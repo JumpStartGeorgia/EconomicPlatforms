@@ -1,0 +1,116 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require formtastic
+ *= require formtastic-bootstrap
+ *= require vendor
+ *= require_self
+ *= require_tree .
+*/
+
+/* clear floats */
+.clearfix:after, .clear:after {
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+}
+* html .clearfix, * html .clear             		{ zoom: 1; } /* IE6 */
+*:first-child+html .clearfix, *:first-child+html .clear { zoom: 1; } /* IE7 */
+
+
+/* make bootstrap button link color stay white */
+a.btn, a.btn:visited {
+	color: #666;
+}
+a.btn-primary, a.btn-primary:visited, a.btn-info, a.btn-info:visited, a.btn-success, a.btn-success:visited,
+a.btn-warning, a.btn-warning:visited, a.btn-danger, a.btn-danger:visited, a.btn-inverse, a.btn-inverse:visited {
+	color: #fff;
+}
+
+/* general */
+a, a:link, a:hover, a:visited, a:active
+{
+  color: #000;
+  background-color: transparent;
+}
+a:hover
+{
+  color: #000;
+  background-color: #ccc;
+}
+a.brand:hover{
+  background-color: transparent;
+}
+
+h1, h2 {
+   margin: 0.5em 0;
+   font-family: Arial;
+   color: #000;
+  font-weight: bold;
+}
+h1 {
+   font-size: 18pt;
+}
+
+h2 {
+   font-size: 16pt;
+}
+
+h3 {
+  margin: 0.5em 0;
+  font-size: 14pt;
+   font-family: Arial;
+   color: #000;
+  font-weight: bold;
+}
+
+strong {
+	font-weight: bold;
+}
+
+p {
+margin: 0.5em 0;
+}
+
+hr {
+	color: #ccc !important;
+	background-color: #ccc !important;
+	height: 2px;
+}
+
+ul.standard, ol.standard, ul.standard ul, ol.standard ol,
+ul.standard ol, ol.standard ul {
+	margin-left: 1em;
+}
+
+ul.standard li {
+	list-style-type:disc;
+	line-height: 1.1;
+}
+ol.standard li {
+	list-style-type:decimal;
+	line-height: 1.1;
+}
+
+/* multilanguage form styles */
+div#form-en {
+	background-color:#ddd;
+	padding: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+div#form-ka {
+	background-color:#999;
+	padding: 0.5em;
+	margin-bottom: 0.5em;
+}
+
