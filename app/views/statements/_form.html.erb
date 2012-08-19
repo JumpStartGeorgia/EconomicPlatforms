@@ -1,0 +1,14 @@
+<%= semantic_form_for @statement do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :date_made %>
+    <%= f.input :statement %>
+    <%= f.input :source %>
+    <%= f.input :author %>
+    <%= f.input :political_party_id %>
+    <%= f.input :economic_category_id %>
+  <% end %>
+
+  <%= f.actions do %>
+    <%= f.action :submit, :as => :input %>
+  <% end %>
+<% end %>

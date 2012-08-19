@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Statement:</b>
+  <%= @statement_score.statement_id %>
+</p>
+
+<p>
+  <b>Indicator category:</b>
+  <%= @statement_score.indicator_category_id %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @statement_score.value %>
+</p>
+
+
+<%= link_to 'Edit', edit_statement_score_path(@statement_score) %> |
+<%= link_to 'Back', statement_scores_path %>

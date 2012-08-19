@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  date_made: 2012-08-19
+  statement: MyText
+  source: MyString
+  author: MyString
+  political_party_id: 1
+  economic_category_id: 1
+
+two:
+  date_made: 2012-08-19
+  statement: MyText
+  source: MyString
+  author: MyString
+  political_party_id: 1
+  economic_category_id: 1

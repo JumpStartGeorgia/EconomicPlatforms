@@ -1,0 +1,27 @@
+<h1>Listing statement_scores</h1>
+
+<table>
+  <tr>
+    <th>Statement</th>
+    <th>Indicator category</th>
+    <th>Value</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @statement_scores.each do |statement_score| %>
+  <tr>
+    <td><%= statement_score.statement_id %></td>
+    <td><%= statement_score.indicator_category_id %></td>
+    <td><%= statement_score.value %></td>
+    <td><%= link_to 'Show', statement_score %></td>
+    <td><%= link_to 'Edit', edit_statement_score_path(statement_score) %></td>
+    <td><%= link_to 'Destroy', statement_score, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Statement score', new_statement_score_path %>

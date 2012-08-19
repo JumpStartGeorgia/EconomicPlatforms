@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Date made:</b>
+  <%= @statement.date_made %>
+</p>
+
+<p>
+  <b>Statement:</b>
+  <%= @statement.statement %>
+</p>
+
+<p>
+  <b>Source:</b>
+  <%= @statement.source %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @statement.author %>
+</p>
+
+<p>
+  <b>Political party:</b>
+  <%= @statement.political_party_id %>
+</p>
+
+<p>
+  <b>Economic category:</b>
+  <%= @statement.economic_category_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_statement_path(@statement) %> |
+<%= link_to 'Back', statements_path %>

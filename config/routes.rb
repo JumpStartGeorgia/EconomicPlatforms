@@ -7,6 +7,13 @@ EconomicPlatforms::Application.routes.draw do
 
 		devise_for :users
 
+    resources :indicator_categories
+    resources :indicators
+    resources :economic_categories
+    resources :political_parties
+    resources :statement_scores
+    resources :statements
+
 		root :to => 'root#index'
 	  match "*path", :to => redirect("/#{I18n.default_locale}") # handles /en/fake/path/whatever
 	end

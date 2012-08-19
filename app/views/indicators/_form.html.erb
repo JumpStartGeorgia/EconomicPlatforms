@@ -1,0 +1,11 @@
+<%= semantic_form_for @indicator do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :indicator_category_id %>
+    <%= f.input :name %>
+    <%= f.input :value %>
+  <% end %>
+
+  <%= f.actions do %>
+    <%= f.action :submit, :as => :input %>
+  <% end %>
+<% end %>
