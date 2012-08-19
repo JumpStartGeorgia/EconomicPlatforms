@@ -1,11 +1,26 @@
-<%= semantic_form_for @statement_score do |f| %>
-  <%= f.inputs do %>
-    <%= f.input :statement_id %>
-    <%= f.input :indicator_category_id %>
-    <%= f.input :value %>
-  <% end %>
+<%= form_for @statement_score, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :statement_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :statement_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :indicator_category_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :indicator_category_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :value, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :value, :class => 'number_field' %>
+    </div>
+  </div>
 
-  <%= f.actions do %>
-    <%= f.action :submit, :as => :input %>
-  <% end %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                statement_scores_path, :class => 'btn' %>
+  </div>
 <% end %>

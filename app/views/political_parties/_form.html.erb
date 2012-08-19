@@ -1,9 +1,8 @@
-<%= semantic_form_for @political_party do |f| %>
-  <%= f.inputs do %>
-    <%= f.input :name %>
-  <% end %>
+<%= form_for @political_party, :html => { :class => 'form-horizontal' } do |f| %>
 
-  <%= f.actions do %>
-    <%= f.action :submit, :as => :input %>
-  <% end %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                political_parties_path, :class => 'btn' %>
+  </div>
 <% end %>

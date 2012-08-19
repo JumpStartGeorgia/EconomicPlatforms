@@ -1,10 +1,19 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = PoliticalParty -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <b>Name:</b>
-  <%= @political_party.name %>
-</p>
+<dl class="dl-horizontal">
+</dl>
 
-
-<%= link_to 'Edit', edit_political_party_path(@political_party) %> |
-<%= link_to 'Back', political_parties_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              political_parties_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_political_party_path(@political_party), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              political_party_path(@political_party),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>
+</div>

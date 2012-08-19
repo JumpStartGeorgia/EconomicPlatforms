@@ -1,11 +1,20 @@
-<%= semantic_form_for @indicator do |f| %>
-  <%= f.inputs do %>
-    <%= f.input :indicator_category_id %>
-    <%= f.input :name %>
-    <%= f.input :value %>
-  <% end %>
+<%= form_for @indicator, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :indicator_category_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :indicator_category_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :value, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :value, :class => 'number_field' %>
+    </div>
+  </div>
 
-  <%= f.actions do %>
-    <%= f.action :submit, :as => :input %>
-  <% end %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                indicators_path, :class => 'btn' %>
+  </div>
 <% end %>

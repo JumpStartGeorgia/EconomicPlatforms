@@ -1,9 +1,8 @@
-<%= semantic_form_for @indicator_category do |f| %>
-  <%= f.inputs do %>
-    <%= f.input :name %>
-  <% end %>
+<%= form_for @indicator_category, :html => { :class => 'form-horizontal' } do |f| %>
 
-  <%= f.actions do %>
-    <%= f.action :submit, :as => :input %>
-  <% end %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                indicator_categories_path, :class => 'btn' %>
+  </div>
 <% end %>
