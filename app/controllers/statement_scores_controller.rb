@@ -1,4 +1,6 @@
 class StatementScoresController < ApplicationController
+  before_filter :authenticate_user!
+
   # GET /statement_scores
   # GET /statement_scores.json
   def index

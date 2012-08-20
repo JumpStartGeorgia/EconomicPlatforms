@@ -1,8 +1,10 @@
 class IndicatorsController < ApplicationController
+  before_filter :authenticate_user!
+
   # GET /indicators
   # GET /indicators.json
   def index
-    @indicators = Indicator.all
+    @indicators = Indicator.ordered
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,6 +27,9 @@ class IndicatorsController < ApplicationController
   # GET /indicators/new.json
   def new
     @indicator = Indicator.new
+    # create the translation object for however many locales there are
+    # so the form will properly create all of the nested form fields
+    I18n.available_locales.length.times {@indicator.indicator_translations.build}
 
     respond_to do |format|
       format.html # new.html.erb

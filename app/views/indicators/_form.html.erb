@@ -1,20 +1,28 @@
-<%= form_for @indicator, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :indicator_category_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :indicator_category_id, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :value, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :value, :class => 'number_field' %>
-    </div>
-  </div>
+<%= semantic_form_for(@indicator) do |f| %>
+	<%= f.error_messages %>
 
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                indicators_path, :class => 'btn' %>
-  </div>
+  <%= f.inputs :for => :indicator_translations do |translation, i| %>
+
+  	<% formLocale = I18n.available_locales[i-1] %>
+
+  	<div id="form-<%= formLocale %>" class="multilanguage">
+  		<h3><%= t("app.language.#{formLocale}") %></h3>
+
+  		<%= translation.input :name %>
+  		<%= translation.hidden_field :locale , :value => formLocale %>
+  	</div>
+
+  <% end %>
+
+	<%= f.inputs do %>
+		<%= f.input :indicator_category %>
+		<%= f.input :value, :as => :string, :input_html => {:size => 5}  %>
+	<% end %>
+
+	<div class="form-actions">
+	  <%= f.submit nil, :class => 'btn btn-success' %>
+	  <%= f.submit nil, :class => 'btn btn-warning', :type => :reset, :value => t('app.buttons.reset'), :name => :reset %>
+	  <%= link_to t('app.buttons.cancel'), indicators_path, :class => 'btn btn-mini btn-warning' %>
+	</div>
+
 <% end %>

@@ -31,12 +31,31 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">EconomicPlatforms</a>
+          <%= link_to(t('app.common.app_name'), root_path(:locale => I18n.locale),:class=>"brand")%>
           <div class="container nav-collapse">
             <ul class="nav">
               <li><%= link_to "Link1", "/path1"  %></li>
               <li><%= link_to "Link2", "/path2"  %></li>
               <li><%= link_to "Link3", "/path3"  %></li>
+              <% if user_signed_in? %>
+                <li>
+     		         <%= current_user.email %>
+  							</li>
+                <li>
+     		         <%= link_to t('.admin'), admin_path %>
+  							</li>
+                <li>
+     		         <%= link_to t('.sign_out'), destroy_user_session_path, :method => :delete %>
+  							</li>
+              <% end %>          
+            </ul>
+
+            <ul class="nav pull-right">
+  						<% I18n.available_locales.each do |locale| %>
+  							<% if locale != I18n.locale %>
+  								<li><%= link_to t("app.language.#{locale}"), params.merge(:locale => locale) %></li>
+  							<% end %>
+  						<% end %>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -46,7 +65,7 @@
     <div class="container">
       <div class="content">
         <div class="row">
-           <div class="span9">
+           <div class="span12">
 							<% flash.each do |key, msg| %>
 								<div class="alert <%= flash_translation(key) %> fade in">
 									<a href="#" data-dismiss="alert" class="close">×</a>
@@ -56,24 +75,9 @@
 
 							<%= yield %>
             </div>
-            <div class="span3">
-              <div class="well sidebar-nav">
-                <h3>Sidebar</h3>
-                <ul class="nav nav-list">
-                  <li class="nav-header">Sidebar</li>
-                  <li><%= link_to "Link1", "/path1"  %></li>
-                  <li><%= link_to "Link2", "/path2"  %></li>
-                  <li><%= link_to "Link3", "/path3"  %></li>
-                </ul>
-              </div><!--/.well -->
-            </div><!--/span-->
+          </div>
         </div><!--/row-->
       </div><!--/content-->
-
-      <footer>
-        <p>&copy; Company 2012</p>
-      </footer>
-
     </div> <!-- /container -->
 
     <!-- Javascripts

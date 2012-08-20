@@ -5,16 +5,14 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= t('app.common.name') %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @economic_categories.each do |economic_category| %>
       <tr>
-        <td><%= link_to economic_category.id, economic_category_path(economic_category) %></td>
-        <td><%=l economic_category.created_at %></td>
+        <td><%= economic_category.name %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_economic_category_path(economic_category), :class => 'btn btn-mini' %>
@@ -29,6 +27,10 @@
   </tbody>
 </table>
 
+<div class="form-actions">
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_economic_category_path,
             :class => 'btn btn-primary' %>
+<%= link_to t('app.buttons.admin'), admin_path,
+:class => 'btn' %>
+</div>

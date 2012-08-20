@@ -1,8 +1,10 @@
 class PoliticalPartiesController < ApplicationController
+  before_filter :authenticate_user!
+
   # GET /political_parties
   # GET /political_parties.json
   def index
-    @political_parties = PoliticalParty.all
+    @political_parties = PoliticalParty.ordered
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,6 +27,9 @@ class PoliticalPartiesController < ApplicationController
   # GET /political_parties/new.json
   def new
     @political_party = PoliticalParty.new
+    # create the translation object for however many locales there are
+    # so the form will properly create all of the nested form fields
+    I18n.available_locales.length.times {@political_party.political_party_translations.build}
 
     respond_to do |format|
       format.html # new.html.erb
@@ -44,7 +49,7 @@ class PoliticalPartiesController < ApplicationController
 
     respond_to do |format|
       if @political_party.save
-        format.html { redirect_to @political_party, notice: 'Political party was successfully created.' }
+        format.html { redirect_to political_parties_path, notice: 'Political party was successfully created.' }
         format.json { render json: @political_party, status: :created, location: @political_party }
       else
         format.html { render action: "new" }
@@ -60,7 +65,7 @@ class PoliticalPartiesController < ApplicationController
 
     respond_to do |format|
       if @political_party.update_attributes(params[:political_party])
-        format.html { redirect_to @political_party, notice: 'Political party was successfully updated.' }
+        format.html { redirect_to political_parties_path, notice: 'Political party was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

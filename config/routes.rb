@@ -14,6 +14,8 @@ EconomicPlatforms::Application.routes.draw do
     resources :statement_scores
     resources :statements
 
+		match '/admin', :to => 'root#admin', :as => :admin, :via => :get
+
 		root :to => 'root#index'
 	  match "*path", :to => redirect("/#{I18n.default_locale}") # handles /en/fake/path/whatever
 	end

@@ -3,8 +3,10 @@
   <h1><%=t '.title', :default => model_class.model_name.human %></h1>
 </div>
 
-<dl class="dl-horizontal">
-</dl>
+<p>
+  <strong><%= t('app.common.name') %>:</strong>
+  <%= @indicator_category.name %>
+</p>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
@@ -16,4 +18,6 @@
               :method => 'delete',
               :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
               :class => 'btn btn-danger' %>
+	<%= link_to t('app.buttons.admin'), admin_path,
+  :class => 'btn' %>
 </div>

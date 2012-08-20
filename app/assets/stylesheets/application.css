@@ -11,8 +11,8 @@
  *= require formtastic
  *= require formtastic-bootstrap
  *= require vendor
- *= require_self
  *= require_tree .
+ *= require_self
 */
 
 /* clear floats */
@@ -114,3 +114,9 @@ div#form-ka {
 	margin-bottom: 0.5em;
 }
 
+/* admin page */
+div.admin_panel ul li {
+	padding-bottom: 0.5em;
+  list-style:disc;
+  margin-left: 1em;
+}

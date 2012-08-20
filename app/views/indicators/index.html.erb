@@ -5,20 +5,18 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:indicator_category_id) %></th>
-      <th><%= model_class.human_attribute_name(:value) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= t('app.common.ind_category') %></th>
+      <th><%= t('app.common.value') %></th>
+      <th><%= t('app.common.name') %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @indicators.each do |indicator| %>
       <tr>
-        <td><%= link_to indicator.id, indicator_path(indicator) %></td>
-        <td><%= indicator.indicator_category_id %></td>
+        <td><%= indicator.indicator_category.name %></td>
         <td><%= indicator.value %></td>
-        <td><%=l indicator.created_at %></td>
+        <td><%= indicator.name %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_indicator_path(indicator), :class => 'btn btn-mini' %>
@@ -33,6 +31,10 @@
   </tbody>
 </table>
 
+<div class="form-actions">
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_indicator_path,
             :class => 'btn btn-primary' %>
+<%= link_to t('app.buttons.admin'), admin_path,
+:class => 'btn' %>
+</div>

@@ -1,27 +1,25 @@
 # encoding: utf-8
-en:
+ka:
   app:
     language:
       en: English
       ka: ქართული
     buttons:
-      back: Back
-      list: View All
+      back: უკან დაბრუნება
+      list: ყველას ნახვა
       admin: Admin Section
-      delete: Delete
-      edit: Edit
+      delete: წაშლა
+      edit: დამუშავება
       show: Show
-      cancel: Cancel
+      cancel: გაუქმება
       update: Update
       save: Save
       create: Create
-      reset: Reset
+      reset: გადატვირთვა
       remove: Remove
     common:
       app_name: Georgia Economic Platforms
       name: Name
-      ind_category: Indicator Category
-      value: Value
   layouts:
     application:
   economic_categories:
@@ -60,7 +58,7 @@ en:
       title: New Political Party
     show:
       title: Political Party Details
-  root  root:
+  root:
     admin:
       title: Administration Section
       basic_header: Basic

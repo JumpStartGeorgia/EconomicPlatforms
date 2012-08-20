@@ -1,4 +1,6 @@
 class StatementsController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index, :show ]
+
   # GET /statements
   # GET /statements.json
   def index

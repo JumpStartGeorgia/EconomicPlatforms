@@ -25,9 +25,19 @@ class ApplicationController < ActionController::Base
     end
 	end
 
+  def default_url_options(options={})
+    { :locale => I18n.locale }
+  end
+
 	def initialize_gon
 		gon.set = true
 	end
+
+	# after user logs in, go to admin page
+	def after_sign_in_path_for(resource)
+		admin_path
+	end
+
 
   #######################
 	def render_not_found(exception)

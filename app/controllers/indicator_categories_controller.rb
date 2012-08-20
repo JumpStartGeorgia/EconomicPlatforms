@@ -1,8 +1,10 @@
 class IndicatorCategoriesController < ApplicationController
+  before_filter :authenticate_user!
+
   # GET /indicator_categories
   # GET /indicator_categories.json
   def index
-    @indicator_categories = IndicatorCategory.all
+    @indicator_categories = IndicatorCategory.ordered
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,6 +27,9 @@ class IndicatorCategoriesController < ApplicationController
   # GET /indicator_categories/new.json
   def new
     @indicator_category = IndicatorCategory.new
+    # create the translation object for however many locales there are
+    # so the form will properly create all of the nested form fields
+    I18n.available_locales.length.times {@indicator_category.indicator_category_translations.build}
 
     respond_to do |format|
       format.html # new.html.erb

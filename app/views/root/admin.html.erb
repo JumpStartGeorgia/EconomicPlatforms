@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h1><%=t '.title' %></h1>
+</div>
+
+<div class="admin_panel row-fluid">
+   <div class="span4">
+ 		<h3><%= t('.basic_header')%></h3>
+ 		<ul class="standard">
+ 			<li>
+ 				<%= link_to t('.political_parties'), political_parties_path %>
+ 			</li>
+ 			<li>
+ 				<%= link_to t('.economic_categories'), economic_categories_path %>
+ 			</li>
+ 			<li>
+ 				<%= link_to t('.indicator_categories'), indicator_categories_path %>
+ 			</li>
+ 			<li>
+ 				<%= link_to t('.indicators'), indicators_path %>
+ 			</li>
+ 		</ul>
+  </div>
+   <div class="span4">
+ 		<h3><%= t('.users_header')%></h3>
+ 		<ul class="standard">
+ 			<li>
+       <%= link_to t('.users'), "#" %>
+      </li>
+ 		</ul>
+  </div>
+</div>
