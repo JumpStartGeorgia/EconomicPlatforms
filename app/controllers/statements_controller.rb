@@ -33,6 +33,10 @@ class StatementsController < ApplicationController
     
     @indicator_categories = IndicatorCategory.ordered
 
+		# turn the datetime picker js on
+		# have to format dates this way so js datetime picker read them properly
+		gon.edit_statement = true
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @statement }
@@ -42,6 +46,10 @@ class StatementsController < ApplicationController
   # GET /statements/1/edit
   def edit
     @statement = Statement.find(params[:id])
+		# turn the datetime picker js on
+		# have to format dates this way so js datetime picker read them properly
+		gon.edit_statement = true
+		gon.date_made = @statement.date_made.strftime('%m/%d/%Y') if !@statement.date_made.nil?
   end
 
   # POST /statements
@@ -54,6 +62,10 @@ class StatementsController < ApplicationController
         format.html { redirect_to @statement, notice: 'Statement was successfully created.' }
         format.json { render json: @statement, status: :created, location: @statement }
       else
+    		# turn the datetime picker js on
+    		# have to format dates this way so js datetime picker read them properly
+    		gon.edit_statement = true
+    		gon.date_made = @statement.date_made.strftime('%m/%d/%Y') if !@statement.date_made.nil?
         format.html { render action: "new" }
         format.json { render json: @statement.errors, status: :unprocessable_entity }
       end
@@ -70,6 +82,10 @@ class StatementsController < ApplicationController
         format.html { redirect_to @statement, notice: 'Statement was successfully updated.' }
         format.json { head :ok }
       else
+    		# turn the datetime picker js on
+    		# have to format dates this way so js datetime picker read them properly
+    		gon.edit_statement = true
+    		gon.date_made = @statement.date_made.strftime('%m/%d/%Y') if !@statement.date_made.nil?
         format.html { render action: "edit" }
         format.json { render json: @statement.errors, status: :unprocessable_entity }
       end

@@ -16,6 +16,7 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require twitter/bootstrap
+//= require vendor
 //= require_tree .
 
 // set focus to first text box on page
