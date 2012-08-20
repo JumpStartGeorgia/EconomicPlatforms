@@ -8,6 +8,6 @@ class Statement < ActiveRecord::Base
   belongs_to :economic_category
   has_many :statement_scores
   
-  validates :date_maade, :political_party_id, :economic_category_id, :presence => true
+  validates :date_made, :political_party_id, :economic_category_id, :presence => true
   
 end

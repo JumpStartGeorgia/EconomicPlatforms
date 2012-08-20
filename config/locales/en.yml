@@ -22,6 +22,10 @@ en:
       name: Name
       ind_category: Indicator Category
       value: Value
+      date_made: Date Made
+      pol_party: Political Party
+      ec_category: Economic Category
+      statement: Statement
   layouts:
     application:
   economic_categories:

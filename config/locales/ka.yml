@@ -20,6 +20,10 @@ ka:
     common:
       app_name: Georgia Economic Platforms
       name: Name
+      date_made: Date Made
+      pol_party: Political Party
+      ec_category: Economic Category
+      statement: Statement
   layouts:
     application:
   economic_categories:

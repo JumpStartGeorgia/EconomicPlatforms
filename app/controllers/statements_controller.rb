@@ -27,6 +27,11 @@ class StatementsController < ApplicationController
   # GET /statements/new.json
   def new
     @statement = Statement.new
+    # create the translation object for however many locales there are
+    # so the form will properly create all of the nested form fields
+    I18n.available_locales.length.times {@statement.statement_translations.build}
+    
+    @indicator_categories = IndicatorCategory.ordered
 
     respond_to do |format|
       format.html # new.html.erb

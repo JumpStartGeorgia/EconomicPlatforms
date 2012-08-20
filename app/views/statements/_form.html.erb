@@ -1,26 +1,51 @@
-<%= form_for @statement, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :date_made, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.date_select :date_made, :class => 'date_select' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :political_party_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :political_party_id, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :economic_category_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :economic_category_id, :class => 'number_field' %>
-    </div>
-  </div>
+<%= semantic_form_for(@statement) do |f| %>
+	<%= f.error_messages %>
+	
+
+	<%= f.inputs do %>
+		<%= f.input :date_made, :as => :string, :input_html => {:size => 20} %>
+	<% end %>
+
+  <%= f.inputs :for => :statement_translations do |translation, i| %>
+
+  	<% formLocale = I18n.available_locales[i-1] %>
+
+  	<div id="form-<%= formLocale %>" class="multilanguage">
+  		<h3><%= t("app.language.#{formLocale}") %></h3>
+
+  		<%= translation.input :statement, :as => :text, :input_html => {:rows => 4, :cols => 100} %>
+  		<%= translation.hidden_field :locale , :value => formLocale %>
+  	</div>
+
+  <% end %>
+
+	<%= f.inputs do %>
+		<%= f.input :political_party %>
+		<%= f.input :economic_category %>
+	<% end %>
+
+  <% if @indicator_categories && !@indicator_categories.empty? 
+	   @indicator_categories.each_with_index do |cat,index| 
+	     if !cat.indicators.nil? && !cat.indicators.empty? %>
+          <div class="control-group">
+            <label class="control-label"><%= cat.name %></label>
+            <div class="controls">
+              <% cat.indicators.each do |ind| %>
+                <label class="radio">
+                  <%= radio_button_tag "options_statement_statement_score_#{cat.id}", ind.value, false, :id => 'statement[statement_score[cat.id]]'%>
+                  <%= "#{ind.value} - #{ind.name}" %>
+                </label>
+              <% end %>
+            </div>
+          </div>
+	     <% end %>
+	  <% end %>
+  <% end %>
+	
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                statements_path, :class => 'btn' %>
+	  <%= f.submit nil, :class => 'btn btn-warning', :type => :reset, :value => t('app.buttons.reset'), :name => :reset %>
+	  <%= link_to t('app.buttons.cancel'), statements_path, :class => 'btn btn-mini btn-warning' %>
   </div>
 <% end %>
