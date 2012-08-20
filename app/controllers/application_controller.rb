@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
 
 	before_filter :set_locale
 	before_filter :initialize_gon
+	before_filter :set_political_parties
+	before_filter :set_economic_categories
 
 	unless Rails.application.config.consider_all_requests_local
 		rescue_from Exception,
@@ -37,6 +39,14 @@ class ApplicationController < ActionController::Base
 	def after_sign_in_path_for(resource)
 		admin_path
 	end
+
+  def set_political_parties
+    @political_parties_nav = PoliticalParty.ordered
+  end
+
+  def set_economic_categories
+    @economic_categories_nav = EconomicCategory.ordered
+  end
 
 
   #######################
