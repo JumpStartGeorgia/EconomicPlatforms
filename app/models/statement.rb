@@ -11,4 +11,6 @@ class Statement < ActiveRecord::Base
 
   validates :date_made, :political_party_id, :economic_category_id, :presence => true
 
+	default_scope lambda {with_translations(I18n.locale).order("statements.date_made desc")}
+
 end
