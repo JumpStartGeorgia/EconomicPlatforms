@@ -1,5 +1,5 @@
 class Statement < ActiveRecord::Base
-  translates :statement_made, :source, :author
+  translates :statement_made, :source, :author, :analysis
   belongs_to :political_party
   belongs_to :economic_category
   has_many :statement_scores, :dependent => :destroy

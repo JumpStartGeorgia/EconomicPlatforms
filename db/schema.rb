@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120821093627) do
+ActiveRecord::Schema.define(:version => 20120821100309) do
 
   create_table "economic_categories", :force => true do |t|
     t.datetime "created_at"
@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(:version => 20120821093627) do
     t.string   "author"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "analysis"
   end
 
   add_index "statement_translations", ["author"], :name => "index_statement_translations_on_author"

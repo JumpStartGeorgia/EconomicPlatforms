@@ -4,6 +4,8 @@
 
 	<%= f.inputs do %>
 		<%= f.input :date_made, :as => :string, :input_html => {:size => 20} %>
+		<%= f.input :political_party %>
+		<%= f.input :economic_category %>
 	<% end %>
 
   <%= f.inputs :for => :statement_translations do |translation, i| %>
@@ -16,15 +18,11 @@
   		<%= translation.input :source %>
   		<%= translation.input :author %>
   		<%= translation.input :statement_made, :as => :text, :input_html => {:rows => 4, :cols => 100} %>
+  		<%= translation.input :analysis, :as => :text, :input_html => {:rows => 4, :cols => 100} %>
   		<%= translation.hidden_field :locale , :value => formLocale %>
   	</div>
 
   <% end %>
-
-	<%= f.inputs do %>
-		<%= f.input :political_party %>
-		<%= f.input :economic_category %>
-	<% end %>
 
   <% if @indicator_categories && !@indicator_categories.empty? %>
 		<%= f.inputs :for => :statement_scores do |scores, i| %>

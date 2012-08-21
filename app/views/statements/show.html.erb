@@ -28,8 +28,14 @@
 </p>
 <p>
   <strong><%= t('app.common.statement') %>:</strong>
-  <%= @statement.statement_made %>
 </p>
+<%= simple_format @statement.statement_made, {}, :sanitize => false %>
+
+<p>
+  <strong><%= t('app.common.analysis') %>:</strong>
+</p>
+<%= simple_format @statement.analysis, {}, :sanitize => false %>
+
 <p>
   <strong><%= t('app.common.scores') %>:</strong>
 </p>
