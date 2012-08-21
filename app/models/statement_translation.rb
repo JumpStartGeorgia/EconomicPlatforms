@@ -1,7 +1,7 @@
 class StatementTranslation < ActiveRecord::Base
-  attr_accessible :statement_id, :statement, :source, :author, :locale
+  attr_accessible :statement_id, :statement_made, :source, :author, :locale
   belongs_to :statement
 
-  validates :statement, :source, :locale, :presence => true
+  validates :statement_made, :source, :locale, :presence => true
 
 end

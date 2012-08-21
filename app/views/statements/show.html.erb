@@ -19,9 +19,27 @@
 </p>
 
 <p>
-  <strong><%= t('app.common.statement') %>:</strong>
-  <%= @statement.statement %>
+  <strong><%= t('app.common.source') %>:</strong>
+  <%= @statement.source %>
 </p>
+<p>
+  <strong><%= t('app.common.author') %>:</strong>
+  <%= @statement.author %>
+</p>
+<p>
+  <strong><%= t('app.common.statement') %>:</strong>
+  <%= @statement.statement_made %>
+</p>
+<p>
+  <strong><%= t('app.common.scores') %>:</strong>
+</p>
+<% if @statement.statement_scores && !@statement.statement_scores.empty? %>
+	<ul class="standard">
+	<% @statement.statement_scores.each do |score| %>
+		<li><%= "#{score.indicator_category.name} - #{score.value}"%></li>
+	<% end %>
+	</ul>
+<% end %>
 
 
 <div class="form-actions">

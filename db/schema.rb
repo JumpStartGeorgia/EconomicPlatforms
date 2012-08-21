@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120819183807) do
+ActiveRecord::Schema.define(:version => 20120821093627) do
 
   create_table "economic_categories", :force => true do |t|
     t.datetime "created_at"
@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(:version => 20120819183807) do
   create_table "statement_translations", :force => true do |t|
     t.integer  "statement_id"
     t.string   "locale"
-    t.text     "statement"
+    t.text     "statement_made"
     t.string   "source"
     t.string   "author"
     t.datetime "created_at"

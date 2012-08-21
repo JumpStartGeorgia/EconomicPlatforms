@@ -18,12 +18,15 @@ ka:
       reset: გადატვირთვა
       remove: Remove
     common:
-      app_name: Georgia Economic Platforms
+      app_name: Georgia Economic Platform
       name: Name
       date_made: Date Made
       pol_party: Political Party
       ec_category: Economic Category
       statement: Statement
+      source: Source
+      author: Author
+      scores: Scores
   layouts:
     application:
   economic_categories:
@@ -66,6 +69,5 @@ ka:
     admin:
       title: Administration Section
       basic_header: Basic
-    
+
   statements:
-    

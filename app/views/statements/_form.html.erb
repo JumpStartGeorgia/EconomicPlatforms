@@ -1,6 +1,6 @@
 <%= semantic_form_for(@statement) do |f| %>
 	<%= f.error_messages %>
-	
+
 
 	<%= f.inputs do %>
 		<%= f.input :date_made, :as => :string, :input_html => {:size => 20} %>
@@ -13,7 +13,9 @@
   	<div id="form-<%= formLocale %>" class="multilanguage">
   		<h3><%= t("app.language.#{formLocale}") %></h3>
 
-  		<%= translation.input :statement, :as => :text, :input_html => {:rows => 4, :cols => 100} %>
+  		<%= translation.input :source %>
+  		<%= translation.input :author %>
+  		<%= translation.input :statement_made, :as => :text, :input_html => {:rows => 4, :cols => 100} %>
   		<%= translation.hidden_field :locale , :value => formLocale %>
   	</div>
 
@@ -24,24 +26,17 @@
 		<%= f.input :economic_category %>
 	<% end %>
 
-  <% if @indicator_categories && !@indicator_categories.empty? 
-	   @indicator_categories.each_with_index do |cat,index| 
-	     if !cat.indicators.nil? && !cat.indicators.empty? %>
-          <div class="control-group">
-            <label class="control-label"><%= cat.name %></label>
-            <div class="controls">
-              <% cat.indicators.each do |ind| %>
-                <label class="radio">
-                  <%= radio_button_tag "options_statement_statement_score_#{cat.id}", ind.value, false, :id => 'statement[statement_score[cat.id]]'%>
-                  <%= "#{ind.value} - #{ind.name}" %>
-                </label>
-              <% end %>
-            </div>
-          </div>
-	     <% end %>
-	  <% end %>
-  <% end %>
-	
+  <% if @indicator_categories && !@indicator_categories.empty? %>
+		<%= f.inputs :for => :statement_scores do |scores, i| %>
+			<% cat = @indicator_categories[i-1] %>
+			<% if !cat.indicators.nil? && !cat.indicators.empty? %>
+	  		<%= scores.hidden_field :indicator_category_id , :value => cat.id %>
+				<%= scores.input :value, :as => :radio, :collection => cat.indicators.map{|x| ["#{x.value} - #{x.name}", x.value]}, :label => cat.name %>
+			<% end %>
+		<% end %>
+	<% end %>
+
+
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>

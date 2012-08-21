@@ -30,8 +30,12 @@ class StatementsController < ApplicationController
     # create the translation object for however many locales there are
     # so the form will properly create all of the nested form fields
     I18n.available_locales.length.times {@statement.statement_translations.build}
-    
+
     @indicator_categories = IndicatorCategory.ordered
+
+    # create the score object for however many categories there are
+    # so the form will properly create all of the nested form fields
+    @indicator_categories.length.times {@statement.statement_scores.build}
 
 		# turn the datetime picker js on
 		# have to format dates this way so js datetime picker read them properly

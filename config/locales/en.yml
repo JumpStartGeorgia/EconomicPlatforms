@@ -18,7 +18,7 @@ en:
       reset: Reset
       remove: Remove
     common:
-      app_name: Georgia Economic Platforms
+      app_name: Georgia Economic Platform
       name: Name
       ind_category: Indicator Category
       value: Value
@@ -26,6 +26,9 @@ en:
       pol_party: Political Party
       ec_category: Economic Category
       statement: Statement
+      source: Source
+      author: Author
+      scores: Scores
   layouts:
     application:
   economic_categories:
@@ -68,6 +71,5 @@ en:
     admin:
       title: Administration Section
       basic_header: Basic
-    
+
   statements:
-    

@@ -8,6 +8,8 @@
       <th><%= t('app.common.date_made') %></th>
       <th><%= t('app.common.pol_party') %></th>
       <th><%= t('app.common.ec_category') %></th>
+      <th><%= t('app.common.source') %></th>
+      <th><%= t('app.common.author') %></th>
       <th><%= t('app.common.statement') %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -15,10 +17,12 @@
   <tbody>
     <% @statements.each do |statement| %>
       <tr>
-        <td><%= link_to l statement.date_made, statement_path(statement) %></td>
+        <td><%= link_to l(statement.date_made), statement_path(statement) %></td>
         <td><%= statement.political_party.name %></td>
         <td><%= statement.economic_category.name %></td>
-        <td><%= statement.statement %></td>
+        <td><%= statement.source %></td>
+        <td><%= statement.author %></td>
+        <td><%= statement.statement_made %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_statement_path(statement), :class => 'btn btn-mini' %>
