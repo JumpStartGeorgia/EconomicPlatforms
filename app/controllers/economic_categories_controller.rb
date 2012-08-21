@@ -4,7 +4,7 @@ class EconomicCategoriesController < ApplicationController
   # GET /economic_categories
   # GET /economic_categories.json
   def index
-    @economic_categories = EconomicCategory.ordered
+    @economic_categories = EconomicCategory.all
 
     respond_to do |format|
       format.html # index.html.erb

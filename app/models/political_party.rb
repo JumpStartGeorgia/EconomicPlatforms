@@ -6,6 +6,6 @@ class PoliticalParty < ActiveRecord::Base
 
   has_many :statements
 
-  scope :ordered, with_translations(I18n.locale).order("political_party_translations.name")
+	default_scope lambda {with_translations(I18n.locale).order("political_party_translations.name")}
   
 end

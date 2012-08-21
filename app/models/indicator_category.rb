@@ -7,6 +7,6 @@ class IndicatorCategory < ActiveRecord::Base
   has_many :indicators
   has_many :statement_scores
   
-  scope :ordered, with_translations(I18n.locale).order("indicator_category_translations.name")
+	default_scope lambda {with_translations(I18n.locale).order("indicator_category_translations.name")}
   
 end

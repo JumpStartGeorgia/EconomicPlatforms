@@ -8,6 +8,6 @@ class Indicator < ActiveRecord::Base
   
   validates :indicator_category_id, :value, :presence => true
   
-  scope :ordered, with_translations(I18n.locale).order("indicators.indicator_category_id, indicators.value, indicator_translations.name")
+	default_scope lambda {with_translations(I18n.locale).order("indicators.indicator_category_id, indicators.value, indicator_translations.name")}
   
 end

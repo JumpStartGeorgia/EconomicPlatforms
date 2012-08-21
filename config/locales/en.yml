@@ -67,9 +67,15 @@ en:
       title: New Political Party
     show:
       title: Political Party Details
-  root  root:
+  root:
     admin:
       title: Administration Section
       basic_header: Basic
-
+      political_parties: Political Parties
+      economic_categorie: Ecomonic Categories
+      indicator_categories: Indicator Categories
+      indicators: Indicators
+      statements: Statements
+      users_header: Users
+      users: Add User
   statements:

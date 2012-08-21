@@ -37,6 +37,7 @@
   </tbody>
 </table>
 
+<% if user_signed_in? %>
 <div class="form-actions">
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_statement_path,
@@ -44,3 +45,4 @@
 <%= link_to t('app.buttons.admin'), admin_path,
 :class => 'btn' %>
 </div>
+<% end %>

@@ -41,11 +41,11 @@ class ApplicationController < ActionController::Base
 	end
 
   def set_political_parties
-    @political_parties_nav = PoliticalParty.ordered
+    @political_parties_nav = PoliticalParty.all
   end
 
   def set_economic_categories
-    @economic_categories_nav = EconomicCategory.ordered
+    @economic_categories_nav = EconomicCategory.all
   end
 
 

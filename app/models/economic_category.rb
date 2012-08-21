@@ -6,6 +6,6 @@ class EconomicCategory < ActiveRecord::Base
 
   has_many :statements
 
-  scope :ordered, with_translations(I18n.locale).order("economic_category_translations.name")
+	default_scope lambda {with_translations(I18n.locale).order("economic_category_translations.name")}
 
 end

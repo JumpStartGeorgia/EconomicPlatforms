@@ -4,7 +4,7 @@ class IndicatorCategoriesController < ApplicationController
   # GET /indicator_categories
   # GET /indicator_categories.json
   def index
-    @indicator_categories = IndicatorCategory.ordered
+    @indicator_categories = IndicatorCategory.all
 
     respond_to do |format|
       format.html # index.html.erb

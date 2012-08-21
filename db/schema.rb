@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120821100309) do
+ActiveRecord::Schema.define(:version => 20120821163153) do
 
   create_table "economic_categories", :force => true do |t|
     t.datetime "created_at"
@@ -91,9 +91,11 @@ ActiveRecord::Schema.define(:version => 20120821100309) do
     t.integer  "value"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "indciator_id"
+    t.integer  "indicator_id"
   end
 
-  add_index "statement_scores", ["statement_id", "indicator_category_id", "value"], :name => "statement_score_id_ind_cat_value"
+  add_index "statement_scores", ["statement_id", "indicator_category_id", "indicator_id", "value"], :name => "statement_score_record"
 
   create_table "statement_translations", :force => true do |t|
     t.integer  "statement_id"

@@ -27,11 +27,11 @@ class StatementsController < ApplicationController
   # GET /statements/new.json
   def new
     @statement = Statement.new
+    @indicator_categories = IndicatorCategory.all
+
     # create the translation object for however many locales there are
     # so the form will properly create all of the nested form fields
     I18n.available_locales.length.times {@statement.statement_translations.build}
-
-    @indicator_categories = IndicatorCategory.ordered
 
     # create the score object for however many categories there are
     # so the form will properly create all of the nested form fields
@@ -50,6 +50,7 @@ class StatementsController < ApplicationController
   # GET /statements/1/edit
   def edit
     @statement = Statement.find(params[:id])
+    @indicator_categories = IndicatorCategory.all
 		# turn the datetime picker js on
 		# have to format dates this way so js datetime picker read them properly
 		gon.edit_statement = true
@@ -70,6 +71,7 @@ class StatementsController < ApplicationController
     		# have to format dates this way so js datetime picker read them properly
     		gon.edit_statement = true
     		gon.date_made = @statement.date_made.strftime('%m/%d/%Y') if !@statement.date_made.nil?
+        @indicator_categories = IndicatorCategory.all
         format.html { render action: "new" }
         format.json { render json: @statement.errors, status: :unprocessable_entity }
       end
@@ -90,6 +92,7 @@ class StatementsController < ApplicationController
     		# have to format dates this way so js datetime picker read them properly
     		gon.edit_statement = true
     		gon.date_made = @statement.date_made.strftime('%m/%d/%Y') if !@statement.date_made.nil?
+        @indicator_categories = IndicatorCategory.all
         format.html { render action: "edit" }
         format.json { render json: @statement.errors, status: :unprocessable_entity }
       end
