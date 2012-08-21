@@ -13,4 +13,15 @@ class StatementScore < ActiveRecord::Base
     .order("indicator_category_translations.name asc")
   end
 
+
+  protected
+  
+  # in the statement form, the indicator_id and value are combined into one value
+	def combined=(val)
+		self[:combined] = val
+	end
+	def combined
+		self[:combined]
+	end
+  
 end

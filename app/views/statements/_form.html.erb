@@ -29,7 +29,8 @@
 			<% cat = @indicator_categories[i-1] %>
 			<% if !cat.indicators.nil? && !cat.indicators.empty? %>
 	  		<%= scores.hidden_field :indicator_category_id , :value => cat.id %>
-				<%= scores.input :value, :as => :radio, :collection => cat.indicators.map{|x| ["#{x.value} - #{x.name}", x.value]}, :label => cat.name %>
+				<%= scores.input :combined, :as => :radio, 
+				  :collection => cat.indicators.map{|x| ["#{x.value} - #{x.name}", "#{x.id}||#{x.value}"]}, :label => cat.name %>
 			<% end %>
 		<% end %>
 	<% end %>

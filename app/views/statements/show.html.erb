@@ -44,7 +44,11 @@
 <% if @statement.statement_scores && !@statement.statement_scores.empty? %>
 	<ul class="standard">
 	<% @statement.statement_scores.ordered.each do |score| %>
-		<li><%= "#{score.indicator_category.name} - #{score.value}"%></li>
+		<li>
+		  <strong><%= score.indicator_category.name %></strong>
+		  <br />
+		  <%= "(#{score.value}) #{score.indicator.name}"%>
+		</li>
 	<% end %>
 	</ul>
 <% end %>

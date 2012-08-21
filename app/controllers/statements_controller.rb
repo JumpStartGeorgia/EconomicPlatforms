@@ -60,6 +60,13 @@ class StatementsController < ApplicationController
   # POST /statements
   # POST /statements.json
   def create
+    # split the score values into indicator_id and value
+    params[:statement][:statement_scores_attributes].each do |key, values|
+      # [indicator_id, value]
+      combined = values[:combined].split("||")
+      values[:indicator_id] = combined[0]
+      values[:value] = combined[1]
+    end
     @statement = Statement.new(params[:statement])
 
     respond_to do |format|
