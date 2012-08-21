@@ -27,7 +27,7 @@ class StatementsController < ApplicationController
   # GET /statements/new.json
   def new
     @statement = Statement.new
-    @indicator_categories = IndicatorCategory.all
+    @indicator_categories = IndicatorCategory.with_indicators
 
     # create the translation object for however many locales there are
     # so the form will properly create all of the nested form fields
@@ -50,7 +50,7 @@ class StatementsController < ApplicationController
   # GET /statements/1/edit
   def edit
     @statement = Statement.find(params[:id])
-    @indicator_categories = IndicatorCategory.all
+    @indicator_categories = IndicatorCategory.with_indicators
 		# turn the datetime picker js on
 		# have to format dates this way so js datetime picker read them properly
 		gon.edit_statement = true
@@ -78,7 +78,7 @@ class StatementsController < ApplicationController
     		# have to format dates this way so js datetime picker read them properly
     		gon.edit_statement = true
     		gon.date_made = @statement.date_made.strftime('%m/%d/%Y') if !@statement.date_made.nil?
-        @indicator_categories = IndicatorCategory.all
+        @indicator_categories = IndicatorCategory.with_indicators
         format.html { render action: "new" }
         format.json { render json: @statement.errors, status: :unprocessable_entity }
       end
@@ -88,6 +88,13 @@ class StatementsController < ApplicationController
   # PUT /statements/1
   # PUT /statements/1.json
   def update
+    # split the score values into indicator_id and value
+    params[:statement][:statement_scores_attributes].each do |key, values|
+      # [indicator_id, value]
+      combined = values[:combined].split("||")
+      values[:indicator_id] = combined[0]
+      values[:value] = combined[1]
+    end
     @statement = Statement.find(params[:id])
 
     respond_to do |format|
@@ -99,7 +106,7 @@ class StatementsController < ApplicationController
     		# have to format dates this way so js datetime picker read them properly
     		gon.edit_statement = true
     		gon.date_made = @statement.date_made.strftime('%m/%d/%Y') if !@statement.date_made.nil?
-        @indicator_categories = IndicatorCategory.all
+        @indicator_categories = IndicatorCategory.with_indicators
         format.html { render action: "edit" }
         format.json { render json: @statement.errors, status: :unprocessable_entity }
       end

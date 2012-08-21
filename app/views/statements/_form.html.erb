@@ -24,16 +24,27 @@
 
   <% end %>
 
-  <% if @indicator_categories && !@indicator_categories.empty? %>
-		<%= f.inputs :for => :statement_scores do |scores, i| %>
-			<% cat = @indicator_categories[i-1] %>
-			<% if !cat.indicators.nil? && !cat.indicators.empty? %>
-	  		<%= scores.hidden_field :indicator_category_id , :value => cat.id %>
-				<%= scores.input :combined, :as => :radio, 
-				  :collection => cat.indicators.map{|x| ["#{x.value} - #{x.name}", "#{x.id}||#{x.value}"]}, :label => cat.name %>
-			<% end %>
-		<% end %>
-	<% end %>
+  <% # when loading an existing record the scores must be ordered or the radio buttons will not be selected 
+    if params[:action] == "new"  
+      score_objs = @statement.statement_scores
+    else
+      score_objs = @statement.statement_scores.ordered
+    end %>
+
+  <% score_objs.each_with_index do |score, i| %>
+    <% if @indicator_categories && !@indicator_categories.empty? %>
+  		<%= f.fields_for :statement_scores, score do |scores| %>
+  			<% cat = @indicator_categories[i] %>
+  			<% if cat && !cat.indicators.nil? && !cat.indicators.empty? %>
+  	  		<%= scores.hidden_field :indicator_category_id , :value => cat.id %>
+  				<%= scores.input :combined, :as => :radio, 
+  				  :collection => cat.indicators.map{|x| ["#{x.value} - #{x.name}", "#{x.id}||#{x.value}"]}, 
+  				  :label => cat.name %>
+  			<% end %>
+  		<% end %>
+  	<% end %>
+  <% end %>
+
 
 
 

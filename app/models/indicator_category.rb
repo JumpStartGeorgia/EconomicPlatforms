@@ -10,4 +10,8 @@ class IndicatorCategory < ActiveRecord::Base
   
 	default_scope lambda {with_translations(I18n.locale).order("indicator_category_translations.name")}
   
+  def self.with_indicators
+    joins(:indicators)
+    .where("indicators.id is not null")
+  end
 end
