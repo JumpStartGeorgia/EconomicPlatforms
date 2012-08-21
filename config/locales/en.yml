@@ -79,3 +79,11 @@ en:
       users_header: Users
       users: Add User
   statements:
+    edit:
+      title: Editing Statement
+    index:
+      title: Statements
+    new:
+      title: New Statement
+    show:
+      title: Statement Details
