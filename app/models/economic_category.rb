@@ -1,4 +1,5 @@
 class EconomicCategory < ActiveRecord::Base
+  has_paper_trail
   translates :name
   has_many :economic_category_translations, :dependent => :destroy
   accepts_nested_attributes_for :economic_category_translations

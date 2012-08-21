@@ -1,4 +1,5 @@
 class Statement < ActiveRecord::Base
+  has_paper_trail
   translates :statement_made, :source, :author, :analysis
   belongs_to :political_party
   belongs_to :economic_category

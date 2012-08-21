@@ -1,4 +1,5 @@
 class PoliticalParty < ActiveRecord::Base
+  has_paper_trail
   translates :name
   has_many :political_party_translations, :dependent => :destroy
   accepts_nested_attributes_for :political_party_translations

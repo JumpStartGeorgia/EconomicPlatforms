@@ -1,4 +1,5 @@
 class IndicatorCategory < ActiveRecord::Base
+  has_paper_trail
   translates :name
   has_many :indicator_category_translations, :dependent => :destroy
   accepts_nested_attributes_for :indicator_category_translations
