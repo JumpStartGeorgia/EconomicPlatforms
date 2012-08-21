@@ -1,6 +1,17 @@
 <% title t('.title') %>
 
 <div class="admin_panel row-fluid">
+  <% if can? :manage, User %>
+   <div class="span4">
+ 		<h3><%= t('.users_header')%></h3>
+ 		<ul class="standard">
+ 			<li>
+       <%= link_to t('.new_users'), "#" %>
+      </li>
+ 		</ul>
+  </div>
+  <% end %>
+  <% if can? :manage, Indicator %>
    <div class="span4">
  		<h3><%= t('.basic_header')%></h3>
  		<ul class="standard">
@@ -21,12 +32,5 @@
  			</li>
  		</ul>
   </div>
-   <div class="span4">
- 		<h3><%= t('.users_header')%></h3>
- 		<ul class="standard">
- 			<li>
-       <%= link_to t('.users'), "#" %>
-      </li>
- 		</ul>
-  </div>
+  <% end %>
 </div>

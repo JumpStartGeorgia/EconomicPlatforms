@@ -14,4 +14,13 @@ class Statement < ActiveRecord::Base
 
 	default_scope lambda {with_translations(I18n.locale).order("statements.date_made desc")}
 
+  before_save :translate_to_english
+  
+  # if there is a ka translation, get the english from google translate
+  def translate_to_english
+    if !self.statement_translations.empty? && !self.statement_translations.index{|x| x.locale == "ka"}.nil?
+      # found ka record
+      # get english
+    end
+  end
 end

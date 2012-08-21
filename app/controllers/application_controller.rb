@@ -17,8 +17,13 @@ class ApplicationController < ActionController::Base
 		            :with => :render_not_found
 		rescue_from ActionController::UnknownAction,
 		            :with => :render_not_found
+
+    rescue_from CanCan::AccessDenied do |exception|
+      redirect_to root_url, :alert => exception.message
+    end
 	end
 
+  
 	def set_locale
     if params[:locale] and I18n.available_locales.include?(params[:locale].to_sym)
       I18n.locale = params[:locale]

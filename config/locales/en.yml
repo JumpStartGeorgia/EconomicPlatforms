@@ -77,7 +77,7 @@ en:
       indicators: Indicators
       statements: Statements
       users_header: Users
-      users: Add User
+      new_users: Add User
   statements:
     edit:
       title: Editing Statement

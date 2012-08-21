@@ -75,6 +75,13 @@ ka:
       indicators: Indicators
       statements: Statements
       users_header: Users
-      users: Add User
+      new_users: Add User
   statements:
-    title: Statements
+    edit:
+      title: Editing Statement
+    index:
+      title: Statements
+    new:
+      title: New Statement
+    show:
+      title: Statement Details

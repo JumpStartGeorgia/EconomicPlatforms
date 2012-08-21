@@ -6,6 +6,7 @@ gem "mysql2", "~> 0.3.11" # this gem works better with utf-8
 gem "json"
 gem "jquery-rails", "1.0.19"
 gem "devise", "2.0.4" # user authentication
+gem "cancan", "~> 1.6.8" # user authorization
 gem "formtastic", "2.1.1" # create forms easier
 gem "formtastic-bootstrap", :git => "https://github.com/cgunther/formtastic-bootstrap.git", :branch => "bootstrap-2"
 #gem "nested_form", "~> 0.1.1", :git => "https://github.com/davidray/nested_form.git" # easily build nested model forms with ajax links
@@ -20,6 +21,8 @@ gem "i18n-js", "~> 2.1.2" # to show translations in javascript
 gem "capistrano", "~> 2.12.0" # to deploy to server
 gem "exception_notification", "2.5.2" # send an email when exception occurs
 gem "paper_trail", "~> 2.6.3" # keep audit log of all transactions
+#gem "google_fish", "~> 0.2.2" # use google translate
+#gem "to_lang", "~> 0.3.1" # use google translate
 
 # Gems used only for assets and not required
 # in production environments by default.

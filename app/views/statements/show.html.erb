@@ -50,7 +50,7 @@
 	</ul>
 <% end %>
 
-<% if user_signed_in? %>
+<% if user_signed_in? && can?(:manage, Statement) %>
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               statements_path, :class => 'btn'  %>
