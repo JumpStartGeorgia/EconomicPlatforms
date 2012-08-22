@@ -22,7 +22,7 @@ gem "capistrano", "~> 2.12.0" # to deploy to server
 gem "exception_notification", "2.5.2" # send an email when exception occurs
 gem "paper_trail", "~> 2.6.3" # keep audit log of all transactions
 #gem "google_fish", "~> 0.2.2" # use google translate
-#gem "to_lang", "~> 0.3.1" # use google translate
+gem "to_lang", "~> 0.3.1" # use google translate
 
 # Gems used only for assets and not required
 # in production environments by default.
