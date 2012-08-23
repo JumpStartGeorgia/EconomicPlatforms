@@ -1,8 +1,8 @@
 EconomicPlatforms::Application.routes.draw do
 
-	#--------------------------------	
+	#--------------------------------
 	# all resources should be within the scope block below
-	#--------------------------------	
+	#--------------------------------
 	scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
 
 		devise_for :users
@@ -13,6 +13,16 @@ EconomicPlatforms::Application.routes.draw do
     resources :political_parties
     resources :statement_scores
     resources :statements
+
+		match '/statements/political_party/:political_party_id', :to => 'statements#political_party',
+			:as => :political_party_statements, :via => :get
+		match '/statements/political_party/:political_party_id/:id', :to => 'statements#political_party_show',
+			:as => :political_party_statement, :via => :get
+		match '/statements/economic_category/:economic_category_id', :to => 'statements#economic_category',
+			:as => :economic_category_statements, :via => :get
+		match '/statements/economic_category/:economic_category_id/:id', :to => 'statements#economic_category_show',
+			:as => :economic_category_statement, :via => :get
+
 
 		match '/admin', :to => 'root#admin', :as => :admin, :via => :get
 

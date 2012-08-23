@@ -17,7 +17,7 @@
     <%= stylesheet_link_tag "application", :media => "all" %>
     <!--[if IE 6]><%= stylesheet_link_tag 'ie6' %><![endif]-->
     <!--[if IE 7]><%= stylesheet_link_tag 'ie7' %><![endif]-->
-      
+
     <!-- For all other devices -->
     <!-- Size should be 32 x 32 pixels -->
     <%= favicon_link_tag 'images/favicon.ico', :rel => 'shortcut icon' %>
@@ -43,10 +43,10 @@
                 </a>
                 <ul class="dropdown-menu">
                   <% @political_parties_nav.each do |pol| %>
-                  <li><%= link_to pol.name, "#"%></li>
+                  <li><%= link_to pol.name, political_party_statements_path(pol.id)%></li>
                   <% end %>
                 </ul>
-              </li>              
+              </li>
               <% end %>
               <% if @economic_categories_nav && !@economic_categories_nav.empty? %>
               <li class="dropdown">
@@ -56,10 +56,10 @@
                 </a>
                 <ul class="dropdown-menu">
                   <% @economic_categories_nav.each do |ec| %>
-                  <li><%= link_to ec.name, "#"%></li>
+                  <li><%= link_to ec.name, economic_category_statements_path(ec.id)%></li>
                   <% end %>
                 </ul>
-              </li>              
+              </li>
               <% end %>
               <% if user_signed_in? %>
                 <li class="navbar-text">
@@ -71,7 +71,7 @@
                 <li>
      		         <%= link_to t('.sign_out'), destroy_user_session_path, :method => :delete %>
   							</li>
-              <% end %>          
+              <% end %>
             </ul>
 
             <ul class="nav pull-right">

@@ -1,12 +1,12 @@
-<% title t('.title') %>
+<% title t('.title', :political_party => @political_party.name) %>
 
 <% if @statements.nil? || @statements.empty? %>
 	<p>
-		<%= t('.no_statements') %>
+		<%= t('.no_statements', :political_party => @political_party.name) %>
 	</p>
 <% else %>
 	<%= render :partial => "statements/statement_list",
-			:locals => {:statements => @statements, :type => nil}%>
+			:locals => {:statements => @statements, :type => Statement::TYPE[0], :type_id => @political_party.id}%>
 <% end %>
 
 <% if user_signed_in? && can?(:manage, Statement) %>

@@ -1,12 +1,12 @@
-<% title t('.title') %>
+<% title t('.title', :economic_category => @economic_category.name) %>
 
 <% if @statements.nil? || @statements.empty? %>
 	<p>
-		<%= t('.no_statements') %>
+		<%= t('.no_statements', :economic_category => @economic_category.name) %>
 	</p>
 <% else %>
 	<%= render :partial => "statements/statement_list",
-			:locals => {:statements => @statements, :type => nil}%>
+			:locals => {:statements => @statements, :type => Statement::TYPE[1], :type_id => @economic_category.id}%>
 <% end %>
 
 <% if user_signed_in? && can?(:manage, Statement) %>

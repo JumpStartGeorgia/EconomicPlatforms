@@ -27,7 +27,7 @@ en:
       ec_category: Economic Category
       statement: Statement
       source: Source
-      author: Author
+      author: Stated By
       scores: Scores
   layouts:
     application:
@@ -87,3 +87,11 @@ en:
       title: New Statement
     show:
       title: Statement Details
+    statement_list:
+      view_statement: View Full Statement
+    political_party:
+      title: "%{political_party} Statements"
+      no_statements: "At this time, no statements have been recorded for %{political_party}."
+    economic_category:
+      title: "%{economic_category} Statements"
+      no_statements: "At this time, no statements have been recorded for %{economic_category}."

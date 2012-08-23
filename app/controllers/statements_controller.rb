@@ -1,5 +1,57 @@
 class StatementsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :show ]
+  before_filter :authenticate_user!, :except => [:political_party, :econimc_category]
+
+  # GET /statements/political_party/:political_party_id
+  # GET /statements/political_party/:political_party_id.json
+  def political_party
+		@political_party = PoliticalParty.find(params[:political_party_id])
+    @statements = Statement.by_political_party(params[:political_party_id])
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @statements }
+    end
+  end
+
+  # GET /statements/political_party/:political_party_id/show/:id
+  # GET /statements/political_party/:political_party_id/show/:id.json
+  def political_party_show
+		@political_party = PoliticalParty.find(params[:political_party_id])
+    @statements = Statement.by_political_party(params[:political_party_id]).where(:id => params[:id])
+
+		@statements = @statements.first if @statements && !@statements.empty?
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @statements }
+    end
+  end
+
+  # GET /statements/economic_category/:economic_category_id
+  # GET /statements/economic_category/:economic_category_id.json
+  def economic_category
+		@economic_category = EconomicCategory.find(params[:economic_category_id])
+    @statements = Statement.by_economic_category(params[:economic_category_id])
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @statements }
+    end
+  end
+
+  # GET /statements/economic_category/:economic_category_id/:id
+  # GET /statements/economic_category/:economic_category_id/:id.json
+  def economic_category_show
+		@economic_category = EconomicCategory.find(params[:economic_category_id])
+    @statements = Statement.by_economic_category(params[:economic_category_id]).where(:id => params[:id])
+
+		@statements = @statements.first if @statements && !@statements.empty?
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @statements }
+    end
+  end
 
   # GET /statements
   # GET /statements.json
