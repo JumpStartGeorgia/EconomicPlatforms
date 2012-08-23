@@ -26,6 +26,30 @@ class Statement < ActiveRecord::Base
 		where(:economic_category_id => economic_category_id) if economic_category_id
 	end
 
+  def self.count_by_political_party
+    sql = "select ppt.name as count_name, if(isnull(s.total),0,s.total) as count_total "
+    sql << "from political_party_translations as ppt "
+    sql << "left join ( "
+    sql << "select political_party_id, count(*) as total "
+    sql << "from statements group by political_party_id) as s on s.political_party_id = ppt.political_party_id  "
+    sql << "where ppt.locale = :locale "
+    sql << "order by ppt.name"
+    
+		find_by_sql([sql, :locale => I18n.locale])
+  end
+
+  def self.count_by_economic_category
+    sql = "select ect.name as count_name, if(isnull(s.total),0,s.total) as count_total "
+    sql << "from economic_category_translations as ect "
+    sql << "left join ( "
+    sql << "select economic_category_id, count(*) as total "
+    sql << "from statements group by economic_category_id) as s on s.economic_category_id = ect.economic_category_id  "
+    sql << "where ect.locale = :locale "
+    sql << "order by ect.name"
+    
+		find_by_sql([sql, :locale => I18n.locale])
+  end
+
 
 	protected
 
@@ -36,4 +60,19 @@ class Statement < ActiveRecord::Base
       # get english
     end
   end
+
+  # save the data from the count_by queries
+	def count_name=(val)
+		self[:count_name] = val
+	end
+	def count_name
+		self[:count_name]
+	end
+	def count_total=(val)
+		self[:count_total] = val
+	end
+	def count_total
+		self[:count_total]
+	end
+
 end

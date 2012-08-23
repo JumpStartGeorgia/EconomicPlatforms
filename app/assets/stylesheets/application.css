@@ -139,3 +139,13 @@ div.admin_panel ul li {
 {
     color: #B94A48;
 }
+
+/* create alternating striped lists */
+ul.striped li:nth-child(odd){
+  padding: 0.3em;
+  background-color: #fff;
+}
+ul.striped li:nth-child(even){
+  padding: 0.3em;
+  background-color: #ddd;
+}

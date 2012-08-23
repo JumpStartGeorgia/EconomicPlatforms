@@ -36,6 +36,11 @@ ka:
       permalink_exists: already exists in the database
   layouts:
     application:
+  root:
+    index:
+      title: Georgia Economic Platform
+      political_party_header: Political Party Statement Count
+      economic_category_header: Economic Category Statement Count
   economic_categories:
     edit:
       title: Editing Economic Category

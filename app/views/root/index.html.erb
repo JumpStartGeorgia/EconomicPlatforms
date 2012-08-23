@@ -1,0 +1,38 @@
+<% title t('.title') %>
+
+<div class="row">
+<% if @political_party_count && !@political_party_count.empty? %>
+  <div class="span4">
+    <h3><%= t('.political_party_header') %></h3>
+    <ul class="striped">
+    <% @political_party_count.each do |count| %>
+      <li>
+        <div>
+          <%= count.count_name %>
+          <span class="pull-right">
+            <%= count.count_total %>
+          </span>
+        </div>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<% if @economic_category_count && !@economic_category_count.empty? %>
+  <div class="span4">
+    <h3><%= t('.economic_category_header') %></h3>
+    <ul class="striped">
+    <% @economic_category_count.each do |count| %>
+      <li>
+        <div>
+          <%= count.count_name %>
+          <span class="pull-right">
+            <%= count.count_total %>
+          </span>
+        </div>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+</div>
