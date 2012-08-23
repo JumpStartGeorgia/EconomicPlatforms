@@ -8,7 +8,7 @@
     <% @political_party_count.each do |count| %>
       <li>
         <div>
-          <%= count.count_name %>
+          <%= link_to count.count_name, political_party_statements_path(count.count_permalink) %>
           <span class="pull-right">
             <%= count.count_total %>
           </span>
@@ -25,7 +25,7 @@
     <% @economic_category_count.each do |count| %>
       <li>
         <div>
-          <%= count.count_name %>
+          <%= link_to count.count_name, economic_category_statements_path(count.count_permalink) %>
           <span class="pull-right">
             <%= count.count_total %>
           </span>

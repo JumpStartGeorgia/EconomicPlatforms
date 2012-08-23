@@ -27,7 +27,7 @@ class Statement < ActiveRecord::Base
 	end
 
   def self.count_by_political_party
-    sql = "select ppt.name as count_name, if(isnull(s.total),0,s.total) as count_total "
+    sql = "select ppt.name as count_name, ppt.permalink as count_permalink, if(isnull(s.total),0,s.total) as count_total "
     sql << "from political_party_translations as ppt "
     sql << "left join ( "
     sql << "select political_party_id, count(*) as total "
@@ -39,7 +39,7 @@ class Statement < ActiveRecord::Base
   end
 
   def self.count_by_economic_category
-    sql = "select ect.name as count_name, if(isnull(s.total),0,s.total) as count_total "
+    sql = "select ect.name as count_name, ect.permalink as count_permalink, if(isnull(s.total),0,s.total) as count_total "
     sql << "from economic_category_translations as ect "
     sql << "left join ( "
     sql << "select economic_category_id, count(*) as total "
@@ -67,6 +67,12 @@ class Statement < ActiveRecord::Base
 	end
 	def count_name
 		self[:count_name]
+	end
+	def count_permalink=(val)
+		self[:count_permalink] = val
+	end
+	def count_permalink
+		self[:count_permalink]
 	end
 	def count_total=(val)
 		self[:count_total] = val
