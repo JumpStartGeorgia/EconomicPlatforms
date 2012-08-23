@@ -1,7 +1,7 @@
 <% title t('.title', :political_party => @political_party.name) %>
 
 	<%= render :partial => "statements/statement_show",
-			:locals => {:statement => @statement, :type => Statement::TYPE[0], :type_id => @political_party.id}%>
+			:locals => {:statement => @statement, :type => Statement::TYPE[0], :type_id => @political_party.permalink}%>
 
 <% if user_signed_in? && can?(:manage, Statement) %>
 <div class="form-actions">

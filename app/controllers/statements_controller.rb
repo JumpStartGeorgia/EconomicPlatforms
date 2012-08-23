@@ -9,8 +9,8 @@ class StatementsController < ApplicationController
   # GET /statements/political_party/:political_party_id
   # GET /statements/political_party/:political_party_id.json
   def political_party
-		@political_party = PoliticalParty.find(params[:political_party_id])
-    @statements = Statement.by_political_party(params[:political_party_id])
+		@political_party = PoliticalParty.find_by_permalink(params[:political_party_id])
+    @statements = Statement.by_political_party(@political_party.id)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -21,8 +21,8 @@ class StatementsController < ApplicationController
   # GET /statements/political_party/:political_party_id/show/:id
   # GET /statements/political_party/:political_party_id/show/:id.json
   def political_party_show
-		@political_party = PoliticalParty.find(params[:political_party_id])
-    @statements = Statement.by_political_party(params[:political_party_id]).where(:id => params[:id])
+		@political_party = PoliticalParty.find_by_permalink(params[:political_party_id])
+    @statements = Statement.by_political_party(@political_party.id).where(:id => params[:id])
 
 		@statement = @statements.first if @statements && !@statements.empty?
 
@@ -37,8 +37,8 @@ class StatementsController < ApplicationController
   # GET /statements/economic_category/:economic_category_id
   # GET /statements/economic_category/:economic_category_id.json
   def economic_category
-		@economic_category = EconomicCategory.find(params[:economic_category_id])
-    @statements = Statement.by_economic_category(params[:economic_category_id])
+		@economic_category = EconomicCategory.find_by_permalink(params[:economic_category_id])
+    @statements = Statement.by_economic_category(@economic_category.id)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -49,8 +49,8 @@ class StatementsController < ApplicationController
   # GET /statements/economic_category/:economic_category_id/:id
   # GET /statements/economic_category/:economic_category_id/:id.json
   def economic_category_show
-		@economic_category = EconomicCategory.find(params[:economic_category_id])
-    @statements = Statement.by_economic_category(params[:economic_category_id]).where(:id => params[:id])
+		@economic_category = EconomicCategory.find_by_permalink(params[:economic_category_id])
+    @statements = Statement.by_economic_category(@economic_category.id).where(:id => params[:id])
 
 		@statement = @statements.first if @statements && !@statements.empty?
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120821214809) do
+ActiveRecord::Schema.define(:version => 20120823191846) do
 
   create_table "economic_categories", :force => true do |t|
     t.datetime "created_at"
@@ -24,11 +24,13 @@ ActiveRecord::Schema.define(:version => 20120821214809) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "permalink"
   end
 
   add_index "economic_category_translations", ["economic_category_id"], :name => "index_52085465f9885e100d1dc9141140c40ae624440c"
   add_index "economic_category_translations", ["locale"], :name => "index_economic_category_translations_on_locale"
   add_index "economic_category_translations", ["name"], :name => "index_economic_category_translations_on_name"
+  add_index "economic_category_translations", ["permalink"], :name => "index_economic_category_translations_on_permalink"
 
   create_table "indicator_categories", :force => true do |t|
     t.datetime "created_at"
@@ -79,10 +81,12 @@ ActiveRecord::Schema.define(:version => 20120821214809) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "permalink"
   end
 
   add_index "political_party_translations", ["locale"], :name => "index_political_party_translations_on_locale"
   add_index "political_party_translations", ["name"], :name => "index_political_party_translations_on_name"
+  add_index "political_party_translations", ["permalink"], :name => "index_political_party_translations_on_permalink"
   add_index "political_party_translations", ["political_party_id"], :name => "index_d74f39ea82f0f6fcd074b03ad118d440ba291333"
 
   create_table "statement_scores", :force => true do |t|

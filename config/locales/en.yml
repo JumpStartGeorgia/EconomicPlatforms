@@ -32,6 +32,7 @@ en:
     msgs:
       does_not_exist: You tried to access a page that does not exist.
       not_authorized: You are not authorized to view that page.
+      permalink_exists: already exists in the database
   layouts:
     application:
   economic_categories:

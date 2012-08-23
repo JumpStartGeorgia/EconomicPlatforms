@@ -6,7 +6,7 @@
 	</p>
 <% else %>
 	<%= render :partial => "statements/statement_list",
-			:locals => {:statements => @statements, :type => Statement::TYPE[0], :type_id => @political_party.id}%>
+			:locals => {:statements => @statements, :type => Statement::TYPE[0], :type_id => @political_party.permalink}%>
 <% end %>
 
 <% if user_signed_in? && can?(:manage, Statement) %>

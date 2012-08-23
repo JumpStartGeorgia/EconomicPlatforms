@@ -46,11 +46,11 @@ class ApplicationController < ActionController::Base
 	end
 
   def set_political_parties
-    @political_parties_nav = PoliticalParty.all
+    @political_parties_nav = PoliticalParty.with_translations(I18n.locale)
   end
 
   def set_economic_categories
-    @economic_categories_nav = EconomicCategory.all
+    @economic_categories_nav = EconomicCategory.with_translations(I18n.locale)
   end
 
   def valid_role?(role)

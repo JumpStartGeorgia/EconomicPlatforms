@@ -79,6 +79,7 @@ GEM
       actionpack (>= 2.3.0)
       json
     haml (3.1.7)
+    has_permalink (0.1.4)
     highline (1.6.13)
     hike (1.2.1)
     httparty (0.8.3)
@@ -221,6 +222,7 @@ DEPENDENCIES
   formtastic-bootstrap!
   globalize3 (= 0.2.0)
   gon (= 2.2.2)
+  has_permalink (~> 0.1.4)
   i18n-js (~> 2.1.2)
   jquery-rails (= 1.0.19)
   json

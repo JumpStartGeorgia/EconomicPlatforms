@@ -183,3 +183,6 @@ ind.indicator_translations.create(:name=>"the party’s position on the issue is
 ind.indicator_translations.create(:name=>"the party’s position on the issue is best described as communist (all means of production should be nationalized, businessmen should be prosecuted as “speculators”, the government should run the economy, provide free education, health and social benefits)", :locale=>"en")
 
 
+puts "###########################################################################"
+puts "IMPORTANT: please run 'rake has_permalink:generate_permalinks[Model]' to update the permalinks for Political Parties and Economic Categories"
+puts "###########################################################################"
