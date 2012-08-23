@@ -29,6 +29,8 @@ en:
       source: Source
       author: Stated By
       scores: Scores
+    msgs:
+      does_not_exist: You tried to access a page that does not exist.
   layouts:
     application:
   economic_categories:
@@ -95,3 +97,7 @@ en:
     economic_category:
       title: "%{economic_category} Statements"
       no_statements: "At this time, no statements have been recorded for %{economic_category}."
+    political_party_show:
+      title: "%{political_party} Statement"
+    economic_category_show:
+      title: "%{economic_category} Statement"

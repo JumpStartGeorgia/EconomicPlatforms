@@ -19,7 +19,9 @@ class StatementsController < ApplicationController
 		@political_party = PoliticalParty.find(params[:political_party_id])
     @statements = Statement.by_political_party(params[:political_party_id]).where(:id => params[:id])
 
-		@statements = @statements.first if @statements && !@statements.empty?
+		@statement = @statements.first if @statements && !@statements.empty?
+
+		redirect_to root_path, notice: t('app.msgs.does_not_exist') if !@statement
 
     respond_to do |format|
       format.html # index.html.erb
@@ -45,7 +47,9 @@ class StatementsController < ApplicationController
 		@economic_category = EconomicCategory.find(params[:economic_category_id])
     @statements = Statement.by_economic_category(params[:economic_category_id]).where(:id => params[:id])
 
-		@statements = @statements.first if @statements && !@statements.empty?
+		@statement = @statements.first if @statements && !@statements.empty?
+
+		redirect_to root_path, notice: t('app.msgs.does_not_exist') if !@statement
 
     respond_to do |format|
       format.html # index.html.erb
@@ -68,6 +72,8 @@ class StatementsController < ApplicationController
   # GET /statements/1.json
   def show
     @statement = Statement.find(params[:id])
+
+		redirect_to root_path, notice: t('app.msgs.does_not_exist') if !@statement
 
     respond_to do |format|
       format.html # show.html.erb

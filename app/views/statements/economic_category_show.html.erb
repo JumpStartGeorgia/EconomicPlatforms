@@ -1,7 +1,7 @@
-<% title t('.title') %>
+<% title t('.title', :economic_category => @economic_category.name) %>
 
 	<%= render :partial => "statements/statement_show",
-			:locals => {:statement => @statement, :type => nil}%>
+			:locals => {:statement => @statement, :type => Statement::TYPE[1]}%>
 
 <% if user_signed_in? && can?(:manage, Statement) %>
 <div class="form-actions">
