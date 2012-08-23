@@ -85,12 +85,15 @@ en:
       title: Editing Statement
     index:
       title: Statements
+      no_statements: "At this time, no statements have been recorded"
     new:
       title: New Statement
     show:
       title: Statement Details
     statement_list:
       view_statement: View Full Statement
+    statement_show:
+      view_statements: View All Statements
     political_party:
       title: "%{political_party} Statements"
       no_statements: "At this time, no statements have been recorded for %{political_party}."

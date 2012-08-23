@@ -1,4 +1,24 @@
 	<% if statement %>
+		<% if type == Statement::TYPE[0] %>
+			<p>
+				<%= link_to t('.view_statements'),
+					political_party_statements_path(:political_party_id => type_id),
+					:class => 'btn btn-mini' %>
+			</p>
+		<% elsif type == Statement::TYPE[1] %>
+			<p>
+				<%= link_to t('.view_statements'),
+					economic_category_statements_path(:economic_category_id => type_id),
+					:class => 'btn btn-mini' %>
+			</p>
+		<% elsif user_signed_in? && can?(:manage, Statement) %>
+			<p>
+				<%= link_to t('.view_statements'),
+					statements_path,
+					:class => 'btn btn-mini' %>
+			</p>
+		<% end %>
+
 		<div class="statement_summary">
 			<h3>
 				<%= l statement.date_made, :format => :long %>
