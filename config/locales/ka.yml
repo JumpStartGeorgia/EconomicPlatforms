@@ -67,8 +67,8 @@ ka:
       title: New Political Party
     show:
       title: Political Party Details
-  root:
-    admin:
+  admin:
+    index:
       title: Administration Section
       basic_header: Basic
       political_parties: Political Parties

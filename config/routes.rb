@@ -7,6 +7,10 @@ EconomicPlatforms::Application.routes.draw do
 
 		devise_for :users
 
+		namespace :admin do
+			resources :users
+		end
+
     resources :indicator_categories
     resources :indicators
     resources :economic_categories
@@ -24,7 +28,7 @@ EconomicPlatforms::Application.routes.draw do
 			:as => :economic_category_statement, :via => :get
 
 
-		match '/admin', :to => 'root#admin', :as => :admin, :via => :get
+		match '/admin', :to => 'admin#index', :as => :admin, :via => :get
 
 		root :to => 'root#index'
 	  match "*path", :to => redirect("/#{I18n.default_locale}") # handles /en/fake/path/whatever
