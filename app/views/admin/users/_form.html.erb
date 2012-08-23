@@ -1,33 +1,17 @@
-<%= form_for [:admin,@user], :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :email, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :email, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :password, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :password, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :password_confirmation, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :password_confirmation, :class => 'text_field' %>
-    </div>
-  </div>
+<%= semantic_form_for([:admin,@user]) do |f| %>
+	<%= f.error_messages %>
 
-  <div class="control-group">
-    <%= f.label :role, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :role, :class => 'text_field' %>
-    </div>
-  </div>
+	<%= f.inputs do %>
+		<%= f.input :email, :input_html => {:size =>35} %>
+		<%= f.input :password, :input_html => {:size => 35}, :label => t('app.common.new_password')  %>
+		<%= f.input :password_confirmation, :input_html => {:size => 35}  %>
+		<%= f.input :role, :as => :select, :collection => User::ROLES.map{|x| [x.humanize, x.to_s]}  %>
+	<% end %>
+
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                admin_users_path, :class => 'btn' %>
+	  <%= f.submit nil, :class => 'btn btn-warning', :type => :reset, :value => t('app.buttons.reset'), :name => :reset %>
+	  <%= link_to t('app.buttons.cancel'), admin_users_path, :class => 'btn btn-mini btn-warning' %>
   </div>
 <% end %>

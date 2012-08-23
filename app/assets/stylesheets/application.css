@@ -29,11 +29,11 @@
 
 /* make bootstrap button link color stay white */
 a.btn, a.btn:visited {
-	color: #666;
+	color: #000 !important;
 }
 a.btn-primary, a.btn-primary:visited, a.btn-info, a.btn-info:visited, a.btn-success, a.btn-success:visited,
 a.btn-warning, a.btn-warning:visited, a.btn-danger, a.btn-danger:visited, a.btn-inverse, a.btn-inverse:visited {
-	color: #fff;
+	color: #fff !important;
 }
 
 /* general */
@@ -114,4 +114,28 @@ div.admin_panel ul li {
 	padding-bottom: 0.5em;
   list-style:disc;
   margin-left: 1em;
+}
+
+/* error message styling */
+.errorExplanation
+{
+    padding: 0.8em;
+    margin-bottom: 1em;
+    border: 2px solid #ddd;
+    background: #F2DEDE;
+    color: #B94A48;
+    border: 1px solid #EED3D7;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.errorExplanation h2
+{
+    color: #B94A48 !important;
+}
+
+.errorExplanation a
+{
+    color: #B94A48;
 }

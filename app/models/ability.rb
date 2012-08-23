@@ -6,7 +6,7 @@ class Ability
     if user.role? :admin
       can :manage, :all
     elsif user.role? :user_manager
-      can :manage, User
+      can :manage, User, :role != User::ROLES[2]
     elsif user.role? :author
       can :manage, Statement
       can :manage, StatementTranslation

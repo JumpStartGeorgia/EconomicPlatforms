@@ -27,8 +27,12 @@ ka:
       source: Source
       author: Stated By
       scores: Scores
+      email: Email
+      role: Role
+      new_password: New Password
     msgs:
       does_not_exist: You tried to access a page that does not exist.
+      not_authorized: You are not authorized to view that page.
   layouts:
     application:
   economic_categories:
@@ -70,14 +74,26 @@ ka:
   admin:
     index:
       title: Administration Section
+      statements_header: Statements
+      new_statement: Add Statement
+      view_statements: View Statements
       basic_header: Basic
       political_parties: Political Parties
       economic_categorie: Ecomonic Categories
       indicator_categories: Indicator Categories
       indicators: Indicators
-      statements: Statements
       users_header: Users
       new_users: Add User
+      view_users: View Users
+    users:
+      edit:
+        title: Editing User
+      index:
+        title: Users
+      new:
+        title: New User
+      show:
+        title: User Details
   statements:
     edit:
       title: Editing Statement

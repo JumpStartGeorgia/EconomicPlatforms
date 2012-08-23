@@ -1,6 +1,10 @@
 class StatementsController < ApplicationController
   before_filter :authenticate_user!,
 		:except => [:political_party, :economic_category, :political_party_show, :economic_category_show]
+  before_filter :except => [:political_party, :economic_category, :political_party_show, :economic_category_show] do |controller_instance|
+    controller_instance.send(:valid_role?, :author)
+  end
+
 
   # GET /statements/political_party/:political_party_id
   # GET /statements/political_party/:political_party_id.json

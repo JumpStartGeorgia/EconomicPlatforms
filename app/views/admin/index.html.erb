@@ -1,20 +1,33 @@
 <% title t('.title') %>
 
 <div class="admin_panel row-fluid">
-  <% if can? :manage, User %>
+  <% if current_user.role? :author %>
+   <div class="span4">
+ 		<h3><%= t('.statements_header')%></h3>
+ 		<ul class="standard">
+ 			<li>
+ 				<%= link_to t('.view_statements'), statements_path %>
+ 			</li>
+ 			<li>
+ 				<%= link_to t('.add_statement'), new_statement_path %>
+ 			</li>
+ 		</ul>
+  </div>
+  <% end %>
+  <% if current_user.role? :user_manager %>
    <div class="span4">
  		<h3><%= t('.users_header')%></h3>
  		<ul class="standard">
  			<li>
-       <%= link_to t('.new_users'), new_admin_user_path %>
+       <%= link_to t('.view_users'), admin_users_path %>
       </li>
  			<li>
-       <%= link_to t('.new_users'), admin_users_path %>
+       <%= link_to t('.new_users'), new_admin_user_path %>
       </li>
  		</ul>
   </div>
   <% end %>
-  <% if can? :manage, Indicator %>
+  <% if current_user.role? :admin %>
    <div class="span4">
  		<h3><%= t('.basic_header')%></h3>
  		<ul class="standard">
@@ -29,9 +42,6 @@
  			</li>
  			<li>
  				<%= link_to t('.indicators'), indicators_path %>
- 			</li>
- 			<li>
- 				<%= link_to t('.statements'), statements_path %>
  			</li>
  		</ul>
   </div>

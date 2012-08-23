@@ -53,6 +53,9 @@ class ApplicationController < ActionController::Base
     @economic_categories_nav = EconomicCategory.all
   end
 
+  def valid_role?(role)
+    redirect_to root_path, :notice => t('app.msgs.not_authorized') if !current_user || !current_user.role?(role)
+  end
 
   #######################
 	def render_not_found(exception)

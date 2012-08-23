@@ -1,8 +1,17 @@
 class Admin::UsersController < ApplicationController
+  before_filter :authenticate_user!
+  before_filter do |controller_instance|
+    controller_instance.send(:valid_role?, :user_manager)
+  end
+
   # GET /admin/users
   # GET /admin/users.json
   def index
-    @users = User.all
+    if current_user.role == User::ROLES[2]
+      @users = User.all
+    else
+      @users = User.no_admins
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -35,6 +44,9 @@ class Admin::UsersController < ApplicationController
   # GET /admin/users/1/edit
   def edit
     @user = User.find(params[:id])
+    if @user.role == User::ROLES[2] && current_user.role != User::ROLES[2]
+      redirect_to admin_users_path
+    end
   end
 
   # POST /admin/users
