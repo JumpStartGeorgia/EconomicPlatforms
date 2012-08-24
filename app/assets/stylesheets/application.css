@@ -41,6 +41,8 @@ a, a:link, a:hover, a:visited, a:active
 {
   color: #000;
   background-color: transparent;
+}
+.content a {
   text-decoration: underline;
 }
 a:hover
@@ -150,4 +152,3 @@ ul.striped li:nth-child(even){
   padding: 0.3em;
   background-color: #ddd;
 }
-

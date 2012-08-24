@@ -1,4 +1,5 @@
 class PoliticalPartyTranslation < ActiveRecord::Base
+	require 'utf8_converter'
   has_paper_trail
   has_permalink :create_permalink
   attr_accessible :political_party_id, :name, :locale, :permalink
@@ -9,7 +10,7 @@ class PoliticalPartyTranslation < ActiveRecord::Base
 			:message => I18n.t('app.msgs.permalink_exists')}
 
   def create_permalink
-    "#{Utf8Converter.convert(name.clone)}"
+    "#{Utf8Converter.convert_ka_to_en(name.clone)}"
   end
 
 end
