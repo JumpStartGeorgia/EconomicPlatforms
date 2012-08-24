@@ -52,7 +52,7 @@ class EconomicCategoriesController < ApplicationController
 
     respond_to do |format|
       if @economic_category.save
-        format.html { redirect_to @economic_category, notice: 'Economic Category was successfully created.' }
+        format.html { redirect_to @economic_category, notice: t('app.msgs.success_created', :obj => t('app.common.economic_category')) }
         format.json { render json: @economic_category, status: :created, location: @economic_category }
       else
         format.html { render action: "new" }
@@ -68,7 +68,7 @@ class EconomicCategoriesController < ApplicationController
 
     respond_to do |format|
       if @economic_category.update_attributes(params[:category])
-        format.html { redirect_to @economic_category, notice: 'Economic Category was successfully updated.' }
+        format.html { redirect_to @economic_category, notice: t('app.msgs.success_updated', :obj => t('app.common.economic_category')) }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

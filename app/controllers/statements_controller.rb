@@ -134,7 +134,7 @@ class StatementsController < ApplicationController
 
     respond_to do |format|
       if @statement.save
-        format.html { redirect_to @statement, notice: 'Statement was successfully created.' }
+        format.html { redirect_to @statement, notice: t('app.msgs.success_created', :obj => t('app.common.statement')) }
         format.json { render json: @statement, status: :created, location: @statement }
       else
     		# turn the datetime picker js on
@@ -162,7 +162,7 @@ class StatementsController < ApplicationController
 
     respond_to do |format|
       if @statement.update_attributes(params[:statement])
-        format.html { redirect_to @statement, notice: 'Statement was successfully updated.' }
+        format.html { redirect_to @statement, notice: t('app.msgs.success_created', :obj => t('app.common.statement')) }
         format.json { head :ok }
       else
     		# turn the datetime picker js on

@@ -52,7 +52,7 @@ class PoliticalPartiesController < ApplicationController
 
     respond_to do |format|
       if @political_party.save
-        format.html { redirect_to political_parties_path, notice: 'Political party was successfully created.' }
+        format.html { redirect_to political_parties_path, notice: t('app.msgs.success_created', :obj => t('app.common.political_party')) }
         format.json { render json: @political_party, status: :created, location: @political_party }
       else
         format.html { render action: "new" }
@@ -68,7 +68,7 @@ class PoliticalPartiesController < ApplicationController
 
     respond_to do |format|
       if @political_party.update_attributes(params[:political_party])
-        format.html { redirect_to political_parties_path, notice: 'Political party was successfully updated.' }
+        format.html { redirect_to political_parties_path, notice: t('app.msgs.success_updated', :obj => t('app.common.political_party')) }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

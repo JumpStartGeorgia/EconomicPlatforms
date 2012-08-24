@@ -52,7 +52,7 @@ class IndicatorsController < ApplicationController
 
     respond_to do |format|
       if @indicator.save
-        format.html { redirect_to @indicator, notice: 'Indicator was successfully created.' }
+        format.html { redirect_to @indicator, notice: t('app.msgs.success_created', :obj => t('app.common.indicator')) }
         format.json { render json: @indicator, status: :created, location: @indicator }
       else
         format.html { render action: "new" }
@@ -68,7 +68,7 @@ class IndicatorsController < ApplicationController
 
     respond_to do |format|
       if @indicator.update_attributes(params[:indicator])
-        format.html { redirect_to @indicator, notice: 'Indicator was successfully updated.' }
+        format.html { redirect_to @indicator, notice: t('app.msgs.success_updated', :obj => t('app.common.indicator')) }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
