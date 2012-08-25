@@ -32,7 +32,9 @@ class PoliticalPartiesController < ApplicationController
     @political_party = PoliticalParty.new
     # create the translation object for however many locales there are
     # so the form will properly create all of the nested form fields
-    I18n.available_locales.length.times {@political_party.political_party_translations.build}
+    I18n.available_locales.each do |locale|
+			@political_party.political_party_translations.build(:locale => locale)
+		end
 
     respond_to do |format|
       format.html # new.html.erb

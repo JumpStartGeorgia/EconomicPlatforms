@@ -8,38 +8,31 @@
 		<%= f.input :economic_category %>
 	<% end %>
 
-  <%= f.inputs :for => :statement_translations do |translation, i| %>
+  <% @statement.statement_translations.sort{|x,y| x.locale <=> y.locale}.each do |trans| %>
+		<%= f.fields_for :statement_translations, trans do |translation| %>
 
-  	<% formLocale = I18n.available_locales[i-1] %>
+			<div id="form-<%= trans.locale %>" class="multilanguage">
+				<h3><%= t("app.language.#{trans.locale}") %></h3>
 
-  	<div id="form-<%= formLocale %>" class="multilanguage">
-  		<h3><%= t("app.language.#{formLocale}") %></h3>
+				<%= translation.input :source, :input_html => {:size => 97} %>
+				<%= translation.input :author, :input_html => {:size => 97} %>
+				<%= translation.input :statement_made, :as => :text, :input_html => {:rows => 4, :cols => 100} %>
+				<%= translation.input :analysis, :as => :text, :input_html => {:rows => 4, :cols => 100} %>
+				<%= translation.hidden_field :locale , :value => trans.locale %>
+			</div>
 
-  		<%= translation.input :source %>
-  		<%= translation.input :author %>
-  		<%= translation.input :statement_made, :as => :text, :input_html => {:rows => 4, :cols => 100} %>
-  		<%= translation.input :analysis, :as => :text, :input_html => {:rows => 4, :cols => 100} %>
-  		<%= translation.hidden_field :locale , :value => formLocale %>
-  	</div>
+		<% end %>
+	<% end %>
 
-  <% end %>
-
-  <% # when loading an existing record the scores must be ordered or the radio buttons will not be selected 
-    if params[:action] == "new"  
-      score_objs = @statement.statement_scores
-    else
-      score_objs = @statement.statement_scores.ordered
-    end %>
-
-  <% score_objs.each_with_index do |score, i| %>
+  <% order_scores(@statement.statement_scores).each do |score| %>
     <% if @indicator_categories && !@indicator_categories.empty? %>
   		<%= f.fields_for :statement_scores, score do |scores| %>
-  			<% cat = @indicator_categories[i] %>
-  			<% if cat && !cat.indicators.nil? && !cat.indicators.empty? %>
-  	  		<%= scores.hidden_field :indicator_category_id , :value => cat.id %>
-  				<%= scores.input :combined, :as => :radio, 
-  				  :collection => cat.indicators.map{|x| ["#{x.value} - #{x.name}", "#{x.id}||#{x.value}"]}, 
-  				  :label => cat.name %>
+  			<% cat = @indicator_categories.select{|x| x.id == score.indicator_category_id} %>
+  			<% if cat && !cat.first.indicators.nil? && !cat.first.indicators.empty? %>
+  	  		<%= scores.hidden_field :indicator_category_id , :value => cat.first.id %>
+  				<%= scores.input :combined, :as => :radio,
+  				  :collection => cat.first.indicators.map{|x| ["#{x.value} - #{x.name}", "#{x.id}||#{x.value}"]},
+  				  :label => cat.first.name %>
   			<% end %>
   		<% end %>
   	<% end %>

@@ -13,11 +13,11 @@ class StatementScore < ActiveRecord::Base
 	end
 
   def self.ordered
-    includes(:indicator_category => :indicator_category_translations)
-    .where(:indicator_category_translations => {:locale => I18n.locale})
-    .order("indicator_category_translations.name asc")
+	  includes(:indicator_category => :indicator_category_translations)
+	  .where(:indicator_category_translations => {:locale => I18n.locale})
+	  .order("indicator_category_translations.name asc")
   end
 
 
-  
+
 end

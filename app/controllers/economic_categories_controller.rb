@@ -32,7 +32,9 @@ class EconomicCategoriesController < ApplicationController
     @economic_category = EconomicCategory.new
     # create the translation object for however many locales there are
     # so the form will properly create all of the nested form fields
-    I18n.available_locales.length.times {@economic_category.economic_category_translations.build}
+    I18n.available_locales.each do |locale|
+			@economic_category.economic_category_translations.build(:locale => locale)
+		end
 
     respond_to do |format|
       format.html # new.html.erb

@@ -94,11 +94,15 @@ class StatementsController < ApplicationController
 
     # create the translation object for however many locales there are
     # so the form will properly create all of the nested form fields
-    I18n.available_locales.length.times {@statement.statement_translations.build}
+    I18n.available_locales.each do |locale|
+			@statement.statement_translations.build(:locale => locale)
+		end
 
     # create the score object for however many categories there are
     # so the form will properly create all of the nested form fields
-    @indicator_categories.length.times {@statement.statement_scores.build}
+    @indicator_categories.each do |cat|
+			@statement.statement_scores.build(:indicator_category_id => cat.id)
+		end
 
 		# turn the datetime picker js on
 		# have to format dates this way so js datetime picker read them properly
@@ -126,9 +130,11 @@ class StatementsController < ApplicationController
     # split the score values into indicator_id and value
     params[:statement][:statement_scores_attributes].each do |key, values|
       # [indicator_id, value]
-      combined = values[:combined].split("||")
-      values[:indicator_id] = combined[0]
-      values[:value] = combined[1]
+			if values[:combined] && !values[:combined].empty?
+		    combined = values[:combined].split("||")
+		    values[:indicator_id] = combined[0]
+		    values[:value] = combined[1]
+			end
     end
     @statement = Statement.new(params[:statement])
 
@@ -154,9 +160,11 @@ class StatementsController < ApplicationController
     # split the score values into indicator_id and value
     params[:statement][:statement_scores_attributes].each do |key, values|
       # [indicator_id, value]
-      combined = values[:combined].split("||")
-      values[:indicator_id] = combined[0]
-      values[:value] = combined[1]
+			if values[:combined] && !values[:combined].empty?
+		    combined = values[:combined].split("||")
+		    values[:indicator_id] = combined[0]
+		    values[:value] = combined[1]
+			end
     end
     @statement = Statement.find(params[:id])
 

@@ -1,17 +1,16 @@
 <%= semantic_form_for(@political_party) do |f| %>
 	<%= f.error_messages %>
 
-  <%= f.inputs :for => :political_party_translations do |translation, i| %>
+  <% @political_party.political_party_translations.sort{|x,y| x.locale <=> y.locale}.each do |trans| %>
+		<%= f.fields_for :political_party_translations, trans do |translation| %>
 
-  	<% formLocale = I18n.available_locales[i-1] %>
+			<div id="form-<%= trans.locale %>" class="multilanguage">
+				<h3><%= t("app.language.#{trans.locale}") %></h3>
 
-  	<div id="form-<%= formLocale %>" class="multilanguage">
-  		<h3><%= t("app.language.#{formLocale}") %></h3>
-
-  		<%= translation.input :name %>
-  		<%= translation.hidden_field :locale , :value => formLocale %>
-  	</div>
-
+				<%= translation.input :name %>
+				<%= translation.hidden_field :locale , :value => trans.locale %>
+			</div>
+	  <% end %>
   <% end %>
 
 	<div class="form-actions">
