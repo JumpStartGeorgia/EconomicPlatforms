@@ -5,129 +5,131 @@ ka:
       en: English
       ka: ქართული
     buttons:
-      back: უკან დაბრუნება
-      list: ყველას ნახვა
-      admin: Admin Section
+      back: უკან
+      list: იხილეთ სრულად
+      admin: ადმინისტრატორის განყოფილება
       delete: წაშლა
-      edit: დამუშავება
-      show: Show
+      edit: შეცვლა
+      show: ჩვენება
       cancel: გაუქმება
-      update: Update
-      save: Save
-      create: Create
-      reset: გადატვირთვა
-      remove: Remove
-      confirm: Are you sure?
-      new: New
+      update: განახლება
+      save: შენახვა
+      create: შექმნა
+      reset:
+      remove: მოშორება
+      confirm: დარწმუნებული ხართ?
+      new: ახალი
     common:
-      app_name: Georgia Economic Platform
-      name: Name
-      date_made: Date Made
-      pol_party: Political Party
-      ec_category: Economic Category
-      statement: Statement
-      indicator: Indicator
-      indicator_category: Indicator Category
-      user: User
-      source: Source
-      author: Stated By
-      scores: Scores
-      email: Email
-      role: Role
-      new_password: New Password
+      app_name: საქართველოს ეკონომიკური პლატფორმა
+      name: სახელი
+      date_made: შექმნის თარიღი
+      pol_party: პოლიტიკური პარტია
+      ec_category: ეკონომიკური კატეგორია
+      statement: განცხადება
+      indicator: ინდიკატორი
+      indicator_category: ინდიკატორის კატეგორია
+      user: მომხმარებელი
+      source: წყარო
+      author: განმცხადებელი
+      scores: ქულები
+      email: ელ.ფოსტა
+      role: როლი
+      new_password: ახალი პაროლი
     msgs:
-      does_not_exist: You tried to access a page that does not exist.
-      not_authorized: You are not authorized to view that page.
-      permalink_exists: already exists in the database
-      success_created: "%{obj} was successfully created."
-      success_updated: "%{obj} was successfully updated."
+      does_not_exist: თქვენ ცდილობთ იხილოთ გვერდი, რომელიც არ არსებობს.
+      not_authorized: თქვენ არ გაქვთ უფლება იხილოთ ეს გვერდი.
+      permalink_exists: უკვე არსებობს მონაცემთა ბაზაში
+      success_created: "%{obj} შექმნილია."
+      success_updated: "%{obj} განახლებულია."
   layouts:
     application:
+      admin: ადმინისტრატო
+      sign_out: Sign Out
   root:
     index:
-      title: Georgia Economic Platform
-      political_party_header: Statements by Political Party
-      economic_category_header: Statements by Economic Category
+      title: საქართველოს ეკონომიკური პლატფორმა
+      political_party_header: განცხადებები პოლიტიკური პარტიების მიხედვით
+      economic_category_header: განცხადებები ეკონომიკური კატეგორიების მიხედვით
   economic_categories:
     edit:
-      title: Editing Economic Category
+      title: ცვლილებების შეტანა ეკონომიკურ კატეგორიაში
     index:
-      title: Economic Categories
+      title: ეკონომიკური კატეგორიები
     new:
-      title: New Economic Category
+      title: ახალი ეკონომიკური კატეგორია
     show:
-      title: Economic Category Details
+      title: ეკონომიკური კატეგორია დეტალები
   indicator_categories:
     edit:
-      title: Editing Indicator Category
+      title: ცვლილებების შეტანა ინდიკატორების კატეგორიაში
     index:
-      title: Indicator Categoies
+      title: ინდიკატორების კატეგორიები
     new:
-      title: New Indicator Category
+      title: ახალი ინდიკატორის კატეგორია
     show:
-      title: Indicator Category Details
+      title: ინდიკატორების კატეგორიები დეტალები
   indicators:
     edit:
-      title: Editing Indicator
+      title: ცვლილებების შეტანა ინდიკატორში
     index:
-      title: Indicators
+      title: ინდიკატორები
     new:
-      title: New Indicator
+      title: ახალი ინდიკატორი
     show:
-      title: Indicator Details
+      title: ინდიკატორი დეტალები
   political_parties:
     edit:
-      title: Editing Political Party
+      title: ცვლილებების შეტანა პოლიტიკურ პარტიაში
     index:
-      title: Political Parties
+      title: პოლიტიკური პარტიები
     new:
-      title: New Political Party
+      title: ახალი პოლიტიკური პარტია
     show:
-      title: Political Party Details
+      title: პოლიტიკური პარტია დეტალები
   admin:
     index:
-      title: Administration Section
-      statements_header: Statements
-      new_statement: Add Statement
-      view_statements: View Statements
-      basic_header: Basic
-      political_parties: Political Parties
-      economic_categorie: Ecomonic Categories
-      indicator_categories: Indicator Categories
-      indicators: Indicators
-      users_header: Users
-      new_users: Add User
-      view_users: View Users
+      title: ადმინისტრატორის განყოფილება
+      statements_header: განცხადება
+      new_statement: განცხადების დამატება
+      view_statements: განცხადებების ნახვა
+      basic_header: ძირითადი
+      political_parties: პოლიტიკური პარტიები
+      economic_categories: ეკონომიკური კატეგორიები
+      indicator_categories: ინდიკატორების კატეგორიები
+      indicators: ინიდიკატორები
+      users_header: მომხმარებლები
+      new_users: მომხმარებლის დამატება
+      view_users: მომხმარებლების ნახვა
     users:
       edit:
-        title: Editing User
+        title: ცვლილებების შეტანა მომხმარებლის გვერდზე
       index:
-        title: Users
+        title: მომხმარებლები
       new:
-        title: New User
+        title: ახალი მომხმარებელი
       show:
-        title: User Details
+        title: მომხმარებლის დეტალები
   statements:
     edit:
-      title: Editing Statement
+      title: ცვლილებების შეტანა განცხადებაში
     index:
-      title: Statements
-      no_statements: "At this time, no statements have been recorded"
+      title: განცხადებები
+      no_statements: "ამ მომენტისათვის განცხადებები არ ფიქსირდება"
     new:
-      title: New Statement
+      title: ახალი განცხადება
     show:
-      title: Statement Details
+      title: განცხადების დეტალები
     statement_list:
-      view_statement: View Full Statement
+      view_statement: განცადების ნახვა სრულად
     statement_show:
-      view_statements: View All Statements
+      view_statements: ყველა განცხადების ნახვა
     political_party:
-      title: "%{political_party} Statements"
-      no_statements: "At this time, no statements have been recorded for %{political_party}."
+      title: "%{political_party} განცხადებები"
+      no_statements: "ამ მომენტისათვის განცხადებები არ ფიქსირდება %{political_party} - თვის."
     economic_category:
-      title: "%{economic_category} Statements"
-      no_statements: "At this time, no statements have been recorded for %{economic_category}."
+      title: "%{economic_category} განცხადებები"
+      no_statements: "ამ მომენტისათვის განცხადებები არ ფიქსირდება %{economic_category} -ში."
     political_party_show:
-      title: "%{political_party} Statement"
+      title: "%{political_party} განცხადება"
     economic_category_show:
-      title: "%{economic_category} Statement"
+      title: "%{economic_category} განცხადება"

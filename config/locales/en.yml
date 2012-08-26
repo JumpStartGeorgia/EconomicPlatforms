@@ -43,6 +43,8 @@ en:
       success_updated: "%{obj} was successfully updated."
   layouts:
     application:
+      admin: Admin
+      sign_out: Sign Out
   root:
     index:
       title: Georgia Economic Platform
@@ -92,7 +94,7 @@ en:
       view_statements: View Statements
       basic_header: Basic
       political_parties: Political Parties
-      economic_categorie: Ecomonic Categories
+      economic_categories: Ecomonic Categories
       indicator_categories: Indicator Categories
       indicators: Indicators
       users_header: Users
