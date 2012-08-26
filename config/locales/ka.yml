@@ -44,7 +44,7 @@ ka:
   layouts:
     application:
       admin: ადმინისტრატო
-      sign_out: Sign Out
+      sign_out: გასვლა
   root:
     index:
       title: საქართველოს ეკონომიკური პლატფორმა
