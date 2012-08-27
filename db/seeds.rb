@@ -22,6 +22,11 @@ pp = PoliticalParty.create(:id => 6)
 pp.political_party_translations.create(:name=>"ლეიბორისტული პარტია", :locale=>"ka")
 pp.political_party_translations.create(:name=>"Labor Party", :locale=>"en")
 
+PoliticalPartyTranslation.all.each do |trans|
+	trans.generate_permalink!
+	trans.save
+end
+
 # Economic Categories **************************************************************************
 EconomicCategory.destroy_all
 
@@ -43,6 +48,11 @@ ec.economic_category_translations.create(:name=>"Employment", :locale=>"en")
 ec = EconomicCategory.create(:id => 6)
 ec.economic_category_translations.create(:name=>"მაკროეკონომიკური საკითხები", :locale=>"ka")
 ec.economic_category_translations.create(:name=>"Macroeconomic Issues", :locale=>"en")
+
+EconomicCategoryTranslation.all.each do |trans|
+	trans.generate_permalink!
+	trans.save
+end
 
 # Indicator Categories **************************************************************************
 IndicatorCategory.destroy_all
@@ -117,72 +127,72 @@ ind.indicator_translations.create(:name=>"მთლიანად თანმ�
 ind.indicator_translations.create(:name=>"fully consistent (example:  (a) the right to work is a fundamental right of every individual and the state should guarantee this right; (b) the state should create jobs, even if these do not produce any value added and are not needed for the economy, in order to maintain full employment)", :locale=>"en")
 
 ind = Indicator.create(:id => 16, :indicator_category_id => 3, :value => 1)
-ind.indicator_translations.create(:name=>"the policy statement makes absolutely no economic sense and if implemented would lead to strongly negative outcomes (“doubling unemployment benefits will increase employment”)", :locale=>"ka")
+ind.indicator_translations.create(:name=>"პოლიტიკური განცხადება არ არის გამართული ეკონომიკური თვალსაზრისით და განხორციელების შემთხვევაში მოიტანს უარყოფით შედეგებს (“უმუშევრობისათვის პენსიების გაორმაგება დასაქმებულთა რადენობას გაზრდის”)", :locale=>"ka")
 ind.indicator_translations.create(:name=>"the policy statement makes absolutely no economic sense and if implemented would lead to strongly negative outcomes (“doubling unemployment benefits will increase employment”)", :locale=>"en")
 ind = Indicator.create(:id => 17, :indicator_category_id => 3, :value => 2)
-ind.indicator_translations.create(:name=>"the policy statement makes almost no economic sense", :locale=>"ka")
+ind.indicator_translations.create(:name=>"პოლიტიკური განცხადება გაუმართავია ეკონომიკური თვალსაზრისით", :locale=>"ka")
 ind.indicator_translations.create(:name=>"the policy statement makes almost no economic sense", :locale=>"en")
 ind = Indicator.create(:id => 18, :indicator_category_id => 3, :value => 3)
-ind.indicator_translations.create(:name=>"the policy statement makes little economic sense", :locale=>"ka")
+ind.indicator_translations.create(:name=>"პოლიტიკური განცხადება თითქმის გაუმართავია ეკონომიკური თვალსაზრისით", :locale=>"ka")
 ind.indicator_translations.create(:name=>"the policy statement makes little economic sense", :locale=>"en")
 ind = Indicator.create(:id => 19, :indicator_category_id => 3, :value => 4)
-ind.indicator_translations.create(:name=>"the policy would bring about ambiguous results (some positive, some negative, or difficult to know)", :locale=>"ka")
+ind.indicator_translations.create(:name=>"პოლიტიკა ორაზროვან შედეგებს მოიტანს (დადებით, უარყოფითს ან ძნელია დაკონკრეტება)", :locale=>"ka")
 ind.indicator_translations.create(:name=>"the policy would bring about ambiguous results (some positive, some negative, or difficult to know)", :locale=>"en")
 ind = Indicator.create(:id => 20, :indicator_category_id => 3, :value => 5)
-ind.indicator_translations.create(:name=>"the policy may bring about some positive results", :locale=>"ka")
+ind.indicator_translations.create(:name=>"პოლიტიკამ შესაძლოა მოიტანოს დადებითი შედეგები", :locale=>"ka")
 ind.indicator_translations.create(:name=>"the policy may bring about some positive results", :locale=>"en")
 ind = Indicator.create(:id => 21, :indicator_category_id => 3, :value => 6)
-ind.indicator_translations.create(:name=>"the policy may bring about mostly positive results", :locale=>"ka")
+ind.indicator_translations.create(:name=>"პოლიტიკამ შესაძლოა ძირითადად დადებითი შედეგები მოიტანოს", :locale=>"ka")
 ind.indicator_translations.create(:name=>"the policy may bring about mostly positive results", :locale=>"en")
 ind = Indicator.create(:id => 22, :indicator_category_id => 3, :value => 7)
-ind.indicator_translations.create(:name=>"the policy is fully justified economically", :locale=>"ka")
+ind.indicator_translations.create(:name=>"პოლიტიკა ეკონომიკური თვალსაზრისით სრულიად გამართლებულია", :locale=>"ka")
 ind.indicator_translations.create(:name=>"the policy is fully justified economically", :locale=>"en")
 
 ind = Indicator.create(:id => 23, :indicator_category_id => 4, :value => 1)
-ind.indicator_translations.create(:name=>"the proposed policy cannot be implemented in either the short or medium term – “we will make Georgia the Silicon Valley of the Caucasus”", :locale=>"ka")
+ind.indicator_translations.create(:name=>"შემოთავაზებული პოლიტიკა შეუძლებელია განხორციელდეს მოკლე ან საშუალო ვადებში - “ჩვენ გადავაქცევთ საქართველოს კავკასიის სილიკონოს ველად”", :locale=>"ka")
 ind.indicator_translations.create(:name=>"the proposed policy cannot be implemented in either the short or medium term – “we will make Georgia the Silicon Valley of the Caucasus”", :locale=>"en")
 ind = Indicator.create(:id => 24, :indicator_category_id => 4, :value => 2)
-ind.indicator_translations.create(:name=>"the proposed policy is very unlikely to be feasible in either the short or medium term", :locale=>"ka")
+ind.indicator_translations.create(:name=>"შემოთავაზებული პოლიტიკა  განუხორციელებადია მოკლე ან საშუალო ვადებში", :locale=>"ka")
 ind.indicator_translations.create(:name=>"the proposed policy is very unlikely to be feasible in either the short or medium term", :locale=>"en")
 ind = Indicator.create(:id => 25, :indicator_category_id => 4, :value => 3)
-ind.indicator_translations.create(:name=>"the proposed policy is unlikely to be feasible in either the short or medium term", :locale=>"ka")
+ind.indicator_translations.create(:name=>"შემოთავაზებული პოლიტიკა  ალბათ განუხორციელებადია მოკლე ან საშუალო ვადებში", :locale=>"ka")
 ind.indicator_translations.create(:name=>"the proposed policy is unlikely to be feasible in either the short or medium term", :locale=>"en")
 ind = Indicator.create(:id => 26, :indicator_category_id => 4, :value => 4)
-ind.indicator_translations.create(:name=>"there is a 50% chance for the proposed policy to be feasible in either the short or medium term", :locale=>"ka")
+ind.indicator_translations.create(:name=>"შემოთავაცებული პოლიტიკის განოხირცილების შანსი მოკლე ან საშუალო ვადებში მხოლოდ 50%-ია", :locale=>"ka")
 ind.indicator_translations.create(:name=>"there is a 50% chance for the proposed policy to be feasible in either the short or medium term", :locale=>"en")
 ind = Indicator.create(:id => 27, :indicator_category_id => 4, :value => 5)
-ind.indicator_translations.create(:name=>"the proposed policy is somewhat likely to be feasible in either the short or medium term", :locale=>"ka")
+ind.indicator_translations.create(:name=>"შემოთავაზებული პოლიტიკა  შესაძლოა განხორციელებადი იყოს მოკლე ან საშუალო ვადებში", :locale=>"ka")
 ind.indicator_translations.create(:name=>"the proposed policy is somewhat likely to be feasible in either the short or medium term", :locale=>"en")
 ind = Indicator.create(:id => 28, :indicator_category_id => 4, :value => 6)
-ind.indicator_translations.create(:name=>"the proposed policy is quite likely to be feasible in either the short or medium term", :locale=>"ka")
+ind.indicator_translations.create(:name=>"შემოთავაზებული პოლიტიკა  სავსებით შესაძლოა განხორციელებადი იყოს მოკლე ან საშუალო ვადებში", :locale=>"ka")
 ind.indicator_translations.create(:name=>"the proposed policy is quite likely to be feasible in either the short or medium term", :locale=>"en")
 ind = Indicator.create(:id => 29, :indicator_category_id => 4, :value => 7)
-ind.indicator_translations.create(:name=>"the proposed policy is feasible", :locale=>"ka")
+ind.indicator_translations.create(:name=>"შემოთავაზებული პოლიტიკა განხორციელებადია", :locale=>"ka")
 ind.indicator_translations.create(:name=>"the proposed policy is feasible", :locale=>"en")
 
 ind = Indicator.create(:id => 30, :indicator_category_id => 5, :value => 1)
-ind.indicator_translations.create(:name=>"the party’s position on the issue is best described as extreme libertarian (the state should guarantee property rights, law and order but should not in any way engage in economic regulation or income redistribution such as support of the poor, unemployed or disabled. These should be taken care of by their families or left to die)", :locale=>"ka")
+ind.indicator_translations.create(:name=>"პარტიის პოზიცია საკითხთან დაკავშირებით ხასითდება, როგორც ექსტრემალურ ლიბერტარინული (სახელმწიფომ უნდა უზრუნველყოს საკუთრების უფლებები, კანონი არ უნდა ერეოდეს ეკონომიკურ რეგულაციასა და შემოსავლის დოსტრიბუიცაში მაგალითად ღარიბთა ან უმუშევართა დახმარებისათვის. ", :locale=>"ka")
 ind.indicator_translations.create(:name=>"the party’s position on the issue is best described as extreme libertarian (the state should guarantee property rights, law and order but should not in any way engage in economic regulation or income redistribution such as support of the poor, unemployed or disabled. These should be taken care of by their families or left to die)", :locale=>"en")
 ind = Indicator.create(:id => 31, :indicator_category_id => 5, :value => 2)
-ind.indicator_translations.create(:name=>"the party’s position on the issue is best described as libertarian", :locale=>"ka")
+ind.indicator_translations.create(:name=>"პარტიის პოზიცია საკითხზე ხასიათდება როგორც ლიბერტარიანული", :locale=>"ka")
 ind.indicator_translations.create(:name=>"the party’s position on the issue is best described as libertarian", :locale=>"en")
 ind = Indicator.create(:id => 32, :indicator_category_id => 5, :value => 3)
-ind.indicator_translations.create(:name=>"the party’s position on the issue is best described as somewhat libertarian", :locale=>"ka")
+ind.indicator_translations.create(:name=>"პარტიის პოზიცია საკითხზე ხასიათდება როგორც რაღაც დონეზე ლიბერტარიანული", :locale=>"ka")
 ind.indicator_translations.create(:name=>"the party’s position on the issue is best described as somewhat libertarian", :locale=>"en")
 ind = Indicator.create(:id => 33, :indicator_category_id => 5, :value => 4)
-ind.indicator_translations.create(:name=>"the party’s position on the issue is best described as Western European “social democracy”", :locale=>"ka")
+ind.indicator_translations.create(:name=>"პარტიის პოზიცია საკითხზე ხასიათდება როგორც დასავლურ ევროპული სოციალურ დემოკრატიული.", :locale=>"ka")
 ind.indicator_translations.create(:name=>"the party’s position on the issue is best described as Western European “social democracy”", :locale=>"en")
 ind = Indicator.create(:id => 34, :indicator_category_id => 5, :value => 5)
-ind.indicator_translations.create(:name=>"the party’s position on the issue is best described as somewhat socialist", :locale=>"ka")
+ind.indicator_translations.create(:name=>"პარტიის პოზიცია საკითხზე ხასიათდება როგორც რაღაც დონეზე სოციალისტური", :locale=>"ka")
 ind.indicator_translations.create(:name=>"the party’s position on the issue is best described as somewhat socialist", :locale=>"en")
 ind = Indicator.create(:id => 35, :indicator_category_id => 5, :value => 6)
-ind.indicator_translations.create(:name=>"the party’s position on the issue is best described as socialist", :locale=>"ka")
+ind.indicator_translations.create(:name=>"პარტიის პოზიცია საკითხზე ხასიათდება როგორც სოციალისტური", :locale=>"ka")
 ind.indicator_translations.create(:name=>"the party’s position on the issue is best described as socialist", :locale=>"en")
 ind = Indicator.create(:id => 36, :indicator_category_id => 5, :value => 7)
-ind.indicator_translations.create(:name=>"the party’s position on the issue is best described as communist (all means of production should be nationalized, businessmen should be prosecuted as “speculators”, the government should run the economy, provide free education, health and social benefits)", :locale=>"ka")
+ind.indicator_translations.create(:name=>" პარტიის პოზიცია საკითხზე ხასიათდება, როგორც კომუნისტური (წარმოების ყველა სახეობა უნდა იყოს ნაციონალიზირებული, ბიზნესმენები სასამართლოს წესით უნდა იქნენ აღიარებული როგორც “სპეკულიანტები”, სახელმწიფომ უნდა მართოს ეკონომიკა, უზრუნველყოს უფასო განათლება ისევე როგორც ჯანმრთელობის და სოციალური ბენეფიტები)", :locale=>"ka")
 ind.indicator_translations.create(:name=>"the party’s position on the issue is best described as communist (all means of production should be nationalized, businessmen should be prosecuted as “speculators”, the government should run the economy, provide free education, health and social benefits)", :locale=>"en")
 
 
 puts "###########################################################################"
-puts "IMPORTANT: please run 'rake has_permalink:generate_permalinks[Model]' to update the permalinks for Political Parties and Economic Categories"
+puts "IMPORTANT: permalinks for Political Parties and Economic Categories were created"
 puts "###########################################################################"
