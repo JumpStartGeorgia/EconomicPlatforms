@@ -3,12 +3,14 @@ class Platform < ActiveRecord::Base
   translates :description
   belongs_to :political_party
   belongs_to :economic_category
+  has_many :platform_files, :dependent => :destroy
   has_many :platform_scores, :dependent => :destroy
   has_many :platform_translations, :dependent => :destroy
   accepts_nested_attributes_for :platform_translations
   accepts_nested_attributes_for :platform_scores
+  accepts_nested_attributes_for :platform_files, :reject_if => lambda { |a| a[:file].blank? }, :allow_destroy => true
   attr_accessible :political_party_id, :economic_category_id,
-		:platform_translations_attributes, :platform_scores_attributes
+		:platform_translations_attributes, :platform_scores_attributes, :platform_files_attributes
 
   validates :political_party_id, :economic_category_id, :presence => true
 	validates :economic_category_id, :uniqueness => {:scope => :political_party_id,

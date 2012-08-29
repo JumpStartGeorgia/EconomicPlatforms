@@ -9,21 +9,20 @@ gem "devise", "2.0.4" # user authentication
 gem "cancan", "~> 1.6.8" # user authorization
 gem "formtastic", "2.1.1" # create forms easier
 gem "formtastic-bootstrap", :git => "https://github.com/cgunther/formtastic-bootstrap.git", :branch => "bootstrap-2"
-#gem "nested_form", "~> 0.1.1", :git => "https://github.com/davidray/nested_form.git" # easily build nested model forms with ajax links
+gem "nested_form", "~> 0.1.1", :git => "https://github.com/davidray/nested_form.git" # easily build nested model forms with ajax links
 gem "globalize3", "0.2.0" # internationalization
 gem "psych", "1.2.2" # yaml parser - default psych in rails has issues
 gem "will_paginate", "3.0.3" # add paging to long lists
 gem "gon", "2.2.2" # push data into js
 gem "dynamic_form", "1.1.4" # to see form error messages
 gem "i18n-js", "~> 2.1.2" # to show translations in javascript
-#gem "paperclip", "~> 3.0.4" # to upload files
-#gem "has_permalink", "~> 0.1.4" # create permalink slugs for nice urls
+gem "paperclip", "~> 3.0.4" # to upload files
+gem "has_permalink", "~> 0.1.4" # create permalink slugs for nice urls
 gem "capistrano", "~> 2.12.0" # to deploy to server
 gem "exception_notification", "2.5.2" # send an email when exception occurs
 gem "paper_trail", "~> 2.6.3" # keep audit log of all transactions
 #gem "google_fish", "~> 0.2.2" # use google translate
 gem "to_lang", "~> 0.3.1" # use google translate
-gem "has_permalink", "~> 0.1.4" # friendly urls
 
 # Gems used only for assets and not required
 # in production environments by default.

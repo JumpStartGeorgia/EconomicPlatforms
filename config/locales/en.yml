@@ -38,6 +38,7 @@ en:
       platform: Party Platform
       policy_brief: Policy Brief
       date: Date
+      files: Supporting Files
     msgs:
       does_not_exist: You tried to access a page that does not exist.
       not_authorized: You are not authorized to view that page.
@@ -92,6 +93,10 @@ en:
       title: New Platform
     show:
       title: Platform Details
+    platform_file_fields:
+      remove_link: Remove File
+    form:
+      add_file: Add File      
   policy_briefs:
     edit:
       title: Editing Policy Brief

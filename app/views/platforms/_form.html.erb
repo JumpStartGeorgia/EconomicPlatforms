@@ -1,4 +1,4 @@
-<%= semantic_form_for(@platform) do |f| %>
+<%= semantic_nested_form_for @platform, :html => { :multipart => true } do |f| %>
 	<%= f.error_messages %>
 
 
@@ -19,6 +19,13 @@
 
 		<% end %>
 	<% end %>
+
+	<div id="nested_form_container">
+		<h3><%= t("app.common.files") %></h3>
+		<%= f.fields_for :platform_files %>
+		<p><%= f.link_to_add t(".add_file"), :platform_files, :class => "btn btn-mini btn-primary" %></p>
+	</div>
+
 
   <% order_scores(@platform.platform_scores).each do |score| %>
     <% if @indicator_categories && !@indicator_categories.empty? %>

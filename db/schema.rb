@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120829133729) do
+ActiveRecord::Schema.define(:version => 20120829173417) do
 
   create_table "economic_categories", :force => true do |t|
     t.datetime "created_at"
@@ -69,6 +69,18 @@ ActiveRecord::Schema.define(:version => 20120829133729) do
   end
 
   add_index "indicators", ["indicator_category_id", "value"], :name => "index_indicators_on_indicator_category_id_and_value"
+
+  create_table "platform_files", :force => true do |t|
+    t.integer  "platform_id"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "platform_files", ["platform_id"], :name => "index_platform_files_on_platform_id"
 
   create_table "platform_scores", :force => true do |t|
     t.integer  "platform_id"

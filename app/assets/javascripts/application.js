@@ -16,6 +16,7 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require twitter/bootstrap
+//= require jquery_nested_form
 //= require vendor
 //= require_tree .
 

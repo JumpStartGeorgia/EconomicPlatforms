@@ -152,3 +152,20 @@ ul.striped li:nth-child(even){
   padding: 0.3em;
   background-color: #ddd;
 }
+
+/* nested form styles */
+#nested_form_container {
+	margin: 0.5em 0;
+  padding: 1em;
+  background-color: #ddd;
+}
+
+#nested_form_container h3 {
+
+}
+
+#nested_form_container .nested_form_item {
+  background-color: #eee;
+  padding: 0.5em 1em;
+}
+
