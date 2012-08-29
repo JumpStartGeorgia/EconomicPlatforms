@@ -23,8 +23,8 @@ en:
       app_name: Georgia Economic Platform
       name: Name
       date_made: Date Made
-      pol_party: Political Party
-      ec_category: Economic Category
+      politcal_party: Political Party
+      economic_category: Economic Category
       statement: Statement
       indicator: Indicator
       indicator_category: Indicator Category
@@ -35,12 +35,17 @@ en:
       email: Email
       role: Role
       new_password: New Password
+      platform: Party Platform
+      policy_brief: Policy Brief
+      date: Date
     msgs:
       does_not_exist: You tried to access a page that does not exist.
       not_authorized: You are not authorized to view that page.
       permalink_exists: already exists in the database
       success_created: "%{obj} was successfully created."
       success_updated: "%{obj} was successfully updated."
+      policy_already_exists: already exists in the database
+      platform_already_exists: already exists in the database
   layouts:
     application:
       admin: Admin
@@ -77,6 +82,26 @@ en:
       title: New Indicator
     show:
       title: Indicator Details
+  platforms:
+    edit:
+      title: Editing Platform
+    index:
+      title: Platforms
+      no_platforms: "At this time, no platforms have been recorded"
+    new:
+      title: New Platform
+    show:
+      title: Platform Details
+  policy_briefs:
+    edit:
+      title: Editing Policy Brief
+    index:
+      title: Policy Briefs
+      no_policy_briefs: "At this time, no policy briefs have been recorded"
+    new:
+      title: New Policy Brief
+    show:
+      title: Policy Brief Details
   political_parties:
     edit:
       title: Editing Political Party
@@ -92,14 +117,16 @@ en:
       statements_header: Statements
       new_statement: Add Statement
       view_statements: View Statements
+      users_header: Users
+      new_users: Add User
+      view_users: View Users
       basic_header: Basic
       political_parties: Political Parties
       economic_categories: Ecomonic Categories
       indicator_categories: Indicator Categories
       indicators: Indicators
-      users_header: Users
-      new_users: Add User
-      view_users: View Users
+      policy_briefs: Policy Briefs
+      platforms: Platforms
     users:
       edit:
         title: Editing User

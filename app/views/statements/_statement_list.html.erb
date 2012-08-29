@@ -24,7 +24,7 @@
 			    <%= link_to t('app.buttons.delete'),
 			                statement_path(statement),
 			                :method => :delete,
-			                :confirm => t('.confirm', :default => t("app.buttons.confirm")),
+			                :confirm => t('app.buttons.confirm'),
 			                :class => 'btn btn-mini btn-danger' %>
 				</p>
       <% end %>
@@ -32,27 +32,27 @@
 				<% if type == Statement::TYPE[0] %>
 					<div class="span4">
 						<p>
-							<strong><%= "#{t('app.common.ec_category')}:"%></strong>
+							<strong><%= "#{t('app.common.economic_category')}:"%></strong>
 							<%= statement.economic_category.name %>
 						</p>
 					</div>
 				<% elsif type == Statement::TYPE[1] %>
 					<div class="span4">
 						<p>
-							<strong><%= "#{t('app.common.pol_party')}:"%></strong>
+							<strong><%= "#{t('app.common.politcal_party')}:"%></strong>
 							<%= statement.political_party.name %>
 						</p>
 					</div>
 				<% elsif user_signed_in? && can?(:manage, Statement) %>
 					<div class="span4">
 						<p>
-							<strong><%= "#{t('app.common.pol_party')}:"%></strong>
+							<strong><%= "#{t('app.common.politcal_party')}:"%></strong>
 							<%= statement.political_party.name %>
 						</p>
 					</div>
 					<div class="span4">
 						<p>
-							<strong><%= "#{t('app.common.ec_category')}:"%></strong>
+							<strong><%= "#{t('app.common.economic_category')}:"%></strong>
 							<%= statement.economic_category.name %>
 						</p>
 					</div>

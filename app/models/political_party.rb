@@ -6,7 +6,8 @@ class PoliticalParty < ActiveRecord::Base
   attr_accessible :id, :political_party_translations_attributes
 
   has_many :statements
+  has_many :policy_briefs
 
 	default_scope lambda {with_translations(I18n.locale).order("political_party_translations.name")}
-  
+
 end

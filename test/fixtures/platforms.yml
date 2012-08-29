@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  political_party_id: 1
+  economic_category_id: 1
+  analysis: MyText
+
+two:
+  political_party_id: 1
+  economic_category_id: 1
+  analysis: MyText

@@ -1,0 +1,45 @@
+<% title t('.title') %>
+
+<% if @policy_briefs.nil? || @policy_briefs.empty? %>
+	<p>
+		<%= t('.no_policy_briefs') %>
+	</p>
+<% else %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= t("app.common.date") %></th>
+      <th><%= t("app.common.political_party") %></th>
+      <th><%= t("app.common.economic_category") %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @policy_briefs.each do |policy_brief| %>
+      <tr>
+        <td><%=link_to(l(policy_brief.created_at), policy_brief_path(policy_brief)) %></td>
+        <td><%= policy_brief.political_party.name %></td>
+        <td><%= policy_brief.economic_category.name %></td>
+        <td>
+          <%= link_to t('app.buttons.edit'),
+                      edit_policy_brief_path(policy_brief), :class => 'btn btn-mini' %>
+          <%= link_to t('app.buttons.delete'),
+                      policy_brief_path(policy_brief),
+                      :method => :delete,
+                      :confirm => t('app.buttons.confirm'),
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+
+<div class="form-actions">
+	<%= link_to t('.new', :default => t("helpers.links.new")),
+		          new_policy_brief_path,
+		          :class => 'btn btn-primary' %>
+	<%= link_to t('app.buttons.admin'), admin_path,
+	:class => 'btn' %>
+</div>

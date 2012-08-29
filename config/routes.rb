@@ -1,5 +1,4 @@
 EconomicPlatforms::Application.routes.draw do
-
 	#--------------------------------
 	# all resources should be within the scope block below
 	#--------------------------------
@@ -14,6 +13,9 @@ EconomicPlatforms::Application.routes.draw do
     resources :indicator_categories
     resources :indicators
     resources :economic_categories
+	  resources :platforms
+		resources :policy_brief_scores
+		resources :policy_briefs
     resources :political_parties
     resources :statement_scores
     resources :statements

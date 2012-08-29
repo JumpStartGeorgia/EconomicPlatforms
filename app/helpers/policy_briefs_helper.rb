@@ -1,0 +1,2 @@
+module PolicyBriefsHelper
+end

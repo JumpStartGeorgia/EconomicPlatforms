@@ -1,0 +1,41 @@
+<% title t('.title') %>
+
+  <p><strong><%= t("app.common.political_party") %>:</strong>
+  <%= @platform.political_party.name %></p>
+
+  <p><strong><%= t("app.common.economic_category") %>:</strong>
+  <%= @platform.economic_category.name %></p>
+
+  <p><strong><%= t("app.common.platform") %>:</strong></p>
+<%= simple_format @platform.description, {}, :sanitize => false %>
+
+	<p>
+		<strong><%= t('app.common.scores') %>:</strong>
+	</p>
+	<% if @platform.platform_scores && !@platform.platform_scores.empty? %>
+		<ul class="standard">
+		<% @platform.platform_scores.ordered.each do |score| %>
+			<li>
+				<strong><%= score.indicator_category.name %></strong>
+				<br />
+				<%= "#{score.value} - #{score.indicator.name}"%>
+			</li>
+		<% end %>
+		</ul>
+	<% end %>
+
+<% if user_signed_in? && can?(:manage, PolicyBrief) %>
+<div class="form-actions">
+  <%= link_to t('app.buttons.list'),
+              platforms_path, :class => 'btn'  %>
+  <%= link_to t('app.buttons.edit'),
+              edit_platform_path(@platform), :class => 'btn' %>
+  <%= link_to t('app.buttons.delete'),
+              platform_path(@platform),
+              :method => 'delete',
+              :confirm => t('app.buttons.confirm'),
+              :class => 'btn btn-danger' %>
+  <%= link_to t('app.buttons.admin'), admin_path,
+  :class => 'btn' %>
+</div>
+<% end %>

@@ -183,7 +183,7 @@ class StatementsController < ApplicationController
 
     respond_to do |format|
       if @statement.update_attributes(params[:statement])
-        format.html { redirect_to @statement, notice: t('app.msgs.success_created', :obj => t('app.common.statement')) }
+        format.html { redirect_to @statement, notice: t('app.msgs.success_updated', :obj => t('app.common.statement')) }
         format.json { head :ok }
       else
     		# turn the datetime picker js on

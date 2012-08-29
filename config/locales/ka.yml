@@ -23,8 +23,8 @@ ka:
       app_name: საქართველოს ეკონომიკური პლატფორმა
       name: სახელი
       date_made: შექმნის თარიღი
-      pol_party: პოლიტიკური პარტია
-      ec_category: ეკონომიკური კატეგორია
+      politcal_party: პოლიტიკური პარტია
+      economic_category: ეკონომიკური კატეგორია
       statement: განცხადება
       indicator: ინდიკატორი
       indicator_category: ინდიკატორის კატეგორია
@@ -35,12 +35,17 @@ ka:
       email: ელ.ფოსტა
       role: როლი
       new_password: ახალი პაროლი
+      platform: Party Platform
+      policy_brief: Policy Brief
+      date: Date
     msgs:
       does_not_exist: თქვენ ცდილობთ იხილოთ გვერდი, რომელიც არ არსებობს.
       not_authorized: თქვენ არ გაქვთ უფლება იხილოთ ეს გვერდი.
       permalink_exists: უკვე არსებობს მონაცემთა ბაზაში
       success_created: "%{obj} შექმნილია."
       success_updated: "%{obj} განახლებულია."
+      policy_already_exists: უკვე არსებობს მონაცემთა ბაზაში
+      platform_already_exists: უკვე არსებობს მონაცემთა ბაზაში
   layouts:
     application:
       admin: ადმინისტრატო
@@ -77,6 +82,26 @@ ka:
       title: ახალი ინდიკატორი
     show:
       title: ინდიკატორი დეტალები
+  platforms:
+    edit:
+      title: Editing Platform
+    index:
+      title: Platforms
+      no_platforms: "At this time, no platforms have been recorded"
+    new:
+      title: New Platform
+    show:
+      title: Platform Details
+  policy_briefs:
+    edit:
+      title: Editing Policy Brief
+    index:
+      title: Policy Briefs
+      no_policy_briefs: "At this time, no policy briefs have been recorded"
+    new:
+      title: New Policy Brief
+    show:
+      title: Policy Brief Details
   political_parties:
     edit:
       title: ცვლილებების შეტანა პოლიტიკურ პარტიაში
@@ -92,14 +117,16 @@ ka:
       statements_header: განცხადება
       new_statement: განცხადების დამატება
       view_statements: განცხადებების ნახვა
+      users_header: მომხმარებლები
+      new_users: მომხმარებლის დამატება
+      view_users: მომხმარებლების ნახვა
       basic_header: ძირითადი
       political_parties: პოლიტიკური პარტიები
       economic_categories: ეკონომიკური კატეგორიები
       indicator_categories: ინდიკატორების კატეგორიები
       indicators: ინიდიკატორები
-      users_header: მომხმარებლები
-      new_users: მომხმარებლის დამატება
-      view_users: მომხმარებლების ნახვა
+      policy_briefs: Policy Briefs
+      platforms: Platforms
     users:
       edit:
         title: ცვლილებების შეტანა მომხმარებლის გვერდზე

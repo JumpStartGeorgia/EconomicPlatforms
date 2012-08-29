@@ -6,6 +6,7 @@ class EconomicCategory < ActiveRecord::Base
   attr_accessible :id, :economic_category_translations_attributes
 
   has_many :statements
+  has_many :policy_briefs
 
 	default_scope lambda {with_translations(I18n.locale).order("economic_category_translations.name")}
 

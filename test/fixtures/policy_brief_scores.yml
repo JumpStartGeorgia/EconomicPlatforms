@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  : 
+  indicator_category: 
+  indicator_id: 1
+  value: 1
+
+two:
+  : 
+  indicator_category: 
+  indicator_id: 1
+  value: 1

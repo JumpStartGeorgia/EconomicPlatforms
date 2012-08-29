@@ -14,10 +14,10 @@
 			<div id="form-<%= trans.locale %>" class="multilanguage">
 				<h3><%= t("app.language.#{trans.locale}") %></h3>
 
-				<%= translation.input :source, :input_html => {:size => 97} %>
-				<%= translation.input :author, :input_html => {:size => 97} %>
-				<%= translation.input :statement_made, :as => :text, :input_html => {:rows => 4, :cols => 100} %>
-				<%= translation.input :analysis, :as => :text, :input_html => {:rows => 4, :cols => 100} %>
+				<%= translation.input :source %>
+				<%= translation.input :author %>
+				<%= translation.input :statement_made, :as => :text, :input_html => {:rows => 4} %>
+				<%= translation.input :analysis, :as => :text, :input_html => {:rows => 4} %>
 				<%= translation.hidden_field :locale , :value => trans.locale %>
 			</div>
 
@@ -37,9 +37,6 @@
   		<% end %>
   	<% end %>
   <% end %>
-
-
-
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>

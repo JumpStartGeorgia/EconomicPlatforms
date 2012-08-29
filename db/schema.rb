@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120823191846) do
+ActiveRecord::Schema.define(:version => 20120829133729) do
 
   create_table "economic_categories", :force => true do |t|
     t.datetime "created_at"
@@ -70,6 +70,57 @@ ActiveRecord::Schema.define(:version => 20120823191846) do
 
   add_index "indicators", ["indicator_category_id", "value"], :name => "index_indicators_on_indicator_category_id_and_value"
 
+  create_table "platform_scores", :force => true do |t|
+    t.integer  "platform_id"
+    t.integer  "indicator_category_id"
+    t.integer  "indicator_id"
+    t.integer  "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "platform_scores", ["platform_id", "indicator_category_id", "indicator_id", "value"], :name => "platform_score_id_ind_cat_value"
+
+  create_table "platform_translations", :force => true do |t|
+    t.integer  "platform_id"
+    t.string   "locale"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "platform_translations", ["locale"], :name => "index_platform_translations_on_locale"
+  add_index "platform_translations", ["platform_id"], :name => "index_platform_translations_on_platform_id"
+
+  create_table "platforms", :force => true do |t|
+    t.integer  "political_party_id"
+    t.integer  "economic_category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "platforms", ["political_party_id", "economic_category_id"], :name => "platform_party_ec_cat"
+
+  create_table "policy_brief_translations", :force => true do |t|
+    t.integer  "policy_brief_id"
+    t.string   "locale"
+    t.text     "analysis"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "policy_brief_translations", ["locale"], :name => "index_policy_brief_translations_on_locale"
+  add_index "policy_brief_translations", ["policy_brief_id"], :name => "index_66fa1075ffd46e8c0f8d201837feaf3f9d24b8a1"
+
+  create_table "policy_briefs", :force => true do |t|
+    t.integer  "political_party_id"
+    t.integer  "economic_category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "policy_briefs", ["political_party_id", "economic_category_id"], :name => "pol_briefs_party_ec_cat"
+
   create_table "political_parties", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -82,6 +133,7 @@ ActiveRecord::Schema.define(:version => 20120823191846) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "permalink"
+    t.text     "platform"
   end
 
   add_index "political_party_translations", ["locale"], :name => "index_political_party_translations_on_locale"
