@@ -1,8 +1,8 @@
-<% title t('.title', :economic_category => @economic_category.name) %>
+<% title t('category.platform.title', :economic_category => @economic_category.name) %>
 
 <div class="row">
 	<div class="span9">
-		<h2><%= t('.secondary_title', :political_party => @political_party.name) %></h2>
+		<h2><%= t('category.platform.secondary_title', :political_party => @political_party.name) %></h2>
 
 		<%= simple_format @platform.description, {}, :sanitize => false %>
 
@@ -22,8 +22,9 @@
 		<% end %>
 	</div>
 
-	<%= render :partial => "category/well" %>
-
+	<% if params[:format] != "pdf" %>
+		<%= render :partial => "category/well" %>
+	<% end %>
 </div>
 
 <% if user_signed_in? && can?(:manage, Platform) %>

@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
     end
 	end
 
-  
+
 	def set_locale
     if params[:locale] and I18n.available_locales.include?(params[:locale].to_sym)
       I18n.locale = params[:locale]
@@ -56,6 +56,18 @@ class ApplicationController < ActionController::Base
   def valid_role?(role)
     redirect_to root_path, :notice => t('app.msgs.not_authorized') if !current_user || !current_user.role?(role)
   end
+
+	def get_stylesheet
+		if Rails.env.production?
+			"#{Rails.root}/public/assets/application.css"
+		else
+			"#{Rails.root}/app/assets/stylesheets/application.css"
+		end
+	end
+
+	def clean_string(s)
+	  s.gsub(/[^0-9A-Za-z ]/,'').split.join('_')
+	end
 
   #######################
 	def render_not_found(exception)

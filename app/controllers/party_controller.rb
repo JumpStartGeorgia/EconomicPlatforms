@@ -1,5 +1,5 @@
 class PartyController < ApplicationController
-
+	require 'utf8_converter'
 	def index
 		@political_party = PoliticalParty.find_by_permalink(params[:political_party_id])
 		if !@political_party
@@ -36,6 +36,15 @@ class PartyController < ApplicationController
 				respond_to do |format|
 				  format.html # index.html.erb
 				  format.json { render json: @statements }
+					format.pdf {
+						html = render_to_string(:layout => "pdf.html.erb" , :action => "platform.html.erb", :formats => [:html], :handler => [:erb])
+						kit = PDFKit.new(html)
+						kit.stylesheets << get_stylesheet
+						filename = "#{@political_party.name} #{t('party.platform.secondary_title', :economic_category => @economic_category.name)}"
+						filename << " #{I18n.l Time.now, :format => :file}"
+						send_data(kit.to_pdf, :filename => "#{clean_string(Utf8Converter.convert_ka_to_en(filename))}.pdf", :type => 'application/pdf')
+						return # to avoid double render call
+					}
 				end
 			end
 		end
@@ -60,6 +69,15 @@ class PartyController < ApplicationController
 				respond_to do |format|
 				  format.html # index.html.erb
 				  format.json { render json: @statements }
+					format.pdf {
+						html = render_to_string(:layout => "pdf.html.erb" , :action => "policy_brief.html.erb", :formats => [:html], :handler => [:erb])
+						kit = PDFKit.new(html)
+						kit.stylesheets << get_stylesheet
+						filename = "#{@political_party.name} #{t('party.policy_brief.secondary_title', :economic_category => @economic_category.name)}"
+						filename << " #{I18n.l Time.now, :format => :file}"
+						send_data(kit.to_pdf, :filename => "#{clean_string(Utf8Converter.convert_ka_to_en(filename))}.pdf", :type => 'application/pdf')
+						return # to avoid double render call
+					}
 				end
 			end
 		end
@@ -82,6 +100,15 @@ class PartyController < ApplicationController
 				respond_to do |format|
 				  format.html # index.html.erb
 				  format.json { render json: @statements }
+					format.pdf {
+						html = render_to_string(:layout => "pdf.html.erb" , :action => "statement.html.erb", :formats => [:html], :handler => [:erb])
+						kit = PDFKit.new(html)
+						kit.stylesheets << get_stylesheet
+						filename = "#{@political_party.name} #{t('party.statement.secondary_title')} #{@statement.id}"
+						filename << " #{I18n.l Time.now, :format => :file}"
+						send_data(kit.to_pdf, :filename => "#{clean_string(Utf8Converter.convert_ka_to_en(filename))}.pdf", :type => 'application/pdf')
+						return # to avoid double render call
+					}
 				end
 			end
 		end

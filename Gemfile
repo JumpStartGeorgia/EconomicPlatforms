@@ -21,8 +21,7 @@ gem "has_permalink", "~> 0.1.4" # create permalink slugs for nice urls
 gem "capistrano", "~> 2.12.0" # to deploy to server
 gem "exception_notification", "2.5.2" # send an email when exception occurs
 gem "paper_trail", "~> 2.6.3" # keep audit log of all transactions
-#gem "google_fish", "~> 0.2.2" # use google translate
-gem "to_lang", "~> 0.3.1" # use google translate
+gem "pdfkit", "~> 0.5.2" # generate pdfs
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -35,6 +34,7 @@ end
 
 group :development do
 	gem "mailcatcher", "0.5.5" # small smtp server for dev, http://mailcatcher.me/
+  gem "wkhtmltopdf-binary", "~> 0.9.5.3" # web kit that takes html and converts to pdf
 end
 
 group :staging do

@@ -1,8 +1,8 @@
-<% title t('.title', :economic_category => @economic_category.name) %>
+<% title t('category.statement.title', :economic_category => @economic_category.name) %>
 
 <div class="row">
 	<div class="span9">
-		<h2><%= t('.secondary_title') %></h2>
+		<h2><%= t('category.statement.secondary_title') %></h2>
 
 		<div class="statement_summary">
 			<h3>
@@ -58,7 +58,9 @@
 		</div>
 	</div>
 
-	<%= render :partial => "category/well" %>
+	<% if params[:format] != "pdf" %>
+		<%= render :partial => "category/well" %>
+	<% end %>
 
 </div>
 

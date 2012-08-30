@@ -185,3 +185,28 @@ ul.striped li:nth-child(even){
 .radio_button_scores .control-label {
 	font-weight: bold;
 }
+
+
+/* styles for printing */
+@media print {
+	/* make the content block the entire width since the menu is not visible */
+	#container
+	{
+		top: 0;
+		margin: 0;
+		padding: 10px;
+		width: 100%;
+	}
+
+	h1.brand  {
+		font-size: 20pt;
+	}
+
+	.form-actions {
+		display:none;
+	}
+
+	#current_url {
+		margin-top: 5em;
+	}
+}

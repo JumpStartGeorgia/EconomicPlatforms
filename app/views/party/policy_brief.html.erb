@@ -1,15 +1,16 @@
-<% title t('.title', :political_party => @political_party.name) %>
+<% title t('party.policy_brief.title', :political_party => @political_party.name) %>
 
 <div class="row">
 	<div class="span9">
-		<h2><%= t('.secondary_title', :economic_category => @economic_category.name) %></h2>
+		<h2><%= t('party.policy_brief.secondary_title', :economic_category => @economic_category.name) %></h2>
 
 		<%= simple_format @policy_brief.analysis, {}, :sanitize => false %>
 
 	</div>
 
-	<%= render :partial => "party/well" %>
-
+	<% if params[:format] != "pdf" %>
+		<%= render :partial => "party/well" %>
+	<% end %>
 </div>
 
 <% if user_signed_in? && can?(:manage, Platform) %>

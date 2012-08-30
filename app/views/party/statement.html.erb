@@ -1,8 +1,8 @@
-<% title t('.title', :political_party => @political_party.name) %>
+<% title t('party.statement.title', :political_party => @political_party.name) %>
 
 <div class="row">
 	<div class="span9">
-		<h2><%= t('.secondary_title') %></h2>
+		<h2><%= t('party.statement.secondary_title') %></h2>
 
 		<div class="statement_summary">
 			<h3>
@@ -58,7 +58,9 @@
 		</div>
 	</div>
 
-	<%= render :partial => "party/well" %>
+	<% if params[:format] != "pdf" %>
+		<%= render :partial => "party/well" %>
+	<% end %>
 
 </div>
 

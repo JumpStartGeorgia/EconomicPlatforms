@@ -36,6 +36,15 @@ class CategoryController < ApplicationController
 				respond_to do |format|
 				  format.html # index.html.erb
 				  format.json { render json: @statements }
+					format.pdf {
+						html = render_to_string(:layout => "pdf.html.erb" , :action => "platform.html.erb", :formats => [:html], :handler => [:erb])
+						kit = PDFKit.new(html)
+						kit.stylesheets << get_stylesheet
+						filename = "#{@economic_category.name} #{t('category.platform.secondary_title', :political_party => @political_party.name)}"
+						filename << " #{I18n.l Time.now, :format => :file}"
+						send_data(kit.to_pdf, :filename => "#{clean_string(Utf8Converter.convert_ka_to_en(filename))}.pdf", :type => 'application/pdf')
+						return # to avoid double render call
+					}
 				end
 			end
 		end
@@ -60,6 +69,15 @@ class CategoryController < ApplicationController
 				respond_to do |format|
 				  format.html # index.html.erb
 				  format.json { render json: @statements }
+					format.pdf {
+						html = render_to_string(:layout => "pdf.html.erb" , :action => "policy_brief.html.erb", :formats => [:html], :handler => [:erb])
+						kit = PDFKit.new(html)
+						kit.stylesheets << get_stylesheet
+						filename = "#{@economic_category.name} #{t('category.policy_brief.secondary_title', :political_party => @political_party.name)}"
+						filename << " #{I18n.l Time.now, :format => :file}"
+						send_data(kit.to_pdf, :filename => "#{clean_string(Utf8Converter.convert_ka_to_en(filename))}.pdf", :type => 'application/pdf')
+						return # to avoid double render call
+					}
 				end
 			end
 		end
@@ -82,6 +100,15 @@ class CategoryController < ApplicationController
 				respond_to do |format|
 				  format.html # index.html.erb
 				  format.json { render json: @statements }
+					format.pdf {
+						html = render_to_string(:layout => "pdf.html.erb" , :action => "statement.html.erb", :formats => [:html], :handler => [:erb])
+						kit = PDFKit.new(html)
+						kit.stylesheets << get_stylesheet
+						filename = "#{@economic_category.name} #{t('category.statement.secondary_title')} #{@statement.id}"
+						filename << " #{I18n.l Time.now, :format => :file}"
+						send_data(kit.to_pdf, :filename => "#{clean_string(Utf8Converter.convert_ka_to_en(filename))}.pdf", :type => 'application/pdf')
+						return # to avoid double render call
+					}
 				end
 			end
 		end
