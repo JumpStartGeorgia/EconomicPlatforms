@@ -158,6 +158,8 @@ ka:
       no_statements: "ამ მომენტისათვის განცხადებები არ ფიქსირდება %{political_party} - თვის."
       view_statement: განცადების ნახვა სრულად
     well:
+      pdf_header: Download
+      pdf_link: PDF
       profile_header: "%{political_party} Profile"
       view_profile: View Complete Profile
       platform_header: "%{political_party} Platforms"
@@ -180,6 +182,8 @@ ka:
       no_statements: "ამ მომენტისათვის განცხადებები არ ფიქსირდება %{economic_category} -ში."
       view_statement: View Full Statement
     well:
+      pdf_header: Download
+      pdf_link: PDF
       profile_header: "%{economic_category} Profile"
       view_profile: View Complete Profile
       platform_header: "%{economic_category} Platforms"

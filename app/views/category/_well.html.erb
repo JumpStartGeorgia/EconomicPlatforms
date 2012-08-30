@@ -1,6 +1,14 @@
 	<div class="span3">
 		<% if params[:action] != 'index' %>
 		<div class="well">
+			<h4><%= t('.pdf_header') %></h4>
+				<ul>
+					<li>
+						<%= link_to t('.pdf_link'),	{:format => :pdf } %>
+					</li>
+				</ul>
+		</div>
+		<div class="well">
 			<h4><%= t('.profile_header', :economic_category => @economic_category.name) %></h4>
 				<ul>
 					<li>

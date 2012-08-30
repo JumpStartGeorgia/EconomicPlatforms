@@ -28,6 +28,10 @@ module ApplicationHelper
 		end
 	end
 
+	def current_url(new_params)
+		url_for :params => params.merge(new_params)
+	end
+
 	# Based on https://gist.github.com/1182136
   class BootstrapLinkRenderer < ::WillPaginate::ActionView::LinkRenderer
     protected

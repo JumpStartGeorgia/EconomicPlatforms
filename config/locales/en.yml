@@ -158,6 +158,8 @@ en:
       no_statements: "At this time, no statements have been recorded for %{political_party}."
       view_statement: View Full Statement
     well:
+      pdf_header: Download
+      pdf_link: PDF
       profile_header: "%{political_party} Profile"
       view_profile: View Complete Profile
       platform_header: "%{political_party} Platforms"
@@ -180,6 +182,8 @@ en:
       no_statements: "At this time, no statements have been recorded for %{economic_category}."
       view_statement: View Full Statement
     well:
+      pdf_header: Download
+      pdf_link: PDF
       profile_header: "%{economic_category} Profile"
       view_profile: View Complete Profile
       platform_header: "%{economic_category} Platforms"
