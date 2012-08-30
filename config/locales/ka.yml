@@ -151,20 +151,6 @@ ka:
       title: ახალი განცხადება
     show:
       title: განცხადების დეტალები
-    statement_list:
-      view_statement: განცადების ნახვა სრულად
-    statement_show:
-      view_statements: ყველა განცხადების ნახვა
-    political_party:
-      title: "%{political_party} განცხადებები"
-      no_statements: "ამ მომენტისათვის განცხადებები არ ფიქსირდება %{political_party} - თვის."
-    economic_category:
-      title: "%{economic_category} განცხადებები"
-      no_statements: "ამ მომენტისათვის განცხადებები არ ფიქსირდება %{economic_category} -ში."
-    political_party_show:
-      title: "%{political_party} განცხადება"
-    economic_category_show:
-      title: "%{economic_category} განცხადება"
   party:
     index:
       title: "%{political_party}"
@@ -190,8 +176,22 @@ ka:
   category:
     index:
       title: "%{economic_category}"
+      statement_header: "%{economic_category} განცხადებები"
       no_statements: "ამ მომენტისათვის განცხადებები არ ფიქსირდება %{economic_category} -ში."
       view_statement: View Full Statement
+    well:
+      profile_header: "%{economic_category} Profile"
+      view_profile: View Complete Profile
+      platform_header: "%{economic_category} Platforms"
+      no_platforms: "At this time, no platforms are on file."
+      policy_brief_header: "%{economic_category} Policy Briefs"
+      no_policy_briefs: "At this time, no policy briefs are on file."
     statement:
-      title: "%{economic_category} განცხადება"
-      view_profile: "View %{economic_category} Profile"
+      title: "%{economic_category}"
+      secondary_title: "განცხადება"
+    platform:
+      title: "%{economic_category}"
+      secondary_title: "Platform - %{political_party}"
+    policy_brief:
+      title: "%{economic_category}"
+      secondary_title: "Policy Brief - %{political_party}"

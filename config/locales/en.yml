@@ -151,20 +151,6 @@ en:
       title: New Statement
     show:
       title: Statement Details
-    statement_list:
-      view_statement: View Full Statement
-    statement_show:
-      view_statements: View All Statements
-    political_party:
-      title: "%{political_party} Statements"
-      no_statements: "At this time, no statements have been recorded for %{political_party}."
-    economic_category:
-      title: "%{economic_category} Statements"
-      no_statements: "At this time, no statements have been recorded for %{economic_category}."
-    political_party_show:
-      title: "%{political_party} Statement"
-    economic_category_show:
-      title: "%{economic_category} Statement"
   party:
     index:
       title: "%{political_party}"
