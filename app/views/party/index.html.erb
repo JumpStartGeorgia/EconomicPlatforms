@@ -13,9 +13,6 @@
 				<div class="statement_summary">
 					<h3>
 						<%= l statement.date_made, :format => :long %>
-						<%= link_to t('.view_statement'),
-							party_statement_path(:political_party_id => @political_party.permalink, :id => statement.id),
-							:class => 'btn btn-mini' %>
 					</h3>
 				  <% if user_signed_in? && can?(:manage, Statement) %>
 						<p>
@@ -28,13 +25,13 @@
 							            :class => 'btn btn-mini btn-danger' %>
 						</p>
 				  <% end %>
+					<div>
+						<p>
+							<strong><%= "#{t('app.common.economic_category')}:"%></strong>
+							<%= statement.economic_category.name %>
+						</p>
+					</div>
 					<div class="row">
-						<div class="span4">
-							<p>
-								<strong><%= "#{t('app.common.economic_category')}:"%></strong>
-								<%= statement.economic_category.name %>
-							</p>
-						</div>
 						<div class="span4">
 							<p>
 								<strong><%= "#{t('app.common.author')}:"%></strong>
@@ -49,10 +46,18 @@
 						</div>
 					</div>
 					<div>
-						<%= simple_format statement.statement_made, {}, :sanitize => false %>
+						<%= simple_format truncate(statement.statement_made, :length => 200, :separator => ' ') %>
+					</div>
+					<div>
+						<%= link_to t('.view_statement'),
+							party_statement_path(:political_party_id => @political_party.permalink, :id => statement.id),
+							:class => 'btn btn-mini' %>
 					</div>
 				</div>
 			<% end %>
+
+			<%= page_navigation_links @statements %>
+
 		<% end %>
 	</div>
 

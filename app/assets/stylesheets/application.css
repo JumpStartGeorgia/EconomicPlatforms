@@ -174,3 +174,14 @@ ul.striped li:nth-child(even){
 .well h4{
 	font-weight: bold;
 }
+
+/* statemetn record */
+.statement_summary {
+	padding: 1em 0 0.5em 0;
+	border-bottom: solid 1px #eee;
+}
+
+/* indicator score headers in forms */
+.radio_button_scores .control-label {
+	font-weight: bold;
+}

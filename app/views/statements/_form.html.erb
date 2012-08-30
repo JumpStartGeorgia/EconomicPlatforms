@@ -29,10 +29,12 @@
   		<%= f.fields_for :statement_scores, score do |scores| %>
   			<% cat = @indicator_categories.select{|x| x.id == score.indicator_category_id} %>
   			<% if cat && !cat.first.indicators.nil? && !cat.first.indicators.empty? %>
-  	  		<%= scores.hidden_field :indicator_category_id , :value => cat.first.id %>
-  				<%= scores.input :combined, :as => :radio,
-  				  :collection => cat.first.indicators.map{|x| ["#{x.value} - #{x.name}", "#{x.id}||#{x.value}"]},
-  				  :label => cat.first.name %>
+					<div class="radio_button_scores">
+			  		<%= scores.hidden_field :indicator_category_id , :value => cat.first.id %>
+						<%= scores.input :combined, :as => :radio,
+						  :collection => cat.first.indicators.map{|x| ["#{x.value} - #{x.name}", "#{x.id}||#{x.value}"]},
+						  :label => cat.first.name %>
+					</div>
   			<% end %>
   		<% end %>
   	<% end %>

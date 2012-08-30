@@ -5,7 +5,7 @@ class CategoryController < ApplicationController
 		if !@economic_category
 			redirect_to root_path, notice: t('app.msgs.does_not_exist')
 		else
-	    @statements = Statement.by_economic_category(@economic_category.id)
+	    @statements = Statement.by_economic_category(@economic_category.id).paginate(:page => params[:page])
 
 			@platforms = Platform.by_economic_category(@economic_category.id)
 			@policy_briefs = PolicyBrief.by_economic_category(@economic_category.id)

@@ -8,7 +8,7 @@ class StatementsController < ApplicationController
   # GET /statements
   # GET /statements.json
   def index
-    @statements = Statement.all
+    @statements = Statement.paginate(:page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

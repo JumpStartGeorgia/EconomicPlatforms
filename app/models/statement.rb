@@ -18,6 +18,9 @@ class Statement < ActiveRecord::Base
 
   TYPE = %w[political_party, economic_indicator]
 
+	# number of items per page for pagination
+	self.per_page = 4
+
 	def self.by_political_party(political_party_id)
 		where(:political_party_id => political_party_id) if political_party_id
 	end
@@ -34,7 +37,7 @@ class Statement < ActiveRecord::Base
     sql << "from statements group by political_party_id) as s on s.political_party_id = ppt.political_party_id  "
     sql << "where ppt.locale = :locale "
     sql << "order by ppt.name"
-    
+
 		find_by_sql([sql, :locale => I18n.locale])
   end
 
@@ -46,7 +49,7 @@ class Statement < ActiveRecord::Base
     sql << "from statements group by economic_category_id) as s on s.economic_category_id = ect.economic_category_id  "
     sql << "where ect.locale = :locale "
     sql << "order by ect.name"
-    
+
 		find_by_sql([sql, :locale => I18n.locale])
   end
 

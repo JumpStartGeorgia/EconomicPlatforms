@@ -9,19 +9,7 @@
 		<div class="statement_summary">
 			<h3>
 				<%= l statement.date_made, :format => :long %>
-				<%= link_to t('.view_statement'),
-					statement_path(:id => statement.id),
-					:class => 'btn btn-mini' %>
 			</h3>
-			<p>
-		    <%= link_to t('app.buttons.edit'),
-		                edit_statement_path(statement), :class => 'btn btn-mini' %>
-		    <%= link_to t('app.buttons.delete'),
-		                statement_path(statement),
-		                :method => :delete,
-		                :confirm => t('app.buttons.confirm'),
-		                :class => 'btn btn-mini btn-danger' %>
-			</p>
 			<div class="row">
 				<div class="span4">
 					<p>
@@ -51,10 +39,25 @@
 				</div>
 			</div>
 			<div>
-				<%= simple_format statement.statement_made, {}, :sanitize => false %>
+				<%= simple_format truncate(statement.statement_made, :length => 200, :separator => ' ') %>
+			</div>
+			<div>
+				<%= link_to t('.view_statement'),
+					statement_path(:id => statement.id),
+					:class => 'btn btn-mini' %>
+		    <%= link_to t('app.buttons.edit'),
+		                edit_statement_path(statement), :class => 'btn btn-mini' %>
+		    <%= link_to t('app.buttons.delete'),
+		                statement_path(statement),
+		                :method => :delete,
+		                :confirm => t('app.buttons.confirm'),
+		                :class => 'btn btn-mini btn-danger' %>
 			</div>
 		</div>
 	<% end %>
+
+	<%= page_navigation_links @statements %>
+
 <% end %>
 
 

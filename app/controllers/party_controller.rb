@@ -5,7 +5,7 @@ class PartyController < ApplicationController
 		if !@political_party
 			redirect_to root_path, notice: t('app.msgs.does_not_exist')
 		else
-	    @statements = Statement.by_political_party(@political_party.id)
+	    @statements = Statement.by_political_party(@political_party.id).paginate(:page => params[:page])
 
 			@platforms = Platform.by_political_party(@political_party.id)
 			@policy_briefs = PolicyBrief.by_political_party(@political_party.id)
