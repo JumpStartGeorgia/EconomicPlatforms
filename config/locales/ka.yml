@@ -96,7 +96,7 @@ ka:
     platform_file_fields:
       remove_link: Remove File
     form:
-      add_file: Add File      
+      add_file: Add File
   policy_briefs:
     edit:
       title: Editing Policy Brief
@@ -165,3 +165,19 @@ ka:
       title: "%{political_party} განცხადება"
     economic_category_show:
       title: "%{economic_category} განცხადება"
+  party:
+    index:
+      title: "%{political_party}"
+      no_statements: "ამ მომენტისათვის განცხადებები არ ფიქსირდება %{political_party} - თვის."
+      view_statement: განცადების ნახვა სრულად
+    statement:
+      title: "%{political_party} განცხადება"
+      view_profile: "View %{political_party} Party Profile"
+  category:
+    index:
+      title: "%{economic_category}"
+      no_statements: "ამ მომენტისათვის განცხადებები არ ფიქსირდება %{economic_category} -ში."
+      view_statement: View Full Statement
+    statement:
+      title: "%{economic_category} განცხადება"
+      view_profile: "View %{economic_category} Profile"

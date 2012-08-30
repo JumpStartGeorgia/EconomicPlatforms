@@ -96,7 +96,7 @@ en:
     platform_file_fields:
       remove_link: Remove File
     form:
-      add_file: Add File      
+      add_file: Add File
   policy_briefs:
     edit:
       title: Editing Policy Brief
@@ -165,3 +165,19 @@ en:
       title: "%{political_party} Statement"
     economic_category_show:
       title: "%{economic_category} Statement"
+  party:
+    index:
+      title: "%{political_party}"
+      no_statements: "At this time, no statements have been recorded for %{political_party}."
+      view_statement: View Full Statement
+    statement:
+      title: "%{political_party} Statement"
+      view_profile: "View %{political_party} Profile"
+  category:
+    index:
+      title: "%{economic_category}"
+      no_statements: "At this time, no statements have been recorded for %{economic_category}."
+      view_statement: View Full Statement
+    statement:
+      title: "%{economic_category} Statement"
+      view_profile: "View %{economic_category} Profile"

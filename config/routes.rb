@@ -20,6 +20,18 @@ EconomicPlatforms::Application.routes.draw do
     resources :statement_scores
     resources :statements
 
+		# party profile
+		match '/party/:political_party_id', :to => 'party#index', :as => :party
+		match '/party/:political_party_id/platform', :to => 'party#platform', :as => :party_platform
+		match '/party/:political_party_id/policy_brief', :to => 'party#policy_brief', :as => :party_policy_brief
+		match '/party/:political_party_id/statement/:id', :to => 'party#statement', :as => :party_statement
+
+
+		# category profile
+		match '/category/:economic_category_id', :to => 'category#index', :as => :category
+		match '/category/:economic_category_id/statement/:id', :to => 'category#statement', :as => :category_statement
+
+		# old statements - to be deleted
 		match '/statements/political_party/:political_party_id', :to => 'statements#political_party',
 			:as => :political_party_statements, :via => :get
 		match '/statements/political_party/:political_party_id/:id', :to => 'statements#political_party_show',

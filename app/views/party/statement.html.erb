@@ -1,0 +1,77 @@
+<% title t('.title', :political_party => @political_party.name) %>
+
+		<p>
+			<%= link_to t('.view_profile', :political_party => @political_party.name),
+				party_path(@political_party.permalink),
+				:class => 'btn btn-mini' %>
+		</p>
+
+		<div class="statement_summary">
+			<h3>
+				<%= l @statement.date_made, :format => :long %>
+			</h3>
+			<div class="row">
+				<div class="span4">
+					<p>
+						<strong><%= "#{t('app.common.economic_category')}:"%></strong>
+						<%= @statement.economic_category.name %>
+					</p>
+				</div>
+				<div class="span4">
+					<p>
+						<strong><%= "#{t('app.common.author')}:"%></strong>
+						<%= @statement.author %>
+					</p>
+				</div>
+				<div class="span4">
+					<p>
+						<strong><%= "#{t('app.common.source')}:"%></strong>
+						<%= @statement.source %>
+					</p>
+				</div>
+			</div>
+
+			<p>
+				<strong><%= "#{t('app.common.statement')}:"%></strong>
+			</p>
+			<%= simple_format @statement.statement_made, {}, :sanitize => false %>
+
+			<% if @statement.analysis && !@statement.analysis.empty? %>
+				<p>
+					<strong><%= t('app.common.analysis') %>:</strong>
+				</p>
+				<%= simple_format @statement.analysis, {}, :sanitize => false %>
+			<% end %>
+
+			<p>
+				<strong><%= t('app.common.scores') %>:</strong>
+			</p>
+			<% if @statement.statement_scores && !@statement.statement_scores.empty? %>
+				<ul class="standard">
+				<% @statement.statement_scores.ordered.each do |score| %>
+					<li>
+						<strong><%= score.indicator_category.name %></strong>
+						<br />
+						<%= "#{score.value} - #{score.indicator.name}"%>
+					</li>
+				<% end %>
+				</ul>
+			<% end %>
+
+		</div>
+
+<% if user_signed_in? && can?(:manage, Statement) %>
+<div class="form-actions">
+  <%= link_to t('app.buttons.list'),
+              statements_path, :class => 'btn'  %>
+  <%= link_to t('app.buttons.edit'),
+              edit_statement_path(@statement), :class => 'btn' %>
+  <%= link_to t('app.buttons.delete'),
+              statement_path(@statement),
+              :method => 'delete',
+              :confirm => t('app.buttons.confirm'),
+              :class => 'btn btn-danger' %>
+  <%= link_to t('app.buttons.admin'), admin_path,
+  :class => 'btn' %>
+</div>
+<% end %>

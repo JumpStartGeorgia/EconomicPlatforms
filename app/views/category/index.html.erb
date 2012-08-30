@@ -1,0 +1,62 @@
+<% title t('.title', :economic_category => @economic_category.name) %>
+
+<% if @statements.nil? || @statements.empty? %>
+	<p>
+		<%= t('.no_statements', :economic_category => @economic_category.name) %>
+	</p>
+<% else %>
+  <% @statements.each do |statement| %>
+		<div class="statement_summary">
+			<h3>
+				<%= l statement.date_made, :format => :long %>
+				<%= link_to t('.view_statement'),
+					category_statement_path(:economic_category_id => @economic_category.permalink, :id => statement.id),
+					:class => 'btn btn-mini' %>
+			</h3>
+      <% if user_signed_in? && can?(:manage, Statement) %>
+				<p>
+			    <%= link_to t('app.buttons.edit'),
+			                edit_statement_path(statement), :class => 'btn btn-mini' %>
+			    <%= link_to t('app.buttons.delete'),
+			                statement_path(statement),
+			                :method => :delete,
+			                :confirm => t('app.buttons.confirm'),
+			                :class => 'btn btn-mini btn-danger' %>
+				</p>
+      <% end %>
+			<div class="row">
+				<div class="span4">
+					<p>
+						<strong><%= "#{t('app.common.politcal_party')}:"%></strong>
+						<%= statement.political_party.name %>
+					</p>
+				</div>
+				<div class="span4">
+					<p>
+						<strong><%= "#{t('app.common.author')}:"%></strong>
+						<%= statement.author %>
+					</p>
+				</div>
+				<div class="span4">
+					<p>
+						<strong><%= "#{t('app.common.source')}:"%></strong>
+						<%= statement.source %>
+					</p>
+				</div>
+			</div>
+			<div>
+				<%= simple_format statement.statement_made, {}, :sanitize => false %>
+			</div>
+		</div>
+	<% end %>
+<% end %>
+
+<% if user_signed_in? && can?(:manage, Statement) %>
+<div class="form-actions">
+<%= link_to t('app.buttons.new'),
+            new_statement_path,
+            :class => 'btn btn-primary' %>
+<%= link_to t('app.buttons.admin'), admin_path,
+:class => 'btn' %>
+</div>
+<% end %>
