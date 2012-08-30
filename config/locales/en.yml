@@ -172,11 +172,11 @@ en:
       no_statements: "At this time, no statements have been recorded for %{political_party}."
       view_statement: View Full Statement
     well:
-      profile_header: Party Profile
+      profile_header: "%{political_party} Profile"
       view_profile: View Complete Profile
-      platform_header: Platforms
+      platform_header: "%{political_party} Platforms"
       no_platforms: "At this time, no platforms are on file."
-      policy_brief_header: Policy Briefs
+      policy_brief_header: "%{political_party} Policy Briefs"
       no_policy_briefs: "At this time, no policy briefs are on file."
     statement:
       title: "%{political_party}"
