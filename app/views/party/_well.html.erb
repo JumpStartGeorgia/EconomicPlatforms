@@ -11,7 +11,7 @@
 		<% end %>
 		<div class="well">
 			<h4><%= t('.platform_header') %></h4>
-			<% if @platforms %>
+			<% if @platforms && !@platforms.empty? %>
 				<ul>
 					<% @platforms.each do |platform| %>
 						<li>
@@ -21,11 +21,13 @@
 						</li>
 					<% end %>
 				</ul>
+			<% else %>
+				<%= t('.no_platforms') %>
 			<% end %>
 		</div>
 		<div class="well">
 			<h4><%= t('.policy_brief_header') %></h4>
-			<% if @policy_briefs %>
+			<% if @policy_briefs && !@policy_briefs.empty? %>
 				<ul>
 					<% @policy_briefs.each do |policy_brief| %>
 						<li>
@@ -35,6 +37,8 @@
 						</li>
 					<% end %>
 				</ul>
+			<% else %>
+				<%= t('.no_policy_briefs') %>
 			<% end %>
 		</div>
 	</div>
