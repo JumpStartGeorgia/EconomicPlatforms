@@ -1,0 +1,27 @@
+<% title t('.title', :economic_category => @economic_category.name) %>
+
+<div class="row">
+	<div class="span9">
+		<h2><%= t('.secondary_title', :political_party => @political_party.name) %></h2>
+
+		<%= simple_format @policy_brief.analysis, {}, :sanitize => false %>
+
+	</div>
+
+	<%= render :partial => "category/well" %>
+
+</div>
+
+<% if user_signed_in? && can?(:manage, Platform) %>
+<div class="form-actions">
+  <%= link_to t('app.buttons.edit'),
+              edit_policy_brief_path(@policy_brief), :class => 'btn' %>
+  <%= link_to t('app.buttons.delete'),
+              policy_brief_path(@policy_brief),
+              :method => 'delete',
+              :confirm => t('app.buttons.confirm'),
+              :class => 'btn btn-danger' %>
+  <%= link_to t('app.buttons.admin'), admin_path,
+  :class => 'btn' %>
+</div>
+<% end %>

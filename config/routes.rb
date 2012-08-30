@@ -29,6 +29,8 @@ EconomicPlatforms::Application.routes.draw do
 
 		# category profile
 		match '/category/:economic_category_id', :to => 'category#index', :as => :category
+		match '/category/:economic_category_id/platform/:political_party_id', :to => 'category#platform', :as => :category_platform
+		match '/category/:economic_category_id/policy_brief/:political_party_id', :to => 'category#policy_brief', :as => :category_policy_brief
 		match '/category/:economic_category_id/statement/:id', :to => 'category#statement', :as => :category_statement
 
 

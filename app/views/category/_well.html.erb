@@ -1,0 +1,44 @@
+	<div class="span3">
+		<% if params[:action] != 'index' %>
+		<div class="well">
+			<h4><%= t('.profile_header', :economic_category => @economic_category.name) %></h4>
+				<ul>
+					<li>
+						<%= link_to t('.view_profile'),	category_path(params[:economic_category_id]) %>
+					</li>
+				</ul>
+		</div>
+		<% end %>
+		<div class="well">
+			<h4><%= t('.platform_header', :economic_category => @economic_category.name) %></h4>
+			<% if @platforms && !@platforms.empty? %>
+				<ul>
+					<% @platforms.each do |platform| %>
+						<li>
+							<%= link_to platform.political_party_name,
+								category_platform_path(:economic_category_id => params[:economic_category_id],
+								:political_party_id => platform.political_party_permalink) %>
+						</li>
+					<% end %>
+				</ul>
+			<% else %>
+				<%= t('.no_platforms') %>
+			<% end %>
+		</div>
+		<div class="well">
+			<h4><%= t('.policy_brief_header', :economic_category => @economic_category.name) %></h4>
+			<% if @policy_briefs && !@policy_briefs.empty? %>
+				<ul>
+					<% @policy_briefs.each do |policy_brief| %>
+						<li>
+							<%= link_to policy_brief.political_party_name,
+								category_policy_brief_path(:economic_category_id => params[:economic_category_id],
+								:political_party_id => policy_brief.political_party_permalink) %>
+						</li>
+					<% end %>
+				</ul>
+			<% else %>
+				<%= t('.no_policy_briefs') %>
+			<% end %>
+		</div>
+	</div>

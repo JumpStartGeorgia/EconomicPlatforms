@@ -1,22 +1,20 @@
 <% title t('.title', :economic_category => @economic_category.name) %>
 
-		<p>
-			<%= link_to t('.view_profile', :economic_category => @economic_category.name),
-				category_path(@economic_category.permalink),
-				:class => 'btn btn-mini' %>
-		</p>
+<div class="row">
+	<div class="span9">
+		<h2><%= t('.secondary_title') %></h2>
 
 		<div class="statement_summary">
 			<h3>
 				<%= l @statement.date_made, :format => :long %>
 			</h3>
+			<div>
+				<p>
+					<strong><%= "#{t('app.common.politcal_party')}:"%></strong>
+					<%= @statement.political_party.name %>
+				</p>
+			</div>
 			<div class="row">
-				<div class="span4">
-					<p>
-						<strong><%= "#{t('app.common.politcal_party')}:"%></strong>
-						<%= @statement.political_party.name %>
-					</p>
-				</div>
 				<div class="span4">
 					<p>
 						<strong><%= "#{t('app.common.author')}:"%></strong>
@@ -57,8 +55,12 @@
 				<% end %>
 				</ul>
 			<% end %>
-
 		</div>
+	</div>
+
+	<%= render :partial => "category/well" %>
+
+</div>
 
 <% if user_signed_in? && can?(:manage, Statement) %>
 <div class="form-actions">
