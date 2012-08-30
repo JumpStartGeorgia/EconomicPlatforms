@@ -1,0 +1,40 @@
+	<div class="span3">
+		<% if params[:action] != 'index' %>
+		<div class="well">
+			<h4><%= t('.profile_header') %></h4>
+				<ul>
+					<li>
+						<%= link_to t('.view_profile'),	party_path(params[:political_party_id]) %>
+					</li>
+				</ul>
+		</div>
+		<% end %>
+		<div class="well">
+			<h4><%= t('.platform_header') %></h4>
+			<% if @platforms %>
+				<ul>
+					<% @platforms.each do |platform| %>
+						<li>
+							<%= link_to platform.economic_category_name,
+								party_platform_path(:political_party_id => params[:political_party_id],
+								:economic_category_id => platform.economic_category_permalink) %>
+						</li>
+					<% end %>
+				</ul>
+			<% end %>
+		</div>
+		<div class="well">
+			<h4><%= t('.policy_brief_header') %></h4>
+			<% if @policy_briefs %>
+				<ul>
+					<% @policy_briefs.each do |policy_brief| %>
+						<li>
+							<%= link_to policy_brief.economic_category_name,
+								party_policy_brief_path(:political_party_id => params[:political_party_id],
+								:economic_category_id => policy_brief.economic_category_permalink) %>
+						</li>
+					<% end %>
+				</ul>
+			<% end %>
+		</div>
+	</div>

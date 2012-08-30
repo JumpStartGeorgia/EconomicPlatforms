@@ -65,6 +65,7 @@ h1 {
 
 h2 {
    font-size: 16pt;
+	margin-bottom: 0.5em;
 }
 
 h3 {
@@ -169,3 +170,7 @@ ul.striped li:nth-child(even){
   padding: 0.5em 1em;
 }
 
+/* wells */
+.well h4{
+	font-weight: bold;
+}

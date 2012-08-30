@@ -1,56 +1,64 @@
 <% title t('.title', :political_party => @political_party.name) %>
 
-<% if @statements.nil? || @statements.empty? %>
-	<p>
-		<%= t('.no_statements', :political_party => @political_party.name) %>
-	</p>
-<% else %>
-  <% @statements.each do |statement| %>
-		<div class="statement_summary">
-			<h3>
-				<%= l statement.date_made, :format => :long %>
-				<%= link_to t('.view_statement'),
-					party_statement_path(:political_party_id => @political_party.permalink, :id => statement.id),
-					:class => 'btn btn-mini' %>
-			</h3>
-      <% if user_signed_in? && can?(:manage, Statement) %>
-				<p>
-			    <%= link_to t('app.buttons.edit'),
-			                edit_statement_path(statement), :class => 'btn btn-mini' %>
-			    <%= link_to t('app.buttons.delete'),
-			                statement_path(statement),
-			                :method => :delete,
-			                :confirm => t('app.buttons.confirm'),
-			                :class => 'btn btn-mini btn-danger' %>
-				</p>
-      <% end %>
-			<div class="row">
-				<div class="span4">
-					<p>
-						<strong><%= "#{t('app.common.economic_category')}:"%></strong>
-						<%= statement.economic_category.name %>
-					</p>
-				</div>
-				<div class="span4">
-					<p>
-						<strong><%= "#{t('app.common.author')}:"%></strong>
-						<%= statement.author %>
-					</p>
-				</div>
-				<div class="span4">
-					<p>
-						<strong><%= "#{t('app.common.source')}:"%></strong>
-						<%= statement.source %>
-					</p>
-				</div>
-			</div>
-			<div>
-				<%= simple_format statement.statement_made, {}, :sanitize => false %>
-			</div>
-		</div>
-	<% end %>
-<% end %>
+<div class="row">
+	<div class="span9">
 
+		<h2><%= t('.statement_header', :political_party => @political_party.name) %></h2>
+		<% if @statements.nil? || @statements.empty? %>
+			<p>
+				<%= t('.no_statements', :political_party => @political_party.name) %>
+			</p>
+		<% else %>
+			<% @statements.each do |statement| %>
+				<div class="statement_summary">
+					<h3>
+						<%= l statement.date_made, :format => :long %>
+						<%= link_to t('.view_statement'),
+							party_statement_path(:political_party_id => @political_party.permalink, :id => statement.id),
+							:class => 'btn btn-mini' %>
+					</h3>
+				  <% if user_signed_in? && can?(:manage, Statement) %>
+						<p>
+							<%= link_to t('app.buttons.edit'),
+							            edit_statement_path(statement), :class => 'btn btn-mini' %>
+							<%= link_to t('app.buttons.delete'),
+							            statement_path(statement),
+							            :method => :delete,
+							            :confirm => t('app.buttons.confirm'),
+							            :class => 'btn btn-mini btn-danger' %>
+						</p>
+				  <% end %>
+					<div class="row">
+						<div class="span4">
+							<p>
+								<strong><%= "#{t('app.common.economic_category')}:"%></strong>
+								<%= statement.economic_category.name %>
+							</p>
+						</div>
+						<div class="span4">
+							<p>
+								<strong><%= "#{t('app.common.author')}:"%></strong>
+								<%= statement.author %>
+							</p>
+						</div>
+						<div class="span4">
+							<p>
+								<strong><%= "#{t('app.common.source')}:"%></strong>
+								<%= statement.source %>
+							</p>
+						</div>
+					</div>
+					<div>
+						<%= simple_format statement.statement_made, {}, :sanitize => false %>
+					</div>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+
+	<%= render :partial => "party/well" %>
+
+</div>
 <% if user_signed_in? && can?(:manage, Statement) %>
 <div class="form-actions">
 <%= link_to t('app.buttons.new'),

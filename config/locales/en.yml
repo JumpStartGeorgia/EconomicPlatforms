@@ -168,11 +168,23 @@ en:
   party:
     index:
       title: "%{political_party}"
+      statement_header: "%{political_party} Statements"
       no_statements: "At this time, no statements have been recorded for %{political_party}."
       view_statement: View Full Statement
+    well:
+      profile_header: Party Profile
+      view_profile: View Complete Profile
+      platform_header: Platforms
+      policy_brief_header: Policy Briefs
     statement:
-      title: "%{political_party} Statement"
-      view_profile: "View %{political_party} Profile"
+      title: "%{political_party}"
+      secondary_title: "Statement"
+    platform:
+      title: "%{political_party}"
+      secondary_title: "Platform - %{economic_category}"
+    policy_brief:
+      title: "%{political_party}"
+      secondary_title: "Policy Brief - %{economic_category}"
   category:
     index:
       title: "%{economic_category}"

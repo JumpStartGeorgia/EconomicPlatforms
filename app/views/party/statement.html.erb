@@ -1,10 +1,8 @@
 <% title t('.title', :political_party => @political_party.name) %>
 
-		<p>
-			<%= link_to t('.view_profile', :political_party => @political_party.name),
-				party_path(@political_party.permalink),
-				:class => 'btn btn-mini' %>
-		</p>
+<div class="row">
+	<div class="span9">
+		<h2><%= t('.secondary_title') %></h2>
 
 		<div class="statement_summary">
 			<h3>
@@ -59,6 +57,11 @@
 			<% end %>
 
 		</div>
+	</div>
+
+	<%= render :partial => "party/well" %>
+
+</div>
 
 <% if user_signed_in? && can?(:manage, Statement) %>
 <div class="form-actions">

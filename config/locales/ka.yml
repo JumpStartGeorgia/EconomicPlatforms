@@ -168,11 +168,23 @@ ka:
   party:
     index:
       title: "%{political_party}"
+      statement_header: "%{political_party} განცხადებები"
       no_statements: "ამ მომენტისათვის განცხადებები არ ფიქსირდება %{political_party} - თვის."
       view_statement: განცადების ნახვა სრულად
+    well:
+      profile_header: Party Profile
+      view_profile: View Complete Profile
+      platform_header: Platforms
+      policy_brief_header: Policy Briefs
     statement:
-      title: "%{political_party} განცხადება"
-      view_profile: "View %{political_party} Party Profile"
+      title: "%{political_party}"
+      secondary_title: "განცხადება"
+    platform:
+      title: "%{political_party}"
+      secondary_title: "Platform - %{economic_category}"
+    policy_brief:
+      title: "%{political_party}"
+      secondary_title: "Policy Brief - %{economic_category}"
   category:
     index:
       title: "%{economic_category}"
