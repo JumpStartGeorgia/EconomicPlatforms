@@ -1,79 +1,9 @@
 class StatementsController < ApplicationController
-  before_filter :authenticate_user!,
-		:except => [:political_party, :economic_category, :political_party_show, :economic_category_show]
-  before_filter :except => [:political_party, :economic_category, :political_party_show, :economic_category_show] do |controller_instance|
+  before_filter :authenticate_user!
+  before_filter do |controller_instance|
     controller_instance.send(:valid_role?, :author)
   end
 
-
-  # GET /statements/political_party/:political_party_id
-  # GET /statements/political_party/:political_party_id.json
-  def political_party
-		@political_party = PoliticalParty.find_by_permalink(params[:political_party_id])
-    @statements = Statement.by_political_party(@political_party.id) if @political_party
-
-		if !@political_party
-			redirect_to root_path, notice: t('app.msgs.does_not_exist')
-		else
-		  respond_to do |format|
-		    format.html # index.html.erb
-		    format.json { render json: @statements }
-		  end
-		end
-  end
-
-  # GET /statements/political_party/:political_party_id/show/:id
-  # GET /statements/political_party/:political_party_id/show/:id.json
-  def political_party_show
-		@political_party = PoliticalParty.find_by_permalink(params[:political_party_id])
-    @statements = Statement.by_political_party(@political_party.id).where(:id => params[:id]) if @political_party
-
-		@statement = @statements.first if @statements && !@statements.empty?
-
-
-		if !@political_party || !@statement
-			redirect_to root_path, notice: t('app.msgs.does_not_exist')
-		else
-		  respond_to do |format|
-		    format.html # index.html.erb
-		    format.json { render json: @statements }
-		  end
-		end
-  end
-
-  # GET /statements/economic_category/:economic_category_id
-  # GET /statements/economic_category/:economic_category_id.json
-  def economic_category
-		@economic_category = EconomicCategory.find_by_permalink(params[:economic_category_id])
-    @statements = Statement.by_economic_category(@economic_category.id) if @economic_category
-
-		if !@economic_category
-			redirect_to root_path, notice: t('app.msgs.does_not_exist')
-		else
-		  respond_to do |format|
-		    format.html # index.html.erb
-		    format.json { render json: @statements }
-		  end
-		end
-  end
-
-  # GET /statements/economic_category/:economic_category_id/:id
-  # GET /statements/economic_category/:economic_category_id/:id.json
-  def economic_category_show
-		@economic_category = EconomicCategory.find_by_permalink(params[:economic_category_id])
-    @statements = Statement.by_economic_category(@economic_category.id).where(:id => params[:id]) if @economic_category
-
-		@statement = @statements.first if @statements && !@statements.empty?
-
-		if !@economic_category || !@statement
-			redirect_to root_path, notice: t('app.msgs.does_not_exist')
-		else
-		  respond_to do |format|
-		    format.html # index.html.erb
-		    format.json { render json: @statements }
-		  end
-		end
-  end
 
   # GET /statements
   # GET /statements.json

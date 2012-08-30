@@ -31,16 +31,6 @@ EconomicPlatforms::Application.routes.draw do
 		match '/category/:economic_category_id', :to => 'category#index', :as => :category
 		match '/category/:economic_category_id/statement/:id', :to => 'category#statement', :as => :category_statement
 
-		# old statements - to be deleted
-		match '/statements/political_party/:political_party_id', :to => 'statements#political_party',
-			:as => :political_party_statements, :via => :get
-		match '/statements/political_party/:political_party_id/:id', :to => 'statements#political_party_show',
-			:as => :political_party_statement, :via => :get
-		match '/statements/economic_category/:economic_category_id', :to => 'statements#economic_category',
-			:as => :economic_category_statements, :via => :get
-		match '/statements/economic_category/:economic_category_id/:id', :to => 'statements#economic_category_show',
-			:as => :economic_category_statement, :via => :get
-
 
 		match '/admin', :to => 'admin#index', :as => :admin, :via => :get
 

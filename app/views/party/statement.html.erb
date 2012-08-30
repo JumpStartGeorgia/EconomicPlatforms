@@ -8,13 +8,13 @@
 			<h3>
 				<%= l @statement.date_made, :format => :long %>
 			</h3>
+			<div>
+				<p>
+					<strong><%= "#{t('app.common.economic_category')}:"%></strong>
+					<%= @statement.economic_category.name %>
+				</p>
+			</div>
 			<div class="row">
-				<div class="span4">
-					<p>
-						<strong><%= "#{t('app.common.economic_category')}:"%></strong>
-						<%= @statement.economic_category.name %>
-					</p>
-				</div>
 				<div class="span4">
 					<p>
 						<strong><%= "#{t('app.common.author')}:"%></strong>
