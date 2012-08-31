@@ -4,6 +4,23 @@ module ApplicationHelper
     content_for(:title) { page_title }
   end
 
+  def sub_title(page_title)
+logger.debug "**************************sub_title = '#{page_title}'"
+		if page_title
+			content_for(:sub_title) { page_title }
+		end
+  end
+
+	def page_title
+		if content_for?(:title) && content_for?(:sub_title)
+			"#{content_for(:title)} - #{content_for(:sub_title)} > #{t('app.common.app_name')}"
+		elsif content_for?(:title)
+			"#{content_for(:title)} > #{t('app.common.app_name')}"
+		else
+			t('app.common.app_name')
+		end
+	end
+
 	def flash_translation(level)
     case level
     when :notice then "alert-info"

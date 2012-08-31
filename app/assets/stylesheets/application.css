@@ -62,6 +62,13 @@ h1, h2, h3 {
 h1 {
    font-size: 18pt;
 }
+h1 small {
+   color: inherit;
+   font-size: 16pt;
+	display: block;
+	padding-top: 0.3em;
+	margin-left: 1em;
+}
 
 h2 {
    font-size: 16pt;
@@ -173,6 +180,10 @@ ul.striped li:nth-child(even){
 /* wells */
 .well h4{
 	font-weight: bold;
+	font-size: 12px;
+}
+.well a {
+	font-size: 12px;
 }
 
 /* statemetn record */
@@ -184,6 +195,16 @@ ul.striped li:nth-child(even){
 /* indicator score headers in forms */
 .radio_button_scores .control-label {
 	font-weight: bold;
+}
+
+/* social links */
+#social_links ul {
+	margin-top: -10px;
+	margin-bottom: 0;
+}
+#social_links ul li a {
+	padding-top: 4px;
+	padding-bottom: 4px;
 }
 
 

@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? "#{yield(:title)} > #{t('app.common.app_name')}" :
-				t('app.common.app_name') %></title>
+    <title><%= page_title %></title>
     <%= csrf_meta_tags %>
 	  <%= include_gon %>
 
@@ -102,8 +101,26 @@
 								</div>
 							<% end %>
 
-              <div class="page-header">
-                <h1><%= yield(:title) %></h1>
+              <div class="page-header row">
+								<div class="span9">
+	                <h1>
+										<%= yield(:title) %>
+									</h1>
+								</div>
+								<div id="social_links" class="span3">
+                  <ul class="nav nav-pills">
+										<li class="f">
+											<%= link_to(image_tag("facebook.png", :height => "27"),
+														"http://www.facebook.com/share.php?u=#{request.protocol}#{request.host_with_port}#{request.fullpath}",
+														:title => "facebook",	:target => "_blank") %>
+										</li>
+										<li class="t">
+											<%= link_to(image_tag("twitter.png", :height => "27"),
+														"https://twitter.com/share", :title => "twitter",
+														:target => "_blank") %>
+										</li>
+									</ul>
+								</div>
               </div>
 
 							<%= yield %>

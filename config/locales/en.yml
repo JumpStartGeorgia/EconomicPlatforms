@@ -168,7 +168,7 @@ en:
       no_policy_briefs: "At this time, no policy briefs are on file."
     statement:
       title: "%{political_party}"
-      secondary_title: "Statement"
+      secondary_title: "Statement - %{date}"
     platform:
       title: "%{political_party}"
       secondary_title: "Platform - %{economic_category}"
@@ -192,7 +192,7 @@ en:
       no_policy_briefs: "At this time, no policy briefs are on file."
     statement:
       title: "%{economic_category}"
-      secondary_title: "Statement"
+      secondary_title: "Statement - %{date}"
     platform:
       title: "%{economic_category}"
       secondary_title: "Platform - %{political_party}"

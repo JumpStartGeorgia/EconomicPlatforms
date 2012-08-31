@@ -1,6 +1,6 @@
 	<div class="span3">
 		<% if params[:action] != 'index' %>
-		<div class="well">
+		<div class="well well-small">
 			<h4><%= t('.pdf_header') %></h4>
 				<ul>
 					<li>
@@ -8,7 +8,7 @@
 					</li>
 				</ul>
 		</div>
-		<div class="well">
+		<div class="well well-small">
 			<h4><%= t('.profile_header', :political_party => @political_party.name) %></h4>
 				<ul>
 					<li>
@@ -17,7 +17,7 @@
 				</ul>
 		</div>
 		<% end %>
-		<div class="well">
+		<div class="well well-small">
 			<h4><%= t('.platform_header', :political_party => @political_party.name) %></h4>
 			<% if @platforms && !@platforms.empty? %>
 				<ul>
@@ -33,7 +33,7 @@
 				<%= t('.no_platforms') %>
 			<% end %>
 		</div>
-		<div class="well">
+		<div class="well well-small">
 			<h4><%= t('.policy_brief_header', :political_party => @political_party.name) %></h4>
 			<% if @policy_briefs && !@policy_briefs.empty? %>
 				<ul>

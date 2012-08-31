@@ -1,13 +1,11 @@
 <% title t('category.statement.title', :economic_category => @economic_category.name) %>
+<% sub_title t('category.statement.secondary_title', :date => l(@statement.date_made, :format => :long)) %>
 
 <div class="row">
 	<div class="span9">
-		<h2><%= t('category.statement.secondary_title') %></h2>
+		<h2><%= t('category.statement.secondary_title', :date => l(@statement.date_made, :format => :long)) %></h2>
 
 		<div class="statement_summary">
-			<h3>
-				<%= l @statement.date_made, :format => :long %>
-			</h3>
 			<div>
 				<p>
 					<strong><%= "#{t('app.common.politcal_party')}:"%></strong>
