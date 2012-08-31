@@ -7,9 +7,9 @@ class IndicatorCategory < ActiveRecord::Base
 
   has_many :indicators
   has_many :statement_scores
-  
+
 	default_scope lambda {with_translations(I18n.locale).order("indicator_category_translations.name")}
-  
+
   def self.with_indicators
     joins(:indicators)
     .where("indicators.id is not null")

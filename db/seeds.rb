@@ -72,8 +72,8 @@ ic.indicator_category_translations.create(:name=>"Feasibility", :locale=>"en")
 ic = IndicatorCategory.create(:id => 5)
 ic.indicator_category_translations.create(:name=>"ადგილი იდეოლოგიურ/პოლიტიკურ რუკაზე", :locale=>"ka")
 ic.indicator_category_translations.create(:name=>"Placement on Ideological/Policy Map", :locale=>"en")
-ic.indicator_category_translations.create(:name=>"იდეოლოგიური ფოკუსი", :locale=>"ka")
 ic = IndicatorCategory.create(:id => 6)
+ic.indicator_category_translations.create(:name=>"იდეოლოგიური ფოკუსი", :locale=>"ka")
 ic.indicator_category_translations.create(:name=>"Ideological Focus/Flip-Flops", :locale=>"en")
 
 # Indicators **************************************************************************
@@ -191,7 +191,6 @@ ind.indicator_translations.create(:name=>"the party’s position on the issue is
 ind = Indicator.create(:id => 36, :indicator_category_id => 5, :value => 7)
 ind.indicator_translations.create(:name=>" პარტიის პოზიცია საკითხზე ხასიათდება, როგორც კომუნისტური (წარმოების ყველა სახეობა უნდა იყოს ნაციონალიზირებული, ბიზნესმენები სასამართლოს წესით უნდა იქნენ აღიარებული როგორც “სპეკულიანტები”, სახელმწიფომ უნდა მართოს ეკონომიკა, უზრუნველყოს უფასო განათლება ისევე როგორც ჯანმრთელობის და სოციალური ბენეფიტები)", :locale=>"ka")
 ind.indicator_translations.create(:name=>"the party’s position on the issue is best described as communist (all means of production should be nationalized, businessmen should be prosecuted as “speculators”, the government should run the economy, provide free education, health and social benefits)", :locale=>"en")
-
 
 puts "###########################################################################"
 puts "IMPORTANT: permalinks for Political Parties and Economic Categories were created"

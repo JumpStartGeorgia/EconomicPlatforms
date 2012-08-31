@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120829173417) do
+ActiveRecord::Schema.define(:version => 20120831123328) do
 
   create_table "economic_categories", :force => true do |t|
     t.datetime "created_at"
@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(:version => 20120829173417) do
   create_table "platform_translations", :force => true do |t|
     t.integer  "platform_id"
     t.string   "locale"
-    t.text     "description"
+    t.text     "description", :limit => 2147483647
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -217,6 +217,7 @@ ActiveRecord::Schema.define(:version => 20120829173417) do
     t.string   "whodunnit"
     t.text     "object"
     t.datetime "created_at"
+    t.string   "locale"
   end
 
   add_index "versions", ["item_type", "item_id"], :name => "index_versions_on_item_type_and_item_id"

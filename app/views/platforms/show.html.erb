@@ -7,7 +7,7 @@
   <%= @platform.economic_category.name %></p>
 
   <p><strong><%= t("app.common.platform") %>:</strong></p>
-<%= simple_format @platform.description, {}, :sanitize => false %>
+	<%= simple_format_no_tags @platform.description, {}, :sanitize => false %>
 
 	<p>
 		<strong><%= t('app.common.scores') %>:</strong>

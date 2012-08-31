@@ -6,9 +6,9 @@ class Indicator < ActiveRecord::Base
   attr_accessible :id, :indicator_category_id, :value, :indicator_translations_attributes
 
   belongs_to :indicator_category
-  
+
   validates :indicator_category_id, :value, :presence => true
-  
+
 	default_scope lambda {with_translations(I18n.locale).order("indicators.indicator_category_id, indicators.value, indicator_translations.name")}
-  
+
 end

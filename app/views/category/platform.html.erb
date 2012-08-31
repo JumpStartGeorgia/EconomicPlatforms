@@ -5,7 +5,7 @@
 	<div class="span9">
 		<h2><%= t('category.platform.secondary_title', :political_party => @political_party.name) %></h2>
 
-		<%= simple_format @platform.description, {}, :sanitize => false %>
+		<%= simple_format_no_tags @platform.description, {}, :sanitize => false %>
 
 		<p>
 			<strong><%= t('app.common.scores') %>:</strong>

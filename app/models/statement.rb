@@ -18,6 +18,8 @@ class Statement < ActiveRecord::Base
 
   TYPE = %w[political_party, economic_indicator]
 
+	attr_accessible :count_name, :count_permalink, :count_total
+
 	# number of items per page for pagination
 	self.per_page = 4
 
@@ -64,24 +66,5 @@ class Statement < ActiveRecord::Base
     end
   end
 
-  # save the data from the count_by queries
-	def count_name=(val)
-		self[:count_name] = val
-	end
-	def count_name
-		self[:count_name]
-	end
-	def count_permalink=(val)
-		self[:count_permalink] = val
-	end
-	def count_permalink
-		self[:count_permalink]
-	end
-	def count_total=(val)
-		self[:count_total] = val
-	end
-	def count_total
-		self[:count_total]
-	end
 
 end
