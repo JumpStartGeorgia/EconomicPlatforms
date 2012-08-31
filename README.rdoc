@@ -9,3 +9,6 @@ a symbol.  The change is listed below.
 def locale
   read_attribute(:locale).to_sym if read_attribute(:locale)
 end
+
+On the server, this file is located at:
+  shared/bundle/ruby/1.9.1/gems/globalize3-0.2.0/lib/globalize/active_record/translation.rb
