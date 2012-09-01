@@ -19,8 +19,6 @@ function build_economic_indicator_chart(div_id, data){
       .domain(d3.range(data.length))
       .rangeRoundBands([0, height], .2);
 
-$("#" + div_id).val("hi!");
-
   var svg = d3.select("#" + div_id).append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
@@ -48,4 +46,14 @@ $("#" + div_id).val("hi!");
       .attr("y1", 0)
       .attr("y2", height);
 
+  $('svg rect').tipsy({ 
+      gravity: 'n',
+      html: true,
+      offset: y.rangeBand(),
+      title: function() { 
+        var d = this.__data__;
+        return '<strong>' + d["political_party"] + '</strong> - ' + d["value_explaination"]; 
+      }
+    });
+      
 }
