@@ -53,7 +53,7 @@ en:
       sign_out: Sign Out
   root:
     index:
-      title: Georgia Economic Platform
+      title: Political Party Ideologies
       political_party_header: Statements by Political Party
       economic_category_header: Statements by Economic Category
   economic_categories:

@@ -18,7 +18,7 @@ class Platform < ActiveRecord::Base
 
 
 	attr_accessible :score_economic_category, :score_political_party, :score_indicator_category, :score_value,
-		:score_left_right_value, :score_value_explaination
+		:score_value_centered, :score_value_explaination
 
 	def self.by_party_category(political_party_id, economic_category_id)
 		if political_party_id && economic_category_id
@@ -63,12 +63,25 @@ class Platform < ActiveRecord::Base
 		return self.economic_category.economic_category_translations[0].permalink
 	end
 
-
+  #########################
+  ## scores
+  #########################
+  def scores_to_hash
+    {
+      :economic_category => self.score_economic_category,
+      :indicator_category => self.score_indicator_category,
+      :political_party => self.score_political_party,
+      :value => self.score_value,
+      :value_centered => self.score_value_centered,
+      :value_explaination => self.score_value_explaination
+    }
+  end
+  
 	def self.scores_for_ec_cat_and_ind_cat(economic_category_id, indicator_category_id)
 		if economic_category_id && indicator_category_id
 			sql = "select ect.name as score_economic_category, ppt.name as score_political_party, ict.name as score_indicator_category, "
 			sql << "if(ps.value=0, null, ps.value) as score_value, "
-			sql << "if(ps.value=0, null, ps.value-4) as score_left_right_value, "
+			sql << "if(ps.value=0, null, ps.value-4) as score_value_centered, "
 			sql << "if(ps.value=0, null, it.name ) as score_value_explaination "
 			sql << "from "
 			sql << "platforms as p "

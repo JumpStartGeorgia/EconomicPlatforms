@@ -53,7 +53,7 @@ ka:
       sign_out: გასვლა
   root:
     index:
-      title: საქართველოს ეკონომიკური პლატფორმა
+      title: Political Party Ideologies
       political_party_header: განცხადებები პოლიტიკური პარტიების მიხედვით
       economic_category_header: განცხადებები ეკონომიკური კატეგორიების მიხედვით
   economic_categories:

@@ -1,38 +1,20 @@
 <% title t('.title') %>
 
-<div class="row">
-<% if @political_party_count && !@political_party_count.empty? %>
-  <div class="span4">
-    <h3><%= t('.political_party_header') %></h3>
-    <ul class="striped">
-    <% @political_party_count.each do |count| %>
-      <li>
-        <div>
-          <%= link_to count.count_name, party_path(count.count_permalink) %>
-          <span class="pull-right">
-            <%= count.count_total %>
-          </span>
-        </div>
-      </li>
+<% if @values && !@values.empty? %>
+  <% @values.each_with_index do |value, i| %>
+    <% if i%2 == 0 %>
+      <div class="row">
     <% end %>
-    </ul>
-  </div>
-<% end %>
-<% if @economic_category_count && !@economic_category_count.empty? %>
-  <div class="span4">
-    <h3><%= t('.economic_category_header') %></h3>
-    <ul class="striped">
-    <% @economic_category_count.each do |count| %>
-      <li>
-        <div>
-          <%= link_to count.count_name, category_path(count.count_permalink) %>
-          <span class="pull-right">
-            <%= count.count_total %>
-          </span>
-        </div>
-      </li>
+
+      <div class="span5">
+        <h3><%= value[:name] %></h3>
+        <div id="<%= "#{value[:div_id]}"%>"></div>
+      </div>
+
+    <% if i%2 == 1 || i==@values.length-1%>
+      </div>
     <% end %>
-    </ul>
-  </div>
+  <% end %>
+  
+  <% %>
 <% end %>
-</div>
