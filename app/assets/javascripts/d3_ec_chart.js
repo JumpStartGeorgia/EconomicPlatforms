@@ -32,7 +32,7 @@ function build_economic_indicator_chart(div_id, data){
       .attr("x", function(d, i) { return x(Math.min(0, d["value_centered"])); })
       .attr("y", function(d, i) { return y(i); })
       .attr("width", function(d, i) { return Math.abs(x(d["value_centered"]) - x(0)); })
-      .attr("height", y.rangeBand());
+      .attr("height", height/gon.number_parties);
 
   svg.append("g")
       .attr("class", "x axis")

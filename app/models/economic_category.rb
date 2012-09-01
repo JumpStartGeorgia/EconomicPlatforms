@@ -12,11 +12,4 @@ class EconomicCategory < ActiveRecord::Base
 
   attr_accessible :ec_cat_name
 
-  def self.id_and_name
-    unscoped.select("economic_categories.id, economic_category_translations.name as ec_cat_name")
-    .joins(:economic_category_translations)
-    .where(:economic_category_translations => {:locale => I18n.locale})
-    .order("economic_category_translations.name")
-  end
-
 end
