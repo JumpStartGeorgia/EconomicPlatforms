@@ -49,7 +49,7 @@ function build_economic_indicator_chart(div_id, data){
   $('svg rect').tipsy({ 
       gravity: 'n',
       html: true,
-      offset: y.rangeBand(),
+      offset: height/gon.number_parties,
       title: function() { 
         var d = this.__data__;
         return '<strong>' + d["political_party"] + '</strong> - ' + d["value_explaination"]; 
