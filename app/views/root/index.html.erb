@@ -1,17 +1,41 @@
 <% title t('.title') %>
 
-<% if @values && !@values.empty? %>
+<% if !@values || @values.empty? %>
+  <p>
+    <%= t('.no_values')%>
+  </p>
+<% else %>
+  <% if @political_parties_nav %>
+    <div id="political_party_scales">
+      <h3><%= t('app.common.political_parties')%></h3>
+      <% @political_parties_nav.each_with_index do |party,i| %>
+        <% if i%3 == 0 %>
+          <div class="row-fluid">
+        <% end %>
+
+          <div class="span4">
+            <span style="background-color: <%= "#{party.color}" %>;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <%= party.name %>
+          </div>
+
+        <% if i%3 == 2 || i==@political_parties_nav.length-1%>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+
   <% @values.each_with_index do |value, i| %>
-    <% if i%2 == 0 %>
+    <% if i%3 == 0 %>
       <div class="row">
     <% end %>
 
-      <div class="span5">
+      <div class="span4">
         <h3><%= value[:name] %></h3>
         <div id="<%= "#{value[:div_id]}"%>"></div>
       </div>
 
-    <% if i%2 == 1 || i==@values.length-1%>
+    <% if i%3 == 2 || i==@values.length-1%>
       </div>
     <% end %>
   <% end %>

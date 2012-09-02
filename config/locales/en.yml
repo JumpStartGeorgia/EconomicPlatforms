@@ -24,6 +24,7 @@ en:
       name: Name
       date_made: Date Made
       politcal_party: Political Party
+      politcal_parties: Political Parties
       economic_category: Economic Category
       statement: Statement
       indicator: Indicator
@@ -57,6 +58,7 @@ en:
       title: Political Party Ideologies
       political_party_header: Statements by Political Party
       economic_category_header: Statements by Economic Category
+      no_values: No political party information has been entered into the application at this time.
   economic_categories:
     edit:
       title: Editing Economic Category

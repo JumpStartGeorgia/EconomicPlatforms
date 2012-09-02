@@ -24,6 +24,7 @@ ka:
       name: სახელი
       date_made: შექმნის თარიღი
       politcal_party: პოლიტიკური პარტია
+      politcal_parties: პოლიტიკური პარტიები
       economic_category: ეკონომიკური კატეგორია
       statement: განცხადება
       indicator: ინდიკატორი
@@ -57,6 +58,7 @@ ka:
       title: Political Party Ideologies
       political_party_header: განცხადებები პოლიტიკური პარტიების მიხედვით
       economic_category_header: განცხადებები ეკონომიკური კატეგორიების მიხედვით
+      no_values: No political party information has been entered into the application at this time.
   economic_categories:
     edit:
       title: ცვლილებების შეტანა ეკონომიკურ კატეგორიაში

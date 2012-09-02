@@ -71,6 +71,7 @@ class Platform < ActiveRecord::Base
       :economic_category => self.score_economic_category,
       :indicator_category => self.score_indicator_category,
       :political_party => self.score_political_party,
+      :color => self.score_color,
       :value => self.score_value,
       :value_centered => self.score_value_centered,
       :value_explaination => self.score_value_explaination
@@ -79,7 +80,8 @@ class Platform < ActiveRecord::Base
   
 	def self.scores_for_ec_cat_and_ind_cat(economic_category_id, indicator_category_id)
 		if economic_category_id && indicator_category_id
-			sql = "select ect.name as score_economic_category, ppt.name as score_political_party, ict.name as score_indicator_category, "
+			sql = "select ect.name as score_economic_category, ict.name as score_indicator_category, "
+			sql << "ppt.name as score_political_party, pp.color as score_color, "
 			sql << "if(ps.value=0, null, ps.value) as score_value, "
 			sql << "if(ps.value=0, null, ps.value-4) as score_value_centered, "
 			sql << "if(ps.value=0, null, it.name ) as score_value_explaination "
@@ -87,6 +89,7 @@ class Platform < ActiveRecord::Base
 			sql << "platforms as p "
 			sql << "inner join platform_scores as ps on ps.platform_id = p.id "
 			sql << "inner join economic_category_translations as ect on ect.economic_category_id = p.economic_category_id "
+			sql << "inner join political_parties as pp on pp.id = p.political_party_id "
 			sql << "inner join political_party_translations as ppt on ppt.political_party_id = p.political_party_id "
 			sql << "inner join indicator_category_translations as ict on ict.indicator_category_id = ps.indicator_category_id "
 			sql << "inner join indicator_translations as it on it.indicator_id = ps.indicator_id "
