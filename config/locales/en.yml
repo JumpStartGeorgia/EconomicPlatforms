@@ -39,6 +39,7 @@ en:
       policy_brief: Policy Brief
       date: Date
       files: Supporting Files
+      color: Color
     msgs:
       does_not_exist: You tried to access a page that does not exist.
       not_authorized: You are not authorized to view that page.

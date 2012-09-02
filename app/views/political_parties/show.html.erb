@@ -5,6 +5,11 @@
   <%= @political_party.name %>
 </p>
 
+<p>
+  <strong><%= t('app.common.color') %>:</strong>
+  <span style="background-color: <%= "#{@political_party.color}" %>;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+</p>
+
 <div class="form-actions">
   <%= link_to t('app.buttons.list'),
               political_parties_path, :class => 'btn'  %>

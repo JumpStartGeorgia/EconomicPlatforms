@@ -3,7 +3,9 @@ class PoliticalParty < ActiveRecord::Base
   translates :name, :permalink
   has_many :political_party_translations, :dependent => :destroy
   accepts_nested_attributes_for :political_party_translations
-  attr_accessible :id, :political_party_translations_attributes
+  attr_accessible :id, :color, :political_party_translations_attributes
+
+  validates :color, :presence => true
 
   has_many :statements
   has_many :policy_briefs

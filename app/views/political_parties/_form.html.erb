@@ -13,6 +13,10 @@
 	  <% end %>
   <% end %>
 
+	<%= f.inputs do %>
+		<%= f.input :color, :input_html => {:size => 10} %>
+	<% end %>
+
 	<div class="form-actions">
 	  <%= f.submit nil, :class => 'btn btn-success' %>
 	  <%= f.submit nil, :class => 'btn btn-warning', :type => :reset, :value => t('app.buttons.reset'), :name => :reset %>

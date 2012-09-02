@@ -3,22 +3,22 @@
 # Political Parties **************************************************************************
 PoliticalParty.destroy_all
 
-pp = PoliticalParty.create(:id => 1)
+pp = PoliticalParty.create(:id => 1, :color => "#E99334")
 pp.political_party_translations.create(:name=>"ერთიანი ეროვნული მოძრაობა", :locale=>"ka")
 pp.political_party_translations.create(:name=>"United National Movement", :locale=>"en")
-pp = PoliticalParty.create(:id => 2)
+pp = PoliticalParty.create(:id => 2, :color => "#c83639")
 pp.political_party_translations.create(:name=>"კოალიცია - ქართული ოცნება", :locale=>"ka")
 pp.political_party_translations.create(:name=>"Coalition - Georgian Dream", :locale=>"en")
-pp = PoliticalParty.create(:id => 3)
+pp = PoliticalParty.create(:id => 3, :color => "#A29B88")
 pp.political_party_translations.create(:name=>"ქრისტიან დემოკრატიული მოძრაობა", :locale=>"ka")
 pp.political_party_translations.create(:name=>"Christian Democratic Movement", :locale=>"en")
-pp = PoliticalParty.create(:id => 4)
+pp = PoliticalParty.create(:id => 4, :color => "#8AB2C1")
 pp.political_party_translations.create(:name=>"ეროვნულ დემოკრატიული პარტია", :locale=>"ka")
 pp.political_party_translations.create(:name=>"National Democratic Party", :locale=>"en")
-pp = PoliticalParty.create(:id => 5)
+pp = PoliticalParty.create(:id => 5, :color => "#4a7a8b")
 pp.political_party_translations.create(:name=>"ახალი მემარჯვენეების პარტია", :locale=>"ka")
 pp.political_party_translations.create(:name=>"New Rights Party", :locale=>"en")
-pp = PoliticalParty.create(:id => 6)
+pp = PoliticalParty.create(:id => 6, :color => "#985271")
 pp.political_party_translations.create(:name=>"ლეიბორისტული პარტია", :locale=>"ka")
 pp.political_party_translations.create(:name=>"Labor Party", :locale=>"en")
 
