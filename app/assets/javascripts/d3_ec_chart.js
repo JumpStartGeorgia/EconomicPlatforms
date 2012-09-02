@@ -1,7 +1,26 @@
 if (gon.economic_chart_data) {
   for (var i=0; i<gon.economic_chart_data.length; i++){
     build_economic_indicator_chart(gon.economic_chart_data[i]["div_id"], gon.economic_chart_data[i]["data"]);
-  }
+  }  
+
+  // hide legend by default
+	$('div#legend_content').hide();
+	$('#legend').click(function () {
+    $('div#legend_content').slideToggle(200);	   	      
+   });
+/*
+  // show political parties by default
+	$('div#political_party_scales_content').show();
+	$('#political_party_scales').click(function () {
+    $('div#political_party_scales_content').slideToggle(200);	   	      
+   });
+
+  // make the indicator scales hidden
+	$('div#indicator_scales_content').hide();
+	$('#indicator_scales').click(function () {
+    $('div#indicator_scales_content').slideToggle(200);	   	      
+   });
+*/
 }
 
 function build_economic_indicator_chart(div_id, data){

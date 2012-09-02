@@ -5,26 +5,76 @@
     <%= t('.no_values')%>
   </p>
 <% else %>
-  <% if @political_parties_nav %>
+  <div id="legend">
+    <h3>Legend</h3>
+    <div id="legend_content" class="row-fluid">
+      <div id="political_party_scales" class="span4">
+        <% if @political_parties_nav && !@political_parties_nav.empty? %>
+          <h3><%= t('app.common.political_parties')%></h3>
+          <div id="political_party_scales_scales_content">
+            <ul>
+              <% @political_parties_nav.each_with_index do |party,i| %>
+                <li>
+                  <span style="background-color: <%= "#{party.color}" %>;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                  <%= party.name %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+      </div>
+      <div id="indicator_scales" class="span8">
+        <% if @indicators && !@indicators.empty? %>
+          <h3><%= t('app.common.indicator_scales')%></h3>
+          <div id="indicator_scales_content">
+            <ol class="standard">
+            <% @indicators.each do |indicator| %>
+              <li value="<%= indicator.value-4 %>"><%= indicator.name %></li>
+            <% end %>
+            </ol>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<%
+=begin%>
+  <% if @political_parties_nav && !@political_parties_nav.empty? %>
     <div id="political_party_scales">
       <h3><%= t('app.common.political_parties')%></h3>
-      <% @political_parties_nav.each_with_index do |party,i| %>
-        <% if i%3 == 0 %>
-          <div class="row-fluid">
-        <% end %>
+      <div id="political_party_scales_content">
+        <% @political_parties_nav.each_with_index do |party,i| %>
+          <% if i%3 == 0 %>
+            <div class="row-fluid">
+          <% end %>
 
-          <div class="span4">
-            <span style="background-color: <%= "#{party.color}" %>;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <%= party.name %>
-          </div>
+            <div class="span4">
+              <span style="background-color: <%= "#{party.color}" %>;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              <%= party.name %>
+            </div>
 
-        <% if i%3 == 2 || i==@political_parties_nav.length-1%>
-          </div>
+          <% if i%3 == 2 || i==@political_parties_nav.length-1%>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
   <% end %>
-
+  
+  <% if @indicators && !@indicators.empty? %>
+    <div id="indicator_scales">
+      <h3><%= t('app.common.indicator_scales')%></h3>
+      <div id="indicator_scales_content">
+        <ol class="standard">
+        <% @indicators.each do |indicator| %>
+          <li value="<%= indicator.value-4 %>"><%= indicator.name %></li>
+        <% end %>
+        </ol>
+      </div>
+    </div>
+  <% end %>
+<%
+=end%>
   <% @values.each_with_index do |value, i| %>
     <% if i%3 == 0 %>
       <div class="row">

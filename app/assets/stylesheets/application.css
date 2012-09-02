@@ -95,7 +95,7 @@ hr {
 
 ul.standard, ol.standard, ul.standard ul, ol.standard ol,
 ul.standard ol, ol.standard ul {
-	margin-left: 1em;
+	margin-left: 2em;
 }
 
 ul.standard li {
@@ -199,7 +199,8 @@ div.admin_panel ul li {
 }
 
 /* home page styles */
-#political_party_scales {
+#legend/*, #political_party_scales, #indicator_scales*/ {
+  cursor: pointer;
   margin-bottom: 1em;
   background-color: whiteSmoke;
   padding: 9px;
@@ -218,6 +219,20 @@ div.admin_panel ul li {
 #political_party_scales div.row {
   margin-bottom: 0.3em;
 }
+/*
+#indicator_scales_content{
+  display: none;
+}
+*/
+#legend_content{
+  margin: 0.5em 0;
+  display: none;
+}
+/*
+#indicator_scales ol li:before{ content:"-"; position:relative; left:-5px;}
+#indicator_scales ol li{ text-indent:-5px; }
+*/
+
 
 /* styles for printing */
 @media print {

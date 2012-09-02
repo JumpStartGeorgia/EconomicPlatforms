@@ -11,4 +11,10 @@ class Indicator < ActiveRecord::Base
 
 	default_scope lambda {with_translations(I18n.locale).order("indicators.indicator_category_id, indicators.value, indicator_translations.name")}
 
+  def self.by_indicator_category(indicator_category_id)
+    if indicator_category_id
+      where(:indicator_category_id => indicator_category_id)
+    end
+  end
+
 end
