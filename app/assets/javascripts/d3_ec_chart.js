@@ -60,8 +60,9 @@ function build_economic_indicator_chart(div_id, data){
       .attr("y2", height);
 
   $('svg rect').tipsy({ 
-      gravity: 'n',
+      gravity: $.fn.tipsy.autoBounds(60, 'nw'),
       html: true,
+      opacity: 1,
       offset: bar_height,
       title: function() { 
         var d = this.__data__;
