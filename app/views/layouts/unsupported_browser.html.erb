@@ -39,40 +39,58 @@
       </div>
     </div>
 
-    <div class="container">
-      <div class="content">
-        <div class="row">
-         <div class="span12">
+		<div id="wrapper">
+		  <div class="container">
+		    <div class="content">
+		      <div class="row">
+		       <div class="span12">
 
-            <div class="page-header">
-              <h1>
-								<%= t('.title') %>
-							</h1>
-						</div>
+		          <div class="page-header">
+		            <h1>
+									<%= t('.title') %>
+								</h1>
+							</div>
 
-							<p><%= t('.p1') %></p>
-							<p><%= t('.p2') %></p>
-							<ul class="standard">
-								<li>
-									<a href="http://www.google.com/chrome/"><%= t('.chrome') %></a>
-								</li>
-								<li>
-									<a href="http://www.mozilla.org/firefox/new/"><%= t('.firefox') %></a>
-								</li>
-								<li>
-									<a href="http://windows.microsoft.com/en-US/internet-explorer/downloads/ie/"><%= t('.ie') %></a>
-								</li>
-								<li>
-									<a href="http://www.opera.com/download/"><%= t('.opera') %></a>
-								</li>
-								<li>
-									<a href="http://support.apple.com/downloads/#internet"><%= t('.safari') %></a>
-								</li>
-							</ul>
-          </div>
-        </div><!--/row-->
-      </div><!--/content-->
-    </div> <!-- /container -->
+								<p><%= t('.p1') %></p>
+								<p><%= t('.p2') %></p>
+								<ul class="standard">
+									<li>
+										<a href="http://www.google.com/chrome/"><%= t('.chrome') %></a>
+									</li>
+									<li>
+										<a href="http://www.mozilla.org/firefox/new/"><%= t('.firefox') %></a>
+									</li>
+									<li>
+										<a href="http://windows.microsoft.com/en-US/internet-explorer/downloads/ie/"><%= t('.ie') %></a>
+									</li>
+									<li>
+										<a href="http://www.opera.com/download/"><%= t('.opera') %></a>
+									</li>
+									<li>
+										<a href="http://support.apple.com/downloads/#internet"><%= t('.safari') %></a>
+									</li>
+								</ul>
+		        </div>
+		      </div><!--/row-->
+		    </div><!--/content-->
+		  </div> <!-- /container -->
+      <div class="push"><!--//--></div>
+    </div><!--/wrapper-->
+
+    <footer class="clear">
+		  <div class="footer-nav">
+			</div>
+       <div class="js-logo">
+				<ul>
+					<li id="left">
+						<%= t(".js_link_text") %>:
+					</li>
+					<li id="right">
+						<%= link_to(image_tag("jumpstart-logo.png"), "http://www.jumpstart.ge", :target => "_blank") %>
+					</li>
+				</ul>
+	    </div><!--/row-->
+    </footer>
 
 
 	<% if Rails.env.production? %>

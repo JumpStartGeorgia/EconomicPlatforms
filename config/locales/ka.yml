@@ -53,6 +53,8 @@ ka:
     application:
       admin: ადმინისტრატო
       sign_out: გასვლა
+      js_link_title: "ეწვიეთ ჯამპსტარტ ჯორჯიას ვებ-გვერდს"
+      js_link_text: აგებულია
     unsupported_browser:
       title: არასათანადო ბრაუზერი
       p1: სამწუხაროდ თქვენი ინტერნეტ ბრაუზერის მოხმარების ვადა გასულია და ვერ მოხდება ვებ-გვერდთან სრულად დაკავშირება.
@@ -64,6 +66,8 @@ ka:
       Safari: Safari
       admin: ადმინისტრატო
       sign_out: გასვლა
+      js_link_title: "ეწვიეთ ჯამპსტარტ ჯორჯიას ვებ-გვერდს"
+      js_link_text: აგებულია
   root:
     index:
       title: Political Party Ideologies
@@ -194,7 +198,7 @@ ka:
       title: "%{economic_category}"
       statement_header: "%{economic_category} განცხადებები"
       no_statements: "ამ მომენტისათვის განცხადებები არ ფიქსირდება %{economic_category} -ში."
-      view_statement: View Full Statement
+      view_statement: განცადების ნახვა სრულად
     well:
       pdf_header: Download
       pdf_link: PDF
