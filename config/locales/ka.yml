@@ -53,6 +53,17 @@ ka:
     application:
       admin: ადმინისტრატო
       sign_out: გასვლა
+    unsupported_browser:
+      title: არასათანადო ბრაუზერი
+      p1: სამწუხაროდ თქვენი ინტერნეტ ბრაუზერის მოხმარების ვადა გასულია და ვერ მოხდება ვებ-გვერდთან სრულად დაკავშირება.
+      p2: არსებობს რამდენიმე უფასო ბრაუზერი რომელის გადმოწერის შემდეგ შეძლებთ ვებ-გვერდით სარგებლობას.
+      chrome: Chrome
+      firefox: Firefox
+      ie: Internet Explorer (მხოლოდ Windows-ზე)
+      opera: Opera
+      Safari: Safari
+      admin: ადმინისტრატო
+      sign_out: გასვლა
   root:
     index:
       title: Political Party Ideologies

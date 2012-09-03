@@ -26,6 +26,7 @@ gem "capistrano", "~> 2.12.0" # to deploy to server
 gem "exception_notification", "2.5.2" # send an email when exception occurs
 gem "paper_trail", "~> 2.6.3" # keep audit log of all transactions
 gem "pdfkit", "~> 0.5.2" # generate pdfs
+gem "useragent", :git => "https://github.com/jilion/useragent.git" # browser detection
 
 # Gems used only for assets and not required
 # in production environments by default.

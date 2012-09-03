@@ -13,6 +13,12 @@ GIT
   specs:
     nested_form (0.1.1)
 
+GIT
+  remote: https://github.com/jilion/useragent.git
+  revision: 835b8b9552ad7d080d3bafcd82bef78b3ab6e625
+  specs:
+    useragent (0.2.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -246,4 +252,5 @@ DEPENDENCIES
   twitter-bootstrap-rails (~> 2.1.0)
   uglifier (>= 1.0.3)
   unicorn (= 4.2.1)
+  useragent!
   will_paginate (= 3.0.3)
