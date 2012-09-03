@@ -15,7 +15,7 @@ gem "nested_form", "~> 0.1.1", :git => "https://github.com/davidray/nested_form.
 ## - checkout the readme to learn how the globalize3 gem was hacked
 ##############################
 gem "globalize3", "0.2.0" # internationalization
-gem "psych", "1.2.2" # yaml parser - default psych in rails has issues
+gem "psych", "1.3.4" # yaml parser - default psych in rails has issues
 gem "will_paginate", "3.0.3" # add paging to long lists
 gem "gon", "2.2.2" # push data into js
 gem "dynamic_form", "1.1.4" # to see form error messages
