@@ -12,7 +12,7 @@ class PolicyBrief < ActiveRecord::Base
 	validates :economic_category_id, :uniqueness => {:scope => :political_party_id,
 			:message => I18n.t('app.msgs.policy_already_exists')}
 
-  scope :public, where("is_public = '1'")
+  scope :published, where("is_public = '1'")
 
 	def self.by_party_category(political_party_id, economic_category_id)
 		if political_party_id && economic_category_id

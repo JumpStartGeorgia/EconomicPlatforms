@@ -5,10 +5,10 @@ class PartyController < ApplicationController
 		if !@political_party
 			redirect_to root_path, notice: t('app.msgs.does_not_exist')
 		else
-	    @statements = Statement.by_political_party(@political_party.id).public.paginate(:page => params[:page])
+	    @statements = Statement.by_political_party(@political_party.id).published.paginate(:page => params[:page])
 
-			@platforms = Platform.by_political_party(@political_party.id).public
-			@policy_briefs = PolicyBrief.by_political_party(@political_party.id).public
+			@platforms = Platform.by_political_party(@political_party.id).published
+			@policy_briefs = PolicyBrief.by_political_party(@political_party.id).published
 
 		  respond_to do |format|
 		    format.html # index.html.erb
@@ -25,13 +25,13 @@ class PartyController < ApplicationController
 		elsif !@economic_category
 			redirect_to party_path(params[:political_party_id]), notice: t('app.msgs.does_not_exist')
 		else
-			@platform = Platform.by_party_category(@political_party.id, @economic_category.id).public
+			@platform = Platform.published.by_party_category(@political_party.id, @economic_category.id)
 
 			if !@platform
 				redirect_to party_path(params[:political_party_id]), notice: t('app.msgs.does_not_exist')
 			else
-				@platforms = Platform.by_political_party(@political_party.id).public
-				@policy_briefs = PolicyBrief.by_political_party(@political_party.id).public
+				@platforms = Platform.published.by_political_party(@political_party.id)
+				@policy_briefs = PolicyBrief.published.by_political_party(@political_party.id)
 
 				respond_to do |format|
 				  format.html # index.html.erb
@@ -58,13 +58,13 @@ class PartyController < ApplicationController
 		elsif !@economic_category
 			redirect_to party_path(params[:political_party_id]), notice: t('app.msgs.does_not_exist')
 		else
-			@policy_brief = PolicyBrief.by_party_category(@political_party.id, @economic_category.id).public
+			@policy_brief = PolicyBrief.published.by_party_category(@political_party.id, @economic_category.id)
 
 			if !@policy_brief
 				redirect_to party_path(params[:political_party_id]), notice: t('app.msgs.does_not_exist')
 			else
-				@platforms = Platform.by_political_party(@political_party.id).public
-				@policy_briefs = PolicyBrief.by_political_party(@political_party.id).public
+				@platforms = Platform.published.by_political_party(@political_party.id)
+				@policy_briefs = PolicyBrief.published.by_political_party(@political_party.id)
 
 				respond_to do |format|
 				  format.html # index.html.erb
@@ -88,14 +88,14 @@ class PartyController < ApplicationController
 		if !@political_party
 			redirect_to root_path, notice: t('app.msgs.does_not_exist')
 		else
-		  @statements = Statement.by_political_party(@political_party.id).where(:id => params[:id]).public
+		  @statements = Statement.published.by_political_party(@political_party.id).where(:id => params[:id])
 			@statement = @statements.first if @statements && !@statements.empty?
 
 			if !@statement
 				redirect_to party_path(params[:political_party_id]), notice: t('app.msgs.does_not_exist')
 			else
-				@platforms = Platform.by_political_party(@political_party.id).public
-				@policy_briefs = PolicyBrief.by_political_party(@political_party.id).public
+				@platforms = Platform.published.by_political_party(@political_party.id)
+				@policy_briefs = PolicyBrief.published.by_political_party(@political_party.id)
 
 				respond_to do |format|
 				  format.html # index.html.erb

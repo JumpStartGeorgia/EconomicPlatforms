@@ -13,7 +13,7 @@ class Statement < ActiveRecord::Base
   validates :date_made, :political_party_id, :economic_category_id, :presence => true
 
 	default_scope lambda {with_translations(I18n.locale).order("statements.date_made desc")}
-  scope :public, where("is_public = '1'")
+  scope :published, where("is_public = '1'")
 
   before_save :translate_to_english
 

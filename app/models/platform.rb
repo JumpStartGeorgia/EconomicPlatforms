@@ -16,7 +16,7 @@ class Platform < ActiveRecord::Base
 	validates :economic_category_id, :uniqueness => {:scope => :political_party_id,
 			:message => I18n.t('app.msgs.platform_already_exists')}
 
-  scope :public, where("is_public = '1'")
+  scope :published, where("is_public = '1'")
 
 	attr_accessible :score_economic_category, :score_political_party, :score_indicator_category, :score_value,
 		:score_value_centered, :score_value_explaination
