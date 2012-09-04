@@ -46,7 +46,7 @@ EconomicPlatforms::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  # config.assets.precompile += %w( search.js )
+  #config.assets.precompile += ['imperavi-rails/imperavi/redactor.css', 'imperavi-rails/imperavi.js']
 
   # Disable delivery errors, bad email addresses will be ignored
   config.action_mailer.raise_delivery_errors = false
@@ -67,8 +67,8 @@ EconomicPlatforms::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  config.assets.precompile += %w( ie6.css ie7.css ) 
-  
+  config.assets.precompile += %w( ie6.css ie7.css )
+
 	# options for exception notification gem
 	config.middleware.use ExceptionNotifier,
 		:email_prefix => "[Econmic Platforms Site App Error (#{Rails.env})] ",
