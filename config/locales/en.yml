@@ -106,6 +106,7 @@ en:
       value: Value
       page: Page
       about: About
+      home: Home
     msgs:
       does_not_exist: You tried to access a page that does not exist.
       not_authorized: You are not authorized to view that page.
