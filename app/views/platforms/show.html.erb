@@ -1,5 +1,21 @@
 <% title t('.title') %>
 
+<% if user_signed_in? && can?(:manage, Platform) %>
+<div class="form-actions">
+  <%= link_to t('app.buttons.list'),
+              platforms_path, :class => 'btn'  %>
+  <%= link_to t('app.buttons.edit'),
+              edit_platform_path(@platform), :class => 'btn' %>
+  <%= link_to t('app.buttons.delete'),
+              platform_path(@platform),
+              :method => 'delete',
+              :confirm => t('app.buttons.confirm'),
+              :class => 'btn btn-danger' %>
+  <%= link_to t('app.buttons.admin'), admin_path,
+  :class => 'btn' %>
+</div>
+<% end %>
+
   <p><strong><%= t("app.common.political_party") %>:</strong>
   <%= @platform.political_party.name %></p>
 
@@ -23,19 +39,3 @@
 		<% end %>
 		</ul>
 	<% end %>
-
-<% if user_signed_in? && can?(:manage, PolicyBrief) %>
-<div class="form-actions">
-  <%= link_to t('app.buttons.list'),
-              platforms_path, :class => 'btn'  %>
-  <%= link_to t('app.buttons.edit'),
-              edit_platform_path(@platform), :class => 'btn' %>
-  <%= link_to t('app.buttons.delete'),
-              platform_path(@platform),
-              :method => 'delete',
-              :confirm => t('app.buttons.confirm'),
-              :class => 'btn btn-danger' %>
-  <%= link_to t('app.buttons.admin'), admin_path,
-  :class => 'btn' %>
-</div>
-<% end %>

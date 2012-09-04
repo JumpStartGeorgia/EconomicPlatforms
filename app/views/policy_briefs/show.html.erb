@@ -1,15 +1,5 @@
 <% title t('.title') %>
 
-
-  <p><strong><%= t("app.common.political_party") %>:</strong>
-  <%= @policy_brief.political_party.name %></p>
-
-  <p><strong><%= t("app.common.economic_category") %>:</strong>
-  <%= @policy_brief.economic_category.name %></p>
-
-  <p><strong><%= t("app.common.analysis") %>:</strong></p>
-<%= simple_format @policy_brief.analysis, {}, :sanitize => false %>
-
 <% if user_signed_in? && can?(:manage, PolicyBrief) %>
 <div class="form-actions">
   <%= link_to t('app.buttons.list'),
@@ -25,3 +15,12 @@
   :class => 'btn' %>
 </div>
 <% end %>
+
+  <p><strong><%= t("app.common.political_party") %>:</strong>
+  <%= @policy_brief.political_party.name %></p>
+
+  <p><strong><%= t("app.common.economic_category") %>:</strong>
+  <%= @policy_brief.economic_category.name %></p>
+
+  <p><strong><%= t("app.common.analysis") %>:</strong></p>
+<%= simple_format @policy_brief.analysis, {}, :sanitize => false %>
