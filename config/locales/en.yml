@@ -10,6 +10,7 @@ en:
       platform: Platform
       policy_brief: Policy Brief
       political_party: Political Party
+      page: Page
     attributes:
       statement:
         date_made: Date Made
@@ -49,6 +50,11 @@ en:
         color: Color
       political_party_translation:
         name: Name
+      page:
+        name: Name
+      page_translation:
+        title: Title
+        description: Description
   app:
     language:
       en: English
@@ -71,6 +77,8 @@ en:
     common:
       app_name: Georgia Economic Platform
       name: Name
+      title: Title
+      description: Description
       date_made: Date Made
       political_party: Political Party
       political_parties: Political Parties
@@ -96,6 +104,8 @@ en:
       analysis: Analysis
       actions: Actions
       value: Value
+      page: Page
+      about: About
     msgs:
       does_not_exist: You tried to access a page that does not exist.
       not_authorized: You are not authorized to view that page.
@@ -127,6 +137,8 @@ en:
     index:
       title: Political Party Ideologies
       no_values: No political party information has been entered into the application at this time.
+    about:
+      title: About
   economic_categories:
     edit:
       title: Editing Economic Category
@@ -203,6 +215,7 @@ en:
       indicators: Indicators
       policy_briefs: Policy Briefs
       platforms: Platforms
+      pages: Pages
     users:
       edit:
         title: Editing User
@@ -270,3 +283,13 @@ en:
     policy_brief:
       title: "%{economic_category}"
       secondary_title: "Policy Brief - %{political_party}"
+  pages:
+    edit:
+      title: Editing Pages
+    index:
+      title: Pages
+      no_pages: "At this time, no pages have been recorded"
+    new:
+      title: New Page
+    show:
+      title: Page Details

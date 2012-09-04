@@ -1,0 +1,9 @@
+<div class="nested_form_item">
+<% if !f.object.nil? && !f.object.file_file_name.nil? %>
+	<%= link_to f.object.file_file_name, f.object.file.url, :target => "_blank", :class => "btn btn-mini" %>
+<% else %>
+	<%= f.input :file, :as => :file, :label => false %>
+<% end %>
+	<%= f.hidden_field :_destroy %>
+	<%= f.link_to_remove t(".remove_link"), :class => "btn btn-mini btn-danger", :confirm => t("app.buttons.confirm") %>
+</div>

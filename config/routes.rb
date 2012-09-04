@@ -1,4 +1,5 @@
 EconomicPlatforms::Application.routes.draw do
+
 	#--------------------------------
 	# all resources should be within the scope block below
 	#--------------------------------
@@ -13,6 +14,7 @@ EconomicPlatforms::Application.routes.draw do
     resources :indicator_categories
     resources :indicators
     resources :economic_categories
+	  resources :pages
 	  resources :platforms
 		resources :policy_brief_scores
 		resources :policy_briefs
@@ -35,6 +37,7 @@ EconomicPlatforms::Application.routes.draw do
 
 
 		match '/admin', :to => 'admin#index', :as => :admin, :via => :get
+		match '/about', :to => 'root#about', :as => :about, :via => :get
 
 		root :to => 'root#index'
 	  match "*path", :to => redirect("/#{I18n.default_locale}") # handles /en/fake/path/whatever

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120902060733) do
+ActiveRecord::Schema.define(:version => 20120904085818) do
 
   create_table "economic_categories", :force => true do |t|
     t.datetime "created_at"
@@ -69,6 +69,38 @@ ActiveRecord::Schema.define(:version => 20120902060733) do
   end
 
   add_index "indicators", ["indicator_category_id", "value"], :name => "index_indicators_on_indicator_category_id_and_value"
+
+  create_table "page_files", :force => true do |t|
+    t.integer  "page_id"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "page_files", ["page_id"], :name => "index_page_files_on_page_id"
+
+  create_table "page_translations", :force => true do |t|
+    t.integer  "page_id"
+    t.string   "locale"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "page_translations", ["locale"], :name => "index_page_translations_on_locale"
+  add_index "page_translations", ["page_id"], :name => "index_page_translations_on_page_id"
+
+  create_table "pages", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pages", ["name"], :name => "index_pages_on_name"
 
   create_table "platform_files", :force => true do |t|
     t.integer  "platform_id"

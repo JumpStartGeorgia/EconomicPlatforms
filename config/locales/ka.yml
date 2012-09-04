@@ -10,6 +10,7 @@ ka:
       platform: პარტიის პლატფორმა
       policy_brief: რეზიუმე პოლიტიკაზე
       political_party: პოლიტიკური პარტია
+      page: Page
     attributes:
       statement:
         date_made: შექმნის თარიღი
@@ -49,6 +50,11 @@ ka:
         color: ფერი
       political_party_translation:
         name: სახელი
+      page:
+        name: სახელი
+      page_translation:
+        title: Title
+        description: Description
   app:
     language:
       en: English
@@ -71,6 +77,8 @@ ka:
     common:
       app_name: საქართველოს ეკონომიკური პლატფორმა
       name: სახელი
+      title: Title
+      description: Description
       date_made: შექმნის თარიღი
       political_party: პოლიტიკური პარტია
       political_parties: პოლიტიკური პარტიები
@@ -96,6 +104,8 @@ ka:
       analysis: Analysis
       actions: Actions
       value: Value
+      page: Page
+      about: შესახებ
     msgs:
       does_not_exist: თქვენ ცდილობთ იხილოთ გვერდი, რომელიც არ არსებობს.
       not_authorized: თქვენ არ გაქვთ უფლება იხილოთ ეს გვერდი.
@@ -127,6 +137,8 @@ ka:
     index:
       title: პოლიტიკური პარტიების იდეოლოგიები
       no_values: აპლიკაციაში პოლიტიკურ პარტიაზე ინფორმაცია ამ დროისთვის შეყვანილი არ არის.
+    about:
+      title: შესახებ
   economic_categories:
     edit:
       title: ცვლილებების შეტანა ეკონომიკურ კატეგორიაში
@@ -203,6 +215,7 @@ ka:
       indicators: ინიდიკატორები
       policy_briefs: რეზიუმე პოლიტიკაზე
       platforms: პლატფორმები
+      pages: Pages
     users:
       edit:
         title: ცვლილებების შეტანა მომხმარებლის გვერდზე
@@ -270,3 +283,17 @@ ka:
     policy_brief:
       title: "%{economic_category}"
       secondary_title: "რეზიუმე პოლიტიკაზე - %{political_party}"
+  pages:
+    edit:
+      title: Editing Pages
+    index:
+      title: Pages
+      no_pages: "At this time, no pages have been recorded"
+    new:
+      title: New Page
+    show:
+      title: Page Details
+    page_file_fields:
+      remove_link: ფაილის წაშლა
+    form:
+      add_file: ფაილის დამატება

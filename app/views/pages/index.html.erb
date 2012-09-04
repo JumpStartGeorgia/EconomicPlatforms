@@ -1,31 +1,31 @@
 <% title t('.title') %>
 
-<% if @platforms.nil? || @platforms.empty? %>
+<% if @pages.nil? || @pages.empty? %>
 	<p>
-		<%= t('.no_platforms') %>
+		<%= t('.no_pages') %>
 	</p>
 <% else %>
 
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= t("app.common.date") %></th>
-      <th><%= t("app.common.political_party") %></th>
-      <th><%= t("app.common.economic_category") %></th>
+      <th><%= t("app.common.name") %></th>
+      <th><%= t("app.common.title") %></th>
+      <th><%= t("app.common.description") %></th>
       <th><%= t('app.common.actions') %></th>
     </tr>
   </thead>
   <tbody>
-    <% @platforms.each do |platform| %>
+    <% @pages.each do |page| %>
       <tr>
-        <td><%=link_to(l(platform.created_at), platform_path(platform)) %></td>
-        <td><%= platform.political_party.name %></td>
-        <td><%= platform.economic_category.name %></td>
+        <td><%= link_to page.name, page_path(page) %></td>
+        <td><%= page.title %></td>
+        <td><%= page.description %></td>
         <td>
           <%= link_to t('app.buttons.edit'),
-                      edit_platform_path(platform), :class => 'btn btn-mini' %>
+                      edit_page_path(page), :class => 'btn btn-mini' %>
           <%= link_to t('app.buttons.delete'),
-                      platform_path(platform),
+                      page_path(page),
                       :method => :delete,
                       :confirm => t('app.buttons.confirm'),
                       :class => 'btn btn-mini btn-danger' %>
@@ -35,10 +35,9 @@
   </tbody>
 </table>
 <% end %>
-
 <div class="form-actions">
 	<%= link_to t('app.buttons.new'),
-		          new_platform_path,
+		          new_page_path,
 		          :class => 'btn btn-primary' %>
 	<%= link_to t('app.buttons.admin'), admin_path,
 	:class => 'btn' %>

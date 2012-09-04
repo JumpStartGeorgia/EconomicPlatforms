@@ -1,0 +1,24 @@
+<% title t('.title') %>
+
+  <p><strong><%= t("app.common.name") %>:</strong>
+  <%= @page.name %></p>
+
+  <p><strong><%= t("app.common.title") %>:</strong>
+  <%= @page.title %></p>
+
+  <p><strong><%= t("app.common.descriptiopn") %>:</strong></p>
+	<%= simple_format_no_tags @page.description, {}, :sanitize => false %>
+
+<div class="form-actions">
+  <%= link_to t('app.buttons.list'),
+              pages_path, :class => 'btn'  %>
+  <%= link_to t('app.buttons.edit'),
+              edit_page_path(@page), :class => 'btn' %>
+  <%= link_to t('app.buttons.delete'),
+              page_path(@page),
+              :method => 'delete',
+              :confirm => t('app.buttons.confirm'),
+              :class => 'btn btn-danger' %>
+  <%= link_to t('app.buttons.admin'), admin_path,
+  :class => 'btn' %>
+</div>
