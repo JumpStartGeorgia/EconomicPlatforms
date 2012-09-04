@@ -30,13 +30,13 @@
 			<p>
 				<strong><%= "#{t('app.common.statement')}:"%></strong>
 			</p>
-			<%= simple_format @statement.statement_made, {}, :sanitize => false %>
+			<%= simple_format_no_tags @statement.statement_made, {}, :sanitize => false %>
 
 			<% if @statement.analysis && !@statement.analysis.empty? %>
 				<p>
 					<strong><%= t('app.common.analysis') %>:</strong>
 				</p>
-				<%= simple_format @statement.analysis, {}, :sanitize => false %>
+				<%= simple_format_no_tags @statement.analysis, {}, :sanitize => false %>
 			<% end %>
 
 			<p>

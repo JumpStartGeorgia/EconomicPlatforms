@@ -8,7 +8,7 @@
   <%= @policy_brief.economic_category.name %></p>
 
   <p><strong><%= t("app.common.analysis") %>:</strong></p>
-<%= simple_format @policy_brief.analysis, {}, :sanitize => false %>
+<%= simple_format_no_tags @policy_brief.analysis, {}, :sanitize => false %>
 
 <% if user_signed_in? && can?(:manage, PolicyBrief) %>
 <div class="form-actions">

@@ -95,7 +95,7 @@ hr {
 
 ul.standard, ol.standard, ul.standard ul, ol.standard ol,
 ul.standard ol, ol.standard ul {
-	margin-left: 2em;
+	padding-left: 2em;
 }
 
 ul.standard li {

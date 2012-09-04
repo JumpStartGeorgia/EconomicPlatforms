@@ -39,7 +39,7 @@
 				</div>
 			</div>
 			<div>
-				<%= simple_format truncate(statement.statement_made, :length => 200, :separator => ' ') %>
+				<%= simple_format_no_tags truncate(statement.statement_made, :length => 200, :separator => ' ') %>
 			</div>
 			<div>
 				<%= link_to t('.view_statement'),

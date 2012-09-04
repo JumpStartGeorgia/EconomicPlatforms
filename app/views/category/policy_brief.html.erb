@@ -5,7 +5,7 @@
 	<div class="span9">
 		<h2><%= t('category.policy_brief.secondary_title', :political_party => @political_party.name) %></h2>
 
-		<%= simple_format @policy_brief.analysis, {}, :sanitize => false %>
+		<%= simple_format_no_tags @policy_brief.analysis, {}, :sanitize => false %>
 
 	</div>
 
