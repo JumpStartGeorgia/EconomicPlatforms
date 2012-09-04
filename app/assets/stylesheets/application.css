@@ -238,57 +238,64 @@ footer {
 	padding: 0 20px;
 }
 
-footer .footer-nav {
-   margin: 0;
-	font-size: 12px;
+footer div#left {
+	margin: 0 !important;
 	float: left;
-	width: 25%;
+	width: 30%;
+	margin-top: 20px;
 }
 footer a:hover {
 	background-color: #D4D4D4;
 }
-footer .footer-nav ul {
+
+footer #middle {
+   margin: 0;
+	font-size: 12px;
+	width: 38%;
+	text-align: center;
+	float: left;
+}
+footer #middle ul {
 	margin-top: 20px;
 }
 
-footer .footer-nav ul li {
+footer #middle ul li {
 	display: inline;
 	font-family: Arial;
 }
-footer .footer-nav ul li.spacer {
+footer #middle ul li.spacer {
   display: inline;
 }
-footer .footer-nav ul li a {
+footer #middle ul li a {
 	padding: 0 10px;
 	color: #454545;
 }
 
-
-footer .js-logo {
+footer div#right {
 	margin: 0 !important;
 	float: right;
-	width: 60%;
+	width: 30%;
 	text-align: right;
 }
 
-footer .js-logo ul {
+footer div#right ul {
 	margin-top: 13px !important;
 }
 
-footer .js-logo ul li {
+footer div#right ul li {
 	display: inline;
 	font-family: Arial;
 	color: #454545;
 	font-size: 10pt;
 }
 
-footer .js-logo ul li#left {
+footer div#right ul li#left {
 	text-align: right;
 }
-footer .js-logo ul li#right {
+footer div#right ul li#right {
 	text-align: left;
 }
-footer .js-logo ul li#right img {
+footer div#right ul li#right img {
 	vertical-align: middle;
 }
 
