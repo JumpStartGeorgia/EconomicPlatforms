@@ -79,6 +79,23 @@ class StatementsController < ApplicationController
 		    values[:value] = combined[1]
 			end
     end
+
+		# if english is empty, load georgian into it
+    en = params[:statement][:statement_translations_attributes].select{|k,v| v[:locale] == 'en'}
+		ka = params[:statement][:statement_translations_attributes].select{|k,v| v[:locale] == 'ka'}
+		if en[en.keys[0]][:locale] == 'en' && en[en.keys[0]][:source].empty?
+			en[en.keys[0]][:source] = ka[ka.keys[0]][:source] if ka && !ka[ka.keys[0]][:source].empty?
+		end
+		if en[en.keys[0]][:locale] == 'en' && en[en.keys[0]][:author].empty?
+			en[en.keys[0]][:author] = ka[ka.keys[0]][:author] if ka && !ka[ka.keys[0]][:author].empty?
+		end
+		if en[en.keys[0]][:locale] == 'en' && en[en.keys[0]][:statement_made].empty?
+			en[en.keys[0]][:statement_made] = ka[ka.keys[0]][:statement_made] if ka && !ka[ka.keys[0]][:statement_made].empty?
+		end
+		if en[en.keys[0]][:locale] == 'en' && en[en.keys[0]][:analysis].empty?
+			en[en.keys[0]][:analysis] = ka[ka.keys[0]][:analysis] if ka && !ka[ka.keys[0]][:analysis].empty?
+		end
+
     @statement = Statement.new(params[:statement])
 
     respond_to do |format|

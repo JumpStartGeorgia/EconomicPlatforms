@@ -53,6 +53,14 @@ class PolicyBriefsController < ApplicationController
   # POST /policy_briefs
   # POST /policy_briefs.json
   def create
+		# if english is empty, load georgian into it
+    en = params[:policy_brief][:policy_brief_translations_attributes].select{|k,v| v[:locale] == 'en'}
+		if en[en.keys[0]][:locale] == 'en' && en[en.keys[0]][:analysis].empty?
+			ka = params[:policy_brief][:policy_brief_translations_attributes].select{|k,v| v[:locale] == 'ka'}
+			en[en.keys[0]][:analysis] = ka[ka.keys[0]][:analysis] if ka && !ka[ka.keys[0]][:analysis].empty?
+		end
+
+
     @policy_brief = PolicyBrief.new(params[:policy_brief])
 
     respond_to do |format|

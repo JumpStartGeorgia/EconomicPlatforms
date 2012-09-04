@@ -68,6 +68,14 @@ class PlatformsController < ApplicationController
 		    values[:value] = combined[1]
 			end
     end
+
+		# if english is empty, load georgian into it
+    en = params[:platform][:platform_translations_attributes].select{|k,v| v[:locale] == 'en'}
+		if en[en.keys[0]][:locale] == 'en' && en[en.keys[0]][:description].empty?
+			ka = params[:platform][:platform_translations_attributes].select{|k,v| v[:locale] == 'ka'}
+			en[en.keys[0]][:description] = ka[ka.keys[0]][:description] if ka && !ka[ka.keys[0]][:description].empty?
+		end
+
     @platform = Platform.new(params[:platform])
 
     respond_to do |format|
