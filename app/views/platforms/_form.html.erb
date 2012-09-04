@@ -25,7 +25,6 @@
 		<p><%= f.link_to_add t(".add_file"), :platform_files, :class => "btn btn-mini btn-primary" %></p>
 	</div>
 
-
   <% order_scores(@platform.platform_scores).each do |score| %>
     <% if @indicator_categories && !@indicator_categories.empty? %>
   		<%= f.fields_for :platform_scores, score do |scores| %>
@@ -41,6 +40,11 @@
   		<% end %>
   	<% end %>
   <% end %>
+
+	<hr />
+	<%= f.inputs do %>
+		<%= f.input :is_public, :as => :radio %>
+	<% end %>
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>

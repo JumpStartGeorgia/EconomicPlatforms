@@ -20,6 +20,7 @@
       <th><%= t("app.common.date") %></th>
       <th><%= t("app.common.political_party") %></th>
       <th><%= t("app.common.economic_category") %></th>
+      <th><%= t("app.common.is_public") %></th>
       <th><%= t('app.common.actions') %></th>
     </tr>
   </thead>
@@ -29,6 +30,7 @@
         <td><%=link_to(l(platform.created_at, :format => :long), platform_path(platform)) %></td>
         <td><%= platform.political_party.name %></td>
         <td><%= platform.economic_category.name %></td>
+        <td><%= platform.is_public %></td>
         <td>
           <%= link_to t('app.buttons.edit'),
                       edit_platform_path(platform), :class => 'btn btn-mini' %>

@@ -40,6 +40,11 @@
   	<% end %>
   <% end %>
 
+	<hr />
+	<%= f.inputs do %>
+		<%= f.input :is_public, :as => :radio %>
+	<% end %>
+
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
 	  <%= f.submit nil, :class => 'btn btn-warning', :type => :reset, :value => t('app.buttons.reset'), :name => :reset %>

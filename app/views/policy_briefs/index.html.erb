@@ -21,6 +21,7 @@
       <th><%= t("app.common.political_party") %></th>
       <th><%= t("app.common.economic_category") %></th>
       <th><%= t('app.common.actions') %></th>
+      <th><%= t('app.common.is_public') %></th>
     </tr>
   </thead>
   <tbody>
@@ -29,6 +30,7 @@
         <td><%=link_to(l(policy_brief.created_at, :format => :long), policy_brief_path(policy_brief)) %></td>
         <td><%= policy_brief.political_party.name %></td>
         <td><%= policy_brief.economic_category.name %></td>
+        <td><%= policy_brief.is_public %></td>
         <td>
           <%= link_to t('app.buttons.edit'),
                       edit_policy_brief_path(policy_brief), :class => 'btn btn-mini' %>

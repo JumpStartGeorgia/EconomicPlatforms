@@ -24,3 +24,6 @@
 
   <p><strong><%= t("app.common.analysis") %>:</strong></p>
 <%= simple_format @policy_brief.analysis, {}, :sanitize => false %>
+
+  <p><strong><%= t("app.common.is_public") %>:</strong>
+  <%= @policy_brief.is_public %></p>

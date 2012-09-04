@@ -25,6 +25,9 @@
   <p><strong><%= t("app.common.platform") %>:</strong></p>
 	<%= simple_format_no_tags @platform.description, {}, :sanitize => false %>
 
+  <p><strong><%= t("app.common.is_public") %>:</strong>
+  <%= @platform.is_public %></p>
+
 	<p>
 		<strong><%= t('app.common.scores') %>:</strong>
 	</p>

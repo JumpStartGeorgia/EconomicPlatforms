@@ -5,12 +5,14 @@ class PolicyBrief < ActiveRecord::Base
   belongs_to :economic_category
   has_many :policy_brief_translations, :dependent => :destroy
   accepts_nested_attributes_for :policy_brief_translations
-  attr_accessible :political_party_id, :economic_category_id,
+  attr_accessible :political_party_id, :economic_category_id, :is_public,
 		:policy_brief_translations_attributes
 
   validates :political_party_id, :economic_category_id, :presence => true
 	validates :economic_category_id, :uniqueness => {:scope => :political_party_id,
 			:message => I18n.t('app.msgs.policy_already_exists')}
+
+  scope :public, where("is_public = '1'")
 
 	def self.by_party_category(political_party_id, economic_category_id)
 		if political_party_id && economic_category_id
