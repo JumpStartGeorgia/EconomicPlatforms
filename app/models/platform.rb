@@ -9,13 +9,14 @@ class Platform < ActiveRecord::Base
   accepts_nested_attributes_for :platform_translations
   accepts_nested_attributes_for :platform_scores
   accepts_nested_attributes_for :platform_files, :reject_if => lambda { |a| a[:file].blank? }, :allow_destroy => true
-  attr_accessible :political_party_id, :economic_category_id,
+  attr_accessible :political_party_id, :economic_category_id, :is_public,
 		:platform_translations_attributes, :platform_scores_attributes, :platform_files_attributes
 
   validates :political_party_id, :economic_category_id, :presence => true
 	validates :economic_category_id, :uniqueness => {:scope => :political_party_id,
 			:message => I18n.t('app.msgs.platform_already_exists')}
 
+  scope :public, where("is_public = '1'")
 
 	attr_accessible :score_economic_category, :score_political_party, :score_indicator_category, :score_value,
 		:score_value_centered, :score_value_explaination
@@ -77,7 +78,7 @@ class Platform < ActiveRecord::Base
       :value_explaination => self.score_value_explaination
     }
   end
-  
+
 	def self.scores_for_ec_cat_and_ind_cat(economic_category_id, indicator_category_id)
 		if economic_category_id && indicator_category_id
 			sql = "select ect.name as score_economic_category, ict.name as score_indicator_category, "

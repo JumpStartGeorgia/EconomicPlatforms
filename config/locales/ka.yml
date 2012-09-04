@@ -16,6 +16,7 @@ ka:
         date_made: შექმნის თარიღი
         political_party: პოლიტიკური პარტია
         economic_category: ეკონომიკური კატეგორია
+        is_public: Make Visible to World
       statement_translation:
         source: Source of Statement
         author: Statement Author
@@ -39,11 +40,13 @@ ka:
       platform:
         political_party: პოლიტიკური პარტია
         economic_category: ეკონომიკური კატეგორია
+        is_public: Make Visible to World
       platform_translation:
         description: Description
       policy_brief:
         political_party: პოლიტიკური პარტია
         economic_category: ეკონომიკური კატეგორია
+        is_public: Make Visible to World
       policy_brief_translation:
         analysis: Analysis
       political_party:
@@ -107,6 +110,7 @@ ka:
       page: Page
       about: შესახებ
       home: Home
+      is_public: Is Visible to World
     msgs:
       does_not_exist: თქვენ ცდილობთ იხილოთ გვერდი, რომელიც არ არსებობს.
       not_authorized: თქვენ არ გაქვთ უფლება იხილოთ ეს გვერდი.

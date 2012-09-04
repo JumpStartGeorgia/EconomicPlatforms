@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120904085818) do
+ActiveRecord::Schema.define(:version => 20120904141415) do
 
   create_table "economic_categories", :force => true do |t|
     t.datetime "created_at"
@@ -141,8 +141,10 @@ ActiveRecord::Schema.define(:version => 20120904085818) do
     t.integer  "economic_category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_public",            :default => false
   end
 
+  add_index "platforms", ["is_public"], :name => "index_platforms_on_is_public"
   add_index "platforms", ["political_party_id", "economic_category_id"], :name => "platform_party_ec_cat"
 
   create_table "policy_brief_translations", :force => true do |t|
@@ -161,8 +163,10 @@ ActiveRecord::Schema.define(:version => 20120904085818) do
     t.integer  "economic_category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_public",            :default => false
   end
 
+  add_index "policy_briefs", ["is_public"], :name => "index_policy_briefs_on_is_public"
   add_index "policy_briefs", ["political_party_id", "economic_category_id"], :name => "pol_briefs_party_ec_cat"
 
   create_table "political_parties", :force => true do |t|
@@ -219,9 +223,11 @@ ActiveRecord::Schema.define(:version => 20120904085818) do
     t.integer  "economic_category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_public",            :default => false
   end
 
   add_index "statements", ["date_made"], :name => "index_statements_on_date_made"
+  add_index "statements", ["is_public"], :name => "index_statements_on_is_public"
   add_index "statements", ["political_party_id", "economic_category_id"], :name => "index_statements_on_political_party_id_and_economic_category_id"
 
   create_table "users", :force => true do |t|

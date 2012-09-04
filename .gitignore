@@ -14,8 +14,8 @@
 /log/*.log
 /tmp
 
-# ignore platform file uploads
-/public/system/platform_files
+# ignore file uploads
+/public/system/*
 
 # ignore database yml
 /config/database.yml

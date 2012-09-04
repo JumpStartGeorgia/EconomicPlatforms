@@ -1,5 +1,13 @@
 <% title t('.title') %>
 
+<div class="form-actions">
+<%= link_to t('app.buttons.new'),
+            new_statement_path,
+            :class => 'btn btn-primary' %>
+<%= link_to t('app.buttons.admin'), admin_path,
+:class => 'btn' %>
+</div>
+
 <% if @statements.nil? || @statements.empty? %>
 	<p>
 		<%= t('.no_statements') %>
@@ -21,6 +29,12 @@
 					<p>
 						<strong><%= "#{t('app.common.economic_category')}:"%></strong>
 						<%= statement.economic_category.name %>
+					</p>
+				</div>
+				<div class="span4">
+					<p>
+						<p><strong><%= t("app.common.is_public") %>:</strong>
+						<%= statement.is_public %></p>
 					</p>
 				</div>
 			</div>
@@ -59,12 +73,3 @@
 	<%= page_navigation_links @statements %>
 
 <% end %>
-
-
-<div class="form-actions">
-<%= link_to t('app.buttons.new'),
-            new_statement_path,
-            :class => 'btn btn-primary' %>
-<%= link_to t('app.buttons.admin'), admin_path,
-:class => 'btn' %>
-</div>

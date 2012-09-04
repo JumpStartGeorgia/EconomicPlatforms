@@ -1,5 +1,19 @@
 <% title t('.title') %>
 
+<div class="form-actions">
+  <%= link_to t('app.buttons.list'),
+              statements_path, :class => 'btn'  %>
+  <%= link_to t('app.buttons.edit'),
+              edit_statement_path(@statement), :class => 'btn' %>
+  <%= link_to t('app.buttons.delete'),
+              statement_path(@statement),
+              :method => 'delete',
+              :confirm => t('app.buttons.confirm'),
+              :class => 'btn btn-danger' %>
+  <%= link_to t('app.buttons.admin'), admin_path,
+  :class => 'btn' %>
+</div>
+
 		<div class="statement_summary">
 			<h3>
 				<%= l @statement.date_made, :format => :long %>
@@ -15,6 +29,12 @@
 					<p>
 						<strong><%= "#{t('app.common.economic_category')}:"%></strong>
 						<%= @statement.economic_category.name %>
+					</p>
+				</div>
+				<div class="span4">
+					<p>
+						<p><strong><%= t("app.common.is_public") %>:</strong>
+						<%= @statement.is_public %></p>
 					</p>
 				</div>
 			</div>
@@ -61,17 +81,3 @@
 			<% end %>
 
 		</div>
-
-<div class="form-actions">
-  <%= link_to t('app.buttons.list'),
-              statements_path, :class => 'btn'  %>
-  <%= link_to t('app.buttons.edit'),
-              edit_statement_path(@statement), :class => 'btn' %>
-  <%= link_to t('app.buttons.delete'),
-              statement_path(@statement),
-              :method => 'delete',
-              :confirm => t('app.buttons.confirm'),
-              :class => 'btn btn-danger' %>
-  <%= link_to t('app.buttons.admin'), admin_path,
-  :class => 'btn' %>
-</div>

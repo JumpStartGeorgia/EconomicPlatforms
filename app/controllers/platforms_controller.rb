@@ -1,4 +1,5 @@
 class PlatformsController < ApplicationController
+
   before_filter :authenticate_user!
   before_filter do |controller_instance|
     controller_instance.send(:valid_role?, :author)
@@ -7,7 +8,7 @@ class PlatformsController < ApplicationController
   # GET /platforms
   # GET /platforms.json
   def index
-    @platforms = Platform.all
+    @platforms = Platform.all.sort_by{|x| [x.political_party.name, x.economic_category.name]}.paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -68,6 +69,14 @@ class PlatformsController < ApplicationController
 		    values[:value] = combined[1]
 			end
     end
+
+		# if english is empty, load georgian into it
+    en = params[:platform][:platform_translations_attributes].select{|k,v| v[:locale] == 'en'}
+		if en[en.keys[0]][:locale] == 'en' && en[en.keys[0]][:description].empty?
+			ka = params[:platform][:platform_translations_attributes].select{|k,v| v[:locale] == 'ka'}
+			en[en.keys[0]][:description] = ka[ka.keys[0]][:description] if ka && !ka[ka.keys[0]][:description].empty?
+		end
+
     @platform = Platform.new(params[:platform])
 
     respond_to do |format|
