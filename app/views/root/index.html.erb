@@ -29,7 +29,9 @@
           <div id="indicator_scales_content">
             <ol class="standard">
             <% @indicators.each do |indicator| %>
-              <li value="<%= indicator.value-4 %>"><%= indicator.name %></li>
+							<% if indicator.value != 0 %>
+	              <li value="<%= indicator.value-4 %>"><%= indicator.name %></li>
+							<% end %>
             <% end %>
             </ol>
           </div>

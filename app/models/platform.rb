@@ -97,6 +97,7 @@ class Platform < ActiveRecord::Base
 			sql << "where "
 			sql << "p.economic_category_id = :economic_category_id "
 			sql << "and ps.indicator_category_id = :indicator_category_id "
+			sql << "and ps.value != 0 "
 			sql << "and ect.locale = :locale "
 			sql << "and ppt.locale = :locale "
 			sql << "and ict.locale = :locale "

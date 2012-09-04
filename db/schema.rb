@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120904141415) do
+ActiveRecord::Schema.define(:version => 20120904175508) do
 
   create_table "economic_categories", :force => true do |t|
     t.datetime "created_at"
@@ -52,14 +52,13 @@ ActiveRecord::Schema.define(:version => 20120904141415) do
   create_table "indicator_translations", :force => true do |t|
     t.integer  "indicator_id"
     t.string   "locale"
-    t.string   "name"
+    t.text     "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "indicator_translations", ["indicator_id"], :name => "index_indicator_translations_on_indicator_id"
   add_index "indicator_translations", ["locale"], :name => "index_indicator_translations_on_locale"
-  add_index "indicator_translations", ["name"], :name => "index_indicator_translations_on_name"
 
   create_table "indicators", :force => true do |t|
     t.integer  "indicator_category_id"
