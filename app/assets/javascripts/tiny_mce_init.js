@@ -1,9 +1,5 @@
-
-tinyMCE.init({
 /*
-  mode : "specific_textareas",
-  editor_selector : "mceEditor",
-*/
+tinyMCE.init({
   mode : 'textareas',
   theme : "advanced",
   onchange_callback : "tiny_mce_change",
@@ -14,11 +10,7 @@ tinyMCE.init({
 
 function tiny_mce_change (inst)
 {
-/*
-  html = inst.getBody().innerHTML;
-  html = html.replace(/<ul>/gi, '<ul class="standard">');
-  inst.getBody().innerHTML = html.replace(/<ol>/gi, '<ol class="standard">');
-*/
   tinyMCE.activeEditor.dom.addClass(tinyMCE.activeEditor.dom.select('ul'), 'standard');
   tinyMCE.activeEditor.dom.addClass(tinyMCE.activeEditor.dom.select('ol'), 'standard');
 }
+*/
