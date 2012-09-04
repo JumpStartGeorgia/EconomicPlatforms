@@ -1,5 +1,54 @@
 # encoding: utf-8
 en:
+  activerecord:
+    models:
+      statement: Statement
+      user: User
+      economic_category: Economic Category
+      indicator_category: Indicator Category
+      indicator: Indicator
+      platform: Platform
+      policy_brief: Policy Brief
+      political_party: Political Party
+    attributes:
+      statement:
+        date_made: Date Made
+        political_party: Political Party
+        economic_category: Economic Category
+      statement_translation:
+        source: Source of Statement
+        author: Statement Author
+        statement_made: Statement Made
+        analysis: Analysis
+      user:
+        email: Email Address
+        password: Password
+        password_confirmation: Password Confirmation
+        role: Role
+        remember_me: Remeber Me
+      economic_category_translation:
+        name: Name
+      indicator_category_translation:
+        name: Name
+      indicator:
+        indicator_category: Indicator Category
+        value: Value
+      indicator_translation:
+        name: Name
+      platform:
+        political_party: Political Party
+        economic_category: Economic Category
+      platform_translation:
+        description: Description
+      policy_brief:
+        political_party: Political Party
+        economic_category: Economic Category
+      policy_brief_translation:
+        analysis: Analysis
+      political_party:
+        color: Color
+      political_party_translation:
+        name: Name
   app:
     language:
       en: English
@@ -23,8 +72,8 @@ en:
       app_name: Georgia Economic Platform
       name: Name
       date_made: Date Made
-      politcal_party: Political Party
-      politcal_parties: Political Parties
+      political_party: Political Party
+      political_parties: Political Parties
       economic_category: Economic Category
       statement: Statement
       indicator: Indicator
@@ -41,6 +90,12 @@ en:
       date: Date
       files: Supporting Files
       color: Color
+      legend: Legend
+      indicator_scales: Scale of Indicators
+      sign_in: Sign In
+      analysis: Analysis
+      actions: Actions
+      value: Value
     msgs:
       does_not_exist: You tried to access a page that does not exist.
       not_authorized: You are not authorized to view that page.
@@ -71,8 +126,6 @@ en:
   root:
     index:
       title: Political Party Ideologies
-      political_party_header: Statements by Political Party
-      economic_category_header: Statements by Economic Category
       no_values: No political party information has been entered into the application at this time.
   economic_categories:
     edit:

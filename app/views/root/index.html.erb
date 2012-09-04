@@ -6,7 +6,7 @@
   </p>
 <% else %>
   <div id="legend">
-    <h3>Legend</h3>
+    <h3><%= t('app.common.legend')%></h3>
     <div id="legend_content" class="row-fluid">
       <div id="political_party_scales" class="span4">
         <% if @political_parties_nav && !@political_parties_nav.empty? %>
@@ -60,7 +60,7 @@
       </div>
     </div>
   <% end %>
-  
+
   <% if @indicators && !@indicators.empty? %>
     <div id="indicator_scales">
       <h3><%= t('app.common.indicator_scales')%></h3>
@@ -89,6 +89,6 @@
       </div>
     <% end %>
   <% end %>
-  
+
   <% %>
 <% end %>

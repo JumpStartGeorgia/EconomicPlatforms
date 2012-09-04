@@ -1,5 +1,54 @@
 # encoding: utf-8
 ka:
+  activerecord:
+    models:
+      statement: განცხადება
+      user: მომხმარებელი
+      economic_category: ეკონომიკური კატეგორია
+      indicator_category: ინდიკატორის კატეგორია
+      indicator: ინდიკატორი
+      platform: პარტიის პლატფორმა
+      policy_brief: რეზიუმე პოლიტიკაზე
+      political_party: პოლიტიკური პარტია
+    attributes:
+      statement:
+        date_made: შექმნის თარიღი
+        political_party: პოლიტიკური პარტია
+        economic_category: ეკონომიკური კატეგორია
+      statement_translation:
+        source: Source of Statement
+        author: Statement Author
+        statement_made: Statement Made
+        analysis: Analysis
+      user:
+        email: Email Address
+        password: Password
+        password_confirmation: Password Confirmation
+        role: Role
+        remember_me: Remeber Me
+      economic_category_translation:
+        name: სახელი
+      indicator_category_translation:
+        name: სახელი
+      indicator:
+        indicator_category: ინდიკატორის კატეგორია
+        value: Value
+      indicator_translation:
+        name: სახელი
+      platform:
+        political_party: პოლიტიკური პარტია
+        economic_category: ეკონომიკური კატეგორია
+      platform_translation:
+        description: Description
+      policy_brief:
+        political_party: პოლიტიკური პარტია
+        economic_category: ეკონომიკური კატეგორია
+      policy_brief_translation:
+        analysis: Analysis
+      political_party:
+        color: ფერი
+      political_party_translation:
+        name: სახელი
   app:
     language:
       en: English
@@ -15,7 +64,7 @@ ka:
       update: განახლება
       save: შენახვა
       create: შექმნა
-      reset:
+      reset: საწყის კონფიგურაციაზე დაბრუნება
       remove: მოშორება
       confirm: დარწმუნებული ხართ?
       new: ახალი
@@ -23,8 +72,8 @@ ka:
       app_name: საქართველოს ეკონომიკური პლატფორმა
       name: სახელი
       date_made: შექმნის თარიღი
-      politcal_party: პოლიტიკური პარტია
-      politcal_parties: პოლიტიკური პარტიები
+      political_party: პოლიტიკური პარტია
+      political_parties: პოლიტიკური პარტიები
       economic_category: ეკონომიკური კატეგორია
       statement: განცხადება
       indicator: ინდიკატორი
@@ -36,11 +85,17 @@ ka:
       email: ელ.ფოსტა
       role: როლი
       new_password: ახალი პაროლი
-      platform: Party Platform
-      policy_brief: Policy Brief
-      date: Date
-      files: Supporting Files
-      color: Color
+      platform: პარტიის პლატფორმა
+      policy_brief: რეზიუმე პოლიტიკაზე
+      date: თარიღი
+      files: დამხმარე ფაილები
+      color: ფერი
+      legend: ლეგენდა
+      indicator_scales: ინდიკატორის სკალა
+      sign_in: შესვლა
+      analysis: Analysis
+      actions: Actions
+      value: Value
     msgs:
       does_not_exist: თქვენ ცდილობთ იხილოთ გვერდი, რომელიც არ არსებობს.
       not_authorized: თქვენ არ გაქვთ უფლება იხილოთ ეს გვერდი.
@@ -70,10 +125,8 @@ ka:
       js_link_text: აგებულია
   root:
     index:
-      title: Political Party Ideologies
-      political_party_header: განცხადებები პოლიტიკური პარტიების მიხედვით
-      economic_category_header: განცხადებები ეკონომიკური კატეგორიების მიხედვით
-      no_values: No political party information has been entered into the application at this time.
+      title: პოლიტიკური პარტიების იდეოლოგიები
+      no_values: აპლიკაციაში პოლიტიკურ პარტიაზე ინფორმაცია ამ დროისთვის შეყვანილი არ არის.
   economic_categories:
     edit:
       title: ცვლილებების შეტანა ეკონომიკურ კატეგორიაში
@@ -103,28 +156,28 @@ ka:
       title: ინდიკატორი დეტალები
   platforms:
     edit:
-      title: Editing Platform
+      title: ცვლილებების შეტანა პლატფორმაში
     index:
-      title: Platforms
-      no_platforms: "At this time, no platforms have been recorded"
+      title: პლატფორმები
+      no_platforms: "ამ დროისათვის პლატფორმები არ არის შეყვანილი"
     new:
-      title: New Platform
+      title: ახალი პლატფორმა
     show:
-      title: Platform Details
+      title: დეტალები პლატფორმაზე
     platform_file_fields:
-      remove_link: Remove File
+      remove_link: ფაილის წაშლა
     form:
-      add_file: Add File
+      add_file: ფაილის დამატება
   policy_briefs:
     edit:
-      title: Editing Policy Brief
+      title: ცვლილებების შეტანა პოლიტიკის რეზიუმეში
     index:
-      title: Policy Briefs
-      no_policy_briefs: "At this time, no policy briefs have been recorded"
+      title: რეზიუმე პოლიტიკაზე
+      no_policy_briefs: "ამ დროისათვის პლატფორმები შეყვანილი არ არის"
     new:
-      title: New Policy Brief
+      title: ახალი რეზიუმე პოლიტიკაზე
     show:
-      title: Policy Brief Details
+      title: დეტალები პოლიტიკის რეზიუმეზე
   political_parties:
     edit:
       title: ცვლილებების შეტანა პოლიტიკურ პარტიაში
@@ -148,8 +201,8 @@ ka:
       economic_categories: ეკონომიკური კატეგორიები
       indicator_categories: ინდიკატორების კატეგორიები
       indicators: ინიდიკატორები
-      policy_briefs: Policy Briefs
-      platforms: Platforms
+      policy_briefs: რეზიუმე პოლიტიკაზე
+      platforms: პლატფორმები
     users:
       edit:
         title: ცვლილებების შეტანა მომხმარებლის გვერდზე
@@ -176,23 +229,23 @@ ka:
       no_statements: "ამ მომენტისათვის განცხადებები არ ფიქსირდება %{political_party} - თვის."
       view_statement: განცადების ნახვა სრულად
     well:
-      pdf_header: Download
+      pdf_header: გადმოწერა
       pdf_link: PDF
-      profile_header: "%{political_party} Profile"
-      view_profile: View Complete Profile
-      platform_header: "%{political_party} Platforms"
-      no_platforms: "At this time, no platforms are on file."
-      policy_brief_header: "%{political_party} Policy Briefs"
-      no_policy_briefs: "At this time, no policy briefs are on file."
+      profile_header: "%{political_party} პროფილი"
+      view_profile: სრული პროფილის ნახვა
+      platform_header: "%{political_party} პლატფორმები"
+      no_platforms: "ამ დროისათვის პლატფორმები ჩაწერილი არ არის."
+      policy_brief_header: "%{political_party} რეზიუმე პოლიტიკაზე"
+      no_policy_briefs: "ამ დროისათვის რეზიუმეები პოლიტიკაზე შეყვანილი არ არის."
     statement:
       title: "%{political_party}"
       secondary_title: "განცხადება - %{date}"
     platform:
       title: "%{political_party}"
-      secondary_title: "Platform - %{economic_category}"
+      secondary_title: "პლატფორმა - %{economic_category}"
     policy_brief:
       title: "%{political_party}"
-      secondary_title: "Policy Brief - %{economic_category}"
+      secondary_title: "რეზიუმე პოლიტიკაზე - %{economic_category}"
   category:
     index:
       title: "%{economic_category}"
@@ -200,20 +253,20 @@ ka:
       no_statements: "ამ მომენტისათვის განცხადებები არ ფიქსირდება %{economic_category} -ში."
       view_statement: განცადების ნახვა სრულად
     well:
-      pdf_header: Download
+      pdf_header: გადმოწერა
       pdf_link: PDF
-      profile_header: "%{economic_category} Profile"
-      view_profile: View Complete Profile
-      platform_header: "%{economic_category} Platforms"
-      no_platforms: "At this time, no platforms are on file."
-      policy_brief_header: "%{economic_category} Policy Briefs"
-      no_policy_briefs: "At this time, no policy briefs are on file."
+      profile_header: "%{economic_category} პროფილი"
+      view_profile: სრული პროფილის ნახვა
+      platform_header: "%{economic_category} პლატფორმები"
+      no_platforms: "ამ დროისათვის პლატფორმები ჩაწერილი არ არის."
+      policy_brief_header: "%{economic_category} რეზიუმე პოლიტიკაზე"
+      no_policy_briefs: "ამ დროისათვის რეზიუმეები პოლიტიკაზე შეყვანილი არ არის."
     statement:
       title: "%{economic_category}"
       secondary_title: "განცხადება - %{date}"
     platform:
       title: "%{economic_category}"
-      secondary_title: "Platform - %{political_party}"
+      secondary_title: "პლატფორმა - %{political_party}"
     policy_brief:
       title: "%{economic_category}"
-      secondary_title: "Policy Brief - %{political_party}"
+      secondary_title: "რეზიუმე პოლიტიკაზე - %{political_party}"
