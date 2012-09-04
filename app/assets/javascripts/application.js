@@ -18,7 +18,6 @@
 //= require twitter/bootstrap
 //= require jquery_nested_form
 //= require vendor
-//= require tiny_mce/tiny_mce
 //= require tiny_mce_init
 //= require_tree .
 
