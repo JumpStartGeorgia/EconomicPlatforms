@@ -1,5 +1,13 @@
 <% title t('.title') %>
 
+<div class="form-actions">
+	<%= link_to t('app.buttons.new'),
+		          new_policy_brief_path,
+		          :class => 'btn btn-primary' %>
+	<%= link_to t('app.buttons.admin'), admin_path,
+	:class => 'btn' %>
+</div>
+
 <% if @policy_briefs.nil? || @policy_briefs.empty? %>
 	<p>
 		<%= t('.no_policy_briefs') %>
@@ -38,11 +46,3 @@
 	<%= page_navigation_links @policy_briefs %>
 
 <% end %>
-
-<div class="form-actions">
-	<%= link_to t('app.buttons.new'),
-		          new_policy_brief_path,
-		          :class => 'btn btn-primary' %>
-	<%= link_to t('app.buttons.admin'), admin_path,
-	:class => 'btn' %>
-</div>

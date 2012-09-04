@@ -1,5 +1,13 @@
 <% title t('.title') %>
 
+<div class="form-actions">
+	<%= link_to t('app.buttons.new'),
+		          new_platform_path,
+		          :class => 'btn btn-primary' %>
+	<%= link_to t('app.buttons.admin'), admin_path,
+	:class => 'btn' %>
+</div>
+
 <% if @platforms.nil? || @platforms.empty? %>
 	<p>
 		<%= t('.no_platforms') %>
@@ -38,11 +46,3 @@
 	<%= page_navigation_links @platforms %>
 
 <% end %>
-
-<div class="form-actions">
-	<%= link_to t('app.buttons.new'),
-		          new_platform_path,
-		          :class => 'btn btn-primary' %>
-	<%= link_to t('app.buttons.admin'), admin_path,
-	:class => 'btn' %>
-</div>
