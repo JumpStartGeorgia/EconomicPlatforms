@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+	require 'will_paginate/array'
   protect_from_forgery
 
 	before_filter :set_locale
