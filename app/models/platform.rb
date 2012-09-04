@@ -77,7 +77,7 @@ class Platform < ActiveRecord::Base
       :value_explaination => self.score_value_explaination
     }
   end
-  
+
 	def self.scores_for_ec_cat_and_ind_cat(economic_category_id, indicator_category_id)
 		if economic_category_id && indicator_category_id
 			sql = "select ect.name as score_economic_category, ict.name as score_indicator_category, "

@@ -18,7 +18,7 @@
   <tbody>
     <% @platforms.each do |platform| %>
       <tr>
-        <td><%=link_to(l(platform.created_at), platform_path(platform)) %></td>
+        <td><%=link_to(l(platform.created_at, :format => :long), platform_path(platform)) %></td>
         <td><%= platform.political_party.name %></td>
         <td><%= platform.economic_category.name %></td>
         <td>
@@ -34,6 +34,9 @@
     <% end %>
   </tbody>
 </table>
+
+	<%= page_navigation_links @platforms %>
+
 <% end %>
 
 <div class="form-actions">

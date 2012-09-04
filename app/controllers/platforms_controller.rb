@@ -1,4 +1,5 @@
 class PlatformsController < ApplicationController
+
   before_filter :authenticate_user!
   before_filter do |controller_instance|
     controller_instance.send(:valid_role?, :author)
@@ -7,7 +8,7 @@ class PlatformsController < ApplicationController
   # GET /platforms
   # GET /platforms.json
   def index
-    @platforms = Platform.all
+    @platforms = Platform.all.sort_by{|x| [x.political_party.name, x.economic_category.name]}.paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html # index.html.erb

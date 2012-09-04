@@ -18,7 +18,7 @@
   <tbody>
     <% @policy_briefs.each do |policy_brief| %>
       <tr>
-        <td><%=link_to(l(policy_brief.created_at), policy_brief_path(policy_brief)) %></td>
+        <td><%=link_to(l(policy_brief.created_at, :format => :long), policy_brief_path(policy_brief)) %></td>
         <td><%= policy_brief.political_party.name %></td>
         <td><%= policy_brief.economic_category.name %></td>
         <td>
@@ -34,6 +34,9 @@
     <% end %>
   </tbody>
 </table>
+
+	<%= page_navigation_links @policy_briefs %>
+
 <% end %>
 
 <div class="form-actions">
