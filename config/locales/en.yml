@@ -203,9 +203,10 @@ en:
   admin:
     index:
       title: Administration Section
-      statements_header: Statements
-      new_statement: Add Statement
-      view_statements: View Statements
+      content_header: Add Content
+      platforms: Platforms
+      policy_briefs: Policy Briefs
+      statements: Statements
       users_header: Users
       new_users: Add User
       view_users: View Users
@@ -214,8 +215,6 @@ en:
       economic_categories: Ecomonic Categories
       indicator_categories: Indicator Categories
       indicators: Indicators
-      policy_briefs: Policy Briefs
-      platforms: Platforms
       pages: Pages
     users:
       edit:

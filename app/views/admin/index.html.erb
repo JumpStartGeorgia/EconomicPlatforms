@@ -3,13 +3,16 @@
 <div class="admin_panel row-fluid">
   <% if current_user.role? :author %>
    <div class="span4">
- 		<h3><%= t('.statements_header')%></h3>
+ 		<h3><%= t('.content_header')%></h3>
  		<ul class="standard">
  			<li>
- 				<%= link_to t('.view_statements'), statements_path %>
+ 				<%= link_to t('.platforms'), platforms_path %>
  			</li>
  			<li>
- 				<%= link_to t('.new_statement'), new_statement_path %>
+ 				<%= link_to t('.policy_briefs'), policy_briefs_path %>
+ 			</li>
+ 			<li>
+ 				<%= link_to t('.statements'), statements_path %>
  			</li>
  		</ul>
   </div>
@@ -45,12 +48,6 @@
  			</li>
  			<li>
  				<%= link_to t('.pages'), pages_path %>
- 			</li>
- 			<li>
- 				<%= link_to t('.platforms'), platforms_path %>
- 			</li>
- 			<li>
- 				<%= link_to t('.policy_briefs'), policy_briefs_path %>
  			</li>
  		</ul>
   </div>

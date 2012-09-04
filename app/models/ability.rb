@@ -11,6 +11,11 @@ class Ability
       can :manage, Statement
       can :manage, StatementTranslation
       can :manage, StatementScore
+      can :manage, Platform
+      can :manage, PlatformTranslation
+      can :manage, PlatformScore
+      can :manage, PolicyBrief
+      can :manage, PolicyBriefTranslation
     else
       can :read, :all
     end

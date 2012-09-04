@@ -203,9 +203,10 @@ ka:
   admin:
     index:
       title: ადმინისტრატორის განყოფილება
-      statements_header: განცხადება
-      new_statement: განცხადების დამატება
-      view_statements: განცხადებების ნახვა
+      content_header: Add Content
+      platforms: პლატფორმები
+      policy_briefs: რეზიუმე პოლიტიკაზე
+      statements: განცხადებების
       users_header: მომხმარებლები
       new_users: მომხმარებლის დამატება
       view_users: მომხმარებლების ნახვა
@@ -214,8 +215,6 @@ ka:
       economic_categories: ეკონომიკური კატეგორიები
       indicator_categories: ინდიკატორების კატეგორიები
       indicators: ინიდიკატორები
-      policy_briefs: რეზიუმე პოლიტიკაზე
-      platforms: პლატფორმები
       pages: Pages
     users:
       edit:
