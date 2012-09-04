@@ -80,8 +80,8 @@ ic.indicator_category_translations.create(:name=>"Ideological Focus/Flip-Flops",
 Indicator.destroy_all
 
 ind = Indicator.create(:id => 1, :indicator_category_id => 1, :value => 0)
-ind.indicator_translations.create(:name=>"ფაქტები არ არის მოყვანილი", :locale=>"ka")
-ind.indicator_translations.create(:name=>"no facts are stated", :locale=>"en")
+ind.indicator_translations.create(:name=>"N/A", :locale=>"ka")
+ind.indicator_translations.create(:name=>"N/A", :locale=>"en")
 ind = Indicator.create(:id => 2, :indicator_category_id => 1, :value => 1)
 ind.indicator_translations.create(:name=>"ტექსტში/განცხადებაში მოყვანილი ყველა ფაქტი არასწორია", :locale=>"ka")
 ind.indicator_translations.create(:name=>"all factual statements contained in the text/statement are wrong", :locale=>"en")
@@ -191,6 +191,21 @@ ind.indicator_translations.create(:name=>"the party’s position on the issue is
 ind = Indicator.create(:id => 36, :indicator_category_id => 5, :value => 7)
 ind.indicator_translations.create(:name=>" პარტიის პოზიცია საკითხზე ხასიათდება, როგორც კომუნისტური (წარმოების ყველა სახეობა უნდა იყოს ნაციონალიზირებული, ბიზნესმენები სასამართლოს წესით უნდა იქნენ აღიარებული როგორც “სპეკულიანტები”, სახელმწიფომ უნდა მართოს ეკონომიკა, უზრუნველყოს უფასო განათლება ისევე როგორც ჯანმრთელობის და სოციალური ბენეფიტები)", :locale=>"ka")
 ind.indicator_translations.create(:name=>"the party’s position on the issue is best described as communist (all means of production should be nationalized, businessmen should be prosecuted as “speculators”, the government should run the economy, provide free education, health and social benefits)", :locale=>"en")
+
+ind = Indicator.create(:id => 37, :indicator_category_id => 2, :value => 0)
+ind.indicator_translations.create(:name=>"N/A", :locale=>"ka")
+ind.indicator_translations.create(:name=>"N/A", :locale=>"en")
+ind = Indicator.create(:id => 38, :indicator_category_id => 3, :value => 0)
+ind.indicator_translations.create(:name=>"N/A", :locale=>"ka")
+ind.indicator_translations.create(:name=>"N/A", :locale=>"en")
+ind = Indicator.create(:id => 39, :indicator_category_id => 4, :value => 0)
+ind.indicator_translations.create(:name=>"N/A", :locale=>"ka")
+ind.indicator_translations.create(:name=>"N/A", :locale=>"en")
+ind = Indicator.create(:id => 40, :indicator_category_id => 5, :value => 0)
+ind.indicator_translations.create(:name=>"N/A", :locale=>"ka")
+ind.indicator_translations.create(:name=>"N/A", :locale=>"en")
+
+
 
 puts "###########################################################################"
 puts "IMPORTANT: permalinks for Political Parties and Economic Categories were created"
