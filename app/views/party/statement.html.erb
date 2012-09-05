@@ -22,7 +22,7 @@
 				<div class="span4">
 					<p>
 						<strong><%= "#{t('app.common.source')}:"%></strong>
-						<%= @statement.source %>
+						<%= auto_link(@statement.source, :urls, :target => "_blank") %>
 					</p>
 				</div>
 			</div>

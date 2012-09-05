@@ -28,6 +28,7 @@ gem "paper_trail", "~> 2.6.3" # keep audit log of all transactions
 gem "pdfkit", "~> 0.5.2" # generate pdfs
 gem "useragent", :git => "https://github.com/jilion/useragent.git" # browser detection
 gem "use_tinymce", "~> 0.0.15" # wysiwyg
+gem "rails_autolink", "~> 1.0.9" # convert string to link if it is url
 
 # Gems used only for assets and not required
 # in production environments by default.
