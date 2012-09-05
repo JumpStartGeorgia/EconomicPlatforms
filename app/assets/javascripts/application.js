@@ -18,8 +18,6 @@
 //= require twitter/bootstrap
 //= require jquery_nested_form
 //= require vendor
-//= tiny_mce_init
-//= require use_tinymce_init
 //= require_tree .
 
 // set focus to first text box on page
