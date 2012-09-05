@@ -1,4 +1,5 @@
 class PlatformsController < ApplicationController
+	use_tinymce :new, :edit
 
   before_filter :authenticate_user!
   before_filter do |controller_instance|
