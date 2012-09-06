@@ -1,3 +1,5 @@
+var class_added = false;
+
 // copied from the examples directory for the jQuery version of tinyMCE
 $().ready(function() {
 	$("textarea").tinymce({
@@ -6,6 +8,7 @@ $().ready(function() {
 
 		// apply class to all lists so they format correctly
 	  onchange_callback : "tiny_mce_change",
+	  init_instance_callback : "tiny_mce_init_instance",
 
 		// General options
 		theme : "advanced",
@@ -56,4 +59,10 @@ function tiny_mce_change (inst)
 {
   tinyMCE.activeEditor.dom.addClass(tinyMCE.activeEditor.dom.select('ul'), 'standard');
   tinyMCE.activeEditor.dom.addClass(tinyMCE.activeEditor.dom.select('ol'), 'standard');
+}
+
+function tiny_mce_init_instance (inst)
+{
+  inst.dom.addClass(inst.dom.select('ul'), 'standard');
+  inst.dom.addClass(inst.dom.select('ol'), 'standard');
 }
