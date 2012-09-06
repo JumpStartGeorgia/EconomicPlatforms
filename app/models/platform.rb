@@ -84,7 +84,7 @@ class Platform < ActiveRecord::Base
 			sql = "select ect.name as score_economic_category, ict.name as score_indicator_category, "
 			sql << "ppt.name as score_political_party, pp.color as score_color, "
 			sql << "if(ps.value=0, null, ps.value) as score_value, "
-			sql << "if(ps.value=0, null, ps.value-4) as score_value_centered, "
+			sql << "if(ps.value=0, null, ((ps.value-4)*(-1))) as score_value_centered, "
 			sql << "if(ps.value=0, null, it.name ) as score_value_explaination "
 			sql << "from "
 			sql << "platforms as p "

@@ -66,9 +66,32 @@ function build_economic_indicator_chart(div_id, data){
       })
       .attr("height", bar_height);
 
+/*
   svg.append("g")
       .attr("class", "x axis")
       .call(d3.svg.axis().scale(x).orient("top").ticks(7));
+*/
+  svg.append("text")
+      .attr("class", "x label")
+      .attr("text-anchor", "start")
+      .attr("x", 0)
+      .attr("y", 0)
+      .text("left");
+
+  svg.append("text")
+      .attr("class", "x label")
+      .attr("text-anchor", "middle")
+      .attr("x", width / 2)
+      .attr("y", 0)
+      .text("center");
+
+  svg.append("text")
+      .attr("class", "x label")
+      .attr("text-anchor", "end")
+      .attr("x", width)
+      .attr("y", 0)
+      .text("right")
+      .attr("style", 'fill: black;');
 
   svg.append("g")
       .attr("class", "y axis")
@@ -78,14 +101,14 @@ function build_economic_indicator_chart(div_id, data){
       .attr("y1", 0)
       .attr("y2", height);
 
-  $('svg rect').tipsy({ 
+  $('svg rect').tipsy({
       gravity: $.fn.tipsy.autoBounds(60, 'nw'),
       html: true,
       opacity: 1,
       offset: bar_height,
       title: function() { 
         var d = this.__data__;
-        return '<strong>' + d["political_party"] + '</strong> - ' + d["value_explaination"]; 
+        return '<strong>' + d["political_party"] + '</strong> - ' + d["value_explaination"];
       }
     });
       
