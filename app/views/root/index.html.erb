@@ -27,7 +27,7 @@
         <% if @indicators && !@indicators.empty? %>
           <h3><%= t('app.common.indicator_scales')%></h3>
           <div id="indicator_scales_content">
-            <ol class="standard">
+            <ul class="standard">
             <% @indicators.each do |indicator| %>
 							<% if indicator.value != 0 %>
 	              <li value="<%= indicator.value-4 %>"><%= indicator.name %></li>
