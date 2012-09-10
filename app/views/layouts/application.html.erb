@@ -29,7 +29,7 @@
 		          <span class="icon-bar"></span>
 		          <span class="icon-bar"></span>
 		        </a>
-		        <%= link_to(t('app.common.app_name'), root_path(:locale => I18n.locale),:class=>"brand")%>
+	          <%= link_to(t('app.common.app_name'), root_path(:locale => I18n.locale),:class=>"brand font")%>
 		        <div class="container nav-collapse">
 		          <ul class="nav">
 		            <% if @political_parties_nav && !@political_parties_nav.empty? %>
@@ -133,8 +133,9 @@
 
 
     <footer class="clear">
-			<div id="left">&nbsp;</div>
+			<div id="left">&copy; 2012</div>
 		  <div id="middle">
+		  <!--
 				<ul>
 					<li>
 						<%= link_to t('app.common.home'), root_path %>
@@ -144,6 +145,7 @@
 						<%= link_to t('app.common.about'), about_path %>
 					</li>
 				</ul>
+		  -->
 			</div>
 			<div id="right">
 				<ul>
