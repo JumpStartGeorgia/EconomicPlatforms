@@ -145,8 +145,8 @@ ka:
   root:
     index:
       title1: რას
-      title2: პარტიები
-      title3: გპირდებიან
+      title2: გპირდებიან
+      title3: პარტიები
       no_values: აპლიკაციაში პოლიტიკურ პარტიაზე ინფორმაცია ამ დროისთვის შეყვანილი არ არის.
       chart_title: პოლიტიკური პარტიების იდეოლოგიები
       latest_statements_header: Latest Statements

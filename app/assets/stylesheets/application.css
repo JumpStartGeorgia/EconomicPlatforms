@@ -196,6 +196,15 @@ div.admin_panel ul li {
   padding: 0.5em 1em;
 }
 
+/* party profile page */
+#plat_brief_nav {
+	margin-bottom: 2em;
+}
+
+#plat_brief_nav > div {
+	display: inline-block;
+}
+
 /* wells */
 .well {
   background: url(/assets/block-bg.jpg) repeat;
@@ -278,9 +287,12 @@ div.admin_panel ul li {
   color: #348be8;
 	margin-left: 4em;
 }
-#title_dropdowns h1#ka span#line3 {
+#title_dropdowns h1#ka span#line2 {
 	display: inline-block;
-	margin-left: 2em;
+	margin-left: 1em;
+	line-height: 90px;
+	margin-top: -5px;
+	margin-bottom: -10px;
 }
 #title_dropdowns h1#ka span#big_red_block {
 	display: inline-block;
@@ -288,15 +300,10 @@ div.admin_panel ul li {
   color: #D73421;
 	text-transform:uppercase;
 	line-height: 90px;
-	margin-top: 0px;
-	margin-bottom: -10px;
-	margin-left: 1em;
+	margin-top: -15px;
+	margin-left: 2em;
 	letter-spacing: 0.15em;
-}
-#title_dropdowns h1#ka span#big_red_inline {
-	display: inline-block;
-  font-size: 40pt;
-  color: #D73421;
+	margin-bottom: -15px;
 }
 
 #title_dropdowns #nav_buttons {

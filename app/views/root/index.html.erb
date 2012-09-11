@@ -2,9 +2,15 @@
 	<div class="span9">
 		<div id="title_dropdowns">
 			<h1 id="<%= I18n.locale %>">
-				<%= t('.title1')%><br />
-				<span id="big_red_block"><%= t('.title2')%></span><br />
-				<span id="line3"><%= t('.title3')%></span><span id="big_red_inline">?</span>
+				<% if I18n.locale == :en %>
+					<%= t('.title1')%><br />
+					<span id="big_red_block"><%= t('.title2')%></span><br />
+					<span id="line3"><%= t('.title3')%></span><span id="big_red_inline">?</span>
+				<% else %>
+					<%= t('.title1')%><br />
+					<span id="line2"><%= t('.title2')%></span><br />
+					<span id="big_red_block"><%= t('.title3')%>?</span>
+				<% end %>
 			</h1>
 			<div id="nav_buttons">
 		    <% if @political_parties_nav && !@political_parties_nav.empty? %>
