@@ -282,7 +282,7 @@ footer #middle {
 	float: left;
 }
 footer #middle ul {
-	margin-top: 20px;
+/*	margin-top: 20px;*/
 }
 
 footer #middle ul li {
@@ -398,10 +398,3 @@ footer #left {
 .page-header h1 {
   color: #348be8;
 }
-
-
-
-
-
-
-
