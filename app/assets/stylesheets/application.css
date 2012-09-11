@@ -302,11 +302,10 @@ footer div#right {
 	width: 30%;
 	text-align: right;
 }
-
-footer div#right ul {
 /*
+footer div#right ul {
+
 	margin-top: 13px !important;
-*/
 }
 
 footer div#right ul li {
@@ -325,7 +324,7 @@ footer div#right ul li#right img {
 	vertical-align: middle;
 }
 
-
+*/
 /* styles for printing */
 @media print {
 	/* make the content block the entire width since the menu is not visible */
