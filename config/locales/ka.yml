@@ -257,11 +257,11 @@ ka:
     well:
       pdf_header: გადმოწერა
       pdf_link: PDF
-      profile_header: "%{political_party} პროფილი"
+      profile_header: "პროფილი"
       view_profile: სრული პროფილის ნახვა
-      platform_header: "%{political_party} პლატფორმები"
+      platform_header: "პლატფორმები"
       no_platforms: "ამ დროისათვის პლატფორმები ჩაწერილი არ არის."
-      policy_brief_header: "%{political_party} რეზიუმე პოლიტიკაზე"
+      policy_brief_header: "რეზიუმე პოლიტიკაზე"
       no_policy_briefs: "ამ დროისათვის რეზიუმეები პოლიტიკაზე შეყვანილი არ არის."
     statement:
       title: "%{political_party}"
@@ -281,11 +281,11 @@ ka:
     well:
       pdf_header: გადმოწერა
       pdf_link: PDF
-      profile_header: "%{economic_category} პროფილი"
+      profile_header: "პროფილი"
       view_profile: სრული პროფილის ნახვა
-      platform_header: "%{economic_category} პლატფორმები"
+      platform_header: "პლატფორმები"
       no_platforms: "ამ დროისათვის პლატფორმები ჩაწერილი არ არის."
-      policy_brief_header: "%{economic_category} რეზიუმე პოლიტიკაზე"
+      policy_brief_header: "რეზიუმე პოლიტიკაზე"
       no_policy_briefs: "ამ დროისათვის რეზიუმეები პოლიტიკაზე შეყვანილი არ არის."
     statement:
       title: "%{economic_category}"
