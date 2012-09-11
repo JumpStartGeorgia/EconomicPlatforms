@@ -144,8 +144,13 @@ en:
       js_link_text: Built by
   root:
     index:
-      title: Political Party Ideologies
+      title1: What does your
+      title2: party
+      title3: promise
       no_values: No political party information has been entered into the application at this time.
+      chart_title: Political Party Ideologies
+      latest_statements_header: Latest Statements
+      about_header: About
     about:
       title: About
   economic_categories:

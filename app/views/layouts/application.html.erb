@@ -102,9 +102,13 @@
 
 		            <div class="page-header row">
 									<div class="span9">
-			              <h1>
-											<%= yield(:title) %>
-										</h1>
+										<% if content_for?(:title) %>
+				              <h1>
+												<%= yield(:title) %>
+											</h1>
+										<% else %>
+												&nbsp;
+										<% end %>
 									</div>
 									<div id="social_links" class="span3">
 		                <ul class="nav nav-pills">

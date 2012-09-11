@@ -12,11 +12,14 @@ $().ready(function() {
 
 		// General options
 		theme : "advanced",
-		plugins : "autolink,lists,table,fullscreen,advlist",
+		plugins : "autolink,lists,table,fullscreen,advlist,paste",
 //		plugins : "autolink,lists,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,advlist",
 
+		// remove ugly MS word styling
+		valid_styles : {'*' : 'color,font-weight,text-decoration'},
+
 		// Theme options
-	  theme_advanced_buttons1 : 'bold, italic, underline, strikethrough,formatselect,|,bullist,numlist,|, link, unlink, undo, redo,|,fullscreen',
+	  theme_advanced_buttons1 : 'pasteword,|,bold, italic, underline, strikethrough,formatselect,|,bullist,numlist,|, link, unlink, undo, redo,|,fullscreen',
 		theme_advanced_buttons2 : "tablecontrols",
 		theme_advanced_buttons3 : "",
 		theme_advanced_buttons4 : "",

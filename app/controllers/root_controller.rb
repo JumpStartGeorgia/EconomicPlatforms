@@ -24,6 +24,9 @@ class RootController < ApplicationController
 			gon.direction_right = t('app.directions.right')
     end
 
+		# get the latest statements
+		@statements = Statement.published.latest
+
   end
 
 	def about

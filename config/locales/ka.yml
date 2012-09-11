@@ -144,8 +144,13 @@ ka:
       js_link_text: აგებულია
   root:
     index:
-      title: პოლიტიკური პარტიების იდეოლოგიები
+      title1: რას
+      title2: პარტიები
+      title3: გპირდებიან
       no_values: აპლიკაციაში პოლიტიკურ პარტიაზე ინფორმაცია ამ დროისთვის შეყვანილი არ არის.
+      chart_title: პოლიტიკური პარტიების იდეოლოგიები
+      latest_statements_header: Latest Statements
+      about_header: About
     about:
       title: შესახებ
   economic_categories:

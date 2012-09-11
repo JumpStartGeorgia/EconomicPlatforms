@@ -24,6 +24,10 @@ class Statement < ActiveRecord::Base
 	# number of items per page for pagination
 	self.per_page = 4
 
+	def self.latest
+		limit(4)
+	end
+
 	def self.by_political_party(political_party_id)
 		where(:political_party_id => political_party_id) if political_party_id
 	end
