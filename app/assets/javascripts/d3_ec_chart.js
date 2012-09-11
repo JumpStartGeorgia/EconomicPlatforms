@@ -1,24 +1,24 @@
 if (gon.economic_chart_data) {
   for (var i=0; i<gon.economic_chart_data.length; i++){
     build_economic_indicator_chart(gon.economic_chart_data[i]["div_id"], gon.economic_chart_data[i]["data"]);
-  }  
+  }
 
   // hide legend by default
 	$('div#legend_content').hide();
 	$('#legend').click(function () {
-    $('div#legend_content').slideToggle(200);	   	      
+    $('div#legend_content').slideToggle(200);
    });
 /*
   // show political parties by default
 	$('div#political_party_scales_content').show();
 	$('#political_party_scales').click(function () {
-    $('div#political_party_scales_content').slideToggle(200);	   	      
+    $('div#political_party_scales_content').slideToggle(200);
    });
 
   // make the indicator scales hidden
 	$('div#indicator_scales_content').hide();
 	$('#indicator_scales').click(function () {
-    $('div#indicator_scales_content').slideToggle(200);	   	      
+    $('div#indicator_scales_content').slideToggle(200);
    });
 */
 }
@@ -28,7 +28,7 @@ function build_economic_indicator_chart(div_id, data){
       width = 300 - margin.left - margin.right,
       height = 150 - margin.top - margin.bottom,
       bar_height = height/gon.number_parties - 5;
-      
+
 
   var x0 = 3;
 
@@ -49,48 +49,48 @@ function build_economic_indicator_chart(div_id, data){
       .data(data)
     .enter().append("rect")
       .attr("style", function(d, i) { return "fill:" + d["color"]; })
-      .attr("x", function(d, i) { 
+      .attr("x", function(d, i) {
         // if value is 0, start it at -0.5
         if (d["value_centered"] == 0)
           return (x(1)-x(0))/2+x(-1);
         else
-          return x(Math.min(0, d["value_centered"])); 
+          return x(Math.min(0, d["value_centered"]));
       })
       .attr("y", function(d, i) { return y(i); })
-      .attr("width", function(d, i) { 
+      .attr("width", function(d, i) {
         // if value is 0, have it go to 0.5
         if (d["value_centered"] == 0)
           return x(1)-x(0);
         else
-          return Math.abs(x(d["value_centered"]) - x(0)); 
+          return Math.abs(x(d["value_centered"]) - x(0));
       })
       .attr("height", bar_height);
 
 /*
   svg.append("g")
       .attr("class", "x axis")
-      .call(d3.svg.axis().scale(x).orient("top").ticks(7));
+      .call(d3.svg.axis().scale(x).orient("top"));
 */
   svg.append("text")
       .attr("class", "x label")
       .attr("text-anchor", "start")
       .attr("x", 0)
-      .attr("y", 0)
-      .text("left");
+      .attr("y", -3)
+      .text(gon.direction_left);
 
   svg.append("text")
       .attr("class", "x label")
       .attr("text-anchor", "middle")
       .attr("x", width / 2)
-      .attr("y", 0)
-      .text("center");
+      .attr("y", -3)
+      .text(gon.direction_center);
 
   svg.append("text")
       .attr("class", "x label")
       .attr("text-anchor", "end")
       .attr("x", width)
-      .attr("y", 0)
-      .text("right")
+      .attr("y", -3)
+      .text(gon.direction_right)
       .attr("style", 'fill: black;');
 
   svg.append("g")
@@ -101,15 +101,23 @@ function build_economic_indicator_chart(div_id, data){
       .attr("y1", 0)
       .attr("y2", height);
 
+  svg.append("g")
+      .attr("class", "x axis")
+    .append("line")
+      .attr("x1", 0)
+      .attr("x2", width)
+      .attr("y1", 0)
+      .attr("y2", 0);
+
   $('svg rect').tipsy({
       gravity: $.fn.tipsy.autoBounds(60, 'nw'),
       html: true,
       opacity: 1,
       offset: bar_height,
-      title: function() { 
+      title: function() {
         var d = this.__data__;
         return '<strong>' + d["political_party"] + '</strong> - ' + d["value_explaination"];
       }
     });
-      
+
 }

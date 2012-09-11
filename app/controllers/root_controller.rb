@@ -19,6 +19,9 @@ class RootController < ApplicationController
       # load a gon variable with the data for the chart
       gon.economic_chart_data = @values
       gon.number_parties = @political_parties_nav.length
+			gon.direction_left = t('app.directions.left')
+			gon.direction_center = t('app.directions.center')
+			gon.direction_right = t('app.directions.right')
     end
 
   end

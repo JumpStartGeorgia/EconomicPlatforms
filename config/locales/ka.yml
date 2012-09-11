@@ -62,6 +62,10 @@ ka:
     language:
       en: English
       ka: ქართული
+    directions:
+      left: Left
+      center: Center
+      right: Right
     buttons:
       back: უკან
       list: იხილეთ სრულად
