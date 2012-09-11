@@ -105,5 +105,15 @@ logger.debug "////////////////////////// BROWSER NOT SUPPORTED"
 		render :file => "#{Rails.root}/public/500.html", :status => 500
 	end
 
+  def add_comment
+    if ['platform', 'policy_brief', 'statement'].include? params[:type]
+      statement = Statement.find(params[:commentable_id])
+      comment = statement.comments.new
+      comment.title = params[:title]
+      comment.comment = params[:comment]
+      comment.save
+      redirect_to statement_path(statement)
+    end
+  end
 
 end
