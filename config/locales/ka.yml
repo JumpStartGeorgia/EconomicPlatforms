@@ -63,9 +63,9 @@ ka:
       en: English
       ka: ქართული
     directions:
-      left: Left
-      center: Center
-      right: Right
+      left: მარცხენა
+      center: ცენტრი
+      right: მარჯვენა
     buttons:
       back: უკან
       list: იხილეთ სრულად
