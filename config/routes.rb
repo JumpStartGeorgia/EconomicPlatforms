@@ -38,6 +38,7 @@ EconomicPlatforms::Application.routes.draw do
 
 		match '/admin', :to => 'admin#index', :as => :admin, :via => :get
 		match '/about', :to => 'root#about', :as => :about, :via => :get
+		match '/methodology', :to => 'root#methodology', :as => :methodology, :via => :get
 
 		root :to => 'root#index'
 	  match "*path", :to => redirect("/#{I18n.default_locale}") # handles /en/fake/path/whatever

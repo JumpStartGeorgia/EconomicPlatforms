@@ -51,6 +51,8 @@
 					<%= t('.no_values')%>
 				</p>
 			<% else %>
+<%
+=begin %>
 				<div id="legend">
 					<h3><%= t('app.common.legend')%></h3>
 					<div id="legend_content" class="row-fluid">
@@ -85,7 +87,8 @@
 						</div>
 					</div>
 				</div>
-
+<%
+=end %>
 				<% @values.each_with_index do |value, i| %>
 					<% if i%2 == 0 %>
 						<div class="chart_row row">
@@ -121,6 +124,37 @@
 					<% end %>
 				</ul>
 			<% end %>
+		</div>
+			<div id="well_legend" class="well well-small">
+				<h3><%= t('app.common.legend')%></h3>
+				<% if @political_parties_nav && !@political_parties_nav.empty? %>
+				  <h4><%= t('app.common.political_parties')%></h4>
+					<ul>
+					  <% @political_parties_nav.each_with_index do |party,i| %>
+					    <li>
+					      <span style="background-color: <%= "#{party.color}" %>;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+					      <%= party.name %>
+					    </li>
+					  <% end %>
+					</ul>
+				<% end %>
+<%
+=begin%>
+			  <% if @indicators && !@indicators.empty? %>
+				  <h4><%= t('app.common.indicator_scales')%></h4>
+					<h5><%= t('app.directions.left') %></h5>
+			    <ul class="standard">
+					  <% @indicators.each do |indicator| %>
+							<% if indicator.value != 0 %>
+						    <li value="<%= indicator.value-4 %>"><%= indicator.name.gsub(/\([^()]*\)/,"") %></li>
+							<% end %>
+					  <% end %>
+			    </ul>
+					<h5><%= t('app.directions.right') %></h5>
+				<% end %>
+<%
+=end%>
+			</div>
 		</div>
 <%
 =begin%>
