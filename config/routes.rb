@@ -35,11 +35,13 @@ EconomicPlatforms::Application.routes.draw do
 		match '/category/:economic_category_id/policy_brief/:political_party_id', :to => 'category#policy_brief', :as => :category_policy_brief
 		match '/category/:economic_category_id/statement/:id', :to => 'category#statement', :as => :category_statement
 
+    # comments and voting
+		match '/add_comment_to/:type/:commentable_id', :to => 'comments#create', :as => :add_comment, :via => :post
+		match '/vote/:type/:votable_id/:status', :to => 'comments#vote', :as => :vote, :via => :get
+
 
 		match '/admin', :to => 'admin#index', :as => :admin, :via => :get
 		match '/about', :to => 'root#about', :as => :about, :via => :get
-
-		match '/add_comment_to/:type/:commentable_id', :to => 'root#add_comment', :as => :add_comment, :via => :post
 
 		root :to => 'root#index'
 	  match "*path", :to => redirect("/#{I18n.default_locale}") # handles /en/fake/path/whatever

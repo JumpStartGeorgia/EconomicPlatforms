@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120911140658) do
+ActiveRecord::Schema.define(:version => 20120912165927) do
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20120911140658) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "vote"
   end
 
   add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
@@ -155,6 +156,7 @@ ActiveRecord::Schema.define(:version => 20120911140658) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "is_public",            :default => false
+    t.string   "vote"
   end
 
   add_index "platforms", ["is_public"], :name => "index_platforms_on_is_public"
@@ -177,6 +179,7 @@ ActiveRecord::Schema.define(:version => 20120911140658) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "is_public",            :default => false
+    t.string   "vote"
   end
 
   add_index "policy_briefs", ["is_public"], :name => "index_policy_briefs_on_is_public"
@@ -237,6 +240,7 @@ ActiveRecord::Schema.define(:version => 20120911140658) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "is_public",            :default => false
+    t.string   "vote"
   end
 
   add_index "statements", ["date_made"], :name => "index_statements_on_date_made"
@@ -272,5 +276,13 @@ ActiveRecord::Schema.define(:version => 20120911140658) do
   end
 
   add_index "versions", ["item_type", "item_id"], :name => "index_versions_on_item_type_and_item_id"
+
+  create_table "voter_ips", :force => true do |t|
+    t.string   "ip",           :limit => 50, :default => ""
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "votable_type"
+    t.integer  "votable_id"
+  end
 
 end

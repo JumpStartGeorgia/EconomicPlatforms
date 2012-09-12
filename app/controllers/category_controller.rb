@@ -32,6 +32,7 @@ class CategoryController < ApplicationController
 			else
 				@platforms = Platform.published.by_economic_category(@economic_category.id)
 				@policy_briefs = PolicyBrief.published.by_economic_category(@economic_category.id)
+				@comments = @platform.comments
 
 				respond_to do |format|
 				  format.html # index.html.erb
@@ -65,6 +66,7 @@ class CategoryController < ApplicationController
 			else
 				@platforms = Platform.published.by_economic_category(@economic_category.id)
 				@policy_briefs = PolicyBrief.published.by_economic_category(@economic_category.id)
+				@comments = @policy_brief.comments
 
 				respond_to do |format|
 				  format.html # index.html.erb
@@ -96,6 +98,7 @@ class CategoryController < ApplicationController
 			else
 				@platforms = Platform.published.by_economic_category(@economic_category.id)
 				@policy_briefs = PolicyBrief.published.by_economic_category(@economic_category.id)
+				@comments = @statement.comments
 
 				respond_to do |format|
 				  format.html # index.html.erb

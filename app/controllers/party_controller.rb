@@ -32,6 +32,7 @@ class PartyController < ApplicationController
 			else
 				@platforms = Platform.published.by_political_party(@political_party.id)
 				@policy_briefs = PolicyBrief.published.by_political_party(@political_party.id)
+				@comments = @platform.comments
 
 				respond_to do |format|
 				  format.html # index.html.erb
@@ -65,6 +66,7 @@ class PartyController < ApplicationController
 			else
 				@platforms = Platform.published.by_political_party(@political_party.id)
 				@policy_briefs = PolicyBrief.published.by_political_party(@political_party.id)
+				@comments = @policy_brief.comments
 
 				respond_to do |format|
 				  format.html # index.html.erb
@@ -96,6 +98,7 @@ class PartyController < ApplicationController
 			else
 				@platforms = Platform.published.by_political_party(@political_party.id)
 				@policy_briefs = PolicyBrief.published.by_political_party(@political_party.id)
+				@comments = @statement.comments
 
 				respond_to do |format|
 				  format.html # index.html.erb
