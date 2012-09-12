@@ -115,7 +115,7 @@
 					<% @statements.each do |statement| %>
 						<li>
 							<%= link_to "#{l(statement.date_made, :format => :short)} - #{statement.political_party.name}",
-									"#",
+									party_statement_path(:political_party_id => statement.political_party.permalink, :id => statement.id),
 									:title => "#{statement.economic_category.name}" %>
 						</li>
 					<% end %>
