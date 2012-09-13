@@ -1,4 +1,6 @@
 class Comment < ActiveRecord::Base
+  require 'split_votes'
+  include SplitVotes
 
   include ActsAsCommentable::Comment
 
@@ -6,10 +8,6 @@ class Comment < ActiveRecord::Base
 
   default_scope :order => 'created_at ASC'
 
-  # NOTE: install the acts_as_votable plugin if you
-  # want user to vote on the quality of comments.
-  #acts_as_voteable
+ #belongs_to :user
 
-  # NOTE: Comments belong to a user
-  belongs_to :user
 end

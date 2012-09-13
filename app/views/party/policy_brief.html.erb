@@ -7,8 +7,8 @@
 
 		<%= simple_format_no_tags @policy_brief.analysis, {}, :sanitize => false %>
 
-		<%= render :partial => 'comments/list', :locals => {:commentable_type => 'policy_brief', :commentable_id => @policy_brief.id} %>
-    <%= render :partial => 'comments/form', :locals => {:commentable_type => 'policy_brief', :commentable_id => @policy_brief.id} %>
+		<%= render :partial => 'comments/list', :locals => {:commentable_type => 'policybrief', :commentable_id => @policy_brief.id} %>
+    <%= render :partial => 'comments/form', :locals => {:commentable_type => 'policybrief', :commentable_id => @policy_brief.id} %>
 
 	</div>
 
