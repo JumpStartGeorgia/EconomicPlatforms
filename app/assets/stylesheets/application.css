@@ -70,10 +70,10 @@ a, a:link, a:hover, a:visited, a:active
 .content a {
   text-decoration: underline;
 }
-a:hover
-{
-  color: #000;
-  background-color: #ccc;
+a:hover {
+  color: #348BE8;
+  background-color: none;
+  text-decoration: underline;
 }
 a.brand:hover{
   background-color: transparent;
