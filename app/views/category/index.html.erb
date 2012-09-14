@@ -49,9 +49,17 @@
 		<% else %>
 			<% @statements.each do |statement| %>
 				<div class="statement_summary">
-					<h3>
-						<%= l statement.date_made, :format => :long %>
-					</h3>
+           <div class="clear">
+			      <h3 style="float: left;">
+				      <%= l statement.date_made, :format => :long %>
+			      </h3>
+            <div style="float: left; margin-left: 20px;">
+              <% diff = statement.votes_diff %>
+              <span style="margin-left: 15px; color: <%= diff[:color] %>;"><%= diff[:number] %></span>
+            </div>
+          </div>
+
+
 				  <% if user_signed_in? && can?(:manage, Statement) %>
 						<p>
 							<%= link_to t('app.buttons.edit'),
