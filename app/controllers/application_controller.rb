@@ -105,5 +105,4 @@ logger.debug "////////////////////////// BROWSER NOT SUPPORTED"
 		render :file => "#{Rails.root}/public/500.html", :status => 500
 	end
 
-
 end

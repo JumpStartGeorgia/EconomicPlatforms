@@ -29,6 +29,7 @@ gem "pdfkit", "~> 0.5.2" # generate pdfs
 gem "useragent", :git => "https://github.com/jilion/useragent.git" # browser detection
 gem "use_tinymce", "~> 0.0.15" # wysiwyg
 gem "rails_autolink", "~> 1.0.9" # convert string to link if it is url
+gem 'acts_as_commentable', '2.0.1' #comments
 
 # Gems used only for assets and not required
 # in production environments by default.

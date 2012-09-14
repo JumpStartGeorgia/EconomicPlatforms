@@ -54,6 +54,10 @@
 				</ul>
 			<% end %>
 		</div>
+
+		<%= render :partial => 'comments/list', :locals => {:commentable_type => 'statement', :commentable_id => @statement.id} %>
+    <%= render :partial => 'comments/form', :locals => {:commentable_type => 'statement', :commentable_id => @statement.id} %>
+
 	</div>
 
 	<% if params[:format] != "pdf" %>

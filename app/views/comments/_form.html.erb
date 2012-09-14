@@ -1,0 +1,16 @@
+
+<form action="<%= add_comment_path(:type => commentable_type, :commentable_id => commentable_id) %>" method="post">
+
+
+  <input type="hidden" name="type" value="<%= commentable_type %>" />
+  <input type="text" name="comment" value="" />
+  <input type="submit" value="Add Comment" />
+
+
+
+</form>
+
+
+
+
+

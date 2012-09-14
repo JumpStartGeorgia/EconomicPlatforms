@@ -10,6 +10,10 @@ class Statement < ActiveRecord::Base
   attr_accessible :date_made, :political_party_id, :economic_category_id, :is_public,
 		:statement_translations_attributes, :statement_scores_attributes
 
+  acts_as_commentable
+  require 'split_votes'
+  include SplitVotes
+
   validates :date_made, :political_party_id, :economic_category_id, :presence => true
 
 	default_scope lambda {with_translations(I18n.locale).order("statements.date_made desc")}

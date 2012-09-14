@@ -14,6 +14,10 @@ class PolicyBrief < ActiveRecord::Base
 
   scope :published, where("is_public = '1'")
 
+  acts_as_commentable
+  require 'split_votes'
+  include SplitVotes
+
 	def self.by_party_category(political_party_id, economic_category_id)
 		if political_party_id && economic_category_id
 			x = with_translations(I18n.locale)

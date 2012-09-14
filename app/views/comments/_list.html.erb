@@ -1,0 +1,31 @@
+<% ip = request.remote_ip %>
+
+<div class="comments">
+  <h4 style="font-weight: bold;">Comments</h4>
+  <% @comments.each do |comment| %>
+    <div class="comment clear" style="margin-bottom: 2px; border-bottom: 1px solid #ccc;">
+      <div class="header" style="font-size: 9px; padding-left: 3px;">
+        <span class="date"><%= comment.created_at %></span>
+        <span class="vote" style="margin-left: 15px;">
+          <% if comment.voted(ip, 'up') %>
+            up
+          <% else %>
+            <%= link_to 'up',   vote_path(:type => 'comment', :votable_id => comment.id, :status => 'up') %>
+          <% end %>
+          <% if comment.voted(ip, 'down') %>
+            down
+          <% else %>
+            <%= link_to 'down', vote_path(:type => 'comment', :votable_id => comment.id, :status => 'down') %>
+          <% end %>
+        </span>
+        <span class="vote-results" style="margin-left: 15px;">
+          <span style="color: green"><%= comment.votes_up %></span>
+          <span style="color: red"><%= comment.votes_down %></span>
+        </span>
+      </div>
+      <div class="body">
+        <%= comment.comment %>
+      </div>
+    </div>
+  <% end %>
+</div>
