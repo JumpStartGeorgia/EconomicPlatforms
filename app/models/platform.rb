@@ -18,6 +18,8 @@ class Platform < ActiveRecord::Base
 
   scope :published, where("is_public = '1'")
 
+  acts_as_commentable
+
 	attr_accessible :score_economic_category, :score_political_party, :score_indicator_category, :score_value,
 		:score_value_centered, :score_value_explaination
 

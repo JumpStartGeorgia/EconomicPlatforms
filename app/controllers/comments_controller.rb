@@ -59,6 +59,7 @@ class CommentsController < ApplicationController
     record = Voter_ip.where(:ip => ip, :votable_type => params[:type], :votable_id => params[:votable_id])
 
     if record.nil? || record.empty?
+
       obj = m.find(params[:votable_id])
       if obj.vote.nil? || obj.vote.length < 4
         obj.vote = '+0-0'
@@ -80,6 +81,7 @@ class CommentsController < ApplicationController
       Voter_ip.create(:ip => ip, :votable_type => params[:type], :votable_id => params[:votable_id], :status => params[:status])
 
     elsif record[0].status != params[:status]
+
       obj = m.find(params[:votable_id])
 
       split = obj.vote.split('+')[1].split('-')
