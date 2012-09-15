@@ -255,7 +255,7 @@ ka:
     index:
       title: "%{political_party}"
       statement_header: "%{political_party} განცხადებები"
-      no_statements: "ამ მომენტისათვის განცხადებები არ ფიქსირდება %{political_party} - თვის."
+      no_statements: "ამ მომენტისათვის განცხადებები %{economic_category} არ ფიქსირდება %{political_party} - თვის."
       view_statement: განცადების ნახვა სრულად
     well:
       pdf_header: გადმოწერა

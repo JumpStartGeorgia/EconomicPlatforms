@@ -5,10 +5,33 @@ class PartyController < ApplicationController
 		if !@political_party
 			redirect_to root_path, notice: t('app.msgs.does_not_exist')
 		else
-	    @statements = Statement.by_political_party(@political_party.id).published.paginate(:page => params[:page])
-
+			@indicator_categories = IndicatorCategory.all
+      @default_indicator_category_id = 5
+      
+      @statements = nil
+      if params[:economic_category_id] && !params[:economic_category_id].empty?
+        # get statements for the pass in ec cat id
+  	    @statements = Statement.by_political_party(@political_party.id)
+  	      .by_economic_category(params[:economic_category_id])
+  	      .published.paginate(:page => params[:page])
+  	    economic_category = @economic_categories_nav.select{|x| x.id.to_s == params[:economic_category_id]} 
+  	    @economic_category_name = economic_category.first.name if economic_category && !economic_category.empty?
+      else
+        # get statements for the first ec cat that has statements
+        @economic_categories_nav.each do |ec_cat|
+    	    @statements = Statement.by_political_party(@political_party.id)
+  	        .by_economic_category(ec_cat.id)
+    	      .published.paginate(:page => params[:page])
+    	    if @statements && !@statements.empty?
+    	      params[:economic_category_id] = ec_cat.id.to_s
+    	      break
+    	    end
+  	    end
+      end
+      
 			@platforms = Platform.by_political_party(@political_party.id).published
 			@policy_briefs = PolicyBrief.by_political_party(@political_party.id).published
+			
 
 		  respond_to do |format|
 		    format.html # index.html.erb

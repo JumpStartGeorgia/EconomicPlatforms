@@ -42,9 +42,30 @@
 		</div>
 
 		<h2><%= t('.statement_header', :political_party => @political_party.name) %></h2>
+      <div id="party_statement_chart">
+        <div id="chart_selections">
+          <%= form_tag do %>
+          	<span>
+          		<%= t('activerecord.model.economic_category') %>
+			        <%= select_tag "economic_category_id", options_from_collection_for_select(@economic_categories_nav, "id", "name", params[:economic_category_id])%>
+          	</span>
+          	<span>
+          		<%= t('activerecord.model.indicator_category') %>
+			        <%= select_tag "indicator_category_id", options_from_collection_for_select(@indicator_categories, "id", "name", params[:indicator_category_id])%>
+          	</span>
+          	<span>
+          		<%= submit_tag t("app.buttons.update_statements") %>
+          	</span>
+          <% end %>
+            
+
+        </div>
+
+      </div>
+
 		<% if @statements.nil? || @statements.empty? %>
 			<p>
-				<%= t('.no_statements', :political_party => @political_party.name) %>
+				<%= t('.no_statements', :political_party => @political_party.name, :economic_category => @economic_category_name) %>
 			</p>
 		<% else %>
 			<% @statements.each do |statement| %>

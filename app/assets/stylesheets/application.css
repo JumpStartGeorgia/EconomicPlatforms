@@ -453,12 +453,6 @@ footer div#right ul li#right img {
 
 
 
-
-
-
-
-
-
 body {
   background: url(/assets/body-bg.jpg) repeat;
   color: #555;
@@ -470,4 +464,19 @@ footer, footer ul li, footer div#right ul li {
 
 footer #left {
   padding-top: 3px;
+}
+
+
+/* party index  chart */
+#party_statement_chart {
+  border-top: solid 1px #ddd;
+  border-bottom: solid 1px #ddd;
+  padding: 10px 0;
+}
+#party_statement_chart #chart_selections, 
+#party_statement_chart #chart_selections select, 
+#party_statement_chart #chart_selections input  {
+  font-size: 11px !important;
+  height: 20px;
+  margin-bottom: 0;
 }
