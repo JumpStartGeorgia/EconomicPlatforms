@@ -1,19 +1,84 @@
 <% title t('.title', :political_party => @political_party.name) %>
 
 <div class="row">
-	<div class="span9">
+	<div id="content_container" class="span9">
+
+		<div id="plat_brief_nav" class="clear">
+	    <% if @platforms && !@platforms.empty? %>
+				<div class="btn-group">
+					<button class="btn"><%= t('party.well.platform_header') %></button>
+					<button class="btn dropdown-toggle" data-toggle="dropdown">
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+	          <% @platforms.each do |platform| %>
+			        <li>
+								<%= link_to platform.economic_category_name,
+									party_platform_path(:political_party_id => params[:political_party_id],
+									:economic_category_id => platform.economic_category_permalink) %>
+							</li>
+	          <% end %>
+					</ul>
+				</div>
+	    <% end %>
+
+	    <% if @policy_briefs && !@policy_briefs.empty? %>
+				<div class="btn-group">
+					<button class="btn"><%= t('party.well.policy_brief_header')%></button>
+					<button class="btn dropdown-toggle" data-toggle="dropdown">
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+	          <% @policy_briefs.each do |policy_brief| %>
+			        <li>
+								<%= link_to policy_brief.economic_category_name,
+									party_policy_brief_path(:political_party_id => params[:political_party_id],
+									:economic_category_id => policy_brief.economic_category_permalink) %>
+							</li>
+	          <% end %>
+					</ul>
+				</div>
+	    <% end %>
+		</div>
 
 		<h2><%= t('.statement_header', :political_party => @political_party.name) %></h2>
+      <div id="party_statement_chart">
+        <div id="chart_selections">
+          <%= form_tag do %>
+          	<span>
+          		<%= t('activerecord.model.economic_category') %>
+			        <%= select_tag "economic_category_id", options_from_collection_for_select(@economic_categories_nav, "id", "name", params[:economic_category_id])%>
+          	</span>
+          	<span>
+          		<%= t('activerecord.model.indicator_category') %>
+			        <%= select_tag "indicator_category_id", options_from_collection_for_select(@indicator_categories, "id", "name", params[:indicator_category_id])%>
+          	</span>
+          	<span>
+          		<%= submit_tag t("app.buttons.update_statements") %>
+          	</span>
+          <% end %>
+        </div>
+
+        <div id="statement_chart"></div>
+      </div>
+
 		<% if @statements.nil? || @statements.empty? %>
 			<p>
-				<%= t('.no_statements', :political_party => @political_party.name) %>
+				<%= t('.no_statements', :political_party => @political_party.name, :economic_category => @economic_category_name) %>
 			</p>
 		<% else %>
 			<% @statements.each do |statement| %>
 				<div class="statement_summary">
-					<h3>
-						<%= l statement.date_made, :format => :long %>
-					</h3>
+           <div class="clear">
+			      <h3 style="float: left;">
+				      <%= l statement.date_made, :format => :long %>
+			      </h3>
+            <div style="float: left; margin-left: 20px;">
+              <% diff = statement.votes_diff %>
+              <span style="margin-left: 15px; color: <%= diff[:color] %>;"><%= diff[:number] %></span>
+            </div>
+          </div>
+
 				  <% if user_signed_in? && can?(:manage, Statement) %>
 						<p>
 							<%= link_to t('app.buttons.edit'),

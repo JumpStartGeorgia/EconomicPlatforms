@@ -1,0 +1,9 @@
+<% if !@page.nil? %>
+
+	<% title @page.title %>
+
+	<%= simple_format_no_tags @page.description, {}, :sanitize => false %>
+
+<% else %>
+	<% title t('.title') %>
+<% end %>

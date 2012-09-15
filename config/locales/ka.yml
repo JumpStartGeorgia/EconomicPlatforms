@@ -8,7 +8,7 @@ ka:
       indicator_category: ინდიკატორის კატეგორია
       indicator: ინდიკატორი
       platform: პარტიის პლატფორმა
-      policy_brief: რეზიუმე პოლიტიკაზე
+      policy_brief: ექსპერტული შეფასება
       political_party: პოლიტიკური პარტია
       page: Page
     attributes:
@@ -63,9 +63,9 @@ ka:
       en: English
       ka: ქართული
     directions:
-      left: Left
-      center: Center
-      right: Right
+      left: მემარცხენე
+      center: ცენტრისტული
+      right: მემარჯვენე
     buttons:
       back: უკან
       list: იხილეთ სრულად
@@ -101,7 +101,7 @@ ka:
       role: როლი
       new_password: ახალი პაროლი
       platform: პარტიის პლატფორმა
-      policy_brief: რეზიუმე პოლიტიკაზე
+      policy_brief: ექსპერტული შეფასება
       date: თარიღი
       files: დამხმარე ფაილები
       color: ფერი
@@ -113,8 +113,13 @@ ka:
       value: Value
       page: Page
       about: შესახებ
-      home: Home
+      home: მთავარი
+      methodology: მეთოდოლოგია
       is_public: Is Visible to World
+      party_statements: "%{party} Statements"
+      party_platform: "%{party} Platform"
+      all_party_platform_avg: All Political Parties Platform Average
+      time: Time
     msgs:
       does_not_exist: თქვენ ცდილობთ იხილოთ გვერდი, რომელიც არ არსებობს.
       not_authorized: თქვენ არ გაქვთ უფლება იხილოთ ეს გვერდი.
@@ -145,14 +150,16 @@ ka:
   root:
     index:
       title1: რას
-      title2: პარტიები
-      title3: გპირდებიან
+      title2: გპირდებიან
+      title3: პარტიები
       no_values: აპლიკაციაში პოლიტიკურ პარტიაზე ინფორმაცია ამ დროისთვის შეყვანილი არ არის.
       chart_title: პოლიტიკური პარტიების იდეოლოგიები
       latest_statements_header: Latest Statements
-      about_header: About
+      about_header: შესახებ
     about:
       title: შესახებ
+    methodology:
+      title: მეთოდოლოგია
   economic_categories:
     edit:
       title: ცვლილებების შეტანა ეკონომიკურ კატეგორიაში
@@ -198,10 +205,10 @@ ka:
     edit:
       title: ცვლილებების შეტანა პოლიტიკის რეზიუმეში
     index:
-      title: რეზიუმე პოლიტიკაზე
+      title: ექსპერტული შეფასება
       no_policy_briefs: "ამ დროისათვის პლატფორმები შეყვანილი არ არის"
     new:
-      title: ახალი რეზიუმე პოლიტიკაზე
+      title: ახალი ექსპერტული შეფასება
     show:
       title: დეტალები პოლიტიკის რეზიუმეზე
   political_parties:
@@ -218,7 +225,7 @@ ka:
       title: ადმინისტრატორის განყოფილება
       content_header: Add Content
       platforms: პლატფორმები
-      policy_briefs: რეზიუმე პოლიტიკაზე
+      policy_briefs: ექსპერტული შეფასება
       statements: განცხადებების
       users_header: მომხმარებლები
       new_users: მომხმარებლის დამატება
@@ -252,16 +259,16 @@ ka:
     index:
       title: "%{political_party}"
       statement_header: "%{political_party} განცხადებები"
-      no_statements: "ამ მომენტისათვის განცხადებები არ ფიქსირდება %{political_party} - თვის."
+      no_statements: "ამ მომენტისათვის განცხადებები %{economic_category} არ ფიქსირდება %{political_party} - თვის."
       view_statement: განცადების ნახვა სრულად
     well:
       pdf_header: გადმოწერა
       pdf_link: PDF
-      profile_header: "%{political_party} პროფილი"
+      profile_header: "პროფილი"
       view_profile: სრული პროფილის ნახვა
-      platform_header: "%{political_party} პლატფორმები"
+      platform_header: "პლატფორმები"
       no_platforms: "ამ დროისათვის პლატფორმები ჩაწერილი არ არის."
-      policy_brief_header: "%{political_party} რეზიუმე პოლიტიკაზე"
+      policy_brief_header: "ექსპერტული შეფასება"
       no_policy_briefs: "ამ დროისათვის რეზიუმეები პოლიტიკაზე შეყვანილი არ არის."
     statement:
       title: "%{political_party}"
@@ -271,7 +278,7 @@ ka:
       secondary_title: "პლატფორმა - %{economic_category}"
     policy_brief:
       title: "%{political_party}"
-      secondary_title: "რეზიუმე პოლიტიკაზე - %{economic_category}"
+      secondary_title: "ექსპერტული შეფასება - %{economic_category}"
   category:
     index:
       title: "%{economic_category}"
@@ -281,11 +288,11 @@ ka:
     well:
       pdf_header: გადმოწერა
       pdf_link: PDF
-      profile_header: "%{economic_category} პროფილი"
+      profile_header: "პროფილი"
       view_profile: სრული პროფილის ნახვა
-      platform_header: "%{economic_category} პლატფორმები"
+      platform_header: "პლატფორმები"
       no_platforms: "ამ დროისათვის პლატფორმები ჩაწერილი არ არის."
-      policy_brief_header: "%{economic_category} რეზიუმე პოლიტიკაზე"
+      policy_brief_header: "ექსპერტული შეფასება"
       no_policy_briefs: "ამ დროისათვის რეზიუმეები პოლიტიკაზე შეყვანილი არ არის."
     statement:
       title: "%{economic_category}"
@@ -295,7 +302,7 @@ ka:
       secondary_title: "პლატფორმა - %{political_party}"
     policy_brief:
       title: "%{economic_category}"
-      secondary_title: "რეზიუმე პოლიტიკაზე - %{political_party}"
+      secondary_title: "ექსპერტული შეფასება - %{political_party}"
   pages:
     edit:
       title: Editing Pages

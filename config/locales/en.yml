@@ -81,6 +81,7 @@ en:
       remove: Remove
       confirm: Are you sure?
       new: New
+      update_statements: Update Statements
     common:
       app_name: Georgia Economic Platform
       name: Name
@@ -114,7 +115,12 @@ en:
       page: Page
       about: About
       home: Home
+      methodology: Methodology
       is_public: Is Visible to World
+      party_statements: "%{party} Statements"
+      party_platform: "%{party} Platform"
+      all_party_platform_avg: All Political Parties Platform Average
+      time: Time
     msgs:
       does_not_exist: You tried to access a page that does not exist.
       not_authorized: You are not authorized to view that page.
@@ -153,6 +159,8 @@ en:
       about_header: About
     about:
       title: About
+    methodology:
+      title: Methodology
   economic_categories:
     edit:
       title: Editing Economic Category
@@ -252,16 +260,16 @@ en:
     index:
       title: "%{political_party}"
       statement_header: "%{political_party} Statements"
-      no_statements: "At this time, no statements have been recorded for %{political_party}."
+      no_statements: "At this time, no %{economic_category} statements have been recorded for %{political_party}."
       view_statement: View Full Statement
     well:
       pdf_header: Download
       pdf_link: PDF
-      profile_header: "%{political_party} Profile"
+      profile_header: "Profile"
       view_profile: View Complete Profile
-      platform_header: "%{political_party} Platforms"
+      platform_header: "Platforms"
       no_platforms: "At this time, no platforms are on file."
-      policy_brief_header: "%{political_party} Policy Briefs"
+      policy_brief_header: "Policy Briefs"
       no_policy_briefs: "At this time, no policy briefs are on file."
     statement:
       title: "%{political_party}"
@@ -281,11 +289,11 @@ en:
     well:
       pdf_header: Download
       pdf_link: PDF
-      profile_header: "%{economic_category} Profile"
+      profile_header: "Profile"
       view_profile: View Complete Profile
-      platform_header: "%{economic_category} Platforms"
+      platform_header: "Platforms"
       no_platforms: "At this time, no platforms are on file."
-      policy_brief_header: "%{economic_category} Policy Briefs"
+      policy_brief_header: "Policy Briefs"
       no_policy_briefs: "At this time, no policy briefs are on file."
     statement:
       title: "%{economic_category}"

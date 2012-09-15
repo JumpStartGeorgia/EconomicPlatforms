@@ -14,7 +14,7 @@ class RootController < ApplicationController
 
     if @values && !@values.empty?
       # get indicators for this category
-      @indicators = Indicator.by_indicator_category(ideological_id)
+      @indicators = Indicator.by_indicator_category(ideological_id).sort{|a,b| b.value <=> a.value}
 
       # load a gon variable with the data for the chart
       gon.economic_chart_data = @values
@@ -31,6 +31,10 @@ class RootController < ApplicationController
 
 	def about
 		@page = Page.find_by_name('about')
+	end
+
+	def methodology
+		@page = Page.find_by_name('methodology')
 	end
 
 end

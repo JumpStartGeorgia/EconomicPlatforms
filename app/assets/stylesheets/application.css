@@ -70,10 +70,10 @@ a, a:link, a:hover, a:visited, a:active
 .content a {
   text-decoration: underline;
 }
-a:hover
-{
-  color: #000;
-  background-color: #ccc;
+a:hover {
+  color: #348BE8;
+  background-color: none;
+  text-decoration: underline;
 }
 a.brand:hover{
   background-color: transparent;
@@ -196,18 +196,40 @@ div.admin_panel ul li {
   padding: 0.5em 1em;
 }
 
+/* party profile page */
+#plat_brief_nav {
+	margin-bottom: 2em;
+}
+
+#plat_brief_nav > div {
+	display: inline-block;
+}
+
 /* wells */
 .well {
   background: url(/assets/block-bg.jpg) repeat;
   padding: 17px 20px 20px 18px;
 }
+.well h3 {
+  font-family: fightme;
+  color: #f3543f;
+  margin-bottom: 8px;
+	font-weight: bold;
+	font-size: 18px;
+}
 .well h4 {
   font-family: fightme;
   color: #f3543f;
-  margin-bottom: 17px;
+  margin-top: 8px;
+  margin-bottom: 4px;
 	font-weight: bold;
 	font-size: 16px;
 }
+#well_legend > h3 {
+  padding-left: 20px;
+  background: url(/assets/legend-icon.jpg) center left no-repeat;
+}
+
 .well a {
 	font-size: 12px;
 	display: block;
@@ -270,9 +292,12 @@ div.admin_panel ul li {
   color: #348be8;
 	margin-left: 4em;
 }
-#title_dropdowns h1#ka span#line3 {
+#title_dropdowns h1#ka span#line2 {
 	display: inline-block;
-	margin-left: 2em;
+	margin-left: 1em;
+	line-height: 90px;
+	margin-top: -5px;
+	margin-bottom: -10px;
 }
 #title_dropdowns h1#ka span#big_red_block {
 	display: inline-block;
@@ -280,15 +305,10 @@ div.admin_panel ul li {
   color: #D73421;
 	text-transform:uppercase;
 	line-height: 90px;
-	margin-top: 0px;
-	margin-bottom: -10px;
-	margin-left: 1em;
+	margin-top: -15px;
+	margin-left: 2em;
 	letter-spacing: 0.15em;
-}
-#title_dropdowns h1#ka span#big_red_inline {
-	display: inline-block;
-  font-size: 40pt;
-  color: #D73421;
+	margin-bottom: -15px;
 }
 
 #title_dropdowns #nav_buttons {
@@ -433,12 +453,6 @@ footer div#right ul li#right img {
 
 
 
-
-
-
-
-
-
 body {
   background: url(/assets/body-bg.jpg) repeat;
   color: #555;
@@ -450,4 +464,43 @@ footer, footer ul li, footer div#right ul li {
 
 footer #left {
   padding-top: 3px;
+}
+
+
+/* party index  chart */
+#party_statement_chart {
+  border-top: solid 1px #ddd;
+  border-bottom: solid 1px #ddd;
+  padding: 10px 0;
+}
+#party_statement_chart #chart_selections,
+#party_statement_chart #chart_selections select,
+#party_statement_chart #chart_selections input  {
+  font-size: 11px !important;
+  height: 25px;
+  margin-bottom: 0;
+}
+#party_statement_chart #chart_selections{
+	margin-bottom: 10px;
+}
+
+#party_statement_chart #chart_selections select{
+  width: 100px;
+}
+
+#party_statement_chart #statement_chart{
+  height: 240px;
+}
+#party_statement_chart #statement_chart path {
+  stroke: steelblue;
+  stroke-width: 3;
+  fill: none;
+}
+#party_statement_chart #statement_chart line {
+  stroke: black;
+}
+
+#party_statement_chart #statement_chart text {
+  font-family: Arial;
+  font-size: 9pt;
 }

@@ -1,30 +1,30 @@
 <% ip = request.remote_ip %>
 
-<div class="comments">
-  <h4 style="font-weight: bold;">Comments</h4>
+<div class="comments" style="padding-top: 15px;">
+  <h4 style="font-weight: bold; margin-bottom: 7px;">Comments</h4>
   <% @comments.each do |comment| %>
-    <div class="comment clear" style="margin-bottom: 2px; border-bottom: 1px solid #ccc;">
-      <div class="header" style="font-size: 9px; padding-left: 3px;">
+    <div class="comment clear" style="margin-bottom: 3px; border-bottom: 1px solid #ccc; padding: 8px 14px 10px 15px; background: url('/assets/block-bg.jpg') repeat; border-radius: 3px; border: 1px solid rgba(0, 0, 0, 0.05); -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05); ">
+      <div class="body">
+        <%= comment.comment %>
+      </div>
+      <div class="header" style="font-size: 9px; padding-left: 3px; margin-top: 8px;">
         <span class="date"><%= l comment.created_at, :format => :long %></span>
         <span class="vote" style="margin-left: 15px;">
           <% if comment.voted(ip, 'up') %>
-            up
+            <%= image_tag('/assets/thumbs-up-grey.png') %>
           <% else %>
-            <%= link_to 'up',   vote_path(:type => 'comment', :votable_id => comment.id, :status => 'up') %>
+            <%= link_to image_tag('/assets/thumbs-up.png'),   vote_path(:type => 'comment', :votable_id => comment.id, :status => 'up') %>
           <% end %>
           <% if comment.voted(ip, 'down') %>
-            down
+            <%= image_tag('/assets/thumbs-down-grey.png') %>
           <% else %>
-            <%= link_to 'down', vote_path(:type => 'comment', :votable_id => comment.id, :status => 'down') %>
+            <%= link_to image_tag('/assets/thumbs-down.png'), vote_path(:type => 'comment', :votable_id => comment.id, :status => 'down') %>
           <% end %>
         </span>
         <span class="vote-results" style="margin-left: 15px;">
-          <span style="color: green"><%= comment.votes_up %></span>
-          <span style="color: red"><%= comment.votes_down %></span>
+          <% diff = comment.votes_diff %>
+          <span style="color: <%= diff[:color] %>;"><%= diff[:number] %></span>
         </span>
-      </div>
-      <div class="body">
-        <%= comment.comment %>
       </div>
     </div>
   <% end %>

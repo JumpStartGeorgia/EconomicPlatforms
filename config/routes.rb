@@ -39,9 +39,9 @@ EconomicPlatforms::Application.routes.draw do
 		match '/add_comment_to/:type/:commentable_id', :to => 'comments#create', :as => :add_comment, :via => :post
 		match '/vote/:type/:votable_id/:status', :to => 'comments#vote', :as => :vote, :via => :get
 
-
 		match '/admin', :to => 'admin#index', :as => :admin, :via => :get
 		match '/about', :to => 'root#about', :as => :about, :via => :get
+		match '/methodology', :to => 'root#methodology', :as => :methodology, :via => :get
 
 		root :to => 'root#index'
 	  match "*path", :to => redirect("/#{I18n.default_locale}") # handles /en/fake/path/whatever

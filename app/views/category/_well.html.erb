@@ -8,17 +8,21 @@
 					</li>
 				</ul>
 		</div>
+		<% end %>
+
 		<div class="well well-small">
-			<h4><%= t('.profile_header', :economic_category => @economic_category.name) %></h4>
+			<h3><%= @economic_category.name %></h3>
+
+			<% if params[:action] != 'index' %>
+				<h4><%= t('.profile_header') %></h4>
 				<ul>
 					<li>
 						<%= link_to t('.view_profile'),	category_path(params[:economic_category_id]) %>
 					</li>
 				</ul>
-		</div>
-		<% end %>
-		<div class="well well-small">
-			<h4><%= t('.platform_header', :economic_category => @economic_category.name) %></h4>
+			<% end %>
+
+			<h4><%= t('.platform_header') %></h4>
 			<% if @platforms && !@platforms.empty? %>
 				<ul>
 					<% @platforms.each do |platform| %>
@@ -32,9 +36,8 @@
 			<% else %>
 				<%= t('.no_platforms') %>
 			<% end %>
-		</div>
-		<div class="well well-small">
-			<h4><%= t('.policy_brief_header', :economic_category => @economic_category.name) %></h4>
+
+			<h4><%= t('.policy_brief_header') %></h4>
 			<% if @policy_briefs && !@policy_briefs.empty? %>
 				<ul>
 					<% @policy_briefs.each do |policy_brief| %>
