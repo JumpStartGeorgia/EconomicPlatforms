@@ -54,7 +54,9 @@
 			        <%= select_tag "indicator_category_id", options_from_collection_for_select(@indicator_categories, "id", "name", params[:indicator_category_id])%>
           	</span>
           	<span>
-          		<%= submit_tag t("app.buttons.update_statements") %>
+          		<%= link_to t("app.buttons.update_statements"), party_path(@political_party.permalink),
+								:class => 'btn btn-primary btn-mini',
+								:id => 'chart_selections_submit' %>
           	</span>
           <% end %>
         </div>

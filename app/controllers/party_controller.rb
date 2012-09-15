@@ -33,6 +33,7 @@ class PartyController < ApplicationController
 			@platforms = Platform.by_political_party(@political_party.id).published
 			@policy_briefs = PolicyBrief.by_political_party(@political_party.id).published
 
+			gon.party_profile = true
       gon.party_statement_chart_data = true
       gon.json_data = Statement.party_statement_scores_json(
 				@political_party.id,
