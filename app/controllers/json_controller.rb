@@ -18,7 +18,7 @@ class JsonController < ApplicationController
       all_party_average = Platform.all_party_average(params[:economic_category_id], params[:indicator_category_id])
       
       # put together in nice format
-      # {party  cat  ind  title  scale={top  middle  bottom}  values=[{x  y}]}
+      # {party  cat  ind  title  scale={top  middle  bottom}  values=[{x  y}]  guidlines={party_plat  all_parties_plat}}
       json['political_party'] = scores.first.political_party_name
       json['economic_category'] = scores.first.economic_category_name
       json['indicator_category'] = scores.first.indicator_category_name
@@ -32,6 +32,9 @@ class JsonController < ApplicationController
         json['values'][index]['x'] = I18n.l(score.date_made, :format => :default)
         json['values'][index]['y'] = score.daily_avg_score
       end
+      json['guidelines'] = Hash.new
+      json['guidelines']['party_platform_score'] = platform_score.first.score_value
+      json['guidelines']['all_party_platform_avg_score'] = all_party_average.to_f
     end
     
     respond_to do |format|
