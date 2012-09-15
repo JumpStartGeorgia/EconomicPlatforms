@@ -71,19 +71,33 @@ class Platform < ActiveRecord::Base
   #########################
   def self.score(political_party_id, economic_category_id, indicator_category_id)
     if political_party_id && economic_category_id && indicator_category_id
-      select("platform_scores.value as score_value")
-      .joins(:platform_scores)
-      .where(['platforms.political_party_id = :pp_id and platforms.economic_category_id = :ec_id and platform_scores.indicator_category_id = :ind_id and platform_scores.value != 0',
-        :pp_id => political_party_id, :ec_id => economic_category_id, :ind_id => indicator_category_id])
+      x = select("platform_scores.value as score_value")
+          .joins(:platform_scores)
+          .where(['platforms.political_party_id = :pp_id and platforms.economic_category_id = :ec_id and platform_scores.indicator_category_id = :ind_id and platform_scores.value != 0',
+            :pp_id => political_party_id, :ec_id => economic_category_id, :ind_id => indicator_category_id])
+
+      # if x exists, center the value and flip the sign
+      if x && x.length > 0
+logger.debug "@@@@@@@@@@@@@ original score = #{x.first.score_value}"
+        y = (x.first.score_value - 4)
+        return y == 0 ? y : y*-1
+      end
     end
   end
 
   def self.all_party_average(economic_category_id, indicator_category_id)
     if economic_category_id && indicator_category_id
-      joins(:platform_scores)
-      .where(['platforms.economic_category_id = :ec_id and platform_scores.indicator_category_id = :ind_id and platform_scores.value != 0',
-        :ec_id => economic_category_id, :ind_id => indicator_category_id])
-      .average('platform_scores.value')
+      x = joins(:platform_scores)
+          .where(['platforms.economic_category_id = :ec_id and platform_scores.indicator_category_id = :ind_id and platform_scores.value != 0',
+            :ec_id => economic_category_id, :ind_id => indicator_category_id])
+          .average('platform_scores.value')
+
+      # if x exists, center the value and flip the sign
+      if x
+logger.debug "@@@@@@@@@@@@@ original score = #{x.to_f}"
+        y = (x.to_f - 4)
+        return y == 0 ? y : y*-1
+      end
     end
   end
 

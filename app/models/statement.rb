@@ -44,7 +44,8 @@ class Statement < ActiveRecord::Base
   def self.daily_average(political_party_id, economic_category_id, indicator_category_id)
     if political_party_id && economic_category_id && indicator_category_id
       sql = "select ppt.name as political_party_name,ect.name as economic_category_name, "
-      sql << "ict.name as indicator_category_name, s.date_made, avg(ss.value) as daily_avg_score "
+      sql << "ict.name as indicator_category_name, s.date_made, "
+      sql << "if(avg(ss.value)=4, 0, ((avg(ss.value)-4)*-1)) as daily_avg_score "
       sql << "from  "
       sql << "statements as s "
       sql << "inner join statement_scores as ss on ss.statement_id = s.id "

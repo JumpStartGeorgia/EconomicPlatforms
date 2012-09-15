@@ -480,3 +480,10 @@ footer #left {
   height: 20px;
   margin-bottom: 0;
 }
+#party_statement_chart #chart_selections select{
+  width: 100px;
+}
+
+#party_statement_chart #statement_chart{
+  height: 150px;
+}

@@ -19,22 +19,26 @@ class JsonController < ApplicationController
       
       # put together in nice format
       # {party  cat  ind  title  scale={top  middle  bottom}  values=[{x  y}]  guidlines={party_plat  all_parties_plat}}
-      json['political_party'] = scores.first.political_party_name
-      json['economic_category'] = scores.first.economic_category_name
-      json['indicator_category'] = scores.first.indicator_category_name
+      json['political_party'] = scores.first.political_party_name if scores && !scores.empty?
+      json['economic_category'] = scores.first.economic_category_name if scores && !scores.empty?
+      json['indicator_category'] = scores.first.indicator_category_name if scores && !scores.empty?
       json['title'] = ''
       json['scales'] = Hash.new
       json['scales']['top'] = t('app.directions.left')
       json['scales']['middle'] = t('app.directions.center')
       json['scales']['bottom'] = t('app.directions.right')
-      json['values'] = Array.new(scores.length) {Hash.new}
-      scores.each_with_index do |score, index|
-        json['values'][index]['x'] = I18n.l(score.date_made, :format => :default)
-        json['values'][index]['y'] = score.daily_avg_score
+      if scores && !scores.empty?
+        json['values'] = Array.new(scores.length) {Hash.new}
+        scores.each_with_index do |score, index|
+          json['values'][index]['x'] = I18n.l(score.date_made, :format => :default)
+          json['values'][index]['y'] = score.daily_avg_score
+        end
+      else
+        json['values'] = Array.new
       end
       json['guidelines'] = Hash.new
-      json['guidelines']['party_platform_score'] = platform_score.first.score_value
-      json['guidelines']['all_party_platform_avg_score'] = all_party_average.to_f
+      json['guidelines']['party_platform_score'] = platform_score
+      json['guidelines']['all_party_platform_avg_score'] = all_party_average
     end
     
     respond_to do |format|

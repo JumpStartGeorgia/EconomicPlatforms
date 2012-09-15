@@ -1,7 +1,7 @@
 <% title t('.title', :political_party => @political_party.name) %>
 
 <div class="row">
-	<div class="span9">
+	<div id="content_container" class="span9">
 
 		<div id="plat_brief_nav" class="clear">
 	    <% if @platforms && !@platforms.empty? %>
@@ -57,10 +57,9 @@
           		<%= submit_tag t("app.buttons.update_statements") %>
           	</span>
           <% end %>
-            
-
         </div>
 
+        <div id="statement_chart"></div>
       </div>
 
 		<% if @statements.nil? || @statements.empty? %>

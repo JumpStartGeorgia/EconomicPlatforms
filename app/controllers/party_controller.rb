@@ -6,7 +6,6 @@ class PartyController < ApplicationController
 			redirect_to root_path, notice: t('app.msgs.does_not_exist')
 		else
 			@indicator_categories = IndicatorCategory.all
-      @default_indicator_category_id = 5
       
       @statements = nil
       if params[:economic_category_id] && !params[:economic_category_id].empty?
@@ -27,11 +26,19 @@ class PartyController < ApplicationController
     	      break
     	    end
   	    end
+  	    # assign default value for ind category drop down
+        params[:indicator_category_id] = 5
       end
       
 			@platforms = Platform.by_political_party(@political_party.id).published
 			@policy_briefs = PolicyBrief.by_political_party(@political_party.id).published
 			
+      gon.party_statement_chart_data = true
+      gon.json_path = json_party_statement_scores_path(
+        :political_party_id => @political_party.id,
+        :economic_category_id => params[:economic_category_id],
+        :indicator_category_id => params[:indicator_category_id]
+      )
 
 		  respond_to do |format|
 		    format.html # index.html.erb
