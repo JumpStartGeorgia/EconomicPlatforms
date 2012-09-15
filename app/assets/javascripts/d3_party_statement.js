@@ -61,7 +61,7 @@ if (gon.party_statement_chart_data && gon.json_data) {
 			    .attr("y1", -1 * (y(0) - ((y(0)-y(1)) * gon.json_data['guidelines']['party_platform_score'])))
 			    .attr("x2", x(gon.json_data['values']['y'].length-1))
 			    .attr("y2", -1 * (y(0) - ((y(0)-y(1)) * gon.json_data['guidelines']['party_platform_score'])))
-			    .attr("style", "stroke: #0f0;stroke-dasharray: 10,6;stroke-width: 3;")
+			    .attr("style", "stroke: #e5e834;stroke-dasharray: 10,6;stroke-width: 3;")
 
 			// guideline - all party platform avg score
 			g.append("svg:line")
@@ -132,7 +132,7 @@ if (gon.party_statement_chart_data && gon.json_data) {
 			    .attr("y1", -1 * y(-5))
 			    .attr("x2", x(0)+15)
 			    .attr("y2", -1 * y(-5))
-			    .attr("style", "stroke: steelblue;stroke-width: 3;")
+			    .attr("style", "stroke: #348be8;stroke-width: 3;")
 			g.append("svg:text")
 		      .attr("class", "label")
 		      .attr("x", x(0)+16)
@@ -145,7 +145,7 @@ if (gon.party_statement_chart_data && gon.json_data) {
 			    .attr("y1", -1 * y(-6))
 			    .attr("x2", x(0)+15)
 			    .attr("y2", -1 * y(-6))
-			    .attr("style", "stroke: #0f0;stroke-dasharray: 5,3;stroke-width: 3;")
+			    .attr("style", "stroke: #e5e834;stroke-dasharray: 5,3;stroke-width: 3;")
 			g.append("svg:text")
 		      .attr("class", "label")
 		      .attr("x", x(0)+16)
