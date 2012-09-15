@@ -19,11 +19,9 @@ class Statement < ActiveRecord::Base
 	default_scope lambda {with_translations(I18n.locale).order("statements.date_made desc")}
   scope :published, where("is_public = '1'")
 
-  before_save :translate_to_english
-
   TYPE = %w[political_party, economic_indicator]
 
-	attr_accessible :count_name, :count_permalink, :count_total
+	attr_accessible :political_party_name, :economic_category_name, :indicator_category_name, :daily_avg_score
 
 	# number of items per page for pagination
 	self.per_page = 4
@@ -40,38 +38,31 @@ class Statement < ActiveRecord::Base
 		where(:economic_category_id => economic_category_id) if economic_category_id
 	end
 
-  def self.count_by_political_party
-    sql = "select ppt.name as count_name, ppt.permalink as count_permalink, if(isnull(s.total),0,s.total) as count_total "
-    sql << "from political_party_translations as ppt "
-    sql << "left join ( "
-    sql << "select political_party_id, count(*) as total "
-    sql << "from statements group by political_party_id) as s on s.political_party_id = ppt.political_party_id  "
-    sql << "where ppt.locale = :locale "
-    sql << "order by ppt.name"
+  #########################
+  ## avg scores
+  #########################
+  def self.daily_average(political_party_id, economic_category_id, indicator_category_id)
+    if political_party_id && economic_category_id && indicator_category_id
+      sql = "select ppt.name as political_party_name,ect.name as economic_category_name, "
+      sql << "ict.name as indicator_category_name, s.date_made, avg(ss.value) as daily_avg_score "
+      sql << "from  "
+      sql << "statements as s "
+      sql << "inner join statement_scores as ss on ss.statement_id = s.id "
+      sql << "inner join political_party_translations as ppt on ppt.political_party_id = s.political_party_id "
+      sql << "inner join economic_category_translations as ect on ect.economic_category_id = s.economic_category_id "
+      sql << "inner join indicator_category_translations as ict on ict.indicator_category_id = ss.indicator_category_id "
+      sql << "where "
+      sql << "s.political_party_id = :pp_id "
+      sql << "and s.economic_category_id = :ec_id "
+      sql << "and ss.indicator_category_id = :ind_id "
+      sql << "and ss.value != 0 "
+      sql << "and ppt.locale = :locale and ect.locale = :locale and ict.locale = :locale "
+      sql << "group by ppt.name,ect.name, ict.name,s.date_made "
+      sql << "order by s.date_made "
+      
+		  find_by_sql([sql, :pp_id => political_party_id, :ec_id => economic_category_id, 
+		    :ind_id => indicator_category_id, :locale => I18n.locale])
 
-		find_by_sql([sql, :locale => I18n.locale])
-  end
-
-  def self.count_by_economic_category
-    sql = "select ect.name as count_name, ect.permalink as count_permalink, if(isnull(s.total),0,s.total) as count_total "
-    sql << "from economic_category_translations as ect "
-    sql << "left join ( "
-    sql << "select economic_category_id, count(*) as total "
-    sql << "from statements group by economic_category_id) as s on s.economic_category_id = ect.economic_category_id  "
-    sql << "where ect.locale = :locale "
-    sql << "order by ect.name"
-
-		find_by_sql([sql, :locale => I18n.locale])
-  end
-
-
-	protected
-
-  # if there is a ka translation, get the english from google translate
-  def translate_to_english
-    if !self.statement_translations.empty? && !self.statement_translations.index{|x| x.locale == "ka"}.nil?
-      # found ka record
-      # get english
     end
   end
 

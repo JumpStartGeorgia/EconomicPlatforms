@@ -39,6 +39,10 @@ EconomicPlatforms::Application.routes.draw do
 		match '/add_comment_to/:type/:commentable_id', :to => 'comments#create', :as => :add_comment, :via => :post
 		match '/vote/:type/:votable_id/:status', :to => 'comments#vote', :as => :vote, :via => :get
 
+    # json
+		match '/json/party_statement_scores/:political_party_id/:economic_category_id/:indicator_category_id', 
+		  :to => 'json#party_statement_scores', :as => :json_party_statement_scores, :via => :get, :defaults => {:format => 'json'}
+    
 
 		match '/admin', :to => 'admin#index', :as => :admin, :via => :get
 		match '/about', :to => 'root#about', :as => :about, :via => :get
