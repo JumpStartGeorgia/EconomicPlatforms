@@ -62,10 +62,27 @@ en:
     language:
       en: English
       ka: ქართული
-    directions:
-      left: Left
-      center: Center
-      right: Right
+    scales:
+      indicator_category_id_1:
+        top: Correct
+        middle: Center
+        bottom: Wrong
+      indicator_category_id_2:
+        top: Consistent
+        middle: Center
+        bottom: Self-Contradictory
+      indicator_category_id_3:
+        top: Justified
+        middle: Center
+        bottom: No Sense
+      indicator_category_id_4:
+        top: Feasible
+        middle: Center
+        bottom: Not Possible
+      indicator_category_id_5:
+        top: Left
+        middle: Center
+        bottom: Right
     buttons:
       back: Back
       list: View All

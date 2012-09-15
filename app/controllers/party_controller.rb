@@ -5,7 +5,7 @@ class PartyController < ApplicationController
 		if !@political_party
 			redirect_to root_path, notice: t('app.msgs.does_not_exist')
 		else
-			@indicator_categories = IndicatorCategory.all
+			@indicator_categories = IndicatorCategory.with_indicators
 
       @statements = nil
       if params[:economic_category_id] && !params[:economic_category_id].empty?

@@ -19,9 +19,9 @@ class RootController < ApplicationController
       # load a gon variable with the data for the chart
       gon.economic_chart_data = @values
       gon.number_parties = @political_parties_nav.length
-			gon.direction_left = t('app.directions.left')
-			gon.direction_center = t('app.directions.center')
-			gon.direction_right = t('app.directions.right')
+			gon.direction_left = t("app.scales.indicator_category_id_#{ideological_id}.top")
+			gon.direction_center = t("app.scales.indicator_category_id_#{ideological_id}.middle")
+			gon.direction_right = t("app.scales.indicator_category_id_#{ideological_id}.bottom")
     end
 
 		# get the latest statements

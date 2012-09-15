@@ -68,10 +68,9 @@ class Statement < ActiveRecord::Base
       json['scales']['x'] = Hash.new
       json['scales']['x']['time'] = I18n.t('app.common.time')
       json['scales']['y'] = Hash.new
-      json['scales']['y']['top'] = I18n.t('app.directions.left')
-      json['scales']['y']['top'] = I18n.t('app.directions.left')
-      json['scales']['y']['middle'] = I18n.t('app.directions.center')
-      json['scales']['y']['bottom'] = I18n.t('app.directions.right')
+      json['scales']['y']['top'] = I18n.t("app.scales.indicator_category_id_#{indicator_category_id}.top")
+      json['scales']['y']['middle'] = I18n.t("app.scales.indicator_category_id_#{indicator_category_id}.middle")
+      json['scales']['y']['bottom'] = I18n.t("app.scales.indicator_category_id_#{indicator_category_id}.bottom")
       if scores && !scores.empty?
         json['values'] = Hash.new
 				json['values']['x'] = Array.new(scores.length)
@@ -84,9 +83,7 @@ class Statement < ActiveRecord::Base
         json['values'] = Array.new
       end
       json['guidelines'] = Hash.new
-      json['guidelines']['party_platform_name'] = I18n.t('app.common.party_platform', :party => json['political_party'])
       json['guidelines']['party_platform_score'] = platform_score
-      json['guidelines']['all_party_platform_avg_name'] = I18n.t('app.common.all_party_platform_avg')
       json['guidelines']['all_party_platform_avg_score'] = all_party_average
       json['legend'] = Hash.new
       json['legend']['party_statements'] = I18n.t('app.common.party_statements', :party => json['political_party'])
@@ -101,7 +98,7 @@ class Statement < ActiveRecord::Base
     if political_party_id && economic_category_id && indicator_category_id
       sql = "select ppt.name as political_party_name,ect.name as economic_category_name, "
       sql << "ict.name as indicator_category_name, s.date_made, "
-      sql << "if(avg(ss.value)=4, 0, ((avg(ss.value)-4)*-1)) as daily_avg_score "
+      sql << "if(avg(ss.value)=4, 0, (avg(ss.value)-4)) as daily_avg_score "
       sql << "from  "
       sql << "statements as s "
       sql << "inner join statement_scores as ss on ss.statement_id = s.id "

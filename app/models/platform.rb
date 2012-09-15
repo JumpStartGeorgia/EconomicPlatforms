@@ -79,8 +79,8 @@ class Platform < ActiveRecord::Base
       # if x exists, center the value and flip the sign
       if x && x.length > 0
 logger.debug "@@@@@@@@@@@@@ original score = #{x.first.score_value}"
-        y = (x.first.score_value - 4)
-        return y == 0 ? y : y*-1
+        return y = (x.first.score_value - 4)
+#        return y == 0 ? y : y*-1
       end
     end
   end
@@ -95,8 +95,8 @@ logger.debug "@@@@@@@@@@@@@ original score = #{x.first.score_value}"
       # if x exists, center the value and flip the sign
       if x
 logger.debug "@@@@@@@@@@@@@ original score = #{x.to_f}"
-        y = (x.to_f - 4)
-        return y == 0 ? y : y*-1
+        return y = (x.to_f - 4)
+#        return y == 0 ? y : y*-1
       end
     end
   end

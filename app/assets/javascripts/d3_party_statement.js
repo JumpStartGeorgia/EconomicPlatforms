@@ -1,15 +1,12 @@
 if (gon.party_statement_chart_data && gon.json_data) {
-console.log("values = " + gon.json_data['values']);
-	if (gon.json_data['values'] == undefined){
-		// no data exists
-console.log("json_data has no length");
+	if (gon.json_data['values'] == undefined || gon.json_data['values']['y'].length == 1){
+		// no data exists or only 1 data point exists
 		$('#statement_chart').hide();
 	} else {
-console.log("json_data has length");
 		$('#statement_chart').show();
 		var	w = $('#content_container').width(),
 			h = 240,
-			margin = {top: 100, right: 50, bottom: 50, left: 75},
+			margin = {top: 100, right: 50, bottom: 50, left: 150},
 			x = d3.scale.linear().domain([0, gon.json_data['values']['y'].length-1]).range([0 + margin.left, w - margin.right]),
 			y = d3.scale.linear().domain([-3,3]).range([0 + margin.top, h - margin.bottom]);
 

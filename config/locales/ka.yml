@@ -62,10 +62,27 @@ ka:
     language:
       en: English
       ka: ქართული
-    directions:
-      left: მემარცხენე
-      center: ცენტრისტული
-      right: მემარჯვენე
+    scales:
+      indicator_category_id_1:
+        top: Correct
+        middle: ცენტრისტული
+        bottom: Wrong
+      indicator_category_id_2:
+        top: Consistent
+        middle: ცენტრისტული
+        bottom: Self-Contradictory
+      indicator_category_id_3:
+        top: Justified
+        middle: ცენტრისტული
+        bottom: No Sense
+      indicator_category_id_4:
+        top: Feasible
+        middle: ცენტრისტული
+        bottom: Not Possible
+      indicator_category_id_5:
+        top: მემარცხენე
+        middle: ცენტრისტული
+        bottom: მემარჯვენე
     buttons:
       back: უკან
       list: იხილეთ სრულად
