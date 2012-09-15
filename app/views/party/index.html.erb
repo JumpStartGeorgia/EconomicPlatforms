@@ -3,7 +3,7 @@
 <div class="row">
 	<div id="content_container" class="span9">
 
-		<div id="plat_brief_nav" class="clear">
+		<div id="plat_brief_nav">
 	    <% if @platforms && !@platforms.empty? %>
 				<div class="btn-group">
 					<button class="btn"><%= t('party.well.platform_header') %></button>
@@ -42,7 +42,7 @@
 		</div>
 
 		<h2><%= t('.statement_header', :political_party => @political_party.name) %></h2>
-      <div id="party_statement_chart">
+      <div id="profile_statement_chart">
         <div id="chart_selections">
           <%= form_tag do %>
           	<span>
@@ -56,7 +56,7 @@
           	<span>
           		<%= link_to t("app.buttons.update_statements"), party_path(@political_party.permalink),
 								:class => 'btn btn-primary btn-mini',
-								:id => 'chart_selections_submit' %>
+								:id => 'party_chart_selections_submit' %>
           	</span>
           <% end %>
         </div>

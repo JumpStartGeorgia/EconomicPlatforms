@@ -135,6 +135,7 @@ ka:
       is_public: Is Visible to World
       party_statements: "%{party} Statements"
       party_platform: "%{party} Platform"
+      category_statements: "%{category} Statements"
       all_party_platform_avg: All Political Parties Platform Average
       time: Time
     msgs:

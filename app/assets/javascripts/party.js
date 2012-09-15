@@ -1,4 +1,4 @@
-$('a#chart_selections_submit').click(function(){
+$('a#party_chart_selections_submit').click(function(){
 	// append ec cat and ind cat ids to url
 	url = $(this).attr('href');
 	ec_id = $('select#economic_category_id').val();

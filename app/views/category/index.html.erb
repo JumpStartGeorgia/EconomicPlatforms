@@ -1,7 +1,7 @@
 <% title t('.title', :economic_category => @economic_category.name) %>
 
 <div class="row">
-	<div class="span9">
+	<div id="content_container" class="span9">
 
 		<div id="plat_brief_nav">
 	    <% if @platforms && !@platforms.empty? %>
@@ -42,6 +42,28 @@
 		</div>
 
 		<h2><%= t('.statement_header', :economic_category => @economic_category.name) %></h2>
+      <div id="profile_statement_chart">
+        <div id="chart_selections">
+          <%= form_tag do %>
+          	<span>
+          		<%= t('activerecord.model.political_party') %>
+			        <%= select_tag "political_party_id", options_from_collection_for_select(@political_parties_nav, "id", "name", params[:political_party_id])%>
+          	</span>
+          	<span>
+          		<%= t('activerecord.model.indicator_category') %>
+			        <%= select_tag "indicator_category_id", options_from_collection_for_select(@indicator_categories, "id", "name", params[:indicator_category_id])%>
+          	</span>
+          	<span>
+          		<%= link_to t("app.buttons.update_statements"), category_path(@economic_category.permalink),
+								:class => 'btn btn-primary btn-mini',
+								:id => 'category_chart_selections_submit' %>
+          	</span>
+          <% end %>
+        </div>
+
+        <div id="statement_chart"></div>
+      </div>
+
 		<% if @statements.nil? || @statements.empty? %>
 			<p>
 				<%= t('.no_statements', :economic_category => @economic_category.name) %>

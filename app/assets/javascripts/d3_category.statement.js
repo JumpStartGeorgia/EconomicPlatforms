@@ -1,4 +1,4 @@
-if (gon.party_statement_chart_data && gon.json_data) {
+if (gon.category_statement_chart_data && gon.json_data) {
 	if (gon.json_data['values'] == undefined || gon.json_data['values'].length == 0 || gon.json_data['values']['y'].length == 1){
 		// no data exists or only 1 data point exists
 		$('#statement_chart').hide();
@@ -137,7 +137,7 @@ if (gon.party_statement_chart_data && gon.json_data) {
 		      .attr("class", "label")
 		      .attr("x", x(0)+16)
 		      .attr("y", -1 * y(-5))
-		      .text(gon.json_data['legend']['party_statements'])
+		      .text(gon.json_data['legend']['category_statements'])
 	        .attr("style", 'fill: black;')
 			    .attr("dy", 4)
 			g.append("svg:line")

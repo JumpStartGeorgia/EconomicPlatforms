@@ -468,39 +468,39 @@ footer #left {
 
 
 /* party index  chart */
-#party_statement_chart {
+#profile_statement_chart {
   border-top: solid 1px #ddd;
   border-bottom: solid 1px #ddd;
   padding: 10px 0;
 }
-#party_statement_chart #chart_selections,
-#party_statement_chart #chart_selections select,
-#party_statement_chart #chart_selections input  {
+#profile_statement_chart #chart_selections,
+#profile_statement_chart #chart_selections select,
+#profile_statement_chart #chart_selections input  {
   font-size: 11px !important;
   height: 25px;
   margin-bottom: 0;
 }
-#party_statement_chart #chart_selections{
+#profile_statement_chart #chart_selections{
 	margin-bottom: 10px;
 }
 
-#party_statement_chart #chart_selections select{
+#profile_statement_chart #chart_selections select{
   width: 100px;
 }
 
-#party_statement_chart #statement_chart{
+#profile_statement_chart #statement_chart{
   height: 240px;
 }
-#party_statement_chart #statement_chart path {
+#profile_statement_chart #statement_chart path {
   stroke: steelblue;
   stroke-width: 3;
   fill: none;
 }
-#party_statement_chart #statement_chart line {
+#profile_statement_chart #statement_chart line {
   stroke: black;
 }
 
-#party_statement_chart #statement_chart text {
+#profile_statement_chart #statement_chart text {
   font-family: Arial;
   font-size: 9pt;
 }

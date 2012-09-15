@@ -5,10 +5,40 @@ class CategoryController < ApplicationController
 		if !@economic_category
 			redirect_to root_path, notice: t('app.msgs.does_not_exist')
 		else
-	    @statements = Statement.published.by_economic_category(@economic_category.id).paginate(:page => params[:page])
+			@indicator_categories = IndicatorCategory.with_indicators
+
+      @statements = nil
+      if params[:political_party_id] && !params[:political_party_id].empty?
+        # get statements for the pass in pol party id
+  	    @statements = Statement.by_political_party(params[:political_party_id])
+  	      .by_economic_category(@economic_category.id)
+  	      .published.paginate(:page => params[:page])
+				political_party = @political_parties_nav.select{|x| x.id.to_s == params[:political_party_id]}
+				@political_party_name = political_party.first.name if political_party && !political_party.empty?
+      else
+        # get statements for the first ec cat that has statements
+        @political_parties_nav.each do |pp|
+    	    @statements = Statement.by_political_party(pp.id)
+  	      .by_economic_category(@economic_category.id)
+    	      .published.paginate(:page => params[:page])
+    	    if @statements && !@statements.empty?
+    	      params[:political_party_id] = pp.id.to_s
+    	      break
+    	    end
+  	    end
+  	    # assign default value for ind category drop down
+        params[:indicator_category_id] = 5
+      end
 
 			@platforms = Platform.published.by_economic_category(@economic_category.id)
 			@policy_briefs = PolicyBrief.published.by_economic_category(@economic_category.id)
+
+			gon.category_profile = true
+      gon.category_statement_chart_data = true
+      gon.json_data = Statement.categiry_statement_scores_json(
+        params[:political_party_id],
+        @economic_category.id,
+        params[:indicator_category_id])
 
 		  respond_to do |format|
 		    format.html # index.html.erb

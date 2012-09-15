@@ -61,7 +61,8 @@ class Statement < ActiveRecord::Base
       json['economic_category'] = scores && !scores.empty? ? scores.first.economic_category_name : nil
       json['indicator_category'] = scores && !scores.empty? ? scores.first.indicator_category_name : nil
       json['title'] = Hash.new
-      json['title']['line1'] = I18n.t('app.common.party_statements', :party => json['political_party'])
+      json['title']['line1'] = I18n.t('app.common.party_statements',
+				:party => json['political_party'])
       json['title']['line2'] = json['economic_category']
       json['title']['line3'] = json['indicator_category']
       json['scales'] = Hash.new
@@ -93,6 +94,61 @@ class Statement < ActiveRecord::Base
 
 		return json
   end
+
+  def self.categiry_statement_scores_json(political_party_id, economic_category_id, indicator_category_id)
+    json = Hash.new
+
+    if political_party_id && economic_category_id && indicator_category_id
+
+      # get the party scores
+      scores = daily_average(political_party_id, economic_category_id, indicator_category_id)
+
+      # get the party platform score
+      platform_score = Platform.score(political_party_id, economic_category_id, indicator_category_id)
+
+      # get the all party platform average
+      all_party_average = Platform.all_party_average(economic_category_id, indicator_category_id)
+
+      # put together in nice format
+      # {party  cat  ind  title  scale={top  middle  bottom}  values=[{x  y}]  guidlines={party_plat  all_parties_plat}}
+      json['political_party'] = scores && !scores.empty? ? scores.first.political_party_name : nil
+      json['economic_category'] = scores && !scores.empty? ? scores.first.economic_category_name : nil
+      json['indicator_category'] = scores && !scores.empty? ? scores.first.indicator_category_name : nil
+      json['title'] = Hash.new
+      json['title']['line1'] = I18n.t('app.common.category_statements',
+				:category => json['economic_category'])
+      json['title']['line2'] = json['political_party']
+      json['title']['line3'] = json['indicator_category']
+      json['scales'] = Hash.new
+      json['scales']['x'] = Hash.new
+      json['scales']['x']['time'] = I18n.t('app.common.time')
+      json['scales']['y'] = Hash.new
+      json['scales']['y']['top'] = I18n.t("app.scales.indicator_category_id_#{indicator_category_id}.top")
+      json['scales']['y']['middle'] = I18n.t("app.scales.indicator_category_id_#{indicator_category_id}.middle")
+      json['scales']['y']['bottom'] = I18n.t("app.scales.indicator_category_id_#{indicator_category_id}.bottom")
+      if scores && !scores.empty?
+        json['values'] = Hash.new
+				json['values']['x'] = Array.new(scores.length)
+				json['values']['y'] = Array.new(scores.length)
+        scores.each_with_index do |score, index|
+          json['values']['x'][index] = I18n.l(score.date_made, :format => :default)
+          json['values']['y'][index] = score.daily_avg_score
+        end
+      else
+        json['values'] = Array.new
+      end
+      json['guidelines'] = Hash.new
+      json['guidelines']['party_platform_score'] = platform_score
+      json['guidelines']['all_party_platform_avg_score'] = all_party_average
+      json['legend'] = Hash.new
+      json['legend']['category_statements'] = I18n.t('app.common.category_statements', :category => json['economic_category'])
+      json['legend']['party_platform'] = I18n.t('app.common.party_platform', :party => json['political_party'])
+      json['legend']['all_party_platform_avg'] = I18n.t('app.common.all_party_platform_avg')
+    end
+
+		return json
+  end
+
 
   def self.daily_average(political_party_id, economic_category_id, indicator_category_id)
     if political_party_id && economic_category_id && indicator_category_id
