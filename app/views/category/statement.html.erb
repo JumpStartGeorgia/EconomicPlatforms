@@ -6,21 +6,23 @@
 	  <div class="clear">
 		  <h2 style="float: left;"><%= t('category.statement.secondary_title', :date => l(@statement.date_made, :format => :long)) %></h2>
 
-      <div class="" style="float: left; margin-left: 50px;">
-        <% ip = request.remote_ip %>
-        <% if @statement.voted(ip, 'up') %>
-          <%= image_tag('/assets/thumbs-up-grey.png') %>
-        <% else %>
-          <%= link_to image_tag('/assets/thumbs-up.png'), vote_path(:type => 'statement', :votable_id => @statement.id, :status => 'up') %>
-        <% end %>
-        <% diff = @statement.votes_diff %>
-        <span style="margin: 0 5px; color: <%= diff[:color] %>;"><%= diff[:number] %></span>
-        <% if @statement.voted(ip, 'down') %>
-          <%= image_tag('/assets/thumbs-down-grey.png') %>
-        <% else %>
-          <%= link_to image_tag('/assets/thumbs-down.png'), vote_path(:type => 'statement', :votable_id => @statement.id, :status => 'down') %>
-        <% end %>
-      </div>
+			<% if params[:format] != "pdf" %>
+				<div class="" style="float: left; margin-left: 50px;">
+				  <% ip = request.remote_ip %>
+				  <% if @statement.voted(ip, 'up') %>
+				    <%= image_tag('/assets/thumbs-up-grey.png') %>
+				  <% else %>
+				    <%= link_to image_tag('/assets/thumbs-up.png'), vote_path(:type => 'statement', :votable_id => @statement.id, :status => 'up') %>
+				  <% end %>
+				  <% diff = @statement.votes_diff %>
+				  <span style="margin: 0 5px; color: <%= diff[:color] %>;"><%= diff[:number] %></span>
+				  <% if @statement.voted(ip, 'down') %>
+				    <%= image_tag('/assets/thumbs-down-grey.png') %>
+				  <% else %>
+				    <%= link_to image_tag('/assets/thumbs-down.png'), vote_path(:type => 'statement', :votable_id => @statement.id, :status => 'down') %>
+				  <% end %>
+				</div>
+			<% end %>
     </div>
 
 		<div class="statement_summary">
