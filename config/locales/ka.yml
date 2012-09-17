@@ -98,7 +98,7 @@ ka:
       remove: მოშორება
       confirm: დარწმუნებული ხართ?
       new: ახალი
-      update_statements: Update Statements
+      update_statements: განცხადებების განახლება
     common:
       app_name: საქართველოს ეკონომიკური პლატფორმა
       name: სახელი
@@ -137,9 +137,9 @@ ka:
       party_statements: "%{party} განცხადებების"
       party_platform: "%{party} პარტიის პლატფორმა"
       category_statements: "%{category} განცხადებების"
-      all_party_platform_avg: All Political Parties Platform Average
-      time: Time
-      comments: Comments
+      all_party_platform_avg: პოლიტიკური პარტიების პროგრამის საშუალო
+      time: დრო
+      comments: კომენტარები
     msgs:
       does_not_exist: თქვენ ცდილობთ იხილოთ გვერდი, რომელიც არ არსებობს.
       not_authorized: თქვენ არ გაქვთ უფლება იხილოთ ეს გვერდი.
@@ -174,7 +174,7 @@ ka:
       title3: პარტიები
       no_values: აპლიკაციაში პოლიტიკურ პარტიაზე ინფორმაცია ამ დროისთვის შეყვანილი არ არის.
       chart_title: პოლიტიკური პარტიების იდეოლოგიები
-      latest_statements_header: Latest Statements
+      latest_statements_header: უახლესი განცხადებები
       about_header: შესახებ
     about:
       title: შესახებ
