@@ -493,7 +493,7 @@ footer #left {
 }
 #profile_statement_chart #statement_chart path {
   stroke: #348be8;
-  stroke-width: 3;
+  stroke-width: 2;
   fill: none;
 }
 #profile_statement_chart #statement_chart line {

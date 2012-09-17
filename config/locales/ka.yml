@@ -139,6 +139,7 @@ ka:
       category_statements: "%{category} განცხადებების"
       all_party_platform_avg: All Political Parties Platform Average
       time: Time
+      comments: Comments
     msgs:
       does_not_exist: თქვენ ცდილობთ იხილოთ გვერდი, რომელიც არ არსებობს.
       not_authorized: თქვენ არ გაქვთ უფლება იხილოთ ეს გვერდი.

@@ -139,6 +139,7 @@ en:
       category_statements: "%{category} Statements"
       all_party_platform_avg: All Political Parties Platform Average
       time: Time
+      comments: Comments
     msgs:
       does_not_exist: You tried to access a page that does not exist.
       not_authorized: You are not authorized to view that page.

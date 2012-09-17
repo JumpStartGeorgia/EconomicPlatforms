@@ -1,7 +1,7 @@
 <% ip = request.remote_ip %>
 
 <div class="comments" style="padding-top: 15px;">
-  <h4 style="font-weight: bold; margin-bottom: 7px;">Comments</h4>
+  <h4 style="font-weight: bold; margin-bottom: 7px;"><%= t('app.common.comments') %></h4>
   <% @comments.each do |comment| %>
     <div class="comment clear" style="margin-bottom: 3px; border-bottom: 1px solid #ccc; padding: 8px 14px 10px 15px; background: url('/assets/block-bg.jpg') repeat; border-radius: 3px; border: 1px solid rgba(0, 0, 0, 0.05); -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05); ">
       <div class="body">
