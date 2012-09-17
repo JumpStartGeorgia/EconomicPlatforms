@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
       m = Statement
 #     path = statement_path(params[:commentable_id])
     else
-      redirect_to root_path, :alert => 'wrong commentable'
+      redirect_to :back, :alert => 'wrong commentable'
       return
     end
     commentable = m.find(params[:commentable_id])
