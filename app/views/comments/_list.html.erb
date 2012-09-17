@@ -15,15 +15,15 @@
           <% else %>
             <%= link_to image_tag('/assets/thumbs-up.png'),   vote_path(:type => 'comment', :votable_id => comment.id, :status => 'up') %>
           <% end %>
+		      <span class="vote-results" style="margin: 0 5px;">
+		        <% diff = comment.votes_diff %>
+		        <span style="color: <%= diff[:color] %>;"><%= diff[:number] %></span>
+		      </span>
           <% if comment.voted(ip, 'down') %>
             <%= image_tag('/assets/thumbs-down-grey.png') %>
           <% else %>
             <%= link_to image_tag('/assets/thumbs-down.png'), vote_path(:type => 'comment', :votable_id => comment.id, :status => 'down') %>
           <% end %>
-        </span>
-        <span class="vote-results" style="margin-left: 15px;">
-          <% diff = comment.votes_diff %>
-          <span style="color: <%= diff[:color] %>;"><%= diff[:number] %></span>
         </span>
       </div>
     </div>
