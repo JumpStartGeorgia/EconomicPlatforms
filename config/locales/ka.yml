@@ -98,6 +98,7 @@ ka:
       remove: მოშორება
       confirm: დარწმუნებული ხართ?
       new: ახალი
+      update_statements: Update Statements
     common:
       app_name: საქართველოს ეკონომიკური პლატფორმა
       name: სახელი
@@ -133,9 +134,9 @@ ka:
       home: მთავარი
       methodology: მეთოდოლოგია
       is_public: Is Visible to World
-      party_statements: "%{party} Statements"
-      party_platform: "%{party} Platform"
-      category_statements: "%{category} Statements"
+      party_statements: "%{party} განცხადებების"
+      party_platform: "%{party} პარტიის პლატფორმა"
+      category_statements: "%{category} განცხადებების"
       all_party_platform_avg: All Political Parties Platform Average
       time: Time
     msgs:
