@@ -22,5 +22,7 @@
 
 // set focus to first text box on page
 $(document).ready(function(){
-  $(":input:visible:enabled:first").focus();
+	if (gon.highlight_first_form_field){
+	  $(":input:visible:enabled:first").focus();
+	}
 });

@@ -1,4 +1,5 @@
 class CategoryController < ApplicationController
+	require 'utf8_converter'
 
 	def index
 		@economic_category = EconomicCategory.find_by_permalink(params[:economic_category_id])
@@ -40,6 +41,8 @@ class CategoryController < ApplicationController
         @economic_category.id,
         params[:indicator_category_id])
 
+			gon.highlight_first_form_field = false
+
 		  respond_to do |format|
 		    format.html # index.html.erb
 		    format.json { render json: @statements }
@@ -64,6 +67,7 @@ class CategoryController < ApplicationController
 				@policy_briefs = PolicyBrief.published.by_economic_category(@economic_category.id)
 				@comments = @platform.comments
 
+				gon.highlight_first_form_field = false
 				respond_to do |format|
 				  format.html # index.html.erb
 				  format.json { render json: @statements }
@@ -98,6 +102,7 @@ class CategoryController < ApplicationController
 				@policy_briefs = PolicyBrief.published.by_economic_category(@economic_category.id)
 				@comments = @policy_brief.comments
 
+				gon.highlight_first_form_field = false
 				respond_to do |format|
 				  format.html # index.html.erb
 				  format.json { render json: @statements }
@@ -130,6 +135,7 @@ class CategoryController < ApplicationController
 				@policy_briefs = PolicyBrief.published.by_economic_category(@economic_category.id)
 				@comments = @statement.comments
 
+				gon.highlight_first_form_field = false
 				respond_to do |format|
 				  format.html # index.html.erb
 				  format.json { render json: @statements }

@@ -1,5 +1,6 @@
 class PartyController < ApplicationController
 	require 'utf8_converter'
+
 	def index
 		@political_party = PoliticalParty.find_by_permalink(params[:political_party_id])
 		if !@political_party
@@ -40,6 +41,7 @@ class PartyController < ApplicationController
         params[:economic_category_id],
         params[:indicator_category_id])
 
+			gon.highlight_first_form_field = false
 		  respond_to do |format|
 		    format.html # index.html.erb
 		    format.json { render json: @statements }
@@ -64,6 +66,7 @@ class PartyController < ApplicationController
 				@policy_briefs = PolicyBrief.published.by_political_party(@political_party.id)
 				@comments = @platform.comments
 
+				gon.highlight_first_form_field = false
 				respond_to do |format|
 				  format.html # index.html.erb
 				  format.json { render json: @statements }
@@ -98,6 +101,7 @@ class PartyController < ApplicationController
 				@policy_briefs = PolicyBrief.published.by_political_party(@political_party.id)
 				@comments = @policy_brief.comments
 
+				gon.highlight_first_form_field = false
 				respond_to do |format|
 				  format.html # index.html.erb
 				  format.json { render json: @statements }
@@ -130,6 +134,7 @@ class PartyController < ApplicationController
 				@policy_briefs = PolicyBrief.published.by_political_party(@political_party.id)
 				@comments = @statement.comments
 
+				gon.highlight_first_form_field = false
 				respond_to do |format|
 				  format.html # index.html.erb
 				  format.json { render json: @statements }
