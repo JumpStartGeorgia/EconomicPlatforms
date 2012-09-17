@@ -46,11 +46,11 @@
         <div id="chart_selections">
           <%= form_tag do %>
           	<span>
-          		<%= t('activerecord.model.political_party') %>
+          		<%= t('app.common.political_party') %>
 			        <%= select_tag "political_party_id", options_from_collection_for_select(@political_parties_nav, "id", "name", params[:political_party_id])%>
           	</span>
           	<span>
-          		<%= t('activerecord.model.indicator_category') %>
+          		<%= t('app.common.indicator_category') %>
 			        <%= select_tag "indicator_category_id", options_from_collection_for_select(@indicator_categories, "id", "name", params[:indicator_category_id])%>
           	</span>
           	<span>

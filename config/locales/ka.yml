@@ -64,21 +64,21 @@ ka:
       ka: ქართული
     scales:
       indicator_category_id_1:
-        top: Correct
+        top: სწორი
         middle: ცენტრისტული
-        bottom: Wrong
+        bottom: არასწორი
       indicator_category_id_2:
-        top: Consistent
+        top: თანმიმდერვრული
         middle: ცენტრისტული
-        bottom: Self-Contradictory
+        bottom: ურთიერთგამომრიცხავი
       indicator_category_id_3:
-        top: Justified
+        top: გამართლებული
         middle: ცენტრისტული
-        bottom: No Sense
+        bottom: უშინაარსო
       indicator_category_id_4:
-        top: Feasible
+        top: განხორციელებადი
         middle: ცენტრისტული
-        bottom: Not Possible
+        bottom: შეუძლებელი
       indicator_category_id_5:
         top: მემარცხენე
         middle: ცენტრისტული
