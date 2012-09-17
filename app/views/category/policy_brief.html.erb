@@ -7,9 +7,10 @@
 
 		<%= simple_format_no_tags @policy_brief.analysis, {}, :sanitize => false %>
 
-		<%= render :partial => 'comments/list', :locals => {:commentable_type => 'policybrief', :commentable_id => @policy_brief.id} %>
-    <%= render :partial => 'comments/form', :locals => {:commentable_type => 'policybrief', :commentable_id => @policy_brief.id} %>
-
+		<% if params[:format] != "pdf" %>
+			<%= render :partial => 'comments/list', :locals => {:commentable_type => 'policybrief', :commentable_id => @policy_brief.id} %>
+		  <%= render :partial => 'comments/form', :locals => {:commentable_type => 'policybrief', :commentable_id => @policy_brief.id} %>
+		<% end %>
 	</div>
 
 	<% if params[:format] != "pdf" %>
