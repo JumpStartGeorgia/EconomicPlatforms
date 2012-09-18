@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
       m = Statement
 #     path = statement_path(params[:commentable_id])
     else
-      redirect_to :back, :alert => 'wrong commentable'
+      redirect_to root_path, :alert => 'wrong commentable'
       return
     end
     commentable = m.find(params[:commentable_id])
@@ -20,7 +20,11 @@ class CommentsController < ApplicationController
     comment.title = params[:title]
     comment.comment = params[:comment]
     comment.save
-    redirect_to :back
+		if request.env["HTTP_REFERER"]
+	    redirect_to :back
+		else
+	    redirect_to root_path
+		end
   end
 
   def vote
@@ -102,11 +106,19 @@ class CommentsController < ApplicationController
       record[0].status = params[:status]
       record[0].save
     else
-      redirect_to :back
+			if request.env["HTTP_REFERER"]
+		    redirect_to :back
+			else
+		    redirect_to root_path
+			end
       return false
     end
 
-    redirect_to :back
+		if request.env["HTTP_REFERER"]
+      redirect_to :back
+		else
+      redirect_to root_path
+		end
   end
 
 end

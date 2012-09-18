@@ -133,6 +133,7 @@ en:
       about: About
       home: Home
       methodology: Methodology
+      disclaimer: Disclaimer
       is_public: Is Visible to World
       party_statements: "%{party} Statements"
       party_platform: "%{party} Platform"
@@ -180,6 +181,8 @@ en:
       title: About
     methodology:
       title: Methodology
+    disclaimer:
+      title: Disclaimer
   economic_categories:
     edit:
       title: Editing Economic Category

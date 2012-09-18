@@ -368,7 +368,7 @@ footer {
 footer div#left {
 	margin: 0 !important;
 	float: left;
-	width: 30%;
+	width: 20%;
 	margin-top: 20px;
 }
 footer a:hover {
@@ -378,7 +378,7 @@ footer a:hover {
 footer #middle {
    margin: 0;
 	font-size: 12px;
-	width: 38%;
+	width: 58%;
 	text-align: center;
 	float: left;
 }
@@ -400,7 +400,7 @@ footer #middle ul li a {
 footer div#right {
 	margin: 0 !important;
 	float: right;
-	width: 30%;
+	width: 20%;
 	text-align: right;
 }
 /*

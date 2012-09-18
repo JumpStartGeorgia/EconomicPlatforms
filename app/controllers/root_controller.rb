@@ -37,4 +37,8 @@ class RootController < ApplicationController
 		@page = Page.find_by_name('methodology')
 	end
 
+	def disclaimer
+		@page = Page.find_by_name('disclaimer')
+	end
+
 end
