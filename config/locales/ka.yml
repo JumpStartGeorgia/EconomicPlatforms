@@ -133,7 +133,7 @@ ka:
       about: შესახებ
       home: მთავარი
       methodology: მეთოდოლოგია
-      disclaimer: წარწერა პუბლიკაციებზე
+      disclaimer: Disclaimer
       is_public: Is Visible to World
       party_statements: "%{party} განცხადებების"
       party_platform: "%{party} პარტიის პლატფორმა"
@@ -182,7 +182,7 @@ ka:
     methodology:
       title: მეთოდოლოგია
     disclaimer:
-      title: წარწერა პუბლიკაციებზე
+      title: Disclaimer
   economic_categories:
     edit:
       title: ცვლილებების შეტანა ეკონომიკურ კატეგორიაში
