@@ -3,15 +3,19 @@
 		<div id="title_dropdowns">
 			<h1 id="<%= I18n.locale %>">
 				<% if I18n.locale == :en %>
-					<%= t('.title1')%><br />
-					<span id="big_red_block"><%= t('.title2')%></span><br />
+					<%= t('.title1')%>
+					<span id="big_red_inline"><%= t('.title2')%></span>
 					<span id="line3"><%= t('.title3')%></span><span id="big_red_inline">?</span>
 				<% else %>
-					<%= t('.title1')%><br />
-					<span id="line2"><%= t('.title2')%></span><br />
-					<span id="big_red_block"><%= t('.title3')%>?</span>
+					<%= t('.title1')%>
+					<span id="line2"><%= t('.title2')%></span>
+					<span id="big_red_inline"><%= t('.title3')%>?</span>
 				<% end %>
 			</h1>
+			<p>
+				<%= t('.welcome') %>
+				<%= link_to t('.welcome_link'), methodology_path %>
+			</p>
 			<div id="nav_buttons">
 		    <% if @political_parties_nav && !@political_parties_nav.empty? %>
 					<div class="btn-group">

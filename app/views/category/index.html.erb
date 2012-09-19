@@ -43,6 +43,7 @@
 
 		<h2><%= t('.statement_header', :economic_category => @economic_category.name) %></h2>
       <div id="profile_statement_chart">
+				<p><%= t('app.msgs.statement_chart_instructions') %></p>
         <div id="chart_selections">
           <%= form_tag do %>
           	<span>

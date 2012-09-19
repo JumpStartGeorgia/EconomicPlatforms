@@ -261,11 +261,13 @@ div.admin_panel ul li {
 	margin-top: -45px;
 	margin-bottom: 2em;
 }
-#title_dropdowns h1#en {
+
+#title_dropdowns h1 {
   font-size: 36pt;
   color: #348be8;
-	margin-left: 4em;
+	text-align: center;
 }
+/*
 #title_dropdowns h1#en span#line3 {
 	display: inline-block;
 	margin-left: 3em;
@@ -281,12 +283,15 @@ div.admin_panel ul li {
 	margin-left: 1.5em;
 	letter-spacing: 0.15em;
 }
-#title_dropdowns h1#en span#big_red_inline {
+*/
+#title_dropdowns h1 span#big_red_inline {
+	text-transform:uppercase;
 	display: inline-block;
   font-size: 40pt;
   color: #D73421;
+	line-height: 60px;
 }
-
+/*
 #title_dropdowns h1#ka {
   font-size: 36pt;
   color: #348be8;
@@ -310,7 +315,7 @@ div.admin_panel ul li {
 	letter-spacing: 0.15em;
 	margin-bottom: -15px;
 }
-
+*/
 #title_dropdowns #nav_buttons {
 	margin-top: 30px;
 	text-align: center;
@@ -473,6 +478,12 @@ footer #left {
   border-bottom: solid 1px #ddd;
   padding: 10px 0;
 }
+#profile_statement_chart p{
+	line-height: 11px;
+	margin-bottom: 5px;
+}
+
+#profile_statement_chart p,
 #profile_statement_chart #chart_selections,
 #profile_statement_chart #chart_selections select,
 #profile_statement_chart #chart_selections input  {

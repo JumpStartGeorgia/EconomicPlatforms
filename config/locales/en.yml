@@ -149,6 +149,7 @@ en:
       success_updated: "%{obj} was successfully updated."
       policy_already_exists: already exists in the database
       platform_already_exists: already exists in the database
+      statement_chart_instructions: Select a category and an indicator to visualize how the party’s statements over time compare to their official party stance and the overall stance of all the parties.
   layouts:
     application:
       admin: Admin
@@ -173,6 +174,8 @@ en:
       title1: What does your
       title2: party
       title3: promise
+      welcome: "Welcome to the Economic Policy Fact Checker! Explore the economic policies of Georgian political parties over time by viewing party platforms, party statements, and our in-depth analysis."
+      welcome_link: "Click here to learn more."
       no_values: No political party information has been entered into the application at this time.
       chart_title: Political Party Ideologies
       latest_statements_header: Latest Statements
