@@ -478,11 +478,6 @@ footer #left {
   border-bottom: solid 1px #ddd;
   padding: 10px 0;
 }
-#profile_statement_chart p{
-	line-height: 11px;
-	margin-bottom: 5px;
-}
-
 #profile_statement_chart p,
 #profile_statement_chart #chart_selections,
 #profile_statement_chart #chart_selections select,
@@ -491,6 +486,11 @@ footer #left {
   height: 25px;
   margin-bottom: 0;
 }
+#profile_statement_chart p{
+	line-height: 11px;
+	margin-bottom: 15px;
+}
+
 #profile_statement_chart #chart_selections{
 	margin-bottom: 10px;
 }
