@@ -3,7 +3,6 @@
 {
   padding: 8px 10px;
   background: #fff;
-  height: 150px;
 }
 
 #activityslider .top
@@ -51,6 +50,8 @@
 .activities
 {
   position: relative;
+  height: 120px;
+  overflow: hidden;
 }
 
 .activities .each
