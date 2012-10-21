@@ -1,13 +1,35 @@
-<%= semantic_form_for @activity do |f| %>
-  <%= f.inputs do %>
-    <%= f.input :title %>
-    <%= f.input :published_at %>
-    <%= f.input :body %>
-    <%= f.input :image %>
-    <%= f.input :video %>
-  <% end %>
+<%= semantic_nested_form_for @activity, :html => { :multipart => true } do |f| %>
+	<%= f.error_messages %>
 
-  <%= f.actions do %>
-    <%= f.action :submit, :as => :input %>
-  <% end %>
+
+  <% @activity.activity_translations.sort{|x,y| x.locale <=> y.locale}.each do |trans| %>
+		<%= f.fields_for :activity_translations, trans do |translation| %>
+
+			<div id="form-<%= trans.locale %>" class="multilanguage">
+				<h3><%= t("app.language.#{trans.locale}") %></h3>
+
+				<%= translation.input :title %>
+				<%= translation.input :body, :as => :text, :input_html => {:rows => 4} %>
+				<%= translation.hidden_field :locale , :value => trans.locale %>
+			</div>
+
+		<% end %>
+	<% end %>
+
+	<%= f.inputs do %>
+		<%= f.input :date, :as => :string %>
+		<%= f.input :video %>
+	<% end %>
+
+	<div id="nested_form_container">
+		<h3><%= t("app.common.images") %></h3>
+		<%= f.fields_for :activity_images %>
+		<p><%= f.link_to_add t(".add_file"), :activity_images, :class => "btn btn-mini btn-primary" %></p>
+	</div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+	  <%= f.submit nil, :class => 'btn btn-warning', :type => :reset, :value => t('app.buttons.reset'), :name => :reset %>
+	  <%= link_to t('app.buttons.cancel'), activities_path, :class => 'btn btn-mini btn-warning' %>
+  </div>
 <% end %>

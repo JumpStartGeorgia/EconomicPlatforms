@@ -2,16 +2,8 @@
 function slider_auto ()
 {
   activity.arrows[activity.direction_auto].click();
-  if (activity.index == 0)
-  {
-    activity.direction_auto = 'right';
-  }
-  else if (activity.index == (activity.slides.length - 1))
-  {
-    activity.direction_auto = 'left';
-  }
 
-  setTimeout(slider_auto, activity.delay + activity.timeout);
+  activity.timer = setTimeout(slider_auto, activity.delay + activity.timeout);
 }
 
 $(function ()
@@ -22,6 +14,7 @@ $(function ()
     timeout: 1000,
     delay: 3000,
     direction_auto: 'right',
+    timer: null,
     arrows:
     {
       left : $('#activityslider .arrow[data-direction="left"]'),
@@ -30,7 +23,34 @@ $(function ()
     slides: $('#activityslider .activities .each')
   };
 
-  setTimeout(slider_auto, activity.delay);
+
+  $('#activityslider').hover(
+    function ()
+    {
+      clearTimeout(activity.timer);
+    },
+    function ()
+    {
+      activity.timer = setTimeout(slider_auto, activity.delay);
+    }
+  );
+
+  activity.timer = setTimeout(slider_auto, activity.delay);
+
+
+  if (typeof gon.slider_images != 'undefined' && gon.slider_images.length > 0)
+  {
+    var options =
+    {
+      width:         500,
+      height:        210,
+      element:       $('#activity_image_slider'),
+      data:          gon.slider_images
+    };
+
+    var s1 = new Va_slider(options);
+  }
+
 
 });
 
@@ -75,14 +95,35 @@ $('#activityslider .arrow:not(.disabled)').live('click', function ()
   if (next == 0)
   {
     activity.arrows.left.addClass('disabled');
+    activity.direction_auto = 'right';
   }
   else if (next == (activity.slides.length - 1))
   {
     activity.arrows.right.addClass('disabled');
+    activity.direction_auto = 'left';
   }
 
   activity.index = next;
 
 });
 
+
+
+$(document).ready(function ()
+{
+
+	if (gon.edit_activity)
+	{
+		// load the date time pickers
+		$('#activity_date').datepicker({
+				dateFormat: 'dd.mm.yy',
+		});
+
+
+		if (gon.activity_date !== undefined && gon.activity_date.length > 0)
+		{
+			$("#activity_date").datepicker("setDate", new Date(gon.date_made));
+		}
+	}
+});
 

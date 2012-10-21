@@ -1,10 +1,9 @@
-<div class="span4">
 
   <div id="activityslider">
 
     <div class="top clear">
       <div class="left">
-        Activities
+        <%= t('app.common.activities') %>
       </div>
       <div class="right">
         <div class="arrow disabled" data-direction="left">&#x25C4;</div>
@@ -20,14 +19,14 @@
           <h3><%= link_to activity.title, activity_path(activity) %></h3>
           <div class="body clear">
             <div class="imagecontainer">
-              <img src="<%= activity.image %>" />
+              <%= image_tag activity.images.last.file.url if !activity.images.last.nil? %>
             </div>
             <div class="text">
               <%= char_limit(activity.body, 120) %>
             </div>
           </div>
           <div class="showlink">
-            <%= link_to 'ვრცლად...', activity_path(activity) %>
+            <%= link_to t('app.common.view_full') + '...', activity_path(activity) %>
           </div>
         </div>
       <% end %>
@@ -36,4 +35,3 @@
 
   </div>
 
-</div>

@@ -1,8 +1,6 @@
 
 #activityslider
 {
-  padding: 8px 10px;
-  background: #fff;
 }
 
 #activityslider .top
@@ -50,7 +48,7 @@
 .activities
 {
   position: relative;
-  height: 120px;
+  height: 126px;
   overflow: hidden;
 }
 
@@ -78,7 +76,8 @@
 
 .activities .each .body .imagecontainer
 {
-  width: 30%;
+  width: 28%;
+  height: 75px;
   float: left;
 }
 

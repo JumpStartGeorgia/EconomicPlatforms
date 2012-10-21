@@ -1,9 +1,11 @@
+
+
 module ActivitiesHelper
 
   def char_limit (text, limit)
     t = ''
 
-    words = text.split(' ')
+    words = strip_tags(text).split(' ')
     charcount = 0
     words.each do |word|
       sum = charcount + word.length + 1
@@ -15,6 +17,14 @@ module ActivitiesHelper
     end
 
     t + '...'
+  end
+
+
+  def video_frame_tag(url, width, height)
+    #require 'rack'
+    #require 'uri'
+    v = Rack::Utils.parse_query(URI(url).query)['v']
+    '<iframe width="' + width.to_s + '" height="' + height.to_s + '" src="http://www.youtube.com/embed/' + v + '" frameborder="0" allowfullscreen=""></iframe>'
   end
 
 end

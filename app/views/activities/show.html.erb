@@ -7,8 +7,10 @@
 
 <p>
   <b>Published at:</b>
-  <%= @activity.published_at %>
+  <%= @activity.date %>
 </p>
+
+ <div id="activity_image_slider"></div>
 
 <p>
   <b>Body:</b>
@@ -17,12 +19,12 @@
 
 <p>
   <b>Image:</b>
-  <%= @activity.image %>
+  <%= image_tag @activity.images.last.file.url %>
 </p>
 
 <p>
   <b>Video:</b>
-  <%= @activity.video %>
+  <%= video_frame_tag(@activity.video, 300, 200).html_safe %>
 </p>
 
 

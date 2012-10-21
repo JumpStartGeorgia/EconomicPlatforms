@@ -13,6 +13,11 @@
     <![endif]-->
 
     <%= stylesheet_link_tag "application", :media => "all" %>
+
+		<% if !@load_image_slider.nil? && @load_image_slider %>
+		  <link href="/stylesheets/image_slider.css" type="text/css" rel="stylesheet" />
+		<% end %>
+
     <!--[if IE 6]><%= stylesheet_link_tag 'ie6' %><![endif]-->
     <!--[if IE 7]><%= stylesheet_link_tag 'ie7' %><![endif]-->
 
@@ -31,58 +36,60 @@
 		        </a>
 	          <%= link_to(t('app.common.app_name'), root_path(:locale => I18n.locale),:class=>"brand font")%>
 		        <div class="container nav-collapse">
-		          <ul class="nav">
-		            <% if @political_parties_nav && !@political_parties_nav.empty? %>
-		            <li class="dropdown">
-		              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-		                    <%= t('app.common.political_party')%>
-		                    <b class="caret"></b>
-		              </a>
-		              <ul class="dropdown-menu">
-		                <% @political_parties_nav.each do |pol| %>
-		                <li><%= link_to pol.name, party_path(pol.permalink)%></li>
-		                <% end %>
-		              </ul>
-		            </li>
-		            <% end %>
-		            <% if @economic_categories_nav && !@economic_categories_nav.empty? %>
-		            <li class="dropdown">
-		              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-		                    <%= t('app.common.economic_category')%>
-		                    <b class="caret"></b>
-		              </a>
-		              <ul class="dropdown-menu">
-		                <% @economic_categories_nav.each do |ec| %>
-		                <li><%= link_to ec.name, category_path(ec.permalink)%></li>
-		                <% end %>
-		              </ul>
-		            </li>
-		            <% end %>
-		            <% if user_signed_in? %>
-				          <li class="dropdown">
-				            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-				                  <%= current_user.email %>
-				                  <b class="caret"></b>
-				            </a>
-				            <ul class="dropdown-menu">
-						          <li>
-					 		         <%= link_to t('.admin'), admin_path %>
-											</li>
-						          <li>
-					 		         <%= link_to t('.sign_out'), destroy_user_session_path, :method => :delete %>
-											</li>
-				            </ul>
-				          </li>
-		            <% end %>
-		          </ul>
+		          <div class="header-right">
+                <ul class="nav">
+		              <% if @political_parties_nav && !@political_parties_nav.empty? %>
+		              <li class="dropdown">
+		                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		                      <%= t('app.common.political_party')%><!--
+		                   --><b class="caret"></b>
+		                </a>
+		                <ul class="dropdown-menu">
+		                  <% @political_parties_nav.each do |pol| %>
+		                  <li><%= link_to pol.name, party_path(pol.permalink)%></li>
+		                  <% end %>
+		                </ul>
+		              </li>
+		              <% end %>
+		              <% if @economic_categories_nav && !@economic_categories_nav.empty? %>
+		              <li class="dropdown">
+		                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		                      <%= t('app.common.economic_category')%><!--
+		                   --><b class="caret"></b>
+		                </a>
+		                <ul class="dropdown-menu">
+		                  <% @economic_categories_nav.each do |ec| %>
+		                  <li><%= link_to ec.name, category_path(ec.permalink)%></li>
+		                  <% end %>
+		                </ul>
+		              </li>
+		              <% end %>
+		              <% if user_signed_in? %>
+				            <li class="dropdown">
+				              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				                    <%= current_user.email %><!--
+				                 --><b class="caret"></b>
+				              </a>
+				              <ul class="dropdown-menu">
+						            <li>
+					   		         <%= link_to t('.admin'), admin_path %>
+											  </li>
+						            <li>
+					   		         <%= link_to t('.sign_out'), destroy_user_session_path, :method => :delete %>
+											  </li>
+				              </ul>
+				            </li>
+		              <% end %>
+		            </ul>
 
-		          <ul class="nav pull-right">
-								<% I18n.available_locales.each do |locale| %>
-									<% if locale != I18n.locale %>
-										<li><%= link_to t("app.language.#{locale}"), params.merge(:locale => locale) %></li>
-									<% end %>
-								<% end %>
-		          </ul>
+		            <ul class="nav pull-right">
+								  <% I18n.available_locales.each do |locale| %>
+									  <% if locale != I18n.locale %>
+										  <li><%= link_to t("app.language.#{locale}"), params.merge(:locale => locale) %></li>
+									  <% end %>
+								  <% end %>
+		            </ul>
+		          </div>
 		        </div><!--/.nav-collapse -->
 		      </div>
 		    </div>
@@ -100,6 +107,8 @@
 									</div>
 								<% end %>
 
+<%
+=begin %>
 		            <div class="page-header row">
 									<div class="span9">
 										<% if content_for?(:title) %>
@@ -125,6 +134,8 @@
 										</ul>
 									</div>
 		            </div>
+<%
+=end %>
 
 								<%= yield %>
 		          </div>
@@ -161,6 +172,9 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag "application" %>
 		<%= use_tinymce_link %>
+		<% if !@load_image_slider.nil? && @load_image_slider %>
+		  <script type="text/javascript" src="/javascripts/va_slider.js"></script>
+		<% end %>
 		<script type="text/javascript">
 			I18n.defaultLocale = "<%= I18n.default_locale %>";
 			I18n.locale = "<%= I18n.locale %>";

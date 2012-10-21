@@ -1,5 +1,7 @@
 EconomicPlatforms::Application.routes.draw do
 
+  resources :activity_images
+
   resources :activities
 
 	#--------------------------------

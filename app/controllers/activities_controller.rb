@@ -1,4 +1,6 @@
 class ActivitiesController < ApplicationController
+	use_tinymce :new, :edit
+
   # GET /activities
   # GET /activities.json
   def index
@@ -15,6 +17,14 @@ class ActivitiesController < ApplicationController
   def show
     @activity = Activity.find(params[:id])
 
+    if @activity.images.length > 0
+      @load_image_slider = true
+      gon.slider_images = []
+      @activity.images.each do |img|
+        gon.slider_images << {"img_src" => img.file.url}
+      end
+    end
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @activity }
@@ -26,6 +36,14 @@ class ActivitiesController < ApplicationController
   def new
     @activity = Activity.new
 
+    # create the translation object for however many locales there are
+    # so the form will properly create all of the nested form fields
+    I18n.available_locales.each do |locale|
+			@activity.activity_translations.build(:locale => locale)
+		end
+
+		gon.edit_activity = true
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @activity }
@@ -35,6 +53,8 @@ class ActivitiesController < ApplicationController
   # GET /activities/1/edit
   def edit
     @activity = Activity.find(params[:id])
+		gon.edit_activity = true
+		gon.activity_date = @activity.date.strftime('%m/%d/%Y') if !@activity.date.nil?
   end
 
   # POST /activities

@@ -109,6 +109,8 @@ en:
       political_parties: Political Parties
       economic_category: Economic Category
       statement: Statement
+      statements: Statements
+      activities: Activities
       indicator: Indicator
       indicator_category: Indicator Category
       user: User
@@ -120,8 +122,10 @@ en:
       new_password: New Password
       platform: Party Platform
       policy_brief: Policy Brief
+      policy_brief: Policy Briefs
       date: Date
       files: Supporting Files
+      images: Attached Images
       color: Color
       legend: Legend
       indicator_scales: Scale of Indicators
@@ -141,6 +145,7 @@ en:
       all_party_platform_avg: All Political Parties Platform Average
       time: Time
       comments: Comments
+      view_full: view full
     msgs:
       does_not_exist: You tried to access a page that does not exist.
       not_authorized: You are not authorized to view that page.

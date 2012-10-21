@@ -109,6 +109,8 @@ ka:
       political_parties: პოლიტიკური პარტიები
       economic_category: ეკონომიკური კატეგორია
       statement: განცხადება
+      statements: განცხადებები
+      activities: სიახლეები
       indicator: ინდიკატორი
       indicator_category: ინდიკატორის კატეგორია
       user: მომხმარებელი
@@ -120,8 +122,10 @@ ka:
       new_password: ახალი პაროლი
       platform: პარტიის პლატფორმა
       policy_brief: ექსპერტული შეფასება
+      policy_briefs: ექსპერტული შეფასებები
       date: თარიღი
       files: დამხმარე ფაილები
+      images: სურათები
       color: ფერი
       legend: ლეგენდა
       indicator_scales: ინდიკატორის სკალა
@@ -141,6 +145,7 @@ ka:
       all_party_platform_avg: პოლიტიკური პარტიების პროგრამის საშუალო
       time: დრო
       comments: კომენტარები
+      view_full: ვრცლად
     msgs:
       does_not_exist: თქვენ ცდილობთ იხილოთ გვერდი, რომელიც არ არსებობს.
       not_authorized: თქვენ არ გაქვთ უფლება იხილოთ ეს გვერდი.
@@ -152,7 +157,7 @@ ka:
       statement_chart_instructions: აირჩიეთ კატეგორია და ინდიკატორი, რათა უკეთ დაინახოთ ერთი პარტიის ოფოციალური პოზიცია და შეადაროთ დანარჩენ სხვა პარტიებს.
   layouts:
     application:
-      admin: ადმინისტრატო
+      admin: ადმინისტრატორი
       sign_out: გასვლა
       js_link_title: "ეწვიეთ ჯამპსტარტ ჯორჯიას ვებ-გვერდს"
       js_link_text: აგებულია
@@ -165,7 +170,7 @@ ka:
       ie: Internet Explorer (მხოლოდ Windows-ზე)
       opera: Opera
       Safari: Safari
-      admin: ადმინისტრატო
+      admin: ადმინისტრატორი
       sign_out: გასვლა
       js_link_title: "ეწვიეთ ჯამპსტარტ ჯორჯიას ვებ-გვერდს"
       js_link_text: აგებულია
