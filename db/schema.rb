@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120913135349) do
+ActiveRecord::Schema.define(:version => 20121019143324) do
+
+  create_table "activities", :force => true do |t|
+    t.string   "title"
+    t.date     "published_at"
+    t.text     "body"
+    t.string   "image"
+    t.string   "video"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
