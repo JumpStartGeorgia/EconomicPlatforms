@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @activity.title %>
+</p>
+
+<p>
+  <b>Published at:</b>
+  <%= @activity.published_at %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @activity.body %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= @activity.image %>
+</p>
+
+<p>
+  <b>Video:</b>
+  <%= @activity.video %>
+</p>
+
+
+<%= link_to 'Edit', edit_activity_path(@activity) %> |
+<%= link_to 'Back', activities_path %>
