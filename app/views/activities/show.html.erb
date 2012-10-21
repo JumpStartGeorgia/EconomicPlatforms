@@ -10,8 +10,6 @@
   <%= @activity.date %>
 </p>
 
- <div id="activity_image_slider"></div>
-
 <p>
   <b>Body:</b>
   <%= @activity.body %>
@@ -19,7 +17,7 @@
 
 <p>
   <b>Image:</b>
-  <%= image_tag @activity.images.last.file.url %>
+  <div id="activity_image_slider"></div>
 </p>
 
 <p>
