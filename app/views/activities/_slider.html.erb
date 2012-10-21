@@ -1,0 +1,39 @@
+<div class="span4">
+
+  <div id="activityslider">
+
+    <div class="top clear">
+      <div class="left">
+        Activities
+      </div>
+      <div class="right">
+        <div class="arrow disabled" data-direction="left">&#x25C4;</div>
+        <% attr = (@activities.length > 1) ? '' : ' disabled' %>
+        <div class="arrow<%= attr %>" data-direction="right">&#x25BA;</div>
+      </div>
+    </div>
+
+    <div class="activities">
+
+      <% @activities.each do |activity| %>
+        <div class="each">
+          <h3><%= link_to activity.title, activity_path(activity) %></h3>
+          <div class="body clear">
+            <div class="imagecontainer">
+              <img src="<%= activity.image %>" />
+            </div>
+            <div class="text">
+              <%= char_limit(activity.body, 120) %>
+            </div>
+          </div>
+          <div class="showlink">
+            <%= link_to 'ვრცლად...', activity_path(activity) %>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+
+  </div>
+
+</div>

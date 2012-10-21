@@ -27,6 +27,8 @@ class RootController < ApplicationController
 		# get the latest statements
 		@statements = Statement.published.latest
 
+    @activities = Activity.all
+
   end
 
 	def about
