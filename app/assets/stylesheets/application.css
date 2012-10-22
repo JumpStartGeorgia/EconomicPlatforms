@@ -291,6 +291,13 @@ div.admin_panel ul li {
   margin-left: 27px;
 }
 
+#home_search input {
+  background: #f1f1f1 url('/assets/search.jpg') 97% 48% no-repeat;
+  padding: 7px 9px 7px 10px;
+  border-color: #e8e8e8;
+  box-shadow: none;
+}
+
 
 
 /* footer */
