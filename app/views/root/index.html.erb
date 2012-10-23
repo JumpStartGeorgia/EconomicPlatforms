@@ -66,9 +66,29 @@
 			      <% if @political_parties_nav && !@political_parties_nav.empty? %>
 				      <ul>
 				        <% @political_parties_nav.each_with_index do |party,i| %>
-				          <li>
-				            <span style="background-color: <%= "#{party.color}" %>;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-				            <%= party.name %>
+				          <li class="dropdown">
+
+				            <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+				              <span style="background-color: <%= "#{party.color}" %>;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+				              <%= party.name %>
+				              <%= '<b class="caret"></b>'.html_safe if party.policy_briefs && !party.policy_briefs.empty? %>
+				            </a>
+
+                    <ul class="dropdown-menu">
+			              <% if party.policy_briefs && !party.policy_briefs.empty? %>
+				              
+					              <% party.policy_briefs.each do |policy_brief| %>
+						              <li>
+							              <%= link_to policy_brief.economic_category_name,
+								              party_policy_brief_path(:political_party_id => party.id,
+								              :economic_category_id => policy_brief.economic_category_permalink) %>
+						              </li>
+					              <% end %>
+			              <% else %>
+				              <li><a class="disabled" href="#"><%= t('policy_briefs.index.empty') %></a></li>
+			              <% end %>
+			              </ul>
+
 				          </li>
 				        <% end %>
 				      </ul>

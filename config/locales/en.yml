@@ -239,6 +239,7 @@ en:
     index:
       title: Policy Briefs
       no_policy_briefs: "At this time, no policy briefs have been recorded"
+      empty: Empty
     new:
       title: New Policy Brief
     show:

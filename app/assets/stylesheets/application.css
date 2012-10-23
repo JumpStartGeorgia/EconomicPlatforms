@@ -292,6 +292,21 @@ div.admin_panel ul li {
   color: #2965a1;
 }
 
+.block a.dropdown-toggle:hover {
+  text-decoration: none;
+}
+
+.block a.disabled:hover {
+  text-decoration: none;
+  background-color: #fff;
+  color: #333;
+  cursor: default;
+}
+
+.dropdown-toggle {
+  display: block;
+}
+
 #title-dropdowns {
   
 }
