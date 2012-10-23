@@ -257,17 +257,47 @@ div.admin_panel ul li {
 .block {
   padding: 12px 17px;
   background: #fff;
-  margin: 0px 0px 10px 0px;
+  margin: 0px 0px 25px 0px;
   box-shadow: 3px 3px #d0d0d0;
 }
 
-.block h4 {
+.block h4, .block_header {
   font-size: 15px;
-  margin-bottom: 8px;
+  font-weight: normal;
+  margin-bottom: 11px;
+}
+
+.block .block_body {
+  padding-top: 10px;
+  border-top: 1px dotted #828282;
+}
+
+.block .block_body ul li {
+  border-bottom: 1px dotted #828282;
+  padding-bottom: 11px;
+  margin-bottom: 10px;
+}
+
+.block .block_body ul li:last-child {
+  border-bottom: none;
+  padding-bottom: 0px;
+}
+
+.block a {
+  text-decoration: none;
+}
+
+.block a:hover {
+  text-decoration: underline;
+  color: #2965a1;
 }
 
 #title-dropdowns {
   
+}
+
+#title-dropdowns h4 {
+  padding-top: 5px;
 }
 
 #title-dropdowns > div:first-child {
@@ -276,19 +306,40 @@ div.admin_panel ul li {
   color: #b81300;
 }
 
-#title-dropdowns > .span3 {
+#title-dropdowns > .ds {
   float: right;
+}
+
+#title-dropdowns > .ds > div {
+  float: left;
+  margin-left: 23px;
 }
 
 #title-dropdowns .btn-group button {
   background: #3b628d;
+  border-color: #3b628d;
   color: #fff;
   text-shadow: none;
   outline: none;
+  box-shadow: none;
+  padding: 6px 10px 8px;
+}
+
+#title-dropdowns .btn-group button .caret {
+  border-top-color: #fff;
+  opacity: 1;
+}
+
+#title-dropdowns .btn-group button.dropdown-toggle {
+  border-left: 1px solid rgba(255, 255, 255, .13);
 }
 
 #side-spans {
   margin-left: 27px;
+}
+
+#home_search {
+  padding-bottom: 3px;
 }
 
 #home_search input {

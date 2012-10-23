@@ -68,7 +68,7 @@ $('#activityslider .arrow:not(.disabled)').live('click', function ()
   // stop all animations
   activity.slides.stop(true, true);
 
-  var overflow = 150;
+  var overflow = 200;
 
   if (direction == 'left')
   {

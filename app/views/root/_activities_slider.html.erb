@@ -3,26 +3,26 @@
 
     <div class="top clear">
       <div class="left">
-        <%= t('app.common.activities') %>
+        <h4 class="block_header"><%= t('app.common.activities') %></h4>
       </div>
       <div class="right">
-        <div class="arrow disabled" data-direction="left">&#x25C4;</div>
+        <div class="arrow disabled" data-direction="left"></div>
         <% attr = (@activities.length > 1) ? '' : ' disabled' %>
-        <div class="arrow<%= attr %>" data-direction="right">&#x25BA;</div>
+        <div class="arrow<%= attr %>" data-direction="right"></div>
       </div>
     </div>
 
-    <div class="activities">
+    <div class="activities block_body">
 
       <% @activities.each do |activity| %>
         <div class="each">
-          <h3><%= link_to activity.title, activity_path(activity) %></h3>
+          <h3><%= activity.title %><%#= link_to activity.title, activity_path(activity) %></h3>
           <div class="body clear">
             <div class="imagecontainer">
               <%= image_tag activity.images.last.file.url if !activity.images.last.nil? %>
             </div>
             <div class="text">
-              <%= char_limit(activity.body, 120) %>
+              <%= char_limit(activity.body, 350) %>
             </div>
           </div>
           <div class="showlink">
