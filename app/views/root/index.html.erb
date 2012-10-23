@@ -61,7 +61,7 @@
       <div class="span4">
 
         <div class="block">
-          <h4><%= t('app.common.policy_briefs') %></h4>
+          <h4 class="font"><%= t('app.common.policy_briefs') %></h4>
           <div class="block_body">
 			      <% if @political_parties_nav && !@political_parties_nav.empty? %>
 				      <ul>
@@ -110,7 +110,7 @@
       <div class="span4">
 
         <div class="block">
-          <h4><%= t('app.common.statements') %></h4>
+          <h4 class="font"><%= t('app.common.statements') %></h4>
           <div class="block_body">
 			      <% if !@statements || @statements.empty? %>
 				      <%= t('statements.index.no_statements') %>
@@ -133,8 +133,11 @@
       <div class="span5">
 
         <div class="block">
-          <h4><%= t('.chart_title')%></h4>
+          <h4 class="font"><%= t('.chart_title')%></h4>
           <div class="block_body">
+            <%= link_to image_tag('/assets/home_chart_' + I18n.locale.to_s + '.jpg'), root_path(:locale => I18n.locale) %>
+<%
+=begin %>
 			      <% if !@values || @values.empty? %>
 				      <p>
 					      <%= t('.no_values')%>
@@ -155,6 +158,8 @@
 					      <% end %>
 				      <% end %>
 			      <% end %>
+<%
+=end %>
           </div>
 			  </div>
 

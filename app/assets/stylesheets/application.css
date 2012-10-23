@@ -262,7 +262,7 @@ div.admin_panel ul li {
 }
 
 .block h4, .block_header {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: normal;
   margin-bottom: 11px;
 }
@@ -276,6 +276,7 @@ div.admin_panel ul li {
   border-bottom: 1px dotted #828282;
   padding-bottom: 11px;
   margin-bottom: 10px;
+  font-size: 12px;
 }
 
 .block .block_body ul li:last-child {
@@ -464,7 +465,7 @@ footer div#right ul li#right img {
 
 
 body {
-  background: url(/assets/body-bg-2.jpg) repeat;
+  background: url(/assets/bg.gif) repeat;
   color: #555;
 }
 
