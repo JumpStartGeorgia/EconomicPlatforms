@@ -210,32 +210,43 @@ div.admin_panel ul li {
 
 /* wells */
 .well {
-  background: url(/assets/block-bg.jpg) repeat;
+  background: #fff;
   padding: 17px 20px 20px 18px;
 }
 .well h3 {
   font-family: fightme;
-  color: #f3543f;
+  color: #555555;
   margin-bottom: 8px;
-	font-weight: bold;
+	padding-bottom: 8px;
 	font-size: 18px;
+	border-bottom: dotted 1px #ddd;
+	font-weight: normal;
 }
 .well h4 {
   font-family: fightme;
-  color: #f3543f;
+  color: #555555;
   margin-top: 8px;
   margin-bottom: 4px;
-	font-weight: bold;
+	padding-bottom: 4px;
 	font-size: 16px;
+	border-bottom: dotted 1px #ddd;
 }
 #well_legend > h3 {
   padding-left: 20px;
   background: url(/assets/legend-icon.jpg) center left no-repeat;
 }
 
+.well ul li {
+	line-height: 2;
+}
 .well a {
 	font-size: 12px;
 	display: block;
+	color: #3B628D;
+	text-decoration: none;
+}
+.well a:hover {
+	background-color: #eee;
 }
 
 /* statemetn record */
@@ -286,6 +297,11 @@ div.admin_panel ul li {
   box-shadow: 3px 3px #d0d0d0;
 }
 
+.block h3 {
+  font-size: 16px;
+  font-weight: normal;
+  margin-bottom: 11px;
+}
 .block h4, .block_header {
   font-size: 14px;
   font-weight: normal;
