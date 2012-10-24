@@ -111,6 +111,7 @@ ka:
       statement: განცხადება
       statements: განცხადებები
       activities: სიახლეები
+      activity: სიახლეები
       indicator: ინდიკატორი
       indicator_category: ინდიკატორის კატეგორია
       user: მომხმარებელი
@@ -270,6 +271,7 @@ ka:
       indicator_categories: ინდიკატორების კატეგორიები
       indicators: ინიდიკატორები
       pages: Pages
+      activities: სიახლეები
     users:
       edit:
         title: ცვლილებების შეტანა მომხმარებლის გვერდზე
@@ -351,3 +353,17 @@ ka:
       remove_link: ფაილის წაშლა
     form:
       add_file: ფაილის დამატება
+  activities:
+    edit:
+      title: Editing Activity
+    index:
+      title: Activities
+      no_pages: "At this time, no activities have been recorded"
+    new:
+      title: New Activity
+    show:
+      title: Activity Details
+    form:
+      add_file: Add Image
+    activity_image_fields:
+      remove_link: Remove Image

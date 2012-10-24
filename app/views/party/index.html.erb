@@ -68,7 +68,8 @@
 				<div class="statement_summary">
            <div class="clear">
 			      <h3 style="float: left;">
-				      <%= l statement.date_made, :format => :long %>
+				      <%= link_to l(statement.date_made, :format => :long),
+							party_statement_path(:political_party_id => @political_party.permalink, :id => statement.id) %>
 			      </h3>
             <div style="float: left; margin-left: 20px;">
 		          <%= image_tag('/assets/thumbs-up-grey.png') %>
@@ -111,11 +112,6 @@
 					</div>
 					<div>
 						<%= simple_format_no_tags truncate(statement.statement_made, :length => 200, :separator => ' ') %>
-					</div>
-					<div>
-						<%= link_to t('.view_statement'),
-							party_statement_path(:political_party_id => @political_party.permalink, :id => statement.id),
-							:class => 'btn btn-mini' %>
 					</div>
 				</div>
 			<% end %>

@@ -111,6 +111,7 @@ en:
       statement: Statement
       statements: Statements
       activities: Activities
+      activity: Activity
       indicator: Indicator
       indicator_category: Indicator Category
       user: User
@@ -270,6 +271,7 @@ en:
       indicator_categories: Indicator Categories
       indicators: Indicators
       pages: Pages
+      activities: Activities
     users:
       edit:
         title: Editing User
@@ -347,3 +349,17 @@ en:
       title: New Page
     show:
       title: Page Details
+  activities:
+    edit:
+      title: Editing Activity
+    index:
+      title: Activities
+      no_pages: "At this time, no activities have been recorded"
+    new:
+      title: New Activity
+    show:
+      title: Activity Details
+    form:
+      add_file: Add Image
+    activity_image_fields:
+      remove_link: Remove Image

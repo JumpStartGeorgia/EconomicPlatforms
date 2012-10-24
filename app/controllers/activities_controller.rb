@@ -1,6 +1,11 @@
 class ActivitiesController < ApplicationController
 	use_tinymce :new, :edit
 
+  before_filter :authenticate_user!
+  before_filter do |controller_instance|
+    controller_instance.send(:valid_role?, :author)
+  end
+
   # GET /activities
   # GET /activities.json
   def index
@@ -60,13 +65,25 @@ class ActivitiesController < ApplicationController
   # POST /activities
   # POST /activities.json
   def create
+		# if english is empty, load georgian into it
+    en = params[:activity][:activity_translations_attributes].select{|k,v| v[:locale] == 'en'}
+		ka = params[:activity][:activity_translations_attributes].select{|k,v| v[:locale] == 'ka'}
+		if en[en.keys[0]][:locale] == 'en' && en[en.keys[0]][:title].empty?
+			en[en.keys[0]][:title] = ka[ka.keys[0]][:title] if ka && !ka[ka.keys[0]][:title].empty?
+		end
+		if en[en.keys[0]][:locale] == 'en' && en[en.keys[0]][:body].empty?
+			en[en.keys[0]][:body] = ka[ka.keys[0]][:body] if ka && !ka[ka.keys[0]][:body].empty?
+		end
+
     @activity = Activity.new(params[:activity])
 
     respond_to do |format|
       if @activity.save
-        format.html { redirect_to @activity, notice: 'Activity was successfully created.' }
+        format.html { redirect_to @activity, notice: t('app.msgs.success_created', :obj => t('app.common.activity')) }
         format.json { render json: @activity, status: :created, location: @activity }
       else
+				gon.edit_activity = true
+				gon.activity_date = @activity.date.strftime('%m/%d/%Y') if !@activity.date.nil?
         format.html { render action: "new" }
         format.json { render json: @activity.errors, status: :unprocessable_entity }
       end
@@ -80,9 +97,11 @@ class ActivitiesController < ApplicationController
 
     respond_to do |format|
       if @activity.update_attributes(params[:activity])
-        format.html { redirect_to @activity, notice: 'Activity was successfully updated.' }
+        format.html { redirect_to @activity, notice: t('app.msgs.success_updated', :obj => t('app.common.activity')) }
         format.json { head :ok }
       else
+				gon.edit_activity = true
+				gon.activity_date = @activity.date.strftime('%m/%d/%Y') if !@activity.date.nil?
         format.html { render action: "edit" }
         format.json { render json: @activity.errors, status: :unprocessable_entity }
       end

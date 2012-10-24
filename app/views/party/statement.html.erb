@@ -3,11 +3,11 @@
 
 <div class="row">
 	<div class="span9">
-	  <div class="clear">
-		  <h2 style="float: left;"><%= t('party.statement.secondary_title', :date => l(@statement.date_made, :format => :long)) %></h2>
+	  <div id="statement_header" class="clear">
+		  <h3><%= t('party.statement.secondary_title', :date => l(@statement.date_made, :format => :long)) %></h3>
 
 			<% if params[:format] != "pdf" %>
-		    <div class="" style="float: left; margin-left: 50px;">
+		    <div id="voting">
 		      <% ip = request.remote_ip %>
 		      <% if @statement.voted(ip, 'up') %>
 		        <%= image_tag('/assets/thumbs-up-grey.png') %>
@@ -25,54 +25,56 @@
 			<% end %>
     </div>
 
+		<hr />
+
 		<div class="statement_summary">
-			<div>
+			<div class="summary_section">
 				<p>
-					<strong><%= "#{t('app.common.economic_category')}:"%></strong>
+					<strong class="tall"><%= "#{t('app.common.economic_category')}:"%></strong>
 					<%= @statement.economic_category.name %>
 				</p>
-			</div>
-			<div class="row">
-				<div class="span4">
-					<p>
-						<strong><%= "#{t('app.common.author')}:"%></strong>
-						<%= @statement.author %>
-					</p>
-				</div>
-				<div class="span4">
-					<p>
-						<strong><%= "#{t('app.common.source')}:"%></strong>
-						<%= auto_link(@statement.source, :urls, :target => "_blank") %>
-					</p>
-				</div>
+				<p>
+					<strong class="tall"><%= "#{t('app.common.author')}:"%></strong>
+					<%= @statement.author %>
+				</p>
+				<p>
+					<strong class="tall"><%= "#{t('app.common.source')}:"%></strong>
+					<%= auto_link(@statement.source, :urls, :target => "_blank") %>
+				</p>
 			</div>
 
-			<p>
-				<strong><%= "#{t('app.common.statement')}:"%></strong>
-			</p>
-			<%= simple_format_no_tags @statement.statement_made, {}, :sanitize => false %>
+			<div class="summary_section">
+				<p>
+					<strong class="tall"><%= "#{t('app.common.statement')}:"%></strong>
+				</p>
+				<%= simple_format_no_tags @statement.statement_made, {}, :sanitize => false %>
+			</div>
 
 			<% if @statement.analysis && !@statement.analysis.empty? %>
-				<p>
-					<strong><%= t('app.common.analysis') %>:</strong>
-				</p>
-				<%= simple_format_no_tags @statement.analysis, {}, :sanitize => false %>
+				<div class="summary_section">
+					<p>
+						<strong class="tall"><%= t('app.common.analysis') %>:</strong>
+					</p>
+					<%= simple_format_no_tags @statement.analysis, {}, :sanitize => false %>
+				</div>
 			<% end %>
 
-			<p>
-				<strong><%= t('app.common.scores') %>:</strong>
-			</p>
-			<% if @statement.statement_scores && !@statement.statement_scores.empty? %>
-				<ul class="standard">
-				<% @statement.statement_scores.ordered.each do |score| %>
-					<li>
-						<strong><%= score.indicator_category.name %></strong>
-						<br />
-						<%= "#{score.value} - #{score.indicator.name}"%>
-					</li>
+			<div class="summary_section">
+				<p>
+					<strong class="tall"><%= t('app.common.scores') %>:</strong>
+				</p>
+				<% if @statement.statement_scores && !@statement.statement_scores.empty? %>
+					<ul id="scores">
+					<% @statement.statement_scores.ordered.each do |score| %>
+						<li>
+							<strong><%= score.indicator_category.name %></strong>
+							<br />
+							<%= "#{score.value} - #{score.indicator.name}"%>
+						</li>
+					<% end %>
+					</ul>
 				<% end %>
-				</ul>
-			<% end %>
+			</div>
 		</div>
 
 		<% if params[:format] != "pdf" %>

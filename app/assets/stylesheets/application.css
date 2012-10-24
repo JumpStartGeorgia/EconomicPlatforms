@@ -240,9 +240,28 @@ div.admin_panel ul li {
 
 /* statemetn record */
 .statement_summary {
-	padding: 1em 0 0.5em 0;
 	border-bottom: solid 1px #ddd;
+	margin-bottom: 15px;
+	padding: 5px 0;
 }
+
+.statement_summary strong.tall {
+	font-size: 18px;
+}
+.statement_summary .summary_section{
+	margin-bottom: 1.5em;
+}
+
+.statement_summary .summary_section ul#scores {
+	padding-left: 2em;
+}
+
+.statement_summary .summary_section ul#scores li {
+	list-style-type:none;
+	line-height: 2;
+}
+
+
 
 /* indicator score headers in forms */
 .radio_button_scores .control-label {
@@ -534,6 +553,7 @@ footer #left {
   border-top: solid 1px #ddd;
   border-bottom: solid 1px #ddd;
   padding: 10px 0;
+	margin-bottom: 1.5em;
 }
 #profile_statement_chart p,
 #profile_statement_chart #chart_selections,
@@ -571,4 +591,14 @@ footer #left {
 #profile_statement_chart #statement_chart text {
   font-family: Arial;
   font-size: 9pt;
+}
+
+#statement_header h3 {
+	float: left;
+}
+
+#statement_header #voting {
+	float: right;
+	margin-left: 50px;
+	margin-right: 20px;
 }

@@ -7,13 +7,13 @@
 
 <p>
   <b>Published at:</b>
-  <%= @activity.date %>
+  <%= l @activity.date, :format => :long %>
 </p>
 
 <p>
   <b>Body:</b>
-  <%= @activity.body %>
 </p>
+<%= simple_format_no_tags @activity.body, {}, :sanitize => false %>
 
 <p>
   <b>Image:</b>
