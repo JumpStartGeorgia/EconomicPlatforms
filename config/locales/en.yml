@@ -192,7 +192,7 @@ en:
     disclaimer:
       title: Disclaimer
     charts:
-      chart_title: Political Party Ideologies
+      title: Political Party Ideologies
   economic_categories:
     edit:
       title: Editing Economic Category

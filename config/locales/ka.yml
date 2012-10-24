@@ -192,7 +192,7 @@ ka:
     disclaimer:
       title: Disclaimer
     charts:
-      chart_title: პოლიტიკური პარტიების იდეოლოგიები
+      title: პოლიტიკური პარტიების იდეოლოგიები
   economic_categories:
     edit:
       title: ცვლილებების შეტანა ეკონომიკურ კატეგორიაში

@@ -132,6 +132,10 @@ ol.standard li {
 	line-height: 1.1;
 }
 
+.page-header {
+	margin: 9px 0;
+}
+
 /* multilanguage form styles */
 div#form-en {
 	background-color:#ddd;
@@ -347,7 +351,7 @@ ul.parties-dropdown a.disabled:hover {
 }
 
 #title-dropdowns {
-  
+
 }
 
 #title-dropdowns h4 {

@@ -108,6 +108,13 @@
 									</div>
 								<% end %>
 
+									<div class="page-header">
+										<% if content_for?(:title) %>
+					            <h1>
+												<%= yield(:title) %>
+											</h1>
+										<% end %>
+									</div>
 <%
 =begin %>
 		            <div class="page-header row">
