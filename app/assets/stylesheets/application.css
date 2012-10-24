@@ -373,22 +373,23 @@ ul.parties-dropdown a.disabled:hover {
   margin-left: 23px;
 }
 
-#title-dropdowns .btn-group button {
+#title-dropdowns .btn-group .dropdown-toggle {
   background: #3b628d;
   border-color: #3b628d;
-  color: #fff;
+  color: #fff !important;
   text-shadow: none;
   outline: none;
   box-shadow: none;
   padding: 6px 10px 8px;
+	text-decoration: none;
 }
 
-#title-dropdowns .btn-group button .caret {
+#title-dropdowns .btn-group .dropdown-toggle .caret {
   border-top-color: #fff;
   opacity: 1;
 }
 
-#title-dropdowns .btn-group button.dropdown-toggle {
+#title-dropdowns .btn-group .dropdown-toggle {
   border-left: 1px solid rgba(255, 255, 255, .13);
 }
 

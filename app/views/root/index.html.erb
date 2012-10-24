@@ -23,10 +23,10 @@
           <div class="">
 		        <% if @political_parties_nav && !@political_parties_nav.empty? %>
 					    <div class="btn-group">
-						    <button class="btn"><%= t('app.common.political_party')%></button>
-						    <button class="btn dropdown-toggle" data-toggle="dropdown">
-							    <span class="caret"></span>
-						    </button>
+								<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+									<%= t('app.common.political_party')%>
+									<span class="caret"></span>
+								</a>
 						    <ul class="dropdown-menu">
 		              <% @political_parties_nav.each do |pol| %>
 		              <li><%= link_to pol.name, party_path(pol.permalink)%></li>
@@ -39,10 +39,10 @@
           <div class="">
 		        <% if @economic_categories_nav && !@economic_categories_nav.empty? %>
 					    <div class="btn-group">
-						    <button class="btn"><%= t('app.common.economic_category')%></button>
-						    <button class="btn dropdown-toggle" data-toggle="dropdown">
-							    <span class="caret"></span>
-						    </button>
+								<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+									<%= t('app.common.economic_category')%>
+									<span class="caret"></span>
+								</a>
 						    <ul class="dropdown-menu">
 		              <% @economic_categories_nav.each do |ec| %>
 		              <li><%= link_to ec.name, category_path(ec.permalink)%></li>
