@@ -2,10 +2,10 @@
 
 
 <div class="row">
-	<div class="block span9 clear">
+	<div class="span9 clear">
 		<h3><%= l @activity.date, :format => :long if @activity.date %></h3>
-		<div class="block_body">
 			<div id="image_video_box" class="pull-right">
+				<div id="activity_image_slider"></div>
 
 				<%= video_frame_tag(@activity.video, 300, 200).html_safe %>
 
@@ -13,7 +13,6 @@
 
 			<%= simple_format_no_tags @activity.body, {}, :sanitize => false %>
 
-		</div>
 	</div>
 
 	<div class="span3">
