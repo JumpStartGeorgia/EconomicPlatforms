@@ -20,15 +20,23 @@ class ActivitiesController < ApplicationController
   # GET /activities/1
   # GET /activities/1.json
   def show
-    @activity = Activity.find(params[:id])
+    @activities = Activity.all
+    @activity = @activities.select{|x| x.id.to_s == params[:id]}
+		if @activity && !@activity.empty?
+			@activity = @activity.first
+		else
+			@activity = nil
+		end
 
-    if @activity.images.length > 0
+    if @activity && @activity.images.length > 0
       @load_image_slider = true
       gon.slider_images = []
       @activity.images.each do |img|
         gon.slider_images << {"img_src" => img.file.url}
       end
     end
+
+		@statements = Statement.published.latest
 
     respond_to do |format|
       format.html # show.html.erb

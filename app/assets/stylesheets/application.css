@@ -602,3 +602,11 @@ footer #left {
 	margin-left: 50px;
 	margin-right: 20px;
 }
+
+#image_video_box {
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+#image_video_box #activity_image_slider{
+	margin-bottom: 20px;
+}

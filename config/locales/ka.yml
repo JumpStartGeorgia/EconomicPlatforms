@@ -363,6 +363,7 @@ ka:
       title: New Activity
     show:
       title: Activity Details
+      latest_statements_header: უახლესი განცხადებები
     form:
       add_file: Add Image
     activity_image_fields:

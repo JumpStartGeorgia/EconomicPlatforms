@@ -359,6 +359,7 @@ en:
       title: New Activity
     show:
       title: Activity Details
+      latest_statements_header: Latest Statements
     form:
       add_file: Add Image
     activity_image_fields:
