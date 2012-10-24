@@ -12,7 +12,7 @@ class RootController < ApplicationController
   end
 
 	def search
-
+    render :template => 'root/search'
 	end
 
 	def charts

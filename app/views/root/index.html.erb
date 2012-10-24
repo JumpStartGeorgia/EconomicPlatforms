@@ -148,8 +148,11 @@
     <div class="row">
       <div class="span3">
 
-        <div class="block" id="home_search">
-          <input type="text" value="" placeholder="<%= t('.search') %>" />
+        <div class="block clear" id="home_search">
+          <form method="get" action="<%= search_path %>">
+            <input type="text" name="q" value="<%= params[:q] if params[:q] %>" placeholder="<%= t('.search') %>" />
+            <input type="image" src="/assets/search.jpg" />
+          </form>
         </div>
 
       </div>

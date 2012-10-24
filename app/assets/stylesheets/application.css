@@ -444,11 +444,27 @@ ul.parties-dropdown a.disabled:hover {
   padding-bottom: 3px;
 }
 
-#home_search input {
-  background: #f1f1f1 url('/assets/search.jpg') 97% 48% no-repeat;
-  padding: 7px 9px 7px 10px;
+#home_search input[type="text"] {
+  background: #f1f1f1;
+  padding: 7px 37px 7px 10px;
+  width: 182px;
   border-color: #e8e8e8;
   box-shadow: none;
+  display: block;
+  float: left;
+}
+
+#home_search input[type="image"] {
+  display: block;
+  float: left;
+  margin-left: -31px;
+  margin-top: 7px;
+  width: 23px;
+}
+
+.gsc-input
+{
+  box-shadow: none !important;
 }
 
 
