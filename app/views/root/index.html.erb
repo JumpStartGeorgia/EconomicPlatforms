@@ -2,9 +2,7 @@
 
   <div class="span9">
     <div class="row">
-
       <div id="title-dropdowns" class="block clear">
-
         <div class="">
 			    <h4 id="<%= I18n.locale %>">
 				    <% if I18n.locale == :en %>
@@ -56,6 +54,7 @@
       </div>
 
     </div>
+
     <div class="row">
 
       <div class="span4">
@@ -74,18 +73,18 @@
 				              <%= '<b class="caret"></b>'.html_safe if party.policy_briefs && !party.policy_briefs.empty? %>
 				            </a>
 
-                    <ul class="parties-dropdown">
+                    <ul class="parties-dropdown dropdown-menu">
 			              <% if party.policy_briefs && !party.policy_briefs.empty? %>
 
 					              <% party.policy_briefs.each do |policy_brief| %>
 						              <li>
-							              <%= link_to policy_brief.economic_category_name,
-								              party_policy_brief_path(:political_party_id => party.id,
-								              :economic_category_id => policy_brief.economic_category_permalink) %>
+							              <%= link_to policy_brief.economic_category.name,
+								              party_policy_brief_path(:political_party_id => party.permalink,
+								              :economic_category_id => policy_brief.economic_category.permalink) %>
 						              </li>
 					              <% end %>
 			              <% else %>
-				              <li><span class="disabled"><%= t('policy_briefs.index.empty') %></span></li>
+				              <li><span class="disabled"><%= t('policy_briefs.index.no_policy_briefs') %></span></li>
 			              <% end %>
 			              </ul>
 
@@ -105,6 +104,7 @@
       </div>
 
     </div>
+
     <div class="row">
 
       <div class="span4">
