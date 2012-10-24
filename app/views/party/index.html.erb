@@ -4,41 +4,35 @@
 	<div id="content_container" class="span9">
 
 		<div id="plat_brief_nav">
-	    <% if @platforms && !@platforms.empty? %>
-				<div class="btn-group">
-					<button class="btn"><%= t('party.well.platform_header') %></button>
-					<button class="btn dropdown-toggle" data-toggle="dropdown">
-						<span class="caret"></span>
-					</button>
-					<ul class="dropdown-menu">
-	          <% @platforms.each do |platform| %>
-			        <li>
+			<div id="platforms">
+				<h2><%= t('party.well.platform_header') %></h2>
+			  <% if @platforms && !@platforms.empty? %>
+					<ul>
+		        <% @platforms.each do |platform| %>
+				      <li>
 								<%= link_to platform.economic_category_name,
 									party_platform_path(:political_party_id => params[:political_party_id],
 									:economic_category_id => platform.economic_category_permalink) %>
 							</li>
-	          <% end %>
+		        <% end %>
 					</ul>
-				</div>
-	    <% end %>
+			  <% end %>
+			</div>
 
-	    <% if @policy_briefs && !@policy_briefs.empty? %>
-				<div class="btn-group">
-					<button class="btn"><%= t('party.well.policy_brief_header')%></button>
-					<button class="btn dropdown-toggle" data-toggle="dropdown">
-						<span class="caret"></span>
-					</button>
-					<ul class="dropdown-menu">
-	          <% @policy_briefs.each do |policy_brief| %>
-			        <li>
+			<div id="briefs">
+			  <% if @policy_briefs && !@policy_briefs.empty? %>
+					<h2><%= t('party.well.policy_brief_header')%></h2>
+					<ul>
+		        <% @policy_briefs.each do |policy_brief| %>
+				      <li>
 								<%= link_to policy_brief.economic_category_name,
 									party_policy_brief_path(:political_party_id => params[:political_party_id],
 									:economic_category_id => policy_brief.economic_category_permalink) %>
 							</li>
-	          <% end %>
+		        <% end %>
 					</ul>
-				</div>
-	    <% end %>
+			  <% end %>
+			</div>
 		</div>
 
 		<h2><%= t('.statement_header', :political_party => @political_party.name) %></h2>

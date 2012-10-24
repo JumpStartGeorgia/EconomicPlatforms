@@ -292,7 +292,7 @@ ka:
   party:
     index:
       title: "%{political_party}"
-      statement_header: "%{political_party} განცხადებები"
+      statement_header: "განცხადებები"
       no_statements: "ამ მომენტისათვის განცხადებები %{economic_category} არ ფიქსირდება %{political_party} - თვის."
       view_statement: განცადების ნახვა სრულად
     well:
@@ -316,7 +316,7 @@ ka:
   category:
     index:
       title: "%{economic_category}"
-      statement_header: "%{economic_category} განცხადებები"
+      statement_header: "განცხადებები"
       no_statements: "ამ მომენტისათვის განცხადებები არ ფიქსირდება %{economic_category} -ში."
       view_statement: განცადების ნახვა სრულად
     well:

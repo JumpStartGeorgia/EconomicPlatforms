@@ -292,7 +292,7 @@ en:
   party:
     index:
       title: "%{political_party}"
-      statement_header: "%{political_party} Statements"
+      statement_header: "Statements"
       no_statements: "At this time, no %{economic_category} statements have been recorded for %{political_party}."
       view_statement: View Full Statement
     well:
@@ -316,7 +316,7 @@ en:
   category:
     index:
       title: "%{economic_category}"
-      statement_header: "%{economic_category} Statements"
+      statement_header: "Statements"
       no_statements: "At this time, no statements have been recorded for %{economic_category}."
       view_statement: View Full Statement
     well:

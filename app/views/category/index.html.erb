@@ -4,13 +4,10 @@
 	<div id="content_container" class="span9">
 
 		<div id="plat_brief_nav">
-	    <% if @platforms && !@platforms.empty? %>
-				<div class="btn-group">
-					<button class="btn"><%= t('category.well.platform_header') %></button>
-					<button class="btn dropdown-toggle" data-toggle="dropdown">
-						<span class="caret"></span>
-					</button>
-					<ul class="dropdown-menu">
+			<div id="platforms">
+				<h2><%= t('category.well.platform_header') %></h2>
+		    <% if @platforms && !@platforms.empty? %>
+					<ul>
 	          <% @platforms.each do |platform| %>
 			        <li>
 							<%= link_to platform.political_party_name,
@@ -19,16 +16,13 @@
 							</li>
 	          <% end %>
 					</ul>
-				</div>
-	    <% end %>
+		    <% end %>
+			</div>
 
-	    <% if @policy_briefs && !@policy_briefs.empty? %>
-				<div class="btn-group">
-					<button class="btn"><%= t('category.well.policy_brief_header')%></button>
-					<button class="btn dropdown-toggle" data-toggle="dropdown">
-						<span class="caret"></span>
-					</button>
-					<ul class="dropdown-menu">
+			<div id="briefs">
+				<h2><%= t('category.well.policy_brief_header') %></h2>
+		    <% if @policy_briefs && !@policy_briefs.empty? %>
+					<ul>
 	          <% @policy_briefs.each do |policy_brief| %>
 			        <li>
 								<%= link_to policy_brief.political_party_name,
@@ -37,8 +31,8 @@
 							</li>
 	          <% end %>
 					</ul>
-				</div>
-	    <% end %>
+		    <% end %>
+			</div>
 		</div>
 
 		<h2><%= t('.statement_header', :economic_category => @economic_category.name) %></h2>

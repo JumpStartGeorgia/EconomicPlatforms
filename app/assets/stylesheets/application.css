@@ -204,6 +204,8 @@ div.admin_panel ul li {
 
 #plat_brief_nav > div {
 	display: inline-block;
+	width: 45%;
+	vertical-align: top;
 }
 
 /* wells */
