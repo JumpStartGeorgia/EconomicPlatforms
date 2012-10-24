@@ -66,15 +66,15 @@
 			      <% if @political_parties_nav && !@political_parties_nav.empty? %>
 				      <ul>
 				        <% @political_parties_nav.each_with_index do |party,i| %>
-				          <li class="dropdown">
+				          <li class="party-dropdown">
 
-				            <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+				            <a href="#" data-toggle="dropdown">
 				              <span style="background-color: <%= "#{party.color}" %>;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
 				              <%= party.name %>
 				              <%= '<b class="caret"></b>'.html_safe if party.policy_briefs && !party.policy_briefs.empty? %>
 				            </a>
 
-                    <ul class="dropdown-menu">
+                    <ul class="parties-dropdown">
 			              <% if party.policy_briefs && !party.policy_briefs.empty? %>
 				              
 					              <% party.policy_briefs.each do |policy_brief| %>
@@ -85,7 +85,7 @@
 						              </li>
 					              <% end %>
 			              <% else %>
-				              <li><a class="disabled" href="#"><%= t('policy_briefs.index.empty') %></a></li>
+				              <li><span class="disabled"><%= t('policy_briefs.index.empty') %></span></li>
 			              <% end %>
 			              </ul>
 

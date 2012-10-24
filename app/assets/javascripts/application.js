@@ -26,3 +26,16 @@ $(document).ready(function(){
 	  $(":input:visible:enabled:first").focus();
 	}
 });
+
+$(function ()
+{
+
+  $('li.party-dropdown').click(function ()
+  {
+    var c = $(this).children('ul.parties-dropdown');
+    $('ul.parties-dropdown').not(c).hide(0);
+    c.toggle(0);
+  });
+
+});
+

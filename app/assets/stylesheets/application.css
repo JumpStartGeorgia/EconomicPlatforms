@@ -272,7 +272,7 @@ div.admin_panel ul li {
   border-top: 1px dotted #828282;
 }
 
-.block .block_body ul li {
+.block .block_body > ul > li {
   border-bottom: 1px dotted #828282;
   padding-bottom: 11px;
   margin-bottom: 10px;
@@ -293,19 +293,57 @@ div.admin_panel ul li {
   color: #2965a1;
 }
 
-.block a.dropdown-toggle:hover {
-  text-decoration: none;
+.block .block_body ul li.party-dropdown {
+  position: relative;
 }
 
-.block a.disabled:hover {
+.block .block_body ul li.party-dropdown a {
+  display: block;
+}
+
+ul.parties-dropdown {
+  position: absolute;
+  top: -10px;
+  left: 100%;
+  z-index: 1000;
+  display: block;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 4px 0;
+  margin: 0;
+  list-style: none;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+
+ul.parties-dropdown li {
+
+}
+
+ul.parties-dropdown a, ul.parties-dropdown span.disabled {
+  display: block;
+  padding: 2px 7px;
+}
+
+ul.parties-dropdown a:hover {
+
+}
+
+ul.parties-dropdown a.disabled:hover {
   text-decoration: none;
   background-color: #fff;
   color: #333;
   cursor: default;
-}
-
-.dropdown-toggle {
-  display: block;
 }
 
 #title-dropdowns {
