@@ -1,0 +1,45 @@
+<div class="row">
+	<div class="span9">
+		<div id="charts">
+			<h2><%= t('.chart_title')%></h2>
+			<% if !@values || @values.empty? %>
+				<p>
+					<%= t('.no_values')%>
+				</p>
+			<% else %>
+				<% @values.each_with_index do |value, i| %>
+					<% if i%2 == 0 %>
+						<div class="chart_row row">
+					<% end %>
+
+						<div class="span4">
+						  <h3><%= value[:name] %></h3>
+						  <div id="<%= "#{value[:div_id]}"%>"></div>
+						</div>
+
+					<% if i%2 == 1 || i==@values.length-1%>
+						</div>
+					<% end %>
+				<% end %>
+
+			<% end %>
+		</div>
+	</div>
+
+	<div class="span3">
+		<div id="well_legend" class="well well-small">
+			<h3><%= t('app.common.political_parties')%></h3>
+			<% if @political_parties_nav && !@political_parties_nav.empty? %>
+			  <h4></h4>
+				<ul>
+				  <% @political_parties_nav.each_with_index do |party,i| %>
+				    <li>
+				      <span style="background-color: <%= "#{party.color}" %>;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+				      <%= party.name %>
+				    </li>
+				  <% end %>
+				</ul>
+			<% end %>
+		</div>
+	</div>
+</div>

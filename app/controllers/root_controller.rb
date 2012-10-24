@@ -1,6 +1,15 @@
 class RootController < ApplicationController
 
   def index
+
+		# get the latest statements
+		@statements = Statement.published.latest
+
+    @activities = Activity.all
+
+  end
+
+	def charts
     # get the ideological values for each economic category
     ideological_id = 5
     @values = []
@@ -23,13 +32,7 @@ class RootController < ApplicationController
 			gon.direction_center = t("app.scales.indicator_category_id_#{ideological_id}.middle")
 			gon.direction_right = t("app.scales.indicator_category_id_#{ideological_id}.bottom")
     end
-
-		# get the latest statements
-		@statements = Statement.published.latest
-
-    @activities = Activity.all
-
-  end
+	end
 
 	def about
 		@page = Page.find_by_name('about')

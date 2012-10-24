@@ -76,7 +76,7 @@
 
                     <ul class="parties-dropdown">
 			              <% if party.policy_briefs && !party.policy_briefs.empty? %>
-				              
+
 					              <% party.policy_briefs.each do |policy_brief| %>
 						              <li>
 							              <%= link_to policy_brief.economic_category_name,
@@ -135,31 +135,7 @@
         <div class="block">
           <h4 class="font"><%= t('.chart_title')%></h4>
           <div class="block_body">
-            <%= link_to image_tag('/assets/home_chart_' + I18n.locale.to_s + '.jpg'), root_path(:locale => I18n.locale) %>
-<%
-=begin %>
-			      <% if !@values || @values.empty? %>
-				      <p>
-					      <%= t('.no_values')%>
-				      </p>
-			      <% else %>
-				      <% @values.each_with_index do |value, i| %>
-					      <% if i%2 == 0 %>
-						      <div class="chart_row row">
-					      <% end %>
-
-						      <div class="span4">
-						        <h3><%= value[:name] %></h3>
-						        <div id="<%= "#{value[:div_id]}"%>"></div>
-						      </div>
-
-					      <% if i%2 == 1 || i==@values.length-1%>
-						      </div>
-					      <% end %>
-				      <% end %>
-			      <% end %>
-<%
-=end %>
+            <%= link_to image_tag('/assets/home_chart_' + I18n.locale.to_s + '.jpg'), charts_path %>
           </div>
 			  </div>
 
@@ -374,5 +350,3 @@
     <% end %>
   </div>
 </div>
-
-

@@ -182,7 +182,6 @@ en:
       welcome: "Welcome to the Economic Policy Fact Checker! Explore the economic policies of Georgian political parties over time by viewing party platforms, party statements, and our in-depth analysis."
       welcome_link: "Click here to learn more."
       no_values: No political party information has been entered into the application at this time.
-      chart_title: Political Party Ideologies
       latest_statements_header: Latest Statements
       about_header: About
       search: Search
@@ -192,6 +191,8 @@ en:
       title: Methodology
     disclaimer:
       title: Disclaimer
+    charts:
+      chart_title: Political Party Ideologies
   economic_categories:
     edit:
       title: Editing Economic Category
