@@ -45,6 +45,7 @@ EconomicPlatforms::Application.routes.draw do
 		match '/vote/:type/:votable_id/:status', :to => 'comments#vote', :as => :vote, :via => :get
 
 		match '/admin', :to => 'admin#index', :as => :admin, :via => :get
+		match '/search', :to => 'root#search', :as => :search, :via => :get
 		match '/charts', :to => 'root#charts', :as => :charts, :via => :get
 		match '/about', :to => 'root#about', :as => :about, :via => :get
 		match '/methodology', :to => 'root#methodology', :as => :methodology, :via => :get

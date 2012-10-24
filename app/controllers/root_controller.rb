@@ -7,7 +7,13 @@ class RootController < ApplicationController
 
     @activities = Activity.all
 
+		gon.highlight_first_form_field = false
+
   end
+
+	def search
+
+	end
 
 	def charts
     # get the ideological values for each economic category
