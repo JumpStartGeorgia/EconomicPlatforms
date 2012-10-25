@@ -14,6 +14,11 @@ class RootController < ApplicationController
 	def search
 	end
 
+	def sitemap
+		  @activities = Activity.all
+	end
+
+
 	def charts
     # get the ideological values for each economic category
     ideological_id = 5
