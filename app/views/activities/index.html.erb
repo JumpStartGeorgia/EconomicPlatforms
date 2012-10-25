@@ -1,29 +1,35 @@
-<h1>Listing activities</h1>
+<% title t('.title') %>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Published at</th>
-    <th>Body</th>
-    <th>Image</th>
-    <th>Video</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @activities.each do |activity| %>
-  <tr>
-    <td><%= activity.title %></td>
-    <td><%= activity.date %></td>
-    <td><%= activity.body %></td>
-    <td><%= link_to 'Show', activity %></td>
-    <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
-    <td><%= link_to 'Destroy', activity, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+<table class="table table-striped">
+  <thead>
+		<tr>
+      <th><%= t('app.common.title') %></th>
+      <th><%= t('app.common.date') %></th>
+      <th><%= t('app.common.actions') %></th>
+		</tr>
+  </thead>
+  <tbody>
+	<% @activities.each do |activity| %>
+		<tr>
+		  <td><%= link_to activity.title, activity %></td>
+		  <td><%= l activity.date, :format => :long if activity.date %></td>
+		  <td>
+				<%= link_to t('app.buttons.edit'), edit_activity_path(activity), :class => 'btn btn-mini' %>
+        <%= link_to t('app.buttons.delete'),
+                    activity,
+                    :method => :delete,
+                    :confirm => t('app.buttons.confirm'),
+                    :class => 'btn btn-mini btn-danger' %>
+			</td>
+		</tr>
+	<% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Activity', new_activity_path %>
+<div class="form-actions">
+<%= link_to t('app.buttons.new'),
+            new_activity_path,
+            :class => 'btn btn-primary' %>
+<%= link_to t('app.buttons.admin'), admin_path,
+:class => 'btn' %>
+</div>

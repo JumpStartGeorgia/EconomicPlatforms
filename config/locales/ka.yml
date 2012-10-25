@@ -198,6 +198,7 @@ ka:
       title: ძიება
     sitemap:
       title: საიტის რუკა
+      other_header: სხვა
   economic_categories:
     edit:
       title: ცვლილებების შეტანა ეკონომიკურ კატეგორიაში

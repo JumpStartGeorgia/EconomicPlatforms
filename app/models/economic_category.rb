@@ -7,6 +7,7 @@ class EconomicCategory < ActiveRecord::Base
 
   has_many :statements
   has_many :policy_briefs
+	has_many :platforms
 
 	default_scope lambda {with_translations(I18n.locale).order("economic_category_translations.name")}
 

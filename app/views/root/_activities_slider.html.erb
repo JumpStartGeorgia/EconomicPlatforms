@@ -20,7 +20,7 @@
           <div class="body clear">
 						<% if activity.images && !activity.images.empty? %>
             <div class="imagecontainer">
-              <%= image_tag activity.images.last.file.url if !activity.images.last.nil? %>
+              <%= image_tag activity.images.last.file.url(:thumb) if !activity.images.last.nil? %>
             </div>
 						<% end %>
             <div class="text">

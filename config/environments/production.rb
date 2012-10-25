@@ -75,4 +75,8 @@ EconomicPlatforms::Application.configure do
 		:email_prefix => "[Econmic Platforms Site App Error (#{Rails.env})] ",
 		:sender_address => ENV['APPLICATION_ERROR_FROM_EMAIL'],
 		:exception_recipients => [ENV['APPLICATION_ERROR_TO_EMAIL']]
+
+	# tell paperclip where to find imagemagick
+	Paperclip.options[:command_path] = "/usr/bin/"
+
 end

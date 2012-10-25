@@ -197,6 +197,7 @@ en:
       title: Search
     sitemap:
       title: Site Map
+      other_header: Other
   economic_categories:
     edit:
       title: Editing Economic Category

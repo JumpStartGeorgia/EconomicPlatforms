@@ -1,5 +1,14 @@
 == Election Platform
 
+=== HOW TO INSTALL IMAGEMAGICK
+1. sudo apt-get install imagemagick libmagickcore-dev libmagickwand-dev
+2. from command line run: which convert
+3. copy the result and add it to your dev environment file at the bottom like the following,
+   leaving off the 'convert' part of the path:
+    	# tell paperclip where to find imagemagick
+    	Paperclip.options[:command_path] = "/usr/bin/"
+
+
 === *******HACK**********
 In order to get paper_trail and globalize3 to work nicely together, the globalize3 gem
 had to be hacked.  At globalize3-0.2.0/lib/globalize/active_record/translation.rb, the
