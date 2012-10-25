@@ -46,6 +46,7 @@ EconomicPlatforms::Application.routes.draw do
 		match '/search', :to => 'root#search', :as => :search, :via => :get
 		match '/charts', :to => 'root#charts', :as => :charts, :via => :get
 		match '/about', :to => 'root#about', :as => :about, :via => :get
+		match '/sitemap', :to => 'root#sitemap', :as => :sitemap, :via => :get
 		match '/methodology', :to => 'root#methodology', :as => :methodology, :via => :get
 
 		root :to => 'root#index'

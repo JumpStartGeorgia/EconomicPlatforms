@@ -486,6 +486,10 @@ footer div#left {
 	width: 20%;
 	margin-top: 20px;
 }
+footer div#left ul li {
+	display: inline;
+	padding-right: 15px;
+}
 footer a:hover {
 	background-color: #D4D4D4;
 }

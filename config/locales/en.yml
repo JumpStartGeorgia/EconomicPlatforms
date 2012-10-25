@@ -147,6 +147,7 @@ en:
       time: Time
       comments: Comments
       view_full: view full
+      sitemap: Site Map
     msgs:
       does_not_exist: You tried to access a page that does not exist.
       not_authorized: You are not authorized to view that page.
@@ -192,6 +193,10 @@ en:
       title: Disclaimer
     charts:
       title: Political Party Ideologies
+    search:
+      title: Search
+    sitemap:
+      title: Site Map
   economic_categories:
     edit:
       title: Editing Economic Category

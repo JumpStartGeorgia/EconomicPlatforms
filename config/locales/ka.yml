@@ -147,6 +147,7 @@ ka:
       time: დრო
       comments: კომენტარები
       view_full: ვრცლად
+      sitemap: საიტის რუკა
     msgs:
       does_not_exist: თქვენ ცდილობთ იხილოთ გვერდი, რომელიც არ არსებობს.
       not_authorized: თქვენ არ გაქვთ უფლება იხილოთ ეს გვერდი.
@@ -193,6 +194,10 @@ ka:
       title: Disclaimer
     charts:
       title: პოლიტიკური პარტიების იდეოლოგიები
+    search:
+      title: ძიება
+    sitemap:
+      title: საიტის რუკა
   economic_categories:
     edit:
       title: ცვლილებების შეტანა ეკონომიკურ კატეგორიაში
