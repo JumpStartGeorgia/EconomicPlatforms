@@ -42,8 +42,8 @@ $(function ()
   {
     var options =
     {
-      width:         500,
-      height:        210,
+      width:         300,
+      height:        180,
       element:       $('#activity_image_slider'),
       data:          gon.slider_images
     };

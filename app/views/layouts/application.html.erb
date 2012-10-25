@@ -127,7 +127,7 @@
 
 										</div>
 									</div>
-									<div class="span3">
+									<div class="span3 sidespan">
 
 										<div class="block clear" id="home_search">
 											<form method="get" action="<%= search_path %>">
@@ -148,10 +148,12 @@
 								<% end %>
 
 									<% if content_for?(:title) %>
-										<div class="page-header">
-					            <h1>
-												<%= yield(:title) %>
-											</h1>
+										<div class="page-header span9">
+										  <div class="block">
+					              <h1>
+												  <%= yield(:title) %>
+											  </h1>
+											</div>
 										</div>
 									<% end %>
 <%
@@ -225,7 +227,7 @@
     <%= javascript_include_tag "application" %>
 		<%= use_tinymce_link %>
 		<% if !@load_image_slider.nil? && @load_image_slider %>
-		  <script type="text/javascript" src="/javascripts/va_slider.js"></script>
+		  <script type="text/javascript" src="/javascripts/image_slider.js"></script>
 		<% end %>
 		<script type="text/javascript">
 			I18n.defaultLocale = "<%= I18n.default_locale %>";

@@ -289,6 +289,23 @@ div.admin_panel ul li {
 	padding-bottom: 4px;
 }
 
+.page-header {
+  margin: 0px;
+  margin-bottom: -3px;
+  box-shadow: none;
+  border: none;
+  padding-bottom: 0px;
+}
+
+/*
+.page-header .block {
+  margin: 0px;
+  padding-bottom: 3px;
+  box-shadow: 3px 0px #d0d0d0;
+  border: none;
+}
+*/
+
 /* home page styles */
 .block {
   padding: 12px 17px;
@@ -438,7 +455,7 @@ ul.parties-dropdown a.disabled:hover {
   border-left: 1px solid rgba(255, 255, 255, .13);
 }
 
-#side-spans {
+.sidespan {
   margin-left: 27px;
 }
 
@@ -448,8 +465,8 @@ ul.parties-dropdown a.disabled:hover {
 
 #home_search input[type="text"] {
   background: #f1f1f1;
-  padding: 7px 37px 7px 10px;
-  width: 182px;
+  padding: 7px 16% 7px 4%;
+  width: 77%;
   border-color: #e8e8e8;
   box-shadow: none;
   display: block;
@@ -647,4 +664,8 @@ footer #left {
 }
 #image_video_box #activity_image_slider{
 	margin-bottom: 20px;
+}
+
+#image_video_box + * {
+	text-align: justify;
 }

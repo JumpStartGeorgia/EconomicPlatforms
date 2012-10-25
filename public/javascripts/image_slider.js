@@ -245,7 +245,7 @@ function Va_slider (options)
 
 	  images[i].onerror = function ()
 	  {
-	    console.log('error loading one or more slider images');
+	    console.log('error loading slider image, index: ' + i);
 	    if (i < (data.length - 1))
 	    {
 	      t.proc_images(data, i + 1);
@@ -397,6 +397,11 @@ function Va_slider (options)
     timer:         null,
     active:        0                                // index of the current (active) visible slide
   };
+
+  if (typeof t.slider.width == 'string' && t.slider.width.slice(-1) == '%')
+  {
+    t.slider.width = t.slider.element.parent().width() * +t.slider.width.slice(0, -1) / 100;
+  }
 
   t.slider.show_overlay = (typeof options.show_overlay == 'undefined') ? true : options.show_overlay;
   t.slider.resize_if_many = (typeof options.resize_if_many == 'undefined') ? false : options.resize_if_many;
