@@ -20,37 +20,42 @@
 
 	<div class="span3 sidespan">
 		<div class="block">
-			<h3><%= t('app.common.activities') %></h3>
+			<h3 class="block_header"><%= t('app.common.activities') %></h3>
 
-			<% if @activities && !@activities.empty? %>
-				<ul>
-					<% @activities.each do |activity| %>
-						<li>
-							<%= link_to activity.title,
-								activity_path(activity.id) %>
-						</li>
-					<% end %>
-				</ul>
-			<% else %>
-				<%= t('.no_platforms') %>
-			<% end %>
+			<div class="block_body font">
+		    <% if @activities && !@activities.empty? %>
+			    <ul>
+				    <% @activities.each do |activity| %>
+					    <li>
+						    <%= link_to activity.title,
+							    activity_path(activity.id) %>
+					    </li>
+				    <% end %>
+			    </ul>
+		    <% else %>
+			    <%= t('.no_platforms') %>
+		    <% end %>
+			</div>
 		</div>
 
     <div class="block">
-      <h3><%= t('.latest_statements_header') %></h3>
-      <% if !@statements || @statements.empty? %>
-	      <%= t('statements.index.no_statements') %>
-      <% else %>
-	      <ul>
-		      <% @statements.each do |statement| %>
-			      <li>
-				      <%= link_to "#{l(statement.date_made, :format => :short)} - #{statement.political_party.name}",
-						      party_statement_path(:political_party_id => statement.political_party.permalink, :id => statement.id),
-						      :title => "#{statement.economic_category.name}" %>
-			      </li>
-		      <% end %>
-	      </ul>
-      <% end %>
+      <h3 class="block_header font"><%= t('.latest_statements_header') %></h3>
+
+			<div class="block_body">
+        <% if !@statements || @statements.empty? %>
+	        <%= t('statements.index.no_statements') %>
+        <% else %>
+	        <ul>
+		        <% @statements.each do |statement| %>
+			        <li>
+				        <%= link_to "#{l(statement.date_made, :format => :short)} - #{statement.political_party.name}",
+						        party_statement_path(:political_party_id => statement.political_party.permalink, :id => statement.id),
+						        :title => "#{statement.economic_category.name}" %>
+			        </li>
+		        <% end %>
+	        </ul>
+        <% end %>
+      </div>
 	  </div>
 
 	</div>
