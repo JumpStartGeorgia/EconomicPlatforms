@@ -42,7 +42,7 @@ $(function ()
   {
     var options =
     {
-      width:         500,
+      width:         300,
       height:        210,
       element:       $('#activity_image_slider'),
       data:          gon.slider_images
@@ -126,4 +126,3 @@ $(document).ready(function ()
 		}
 	}
 });
-

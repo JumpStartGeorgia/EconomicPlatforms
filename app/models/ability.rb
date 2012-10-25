@@ -16,6 +16,7 @@ class Ability
       can :manage, PlatformScore
       can :manage, PolicyBrief
       can :manage, PolicyBriefTranslation
+			can :manage, Activity
     else
       can :read, :all
     end

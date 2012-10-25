@@ -1,20 +1,24 @@
 class ActivitiesController < ApplicationController
 	use_tinymce :new, :edit
 
-  before_filter :authenticate_user!
-  before_filter do |controller_instance|
+  before_filter :authenticate_user!, :except => [:show, :index]
+  before_filter(:except => [:show, :index]) do |controller_instance|
     controller_instance.send(:valid_role?, :author)
   end
 
   # GET /activities
   # GET /activities.json
   def index
-    @activities = Activity.all
+		if user_signed_in?
+		  @activities = Activity.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @activities }
-    end
+		  respond_to do |format|
+		    format.html # index.html.erb
+		    format.json { render json: @activities }
+		  end
+		else
+			redirect_to root_path
+		end
   end
 
   # GET /activities/1
@@ -32,7 +36,7 @@ class ActivitiesController < ApplicationController
       @load_image_slider = true
       gon.slider_images = []
       @activity.images.each do |img|
-        gon.slider_images << {"img_src" => img.file.url}
+        gon.slider_images << {"img_src" => img.file.url(:medium)}
       end
     end
 
