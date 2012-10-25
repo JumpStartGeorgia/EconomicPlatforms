@@ -18,9 +18,11 @@
         <div class="each">
           <h3><%= activity.title %><%#= link_to activity.title, activity_path(activity) %></h3>
           <div class="body clear">
+						<% if activity.images && !activity.images.empty? %>
             <div class="imagecontainer">
               <%= image_tag activity.images.last.file.url if !activity.images.last.nil? %>
             </div>
+						<% end %>
             <div class="text">
               <%= char_limit(activity.body, 350) %>
             </div>
@@ -34,4 +36,3 @@
     </div>
 
   </div>
-
