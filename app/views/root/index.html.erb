@@ -276,12 +276,16 @@
 
 <div class="row">
   <div class="span12">
-    <% @activities.each do |activity| %>
-			<% if activity.video && !activity.video.empty? %>
-		    <div class="activity-video-container" style="width: 20%; float:left; text-align: center;">
-		      <%= video_frame_tag(activity.video, 200, 150).html_safe %>
-		    </div>
-			<% end %>
-    <% end %>
+    <div class="row">
+      <div class="span1">&nbsp;</div>
+      <% @activities.each do |activity| %>
+			  <% if activity.video && !activity.video.empty? %>
+		      <div class="span2 activity-video-container">
+		        <%= video_frame_tag(activity.video, 170, 150).html_safe %>
+		      </div>
+			  <% end %>
+      <% end %>
+      <div class="span1">&nbsp;</div>
+    </div>
   </div>
 </div>

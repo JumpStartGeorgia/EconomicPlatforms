@@ -291,7 +291,9 @@ div.admin_panel ul li {
 
 .page-header {
   margin: 0px;
-  margin-bottom: -3px;
+/*
+  margin-bottom: -100px;
+*/
   box-shadow: none;
   border: none;
   padding-bottom: 0px;
