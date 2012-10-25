@@ -162,6 +162,8 @@ en:
       sign_out: Sign Out
       js_link_title: "Visit JumpStart Georgia's website"
       js_link_text: Built by
+      search: Search
+      slogan: What does your party promise?
     unsupported_browser:
       title: Unsupported Browser
       p1: We are sorry to report that your browser is out of date and will not properly render the content from this website.
@@ -177,15 +179,11 @@ en:
       js_link_text: Built by
   root:
     index:
-      title1: What does your
-      title2: party
-      title3: promise
       welcome: "Welcome to the Economic Policy Fact Checker! Explore the economic policies of Georgian political parties over time by viewing party platforms, party statements, and our in-depth analysis."
       welcome_link: "Click here to learn more."
       no_values: No political party information has been entered into the application at this time.
       latest_statements_header: Latest Statements
       about_header: About
-      search: Search
     about:
       title: About
     methodology:

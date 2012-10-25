@@ -399,6 +399,8 @@ ul.parties-dropdown a.disabled:hover {
 
 #title-dropdowns h4 {
   padding-top: 5px;
+	font-size: 18px;
+	letter-spacing: 2px;
 }
 
 #title-dropdowns > div:first-child {

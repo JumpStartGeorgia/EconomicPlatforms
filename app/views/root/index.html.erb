@@ -1,64 +1,7 @@
 <div class="row">
-
   <div class="span9">
     <div class="row">
-      <div id="title-dropdowns" class="block clear">
-        <div class="">
-			    <h4 id="<%= I18n.locale %>">
-				    <% if I18n.locale == :en %>
-					    <%= t('.title1')%>
-					    <%= t('.title2')%>
-					    <%= t('.title3')%>?
-				    <% else %>
-					    <%= t('.title1')%>
-					    <%= t('.title2')%>
-					    <%= t('.title3')%>?
-				    <% end %>
-			    </h4>
-        </div>
-
-        <div class="ds">
-          <div class="">
-		        <% if @political_parties_nav && !@political_parties_nav.empty? %>
-					    <div class="btn-group">
-								<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-									<%= t('app.common.political_party')%>
-									<span class="caret"></span>
-								</a>
-						    <ul class="dropdown-menu">
-		              <% @political_parties_nav.each do |pol| %>
-		              <li><%= link_to pol.name, party_path(pol.permalink)%></li>
-		              <% end %>
-						    </ul>
-					    </div>
-		        <% end %>
-          </div>
-
-          <div class="">
-		        <% if @economic_categories_nav && !@economic_categories_nav.empty? %>
-					    <div class="btn-group">
-								<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-									<%= t('app.common.economic_category')%>
-									<span class="caret"></span>
-								</a>
-						    <ul class="dropdown-menu">
-		              <% @economic_categories_nav.each do |ec| %>
-		              <li><%= link_to ec.name, category_path(ec.permalink)%></li>
-		              <% end %>
-						    </ul>
-					    </div>
-            <% end %>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="row">
-
       <div class="span4">
-
         <div class="block">
           <h4 class="font"><%= t('app.common.policy_briefs') %></h4>
           <div class="block_body">
@@ -145,19 +88,6 @@
 
 
   <div id="side-spans" class="span3">
-    <div class="row">
-      <div class="span3">
-
-        <div class="block clear" id="home_search">
-          <form method="get" action="<%= search_path %>">
-            <input type="text" name="q" value="<%= params[:q] if params[:q] %>" placeholder="<%= t('.search') %>" />
-            <input type="image" src="/assets/search.jpg" />
-          </form>
-        </div>
-
-      </div>
-    </div>
-
     <div class="row">
       <div class="span3">
 
