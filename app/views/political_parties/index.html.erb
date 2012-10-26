@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th><%= t('app.common.name') %></th>
+      <th><%= t('app.common.logo') %></th>
       <th><%= t('app.common.color') %></th>
       <th><%= t('app.common.actions') %></th>
     </tr>
@@ -12,6 +13,7 @@
     <% @political_parties.each do |political_party| %>
       <tr>
         <td><%= political_party.name %></td>
+        <td><%= image_tag(political_party.logo.url) if political_party.logo_file_name %></td>
         <td><span style="background-color: <%= "#{political_party.color}" %>;">&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
         <td>
           <%= link_to t('app.buttons.edit'),

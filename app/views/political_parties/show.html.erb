@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <strong><%= t('app.common.logo') %>:</strong>
+  <%= image_tag(@political_party.logo.url) if @political_party.logo_file_name %>
+</p>
+
+<p>
   <strong><%= t('app.common.color') %>:</strong>
   <span style="background-color: <%= "#{@political_party.color}" %>;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
 </p>

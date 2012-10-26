@@ -1,5 +1,6 @@
 <% title t('party.statement.title', :political_party => @political_party.name) %>
 <% sub_title t('party.statement.secondary_title', :date => l(@statement.date_made, :format => :long)) %>
+<% title_image @political_party.logo.url if @political_party.logo_file_name %>
 
 <div class="row">
 	<div class="span9">

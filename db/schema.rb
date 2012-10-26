@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121021204926) do
+ActiveRecord::Schema.define(:version => 20121026072124) do
 
   create_table "activities", :force => true do |t|
     t.date     "date"
@@ -220,6 +220,10 @@ ActiveRecord::Schema.define(:version => 20121021204926) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "color"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
   create_table "political_party_translations", :force => true do |t|

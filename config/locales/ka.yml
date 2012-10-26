@@ -51,6 +51,7 @@ ka:
         analysis: Analysis
       political_party:
         color: ფერი
+        logo: ლოგო
       political_party_translation:
         name: სახელი
       page:
@@ -148,6 +149,7 @@ ka:
       comments: კომენტარები
       view_full: ვრცლად
       sitemap: საიტის რუკა
+      logo: ლოგო
     msgs:
       does_not_exist: თქვენ ცდილობთ იხილოთ გვერდი, რომელიც არ არსებობს.
       not_authorized: თქვენ არ გაქვთ უფლება იხილოთ ეს გვერდი.
