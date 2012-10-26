@@ -46,7 +46,7 @@
   font-family: fightme;
   font-style: normal;
   font-weight: 400;
-  src: url(http://localhost/gyla/style/bpg_mrgvlovani_caps_2010.ttf);
+  src: url(/bpg_mrgvlovani_caps_2010.ttf);
 }
 
 .font, .font * { font-family: fightme; }
@@ -249,7 +249,7 @@ div.admin_panel ul li {
 	background-color: #eee;
 }
 
-/* statement record */
+/* statement record 
 .statement_summary {
 	border-bottom: solid 1px #ddd;
 	margin-bottom: 15px;
@@ -271,7 +271,7 @@ div.admin_panel ul li {
 	list-style-type:none;
 	line-height: 2;
 }
-
+*/
 
 
 /* indicator score headers in forms */
@@ -347,14 +347,22 @@ div.admin_panel ul li {
   font-size: 12px;
 }
 
+.block a {
+  text-decoration: none;
+}
+
+.block a:hover {
+  text-decoration: underline;
+  color: #2965a1;
+}
+
 .block a.blue, .block ul.blue a {
 	font-size: 12px;
 	display: block;
 	color: #3B628D;
-	text-decoration: none;
 }
 .block a.blue:hover, .block ul.blue a:hover {
-	background-color: #f8f8f8;
+  text-decoration: underline;
 }
 
 .block .block_body {
@@ -393,15 +401,6 @@ div.admin_panel ul li {
 .block .block_body ul li:last-child {
   border-bottom: none;
   padding-bottom: 0px;
-}
-
-.block a {
-  text-decoration: none;
-}
-
-.block a:hover {
-  text-decoration: underline;
-  color: #2965a1;
 }
 
 .block .block_body ul li.party-dropdown {
@@ -701,6 +700,7 @@ footer #left {
   font-size: 9pt;
 }
 
+/*
 #statement_header h3 {
 	float: left;
 }
@@ -710,6 +710,7 @@ footer #left {
 	margin-left: 50px;
 	margin-right: 20px;
 }
+*/
 
 #image_video_box {
 	margin-left: 20px;

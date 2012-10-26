@@ -24,7 +24,10 @@ module ActivitiesHelper
     #require 'rack'
     #require 'uri'
     v = Rack::Utils.parse_query(URI(url).query)['v']
-    '<iframe width="' + width.to_s + '" height="' + height.to_s + '" src="http://www.youtube.com/embed/' + v + '" frameborder="0" allowfullscreen=""></iframe>'
+
+    content_tag(:iframe, "", :width => width, :height => height, :src => "http://www.youtube.com/embed/" + v, :frameborder => 0, :allowfullscreen => "")
+
+   #'<iframe width="' + width.to_s + '" height="' + height.to_s + '" src="http://www.youtube.com/embed/' + v + '" frameborder="0" allowfullscreen=""></iframe>'
   end
 
 end
