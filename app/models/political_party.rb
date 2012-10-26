@@ -1,9 +1,14 @@
 class PoliticalParty < ActiveRecord::Base
   has_paper_trail
   translates :name, :permalink
+	has_attached_file :logo,
+    :url => "/system/activity_images/:attachment/:id/:style/:filename",
+    :path => ":rails_root/public/system/activity_images/:attachment/:id/:style/:filename"
+
+
   has_many :political_party_translations, :dependent => :destroy
   accepts_nested_attributes_for :political_party_translations
-  attr_accessible :id, :color, :political_party_translations_attributes
+  attr_accessible :id, :color, :political_party_translations_attributes, :logo
 
   validates :color, :presence => true
 

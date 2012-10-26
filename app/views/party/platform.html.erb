@@ -1,5 +1,6 @@
 <% title t('party.platform.title', :political_party => @political_party.name) %>
 <% sub_title t('party.platform.secondary_title', :economic_category => @economic_category.name) %>
+<% title_image @political_party.logo.url if @political_party.logo_file_name %>
 
 <div class="row">
 	<div class="span9">

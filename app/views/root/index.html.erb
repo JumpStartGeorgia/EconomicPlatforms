@@ -11,8 +11,8 @@
 				          <li class="party-dropdown">
 
 				            <a href="#" data-toggle="dropdown">
-				              <span style="background-color: <%= "#{party.color}" %>;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-				              <%= party.name %>
+				              <%= image_tag(party.logo.url, :style => 'vertical-align: middle;') if party.logo_file_name %>
+											<%= party.name %>
 				              <%= '<b class="caret"></b>'.html_safe if party.policy_briefs && !party.policy_briefs.empty? %>
 				            </a>
 

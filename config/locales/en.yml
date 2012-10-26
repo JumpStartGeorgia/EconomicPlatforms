@@ -51,6 +51,7 @@ en:
         analysis: Analysis
       political_party:
         color: Color
+        logo: Logo
       political_party_translation:
         name: Name
       page:
@@ -148,6 +149,7 @@ en:
       comments: Comments
       view_full: view full
       sitemap: Site Map
+      logo: Logo
     msgs:
       does_not_exist: You tried to access a page that does not exist.
       not_authorized: You are not authorized to view that page.

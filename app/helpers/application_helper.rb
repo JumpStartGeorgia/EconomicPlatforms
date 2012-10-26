@@ -11,6 +11,10 @@ logger.debug "**************************sub_title = '#{page_title}'"
 		end
   end
 
+  def title_image(image_url)
+    content_for(:title_image) { image_url }
+  end
+
 	def page_title
 		if content_for?(:title) && content_for?(:sub_title)
 			"#{content_for(:title)} - #{content_for(:sub_title)} > #{t('app.common.app_name')}"

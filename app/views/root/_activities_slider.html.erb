@@ -16,7 +16,7 @@
 
       <% @activities.each do |activity| %>
         <div class="each">
-          <h3><%= activity.title %><%#= link_to activity.title, activity_path(activity) %></h3>
+          <h3><%= "#{l activity.date, :format => :short} - #{activity.title}" %></h3>
           <div class="body clear">
 						<% if activity.images && !activity.images.empty? %>
             <div class="imagecontainer">

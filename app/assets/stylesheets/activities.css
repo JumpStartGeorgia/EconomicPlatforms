@@ -87,7 +87,7 @@
 
 .activities .each .body .imagecontainer
 {
-  width: 28%;
+  width: 122px;
   float: left;
   margin: 4px 10px 5px 0px;
 }
@@ -111,4 +111,12 @@
   margin-top: 4px;
 }
 
+.activities .each .showlink a
+{
+	color: #3B628D;
+}
 
+.activities .each .showlink a:hover
+{
+	background-color: #eee;
+}
