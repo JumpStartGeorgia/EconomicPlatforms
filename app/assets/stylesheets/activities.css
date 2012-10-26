@@ -87,7 +87,7 @@
 
 .activities .each .body .imagecontainer
 {
-  width: 28%;
+  width: 122px;
   float: left;
   margin: 4px 10px 5px 0px;
 }
@@ -109,5 +109,3 @@
   width: 100%;
   text-align: right;
 }
-
-
