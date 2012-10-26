@@ -7,7 +7,9 @@ class Activity < ActiveRecord::Base
   accepts_nested_attributes_for :activity_images, :reject_if => lambda { |a| a[:file].blank? }, :allow_destroy => true
   attr_accessible :image, :video, :date, :activity_images_attributes, :activity_translations_attributes
 
- #validates :title, :body, :presence => true
+  validates :title, :body, :date, :presence => true
+
+	default_scope order("date desc")
 
   def images
     self.activity_images

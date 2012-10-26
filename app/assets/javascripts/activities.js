@@ -12,7 +12,7 @@ $(function ()
   {
     index: 0,
     timeout: 1000,
-    delay: 3000,
+    delay: 5000,
     direction_auto: 'right',
     timer: null,
     arrows:

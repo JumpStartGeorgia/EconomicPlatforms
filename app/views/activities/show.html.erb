@@ -62,6 +62,11 @@
 </div>
 <% if user_signed_in? && can?(:manage, Activity) %>
 <div class="form-actions">
+  <%= link_to t('app.buttons.list'),
+              activities_path, :class => 'btn'  %>
+	<%= link_to t('app.buttons.new'),
+		          new_activity_path,
+		          :class => 'btn btn-primary' %>
   <%= link_to t('app.buttons.edit'),
               edit_activity_path(@activity), :class => 'btn' %>
   <%= link_to t('app.buttons.delete'),

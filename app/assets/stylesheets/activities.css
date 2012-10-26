@@ -109,3 +109,13 @@
   width: 100%;
   text-align: right;
 }
+
+.activities .each .showlink a
+{
+	color: #3B628D;
+}
+
+.activities .each .showlink a:hover
+{
+	background-color: #eee;
+}
