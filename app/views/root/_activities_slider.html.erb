@@ -24,11 +24,11 @@
             </div>
 						<% end %>
             <div class="text">
-              <%= char_limit(activity.body, 350) %>
+              <%= char_limit(activity.body, 280) %>
             </div>
-          </div>
-          <div class="showlink">
-            <%= link_to t('app.common.view_full') + '...', activity_path(activity) %>
+            <div class="showlink">
+              <%= link_to t('app.common.view_full') + '...', activity_path(activity) %>
+            </div>
           </div>
         </div>
       <% end %>
