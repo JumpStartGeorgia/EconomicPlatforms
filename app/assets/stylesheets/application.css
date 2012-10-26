@@ -249,7 +249,7 @@ div.admin_panel ul li {
 	background-color: #eee;
 }
 
-/* statemetn record */
+/* statement record */
 .statement_summary {
 	border-bottom: solid 1px #ddd;
 	margin-bottom: 15px;
@@ -289,17 +289,15 @@ div.admin_panel ul li {
 	padding-bottom: 4px;
 }
 
+/*
 .page-header {
   margin: 0px;
-/*
   margin-bottom: -100px;
-*/
   box-shadow: none;
   border: none;
   padding-bottom: 0px;
 }
 
-/*
 .page-header .block {
   margin: 0px;
   padding-bottom: 3px;
@@ -316,15 +314,47 @@ div.admin_panel ul li {
   box-shadow: 3px 3px #d0d0d0;
 }
 
-.block h3 {
-  font-size: 16px;
+.block > h3 {
+  font-size: 15px;
   font-weight: normal;
   margin-bottom: 11px;
 }
-.block h4, .block_header {
+.block > h4, .block_header {
   font-size: 14px;
   font-weight: normal;
   margin-bottom: 11px;
+}
+
+.block .block_header .left {
+  float: left;
+}
+
+.block .block_header .right {
+  float: right;
+}
+
+.block .block_body span.font, .block .block_body p.font {
+  font-weight: bold;
+  line-height: 25px;
+}
+
+.block .block_header h3 {
+  font-family: fightme;
+  font-size: 17px;
+}
+
+.block .block_header h3 + span {
+  font-size: 12px;
+}
+
+.block a.blue, .block ul.blue a {
+	font-size: 12px;
+	display: block;
+	color: #3B628D;
+	text-decoration: none;
+}
+.block a.blue:hover, .block ul.blue a:hover {
+	background-color: #f8f8f8;
 }
 
 .block .block_body {
@@ -332,10 +362,31 @@ div.admin_panel ul li {
   border-top: 1px dotted #828282;
 }
 
+.block .block_body:not(:last-child) {
+  margin-bottom: 27px;
+}
+
 .block .block_body > ul > li {
   border-bottom: 1px dotted #828282;
   padding-bottom: 11px;
   margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.block .block_body ul.normal {
+  padding-left: 30px;
+  line-height: 27px;
+}
+
+.block .block_body ul.normal.p {
+  padding-left: 0px;
+  line-height: 22px;
+}
+
+.block .block_body ul.normal li {
+  border: none;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
   font-size: 12px;
 }
 
