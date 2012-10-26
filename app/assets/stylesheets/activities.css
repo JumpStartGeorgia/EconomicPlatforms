@@ -58,7 +58,7 @@
 .activities
 {
   position: relative;
-  height: 170px;
+  min-height: 206px;
   overflow: hidden;
 }
 
@@ -101,7 +101,7 @@
 .activities .each .body .text
 {
   text-align: justify;
-  font-size: 11px;
+  font-size: 13px;
 }
 
 .activities .each .showlink

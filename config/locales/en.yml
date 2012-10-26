@@ -187,6 +187,8 @@ en:
       no_values: No political party information has been entered into the application at this time.
       latest_statements_header: Latest Statements
       about_header: About
+      chart_title: Political Party Ideologies
+      chart_text: View Political Party Ideologies for Each Economic Category
     about:
       title: About
     methodology:
