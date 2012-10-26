@@ -334,11 +334,14 @@ div.admin_panel ul li {
 
 .block .block_body > ul > li {
   border-bottom: 1px dotted #828282;
-  padding-bottom: 11px;
-  margin-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   font-size: 12px;
 }
 
+.block .block_body ul li:first-child {
+  margin-top: -10px;
+}
 .block .block_body ul li:last-child {
   border-bottom: none;
   padding-bottom: 0px;
@@ -670,4 +673,17 @@ footer #left {
 
 #image_video_box + * {
 	text-align: justify;
+}
+
+#chart_block #chart {
+	float: left;
+	width: 50%;
+	text-align: center;
+}
+#chart_block #chart_text {
+	float: left;
+	width: 50%;
+	text-align: center;
+	height: 96px;
+	padding-top: 20px;
 }
