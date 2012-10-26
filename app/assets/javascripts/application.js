@@ -20,10 +20,10 @@
 //= require vendor
 //= require_tree .
 
-// set focus to first text box on page
+// set focus to 3rd input field on page (first two are for search box)
 $(document).ready(function(){
 	if (gon.highlight_first_form_field){
-	  $(":input:visible:enabled:first").focus();
+	  $(":input:visible:enabled").eq(2).focus();
 	}
 });
 
