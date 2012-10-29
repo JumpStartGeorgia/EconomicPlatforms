@@ -420,10 +420,19 @@ div.admin_panel ul li {
 	margin-left: 1px;
 }
 
+.imagecontainer {
+  
+}
+
+.imagecontainer * {
+  display: block;
+  width: 100%;
+}
+
 
 ul.parties-dropdown {
   position: absolute;
-  top: -10px;
+  top: -2px;
   left: 100%;
   z-index: 1000;
   display: block;
@@ -447,7 +456,10 @@ ul.parties-dropdown {
 }
 
 ul.parties-dropdown li {
+}
 
+ul.parties-dropdown li:first-child {
+  margin-top: 0px !important;
 }
 
 ul.parties-dropdown a, ul.parties-dropdown span.disabled {

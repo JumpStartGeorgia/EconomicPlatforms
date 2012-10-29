@@ -30,11 +30,12 @@ $(document).ready(function(){
 $(function ()
 {
 
-  $('li.party-dropdown').click(function ()
+  $('li.party-dropdown a').click(function ()
   {
-    var c = $(this).children('ul.parties-dropdown');
+    var c = $(this).siblings('ul.parties-dropdown');
     $('ul.parties-dropdown').not(c).hide(0);
     c.toggle(0);
+    return false;
   });
 
 });

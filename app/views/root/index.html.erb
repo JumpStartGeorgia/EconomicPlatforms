@@ -10,7 +10,7 @@
 				        <% @political_parties_nav.each_with_index do |party,i| %>
 				          <li class="party-dropdown">
 
-				            <a href="#" data-toggle="dropdown">
+				            <a href="#">
 				              <%= image_tag(party.logo.url, :style => 'vertical-align: middle;') if party.logo_file_name %>
 											<%= party.name %>
 				              <%= '<b class="caret"></b>'.html_safe if party.policy_briefs && !party.policy_briefs.empty? %>
@@ -97,7 +97,9 @@
       <div class="span3">
 
         <div class="block">
-          <%= link_to(image_tag("logos.jpg"), about_path) %>
+          <div class="imagecontainer" style="max-width: 236px;">
+            <%= link_to(image_tag("logos.jpg"), about_path) %>
+          </div>
         </div>
 
       </div>
