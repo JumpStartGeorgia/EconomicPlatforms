@@ -11,8 +11,8 @@ class Statement < ActiveRecord::Base
 		:statement_translations_attributes, :statement_scores_attributes
 
   acts_as_commentable
- #require 'split_votes'
-  include SplitVotes
+ require 'split_votes'
+#  include SplitVotes
 
   validates :date_made, :political_party_id, :economic_category_id, :presence => true
 
