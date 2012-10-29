@@ -30,7 +30,7 @@ $(document).ready(function(){
 $(function ()
 {
 
-  $('li.party-dropdown a').click(function ()
+  $('li.party-dropdown > a').click(function ()
   {
     var c = $(this).siblings('ul.parties-dropdown');
     $('ul.parties-dropdown').not(c).hide(0);
