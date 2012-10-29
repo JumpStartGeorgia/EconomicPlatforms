@@ -1,130 +1,144 @@
 <% title t('.title', :political_party => @political_party.name) %>
 <% title_image @political_party.logo.url if @political_party.logo_file_name %>
 
+
+
+
+
 <div class="row">
-	<div id="content_container" class="span9">
+	<div class="span9 clear">
+	  <div class="block clear">
+		  <div class="block_header font clear">
+		  </div>
 
-		<div id="plat_brief_nav">
-			<div id="platforms">
-				<h2><%= t('party.well.platform_header') %></h2>
-			  <% if @platforms && !@platforms.empty? %>
-					<ul>
-		        <% @platforms.each do |platform| %>
-				      <li>
-								<%= link_to platform.economic_category_name,
-									party_platform_path(:political_party_id => params[:political_party_id],
-									:economic_category_id => platform.economic_category_permalink) %>
-							</li>
-		        <% end %>
-					</ul>
-			  <% end %>
-			</div>
+      <div class="block_body" id="content_container">
 
-			<div id="briefs">
-			  <% if @policy_briefs && !@policy_briefs.empty? %>
-					<h2><%= t('party.well.policy_brief_header')%></h2>
-					<ul>
-		        <% @policy_briefs.each do |policy_brief| %>
-				      <li>
-								<%= link_to policy_brief.economic_category_name,
-									party_policy_brief_path(:political_party_id => params[:political_party_id],
-									:economic_category_id => policy_brief.economic_category_permalink) %>
-							</li>
-		        <% end %>
-					</ul>
-			  <% end %>
-			</div>
-		</div>
+		    <div id="plat_brief_nav">
+			    <div id="platforms">
+				    <h2><%= t('party.well.platform_header') %></h2>
+			      <% if @platforms && !@platforms.empty? %>
+					    <ul>
+		            <% @platforms.each do |platform| %>
+				          <li>
+								    <%= link_to platform.economic_category_name,
+									    party_platform_path(:political_party_id => params[:political_party_id],
+									    :economic_category_id => platform.economic_category_permalink) %>
+							    </li>
+		            <% end %>
+					    </ul>
+			      <% end %>
+			    </div>
 
-		<h2><%= t('.statement_header', :political_party => @political_party.name) %></h2>
-      <div id="profile_statement_chart">
-				<p><%= t('app.msgs.statement_chart_instructions') %></p>
-        <div id="chart_selections">
-          <%= form_tag do %>
-          	<span>
-          		<%= t('app.common.economic_category') %>
-			        <%= select_tag "economic_category_id", options_from_collection_for_select(@economic_categories_nav, "id", "name", params[:economic_category_id])%>
-          	</span>
-          	<span>
-          		<%= t('app.common.indicator_category') %>
-			        <%= select_tag "indicator_category_id", options_from_collection_for_select(@indicator_categories, "id", "name", params[:indicator_category_id])%>
-          	</span>
-          	<span>
-          		<%= link_to t("app.buttons.update_statements"), party_path(@political_party.permalink),
-								:class => 'btn btn-primary btn-mini',
-								:id => 'party_chart_selections_submit' %>
-          	</span>
-          <% end %>
-        </div>
+			    <div id="briefs">
+			      <% if @policy_briefs && !@policy_briefs.empty? %>
+					    <h2><%= t('party.well.policy_brief_header')%></h2>
+					    <ul>
+		            <% @policy_briefs.each do |policy_brief| %>
+				          <li>
+								    <%= link_to policy_brief.economic_category_name,
+									    party_policy_brief_path(:political_party_id => params[:political_party_id],
+									    :economic_category_id => policy_brief.economic_category_permalink) %>
+							    </li>
+		            <% end %>
+					    </ul>
+			      <% end %>
+			    </div>
+		    </div>
 
-        <div id="statement_chart"></div>
-      </div>
-
-		<% if @statements.nil? || @statements.empty? %>
-			<p>
-				<%= t('.no_statements', :political_party => @political_party.name, :economic_category => @economic_category_name) %>
-			</p>
-		<% else %>
-			<% @statements.each do |statement| %>
-				<div class="statement_summary">
-           <div class="clear">
-			      <h3 style="float: left;">
-				      <%= link_to l(statement.date_made, :format => :long),
-							party_statement_path(:political_party_id => @political_party.permalink, :id => statement.id) %>
-			      </h3>
-            <div style="float: left; margin-left: 20px;">
-		          <%= image_tag('/assets/thumbs-up-grey.png') %>
-              <% diff = statement.votes_diff %>
-              <span style="margin: 0 5px; color: <%= diff[:color] %>;"><%= diff[:number] %></span>
-		          <%= image_tag('/assets/thumbs-down-grey.png') %>
+		    <h2><%= t('.statement_header', :political_party => @political_party.name) %></h2>
+          <div id="profile_statement_chart">
+				    <p><%= t('app.msgs.statement_chart_instructions') %></p>
+            <div id="chart_selections">
+              <%= form_tag do %>
+              	<span>
+              		<%= t('app.common.economic_category') %>
+			            <%= select_tag "economic_category_id", options_from_collection_for_select(@economic_categories_nav, "id", "name", params[:economic_category_id])%>
+              	</span>
+              	<span>
+              		<%= t('app.common.indicator_category') %>
+			            <%= select_tag "indicator_category_id", options_from_collection_for_select(@indicator_categories, "id", "name", params[:indicator_category_id])%>
+              	</span>
+              	<span>
+              		<%= link_to t("app.buttons.update_statements"), party_path(@political_party.permalink),
+								    :class => 'btn btn-primary btn-mini',
+								    :id => 'party_chart_selections_submit' %>
+              	</span>
+              <% end %>
             </div>
+
+            <div id="statement_chart"></div>
           </div>
 
-				  <% if user_signed_in? && can?(:manage, Statement) %>
-						<p>
-							<%= link_to t('app.buttons.edit'),
-							            edit_statement_path(statement), :class => 'btn btn-mini' %>
-							<%= link_to t('app.buttons.delete'),
-							            statement_path(statement),
-							            :method => :delete,
-							            :confirm => t('app.buttons.confirm'),
-							            :class => 'btn btn-mini btn-danger' %>
-						</p>
-				  <% end %>
-					<div>
-						<p>
-							<strong><%= "#{t('app.common.economic_category')}:"%></strong>
-							<%= statement.economic_category.name %>
-						</p>
-					</div>
-					<div class="row">
-						<div class="span4">
-							<p>
-								<strong><%= "#{t('app.common.author')}:"%></strong>
-								<%= statement.author %>
-							</p>
-						</div>
-						<div class="span4">
-							<p>
-								<strong><%= "#{t('app.common.source')}:"%></strong>
-								<%= auto_link(statement.source, :urls, :target => "_blank") %>
-							</p>
-						</div>
-					</div>
-					<div>
-						<%= simple_format_no_tags truncate(statement.statement_made, :length => 200, :separator => ' ') %>
-					</div>
-				</div>
-			<% end %>
+		    <% if @statements.nil? || @statements.empty? %>
+			    <p>
+				    <%= t('.no_statements', :political_party => @political_party.name, :economic_category => @economic_category_name) %>
+			    </p>
+		    <% else %>
+			    <% @statements.each do |statement| %>
+				    <div class="statement_summary">
+               <div class="clear">
+			          <h3 style="float: left;">
+				          <%= link_to l(statement.date_made, :format => :long),
+							    party_statement_path(:political_party_id => @political_party.permalink, :id => statement.id) %>
+			          </h3>
+                <div style="float: left; margin-left: 20px;">
+		              <%= image_tag('/assets/thumbs-up-grey.png') %>
+                  <% diff = statement.votes_diff %>
+                  <span style="margin: 0 5px; color: <%= diff[:color] %>;"><%= diff[:number] %></span>
+		              <%= image_tag('/assets/thumbs-down-grey.png') %>
+                </div>
+              </div>
 
-			<%= page_navigation_links @statements %>
+				      <% if user_signed_in? && can?(:manage, Statement) %>
+						    <p>
+							    <%= link_to t('app.buttons.edit'),
+							                edit_statement_path(statement), :class => 'btn btn-mini' %>
+							    <%= link_to t('app.buttons.delete'),
+							                statement_path(statement),
+							                :method => :delete,
+							                :confirm => t('app.buttons.confirm'),
+							                :class => 'btn btn-mini btn-danger' %>
+						    </p>
+				      <% end %>
+					    <div>
+						    <p>
+							    <strong><%= "#{t('app.common.economic_category')}:"%></strong>
+							    <%= statement.economic_category.name %>
+						    </p>
+					    </div>
+					    <div class="row">
+						    <div class="span4">
+							    <p>
+								    <strong><%= "#{t('app.common.author')}:"%></strong>
+								    <%= statement.author %>
+							    </p>
+						    </div>
+						    <div class="span4">
+							    <p>
+								    <strong><%= "#{t('app.common.source')}:"%></strong>
+								    <%= auto_link(statement.source, :urls, :target => "_blank") %>
+							    </p>
+						    </div>
+					    </div>
+					    <div>
+						    <%= simple_format_no_tags truncate(statement.statement_made, :length => 200, :separator => ' ') %>
+					    </div>
+				    </div>
+			    <% end %>
 
-		<% end %>
+			    <%= page_navigation_links @statements %>
+
+		    <% end %>
+
+      </div>
+
+    </div>
 	</div>
 
 	<%= render :partial => "party/well" %>
-
 </div>
+
+
 <% if user_signed_in? && can?(:manage, Statement) %>
 <div class="form-actions">
 <%= link_to t('app.buttons.new'),
