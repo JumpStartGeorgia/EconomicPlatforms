@@ -249,29 +249,16 @@ div.admin_panel ul li {
 	background-color: #eee;
 }
 
-/* statement record 
+/* statement record */
 .statement_summary {
 	border-bottom: solid 1px #ddd;
 	margin-bottom: 15px;
 	padding: 5px 0;
 }
 
-.statement_summary strong.tall {
-	font-size: 18px;
+.statement_summary h3 a {
+  text-decoration: underline;
 }
-.statement_summary .summary_section{
-	margin-bottom: 1.5em;
-}
-
-.statement_summary .summary_section ul#scores {
-	padding-left: 2em;
-}
-
-.statement_summary .summary_section ul#scores li {
-	list-style-type:none;
-	line-height: 2;
-}
-*/
 
 
 /* indicator score headers in forms */
