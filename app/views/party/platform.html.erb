@@ -16,7 +16,7 @@
 			    <strong><%= t('app.common.scores') %>:</strong>
 		    </p>
 		    <% if @platform.platform_scores && !@platform.platform_scores.empty? %>
-			    <ul class="standard">
+			    <ul class="normal">
 			    <% @platform.platform_scores.ordered.each do |score| %>
 				    <li>
 					    <strong><%= score.indicator_category.name %></strong>
