@@ -348,6 +348,9 @@ div.admin_panel ul li {
 
 .block .block_body {
   padding-top: 10px;
+}
+
+.block_header + .block_body {
   border-top: 1px dotted #828282;
 }
 
