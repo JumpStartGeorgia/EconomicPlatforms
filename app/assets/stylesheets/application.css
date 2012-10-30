@@ -355,14 +355,14 @@ div.admin_panel ul li {
   margin-bottom: 27px;
 }
 
-.block .block_body > ul > li {
+.block .block_body > ul.block_list_line > li {
   border-bottom: 1px dotted #828282;
   padding-top: 5px;
   padding-bottom: 5px;
   font-size: 12px;
 }
 
-.block .block_body ul li:first-child {
+.block .block_body ul.block_list_line li:first-child {
   margin-top: -10px;
 }
 

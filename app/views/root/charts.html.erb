@@ -1,44 +1,57 @@
 <% title t('.title') %>
 <div class="row">
 	<div class="span9">
-		<div id="charts">
-			<% if !@values || @values.empty? %>
-				<p>
-					<%= t('.no_values')%>
-				</p>
-			<% else %>
-				<% @values.each_with_index do |value, i| %>
-					<% if i%2 == 0 %>
-						<div class="chart_row row">
-					<% end %>
+	  <div class="block clear">
+		  <div class="block_header font clear">
+		  </div>
 
-						<div class="span4">
-						  <h3><%= value[:name] %></h3>
-						  <div id="<%= "#{value[:div_id]}"%>"></div>
-						</div>
+      <div class="block_body" id="content_container">
 
-					<% if i%2 == 1 || i==@values.length-1%>
-						</div>
-					<% end %>
-				<% end %>
+    		<div id="charts">
+    			<% if !@values || @values.empty? %>
+    				<p>
+    					<%= t('.no_values')%>
+    				</p>
+    			<% else %>
+    				<% @values.each_with_index do |value, i| %>
+    					<% if i%2 == 0 %>
+    						<div class="chart_row row">
+    					<% end %>
 
-			<% end %>
-		</div>
-	</div>
+    						<div class="span4">
+    						  <h3><%= value[:name] %></h3>
+    						  <div id="<%= "#{value[:div_id]}"%>"></div>
+    						</div>
 
-	<div class="span3">
-		<div id="well_legend" class="well well-small">
-			<h3><%= t('app.common.political_parties')%></h3>
+    					<% if i%2 == 1 || i==@values.length-1%>
+    						</div>
+    					<% end %>
+    				<% end %>
+
+    			<% end %>
+    		</div>
+    	</div>
+    </div>
+  </div>
+
+
+	<div class="span3 sidespan">
+	  <div class="block">
+		  <h3 class="block_header font">
+			  <%= t('app.common.political_parties')%>
+			</h3>
 			<% if @political_parties_nav && !@political_parties_nav.empty? %>
 			  <h4></h4>
-				<ul>
-				  <% @political_parties_nav.each_with_index do |party,i| %>
-				    <li>
-				      <span style="background-color: <%= "#{party.color}" %>;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-				      <%= party.name %>
-				    </li>
-				  <% end %>
-				</ul>
+			  <div class="block_body">
+  				<ul>
+  				  <% @political_parties_nav.each_with_index do |party,i| %>
+  				    <li>
+  				      <span style="background-color: <%= "#{party.color}" %>;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  				      <%= party.name %>
+  				    </li>
+  				  <% end %>
+  				</ul>
+        </div>
 			<% end %>
 		</div>
 	</div>

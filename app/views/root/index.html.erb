@@ -6,7 +6,7 @@
           <h4 class="font"><%= t('app.common.policy_briefs') %></h4>
           <div class="block_body">
 			      <% if @political_parties_nav && !@political_parties_nav.empty? %>
-				      <ul>
+				      <ul class="block_list_line">
 				        <% @political_parties_nav.each_with_index do |party,i| %>
 				          <li class="party-dropdown">
 
@@ -58,7 +58,7 @@
 			      <% if !@statements || @statements.empty? %>
 				      <%= t('statements.index.no_statements') %>
 			      <% else %>
-				      <ul>
+				      <ul class="block_list_line">
 					      <% @statements.each do |statement| %>
 						      <li>
 							      <%= link_to "#{l(statement.date_made, :format => :short)} - #{statement.political_party.name}",

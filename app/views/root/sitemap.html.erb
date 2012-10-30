@@ -1,6 +1,14 @@
 <% title t('.title') %>
 
 <div class="row">
+	<div class="span12 clear">
+	  <div class="block clear">
+		  <div class="block_header font clear">
+		  </div>
+
+      <div class="block_body" id="content_container">
+
+<div class="row">
 	<div class="span4">
 		<h2><%= t('app.common.political_party') %></h2>
 		<ul class="standard">
@@ -91,7 +99,7 @@
 		</ul>
 	</div>
 
-	<div class="span4">
+	<div class="span3">
 		<% if @activities && !@activities.empty? %>
 			<h2><%= t('app.common.activities') %></h2>
 			<ul class="standard">
@@ -121,3 +129,9 @@
 		</ul>
 	</div>
 </div>
+
+      </div>
+
+    </div>
+	</div>
+</div>        

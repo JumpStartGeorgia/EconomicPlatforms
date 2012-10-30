@@ -2,31 +2,6 @@
 
 <script>
 
-/*
-function queryparam (key, default_)
-{
-  if (default_ == null)
-  {
-    default_ = "";
-  }
-  key = key.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
-  var regex = new RegExp("[\\?&]" + key + "=([^&#]*)");
-  var qs = regex.exec(window.location.href);
-  if (qs == null)
-  {
-    return default_;
-  }
-  else
-  {
-    return qs[1];
-  }
-}
-
-  var q = queryparam('q');
-*/
-
-
-
   (function() {
     var cx = '003724594621929416656:twffp08h7pk';
     var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
@@ -37,5 +12,18 @@ function queryparam (key, default_)
 
 </script>
 
-<!-- Place this tag where you want both of the search box and the search results to render -->
-<gcse:search></gcse:search>
+<div class="row">
+	<div class="span12 clear">
+	  <div class="block clear">
+		  <div class="block_header font clear">
+		  </div>
+
+      <div class="block_body" id="content_container">
+
+        <gcse:search></gcse:search>
+
+      </div>
+
+    </div>
+	</div>
+</div>        
