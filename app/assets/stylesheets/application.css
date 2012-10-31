@@ -511,6 +511,10 @@ ul.parties-dropdown a.disabled:hover {
   margin-left: 27px;
 }
 
+.sidespan li {
+	margin-bottom: 5px;
+}
+
 #home_search {
   padding-bottom: 3px;
 }
