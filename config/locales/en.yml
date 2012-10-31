@@ -11,7 +11,14 @@ en:
       policy_brief: Policy Brief
       political_party: Political Party
       page: Page
+      activity: News
     attributes:
+      activity:
+        date: Date
+        video: YouTube Video Link
+      activity_translation:
+        title: Title
+        body: Text
       statement:
         date_made: Date Made
         political_party: Political Party
@@ -59,6 +66,7 @@ en:
       page_translation:
         title: Title
         description: Description
+
   app:
     language:
       en: English
@@ -111,7 +119,7 @@ en:
       economic_category: Economic Category
       statement: Statement
       statements: Statements
-      activities: Activities
+      activities: News
       activity: Activity
       indicator: Indicator
       indicator_category: Indicator Category
@@ -360,14 +368,14 @@ en:
       title: Page Details
   activities:
     edit:
-      title: Editing Activity
+      title: Editing News
     index:
-      title: Activities
-      no_pages: "At this time, no activities have been recorded"
+      title: News
+      no_pages: "At this time, no news items have been recorded"
     new:
-      title: New Activity
+      title: New News
     show:
-      title: Activity Details
+      title: News Details
       latest_statements_header: Latest Statements
     form:
       add_file: Add Image

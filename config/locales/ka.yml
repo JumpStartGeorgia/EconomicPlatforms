@@ -11,7 +11,14 @@ ka:
       policy_brief: ექსპერტული შეფასება
       political_party: პოლიტიკური პარტია
       page: გვერდი
+      activity: სიახლე
     attributes:
+      activity:
+        date: თარიღი
+        video: YouTube ვიდეო ლინკი
+      activity_translation:
+        title: სათაური
+        body: ტექსტი
       statement:
         date_made: შექმნის თარიღი
         political_party: პოლიტიკური პარტია
