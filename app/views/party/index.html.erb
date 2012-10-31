@@ -114,7 +114,9 @@
 						    <div class="span4">
 							    <p>
 								    <strong><%= "#{t('app.common.source')}:"%></strong>
-								    <%= auto_link(statement.source, :urls, :target => "_blank") %>
+										<%= auto_link(statement.source, :urls, :target => "_blank", :class => "statement_source") do |text| %>
+											<% t('app.common.view_source') %>
+										<% end %>
 							    </p>
 						    </div>
 					    </div>
