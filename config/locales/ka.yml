@@ -1,4 +1,4 @@
-# encoding: utf-8
+﻿# encoding: utf-8
 ka:
   activerecord:
     models:
@@ -10,45 +10,45 @@ ka:
       platform: პარტიის პლატფორმა
       policy_brief: ექსპერტული შეფასება
       political_party: პოლიტიკური პარტია
-      page: Page
+      page: გვერდი
     attributes:
       statement:
         date_made: შექმნის თარიღი
         political_party: პოლიტიკური პარტია
         economic_category: ეკონომიკური კატეგორია
-        is_public: Make Visible to World
+        is_public: ხილული მსოფლიოსათვის
       statement_translation:
-        source: Source of Statement
-        author: Statement Author
-        statement_made: Statement Made
-        analysis: Analysis
+        source: განცხადების წყარო
+        author: განცხადების ავტორი
+        statement_made: გაკეთებული განცადება
+        analysis: ანალიზი
       user:
-        email: Email Address
-        password: Password
-        password_confirmation: Password Confirmation
-        role: Role
-        remember_me: Remeber Me
+        email: ელ.ფოსტა
+        password: პაროლი
+        password_confirmation: გაიმეორეთ პაროლი
+        role: როლი
+        remember_me: დამიმახსოვრე
       economic_category_translation:
         name: სახელი
       indicator_category_translation:
         name: სახელი
       indicator:
-        indicator_category: ინდიკატორის კატეგორია
-        value: Value
+        indicator_category:
+        value: შეფასება
       indicator_translation:
         name: სახელი
       platform:
         political_party: პოლიტიკური პარტია
         economic_category: ეკონომიკური კატეგორია
-        is_public: Make Visible to World
+        is_public: ხილული მსოფლიოსათვის
       platform_translation:
-        description: Description
+        description: აღწერა
       policy_brief:
         political_party: პოლიტიკური პარტია
         economic_category: ეკონომიკური კატეგორია
-        is_public: Make Visible to World
+        is_public: ხილული მსოფლიოსათვის
       policy_brief_translation:
-        analysis: Analysis
+        analysis: ანალიზი
       political_party:
         color: ფერი
         logo: ლოგო
@@ -57,8 +57,8 @@ ka:
       page:
         name: სახელი
       page_translation:
-        title: Title
-        description: Description
+        title: სათაური
+        description: აღწერა
   app:
     language:
       en: English
@@ -103,8 +103,8 @@ ka:
     common:
       app_name: საქართველოს ეკონომიკური პლატფორმა
       name: სახელი
-      title: Title
-      description: Description
+      title: სათაური
+      description: აღწერა
       date_made: შექმნის თარიღი
       political_party: პოლიტიკური პარტია
       political_parties: პოლიტიკური პარტიები
@@ -132,15 +132,15 @@ ka:
       legend: ლეგენდა
       indicator_scales: ინდიკატორის სკალა
       sign_in: შესვლა
-      analysis: Analysis
-      actions: Actions
-      value: Value
-      page: Page
+      analysis: ანალიზი
+      actions: აირჩიეთ
+      value: შეფასება
+      page: გვერდი
       about: შესახებ
       home: მთავარი
       methodology: მეთოდოლოგია
       disclaimer: Disclaimer
-      is_public: Is Visible to World
+      is_public: ხილული მსოფლიოსათვის
       party_statements: "%{party} განცხადებების"
       party_platform: "%{party} პარტიის პლატფორმა"
       category_statements: "%{category} განცხადებების"
@@ -268,7 +268,7 @@ ka:
   admin:
     index:
       title: ადმინისტრატორის განყოფილება
-      content_header: Add Content
+      content_header: შინაარსის დამატება
       platforms: პლატფორმები
       policy_briefs: ექსპერტული შეფასება
       statements: განცხადებების
@@ -280,7 +280,7 @@ ka:
       economic_categories: ეკონომიკური კატეგორიები
       indicator_categories: ინდიკატორების კატეგორიები
       indicators: ინიდიკატორები
-      pages: Pages
+      pages: გვერდი
       activities: სიახლეები
     users:
       edit:
@@ -313,7 +313,7 @@ ka:
       profile_header: "პროფილი"
       view_profile: სრული პროფილის ნახვა
       platform_header: "პლატფორმები"
-      no_platforms: "ამ დროისათვის პლატფორმები ჩაწერილი არ არის."
+      no_platforms: "ამ დროისათვის პლათფორმები ჩაწერილი არ არის."
       policy_brief_header: "ექსპერტული შეფასება"
       no_policy_briefs: "ამ დროისათვის რეზიუმეები პოლიტიკაზე შეყვანილი არ არის."
     statement:
@@ -321,7 +321,7 @@ ka:
       secondary_title: "განცხადება - %{date}"
     platform:
       title: "%{political_party}"
-      secondary_title: "პლატფორმა - %{economic_category}"
+      secondary_title: "პლათფორმა - %{economic_category}"
     policy_brief:
       title: "%{political_party}"
       secondary_title: "ექსპერტული შეფასება - %{economic_category}"
@@ -333,7 +333,7 @@ ka:
       view_statement: განცადების ნახვა სრულად
     well:
       pdf_header: გადმოწერა
-      pdf_link: PDF
+      pdf_link: პდფ ფაილი
       profile_header: "პროფილი"
       view_profile: სრული პროფილის ნახვა
       platform_header: "პლატფორმები"
@@ -345,36 +345,36 @@ ka:
       secondary_title: "განცხადება - %{date}"
     platform:
       title: "%{economic_category}"
-      secondary_title: "პლატფორმა - %{political_party}"
+      secondary_title: "პლათფორმა - %{political_party}"
     policy_brief:
       title: "%{economic_category}"
       secondary_title: "ექსპერტული შეფასება - %{political_party}"
   pages:
     edit:
-      title: Editing Pages
+      title: გვერდების შეცვლა
     index:
-      title: Pages
-      no_pages: "At this time, no pages have been recorded"
+      title: გვერდები
+      no_pages: მოცემული დროისათვის სიახლე არ მოიძებნება
     new:
-      title: New Page
+      title: ახალი გვერდი
     show:
-      title: Page Details
+      title: გვერდის სრულად ნახვა
     page_file_fields:
       remove_link: ფაილის წაშლა
     form:
       add_file: ფაილის დამატება
   activities:
     edit:
-      title: Editing Activity
+      title: რედაქტირება
     index:
-      title: Activities
-      no_pages: "At this time, no activities have been recorded"
+      title: სიახლეები
+      no_pages: მოცემული დროისათვის სიახლე არ მოიძებნება
     new:
-      title: New Activity
+      title: ახალი
     show:
-      title: Activity Details
+      title: სიახლეები დეტალურად
       latest_statements_header: უახლესი განცხადებები
     form:
-      add_file: Add Image
+      add_file: იმიჯის დამატება
     activity_image_fields:
-      remove_link: Remove Image
+      remove_link: იმიჯის წაშლა
