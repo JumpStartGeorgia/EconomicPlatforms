@@ -16,7 +16,7 @@ module ActivitiesHelper
       t += ' ' + word
     end
 
-    t + '...'
+    (t + '...').html_safe
   end
 
 
