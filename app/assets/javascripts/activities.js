@@ -44,6 +44,7 @@ $(function ()
     {
       width:         300,
       height:        180,
+      show_overlay:  false,
       element:       $('#activity_image_slider'),
       data:          gon.slider_images
     };
@@ -68,7 +69,7 @@ $('#activityslider .arrow:not(.disabled)').live('click', function ()
   // stop all animations
   activity.slides.stop(true, true);
 
-  var overflow = 200;
+  var overflow = 220;
 
   if (direction == 'left')
   {

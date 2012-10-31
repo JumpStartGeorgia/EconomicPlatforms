@@ -296,7 +296,7 @@ div.admin_panel ul li {
 }
 
 .block > h3 {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: normal;
   margin-bottom: 11px;
 }
@@ -304,6 +304,13 @@ div.admin_panel ul li {
   font-size: 14px;
   font-weight: normal;
   margin-bottom: 11px;
+}
+
+.sidespan .block > h3 {
+  margin-bottom: 8px;
+}
+.sidespan .block > h4, .block_header {
+  margin-bottom: 8px;
 }
 
 .block .block_header .left {
@@ -337,21 +344,32 @@ div.admin_panel ul li {
   color: #2965a1;
 }
 
+.block a.blue, .block ul.blue a, .sitemap a {
+	display: block;
+	color: #3B628D;
+}
+
 .block a.blue, .block ul.blue a {
 	font-size: 12px;
 	display: block;
 	color: #3B628D;
 }
-.block a.blue:hover, .block ul.blue a:hover {
+.block a.blue:hover, .block ul.blue a:hover, .sitemap a:hover {
   text-decoration: underline;
 }
 
 .block .block_body {
   padding-top: 10px;
+  text-align: justify;
+}
+
+.sidespan .block .block_body {
+  padding-top: 5px;
+  text-align: left;
 }
 
 .block_header + .block_body, h4 + .block_body, .top + .block_body {
-  border-top: 1px dotted #828282;
+  border-top: 1px dotted rgba(130, 130, 130, .7);
 }
 
 .block .block_body:not(:last-child) {
@@ -359,7 +377,7 @@ div.admin_panel ul li {
 }
 
 .block .block_body > ul.block_list_line > li {
-  border-bottom: 1px dotted #828282;
+  border-bottom: 1px dotted rgba(130, 130, 130, .7);
   padding-top: 5px;
   padding-bottom: 5px;
   font-size: 12px;
@@ -413,6 +431,17 @@ div.admin_panel ul li {
   width: 100%;
 }
 
+.block_body.sitemap {
+  text-align: left;
+}
+
+.sitemap > div > div > ul > li > a  {
+  font-weight: bold;
+}
+
+.sitemap > div > div.right > ul > li > a  {
+  font-weight: normal;
+}
 
 ul.parties-dropdown {
   position: absolute;
