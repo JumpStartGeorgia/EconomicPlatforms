@@ -350,7 +350,7 @@ div.admin_panel ul li {
   padding-top: 10px;
 }
 
-.block_header + .block_body {
+.block_header + .block_body, h4 + .block_body {
   border-top: 1px dotted #828282;
 }
 

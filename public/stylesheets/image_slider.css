@@ -107,15 +107,21 @@
     height: 100%;
     top: 0px;
     z-index: 210;
-    opacity: .15;
-    -webkit-transition: opacity .25s;
     background-color: rgba(255, 255, 255, .45);
     background-repeat: no-repeat;
     background-position: center center;
     cursor: pointer;
 }
 
-.switcher_button:hover
+.switcher_button, .switcher_circles .circle, .switcher_circles .circle_selected {
+    opacity: .15;
+    -webkit-transition: opacity .25s;
+    transition: opacity .25s;
+    -moz-transition: opacity .25s;
+    -o-transition: opacity .25s;
+}
+
+.switcher_button:hover, .switcher_circles .circle:hover, .switcher_circles .circle_selected:hover
 {
     opacity: 1;
 }
