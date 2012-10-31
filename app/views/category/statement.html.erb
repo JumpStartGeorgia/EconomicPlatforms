@@ -28,7 +28,9 @@
         <br />
 
         <span class="font"><%= "#{t('app.common.source')}:"%></span>
-        <%= auto_link(@statement.source, :urls, :target => "_blank") %>
+        <%= auto_link(@statement.source, :urls, :target => "_blank", :class => "statement_source") do |text| %>
+          <% t('app.common.view_source') %>
+        <% end %>
         <br />
         <br />
 

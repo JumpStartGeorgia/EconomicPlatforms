@@ -256,8 +256,8 @@ div.admin_panel ul li {
 	padding: 5px 0;
 }
 
-.statement_summary h3 a {
-  text-decoration: underline;
+.statement_summary h3 a, a.statement_source {
+  text-decoration: underline !important;
 }
 
 
@@ -405,7 +405,7 @@ div.admin_panel ul li {
 }
 
 .imagecontainer {
-  
+
 }
 
 .imagecontainer * {
@@ -509,6 +509,10 @@ ul.parties-dropdown a.disabled:hover {
 
 .sidespan {
   margin-left: 27px;
+}
+
+.sidespan li {
+	margin-bottom: 5px;
 }
 
 #home_search {

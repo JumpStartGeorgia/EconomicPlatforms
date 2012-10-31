@@ -2,8 +2,8 @@ class PoliticalParty < ActiveRecord::Base
   has_paper_trail
   translates :name, :permalink
 	has_attached_file :logo,
-    :url => "/system/activity_images/:attachment/:id/:style/:filename",
-    :path => ":rails_root/public/system/activity_images/:attachment/:id/:style/:filename"
+    :url => "/system/political_parties/:attachment/:id/:style/:filename",
+    :path => ":rails_root/public/system/political_parties/:attachment/:id/:style/:filename"
 
 
   has_many :political_party_translations, :dependent => :destroy

@@ -150,6 +150,7 @@ ka:
       view_full: ვრცლად
       sitemap: საიტის რუკა
       logo: ლოგო
+      view_source: იხილეთ წყარო
     msgs:
       does_not_exist: თქვენ ცდილობთ იხილოთ გვერდი, რომელიც არ არსებობს.
       not_authorized: თქვენ არ გაქვთ უფლება იხილოთ ეს გვერდი.

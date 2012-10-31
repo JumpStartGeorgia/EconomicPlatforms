@@ -122,7 +122,7 @@ $(document).ready(function ()
 
 		if (gon.activity_date !== undefined && gon.activity_date.length > 0)
 		{
-			$("#activity_date").datepicker("setDate", new Date(gon.date_made));
+			$("#activity_date").datepicker("setDate", new Date(gon.activity_date));
 		}
 	}
 });
