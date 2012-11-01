@@ -24,7 +24,7 @@
 
 			<div class="block_body font">
 		    <% if @activities && !@activities.empty? %>
-			    <ul>
+	        <ul class="blue normal p">
 				    <% @activities.each do |activity| %>
 					    <li>
 						    <%= link_to activity.title,
@@ -45,7 +45,7 @@
         <% if !@statements || @statements.empty? %>
 	        <%= t('statements.index.no_statements') %>
         <% else %>
-	        <ul>
+	        <ul class="blue normal p">
 		        <% @statements.each do |statement| %>
 			        <li>
 				        <%= link_to "#{l(statement.date_made, :format => :short)} - #{statement.political_party.name}",
