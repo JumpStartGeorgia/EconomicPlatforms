@@ -65,6 +65,35 @@ logger.debug "**************************sub_title = '#{page_title}'"
 		text.html_safe
 	end
 
+	# since the url contains english or georgian text, the text must be updated to the correct language
+	# for the language switcher link to work
+	def generate_language_switcher_link(locale)
+		party = nil
+		ec = nil
+
+		if @political_party
+			party = PoliticalPartyTranslation.where(:locale => locale, :political_party_id => @political_party.id)
+		end
+
+		if @economic_category
+			ec = EconomicCategoryTranslation.where(:locale => locale, :economic_category_id => @economic_category.id)
+		end
+
+		if party && !party.empty? && ec && !ec.empty?
+			link_to t("app.language.#{locale}"), params.merge(:locale => locale,
+						:political_party_id => party.first.permalink,
+						:economic_category_id => ec.first.permalink)
+		elsif party && !party.empty?
+			link_to t("app.language.#{locale}"), params.merge(:locale => locale,
+						:political_party_id => party.first.permalink)
+		elsif ec && !ec.empty?
+			link_to t("app.language.#{locale}"), params.merge(:locale => locale,
+						:economic_category_id => ec.first.permalink)
+		else
+			link_to t("app.language.#{locale}"), params.merge(:locale => locale)
+		end
+
+	end
 
 	# Based on https://gist.github.com/1182136
   class BootstrapLinkRenderer < ::WillPaginate::ActionView::LinkRenderer
