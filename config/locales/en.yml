@@ -206,6 +206,9 @@ en:
       title: Disclaimer
     charts:
       title: Political Party Ideologies
+      left: "The party's position on the stated issue, according to its platform is best described as extremely socialist/communis"
+      center: "The party's position on the stated issue, according to its platform is best described as Western European “social-democracy”"
+      right: "The party's position on the stated issue, according to its platform is best described as extreme libertarian (the state should guarantee property rights, law and order but should not in any way engage in economic regulation or income redistribution such as support of the poor, unemployed or disabled)"
     search:
       title: Search
     sitemap:

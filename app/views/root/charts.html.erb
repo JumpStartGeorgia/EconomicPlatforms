@@ -5,6 +5,27 @@
 
       <div class="block_body" id="content_container">
 
+				<% if @political_parties_nav && !@political_parties_nav.empty? %>
+					<div id="political_party_colors">
+						<div class="clear">
+							<% @political_parties_nav[0..2].each_with_index do |party,i| %>
+								<div>
+								  <div class="colors"><span style="background-color: <%= "#{party.color}" %>;">&nbsp;&nbsp;&nbsp;</span></div>
+								  <div class="party_names"><%= party.name %></div>
+							  </div>
+							<% end %>
+						</div>
+						<div class="clear">
+							<% @political_parties_nav[3..5].each_with_index do |party,i| %>
+								<div>
+								  <div class="colors"><span style="background-color: <%= "#{party.color}" %>;">&nbsp;&nbsp;&nbsp;</span></div>
+								  <div class="party_names"><%= party.name %></div>
+							  </div>
+							<% end %>
+						</div>
+					</div>
+				<% end %>
+
     		<div id="charts">
     			<% if !@values || @values.empty? %>
     				<p>
@@ -34,6 +55,8 @@
 
 
 	<div class="span3 sidespan">
+<%
+=begin %>
 	  <div class="block">
 		  <h3 class="block_header font">
 			  <%= t('app.common.political_parties')%>
@@ -51,6 +74,26 @@
   				</ul>
         </div>
 			<% end %>
+		</div>
+<%
+=end %>
+	  <div class="block">
+		  <div class="block_body block_body_small">
+				<ul>
+			    <li>
+						<strong><%= t('app.scales.indicator_category_id_5.top') %>:</strong>
+						<%= t('.left') %>
+			    </li>
+			    <li>
+						<strong><%= t('app.scales.indicator_category_id_5.middle') %>:</strong>
+						<%= t('.center') %>
+			    </li>
+			    <li>
+						<strong><%= t('app.scales.indicator_category_id_5.bottom') %>:</strong>
+						<%= t('.right') %>
+			    </li>
+				</ul>
+      </div>
 		</div>
 	</div>
 </div>
