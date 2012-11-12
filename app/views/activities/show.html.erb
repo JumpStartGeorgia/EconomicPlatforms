@@ -1,0 +1,80 @@
+<% title @activity.title %>
+
+
+<div class="row">
+	<div class="span9 clear">
+	  <div class="block clear">
+		  <h3><%= l @activity.date, :format => :long if @activity.date %></h3>
+			  <div id="image_video_box" class="pull-right">
+				  <div id="activity_image_slider"></div>
+
+				  <% if @activity.video && !@activity.video.empty? %>
+					  <%= video_frame_tag(@activity.video, 300, 200).html_safe %>
+				  <% end %>
+
+			  </div>
+
+			  <%= simple_format_no_tags @activity.body, {}, :sanitize => false %>
+      </div>
+	</div>
+
+	<div class="span3 sidespan">
+		<div class="block">
+			<h3 class="block_header"><%= t('app.common.activities') %></h3>
+
+			<div class="block_body font">
+		    <% if @activities && !@activities.empty? %>
+	        <ul class="blue normal p">
+				    <% @activities.each do |activity| %>
+					    <li>
+						    <%= link_to activity.title,
+							    activity_path(activity.id) %>
+					    </li>
+				    <% end %>
+			    </ul>
+		    <% else %>
+			    <%= t('.no_platforms') %>
+		    <% end %>
+			</div>
+		</div>
+
+    <div class="block">
+      <h3 class="block_header font"><%= t('.latest_statements_header') %></h3>
+
+			<div class="block_body">
+        <% if !@statements || @statements.empty? %>
+	        <%= t('statements.index.no_statements') %>
+        <% else %>
+	        <ul class="blue normal p">
+		        <% @statements.each do |statement| %>
+			        <li>
+				        <%= link_to "#{l(statement.date_made, :format => :short)} - #{statement.political_party.name}",
+						        party_statement_path(:political_party_id => statement.political_party.permalink, :id => statement.id),
+						        :title => "#{statement.economic_category.name}" %>
+			        </li>
+		        <% end %>
+	        </ul>
+        <% end %>
+      </div>
+	  </div>
+
+	</div>
+</div>
+<% if user_signed_in? && can?(:manage, Activity) %>
+<div class="form-actions">
+  <%= link_to t('app.buttons.list'),
+              activities_path, :class => 'btn'  %>
+	<%= link_to t('app.buttons.new'),
+		          new_activity_path,
+		          :class => 'btn btn-primary' %>
+  <%= link_to t('app.buttons.edit'),
+              edit_activity_path(@activity), :class => 'btn' %>
+  <%= link_to t('app.buttons.delete'),
+              statement_path(@statement),
+              :method => 'delete',
+              :confirm => t('app.buttons.confirm'),
+              :class => 'btn btn-danger' %>
+  <%= link_to t('app.buttons.admin'), admin_path,
+  :class => 'btn' %>
+</div>
+<% end %>

@@ -11,7 +11,38 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120913135349) do
+ActiveRecord::Schema.define(:version => 20121030125850) do
+
+  create_table "activities", :force => true do |t|
+    t.date     "date"
+    t.string   "video"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "activity_images", :force => true do |t|
+    t.integer  "activity_id"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "activity_images", ["activity_id"], :name => "index_activity_images_on_activity_id"
+
+  create_table "activity_translations", :force => true do |t|
+    t.integer  "activity_id"
+    t.string   "locale"
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "activity_translations", ["activity_id"], :name => "index_activity_translations_on_activity_id"
+  add_index "activity_translations", ["locale"], :name => "index_activity_translations_on_locale"
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
@@ -189,6 +220,10 @@ ActiveRecord::Schema.define(:version => 20120913135349) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "color"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
   create_table "political_party_translations", :force => true do |t|

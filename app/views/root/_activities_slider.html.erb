@@ -1,0 +1,38 @@
+
+  <div id="activityslider">
+
+    <div class="top clear">
+      <div class="left">
+        <h4 class="block_header font"><%= t('app.common.activities') %></h4>
+      </div>
+      <div class="right">
+        <div class="arrow disabled" data-direction="left"></div>
+        <% attr = (@activities.length > 1) ? '' : ' disabled' %>
+        <div class="arrow<%= attr %>" data-direction="right"></div>
+      </div>
+    </div>
+
+    <div class="activities block_body">
+
+      <% @activities.each do |activity| %>
+        <div class="each">
+          <h3><%= "#{l activity.date, :format => :short} - #{activity.title}" %></h3>
+          <div class="body clear">
+						<% if activity.images && !activity.images.empty? %>
+            <div class="imagecontainer">
+              <%= image_tag activity.images.last.file.url(:thumb) if !activity.images.last.nil? %>
+            </div>
+						<% end %>
+            <div class="text">
+              <%= char_limit(activity.body, 280) %>
+            </div>
+            <div class="showlink">
+              <%= link_to t('app.common.view_full') + '...', activity_path(activity) %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+
+  </div>

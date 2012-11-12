@@ -1,150 +1,296 @@
 <div class="row">
-	<div class="span9">
-		<div id="title_dropdowns">
-			<h1 id="<%= I18n.locale %>">
-				<% if I18n.locale == :en %>
-					<%= t('.title1')%>
-					<span id="big_red_inline"><%= t('.title2')%></span>
-					<span id="line3"><%= t('.title3')%></span><span id="big_red_inline">?</span>
-				<% else %>
-					<%= t('.title1')%>
-					<span id="line2"><%= t('.title2')%></span>
-					<span id="big_red_inline"><%= t('.title3')%>?</span>
-				<% end %>
-			</h1>
-			<p>
-				<%= t('.welcome') %>
-				<%= link_to t('.welcome_link'), methodology_path %>
-			</p>
-			<div id="nav_buttons">
-		    <% if @political_parties_nav && !@political_parties_nav.empty? %>
-					<div class="btn-group">
-						<button class="btn"><%= t('app.common.political_party')%></button>
-						<button class="btn dropdown-toggle" data-toggle="dropdown">
-							<span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu">
-		          <% @political_parties_nav.each do |pol| %>
-		          <li><%= link_to pol.name, party_path(pol.permalink)%></li>
-		          <% end %>
-						</ul>
-					</div>
-		    <% end %>
+  <div class="span9">
+    <div class="row">
+      <div class="span4">
+        <div class="block">
+          <h4 class="font"><%= t('app.common.policy_briefs') %></h4>
+          <div class="block_body">
+			      <% if @political_parties_nav && !@political_parties_nav.empty? %>
+				      <ul class="block_list_line">
+				        <% @political_parties_nav.each_with_index do |party,i| %>
+				          <li class="party-dropdown">
 
-		    <% if @economic_categories_nav && !@economic_categories_nav.empty? %>
-					<div class="btn-group">
-						<button class="btn"><%= t('app.common.economic_category')%></button>
-						<button class="btn dropdown-toggle" data-toggle="dropdown">
-							<span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu">
-		          <% @economic_categories_nav.each do |ec| %>
-		          <li><%= link_to ec.name, category_path(ec.permalink)%></li>
-		          <% end %>
-						</ul>
-					</div>
-				</div>
-      <% end %>
+				            <a href="#">
+				              <%= image_tag(party.logo.url, :style => 'vertical-align: middle;') if party.logo_file_name %>
+											<%= party.name %>
+				              <%= '<b class="caret"></b>'.html_safe if party.policy_briefs && !party.policy_briefs.empty? %>
+				            </a>
 
-		</div>
+                    <ul class="parties-dropdown dropdown-menu">
+			              <% if party.policy_briefs && !party.policy_briefs.empty? %>
 
-		<div id="charts">
-			<h2><%= t('.chart_title')%></h2>
-			<% if !@values || @values.empty? %>
-				<p>
-					<%= t('.no_values')%>
-				</p>
-			<% else %>
+					              <% party.policy_briefs.each do |policy_brief| %>
+						              <li>
+							              <%= link_to policy_brief.economic_category.name,
+								              party_policy_brief_path(:political_party_id => party.permalink,
+								              :economic_category_id => policy_brief.economic_category.permalink) %>
+						              </li>
+					              <% end %>
+			              <% else %>
+				              <li><span class="disabled"><%= t('policy_briefs.index.no_policy_briefs') %></span></li>
+			              <% end %>
+			              </ul>
+
+				          </li>
+				        <% end %>
+				      </ul>
+			      <% end %>
+			    </div>
+			  </div>
+
+      </div>
+
+      <div class="span5">
+        <div class="block clear">
+          <%= render 'activities_slider' %>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="span4">
+
+        <div class="block" style="min-height: 161px;">
+          <h4 class="font"><%= t('app.common.statements') %></h4>
+          <div class="block_body">
+			      <% if !@statements || @statements.empty? %>
+				      <%= t('statements.index.no_statements') %>
+			      <% else %>
+				      <ul class="block_list_line">
+					      <% @statements.each do |statement| %>
+						      <li>
+							      <%= link_to "#{l(statement.date_made, :format => :short)} - #{statement.political_party.name}",
+									      party_statement_path(:political_party_id => statement.political_party.permalink, :id => statement.id),
+									      :title => "#{statement.economic_category.name}" %>
+						      </li>
+					      <% end %>
+				      </ul>
+			      <% end %>
+			    </div>
+			  </div>
+
+      </div>
+
+      <div class="span5">
+
+        <div class="block">
+          <h4 class="font"><%= t('.chart_title')%></h4>
+          <div id="chart_block" class="block_body clear">
+						<div id="chart">
+	            <%= link_to image_tag('/assets/chart.jpg'), charts_path %>
+						</div>
+						<div id="chart_text">
+							<%= link_to t('.chart_text'), charts_path %>
+						</div>
+          </div>
+			  </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="span3 sidespan">
+    <div class="row">
+      <div class="span3">
+
+        <div class="block">
+          <div class="imagecontainer" style="max-width: 236px;">
+            <%= link_to(image_tag("logos.jpg"), about_path) %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<%# ...ALTERNATE MARKUP... %>
 <%
 =begin %>
-				<div id="legend">
-					<h3><%= t('app.common.legend')%></h3>
-					<div id="legend_content" class="row-fluid">
-						<div id="political_party_scales" class="span4">
-						  <% if @political_parties_nav && !@political_parties_nav.empty? %>
-						    <h3><%= t('app.common.political_parties')%></h3>
-						    <div id="political_party_scales_scales_content">
-						      <ul>
-						        <% @political_parties_nav.each_with_index do |party,i| %>
-						          <li>
-						            <span style="background-color: <%= "#{party.color}" %>;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-						            <%= party.name %>
-						          </li>
-						        <% end %>
-						      </ul>
+<div class="row">
+  <div class="span9">
+
+    <div id="title-dropdowns" class="block clear">
+
+      <div class="">
+		    <h4 id="<%= I18n.locale %>">
+			    <% if I18n.locale == :en %>
+				    <%= t('.title1')%>
+				    <%= t('.title2')%>
+				    <%= t('.title3')%>?
+			    <% else %>
+				    <%= t('.title1')%>
+				    <%= t('.title2')%>
+				    <%= t('.title3')%>?
+			    <% end %>
+		    </h4>
+      </div>
+
+      <div class="ds">
+        <div class="">
+	        <% if @political_parties_nav && !@political_parties_nav.empty? %>
+				    <div class="btn-group">
+					    <button class="btn"><%= t('app.common.political_party')%></button>
+					    <button class="btn dropdown-toggle" data-toggle="dropdown">
+						    <span class="caret"></span>
+					    </button>
+					    <ul class="dropdown-menu">
+	              <% @political_parties_nav.each do |pol| %>
+	              <li><%= link_to pol.name, party_path(pol.permalink)%></li>
+	              <% end %>
+					    </ul>
+				    </div>
+	        <% end %>
+        </div>
+
+        <div class="">
+	        <% if @economic_categories_nav && !@economic_categories_nav.empty? %>
+				    <div class="btn-group">
+					    <button class="btn"><%= t('app.common.economic_category')%></button>
+					    <button class="btn dropdown-toggle" data-toggle="dropdown">
+						    <span class="caret"></span>
+					    </button>
+					    <ul class="dropdown-menu">
+	              <% @economic_categories_nav.each do |ec| %>
+	              <li><%= link_to ec.name, category_path(ec.permalink)%></li>
+	              <% end %>
+					    </ul>
+				    </div>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="span3">
+
+    <div class="block" id="home_search">
+      <input type="text" value="" placeholder="<%= t('.search') %>" />
+    </div>
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="span9">
+    <div class="row">
+      <div class="span4">
+
+        <div class="block">
+          <h4><%= t('app.common.policy_briefs') %></h4>
+			    <% if @political_parties_nav && !@political_parties_nav.empty? %>
+				    <ul>
+				      <% @political_parties_nav.each_with_index do |party,i| %>
+				        <li>
+				          <span style="background-color: <%= "#{party.color}" %>;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+				          <%= party.name %>
+				        </li>
+				      <% end %>
+				    </ul>
+			    <% end %>
+			  </div>
+
+      </div>
+      <div class="span5">
+
+        <div class="block clear">
+          <%= render 'activities_slider' %>
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="span4">
+
+        <div class="block">
+          <h4><%= t('app.common.statements') %></h4>
+			    <% if !@statements || @statements.empty? %>
+				    <%= t('statements.index.no_statements') %>
+			    <% else %>
+				    <ul>
+					    <% @statements.each do |statement| %>
+						    <li>
+							    <%= link_to "#{l(statement.date_made, :format => :short)} - #{statement.political_party.name}",
+									    party_statement_path(:political_party_id => statement.political_party.permalink, :id => statement.id),
+									    :title => "#{statement.economic_category.name}" %>
+						    </li>
+					    <% end %>
+				    </ul>
+			    <% end %>
+			  </div>
+
+      </div>
+      <div class="span5">
+
+        <div class="block">
+          <h4><%= t('.chart_title')%></h4>
+			    <% if !@values || @values.empty? %>
+				    <p>
+					    <%= t('.no_values')%>
+				    </p>
+			    <% else %>
+				    <% @values.each_with_index do |value, i| %>
+					    <% if i%2 == 0 %>
+						    <div class="chart_row row">
+					    <% end %>
+
+						    <div class="span4">
+						      <h3><%= value[:name] %></h3>
+						      <div id="<%= "#{value[:div_id]}"%>"></div>
 						    </div>
-						  <% end %>
-						</div>
-						<div id="indicator_scales" class="span8">
-						  <% if @indicators && !@indicators.empty? %>
-						    <h3><%= t('app.common.indicator_scales')%></h3>
-						    <div id="indicator_scales_content">
-						      <ul class="standard">
-						      <% @indicators.each do |indicator| %>
-										<% if indicator.value != 0 %>
-							        <li value="<%= indicator.value-4 %>"><%= indicator.name %></li>
-										<% end %>
-						      <% end %>
-						      </ol>
+
+					    <% if i%2 == 1 || i==@values.length-1%>
 						    </div>
-						  <% end %>
-						</div>
-					</div>
-				</div>
+					    <% end %>
+				    <% end %>
+
+			    <% end %>
+			  </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="span3">
+
+    <div class="block">
+      <%= link_to(image_tag("logos.jpg"), about_path) %>
+    </div>
+
+  </div>
+</div>
 <%
 =end %>
-				<% @values.each_with_index do |value, i| %>
-					<% if i%2 == 0 %>
-						<div class="chart_row row">
-					<% end %>
 
-						<div class="span4">
-						  <h3><%= value[:name] %></h3>
-						  <div id="<%= "#{value[:div_id]}"%>"></div>
-						</div>
 
-					<% if i%2 == 1 || i==@values.length-1%>
-						</div>
-					<% end %>
-				<% end %>
 
-			<% end %>
-		</div>
-	</div>
 
-	<div class="span3">
-		<div class="well well-small">
-			<h4><%= t('.latest_statements_header') %></h4>
-			<% if !@statements || @statements.empty? %>
-				<%= t('statements.index.no_statements') %>
-			<% else %>
-				<ul>
-					<% @statements.each do |statement| %>
-						<li>
-							<%= link_to "#{l(statement.date_made, :format => :short)} - #{statement.political_party.name}",
-									party_statement_path(:political_party_id => statement.political_party.permalink, :id => statement.id),
-									:title => "#{statement.economic_category.name}" %>
-						</li>
-					<% end %>
-				</ul>
-			<% end %>
-		</div>
-		<div id="well_legend" class="well well-small">
-			<h3><%= t('app.common.political_parties')%></h3>
-			<% if @political_parties_nav && !@political_parties_nav.empty? %>
-			  <h4></h4>
-				<ul>
-				  <% @political_parties_nav.each_with_index do |party,i| %>
-				    <li>
-				      <span style="background-color: <%= "#{party.color}" %>;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-				      <%= party.name %>
-				    </li>
-				  <% end %>
-				</ul>
-			<% end %>
-		</div>
-		<div>
-			<%= link_to(image_tag("logos.jpg"), about_path) %>
-		</div>
-	</div>
+
+
+
+
+<div class="row">
+  <div class="span12">
+    <div class="row">
+      <% @activities.each do |activity| %>
+			  <% if activity.video && !activity.video.empty? %>
+		      <div class="span2 activity-video-container">
+		        <%= video_frame_tag(activity.video, 170, 150).html_safe %>
+		      </div>
+			  <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>

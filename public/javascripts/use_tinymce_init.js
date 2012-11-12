@@ -62,10 +62,22 @@ function tiny_mce_change (inst)
 {
   tinyMCE.activeEditor.dom.addClass(tinyMCE.activeEditor.dom.select('ul'), 'standard');
   tinyMCE.activeEditor.dom.addClass(tinyMCE.activeEditor.dom.select('ol'), 'standard');
+
+  var body = $(tinyMCE.activeEditor.dom.select('body')[0]);
+  var div = body.find('div');
+  var pre = body.find('pre');
+  div.replaceWith(function (){ '<p>' + $(this).html() + '</p>' });
+  pre.replaceWith(function (){ '<p>' + $(this).html() + '</p>' });
 }
 
 function tiny_mce_init_instance (inst)
 {
   inst.dom.addClass(inst.dom.select('ul'), 'standard');
   inst.dom.addClass(inst.dom.select('ol'), 'standard');
+
+  var body = $(inst.dom.select('body')[0]);
+  var div = body.find('div');
+  var pre = body.find('pre');
+  div.replaceWith(function (){ '<p>' + $(this).html() + '</p>' });
+  pre.replaceWith(function (){ '<p>' + $(this).html() + '</p>' });
 }

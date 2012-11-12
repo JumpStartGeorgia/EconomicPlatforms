@@ -1,5 +1,6 @@
 EconomicPlatforms::Application.routes.draw do
 
+
 	#--------------------------------
 	# all resources should be within the scope block below
 	#--------------------------------
@@ -21,6 +22,8 @@ EconomicPlatforms::Application.routes.draw do
     resources :political_parties
     resources :statement_scores
     resources :statements
+    resources :activities
+	  resources :activity_images
 
 		# party profile
 		match '/party/:political_party_id', :to => 'party#index', :as => :party
@@ -40,7 +43,10 @@ EconomicPlatforms::Application.routes.draw do
 		match '/vote/:type/:votable_id/:status', :to => 'comments#vote', :as => :vote, :via => :get
 
 		match '/admin', :to => 'admin#index', :as => :admin, :via => :get
+		match '/search', :to => 'root#search', :as => :search, :via => :get
+		match '/charts', :to => 'root#charts', :as => :charts, :via => :get
 		match '/about', :to => 'root#about', :as => :about, :via => :get
+		match '/sitemap', :to => 'root#sitemap', :as => :sitemap, :via => :get
 		match '/methodology', :to => 'root#methodology', :as => :methodology, :via => :get
 
 		root :to => 'root#index'

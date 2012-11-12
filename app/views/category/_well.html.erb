@@ -1,55 +1,66 @@
-	<div class="span3">
+	<div class="span3 sidespan">
 		<% if params[:action] != 'index' %>
-		<div class="well well-small">
-			<h4><%= t('.pdf_header') %></h4>
-				<ul>
-					<li>
-						<%= link_to t('.pdf_link'),	{:format => :pdf } %>
-					</li>
-				</ul>
-		</div>
+		  <div class="block">
+			  <h3 class="block_header font">
+			    <%= t(".pdf_header") %>
+			  </h3>
+
+			  <div class="block_body">
+			    <%= link_to t('.pdf_link'), {:format => :pdf}, :class => :blue %>
+			  </div>
+		  </div>
 		<% end %>
 
-		<div class="well well-small">
-			<h3><%= @economic_category.name %></h3>
+    <div class="block">
+      <h3 class="block_header font">
+				<%= @economic_category.name %>
+      </h3>
 
 			<% if params[:action] != 'index' %>
-				<h4><%= t('.profile_header') %></h4>
-				<ul>
-					<li>
-						<%= link_to t('.view_profile'),	category_path(params[:economic_category_id]) %>
-					</li>
-				</ul>
-			<% end %>
+			  <div class="block_body">
+			    <%= link_to t('.view_profile'),	category_path(params[:economic_category_id]), :class => :blue %>
+        </div>
+      <% end %>
 
-			<h4><%= t('.platform_header') %></h4>
-			<% if @platforms && !@platforms.empty? %>
-				<ul>
-					<% @platforms.each do |platform| %>
-						<li>
-							<%= link_to platform.political_party_name,
+      <h3 class="block_header font">
+        <%= t('.platform_header') %>
+      </h3>
+
+			<div class="block_body">
+			  <% if @platforms && !@platforms.empty? %>
+				  <ul class="blue normal p">
+					  <% @platforms.each do |platform| %>
+						  <li>
+							  <%= link_to platform.political_party_name,
 								category_platform_path(:economic_category_id => params[:economic_category_id],
 								:political_party_id => platform.political_party_permalink) %>
-						</li>
-					<% end %>
-				</ul>
-			<% else %>
-				<%= t('.no_platforms') %>
-			<% end %>
+						  </li>
+					  <% end %>
+				  </ul>
+			  <% else %>
+				  <%= t('.no_platforms') %>
+			  <% end %>
+      </div>
 
-			<h4><%= t('.policy_brief_header') %></h4>
-			<% if @policy_briefs && !@policy_briefs.empty? %>
-				<ul>
-					<% @policy_briefs.each do |policy_brief| %>
-						<li>
-							<%= link_to policy_brief.political_party_name,
+      <h3 class="block_header font">
+        <%= t('.policy_brief_header') %>
+      </h3>
+
+			<div class="block_body">
+			  <% if @policy_briefs && !@policy_briefs.empty? %>
+				  <ul class="blue normal p">
+					  <% @policy_briefs.each do |policy_brief| %>
+						  <li>
+							  <%= link_to policy_brief.political_party_name,
 								category_policy_brief_path(:economic_category_id => params[:economic_category_id],
 								:political_party_id => policy_brief.political_party_permalink) %>
-						</li>
-					<% end %>
-				</ul>
-			<% else %>
-				<%= t('.no_policy_briefs') %>
-			<% end %>
-		</div>
+						  </li>
+					  <% end %>
+				  </ul>
+			  <% else %>
+				  <%= t('.no_policy_briefs') %>
+			  <% end %>
+      </div>
+	  </div>
+
 	</div>

@@ -15,6 +15,11 @@
 
 	<%= f.inputs do %>
 		<%= f.input :color, :input_html => {:size => 10} %>
+		<%= f.input :logo, :as => :file %>
+		<% if @political_party.logo_file_name %>
+			<%= image_tag @political_party.logo.url %>
+		<% end %>
+
 	<% end %>
 
 	<div class="form-actions">

@@ -1,0 +1,135 @@
+<% title t('.title') %>
+
+<div class="row">
+	<div class="span12 clear sidespan">
+	  <div class="block clear">
+
+      <div class="block_body sitemap" id="content_container">
+
+<div class="row">
+	<div class="span4">
+		<h2><%= t('app.common.political_party') %></h2>
+		<ul class="standard">
+			<% @political_parties_nav.each do |party| %>
+				<li>
+					<%= link_to party.name, party_path(party.permalink)%>
+					<ul>
+						<% if party.platforms && !party.platforms.empty? %>
+							<li>
+								<%= t('party.well.platform_header') %>
+								<ul>
+									<% party.platforms.each do |platform| %>
+										<li>
+									    <%= link_to platform.economic_category.name,
+										    party_platform_path(:political_party_id => party.permalink,
+										    :economic_category_id => platform.economic_category.permalink) %>
+										</li>
+									<% end %>
+								</ul>
+							</li>
+						<% end %>
+						<% if party.policy_briefs && !party.policy_briefs.empty? %>
+							<li>
+								<%= t('app.common.policy_briefs') %>
+								<ul>
+									<% party.policy_briefs.each do |policy_brief| %>
+										<li>
+									    <%= link_to policy_brief.economic_category.name,
+										    party_policy_brief_path(:political_party_id => party.permalink,
+										    :economic_category_id => policy_brief.economic_category.permalink) %>
+										</li>
+									<% end %>
+								</ul>
+							</li>
+						<% end %>
+						<li>
+							<%= link_to t('app.common.statements'),
+							    party_path(:political_party_id => party.permalink) %>
+						</li>
+					</ul>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+
+	<div class="span4">
+		<h2><%= t('app.common.economic_category') %></h2>
+		<ul class="standard">
+			<% @economic_categories_nav.each do |category| %>
+				<li>
+					<%= link_to category.name, category_path(category.permalink)%>
+					<ul>
+						<% if category.platforms && !category.platforms.empty? %>
+							<li>
+								<%= t('category.well.platform_header') %>
+								<ul>
+									<% category.platforms.each do |platform| %>
+										<li>
+									    <%= link_to platform.political_party.name,
+										    category_platform_path(:economic_category_id => category.permalink,
+										    :political_party_id => platform.political_party.permalink) %>
+										</li>
+									<% end %>
+								</ul>
+							</li>
+						<% end %>
+						<% if category.policy_briefs && !category.policy_briefs.empty? %>
+							<li>
+								<%= t('app.common.policy_briefs') %>
+								<ul>
+									<% category.policy_briefs.each do |policy_brief| %>
+										<li>
+									    <%= link_to policy_brief.political_party.name,
+										    category_policy_brief_path(:economic_category_id => category.permalink,
+										    :political_party_id => policy_brief.political_party.permalink) %>
+										</li>
+									<% end %>
+								</ul>
+							</li>
+						<% end %>
+						<li>
+							<%= link_to t('app.common.statements'),
+							    category_path(:economic_category_id => category.permalink) %>
+						</li>
+					</ul>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+
+	<div class="span3 right">
+		<% if @activities && !@activities.empty? %>
+			<h2><%= t('app.common.activities') %></h2>
+			<ul class="standard">
+				<% @activities.each do |activity| %>
+					<li>
+						<%= link_to activity.title,
+							activity_path(activity.id) %>
+					</li>
+				<% end %>
+			</ul>
+		<% end %>
+
+		<h2><%= t('.other_header') %></h2>
+		<ul class="standard">
+			<li>
+				<%= link_to t('app.common.about'), about_path %>
+			</li>
+			<li>
+				<%= link_to t('app.common.methodology'), methodology_path %>
+			</li>
+			<li>
+				<%= link_to t('root.charts.title'), charts_path %>
+			</li>
+			<li>
+				<%= link_to t('app.common.search'), search_path %>
+			</li>
+		</ul>
+	</div>
+</div>
+
+      </div>
+
+    </div>
+	</div>
+</div>        

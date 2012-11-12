@@ -11,7 +11,14 @@ en:
       policy_brief: Policy Brief
       political_party: Political Party
       page: Page
+      activity: News
     attributes:
+      activity:
+        date: Date
+        video: YouTube Video Link
+      activity_translation:
+        title: Title
+        body: Text
       statement:
         date_made: Date Made
         political_party: Political Party
@@ -51,6 +58,7 @@ en:
         analysis: Analysis
       political_party:
         color: Color
+        logo: Logo
       political_party_translation:
         name: Name
       page:
@@ -58,6 +66,7 @@ en:
       page_translation:
         title: Title
         description: Description
+
   app:
     language:
       en: English
@@ -74,7 +83,7 @@ en:
       indicator_category_id_3:
         top: Justified
         middle: Center
-        bottom: No Justified
+        bottom: Not Justified
       indicator_category_id_4:
         top: Feasible
         middle: Center
@@ -109,6 +118,9 @@ en:
       political_parties: Political Parties
       economic_category: Economic Category
       statement: Statement
+      statements: Statements
+      activities: News
+      activity: Activity
       indicator: Indicator
       indicator_category: Indicator Category
       user: User
@@ -120,8 +132,10 @@ en:
       new_password: New Password
       platform: Party Platform
       policy_brief: Policy Brief
+      policy_briefs: Policy Briefs
       date: Date
       files: Supporting Files
+      images: Attached Images
       color: Color
       legend: Legend
       indicator_scales: Scale of Indicators
@@ -141,6 +155,10 @@ en:
       all_party_platform_avg: All Political Parties Platform Average
       time: Time
       comments: Comments
+      view_full: view full
+      sitemap: Site Map
+      logo: Logo
+      view_source: View Source
     msgs:
       does_not_exist: You tried to access a page that does not exist.
       not_authorized: You are not authorized to view that page.
@@ -156,6 +174,8 @@ en:
       sign_out: Sign Out
       js_link_title: "Visit JumpStart Georgia's website"
       js_link_text: Built by
+      search: Search
+      slogan: What does your party promise?
     unsupported_browser:
       title: Unsupported Browser
       p1: We are sorry to report that your browser is out of date and will not properly render the content from this website.
@@ -171,21 +191,26 @@ en:
       js_link_text: Built by
   root:
     index:
-      title1: What does your
-      title2: party
-      title3: promise
       welcome: "Welcome to the Economic Policy Fact Checker! Explore the economic policies of Georgian political parties over time by viewing party platforms, party statements, and our in-depth analysis."
       welcome_link: "Click here to learn more."
       no_values: No political party information has been entered into the application at this time.
-      chart_title: Political Party Ideologies
       latest_statements_header: Latest Statements
       about_header: About
+      chart_title: Political Party Ideologies
+      chart_text: View Political Party Ideologies for Each Economic Category
     about:
       title: About
     methodology:
       title: Methodology
     disclaimer:
       title: Disclaimer
+    charts:
+      title: Political Party Ideologies
+    search:
+      title: Search
+    sitemap:
+      title: Site Map
+      other_header: Other
   economic_categories:
     edit:
       title: Editing Economic Category
@@ -233,6 +258,7 @@ en:
     index:
       title: Policy Briefs
       no_policy_briefs: "At this time, no policy briefs have been recorded"
+      empty: Empty
     new:
       title: New Policy Brief
     show:
@@ -262,6 +288,7 @@ en:
       indicator_categories: Indicator Categories
       indicators: Indicators
       pages: Pages
+      activities: Activities
     users:
       edit:
         title: Editing User
@@ -284,7 +311,7 @@ en:
   party:
     index:
       title: "%{political_party}"
-      statement_header: "%{political_party} Statements"
+      statement_header: "Statements"
       no_statements: "At this time, no %{economic_category} statements have been recorded for %{political_party}."
       view_statement: View Full Statement
     well:
@@ -308,7 +335,7 @@ en:
   category:
     index:
       title: "%{economic_category}"
-      statement_header: "%{economic_category} Statements"
+      statement_header: "Statements"
       no_statements: "At this time, no statements have been recorded for %{economic_category}."
       view_statement: View Full Statement
     well:
@@ -339,3 +366,18 @@ en:
       title: New Page
     show:
       title: Page Details
+  activities:
+    edit:
+      title: Editing News
+    index:
+      title: News
+      no_pages: "At this time, no news items have been recorded"
+    new:
+      title: New News
+    show:
+      title: News Details
+      latest_statements_header: Latest Statements
+    form:
+      add_file: Add Image
+    activity_image_fields:
+      remove_link: Remove Image

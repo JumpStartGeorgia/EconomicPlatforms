@@ -1,91 +1,83 @@
 <% title t('category.statement.title', :economic_category => @economic_category.name) %>
 <% sub_title t('category.statement.secondary_title', :date => l(@statement.date_made, :format => :long)) %>
 
+
 <div class="row">
-	<div class="span9">
-	  <div class="clear">
-		  <h2 style="float: left;"><%= t('category.statement.secondary_title', :date => l(@statement.date_made, :format => :long)) %></h2>
 
-			<% if params[:format] != "pdf" %>
-				<div class="" style="float: left; margin-left: 50px;">
-				  <% ip = request.remote_ip %>
-				  <% if @statement.voted(ip, 'up') %>
-				    <%= image_tag('/assets/thumbs-up-grey.png') %>
-				  <% else %>
-				    <%= link_to image_tag('/assets/thumbs-up.png'), vote_path(:type => 'statement', :votable_id => @statement.id, :status => 'up') %>
-				  <% end %>
-				  <% diff = @statement.votes_diff %>
-				  <span style="margin: 0 5px; color: <%= diff[:color] %>;"><%= diff[:number] %></span>
-				  <% if @statement.voted(ip, 'down') %>
-				    <%= image_tag('/assets/thumbs-down-grey.png') %>
-				  <% else %>
-				    <%= link_to image_tag('/assets/thumbs-down.png'), vote_path(:type => 'statement', :votable_id => @statement.id, :status => 'down') %>
-				  <% end %>
-				</div>
-			<% end %>
+  <div class="span9 clear">
+    <div class="block clear">
+      <div class="block_header clear">
+        <div class="left">
+          <%= t('category.statement.secondary_title', :date => l(@statement.date_made, :format => :long)) %>
+        </div>
+        <% if params[:format] != "pdf" %>
+          <div class="right" id="voting">
+            <%= votes_cont(@statement) %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="block_body">
+
+        <span class="font"><%= "#{t('app.common.political_party')}:"%></span>
+        <%= @statement.political_party.name %>
+        <br />
+
+        <span class="font"><%= "#{t('app.common.author')}:"%></span>
+        <%= @statement.author %>
+        <br />
+
+        <span class="font"><%= "#{t('app.common.source')}:"%></span>
+        <%= auto_link(@statement.source, :urls, :target => "_blank", :class => "statement_source") do |text| %>
+          <% t('app.common.view_source') %>
+        <% end %>
+        <br />
+        <br />
+
+        <p class="font"><%= "#{t('app.common.statement')}:"%></p>
+        <%= simple_format_no_tags @statement.statement_made, {}, :sanitize => false %>
+
+        <% if @statement.analysis && !@statement.analysis.empty? %>
+          <p>
+            <strong><%= t('app.common.analysis') %>:</strong>
+          </p>
+          <%= simple_format_no_tags @statement.analysis, {}, :sanitize => false %>
+        <% end %>
+        <br />
+
+        <p class="font"><%= "#{t('app.common.scores')}:"%></p>
+        <% if @statement.statement_scores && !@statement.statement_scores.empty? %>
+          <ul class="normal">
+          <% @statement.statement_scores.ordered.each do |score| %>
+            <li>
+              <strong><%= score.indicator_category.name %></strong>
+              <br />
+              <%= "#{score.value} - #{score.indicator.name}"%>
+            </li>
+          <% end %>
+          </ul>
+        <% end %>
+
+      </div>
+
+      <% if params[:format] != "pdf" %>
+        <%= render :partial => 'comments/list', :locals => {:commentable_type => 'statement', :commentable_id => @statement.id} %>
+        <%= render :partial => 'comments/form', :locals => {:commentable_type => 'statement', :commentable_id => @statement.id} %>
+      <% end %>
+
     </div>
+  </div>
 
-		<div class="statement_summary">
-			<div>
-				<p>
-					<strong><%= "#{t('app.common.political_party')}:"%></strong>
-					<%= @statement.political_party.name %>
-				</p>
-			</div>
-			<div class="row">
-				<div class="span4">
-					<p>
-						<strong><%= "#{t('app.common.author')}:"%></strong>
-						<%= @statement.author %>
-					</p>
-				</div>
-				<div class="span4">
-					<p>
-						<strong><%= "#{t('app.common.source')}:"%></strong>
-						<%= auto_link(@statement.source, :urls, :target => "_blank") %>
-					</p>
-				</div>
-			</div>
 
-			<p>
-				<strong><%= "#{t('app.common.statement')}:"%></strong>
-			</p>
-			<%= simple_format_no_tags @statement.statement_made, {}, :sanitize => false %>
+  <% if params[:format] != "pdf" %>
+    <%= render :partial => "category/well" %>
+  <% end %>
 
-			<% if @statement.analysis && !@statement.analysis.empty? %>
-				<p>
-					<strong><%= t('app.common.analysis') %>:</strong>
-				</p>
-				<%= simple_format_no_tags @statement.analysis, {}, :sanitize => false %>
-			<% end %>
-
-			<p>
-				<strong><%= t('app.common.scores') %>:</strong>
-			</p>
-			<% if @statement.statement_scores && !@statement.statement_scores.empty? %>
-				<ul class="standard">
-				<% @statement.statement_scores.ordered.each do |score| %>
-					<li>
-						<strong><%= score.indicator_category.name %></strong>
-						<br />
-						<%= "#{score.value} - #{score.indicator.name}"%>
-					</li>
-				<% end %>
-				</ul>
-			<% end %>
-		</div>
-
-		<% if params[:format] != "pdf" %>
-			<%= render :partial => 'comments/list', :locals => {:commentable_type => 'statement', :commentable_id => @statement.id} %>
-		  <%= render :partial => 'comments/form', :locals => {:commentable_type => 'statement', :commentable_id => @statement.id} %>
-		<% end %>
-	</div>
-
-	<% if params[:format] != "pdf" %>
-		<%= render :partial => "category/well" %>
-	<% end %>
 
 </div>
+
+
+
 
 <% if user_signed_in? && can?(:manage, Statement) %>
 <div class="form-actions">

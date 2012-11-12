@@ -1,9 +1,19 @@
-<% if !@page.nil? %>
-
+<% if @page.nil? %>
+  <% title t('.title') %>
+<% else %>
 	<% title @page.title %>
 
-	<%= simple_format_no_tags @page.description, {}, :sanitize => false %>
+<div class="row">
+	<div class="span12 clear sidespan">
+	  <div class="block clear">
 
-<% else %>
-	<% title t('.title') %>
+      <div class="block_body" id="content_container">
+
+	      <%= simple_format_no_tags @page.description, {}, :sanitize => false %>
+
+      </div>
+
+    </div>
+	</div>
+</div>
 <% end %>

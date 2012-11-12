@@ -1,37 +1,46 @@
 <% title t('category.platform.title', :economic_category => @economic_category.name) %>
 <% sub_title t('category.platform.secondary_title', :political_party => @political_party.name) %>
 
+
+
+
 <div class="row">
-	<div class="span9">
-		<h2><%= t('category.platform.secondary_title', :political_party => @political_party.name) %></h2>
+	<div class="span9 clear">
+	  <div class="block clear">
+		  <div class="block_header font clear">
+		    <%= t('category.platform.secondary_title', :political_party => @political_party.name) %>
+		  </div>
 
-		<%= simple_format_no_tags @platform.description, {}, :sanitize => false %>
+      <div class="block_body">
+        <%= simple_format_no_tags @platform.description, {}, :sanitize => false %>
 
-		<p>
-			<strong><%= t('app.common.scores') %>:</strong>
-		</p>
-		<% if @platform.platform_scores && !@platform.platform_scores.empty? %>
-			<ul class="standard">
-			<% @platform.platform_scores.ordered.each do |score| %>
-				<li>
-					<strong><%= score.indicator_category.name %></strong>
-					<br />
-					<%= "#{score.value} - #{score.indicator.name}"%>
-				</li>
-			<% end %>
-			</ul>
-		<% end %>
+	      <p class="font"><%= "#{t('app.common.scores')}:"%></p>
+	      <% if @platform.platform_scores && !@platform.platform_scores.empty? %>
+		      <ul class="normal">
+		      <% @platform.platform_scores.ordered.each do |score| %>
+			      <li>
+				      <strong><%= score.indicator_category.name %></strong>
+				      <br />
+				      <%= "#{score.value} - #{score.indicator.name}"%>
+			      </li>
+		      <% end %>
+		      </ul>
+	      <% end %>
+      </div>
 
-		<% if params[:format] != "pdf" %>
-			<%= render :partial => 'comments/list', :locals => {:commentable_type => 'platform', :commentable_id => @platform.id} %>
-		  <%= render :partial => 'comments/form', :locals => {:commentable_type => 'platform', :commentable_id => @platform.id} %>
-		<% end %>
+		  <% if params[:format] != "pdf" %>
+			  <%= render :partial => 'comments/list', :locals => {:commentable_type => 'platform', :commentable_id => @platform.id} %>
+		    <%= render :partial => 'comments/form', :locals => {:commentable_type => 'platform', :commentable_id => @platform.id} %>
+		  <% end %>
+
+    </div>
 	</div>
 
 	<% if params[:format] != "pdf" %>
 		<%= render :partial => "category/well" %>
 	<% end %>
 </div>
+
 
 <% if user_signed_in? && can?(:manage, Platform) %>
 <div class="form-actions">

@@ -13,6 +13,11 @@
     <![endif]-->
 
     <%= stylesheet_link_tag "application", :media => "all" %>
+
+		<% if !@load_image_slider.nil? && @load_image_slider %>
+		  <link href="/stylesheets/image_slider.css" type="text/css" rel="stylesheet" />
+		<% end %>
+
     <!--[if IE 6]><%= stylesheet_link_tag 'ie6' %><![endif]-->
     <!--[if IE 7]><%= stylesheet_link_tag 'ie7' %><![endif]-->
 
@@ -29,60 +34,46 @@
 		          <span class="icon-bar"></span>
 		          <span class="icon-bar"></span>
 		        </a>
-	          <%= link_to(t('app.common.app_name'), root_path(:locale => I18n.locale),:class=>"brand font")%>
+	          <%#= link_to(t('app.common.app_name'), root_path(:locale => I18n.locale),:class=>"brand font")%>
+	          <%= link_to image_tag('/assets/header_logo_' + I18n.locale.to_s + '.png'), root_path(:locale => I18n.locale) %>
 		        <div class="container nav-collapse">
-		          <ul class="nav">
-		            <% if @political_parties_nav && !@political_parties_nav.empty? %>
-		            <li class="dropdown">
-		              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-		                    <%= t('app.common.political_party')%>
-		                    <b class="caret"></b>
-		              </a>
-		              <ul class="dropdown-menu">
-		                <% @political_parties_nav.each do |pol| %>
-		                <li><%= link_to pol.name, party_path(pol.permalink)%></li>
-		                <% end %>
-		              </ul>
-		            </li>
-		            <% end %>
-		            <% if @economic_categories_nav && !@economic_categories_nav.empty? %>
-		            <li class="dropdown">
-		              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-		                    <%= t('app.common.economic_category')%>
-		                    <b class="caret"></b>
-		              </a>
-		              <ul class="dropdown-menu">
-		                <% @economic_categories_nav.each do |ec| %>
-		                <li><%= link_to ec.name, category_path(ec.permalink)%></li>
-		                <% end %>
-		              </ul>
-		            </li>
-		            <% end %>
-		            <% if user_signed_in? %>
-				          <li class="dropdown">
-				            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-				                  <%= current_user.email %>
-				                  <b class="caret"></b>
-				            </a>
-				            <ul class="dropdown-menu">
-						          <li>
-					 		         <%= link_to t('.admin'), admin_path %>
-											</li>
-						          <li>
-					 		         <%= link_to t('.sign_out'), destroy_user_session_path, :method => :delete %>
-											</li>
-				            </ul>
-				          </li>
-		            <% end %>
-		          </ul>
+		          <div class="header-right">
+                <ul class="nav">
+									<li>
+										<%= link_to t('app.common.home'), root_path %>
+									</li>
+									<li>
+										<%= link_to t('app.common.about'), about_path %>
+									</li>
+									<li>
+										<%= link_to t('app.common.methodology'), methodology_path %>
+									</li>
+		              <% if user_signed_in? %>
+				            <li class="dropdown">
+				              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				                    <%= current_user.email %><!--
+				                 --><b class="caret"></b>
+				              </a>
+				              <ul class="dropdown-menu">
+						            <li>
+					   		         <%= link_to t('.admin'), admin_path %>
+											  </li>
+						            <li>
+					   		         <%= link_to t('.sign_out'), destroy_user_session_path, :method => :delete %>
+											  </li>
+				              </ul>
+				            </li>
+		              <% end %>
+		            </ul>
 
-		          <ul class="nav pull-right">
-								<% I18n.available_locales.each do |locale| %>
-									<% if locale != I18n.locale %>
-										<li><%= link_to t("app.language.#{locale}"), params.merge(:locale => locale) %></li>
-									<% end %>
-								<% end %>
-		          </ul>
+		            <ul class="nav pull-right">
+								  <% I18n.available_locales.each do |locale| %>
+									  <% if locale != I18n.locale %>
+										  <li><%= link_to t("app.language.#{locale}"), params.merge(:locale => locale) %></li>
+									  <% end %>
+								  <% end %>
+		            </ul>
+		          </div>
 		        </div><!--/.nav-collapse -->
 		      </div>
 		    </div>
@@ -93,6 +84,62 @@
 		    <div class="content">
 		      <div class="row">
 		         <div class="span12">
+								<div class="row">
+				         <div class="span9">
+										<div id="title-dropdowns" class="block clear">
+											<div class="">
+												<h4><%= t('.slogan')%></h4>
+											</div>
+
+											<div class="ds">
+												<div class="">
+													<% if @political_parties_nav && !@political_parties_nav.empty? %>
+														<div class="btn-group">
+															<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+																<%= t('app.common.political_party')%>
+																<span class="caret"></span>
+															</a>
+															<ul class="dropdown-menu">
+																<% @political_parties_nav.each do |pol| %>
+																<li><%= link_to pol.name, party_path(pol.permalink)%></li>
+																<% end %>
+															</ul>
+														</div>
+													<% end %>
+												</div>
+
+												<div class="">
+													<% if @economic_categories_nav && !@economic_categories_nav.empty? %>
+														<div class="btn-group">
+															<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+																<%= t('app.common.economic_category')%>
+																<span class="caret"></span>
+															</a>
+															<ul class="dropdown-menu">
+																<% @economic_categories_nav.each do |ec| %>
+																<li><%= link_to ec.name, category_path(ec.permalink)%></li>
+																<% end %>
+															</ul>
+														</div>
+													<% end %>
+												</div>
+											</div>
+
+										</div>
+									</div>
+									<div class="span3 sidespan">
+
+										<div class="block clear" id="home_search">
+											<form method="get" action="<%= search_path %>">
+												<input type="text" name="q" value="<%= params[:q] if params[:q] %>" placeholder="<%= t('.search') %>" />
+												<input type="image" src="/assets/search.jpg" />
+											</form>
+										</div>
+
+									</div>
+								</div>
+
+
 								<% flash.each do |key, msg| %>
 									<div class="alert <%= flash_translation(key) %> fade in">
 										<a href="#" data-dismiss="alert" class="close">×</a>
@@ -100,6 +147,18 @@
 									</div>
 								<% end %>
 
+									<% if content_for?(:title) %>
+										<div class="page-header">
+										  <div class="block">
+					              <h1>
+													<%= image_tag(yield(:title_image), :style => 'vertical-align: middle;') if content_for?(:title_image) %>
+												  <%= yield(:title) %>
+											  </h1>
+											</div>
+										</div>
+									<% end %>
+<%
+=begin %>
 		            <div class="page-header row">
 									<div class="span9">
 										<% if content_for?(:title) %>
@@ -125,6 +184,8 @@
 										</ul>
 									</div>
 		            </div>
+<%
+=end %>
 
 								<%= yield %>
 		          </div>
@@ -137,19 +198,24 @@
 
 
     <footer class="clear">
-			<div id="left">&nbsp;</div>
+			<div id="left">
+        <ul>
+					<li class="f">
+						<%= link_to(image_tag("fb_share.jpg", :height => "20"),
+									"http://www.facebook.com/share.php?u=#{request.protocol}#{request.host_with_port}#{request.fullpath}",
+									:title => "facebook",	:target => "_blank") %>
+					</li>
+					<li class="t">
+						<%= link_to(image_tag("twitter.jpg", :height => "20"),
+									"https://twitter.com/share", :title => "twitter",
+									:target => "_blank") %>
+					</li>
+				</ul>
+			</div>
 		  <div id="middle">
 				<ul>
 					<li>
-						<%= link_to t('app.common.home'), root_path %>
-					</li>
-					<li class="spacer">|</li>
-					<li>
-						<%= link_to t('app.common.about'), about_path %>
-					</li>
-					<li class="spacer">|</li>
-					<li>
-						<%= link_to t('app.common.methodology'), methodology_path %>
+						<%= link_to t('app.common.sitemap'), sitemap_path %>
 					</li>
 				</ul>
 			</div>
@@ -161,6 +227,9 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag "application" %>
 		<%= use_tinymce_link %>
+		<% if !@load_image_slider.nil? && @load_image_slider %>
+		  <script type="text/javascript" src="/javascripts/image_slider.js"></script>
+		<% end %>
 		<script type="text/javascript">
 			I18n.defaultLocale = "<%= I18n.default_locale %>";
 			I18n.locale = "<%= I18n.locale %>";

@@ -34,4 +34,7 @@ EconomicPlatforms::Application.configure do
 	# small smtp server for dev, http://mailcatcher.me/
   config.action_mailer.delivery_method = :smtp
 	config.action_mailer.smtp_settings = { :address => "127.0.0.1", :port => 1025 }
+
+	# tell paperclip where to find imagemagick
+	Paperclip.options[:command_path] = "/usr/bin/"
 end
