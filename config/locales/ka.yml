@@ -158,6 +158,7 @@ ka:
       sitemap: საიტის რუკა
       logo: ლოგო
       view_source: იხილეთ წყარო
+      download_report: ანგარიშის ჩამოტვირთვა
     msgs:
       does_not_exist: თქვენ ცდილობთ იხილოთ გვერდი, რომელიც არ არსებობს.
       not_authorized: თქვენ არ გაქვთ უფლება იხილოთ ეს გვერდი.
