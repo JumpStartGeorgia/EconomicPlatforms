@@ -4,8 +4,8 @@ set -e
 ##################################
 ##### SET THESE VARIABLES ########
 ##################################
-AS_USER=ecplatform # name of user on server
-APP_ROOT=/home/ecplatform/Economic-Platforms/current # path to application current folder
+AS_USER=eprc # name of user on server
+APP_ROOT=/home/eprc/Economic-Platforms/current # path to application current folder
 # update the name of the enviroment at '-E _____' to production, staging, etc
 CMD="cd $APP_ROOT; bundle exec unicorn -D -c $APP_ROOT/config/deploy/production/unicorn.rb -E production"
 ##################################
