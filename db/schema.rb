@@ -11,13 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121030125850) do
+ActiveRecord::Schema.define(:version => 20131001140427) do
 
   create_table "activities", :force => true do |t|
     t.date     "date"
     t.string   "video"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "election_id"
   end
 
   create_table "activity_images", :force => true do |t|
@@ -77,6 +78,23 @@ ActiveRecord::Schema.define(:version => 20121030125850) do
   add_index "economic_category_translations", ["locale"], :name => "index_economic_category_translations_on_locale"
   add_index "economic_category_translations", ["name"], :name => "index_economic_category_translations_on_name"
   add_index "economic_category_translations", ["permalink"], :name => "index_economic_category_translations_on_permalink"
+
+  create_table "election_translations", :force => true do |t|
+    t.integer  "election_id"
+    t.string   "locale"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "election_translations", ["election_id"], :name => "index_election_translations_on_election_id"
+  add_index "election_translations", ["locale"], :name => "index_election_translations_on_locale"
+
+  create_table "elections", :force => true do |t|
+    t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "indicator_categories", :force => true do |t|
     t.datetime "created_at"
@@ -188,6 +206,7 @@ ActiveRecord::Schema.define(:version => 20121030125850) do
     t.datetime "updated_at"
     t.boolean  "is_public",            :default => false
     t.string   "vote"
+    t.integer  "election_id"
   end
 
   add_index "platforms", ["is_public"], :name => "index_platforms_on_is_public"
@@ -211,6 +230,7 @@ ActiveRecord::Schema.define(:version => 20121030125850) do
     t.datetime "updated_at"
     t.boolean  "is_public",            :default => false
     t.string   "vote"
+    t.integer  "election_id"
   end
 
   add_index "policy_briefs", ["is_public"], :name => "index_policy_briefs_on_is_public"
@@ -224,6 +244,7 @@ ActiveRecord::Schema.define(:version => 20121030125850) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
+    t.integer  "election_id"
   end
 
   create_table "political_party_translations", :force => true do |t|
@@ -276,6 +297,7 @@ ActiveRecord::Schema.define(:version => 20121030125850) do
     t.datetime "updated_at"
     t.boolean  "is_public",            :default => false
     t.string   "vote"
+    t.integer  "election_id"
   end
 
   add_index "statements", ["date_made"], :name => "index_statements_on_date_made"
