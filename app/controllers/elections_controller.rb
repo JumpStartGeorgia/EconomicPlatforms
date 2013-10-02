@@ -42,6 +42,8 @@ class ElectionsController < ApplicationController
 			@election.election_translations.build(:locale => locale)
 		end
 
+    gon.edit_election = true
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @election }
@@ -51,6 +53,9 @@ class ElectionsController < ApplicationController
   # GET /elections/1/edit
   def edit
     @election = Election.find(params[:id])
+
+    gon.edit_election = true
+		@election.date = @election.date.strftime('%d.%m.%Y') if !@election.date.nil?
   end
 
   # POST /elections
