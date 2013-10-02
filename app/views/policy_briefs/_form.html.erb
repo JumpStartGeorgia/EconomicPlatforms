@@ -5,6 +5,7 @@
 	<%= f.inputs do %>
 		<%= f.input :political_party %>
 		<%= f.input :economic_category %>
+	  <%= f.input :election_id, :as => :select, :collection => Election.all, :include_blank => false %>
 	<% end %>
 
   <% @policy_brief.policy_brief_translations.sort{|x,y| x.locale <=> y.locale}.each do |trans| %>

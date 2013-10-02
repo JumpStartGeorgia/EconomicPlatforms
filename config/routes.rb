@@ -24,6 +24,7 @@ EconomicPlatforms::Application.routes.draw do
     resources :statements
     resources :activities
 	  resources :activity_images
+    resources :elections
 
 		# party profile
 		match '/party/:political_party_id', :to => 'party#index', :as => :party

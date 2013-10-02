@@ -3,12 +3,13 @@ class PolicyBrief < ActiveRecord::Base
   translates :analysis
   belongs_to :political_party
   belongs_to :economic_category
+  belongs_to :election
   has_many :policy_brief_translations, :dependent => :destroy
   accepts_nested_attributes_for :policy_brief_translations
   attr_accessible :political_party_id, :economic_category_id, :is_public,
-		:policy_brief_translations_attributes
+		:policy_brief_translations_attributes, :election_id
 
-  validates :political_party_id, :economic_category_id, :presence => true
+  validates :political_party_id, :economic_category_id, :election_id, :presence => true
 	validates :economic_category_id, :uniqueness => {:scope => :political_party_id,
 			:message => I18n.t('app.msgs.policy_already_exists')}
 

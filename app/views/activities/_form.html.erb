@@ -17,6 +17,7 @@
 	<% end %>
 
 	<%= f.inputs do %>
+	  <%= f.input :election_id, :as => :select, :collection => Election.all, :include_blank => false %>
 		<%= f.input :date, :as => :string, :input_html => {:size => 20}  %>
 		<%= f.input :video %>
 	<% end %>

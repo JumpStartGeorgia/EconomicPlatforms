@@ -1,0 +1,29 @@
+<% title @election.name %>
+
+
+<div class="row">
+	<div class="span9 clear">
+	  <div class="block clear">
+		  <h3><%= l @election.date, :format => :long if @election.date %></h3>
+      </div>
+	</div>
+</div>
+
+<% if user_signed_in? && can?(:manage, Election) %>
+<div class="form-actions">
+  <%= link_to t('app.buttons.list'),
+              elections_path, :class => 'btn'  %>
+	<%= link_to t('app.buttons.new'),
+		          new_election_path,
+		          :class => 'btn btn-primary' %>
+  <%= link_to t('app.buttons.edit'),
+              edit_election_path(@election), :class => 'btn' %>
+  <%= link_to t('app.buttons.delete'),
+              statement_path(@statement),
+              :method => 'delete',
+              :confirm => t('app.buttons.confirm'),
+              :class => 'btn btn-danger' %>
+  <%= link_to t('app.buttons.admin'), admin_path,
+  :class => 'btn' %>
+</div>
+<% end %>

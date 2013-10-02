@@ -3,18 +3,19 @@ class Statement < ActiveRecord::Base
   translates :statement_made, :source, :author, :analysis
   belongs_to :political_party
   belongs_to :economic_category
+  belongs_to :election
   has_many :statement_scores, :dependent => :destroy
   has_many :statement_translations, :dependent => :destroy
   accepts_nested_attributes_for :statement_translations
   accepts_nested_attributes_for :statement_scores
   attr_accessible :date_made, :political_party_id, :economic_category_id, :is_public,
-		:statement_translations_attributes, :statement_scores_attributes
+		:statement_translations_attributes, :statement_scores_attributes, :election_id
 
   acts_as_commentable
   require 'split_votes'
   include SplitVotes
 
-  validates :date_made, :political_party_id, :economic_category_id, :presence => true
+  validates :date_made, :election_id, :political_party_id, :economic_category_id, :presence => true
 
 	default_scope lambda {with_translations(I18n.locale).order("statements.date_made desc")}
   scope :published, where("is_public = '1'")

@@ -6,6 +6,7 @@
 		<%= f.input :date_made, :as => :string, :input_html => {:size => 20} %>
 		<%= f.input :political_party %>
 		<%= f.input :economic_category %>
+	  <%= f.input :election_id, :as => :select, :collection => Election.all, :include_blank => false %>
 	<% end %>
 
   <% @statement.statement_translations.sort{|x,y| x.locale <=> y.locale}.each do |trans| %>

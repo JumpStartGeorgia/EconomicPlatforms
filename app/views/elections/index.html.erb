@@ -1,0 +1,35 @@
+<% title t('.title') %>
+
+<table class="table table-striped">
+  <thead>
+		<tr>
+      <th><%= t('app.common.title') %></th>
+      <th><%= t('app.common.date') %></th>
+      <th><%= t('app.common.actions') %></th>
+		</tr>
+  </thead>
+  <tbody>
+	<% @elections.each do |election| %>
+		<tr>
+		  <td><%= link_to election.name, election %></td>
+		  <td><%= l election.date, :format => :long if election.date %></td>
+		  <td>
+				<%= link_to t('app.buttons.edit'), edit_election_path(election), :class => 'btn btn-mini' %>
+        <%= link_to t('app.buttons.delete'),
+                    election,
+                    :method => :delete,
+                    :confirm => t('app.buttons.confirm'),
+                    :class => 'btn btn-mini btn-danger' %>
+			</td>
+		</tr>
+	<% end %>
+  </tbody>
+</table>
+
+<div class="form-actions">
+<%= link_to t('app.buttons.new'),
+            new_election_path,
+            :class => 'btn btn-primary' %>
+<%= link_to t('app.buttons.admin'), admin_path,
+:class => 'btn' %>
+</div>
