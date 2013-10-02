@@ -70,6 +70,9 @@ ka:
     language:
       en: English
       ka: ქართული
+      am: Հայերեն
+      ru: Русский
+      az: Azərbaycan
     scales:
       indicator_category_id_1:
         top: სწორი
