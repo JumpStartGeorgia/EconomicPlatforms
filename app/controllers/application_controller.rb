@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 	before_filter :set_locale
 	before_filter :is_browser_supported?
 	before_filter :initialize_gon
+	before_filter :set_elections
 	before_filter :set_political_parties
 	before_filter :set_economic_categories
 
@@ -67,8 +68,12 @@ logger.debug "////////////////////////// BROWSER NOT SUPPORTED"
 		admin_path
 	end
 
+  def set_elections
+    @elections_nav = Election.with_translations(I18n.locale)
+  end
+
   def set_political_parties
-    @political_parties_nav = PoliticalParty.with_translations(I18n.locale)
+    @political_parties_nav = (params[:election].nil? ? @elections_nav.first : Election.find(params[:election])).political_parties.with_translations(I18n.locale)
   end
 
   def set_economic_categories

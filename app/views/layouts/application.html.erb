@@ -96,6 +96,22 @@
 
 											<div class="ds">
 												<div class="">
+													<% if @elections_nav && !@elections_nav.empty? %>
+														<div class="btn-group">
+															<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+																<%= t('app.common.election')%>
+																<span class="caret"></span>
+															</a>
+															<ul class="dropdown-menu">
+																<% @elections_nav.each do |el| %>
+																<li><%= link_to el.name, url_for(:election => el.id)%></li>
+																<% end %>
+															</ul>
+														</div>
+													<% end %>
+												</div>
+
+												<div class="">
 													<% if @political_parties_nav && !@political_parties_nav.empty? %>
 														<div class="btn-group">
 															<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
