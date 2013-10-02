@@ -35,7 +35,7 @@
 		          <span class="icon-bar"></span>
 		        </a>
 	          <%#= link_to(t('app.common.app_name'), root_path(:locale => I18n.locale),:class=>"brand font")%>
-	          <%= link_to image_tag('/assets/header_logo_' + I18n.locale.to_s + '.png'), root_path(:locale => I18n.locale) %>
+	          <%= link_to image_tag('/assets/header_logo_' + I18n.locale.to_s + '.png', :alt => t('app.common.app_name')), root_path(:locale => I18n.locale) %>
 		        <div class="container nav-collapse">
 		          <div class="header-right">
                 <ul class="nav">
