@@ -26,6 +26,9 @@ EconomicPlatforms::Application.routes.draw do
 	  resources :activity_images
     resources :elections
 
+    # political parties of an election
+    match '/elections/political_parties/:id', :to => 'elections#political_parties', :as => 'election_political_parties' 
+
 		# party profile
 		match '/party/:political_party_id', :to => 'party#index', :as => :party
 		match '/party/:political_party_id/platform/:economic_category_id', :to => 'party#platform', :as => :party_platform

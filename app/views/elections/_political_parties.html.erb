@@ -1,0 +1,4 @@
+  <option></option>
+<% @political_parties.each do |pp| %>
+  <option value="<%= pp.id.to_s %>"><%= pp.name %></option>
+<% end %>
