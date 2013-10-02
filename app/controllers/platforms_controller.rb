@@ -40,6 +40,8 @@ class PlatformsController < ApplicationController
 			@platform.platform_translations.build(:locale => locale)
 		end
 
+    gon.election_political_parties_path = election_political_parties_path(:id => 999)
+
     # create the score object for however many categories there are
     # so the form will properly create all of the nested form fields
     @indicator_categories.each do |cat|
@@ -56,6 +58,8 @@ class PlatformsController < ApplicationController
   def edit
     @platform = Platform.find(params[:id])
     @indicator_categories = IndicatorCategory.with_indicators
+
+    gon.election_political_parties_path = election_political_parties_path(:id => 999)
   end
 
   # POST /platforms

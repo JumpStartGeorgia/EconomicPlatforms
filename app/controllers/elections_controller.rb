@@ -101,4 +101,19 @@ class ElectionsController < ApplicationController
       format.json { head :ok }
     end
   end
+
+
+
+
+
+
+  def political_parties
+    @political_parties = Election.find(params[:id]).political_parties#.map{|x| {:id => x.id, :name => x.name} }
+
+    respond_to do |format|
+      format.html { render partial: 'political_parties' }
+    end
+  end
+
+
 end

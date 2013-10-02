@@ -40,6 +40,8 @@ class PolicyBriefsController < ApplicationController
 			@policy_brief.policy_brief_translations.build(:locale => locale)
 		end
 
+    gon.election_political_parties_path = election_political_parties_path(:id => 999)
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @policy_brief }
@@ -50,6 +52,8 @@ class PolicyBriefsController < ApplicationController
   def edit
     @policy_brief = PolicyBrief.find(params[:id])
     @indicator_categories = IndicatorCategory.with_indicators
+
+    gon.election_political_parties_path = election_political_parties_path(:id => 999)
   end
 
   # POST /policy_briefs

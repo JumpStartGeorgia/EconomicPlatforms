@@ -1,6 +1,10 @@
 <%= semantic_nested_form_for @activity, :html => { :multipart => true } do |f| %>
 	<%= f.error_messages %>
 
+	<%= f.inputs do %>
+	  <%= f.input :election_id, :as => :select, :collection => Election.all, :include_blank => false %>
+	<% end %>
+
 
   <% @activity.activity_translations.sort{|x,y| x.locale <=> y.locale}.each do |trans| %>
 		<%= f.fields_for :activity_translations, trans do |translation| %>
@@ -17,7 +21,6 @@
 	<% end %>
 
 	<%= f.inputs do %>
-	  <%= f.input :election_id, :as => :select, :collection => Election.all, :include_blank => false %>
 		<%= f.input :date, :as => :string, :input_html => {:size => 20}  %>
 		<%= f.input :video %>
 	<% end %>

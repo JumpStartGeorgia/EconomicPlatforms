@@ -53,6 +53,8 @@ class StatementsController < ApplicationController
 		# have to format dates this way so js datetime picker read them properly
 		gon.edit_statement = true
 
+    gon.election_political_parties_path = election_political_parties_path(:id => 999)
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @statement }
@@ -67,6 +69,8 @@ class StatementsController < ApplicationController
 		# have to format dates this way so js datetime picker read them properly
 		gon.edit_statement = true
 		gon.date_made = @statement.date_made.strftime('%m/%d/%Y') if !@statement.date_made.nil?
+
+    gon.election_political_parties_path = election_political_parties_path(:id => 999)
   end
 
   # POST /statements
