@@ -279,6 +279,15 @@ az:
       title: ახალი პოლიტიკური პარტია
     show:
       title: პოლიტიკური პარტია დეტალები
+  elections:
+    edit:
+      title: არჩევნების რედაქტირება
+    index:
+      title: არჩევნები
+    new:
+      title: ახალი არჩევნები
+    show:
+      title: არჩევნების დეტალები
   admin:
     index:
       title: ადმინისტრატორის განყოფილება
@@ -296,6 +305,7 @@ az:
       indicators: ინიდიკატორები
       pages: გვერდი
       activities: სიახლეები
+      elections: არჩევნები
     users:
       edit:
         title: ცვლილებების შეტანა მომხმარებლის გვერდზე
