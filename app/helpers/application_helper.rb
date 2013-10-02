@@ -17,9 +17,9 @@ logger.debug "**************************sub_title = '#{page_title}'"
 
 	def page_title
 		if content_for?(:title) && content_for?(:sub_title)
-			"#{content_for(:title)} - #{content_for(:sub_title)} > #{t('app.common.app_name')}"
+			"#{content_for(:title)} - #{content_for(:sub_title)} | #{t('app.common.app_name')}"
 		elsif content_for?(:title)
-			"#{content_for(:title)} > #{t('app.common.app_name')}"
+			"#{content_for(:title)} | #{t('app.common.app_name')}"
 		else
 			t('app.common.app_name')
 		end
