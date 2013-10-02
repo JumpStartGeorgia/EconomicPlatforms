@@ -91,6 +91,23 @@ logger.debug "////////////////////////// BROWSER NOT SUPPORTED"
 	  s.gsub(/[^0-9A-Za-z ]/,'').split.join('_')
 	end
 
+  
+  # add in required content for translations if none provided
+  # - only do this if default locale trans record has data
+  def add_missing_translation_content(ary_trans)
+    if ary_trans.present?
+      default_trans = ary_trans.select{|x| x.locale == I18n.default_locale.to_s}.first
+      if default_trans.present? && default_trans.required_data_provided?
+        ary_trans.each do |trans|
+          if trans.locale != I18n.default_locale.to_s && !trans.required_data_provided?
+            # add required content from default locale trans
+            trans.add_required_data(default_trans)
+          end
+        end
+      end
+    end
+  end
+
   #######################
 	def render_not_found(exception)
 		ExceptionNotifier::Notifier

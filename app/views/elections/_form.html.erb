@@ -2,7 +2,7 @@
 	<%= f.error_messages %>
 
 
-  <% @election.election_translations.sort{|x,y| x.locale <=> y.locale}.each do |trans| %>
+  <% create_sorted_translation_objects(@election.election_translations).each do |trans| %>
 		<%= f.fields_for :election_translations, trans do |translation| %>
 
 			<div id="form-<%= trans.locale %>" class="multilanguage">

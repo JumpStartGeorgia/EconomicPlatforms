@@ -39,7 +39,7 @@ class ElectionsController < ApplicationController
     # create the translation object for however many locales there are
     # so the form will properly create all of the nested form fields
     I18n.available_locales.each do |locale|
-			@election.election_translations.build(:locale => locale)
+			@election.election_translations.build(:locale => locale.to_s)
 		end
 
     gon.edit_election = true
@@ -63,6 +63,8 @@ class ElectionsController < ApplicationController
   def create
     @election = Election.new(params[:election])
 
+    add_missing_translation_content(@election.election_translations)
+    
     respond_to do |format|
       if @election.save
         format.html { redirect_to @election, notice: t('app.msgs.success_created', :obj => t('app.common.election')) }
@@ -79,8 +81,12 @@ class ElectionsController < ApplicationController
   def update
     @election = Election.find(params[:id])
 
+    @election.assign_attributes(params[:election])
+
+    add_missing_translation_content(@election.election_translations)
+    
     respond_to do |format|
-      if @election.update_attributes(params[:election])
+      if @election.save
         format.html { redirect_to @election, notice: t('app.msgs.success_updated', :obj => t('app.common.election')) }
         format.json { head :ok }
       else

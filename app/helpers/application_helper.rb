@@ -94,6 +94,24 @@ logger.debug "**************************sub_title = '#{page_title}'"
 		end
 
 	end
+	
+	# put the default locale first and then sort the remaining alpha
+	def create_sorted_translation_objects(trans)
+	  if trans.present?
+      # pull out default locale
+      default = trans.select{|x| x.locale == I18n.default_locale.to_s}.first
+      if default.present?
+        trans.delete(default)
+      end
+
+      # now sort the left over
+      trans.sort!{|x,y| x.locale <=> y.locale}
+      
+      # add default back in
+      trans.insert(0, default)      
+	  end
+	end
+	
 
 	# Based on https://gist.github.com/1182136
   class BootstrapLinkRenderer < ::WillPaginate::ActionView::LinkRenderer
