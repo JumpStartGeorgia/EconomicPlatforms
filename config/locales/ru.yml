@@ -1,72 +1,71 @@
-# encoding: utf-8
-en:
+﻿# encoding: utf-8
+ru:
   activerecord:
     models:
-      statement: Statement
-      user: User
-      economic_category: Economic Category
-      indicator_category: Indicator Category
-      indicator: Indicator
-      platform: Platform
-      policy_brief: Policy Brief
-      political_party: Political Party
-      page: Page
-      activity: News
+      statement: განცხადება
+      user: მომხმარებელი
+      economic_category: ეკონომიკური კატეგორია
+      indicator_category: ინდიკატორის კატეგორია
+      indicator: ინდიკატორი
+      platform: პარტიის პლატფორმა
+      policy_brief: ექსპერტული შეფასება
+      political_party: პოლიტიკური პარტია
+      page: გვერდი
+      activity: სიახლე
     attributes:
       activity:
-        date: Date
-        video: YouTube Video Link
+        date: თარიღი
+        video: YouTube ვიდეო ლინკი
       activity_translation:
-        title: Title
-        body: Text
+        title: სათაური
+        body: ტექსტი
       statement:
-        date_made: Date Made
-        political_party: Political Party
-        economic_category: Economic Category
-        is_public: Make Visible to World
+        date_made: შექმნის თარიღი
+        political_party: პოლიტიკური პარტია
+        economic_category: ეკონომიკური კატეგორია
+        is_public: ხილული მსოფლიოსათვის
       statement_translation:
-        source: Source of Statement
-        author: Statement Author
-        statement_made: Statement Made
-        analysis: Analysis
+        source: განცხადების წყარო
+        author: განცხადების ავტორი
+        statement_made: გაკეთებული განცადება
+        analysis: ანალიზი
       user:
-        email: Email Address
-        password: Password
-        password_confirmation: Password Confirmation
-        role: Role
-        remember_me: Remeber Me
+        email: ელ.ფოსტა
+        password: პაროლი
+        password_confirmation: გაიმეორეთ პაროლი
+        role: როლი
+        remember_me: დამიმახსოვრე
       economic_category_translation:
-        name: Name
+        name: სახელი
       indicator_category_translation:
-        name: Name
+        name: სახელი
       indicator:
-        indicator_category: Indicator Category
-        value: Value
+        indicator_category:
+        value: შეფასება
       indicator_translation:
-        name: Name
+        name: სახელი
       platform:
-        political_party: Political Party
-        economic_category: Economic Category
-        is_public: Make Visible to World
+        political_party: პოლიტიკური პარტია
+        economic_category: ეკონომიკური კატეგორია
+        is_public: ხილული მსოფლიოსათვის
       platform_translation:
-        description: Description
+        description: აღწერა
       policy_brief:
-        political_party: Political Party
-        economic_category: Economic Category
-        is_public: Make Visible to World
+        political_party: პოლიტიკური პარტია
+        economic_category: ეკონომიკური კატეგორია
+        is_public: ხილული მსოფლიოსათვის
       policy_brief_translation:
-        analysis: Analysis
+        analysis: ანალიზი
       political_party:
-        color: Color
-        logo: Logo
+        color: ფერი
+        logo: ლოგო
       political_party_translation:
-        name: Name
+        name: სახელი
       page:
-        name: Name
+        name: სახელი
       page_translation:
-        title: Title
-        description: Description
-
+        title: სათაური
+        description: აღწერა
   app:
     language:
       en: English
@@ -76,209 +75,210 @@ en:
       az: Azərbaycan
     scales:
       indicator_category_id_1:
-        top: Correct
-        middle: Center
-        bottom: Wrong
+        top: სწორი
+        middle: ცენტრისტული
+        bottom: არასწორი
       indicator_category_id_2:
-        top: Consistent
-        middle: Center
-        bottom: Self-Contradictory
+        top: თანმიმდერვრული
+        middle: ცენტრისტული
+        bottom: ურთიერთგამომრიცხავი
       indicator_category_id_3:
-        top: Justified
-        middle: Center
-        bottom: Not Justified
+        top: გამართლებული
+        middle: ცენტრისტული
+        bottom: არ არის გამართლებული
       indicator_category_id_4:
-        top: Feasible
-        middle: Center
-        bottom: Not Possible
+        top: განხორციელებადი
+        middle: ცენტრისტული
+        bottom: შეუძლებელი
       indicator_category_id_5:
-        top: Left
-        middle: Center
-        bottom: Right
+        top: მემარცხენე
+        middle: ცენტრისტული
+        bottom: მემარჯვენე
     buttons:
-      back: Back
-      list: View All
-      admin: Admin Section
-      delete: Delete
-      edit: Edit
-      show: Show
-      cancel: Cancel
-      update: Update
-      save: Save
-      create: Create
-      reset: Reset
-      remove: Remove
-      confirm: Are you sure?
-      new: New
-      update_statements: Update Statements
+      back: უკან
+      list: იხილეთ სრულად
+      admin: ადმინისტრატორის განყოფილება
+      delete: წაშლა
+      edit: შეცვლა
+      show: ჩვენება
+      cancel: გაუქმება
+      update: განახლება
+      save: შენახვა
+      create: შექმნა
+      reset: საწყის კონფიგურაციაზე დაბრუნება
+      remove: მოშორება
+      confirm: დარწმუნებული ხართ?
+      new: ახალი
+      update_statements: განცხადებების განახლება
     common:
-      app_name: Georgia Economic Platform
-      name: Name
-      title: Title
-      description: Description
-      date_made: Date Made
-      political_party: Political Party
-      political_parties: Political Parties
-      economic_category: Economic Category
-      statement: Statement
-      statements: Statements
-      activities: News
-      activity: Activity
-      indicator: Indicator
-      indicator_category: Indicator Category
-      user: User
-      source: Source
-      author: Stated By
-      scores: Scores
-      email: Email
-      role: Role
-      new_password: New Password
-      platform: Party Platform
-      policy_brief: Policy Brief
-      policy_briefs: Policy Briefs
-      date: Date
-      files: Supporting Files
-      images: Attached Images
-      color: Color
-      legend: Legend
-      indicator_scales: Scale of Indicators
-      sign_in: Sign In
-      analysis: Analysis
-      actions: Actions
-      value: Value
-      page: Page
-      about: About
-      home: Home
-      methodology: Methodology
+      app_name: "პოლიტიკური პარტიების: სოციალურ-ეკონომიკური პროგრამები"
+      name: სახელი
+      title: სათაური
+      description: აღწერა
+      date_made: შექმნის თარიღი
+      political_party: პოლიტიკური პარტია
+      political_parties: პოლიტიკური პარტიები
+      economic_category: ეკონომიკური კატეგორია
+      statement: განცხადება
+      statements: განცხადებები
+      activities: სიახლეები
+      activity: სიახლეები
+      indicator: ინდიკატორი
+      indicator_category: ინდიკატორის კატეგორია
+      user: მომხმარებელი
+      source: წყარო
+      author: განმცხადებელი
+      scores: ქულები
+      email: ელ.ფოსტა
+      role: როლი
+      new_password: ახალი პაროლი
+      platform: პარტიის პლატფორმა
+      policy_brief: ექსპერტული შეფასება
+      policy_briefs: ექსპერტული შეფასებები
+      date: თარიღი
+      files: დამხმარე ფაილები
+      images: სურათები
+      color: ფერი
+      legend: ლეგენდა
+      indicator_scales: ინდიკატორის სკალა
+      sign_in: შესვლა
+      analysis: ანალიზი
+      actions: აირჩიეთ
+      value: შეფასება
+      page: გვერდი
+      about: შესახებ
+      home: მთავარი
+      methodology: მეთოდოლოგია
       disclaimer: Disclaimer
-      is_public: Is Visible to World
-      party_statements: "%{party} Statements"
-      party_platform: "%{party} Platform"
-      category_statements: "%{category} Statements"
-      all_party_platform_avg: All Political Parties Platform Average
-      time: Time
-      comments: Comments
-      view_full: view full
-      sitemap: Site Map
-      logo: Logo
-      view_source: View Source
-      download_report: Download Report
+      is_public: ხილული მსოფლიოსათვის
+      party_statements: "%{party} განცხადებების"
+      party_platform: "%{party} პარტიის პლატფორმა"
+      category_statements: "%{category} განცხადებების"
+      all_party_platform_avg: პოლიტიკური პარტიების პროგრამის საშუალო
+      time: დრო
+      comments: კომენტარები
+      view_full: ვრცლად
+      sitemap: საიტის რუკა
+      logo: ლოგო
+      view_source: იხილეთ წყარო
+      download_report: ანგარიშის ჩამოტვირთვა
     msgs:
-      does_not_exist: You tried to access a page that does not exist.
-      not_authorized: You are not authorized to view that page.
-      permalink_exists: already exists in the database
-      success_created: "%{obj} was successfully created."
-      success_updated: "%{obj} was successfully updated."
-      policy_already_exists: already exists in the database
-      platform_already_exists: already exists in the database
-      statement_chart_instructions: Select a category and an indicator to visualize how the party’s statements over time compare to their official party stance and the overall stance of all the parties.
+      does_not_exist: თქვენ ცდილობთ იხილოთ გვერდი, რომელიც არ არსებობს.
+      not_authorized: თქვენ არ გაქვთ უფლება იხილოთ ეს გვერდი.
+      permalink_exists: უკვე არსებობს მონაცემთა ბაზაში
+      success_created: "%{obj} შექმნილია."
+      success_updated: "%{obj} განახლებულია."
+      policy_already_exists: უკვე არსებობს მონაცემთა ბაზაში
+      platform_already_exists: უკვე არსებობს მონაცემთა ბაზაში
+      statement_chart_instructions: აირჩიეთ კატეგორია და ინდიკატორი, რათა უკეთ დაინახოთ ერთი პარტიის ოფოციალური პოზიცია და შეადაროთ დანარჩენ სხვა პარტიებს.
   layouts:
     application:
-      admin: Admin
-      sign_out: Sign Out
-      js_link_title: "Visit JumpStart Georgia's website"
-      js_link_text: Built by
-      search: Search
-      slogan: What does your party promise?
+      admin: ადმინისტრატორი
+      sign_out: გასვლა
+      js_link_title: "ეწვიეთ ჯამპსტარტ ჯორჯიას ვებ-გვერდს"
+      js_link_text: აგებულია
+      search: ძიება
+      slogan: რას გპირდებიან პარტიები?
     unsupported_browser:
-      title: Unsupported Browser
-      p1: We are sorry to report that your browser is out of date and will not properly render the content from this website.
-      p2: On the bright side, there are several free browsers that you can download that are compatible with this site.
+      title: არასათანადო ბრაუზერი
+      p1: სამწუხაროდ თქვენი ინტერნეტ ბრაუზერის მოხმარების ვადა გასულია და ვერ მოხდება ვებ-გვერდთან სრულად დაკავშირება.
+      p2: არსებობს რამდენიმე უფასო ბრაუზერი რომელის გადმოწერის შემდეგ შეძლებთ ვებ-გვერდით სარგებლობას.
       chrome: Chrome
       firefox: Firefox
-      ie: Internet Explorer (Windows only)
+      ie: Internet Explorer (მხოლოდ Windows-ზე)
       opera: Opera
       Safari: Safari
-      admin: Admin
-      sign_out: Sign Out
-      js_link_title: "Visit JumpStart Georgia's website"
-      js_link_text: Built by
+      admin: ადმინისტრატორი
+      sign_out: გასვლა
+      js_link_title: "ეწვიეთ ჯამპსტარტ ჯორჯიას ვებ-გვერდს"
+      js_link_text: აგებულია
   root:
     index:
-      welcome: "Welcome to the Economic Policy Fact Checker! Explore the economic policies of Georgian political parties over time by viewing party platforms, party statements, and our in-depth analysis."
-      welcome_link: "Click here to learn more."
-      no_values: No political party information has been entered into the application at this time.
-      latest_statements_header: Latest Statements
-      about_header: About
-      chart_title: Political Party Ideologies
-      chart_text: View Political Party Ideologies for Each Economic Category
+      title1:
+      welcome: "კეთილი იყოს თქვენი მობრძანება ეკონომიკური პოლიტიკის ფაქტების შემმოწმებელში! იხილეთ პოლიტიკური პარტიის პლატფორმები, განცხადებები და ასევე ჩვენი ღრმა ანალიზი, რათა უკეთ აღმოაჩინოთ საქართველოს პოლიტიკური პარტიების ეკონომიკური პოლიტიკა."
+      welcome_link: "გაიგეთ მეტი, დააჭირეთ აქ."
+      no_values: აპლიკაციაში პოლიტიკურ პარტიაზე ინფორმაცია ამ დროისთვის შეყვანილი არ არის.
+      latest_statements_header: უახლესი განცხადებები
+      about_header: შესახებ
+      chart_title: პოლიტიკური პარტიების იდეოლოგიები
+      chart_text: დააკლიკეთ  და იხილეთ, პოლიტიკური პარტიების იდეოლოგიების გრაფიკები
     about:
-      title: About
+      title: შესახებ
     methodology:
-      title: Methodology
+      title: მეთოდოლოგია
     disclaimer:
       title: Disclaimer
     charts:
-      title: Political Party Ideologies
-      left: "The party's position on the stated issue, according to its platform is best described as extremely socialist/communis"
-      center: "The party's position on the stated issue, according to its platform is best described as Western European “social-democracy”"
-      right: "The party's position on the stated issue, according to its platform is best described as extreme libertarian (the state should guarantee property rights, law and order but should not in any way engage in economic regulation or income redistribution such as support of the poor, unemployed or disabled)"
+      title: პოლიტიკური პარტიების იდეოლოგიები
+      left: "პარტიის პოზიცია მითითებულ საკითხზე, მისი პლათფორმის მიხედვით ხასიათდება,როგორც უკიდურესად სოციალისტური/კომუნისტური"
+      center: "პარტიის პოზიცია მითითებულ საკითხზე ,მისი პლათფორმის მიხედვით  ხასიათდება, როგორც დასავლურ-ევროპული სოციალურ-დემოკრატიული"
+      right: "პარტიის პოზიცია მითითებულ საკითხზე, მისი პლათფორმის მიხედვით ხასითდება, როგორც ექსტრემალურად ლიბეტარიანული სახელმწიფომ უნდა უზრუნველყოს საკუთრების უფლების დაცვა, კანონი და წესრიგი, მაგრამ არ უნდა არეგულირებდეს ეკონომიკას და სახელმწიფო არ უნდა ერეოდეს შემოსავლების გადანაწილებაში, როგორიცაა მაგალითად ღარიბთა ან უმუშევართა დახმარება)"
     search:
-      title: Search
+      title: ძიება
     sitemap:
-      title: Site Map
-      other_header: Other
+      title: საიტის რუკა
+      other_header: სხვა
   economic_categories:
     edit:
-      title: Editing Economic Category
+      title: ცვლილებების შეტანა ეკონომიკურ კატეგორიაში
     index:
-      title: Economic Categories
+      title: ეკონომიკური კატეგორიები
     new:
-      title: New Economic Category
+      title: ახალი ეკონომიკური კატეგორია
     show:
-      title: Economic Category Details
+      title: ეკონომიკური კატეგორია დეტალები
   indicator_categories:
     edit:
-      title: Editing Indicator Category
+      title: ცვლილებების შეტანა ინდიკატორების კატეგორიაში
     index:
-      title: Indicator Categoies
+      title: ინდიკატორების კატეგორიები
     new:
-      title: New Indicator Category
+      title: ახალი ინდიკატორის კატეგორია
     show:
-      title: Indicator Category Details
+      title: ინდიკატორების კატეგორიები დეტალები
   indicators:
     edit:
-      title: Editing Indicator
+      title: ცვლილებების შეტანა ინდიკატორში
     index:
-      title: Indicators
+      title: ინდიკატორები
     new:
-      title: New Indicator
+      title: ახალი ინდიკატორი
     show:
-      title: Indicator Details
+      title: ინდიკატორი დეტალები
   platforms:
     edit:
-      title: Editing Platform
+      title: ცვლილებების შეტანა პლატფორმაში
     index:
-      title: Platforms
-      no_platforms: "At this time, no platforms have been recorded"
+      title: პლატფორმები
+      no_platforms: "ამ დროისათვის პლატფორმები არ არის შეყვანილი"
     new:
-      title: New Platform
+      title: ახალი პლატფორმა
     show:
-      title: Platform Details
+      title: დეტალები პლატფორმაზე
     platform_file_fields:
-      remove_link: Remove File
+      remove_link: ფაილის წაშლა
     form:
-      add_file: Add File
+      add_file: ფაილის დამატება
   policy_briefs:
     edit:
-      title: Editing Policy Brief
+      title: ცვლილებების შეტანა პოლიტიკის რეზიუმეში
     index:
-      title: Policy Briefs
-      no_policy_briefs: "At this time, no policy briefs have been recorded"
-      empty: Empty
+      title: ექსპერტული შეფასება
+      no_policy_briefs: "ამ დროისათვის პლატფორმები შეყვანილი არ არის"
+      empty: ცარიელია
     new:
-      title: New Policy Brief
+      title: ახალი ექსპერტული შეფასება
     show:
-      title: Policy Brief Details
+      title: დეტალები პოლიტიკის რეზიუმეზე
   political_parties:
     edit:
-      title: Editing Political Party
+      title: ცვლილებების შეტანა პოლიტიკურ პარტიაში
     index:
-      title: Political Parties
+      title: პოლიტიკური პარტიები
     new:
-      title: New Political Party
+      title: ახალი პოლიტიკური პარტია
     show:
-      title: Political Party Details
+      title: პოლიტიკური პარტია დეტალები
   elections:
     edit:
       title: არჩევნების რედაქტირება
@@ -290,111 +290,115 @@ en:
       title: არჩევნების დეტალები
   admin:
     index:
-      title: Administration Section
-      content_header: Add Content
-      platforms: Platforms
-      policy_briefs: Policy Briefs
-      statements: Statements
-      users_header: Users
-      new_users: Add User
-      view_users: View Users
-      basic_header: Basic
-      political_parties: Political Parties
-      economic_categories: Ecomonic Categories
-      indicator_categories: Indicator Categories
-      indicators: Indicators
-      pages: Pages
-      activities: Activities
+      title: ადმინისტრატორის განყოფილება
+      content_header: შინაარსის დამატება
+      platforms: პლატფორმები
+      policy_briefs: ექსპერტული შეფასება
+      statements: განცხადებების
+      users_header: მომხმარებლები
+      new_users: მომხმარებლის დამატება
+      view_users: მომხმარებლების ნახვა
+      basic_header: ძირითადი
+      political_parties: პოლიტიკური პარტიები
+      economic_categories: ეკონომიკური კატეგორიები
+      indicator_categories: ინდიკატორების კატეგორიები
+      indicators: ინიდიკატორები
+      pages: გვერდი
+      activities: სიახლეები
       elections: არჩევნები
     users:
       edit:
-        title: Editing User
+        title: ცვლილებების შეტანა მომხმარებლის გვერდზე
       index:
-        title: Users
+        title: მომხმარებლები
       new:
-        title: New User
+        title: ახალი მომხმარებელი
       show:
-        title: User Details
+        title: მომხმარებლის დეტალები
   statements:
     edit:
-      title: Editing Statement
+      title: ცვლილებების შეტანა განცხადებაში
     index:
-      title: Statements
-      no_statements: "At this time, no statements have been recorded"
+      title: განცხადებები
+      no_statements: "ამ მომენტისათვის განცხადებები არ ფიქსირდება"
     new:
-      title: New Statement
+      title: ახალი განცხადება
     show:
-      title: Statement Details
+      title: განცხადების დეტალები
   party:
     index:
       title: "%{political_party}"
-      statement_header: "Statements"
-      no_statements: "At this time, no %{economic_category} statements have been recorded for %{political_party}."
-      view_statement: View Full Statement
+      statement_header: "განცხადებები"
+      no_statements: "ამ მომენტისათვის განცხადებები %{economic_category} არ ფიქსირდება %{political_party} - თვის."
+      view_statement: განცადების ნახვა სრულად
     well:
-      pdf_header: Download
+      pdf_header: გადმოწერა
       pdf_link: PDF
-      profile_header: "Profile"
-      view_profile: View Complete Profile
-      platform_header: "Platforms"
-      no_platforms: "At this time, no platforms are on file."
-      policy_brief_header: "Policy Briefs"
-      no_policy_briefs: "At this time, no policy briefs are on file."
+      profile_header: "პროფილი"
+      view_profile: სრული პროფილის ნახვა
+      platform_header: "პლატფორმები"
+      no_platforms: "ამ დროისათვის პლათფორმები ჩაწერილი არ არის."
+      policy_brief_header: "ექსპერტული შეფასება"
+      no_policy_briefs: "ამ დროისათვის რეზიუმეები პოლიტიკაზე შეყვანილი არ არის."
     statement:
       title: "%{political_party}"
-      secondary_title: "Statement - %{date}"
+      secondary_title: "განცხადება - %{date}"
     platform:
       title: "%{political_party}"
-      secondary_title: "Platform - %{economic_category}"
+      secondary_title: "პლათფორმა - %{economic_category}"
     policy_brief:
       title: "%{political_party}"
-      secondary_title: "Policy Brief - %{economic_category}"
+      secondary_title: "ექსპერტული შეფასება - %{economic_category}"
   category:
     index:
       title: "%{economic_category}"
-      statement_header: "Statements"
-      no_statements: "At this time, no statements have been recorded for %{economic_category}."
-      view_statement: View Full Statement
+      statement_header: "განცხადებები"
+      no_statements: "ამ მომენტისათვის განცხადებები არ ფიქსირდება %{economic_category} -ში."
+      view_statement: განცადების ნახვა სრულად
     well:
-      pdf_header: Download
-      pdf_link: PDF
-      profile_header: "Profile"
-      view_profile: View Complete Profile
-      platform_header: "Platforms"
-      no_platforms: "At this time, no platforms are on file."
-      policy_brief_header: "Policy Briefs"
-      no_policy_briefs: "At this time, no policy briefs are on file."
+      pdf_header: გადმოწერა
+      pdf_link: პდფ ფაილი
+      profile_header: "პროფილი"
+      view_profile: სრული პროფილის ნახვა
+      platform_header: "პლატფორმები"
+      no_platforms: "ამ დროისათვის პლატფორმები ჩაწერილი არ არის."
+      policy_brief_header: "ექსპერტული შეფასება"
+      no_policy_briefs: "ამ დროისათვის რეზიუმეები პოლიტიკაზე შეყვანილი არ არის."
     statement:
       title: "%{economic_category}"
-      secondary_title: "Statement - %{date}"
+      secondary_title: "განცხადება - %{date}"
     platform:
       title: "%{economic_category}"
-      secondary_title: "Platform - %{political_party}"
+      secondary_title: "პლათფორმა - %{political_party}"
     policy_brief:
       title: "%{economic_category}"
-      secondary_title: "Policy Brief - %{political_party}"
+      secondary_title: "ექსპერტული შეფასება - %{political_party}"
   pages:
     edit:
-      title: Editing Pages
+      title: გვერდების შეცვლა
     index:
-      title: Pages
-      no_pages: "At this time, no pages have been recorded"
+      title: გვერდები
+      no_pages: მოცემული დროისათვის სიახლე არ მოიძებნება
     new:
-      title: New Page
+      title: ახალი გვერდი
     show:
-      title: Page Details
+      title: გვერდის სრულად ნახვა
+    page_file_fields:
+      remove_link: ფაილის წაშლა
+    form:
+      add_file: ფაილის დამატება
   activities:
     edit:
-      title: Editing News
+      title: რედაქტირება
     index:
-      title: News
-      no_pages: "At this time, no news items have been recorded"
+      title: სიახლეები
+      no_pages: მოცემული დროისათვის სიახლე არ მოიძებნება
     new:
-      title: New News
+      title: ახალი
     show:
-      title: News Details
-      latest_statements_header: Latest Statements
+      title: სიახლეები დეტალურად
+      latest_statements_header: უახლესი განცხადებები
     form:
-      add_file: Add Image
+      add_file: იმიჯის დამატება
     activity_image_fields:
-      remove_link: Remove Image
+      remove_link: იმიჯის წაშლა
