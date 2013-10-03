@@ -34,7 +34,7 @@ class PagesController < ApplicationController
     # create the translation object for however many locales there are
     # so the form will properly create all of the nested form fields
     I18n.available_locales.each do |locale|
-			@page.page_translations.build(:locale => locale)
+			@page.page_translations.build(:locale => locale.to_s)
 		end
 
     respond_to do |format|
@@ -53,6 +53,8 @@ class PagesController < ApplicationController
   def create
     @page = Page.new(params[:page])
 
+    add_missing_translation_content(@page.page_translations)
+
     respond_to do |format|
       if @page.save
         format.html { redirect_to @page, notice: t('app.msgs.success_created', :obj => t('app.common.page')) }
@@ -68,9 +70,13 @@ class PagesController < ApplicationController
   # PUT /pages/1.json
   def update
     @page = Page.find(params[:id])
+    
+    @page.assign_attributes(params[:page])
 
+    add_missing_translation_content(@page.page_translations)
+    
     respond_to do |format|
-      if @page.update_attributes(params[:page])
+      if @page.save
         format.html { redirect_to @page, notice: t('app.msgs.success_updated', :obj => t('app.common.page')) }
         format.json { head :ok }
       else

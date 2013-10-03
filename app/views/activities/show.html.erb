@@ -1,5 +1,23 @@
 <% title @activity.title %>
 
+<% if user_signed_in? && can?(:manage, Activity) %>
+<div class="form-actions">
+  <%= link_to t('app.buttons.list'),
+              activities_path, :class => 'btn'  %>
+	<%= link_to t('app.buttons.new'),
+		          new_activity_path,
+		          :class => 'btn btn-primary' %>
+  <%= link_to t('app.buttons.edit'),
+              edit_activity_path(@activity), :class => 'btn' %>
+  <%= link_to t('app.buttons.delete'),
+              statement_path(@statement),
+              :method => 'delete',
+              :confirm => t('app.buttons.confirm'),
+              :class => 'btn btn-danger' %>
+  <%= link_to t('app.buttons.admin'), admin_path,
+  :class => 'btn' %>
+</div>
+<% end %>
 
 <div class="row">
 	<div class="span9 clear">
@@ -60,21 +78,4 @@
 
 	</div>
 </div>
-<% if user_signed_in? && can?(:manage, Activity) %>
-<div class="form-actions">
-  <%= link_to t('app.buttons.list'),
-              activities_path, :class => 'btn'  %>
-	<%= link_to t('app.buttons.new'),
-		          new_activity_path,
-		          :class => 'btn btn-primary' %>
-  <%= link_to t('app.buttons.edit'),
-              edit_activity_path(@activity), :class => 'btn' %>
-  <%= link_to t('app.buttons.delete'),
-              statement_path(@statement),
-              :method => 'delete',
-              :confirm => t('app.buttons.confirm'),
-              :class => 'btn btn-danger' %>
-  <%= link_to t('app.buttons.admin'), admin_path,
-  :class => 'btn' %>
-</div>
-<% end %>
+

@@ -10,7 +10,7 @@ class StatementsController < ApplicationController
   # GET /statements
   # GET /statements.json
   def index
-    @statements = Statement.paginate(:page => params[:page])
+    @statements = Statement.sorted.paginate(:page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -35,12 +35,12 @@ class StatementsController < ApplicationController
   # GET /statements/new.json
   def new
     @statement = Statement.new
-    @indicator_categories = IndicatorCategory.with_indicators
+    @indicator_categories = IndicatorCategory.with_indicators.sorted
 
     # create the translation object for however many locales there are
     # so the form will properly create all of the nested form fields
     I18n.available_locales.each do |locale|
-			@statement.statement_translations.build(:locale => locale)
+			@statement.statement_translations.build(:locale => locale.to_s)
 		end
 
     # create the score object for however many categories there are
@@ -64,7 +64,7 @@ class StatementsController < ApplicationController
   # GET /statements/1/edit
   def edit
     @statement = Statement.find(params[:id])
-    @indicator_categories = IndicatorCategory.with_indicators
+    @indicator_categories = IndicatorCategory.with_indicators.sorted
 		# turn the datetime picker js on
 		# have to format dates this way so js datetime picker read them properly
 		gon.edit_statement = true
@@ -86,23 +86,9 @@ class StatementsController < ApplicationController
 			end
     end
 
-		# if english is empty, load georgian into it
-    en = params[:statement][:statement_translations_attributes].select{|k,v| v[:locale] == 'en'}
-		ka = params[:statement][:statement_translations_attributes].select{|k,v| v[:locale] == 'ka'}
-		if en[en.keys[0]][:locale] == 'en' && en[en.keys[0]][:source].empty?
-			en[en.keys[0]][:source] = ka[ka.keys[0]][:source] if ka && !ka[ka.keys[0]][:source].empty?
-		end
-		if en[en.keys[0]][:locale] == 'en' && en[en.keys[0]][:author].empty?
-			en[en.keys[0]][:author] = ka[ka.keys[0]][:author] if ka && !ka[ka.keys[0]][:author].empty?
-		end
-		if en[en.keys[0]][:locale] == 'en' && en[en.keys[0]][:statement_made].empty?
-			en[en.keys[0]][:statement_made] = ka[ka.keys[0]][:statement_made] if ka && !ka[ka.keys[0]][:statement_made].empty?
-		end
-		if en[en.keys[0]][:locale] == 'en' && en[en.keys[0]][:analysis].empty?
-			en[en.keys[0]][:analysis] = ka[ka.keys[0]][:analysis] if ka && !ka[ka.keys[0]][:analysis].empty?
-		end
-
     @statement = Statement.new(params[:statement])
+
+    add_missing_translation_content(@statement.statement_translations)
 
     respond_to do |format|
       if @statement.save
@@ -113,7 +99,7 @@ class StatementsController < ApplicationController
     		# have to format dates this way so js datetime picker read them properly
     		gon.edit_statement = true
     		gon.date_made = @statement.date_made.strftime('%m/%d/%Y') if !@statement.date_made.nil?
-        @indicator_categories = IndicatorCategory.with_indicators
+        @indicator_categories = IndicatorCategory.with_indicators.sorted
         format.html { render action: "new" }
         format.json { render json: @statement.errors, status: :unprocessable_entity }
       end
@@ -132,10 +118,15 @@ class StatementsController < ApplicationController
 		    values[:value] = combined[1]
 			end
     end
+
     @statement = Statement.find(params[:id])
 
+    @statement.assign_attributes(params[:statement])
+
+    add_missing_translation_content(@statement.statement_translations)
+    
     respond_to do |format|
-      if @statement.update_attributes(params[:statement])
+      if @statement.save
         format.html { redirect_to @statement, notice: t('app.msgs.success_updated', :obj => t('app.common.statement')) }
         format.json { head :ok }
       else
@@ -143,7 +134,7 @@ class StatementsController < ApplicationController
     		# have to format dates this way so js datetime picker read them properly
     		gon.edit_statement = true
     		gon.date_made = @statement.date_made.strftime('%m/%d/%Y') if !@statement.date_made.nil?
-        @indicator_categories = IndicatorCategory.with_indicators
+        @indicator_categories = IndicatorCategory.with_indicators.sorted
         format.html { render action: "edit" }
         format.json { render json: @statement.errors, status: :unprocessable_entity }
       end

@@ -137,14 +137,14 @@ ol.standard li {
 }
 
 /* multilanguage form styles */
-.multilanguage{
+.multilanguage, .multilanguage_nested{
 	padding: 0.5em;
 	margin-bottom: 0.5em;
 }
-.fields:nth-child(odd) .multilanguage{ 
+.multilanguage:nth-child(odd), .fields:nth-child(odd) .multilanguage_nested{ 
 	background-color:#ddd;
 }
-.fields:nth-child(even) .multilanguage {
+.multilanguage:nth-child(even), .fields:nth-child(even) .multilanguage_nested{ 
 	background-color:#999;
 }
 /*

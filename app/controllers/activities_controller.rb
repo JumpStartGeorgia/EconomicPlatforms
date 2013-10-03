@@ -10,7 +10,7 @@ class ActivitiesController < ApplicationController
   # GET /activities.json
   def index
 		if user_signed_in?
-		  @activities = Activity.all
+		  @activities = Activity.sorted
 
 		  respond_to do |format|
 		    format.html # index.html.erb
@@ -24,7 +24,7 @@ class ActivitiesController < ApplicationController
   # GET /activities/1
   # GET /activities/1.json
   def show
-    @activities = Activity.all
+    @activities = Activity.sorted
     @activity = @activities.select{|x| x.id.to_s == params[:id]}
 		if @activity && !@activity.empty?
 			@activity = @activity.first
@@ -40,7 +40,7 @@ class ActivitiesController < ApplicationController
       end
     end
 
-		@statements = Statement.published.latest
+		@statements = Statement.sorted.published.latest
 
     respond_to do |format|
       format.html # show.html.erb
@@ -56,7 +56,7 @@ class ActivitiesController < ApplicationController
     # create the translation object for however many locales there are
     # so the form will properly create all of the nested form fields
     I18n.available_locales.each do |locale|
-			@activity.activity_translations.build(:locale => locale)
+			@activity.activity_translations.build(:locale => locale.to_s)
 		end
 
 		gon.edit_activity = true
@@ -77,17 +77,9 @@ class ActivitiesController < ApplicationController
   # POST /activities
   # POST /activities.json
   def create
-		# if english is empty, load georgian into it
-    en = params[:activity][:activity_translations_attributes].select{|k,v| v[:locale] == 'en'}
-		ka = params[:activity][:activity_translations_attributes].select{|k,v| v[:locale] == 'ka'}
-		if en[en.keys[0]][:locale] == 'en' && en[en.keys[0]][:title].empty?
-			en[en.keys[0]][:title] = ka[ka.keys[0]][:title] if ka && !ka[ka.keys[0]][:title].empty?
-		end
-		if en[en.keys[0]][:locale] == 'en' && en[en.keys[0]][:body].empty?
-			en[en.keys[0]][:body] = ka[ka.keys[0]][:body] if ka && !ka[ka.keys[0]][:body].empty?
-		end
-
     @activity = Activity.new(params[:activity])
+
+    add_missing_translation_content(@activity.activity_translations)
 
     respond_to do |format|
       if @activity.save
@@ -107,8 +99,12 @@ class ActivitiesController < ApplicationController
   def update
     @activity = Activity.find(params[:id])
 
+    @activity.assign_attributes(params[:activity])
+
+    add_missing_translation_content(@activity.activity_translations)
+    
     respond_to do |format|
-      if @activity.update_attributes(params[:activity])
+      if @activity.save
         format.html { redirect_to @activity, notice: t('app.msgs.success_updated', :obj => t('app.common.activity')) }
         format.json { head :ok }
       else

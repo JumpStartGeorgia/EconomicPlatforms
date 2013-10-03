@@ -1,5 +1,9 @@
-<%= semantic_nested_form_for @election do |f| %>
+<%= semantic_form_for @election do |f| %>
 	<%= f.error_messages %>
+
+	<%= f.inputs do %>
+		<%= f.input :date, :as => :string, :input_html => {:size => 20}  %>
+	<% end %>
 
 
   <% create_sorted_translation_objects(@election.election_translations).each do |trans| %>
@@ -13,10 +17,6 @@
 			</div>
 
 		<% end %>
-	<% end %>
-
-	<%= f.inputs do %>
-		<%= f.input :date, :as => :string, :input_html => {:size => 20}  %>
 	<% end %>
 
   <div class="form-actions">

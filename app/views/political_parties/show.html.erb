@@ -1,5 +1,19 @@
 <% title t('.title') %>
 
+<div class="form-actions">
+  <%= link_to t('app.buttons.list'),
+              political_parties_path, :class => 'btn'  %>
+  <%= link_to t('app.buttons.edit'),
+              edit_political_party_path(@political_party), :class => 'btn' %>
+  <%= link_to t('app.buttons.delete'),
+              political_party_path(@political_party),
+              :method => 'delete',
+              :confirm => t('app.buttons.confirm'),
+              :class => 'btn btn-danger' %>
+  <%= link_to t('app.buttons.admin'), admin_path,
+  :class => 'btn' %>
+</div>
+
 <p>
   <strong><%= t('app.common.name') %>:</strong>
   <%= @political_party.name %>
@@ -15,16 +29,3 @@
   <span style="background-color: <%= "#{@political_party.color}" %>;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
 </p>
 
-<div class="form-actions">
-  <%= link_to t('app.buttons.list'),
-              political_parties_path, :class => 'btn'  %>
-  <%= link_to t('app.buttons.edit'),
-              edit_political_party_path(@political_party), :class => 'btn' %>
-  <%= link_to t('app.buttons.delete'),
-              political_party_path(@political_party),
-              :method => 'delete',
-              :confirm => t('app.buttons.confirm'),
-              :class => 'btn btn-danger' %>
-  <%= link_to t('app.buttons.admin'), admin_path,
-  :class => 'btn' %>
-</div>

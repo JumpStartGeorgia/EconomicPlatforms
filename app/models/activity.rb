@@ -10,7 +10,7 @@ class Activity < ActiveRecord::Base
 
   validates :date, :election_id, :presence => true
 
-	default_scope order("date desc")
+	scope :sorted, order("date desc")
 
   def images
     self.activity_images

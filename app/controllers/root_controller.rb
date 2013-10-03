@@ -3,9 +3,9 @@ class RootController < ApplicationController
   def index
 
 		# get the latest statements
-		@statements = Statement.published.latest
+		@statements = Statement.sorted.published.latest
 
-    @activities = Activity.all
+    @activities = Activity.sorted
 
 		gon.highlight_first_form_field = false
 
@@ -15,7 +15,7 @@ class RootController < ApplicationController
 	end
 
 	def sitemap
-		  @activities = Activity.all
+		  @activities = Activity.sorted
 	end
 
 
@@ -33,7 +33,7 @@ class RootController < ApplicationController
 
     if @values && !@values.empty?
       # get indicators for this category
-      @indicators = Indicator.by_indicator_category(ideological_id).sort{|a,b| b.value <=> a.value}
+      @indicators = Indicator.sorted.by_indicator_category(ideological_id).sort{|a,b| b.value <=> a.value}
 
       # load a gon variable with the data for the chart
       gon.economic_chart_data = @values

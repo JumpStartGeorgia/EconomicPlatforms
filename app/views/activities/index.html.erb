@@ -1,4 +1,11 @@
 <% title t('.title') %>
+<div class="form-actions">
+<%= link_to t('app.buttons.new'),
+            new_activity_path,
+            :class => 'btn btn-primary' %>
+<%= link_to t('app.buttons.admin'), admin_path,
+:class => 'btn' %>
+</div>
 
 <table class="table table-striped">
   <thead>
@@ -26,10 +33,4 @@
   </tbody>
 </table>
 
-<div class="form-actions">
-<%= link_to t('app.buttons.new'),
-            new_activity_path,
-            :class => 'btn btn-primary' %>
-<%= link_to t('app.buttons.admin'), admin_path,
-:class => 'btn' %>
-</div>
+

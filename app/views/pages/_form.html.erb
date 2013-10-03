@@ -6,10 +6,10 @@
 		<%= f.input :name %>
 	<% end %>
 
-  <% @page.page_translations.sort{|x,y| x.locale <=> y.locale}.each do |trans| %>
+  <% create_sorted_translation_objects(@page.page_translations).each do |trans| %>
 		<%= f.fields_for :page_translations, trans do |translation| %>
 
-			<div id="form-<%= trans.locale %>" class="multilanguage">
+			<div id="form-<%= trans.locale %>" class="multilanguage_nested">
 				<h3><%= t("app.language.#{trans.locale}") %></h3>
 
 				<%= translation.input :title %>

@@ -69,15 +69,15 @@ logger.debug "////////////////////////// BROWSER NOT SUPPORTED"
 	end
 
   def set_elections
-    @elections_nav = Election.with_translations(I18n.locale)
+    @elections_nav = Election.sorted.with_translations(I18n.locale)
   end
 
   def set_political_parties
-    @political_parties_nav = (params[:election].nil? ? @elections_nav.first : Election.find(params[:election])).political_parties.with_translations(I18n.locale)
+    @political_parties_nav = (params[:election_id].nil? ? @elections_nav.first : Election.find(params[:election_id])).political_parties.with_translations(I18n.locale)
   end
 
   def set_economic_categories
-    @economic_categories_nav = EconomicCategory.with_translations(I18n.locale)
+    @economic_categories_nav = EconomicCategory.sorted
   end
 
   def valid_role?(role)

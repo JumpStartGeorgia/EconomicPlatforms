@@ -13,6 +13,6 @@ class Election < ActiveRecord::Base
 
   validates :date, :presence => true
 
-	default_scope order("date desc")
+	scope :sorted, order("date desc")
 
 end

@@ -3,12 +3,12 @@
 
 
 	<%= f.inputs do %>
-	  <%= f.input :election_id, :as => :select, :collection => Election.all, :include_blank => false %>
+	  <%= f.input :election_id, :as => :select, :collection => Election.sorted, :include_blank => false %>
 		<%= f.input :political_party, :collection => Election.first.political_parties %>
-		<%= f.input :economic_category %>
+		<%= f.input :economic_category, :collection => @economic_categories_nav %>
 	<% end %>
 
-  <% @policy_brief.policy_brief_translations.sort{|x,y| x.locale <=> y.locale}.each do |trans| %>
+  <% create_sorted_translation_objects(@policy_brief.policy_brief_translations).each do |trans| %>
 		<%= f.fields_for :policy_brief_translations, trans do |translation| %>
 
 			<div id="form-<%= trans.locale %>" class="multilanguage">

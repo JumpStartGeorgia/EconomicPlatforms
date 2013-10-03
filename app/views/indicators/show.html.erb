@@ -1,20 +1,5 @@
 <% title t('.title') %>
 
-<p>
-  <strong><%= t('app.common.ind_category') %>:</strong>
-  <%= @indicator.name %>
-</p>
-
-<p>
-  <strong><%= t('app.common.value') %>:</strong>
-  <%= @indicator.name %>
-</p>
-
-<p>
-  <strong><%= t('app.common.name') %>:</strong>
-  <%= @indicator.name %>
-</p>
-
 <div class="form-actions">
   <%= link_to t('app.buttons.list'),
               indicators_path, :class => 'btn'  %>
@@ -28,3 +13,19 @@
 	<%= link_to t('app.buttons.admin'), admin_path,
   :class => 'btn' %>
 </div>
+
+<p>
+  <strong><%= t('app.common.ind_category') %>:</strong>
+  <%= @indicator.indicator_category.name %>
+</p>
+
+<p>
+  <strong><%= t('app.common.value') %>:</strong>
+  <%= @indicator.value %>
+</p>
+
+<p>
+  <strong><%= t('app.common.name') %>:</strong>
+  <%= @indicator.name %>
+</p>
+
