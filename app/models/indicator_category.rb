@@ -16,4 +16,14 @@ class IndicatorCategory < ActiveRecord::Base
     joins(:indicators)
     .where("indicators.id is not null")
   end
+
+
+  # normal process of Election.destroy does not work because paper trail is throwing error
+  # - so have to do normal deletes
+  def self.delete_hack(id)
+    if id.present?
+      IndicatorCategoryTranslation.where(:indicator_category_id => id).delete_all
+      IndicatorCategory.delete(id)
+    end
+  end
 end

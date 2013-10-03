@@ -88,8 +88,7 @@ class IndicatorsController < ApplicationController
   # DELETE /indicators/1
   # DELETE /indicators/1.json
   def destroy
-    @indicator = Indicator.find(params[:id])
-    @indicator.destroy
+    Indicator.delete_hack(params[:id])
 
     respond_to do |format|
       format.html { redirect_to indicators_url }

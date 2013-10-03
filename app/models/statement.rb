@@ -26,6 +26,17 @@ class Statement < ActiveRecord::Base
 	# number of items per page for pagination
 	self.per_page = 4
 	
+
+  # normal process of Election.destroy does not work because paper trail is throwing error
+  # - so have to do normal deletes
+  def self.delete_hack(id)
+    if id.present?
+      StatementTranslation.where(:statement_id => id).delete_all
+      StatementScore.where(:statement_id => id).delete_all
+      Statement.delete(id)
+    end
+  end
+
 	def self.sorted
     with_translations(I18n.locale).order("statements.date_made desc")	
   end

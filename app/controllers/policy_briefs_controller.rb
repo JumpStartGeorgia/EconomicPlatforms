@@ -101,8 +101,7 @@ class PolicyBriefsController < ApplicationController
   # DELETE /policy_briefs/1
   # DELETE /policy_briefs/1.json
   def destroy
-    @policy_brief = PolicyBrief.find(params[:id])
-    @policy_brief.destroy
+    PolicyBrief.delete_hack(params[:id])
 
     respond_to do |format|
       format.html { redirect_to policy_briefs_url }

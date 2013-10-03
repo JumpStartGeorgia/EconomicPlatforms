@@ -13,4 +13,15 @@ class EconomicCategory < ActiveRecord::Base
   def self.sorted
     with_translations(I18n.locale).order("economic_category_translations.name")  
   end
+
+
+  # normal process of Election.destroy does not work because paper trail is throwing error
+  # - so have to do normal deletes
+  def self.delete_hack(id)
+    if id.present?
+      EconomicCategoryTranslation.where(:economic_category_id => id).delete_all
+      EconomicCategory.delete(id)
+    end
+  end
+
 end

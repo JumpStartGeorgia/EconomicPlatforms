@@ -87,11 +87,10 @@ class EconomicCategoriesController < ApplicationController
   # DELETE /economic_categories/1
   # DELETE /economic_categories/1.json
   def destroy
-    @economic_category = EconomicCategory.find(params[:id])
-    @economic_category.destroy
+    EconomicCategory.delete_hack(params[:id])
 
     respond_to do |format|
-      format.html { redirect_to categories_url }
+      format.html { redirect_to economic_categories_url }
       format.json { head :ok }
     end
   end

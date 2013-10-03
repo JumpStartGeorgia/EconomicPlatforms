@@ -24,6 +24,18 @@ class Platform < ActiveRecord::Base
 	attr_accessible :score_economic_category, :score_political_party, :score_indicator_category, :score_value,
 		:score_value_centered, :score_value_explaination,
 
+
+  # normal process of Election.destroy does not work because paper trail is throwing error
+  # - so have to do normal deletes
+  def self.delete_hack(id)
+    if id.present?
+      PlatformTranslation.where(:platform_id => id).delete_all
+      PlatformFile.where(:platform_id => id).delete_all
+      PlatformScore.where(:platform_id => id).delete_all
+      Platform.delete(id)
+    end
+  end
+
 	def self.by_party_category(political_party_id, economic_category_id)
 		if political_party_id && economic_category_id
 			x = with_translations(I18n.locale)

@@ -88,8 +88,7 @@ class IndicatorCategoriesController < ApplicationController
   # DELETE /indicator_categories/1
   # DELETE /indicator_categories/1.json
   def destroy
-    @indicator_category = IndicatorCategory.find(params[:id])
-    @indicator_category.destroy
+    IndicatorCategory.delete_hack(params[:id])
 
     respond_to do |format|
       format.html { redirect_to indicator_categories_url }

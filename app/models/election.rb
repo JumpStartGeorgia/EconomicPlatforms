@@ -15,6 +15,15 @@ class Election < ActiveRecord::Base
 
 	scope :sorted, order("date desc")
 	
+  # normal process of Election.destroy does not work because paper trail is throwing error
+  # - so have to do normal deletes
+  def self.delete_hack(id)
+    if id.present?
+      ElectionTranslation.where(:election_id => id).delete_all
+      Election.delete(id)
+    end
+  end
+
 	# get elections that have data
 	# data is defined as having at least one record that is public in: platform, policy brief, or statement
 	def self.with_data
@@ -28,7 +37,7 @@ class Election < ActiveRecord::Base
 	  ids << pb.map{|x| x.election_id} if pb.present?
 	  ids << s.map{|x| x.election_id} if s.present?
 
-    ids.flatten!
+    ids.flatten!.uniq!
     
     if ids.present?
       x = where(:id => ids)
