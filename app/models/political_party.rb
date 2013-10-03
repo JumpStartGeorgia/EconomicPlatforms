@@ -21,4 +21,8 @@ class PoliticalParty < ActiveRecord::Base
     with_translations(I18n.locale).order("political_party_translations.name")
   end
 
+  def self.by_election(election_id)
+    where(:election_id => election_id)
+  end
+
 end

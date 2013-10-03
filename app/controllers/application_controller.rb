@@ -73,7 +73,9 @@ logger.debug "////////////////////////// BROWSER NOT SUPPORTED"
   end
 
   def set_political_parties
-    @political_parties_nav = (params[:election_id].nil? ? @elections_nav.first : Election.find(params[:election_id])).political_parties.with_translations(I18n.locale)
+    e_id = params[:election_id].nil? ? @elections_nav.first.id : params[:election_id]
+    
+    @political_parties_nav = PoliticalParty.by_election(e_id).sorted if e_id.present?
   end
 
   def set_economic_categories
