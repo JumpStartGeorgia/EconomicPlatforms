@@ -111,6 +111,14 @@ logger.debug "**************************sub_title = '#{page_title}'"
     return trans
 	end
 	
+	
+	def is_public_page?
+	  public = true
+	  
+	  public = false if !(params[:controller] == 'root' || params[:controller] == 'activities' || params[:controller] == 'party' || params[:controller] == 'category')
+	  
+	  return public
+	end
 
 	# Based on https://gist.github.com/1182136
   class BootstrapLinkRenderer < ::WillPaginate::ActionView::LinkRenderer
