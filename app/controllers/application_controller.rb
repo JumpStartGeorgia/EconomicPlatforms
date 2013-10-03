@@ -55,7 +55,10 @@ logger.debug "////////////////////////// BROWSER NOT SUPPORTED"
 	end
 
   def default_url_options(options={})
-    { :locale => I18n.locale }
+    {
+      :locale => I18n.locale,
+      :election_id => @current_election_id
+    }
   end
 
 	def initialize_gon
@@ -71,7 +74,10 @@ logger.debug "////////////////////////// BROWSER NOT SUPPORTED"
   def set_elections
     @elections_nav = Election.sorted.with_translations(I18n.locale).with_data
     @current_election = (params[:election_id].blank? ? @elections_nav.first : @elections_nav.find_by_id(params[:election_id]))
-    @current_election_id = @current_election.nil? ? nil : @current_election.id
+    if @current_election.blank?
+      redirect_to root_path
+    end
+    @current_election_id = @current_election.blank? ? nil : @current_election.id
   end
 
   def set_political_parties

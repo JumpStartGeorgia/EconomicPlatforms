@@ -30,17 +30,17 @@ EconomicPlatforms::Application.routes.draw do
     match '/elections/political_parties/:id', :to => 'elections#political_parties', :as => 'election_political_parties' 
 
 		# party profile
-		match '/party/:political_party_id', :to => 'party#index', :as => :party
-		match '/party/:political_party_id/platform/:economic_category_id', :to => 'party#platform', :as => :party_platform
-		match '/party/:political_party_id/policy_brief/:economic_category_id', :to => 'party#policy_brief', :as => :party_policy_brief
-		match '/party/:political_party_id/statement/:id', :to => 'party#statement', :as => :party_statement
+		match '/election/:election_id/party/:political_party_id', :to => 'party#index', :as => :party
+		match '/election/:election_id/party/:political_party_id/platform/:economic_category_id', :to => 'party#platform', :as => :party_platform
+		match '/election/:election_id/party/:political_party_id/policy_brief/:economic_category_id', :to => 'party#policy_brief', :as => :party_policy_brief
+		match '/election/:election_id/party/:political_party_id/statement/:id', :to => 'party#statement', :as => :party_statement
 
 
 		# category profile
-		match '/category/:economic_category_id', :to => 'category#index', :as => :category
-		match '/category/:economic_category_id/platform/:political_party_id', :to => 'category#platform', :as => :category_platform
-		match '/category/:economic_category_id/policy_brief/:political_party_id', :to => 'category#policy_brief', :as => :category_policy_brief
-		match '/category/:economic_category_id/statement/:id', :to => 'category#statement', :as => :category_statement
+		match '/election/:election_id/category/:economic_category_id', :to => 'category#index', :as => :category
+		match '/election/:election_id/category/:economic_category_id/platform/:political_party_id', :to => 'category#platform', :as => :category_platform
+		match '/election/:election_id/category/:economic_category_id/policy_brief/:political_party_id', :to => 'category#policy_brief', :as => :category_policy_brief
+		match '/election/:election_id/category/:economic_category_id/statement/:id', :to => 'category#statement', :as => :category_statement
 
     # comments and voting
 		match '/add_comment_to/:type/:commentable_id', :to => 'comments#create', :as => :add_comment, :via => :post
