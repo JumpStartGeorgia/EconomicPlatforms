@@ -12,6 +12,7 @@ en:
       political_party: Political Party
       page: Page
       activity: News
+      election: Election
     attributes:
       activity:
         date: Date
@@ -66,7 +67,10 @@ en:
       page_translation:
         title: Title
         description: Description
-
+      election:
+        date: Election Date
+      election_translation:
+        name: Election Name
   app:
     language:
       en: English
