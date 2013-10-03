@@ -69,7 +69,7 @@ logger.debug "////////////////////////// BROWSER NOT SUPPORTED"
 	end
 
   def set_elections
-    @elections_nav = Election.sorted.with_translations(I18n.locale)
+    @elections_nav = Election.sorted.with_translations(I18n.locale).with_data
   end
 
   def set_political_parties
