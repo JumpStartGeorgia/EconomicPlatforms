@@ -17,7 +17,6 @@ class Statement < ActiveRecord::Base
 
   validates :date_made, :election_id, :political_party_id, :economic_category_id, :presence => true
 
-	default_scope lambda {with_translations(I18n.locale).order("statements.date_made desc")}
   scope :published, where("is_public = '1'")
 
   TYPE = %w[political_party, economic_indicator]
@@ -26,6 +25,10 @@ class Statement < ActiveRecord::Base
 
 	# number of items per page for pagination
 	self.per_page = 4
+	
+	def self.sorted
+    with_translations(I18n.locale).order("statements.date_made desc")	
+  end
 
 	def self.latest
 		limit(4)

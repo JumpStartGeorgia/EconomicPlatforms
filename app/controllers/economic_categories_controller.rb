@@ -7,7 +7,7 @@ class EconomicCategoriesController < ApplicationController
   # GET /economic_categories
   # GET /economic_categories.json
   def index
-    @economic_categories = EconomicCategory.all
+    @economic_categories = EconomicCategory.sorted
 
     respond_to do |format|
       format.html # index.html.erb
@@ -33,7 +33,7 @@ class EconomicCategoriesController < ApplicationController
     # create the translation object for however many locales there are
     # so the form will properly create all of the nested form fields
     I18n.available_locales.each do |locale|
-			@economic_category.economic_category_translations.build(:locale => locale)
+			@economic_category.economic_category_translations.build(:locale => locale.to_s)
 		end
 
     respond_to do |format|
@@ -50,7 +50,8 @@ class EconomicCategoriesController < ApplicationController
   # POST /economic_categories
   # POST /economic_categories.json
   def create
-    @economic_category = EconomicCategory.new(params[:category])
+    @economic_category = EconomicCategory.new(params[:economic_category])
+    add_missing_translation_content(@economic_category.economic_category_translations)
 
     respond_to do |format|
       if @economic_category.save
@@ -68,8 +69,12 @@ class EconomicCategoriesController < ApplicationController
   def update
     @economic_category = EconomicCategory.find(params[:id])
 
+    @economic_category.assign_attributes(params[:economic_category])
+
+    add_missing_translation_content(@economic_category.economic_category_translations)
+    
     respond_to do |format|
-      if @economic_category.update_attributes(params[:category])
+      if @economic_category.save
         format.html { redirect_to @economic_category, notice: t('app.msgs.success_updated', :obj => t('app.common.economic_category')) }
         format.json { head :ok }
       else

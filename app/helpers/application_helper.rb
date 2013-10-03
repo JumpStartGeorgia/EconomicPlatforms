@@ -38,7 +38,7 @@ logger.debug "**************************sub_title = '#{page_title}'"
 	def order_scores(scores)
 		if scores && !scores.empty?
 			new_order = []
-			cats = IndicatorCategory.all
+			cats = IndicatorCategory.sorted
 			cats.each do |cat|
 				score = scores.select{|x| x.indicator_category_id == cat.id}
 				if score && !score.empty?
@@ -95,23 +95,30 @@ logger.debug "**************************sub_title = '#{page_title}'"
 
 	end
 	
-	# put the default locale first and then sort the remaining alpha
+	# put the default locale first and then sort the remaining locales
 	def create_sorted_translation_objects(trans)
 	  if trans.present?
       # pull out default locale
       default = trans.select{|x| x.locale == I18n.default_locale.to_s}.first
-      if default.present?
-        trans.delete(default)
-      end
+      trans.delete(default) if default.present?
 
       # now sort the left over
       trans.sort!{|x,y| x.locale <=> y.locale}
-      
+
       # add default back in
-      trans.insert(0, default)      
+      trans.insert(0, default) if default.present?
 	  end
+    return trans
 	end
 	
+	
+	def is_public_page?
+	  public = true
+	  
+	  public = false if !(params[:controller] == 'root' || params[:controller] == 'activities' || params[:controller] == 'party' || params[:controller] == 'category')
+	  
+	  return public
+	end
 
 	# Based on https://gist.github.com/1182136
   class BootstrapLinkRenderer < ::WillPaginate::ActionView::LinkRenderer

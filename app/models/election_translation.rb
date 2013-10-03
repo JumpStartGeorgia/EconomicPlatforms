@@ -10,16 +10,11 @@ class ElectionTranslation < ActiveRecord::Base
     provided = false
     
     provided = self.name.present?
-
-Rails.logger.debug "***************************************"
-Rails.logger.debug "******* - required data provided = #{provided}"
     
     return provided
   end
   
   def add_required_data(obj)
-Rails.logger.debug "***************************************"
-Rails.logger.debug "******* - setting name to #{obj.name}"
     self.name = obj.name
   end
 end

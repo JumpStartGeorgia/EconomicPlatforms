@@ -2,14 +2,15 @@
 	<%= f.error_messages %>
 
 	<%= f.inputs do %>
-	  <%= f.input :election_id, :as => :select, :collection => Election.all, :include_blank => false %>
+		<%= f.input :date, :as => :string, :input_html => {:size => 20}  %>
+	  <%= f.input :election_id, :as => :select, :collection => Election.sorted, :include_blank => false %>
 	<% end %>
 
 
-  <% @activity.activity_translations.sort{|x,y| x.locale <=> y.locale}.each do |trans| %>
+  <% create_sorted_translation_objects(@activity.activity_translations).each do |trans| %>
 		<%= f.fields_for :activity_translations, trans do |translation| %>
 
-			<div id="form-<%= trans.locale %>" class="multilanguage">
+			<div id="form-<%= trans.locale %>" class="multilanguage_nested">
 				<h3><%= t("app.language.#{trans.locale}") %></h3>
 
 				<%= translation.input :title %>
@@ -21,7 +22,6 @@
 	<% end %>
 
 	<%= f.inputs do %>
-		<%= f.input :date, :as => :string, :input_html => {:size => 20}  %>
 		<%= f.input :video %>
 	<% end %>
 

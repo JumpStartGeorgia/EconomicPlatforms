@@ -13,4 +13,15 @@ class PoliticalPartyTranslation < ActiveRecord::Base
     "#{Utf8Converter.convert_ka_to_en(name.clone)}"
   end
 
+  def required_data_provided?
+    provided = false
+    
+    provided = self.name.present?
+    
+    return provided
+  end
+  
+  def add_required_data(obj)
+    self.name = obj.name
+  end
 end

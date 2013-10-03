@@ -6,12 +6,12 @@ class CategoryController < ApplicationController
 		if !@economic_category
 			redirect_to root_path, notice: t('app.msgs.does_not_exist')
 		else
-			@indicator_categories = IndicatorCategory.with_indicators
+			@indicator_categories = IndicatorCategory.with_indicators.sorted
 
       @statements = nil
       if params[:political_party_id] && !params[:political_party_id].empty?
         # get statements for the pass in pol party id
-  	    @statements = Statement.by_political_party(params[:political_party_id])
+  	    @statements = Statement.sorted.by_political_party(params[:political_party_id])
   	      .by_economic_category(@economic_category.id)
   	      .published.paginate(:page => params[:page])
 				political_party = @political_parties_nav.select{|x| x.id.to_s == params[:political_party_id]}
@@ -19,7 +19,7 @@ class CategoryController < ApplicationController
       else
         # get statements for the first ec cat that has statements
         @political_parties_nav.each do |pp|
-    	    @statements = Statement.by_political_party(pp.id)
+    	    @statements = Statement.sorted.by_political_party(pp.id)
   	      .by_economic_category(@economic_category.id)
     	      .published.paginate(:page => params[:page])
     	    if @statements && !@statements.empty?
@@ -36,7 +36,7 @@ class CategoryController < ApplicationController
 
 			gon.category_profile = true
       gon.category_statement_chart_data = true
-      gon.json_data = Statement.categiry_statement_scores_json(
+      gon.json_data = Statement.sorted.categiry_statement_scores_json(
         params[:political_party_id],
         @economic_category.id,
         params[:indicator_category_id])
@@ -125,7 +125,7 @@ class CategoryController < ApplicationController
 		if !@economic_category
 			redirect_to root_path, notice: t('app.msgs.does_not_exist')
 		else
-		  @statements = Statement.published.by_economic_category(@economic_category.id).where(:id => params[:id])
+		  @statements = Statement.sorted.published.by_economic_category(@economic_category.id).where(:id => params[:id])
 			@statement = @statements.first if @statements && !@statements.empty?
 
 			if !@statement

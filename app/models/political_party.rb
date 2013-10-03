@@ -17,6 +17,8 @@ class PoliticalParty < ActiveRecord::Base
   has_many :policy_briefs
 	has_many :platforms
 
-	default_scope lambda {with_translations(I18n.locale).order("political_party_translations.name")}
+  def self.sorted
+    with_translations(I18n.locale).order("political_party_translations.name")
+  end
 
 end

@@ -2,15 +2,15 @@
 	<%= f.error_messages %>
 
 	<%= f.inputs do %>
-	  <%= f.input :election_id, :as => :select, :collection => Election.all, :include_blank => false %>
+	  <%= f.input :election_id, :as => :select, :collection => Election.sorted, :include_blank => false %>
 		<%= f.input :political_party, :collection => (@platform.election.nil? ? Election.first : @platform.election).political_parties %>
-		<%= f.input :economic_category %>
+		<%= f.input :economic_category, :collection => @economic_categories_nav %>
 	<% end %>
 
-  <% @platform.platform_translations.sort{|x,y| x.locale <=> y.locale}.each do |trans| %>
+  <% create_sorted_translation_objects(@platform.platform_translations).each do |trans| %>
 		<%= f.fields_for :platform_translations, trans do |translation| %>
 
-			<div id="form-<%= trans.locale %>" class="multilanguage">
+			<div id="form-<%= trans.locale %>" class="multilanguage_nested">
 				<h3><%= t("app.language.#{trans.locale}") %></h3>
 
 				<%= translation.input :description, :as => :text, :input_html => {:rows => 15} %>

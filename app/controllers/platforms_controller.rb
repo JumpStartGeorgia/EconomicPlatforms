@@ -32,12 +32,12 @@ class PlatformsController < ApplicationController
   # GET /platforms/new.json
   def new
     @platform = Platform.new
-    @indicator_categories = IndicatorCategory.with_indicators
+    @indicator_categories = IndicatorCategory.with_indicators.sorted
 
     # create the translation object for however many locales there are
     # so the form will properly create all of the nested form fields
     I18n.available_locales.each do |locale|
-			@platform.platform_translations.build(:locale => locale)
+			@platform.platform_translations.build(:locale => locale.to_s)
 		end
 
     gon.election_political_parties_path = election_political_parties_path(:id => 999)
@@ -57,7 +57,7 @@ class PlatformsController < ApplicationController
   # GET /platforms/1/edit
   def edit
     @platform = Platform.find(params[:id])
-    @indicator_categories = IndicatorCategory.with_indicators
+    @indicator_categories = IndicatorCategory.with_indicators.sorted
 
     gon.election_political_parties_path = election_political_parties_path(:id => 999)
   end
@@ -75,21 +75,16 @@ class PlatformsController < ApplicationController
 			end
     end
 
-		# if english is empty, load georgian into it
-    en = params[:platform][:platform_translations_attributes].select{|k,v| v[:locale] == 'en'}
-		if en[en.keys[0]][:locale] == 'en' && en[en.keys[0]][:description].empty?
-			ka = params[:platform][:platform_translations_attributes].select{|k,v| v[:locale] == 'ka'}
-			en[en.keys[0]][:description] = ka[ka.keys[0]][:description] if ka && !ka[ka.keys[0]][:description].empty?
-		end
-
     @platform = Platform.new(params[:platform])
+
+    add_missing_translation_content(@platform.platform_translations)
 
     respond_to do |format|
       if @platform.save
         format.html { redirect_to @platform, notice: t('app.msgs.success_created', :obj => t('app.common.platform')) }
         format.json { render json: @platform, status: :created, location: @platform }
       else
-		    @indicator_categories = IndicatorCategory.with_indicators
+		    @indicator_categories = IndicatorCategory.with_indicators.sorted
         gon.election_political_parties_path = election_political_parties_path(:id => 999)
         format.html { render action: "new" }
         format.json { render json: @platform.errors, status: :unprocessable_entity }
@@ -108,14 +103,19 @@ class PlatformsController < ApplicationController
 		    values[:value] = combined[1]
 			end
     end
+    
     @platform = Platform.find(params[:id])
 
+    @platform.assign_attributes(params[:platform])
+
+    add_missing_translation_content(@platform.platform_translations)
+    
     respond_to do |format|
-      if @platform.update_attributes(params[:platform])
+      if @platform.save
         format.html { redirect_to @platform, notice: t('app.msgs.success_created', :obj => t('app.common.platform')) }
         format.json { head :ok }
       else
-		    @indicator_categories = IndicatorCategory.with_indicators
+		    @indicator_categories = IndicatorCategory.with_indicators.sorted
         gon.election_political_parties_path = election_political_parties_path(:id => 999)
         format.html { render action: "edit" }
         format.json { render json: @platform.errors, status: :unprocessable_entity }

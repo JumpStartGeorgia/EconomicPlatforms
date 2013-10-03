@@ -1,14 +1,5 @@
 <% title @election.name %>
 
-
-<div class="row">
-	<div class="span9 clear">
-	  <div class="block clear">
-		  <h3><%= l @election.date, :format => :long if @election.date %></h3>
-      </div>
-	</div>
-</div>
-
 <% if user_signed_in? && can?(:manage, Election) %>
 <div class="form-actions">
   <%= link_to t('app.buttons.list'),
@@ -27,3 +18,15 @@
   :class => 'btn' %>
 </div>
 <% end %>
+
+<p>
+  <strong><%= t('app.common.date') %>:</strong>
+  <%= l @election.date, :format => :long if @election.date %>
+</p>
+
+<p>
+  <strong><%= t('app.common.name') %>:</strong>
+  <%= @election.name %>
+</p>
+
+

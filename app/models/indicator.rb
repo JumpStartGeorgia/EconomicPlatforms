@@ -9,7 +9,9 @@ class Indicator < ActiveRecord::Base
 
   validates :indicator_category_id, :value, :presence => true
 
-	default_scope lambda {with_translations(I18n.locale).order("indicators.indicator_category_id, indicators.value, indicator_translations.name")}
+  def self.sorted
+    with_translations(I18n.locale).order("indicators.indicator_category_id, indicators.value, indicator_translations.name")  
+  end
 
   def self.by_indicator_category(indicator_category_id)
     if indicator_category_id

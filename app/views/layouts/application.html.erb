@@ -35,18 +35,18 @@
 		          <span class="icon-bar"></span>
 		        </a>
 	          <%#= link_to(t('app.common.app_name'), root_path(:locale => I18n.locale),:class=>"brand font")%>
-	          <%= link_to image_tag('/assets/header_logo_' + I18n.locale.to_s + '.png', :alt => t('app.common.app_name')), root_path(:locale => I18n.locale) %>
+	          <%= link_to image_tag('/assets/header_logo_' + I18n.locale.to_s + '.png', :alt => t('app.common.app_name')), root_path(:locale => I18n.locale, :election_id => @current_election_id) %>
 		        <div class="container nav-collapse">
 		          <div class="header-right">
                 <ul class="nav">
 									<li>
-										<%= link_to t('app.common.home'), root_path %>
+										<%= link_to t('app.common.home'), root_path(:election_id => @current_election_id) %>
 									</li>
 									<li>
-										<%= link_to t('app.common.about'), about_path %>
+										<%= link_to t('app.common.about'), about_path(:election_id => @current_election_id) %>
 									</li>
 									<li>
-										<%= link_to t('app.common.methodology'), methodology_path %>
+										<%= link_to t('app.common.methodology'), methodology_path(:election_id => @current_election_id) %>
 									</li>
 									<li>
 										<%= link_to t('app.common.download_report'), "/Report_#{I18n.locale}.pdf", :target => :blank %>
@@ -59,10 +59,10 @@
 				              </a>
 				              <ul class="dropdown-menu">
 						            <li>
-					   		         <%= link_to t('.admin'), admin_path %>
+					   		         <%= link_to t('.admin'), admin_path(:election_id => @current_election_id) %>
 											  </li>
 						            <li>
-					   		         <%= link_to t('.sign_out'), destroy_user_session_path, :method => :delete %>
+					   		         <%= link_to t('.sign_out'), destroy_user_session_path(:election_id => @current_election_id), :method => :delete %>
 											  </li>
 				              </ul>
 				            </li>
@@ -87,77 +87,78 @@
 		    <div class="content">
 		      <div class="row">
 		         <div class="span12">
-								<div class="row">
-				         <div class="span9">
-										<div id="title-dropdowns" class="block clear">
-											<div class="">
-												<h4><%= t('.slogan')%></h4>
-											</div>
+                <% if is_public_page? %>
+								  <div class="row">
+				           <div class="span9">
+										  <div id="title-dropdowns" class="block clear">
+											  <div class="">
+												  <h4><%= t('.slogan')%></h4>
+											  </div>
 
-											<div class="ds">
-												<div class="">
-													<% if @elections_nav && !@elections_nav.empty? %>
-														<div class="btn-group">
-															<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-																<%= t('app.common.election')%>
-																<span class="caret"></span>
-															</a>
-															<ul class="dropdown-menu">
-																<% @elections_nav.each do |el| %>
-																<li><%= link_to el.name, url_for(:election => el.id)%></li>
-																<% end %>
-															</ul>
-														</div>
-													<% end %>
-												</div>
+											  <div class="ds">
+												  <div class="">
+													  <% if @elections_nav && !@elections_nav.empty? %>
+														  <div class="btn-group">
+															  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+																  <%= t('app.common.election')%>
+																  <span class="caret"></span>
+															  </a>
+															  <ul class="dropdown-menu">
+																  <% @elections_nav.each do |el| %>
+																  <li><%= link_to el.name, url_for(:election_id => el.id)%></li>
+																  <% end %>
+															  </ul>
+														  </div>
+													  <% end %>
+												  </div>
 
-												<div class="">
-													<% if @political_parties_nav && !@political_parties_nav.empty? %>
-														<div class="btn-group">
-															<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-																<%= t('app.common.political_party')%>
-																<span class="caret"></span>
-															</a>
-															<ul class="dropdown-menu">
-																<% @political_parties_nav.each do |pol| %>
-																<li><%= link_to pol.name, party_path(pol.permalink)%></li>
-																<% end %>
-															</ul>
-														</div>
-													<% end %>
-												</div>
+												  <div class="">
+													  <% if @political_parties_nav && !@political_parties_nav.empty? %>
+														  <div class="btn-group">
+															  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+																  <%= t('app.common.political_party')%>
+																  <span class="caret"></span>
+															  </a>
+															  <ul class="dropdown-menu">
+																  <% @political_parties_nav.each do |pol| %>
+																  <li><%= link_to pol.name, party_path(pol.permalink, :election_id => @current_election_id)%></li>
+																  <% end %>
+															  </ul>
+														  </div>
+													  <% end %>
+												  </div>
 
-												<div class="">
-													<% if @economic_categories_nav && !@economic_categories_nav.empty? %>
-														<div class="btn-group">
-															<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-																<%= t('app.common.economic_category')%>
-																<span class="caret"></span>
-															</a>
-															<ul class="dropdown-menu">
-																<% @economic_categories_nav.each do |ec| %>
-																<li><%= link_to ec.name, category_path(ec.permalink)%></li>
-																<% end %>
-															</ul>
-														</div>
-													<% end %>
-												</div>
-											</div>
+												  <div class="">
+													  <% if @economic_categories_nav && !@economic_categories_nav.empty? %>
+														  <div class="btn-group">
+															  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+																  <%= t('app.common.economic_category')%>
+																  <span class="caret"></span>
+															  </a>
+															  <ul class="dropdown-menu">
+																  <% @economic_categories_nav.each do |ec| %>
+																  <li><%= link_to ec.name, category_path(ec.permalink, :election_id => @current_election_id)%></li>
+																  <% end %>
+															  </ul>
+														  </div>
+													  <% end %>
+												  </div>
+											  </div>
 
-										</div>
-									</div>
-									<div class="span3 sidespan">
+										  </div>
+									  </div>
+									  <div class="span3 sidespan">
 
-										<div class="block clear" id="home_search">
-											<form method="get" action="<%= search_path %>">
-												<input type="text" name="q" value="<%= params[:q] if params[:q] %>" placeholder="<%= t('.search') %>" />
-												<input type="image" src="/assets/search.jpg" />
-											</form>
-										</div>
+										  <div class="block clear" id="home_search">
+											  <form method="get" action="<%= search_path %>">
+												  <input type="text" name="q" value="<%= params[:q] if params[:q] %>" placeholder="<%= t('.search') %>" />
+												  <input type="image" src="/assets/search.jpg" />
+											  </form>
+										  </div>
 
-									</div>
-								</div>
-
+									  </div>
+								  </div>
+                <% end %>
 
 								<% flash.each do |key, msg| %>
 									<div class="alert <%= flash_translation(key) %> fade in">
@@ -234,7 +235,7 @@
 		  <div id="middle">
 				<ul>
 					<li>
-						<%= link_to t('app.common.sitemap'), sitemap_path %>
+						<%= link_to t('app.common.sitemap'), sitemap_path(:election_id => @current_election_id) %>
 					</li>
 				</ul>
 			</div>

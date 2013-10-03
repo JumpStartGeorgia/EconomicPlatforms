@@ -7,7 +7,7 @@ class IndicatorsController < ApplicationController
   # GET /indicators
   # GET /indicators.json
   def index
-    @indicators = Indicator.all
+    @indicators = Indicator.sorted
 
     respond_to do |format|
       format.html # index.html.erb
@@ -33,7 +33,7 @@ class IndicatorsController < ApplicationController
     # create the translation object for however many locales there are
     # so the form will properly create all of the nested form fields
     I18n.available_locales.each do |locale|
-			@indicator.indicator_translations.build(:locale => locale)
+			@indicator.indicator_translations.build(:locale => locale.to_s)
 		end
 
     respond_to do |format|
@@ -52,6 +52,8 @@ class IndicatorsController < ApplicationController
   def create
     @indicator = Indicator.new(params[:indicator])
 
+    add_missing_translation_content(@indicator.indicator_translations)
+
     respond_to do |format|
       if @indicator.save
         format.html { redirect_to @indicator, notice: t('app.msgs.success_created', :obj => t('app.common.indicator')) }
@@ -68,8 +70,12 @@ class IndicatorsController < ApplicationController
   def update
     @indicator = Indicator.find(params[:id])
 
+    @indicator.assign_attributes(params[:indicator])
+
+    add_missing_translation_content(@indicator.indicator_translations)
+    
     respond_to do |format|
-      if @indicator.update_attributes(params[:indicator])
+      if @indicator.save
         format.html { redirect_to @indicator, notice: t('app.msgs.success_updated', :obj => t('app.common.indicator')) }
         format.json { head :ok }
       else

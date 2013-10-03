@@ -6,12 +6,12 @@ class PartyController < ApplicationController
 		if !@political_party
 			redirect_to root_path, notice: t('app.msgs.does_not_exist')
 		else
-			@indicator_categories = IndicatorCategory.with_indicators
+			@indicator_categories = IndicatorCategory.with_indicators.sorted
 
       @statements = nil
       if params[:economic_category_id] && !params[:economic_category_id].empty?
         # get statements for the pass in ec cat id
-  	    @statements = Statement.by_political_party(@political_party.id)
+  	    @statements = Statement.sorted.by_political_party(@political_party.id)
   	      .by_economic_category(params[:economic_category_id])
   	      .published.paginate(:page => params[:page])
   	    economic_category = @economic_categories_nav.select{|x| x.id.to_s == params[:economic_category_id]}
@@ -19,7 +19,7 @@ class PartyController < ApplicationController
       else
         # get statements for the first ec cat that has statements
         @economic_categories_nav.each do |ec_cat|
-    	    @statements = Statement.by_political_party(@political_party.id)
+    	    @statements = Statement.sorted.by_political_party(@political_party.id)
   	        .by_economic_category(ec_cat.id)
     	      .published.paginate(:page => params[:page])
     	    if @statements && !@statements.empty?
@@ -36,7 +36,7 @@ class PartyController < ApplicationController
 
 			gon.party_profile = true
       gon.party_statement_chart_data = true
-      gon.json_data = Statement.party_statement_scores_json(
+      gon.json_data = Statement.sorted.party_statement_scores_json(
 				@political_party.id,
         params[:economic_category_id],
         params[:indicator_category_id])
@@ -124,7 +124,7 @@ class PartyController < ApplicationController
 		if !@political_party
 			redirect_to root_path, notice: t('app.msgs.does_not_exist')
 		else
-		  @statements = Statement.published.by_political_party(@political_party.id).where(:id => params[:id])
+		  @statements = Statement.sorted.published.by_political_party(@political_party.id).where(:id => params[:id])
 			@statement = @statements.first if @statements && !@statements.empty?
 
 			if !@statement

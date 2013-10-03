@@ -7,7 +7,7 @@ class IndicatorCategoriesController < ApplicationController
   # GET /indicator_categories
   # GET /indicator_categories.json
   def index
-    @indicator_categories = IndicatorCategory.all
+    @indicator_categories = IndicatorCategory.sorted
 
     respond_to do |format|
       format.html # index.html.erb
@@ -33,7 +33,7 @@ class IndicatorCategoriesController < ApplicationController
     # create the translation object for however many locales there are
     # so the form will properly create all of the nested form fields
     I18n.available_locales.each do |locale|
-			@indicator_category.indicator_category_translations.build(:locale => locale)
+			@indicator_category.indicator_category_translations.build(:locale => locale.to_s)
 		end
 
     respond_to do |format|
@@ -52,6 +52,8 @@ class IndicatorCategoriesController < ApplicationController
   def create
     @indicator_category = IndicatorCategory.new(params[:indicator_category])
 
+    add_missing_translation_content(@indicator_category.indicator_category_translations)
+
     respond_to do |format|
       if @indicator_category.save
         format.html { redirect_to @indicator_category, notice: t('app.msgs.success_created', :obj => t('app.common.indicator_category')) }
@@ -68,8 +70,12 @@ class IndicatorCategoriesController < ApplicationController
   def update
     @indicator_category = IndicatorCategory.find(params[:id])
 
+    @indicator_category.assign_attributes(params[:indicator_category])
+
+    add_missing_translation_content(@indicator_category.indicator_category_translations)
+    
     respond_to do |format|
-      if @indicator_category.update_attributes(params[:indicator_category])
+      if @indicator_category.save
         format.html { redirect_to @indicator_category, notice: t('app.msgs.success_updated', :obj => t('app.common.indicator_category')) }
         format.json { head :ok }
       else

@@ -5,4 +5,17 @@ class StatementTranslation < ActiveRecord::Base
 
   validates :statement_made, :author, :source, :locale, :presence => true
 
+  def required_data_provided?
+    provided = false
+    
+    provided = self.statement_made.present? && self.author.present? && self.source.present?
+    
+    return provided
+  end
+  
+  def add_required_data(obj)
+    self.statement_made = obj.statement_made
+    self.author = obj.author
+    self.source = obj.source
+  end
 end
