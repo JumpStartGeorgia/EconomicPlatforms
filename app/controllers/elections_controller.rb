@@ -99,8 +99,7 @@ class ElectionsController < ApplicationController
   # DELETE /elections/1
   # DELETE /elections/1.json
   def destroy
-    @election = Election.find(params[:id])
-    @election.destroy
+    Election.delete_hack(params[:id])
 
     respond_to do |format|
       format.html { redirect_to elections_url }

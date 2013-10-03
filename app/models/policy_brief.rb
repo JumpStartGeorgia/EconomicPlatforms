@@ -17,6 +17,16 @@ class PolicyBrief < ActiveRecord::Base
 
   acts_as_commentable
 
+
+  # normal process of Election.destroy does not work because paper trail is throwing error
+  # - so have to do normal deletes
+  def self.delete_hack(id)
+    if id.present?
+      PolicyBriefTranslation.where(:policy_brief_id => id).delete_all
+      PolicyBrief.delete(id)
+    end
+  end
+
 	def self.by_party_category(political_party_id, economic_category_id)
 		if political_party_id && economic_category_id
 			x = with_translations(I18n.locale)

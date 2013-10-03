@@ -16,4 +16,15 @@ class Activity < ActiveRecord::Base
     self.activity_images
   end
 
+  # normal process of Election.destroy does not work because paper trail is throwing error
+  # - so have to do normal deletes
+  def self.delete_hack(id)
+    if id.present?
+      ActivityTranslation.where(:activity_id => id).delete_all
+      ActivityImage.where(:activity_id => id).delete_all
+      Activity.delete(id)
+    end
+  end
+
+
 end

@@ -73,7 +73,7 @@ logger.debug "////////////////////////// BROWSER NOT SUPPORTED"
   end
 
   def set_political_parties
-    e_id = params[:election_id].nil? ? @elections_nav.first.id : params[:election_id]
+    e_id = params[:election_id].present? ? params[:election_id] : @elections_nav.first.id
     
     @political_parties_nav = PoliticalParty.by_election(e_id).sorted if e_id.present?
   end

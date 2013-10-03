@@ -144,8 +144,7 @@ class StatementsController < ApplicationController
   # DELETE /statements/1
   # DELETE /statements/1.json
   def destroy
-    @statement = Statement.find(params[:id])
-    @statement.destroy
+    Statement.delete_hack(params[:id])
 
     respond_to do |format|
       format.html { redirect_to statements_url }

@@ -88,8 +88,7 @@ class PoliticalPartiesController < ApplicationController
   # DELETE /political_parties/1
   # DELETE /political_parties/1.json
   def destroy
-    @political_party = PoliticalParty.find(params[:id])
-    @political_party.destroy
+    PoliticalParty.delete_hack(params[:id])
 
     respond_to do |format|
       format.html { redirect_to political_parties_url }

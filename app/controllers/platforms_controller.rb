@@ -124,8 +124,7 @@ class PlatformsController < ApplicationController
   # DELETE /platforms/1
   # DELETE /platforms/1.json
   def destroy
-    @platform = Platform.find(params[:id])
-    @platform.destroy
+    Platform.delete_hack(params[:id])
 
     respond_to do |format|
       format.html { redirect_to platforms_url }
