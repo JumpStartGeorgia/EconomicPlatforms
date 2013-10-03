@@ -3,7 +3,7 @@
 
 	<%= f.inputs do %>
 	  <%= f.input :election_id, :as => :select, :collection => Election.all, :include_blank => false %>
-		<%= f.input :political_party, :collection => Election.first.political_parties %>
+		<%= f.input :political_party, :collection => (@platform.election.nil? ? Election.first : @platform.election).political_parties %>
 		<%= f.input :economic_category %>
 	<% end %>
 

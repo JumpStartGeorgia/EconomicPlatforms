@@ -90,6 +90,7 @@ class PlatformsController < ApplicationController
         format.json { render json: @platform, status: :created, location: @platform }
       else
 		    @indicator_categories = IndicatorCategory.with_indicators
+        gon.election_political_parties_path = election_political_parties_path(:id => 999)
         format.html { render action: "new" }
         format.json { render json: @platform.errors, status: :unprocessable_entity }
       end
@@ -115,6 +116,7 @@ class PlatformsController < ApplicationController
         format.json { head :ok }
       else
 		    @indicator_categories = IndicatorCategory.with_indicators
+        gon.election_political_parties_path = election_political_parties_path(:id => 999)
         format.html { render action: "edit" }
         format.json { render json: @platform.errors, status: :unprocessable_entity }
       end
