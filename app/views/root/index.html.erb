@@ -1,5 +1,10 @@
 <div class="row">
   <div class="span9">
+    <% if @current_election.present? %>
+      <div class="block">
+        <h1><%= @current_election.name %></h1>
+      </div> 
+    <% end %>
     <div class="row">
       <div class="span4">
         <div class="block">

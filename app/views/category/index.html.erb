@@ -1,4 +1,9 @@
-<% title t('.title', :economic_category => @economic_category.name) %>
+<% 
+  page_title = @economic_category.name.clone
+  page_title << " - #{@current_election.name}" if @current_election.present? 
+
+  title page_title
+%>
 
 
 <div class="row">

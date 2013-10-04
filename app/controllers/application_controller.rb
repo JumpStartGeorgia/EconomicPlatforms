@@ -73,11 +73,12 @@ logger.debug "////////////////////////// BROWSER NOT SUPPORTED"
 
   def set_elections
     @elections_nav = Election.sorted.with_translations(I18n.locale).with_data
-    @current_election = (params[:election_id].blank? ? @elections_nav.first : @elections_nav.find_by_id(params[:election_id]))
+    @current_election = (params[:election_id].blank? ? @elections_nav.first : @elections_nav.select{|x| x.id.to_s == params[:election_id]}.first)
     if @current_election.blank?
-      redirect_to root_path
+      redirect_to root_path 
+    else
+      @current_election_id = @current_election.id
     end
-    @current_election_id = @current_election.blank? ? nil : @current_election.id
   end
 
   def set_political_parties

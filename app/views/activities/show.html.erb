@@ -1,4 +1,9 @@
-<% title @activity.title %>
+<% 
+  page_title = @activity.title
+  page_title << " - #{@current_election.name}" if @current_election.present? 
+
+  title page_title
+%>
 
 <% if user_signed_in? && can?(:manage, Activity) %>
 <div class="form-actions">
@@ -38,7 +43,12 @@
 
 	<div class="span3 sidespan">
 		<div class="block">
-			<h3 class="block_header"><%= t('app.common.activities') %></h3>
+			<h3 class="block_header">
+			  <%= t('app.common.activities') %>
+        <% if @current_election.present? %>
+			    <%= " - #{@current_election.name}" %>
+        <% end %>
+		  </h3>
 
 			<div class="block_body font">
 		    <% if @activities && !@activities.empty? %>

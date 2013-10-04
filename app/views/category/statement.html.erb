@@ -1,5 +1,10 @@
-<% title t('category.statement.title', :economic_category => @economic_category.name) %>
-<% sub_title t('category.statement.secondary_title', :date => l(@statement.date_made, :format => :long)) %>
+<% 
+  page_title = @economic_category.name.clone
+  page_title << " - #{@current_election.name}" if @current_election.present? 
+
+  title page_title
+  sub_title t('.secondary_title', :date => l(@statement.date_made, :format => :long))
+%>
 
 
 <div class="row">
@@ -8,7 +13,7 @@
     <div class="block clear">
       <div class="block_header clear">
         <div class="left">
-          <%= t('category.statement.secondary_title', :date => l(@statement.date_made, :format => :long)) %>
+          <%= t('.secondary_title', :date => l(@statement.date_made, :format => :long)) %>
         </div>
         <% if params[:format] != "pdf" %>
           <div class="right" id="voting">
