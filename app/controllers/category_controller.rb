@@ -51,7 +51,7 @@ class CategoryController < ApplicationController
 	end
 
 	def platform
-		@political_party = PoliticalParty.find_by_permalink(params[:political_party_id])
+		@political_party = PoliticalParty.find_by_permalink(params[:political_party_id]).by_election(election_id)
 		@economic_category = EconomicCategory.find_by_permalink(params[:economic_category_id])
 		if !@economic_category
 			redirect_to root_path, notice: t('app.msgs.does_not_exist')
@@ -86,7 +86,7 @@ class CategoryController < ApplicationController
 	end
 
 	def policy_brief
-		@political_party = PoliticalParty.find_by_permalink(params[:political_party_id])
+		@political_party = PoliticalParty.find_by_permalink(params[:political_party_id]).by_election(election_id)
 		@economic_category = EconomicCategory.find_by_permalink(params[:economic_category_id])
 		if !@economic_category
 			redirect_to root_path, notice: t('app.msgs.does_not_exist')
