@@ -34,5 +34,4 @@ class PoliticalParty < ActiveRecord::Base
     end
   end
 
-
 end

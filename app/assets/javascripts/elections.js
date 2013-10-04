@@ -13,8 +13,8 @@ $(document).ready(function(){
 			$("#election_date").datepicker("setDate", new Date(gon.election_date));
 		}
 	*/
-	}
 
+	}
 
   var field = $('#platform_election_id, #policy_brief_election_id, #statement_election_id');
   var replacefield = $('#platform_political_party_id, #policy_brief_political_party_id, #statement_political_party_id');
