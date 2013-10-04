@@ -53,7 +53,7 @@ class StatementsController < ApplicationController
 		# have to format dates this way so js datetime picker read them properly
 		gon.edit_statement = true
 
-    gon.election_political_parties_path = election_political_parties_path(:id => 999)
+    gon.election_political_parties_path = election_political_parties_path(:election_id => 999)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -70,7 +70,7 @@ class StatementsController < ApplicationController
 		gon.edit_statement = true
 		gon.date_made = @statement.date_made.strftime('%m/%d/%Y') if !@statement.date_made.nil?
 
-    gon.election_political_parties_path = election_political_parties_path(:id => 999)
+    gon.election_political_parties_path = election_political_parties_path(:election_id => 999)
   end
 
   # POST /statements
@@ -100,7 +100,7 @@ class StatementsController < ApplicationController
     		gon.edit_statement = true
     		gon.date_made = @statement.date_made.strftime('%m/%d/%Y') if !@statement.date_made.nil?
         @indicator_categories = IndicatorCategory.with_indicators.sorted
-        gon.election_political_parties_path = election_political_parties_path(:id => 999)
+        gon.election_political_parties_path = election_political_parties_path(:election_id => 999)
         format.html { render action: "new" }
         format.json { render json: @statement.errors, status: :unprocessable_entity }
       end
@@ -136,7 +136,7 @@ class StatementsController < ApplicationController
     		gon.edit_statement = true
     		gon.date_made = @statement.date_made.strftime('%m/%d/%Y') if !@statement.date_made.nil?
         @indicator_categories = IndicatorCategory.with_indicators.sorted
-        gon.election_political_parties_path = election_political_parties_path(:id => 999)
+        gon.election_political_parties_path = election_political_parties_path(:election_id => 999)
         format.html { render action: "edit" }
         format.json { render json: @statement.errors, status: :unprocessable_entity }
       end

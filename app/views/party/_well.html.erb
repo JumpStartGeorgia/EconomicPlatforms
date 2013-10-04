@@ -12,15 +12,13 @@
 		<% end %>
 
     <div class="block">
-      <% if @current_election.present? %>
-        <h3 class="block_header font">
-				  <%= @current_election.name %>
-        </h3>
-      <% end %>
 
       <h3 class="block_header font">
 				<%= image_tag(@political_party.logo.url, :style => 'vertical-align: middle;') if @political_party.logo_file_name %>
 				<%= @political_party.name %>
+        <% if @current_election.present? %>
+			    <%= " - #{@current_election.name}" %>
+        <% end %>
       </h3>
 
 			<% if params[:action] != 'index' %>

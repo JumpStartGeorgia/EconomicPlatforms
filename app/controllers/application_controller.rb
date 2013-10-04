@@ -72,11 +72,14 @@ logger.debug "////////////////////////// BROWSER NOT SUPPORTED"
 	end
 
   def set_elections
+    @elections_w_parties = Election.with_political_parties.sorted.with_translations(I18n.locale)
     @elections_nav = Election.sorted.with_translations(I18n.locale).with_data
 
     @current_election = (params[:election_id].blank? ? @elections_nav.first : @elections_nav.select{|x| x.id.to_s == params[:election_id]}.first)
     if @current_election.blank?
-      redirect_to root_path(:locale => I18n.default_locale)
+      # if getting political parties for election, it is possible election does not have any data yet,
+      # so do not redirect if calling this action
+      redirect_to root_path(:locale => I18n.default_locale) if !(params[:controller] == "elections" && params[:action] == "political_parties")
     else
       @current_election_id = @current_election.id
     end

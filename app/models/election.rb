@@ -24,6 +24,22 @@ class Election < ActiveRecord::Base
     end
   end
 
+  # get elections that have political parties
+  def self.with_political_parties
+    x = nil
+    ids = []
+    pp = PoliticalParty.select('distinct election_id')
+    ids << pp.map{|x| x.election_id} if pp.present?
+    
+    ids.flatten!
+
+    if ids.present?
+      x = where(:id => ids)
+    end
+    
+    return x
+  end
+
 	# get elections that have data
 	# data is defined as having at least one record that is public in: platform, policy brief, or statement
 	def self.with_data

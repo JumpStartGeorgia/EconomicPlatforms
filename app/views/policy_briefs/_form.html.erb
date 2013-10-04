@@ -3,8 +3,8 @@
 
 
 	<%= f.inputs do %>
-	  <%= f.input :election_id, :as => :select, :collection => Election.sorted, :include_blank => false %>
-		<%= f.input :political_party, :collection => (@policy_brief.election.nil? ? Election.first : @policy_brief.election).political_parties %>
+	  <%= f.input :election_id, :as => :select, :collection => @elections_w_parties, :include_blank => false %>
+		<%= f.input :political_party, :collection => PoliticalParty.by_election(@policy_brief.election_id.blank? ? @elections_w_parties.first.id : @policy_brief.election_id).sorted %>
 		<%= f.input :economic_category, :collection => @economic_categories_nav %>
 	<% end %>
 

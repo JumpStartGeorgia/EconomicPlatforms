@@ -4,8 +4,8 @@
 
 	<%= f.inputs do %>
 		<%= f.input :date_made, :as => :string, :input_html => {:size => 20} %>
-	  <%= f.input :election_id, :as => :select, :collection => Election.sorted, :include_blank => false %>
-		<%= f.input :political_party, :collection => (@statement.election.nil? ? Election.first : @statement.election).political_parties %>
+	  <%= f.input :election_id, :as => :select, :collection => @elections_w_parties, :include_blank => false %>
+		<%= f.input :political_party, :collection => PoliticalParty.by_election(@statement.election_id.blank? ? @elections_w_parties.first.id : @statement.election_id).sorted %>
 		<%= f.input :economic_category, :collection => @economic_categories_nav %>
 	<% end %>
 

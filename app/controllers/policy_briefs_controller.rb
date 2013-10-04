@@ -40,7 +40,7 @@ class PolicyBriefsController < ApplicationController
 			@policy_brief.policy_brief_translations.build(:locale => locale.to_s)
 		end
 
-    gon.election_political_parties_path = election_political_parties_path(:id => 999)
+    gon.election_political_parties_path = election_political_parties_path(:election_id => 999)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -53,7 +53,7 @@ class PolicyBriefsController < ApplicationController
     @policy_brief = PolicyBrief.find(params[:id])
     @indicator_categories = IndicatorCategory.with_indicators.sorted
 
-    gon.election_political_parties_path = election_political_parties_path(:id => 999)
+    gon.election_political_parties_path = election_political_parties_path(:election_id => 999)
   end
 
   # POST /policy_briefs
@@ -69,7 +69,7 @@ class PolicyBriefsController < ApplicationController
         format.json { render json: @policy_brief, status: :created, location: @policy_brief }
       else
         @indicator_categories = IndicatorCategory.with_indicators.sorted
-        gon.election_political_parties_path = election_political_parties_path(:id => 999)
+        gon.election_political_parties_path = election_political_parties_path(:election_id => 999)
         format.html { render action: "new" }
         format.json { render json: @policy_brief.errors, status: :unprocessable_entity }
       end
@@ -91,7 +91,7 @@ class PolicyBriefsController < ApplicationController
         format.json { head :ok }
       else
         @indicator_categories = IndicatorCategory.with_indicators.sorted
-        gon.election_political_parties_path = election_political_parties_path(:id => 999)
+        gon.election_political_parties_path = election_political_parties_path(:election_id => 999)
         format.html { render action: "edit" }
         format.json { render json: @policy_brief.errors, status: :unprocessable_entity }
       end

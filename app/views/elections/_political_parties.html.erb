@@ -1,4 +1,6 @@
   <option></option>
-<% @political_parties.each do |pp| %>
-  <option value="<%= pp.id.to_s %>"><%= pp.name %></option>
+<% if @political_parties.present? %>
+  <% @political_parties.each do |pp| %>
+    <option value="<%= pp.id %>"><%= pp.name %></option>
+  <% end %>
 <% end %>

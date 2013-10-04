@@ -12,14 +12,11 @@
 		<% end %>
 
     <div class="block">
-      <% if @current_election.present? %>
-        <h3 class="block_header font">
-				  <%= @current_election.name %>
-        </h3>
-      <% end %>
-
       <h3 class="block_header font">
 				<%= @economic_category.name %>
+        <% if @current_election.present? %>
+			    <%= " - #{@current_election.name}" %>
+        <% end %>
       </h3>
 
 			<% if params[:action] != 'index' %>

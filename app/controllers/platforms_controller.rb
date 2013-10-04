@@ -40,7 +40,8 @@ class PlatformsController < ApplicationController
 			@platform.platform_translations.build(:locale => locale.to_s)
 		end
 
-    gon.election_political_parties_path = election_political_parties_path(:id => 999)
+Rails.logger.debug "/////////////// gon path = #{election_political_parties_path(:election_id => 999)}"
+    gon.election_political_parties_path = election_political_parties_path(:election_id => 999)
 
     # create the score object for however many categories there are
     # so the form will properly create all of the nested form fields
@@ -59,7 +60,7 @@ class PlatformsController < ApplicationController
     @platform = Platform.find(params[:id])
     @indicator_categories = IndicatorCategory.with_indicators.sorted
 
-    gon.election_political_parties_path = election_political_parties_path(:id => 999)
+    gon.election_political_parties_path = election_political_parties_path(:election_id => 999)
   end
 
   # POST /platforms
@@ -85,7 +86,7 @@ class PlatformsController < ApplicationController
         format.json { render json: @platform, status: :created, location: @platform }
       else
 		    @indicator_categories = IndicatorCategory.with_indicators.sorted
-        gon.election_political_parties_path = election_political_parties_path(:id => 999)
+        gon.election_political_parties_path = election_political_parties_path(:election_id => 999)
         format.html { render action: "new" }
         format.json { render json: @platform.errors, status: :unprocessable_entity }
       end
@@ -116,7 +117,7 @@ class PlatformsController < ApplicationController
         format.json { head :ok }
       else
 		    @indicator_categories = IndicatorCategory.with_indicators.sorted
-        gon.election_political_parties_path = election_political_parties_path(:id => 999)
+        gon.election_political_parties_path = election_political_parties_path(:election_id => 999)
         format.html { render action: "edit" }
         format.json { render json: @platform.errors, status: :unprocessable_entity }
       end
