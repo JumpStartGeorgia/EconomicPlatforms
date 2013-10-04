@@ -22,9 +22,6 @@ $(document).ready(function(){
   {
     field.change(function ()
     {
-      console.log('field value = ' + field.val());
-      console.log(gon.election_political_parties_path);
-      console.log(gon.election_political_parties_path.replace(/[0-9]+(\/)?$/, field.val() + '$1'));
       replacefield.attr('disabled', 1).load(gon.election_political_parties_path.replace(/[0-9]+(\/)?$/, field.val() + '$1'), function ()
       {
         replacefield.removeAttr('disabled');

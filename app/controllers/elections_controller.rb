@@ -114,8 +114,6 @@ class ElectionsController < ApplicationController
 
   def political_parties
     @political_parties = PoliticalParty.by_election(params[:election_id]).sorted
-Rails.logger.debug "***************************"
-Rails.logger.debug "**** pol parties length = #{@political_parties.length} for elec id #{params[:election_id]}"
     respond_to do |format|
       format.html { render partial: 'political_parties' }
     end
