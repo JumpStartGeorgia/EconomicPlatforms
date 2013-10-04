@@ -22,6 +22,11 @@
 	  <div class="block clear">
 		  <div class="block_header clear">
 		    <div class="left">
+
+          <p><strong><%= t("admin.index.elections") %>:</strong>
+          <%= @statement.election.name %></p>
+          <br />
+
 		      <h3>
 		        <%#= "#{t('app.common.political_party')}:"%>
 		        <%= @statement.political_party.name %>
