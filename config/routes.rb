@@ -35,12 +35,26 @@ EconomicPlatforms::Application.routes.draw do
 		match '/election/:election_id/party/:political_party_id/policy_brief/:economic_category_id', :to => 'party#policy_brief', :as => :party_policy_brief
 		match '/election/:election_id/party/:political_party_id/statement/:id', :to => 'party#statement', :as => :party_statement
 
+    # redirect old party routes
+		match '/party/:political_party_id' => redirect('/%{locale}/election/1/party/%{political_party_id}')
+		match '/party/:political_party_id/platform/:economic_category_id' => redirect('/%{locale}/election/1/party/%{political_party_id}/platform/%{economic_category_id}')
+		match '/party/:political_party_id/policy_brief/:economic_category_id' => redirect('/%{locale}/election/1/party/%{political_party_id}/policy_brief/%{economic_category_id}')
+		match '/party/:political_party_id/statement/:id' => redirect('/%{locale}/election/1/party/%{political_party_id}/statement/%{id}')
+
 
 		# category profile
 		match '/election/:election_id/category/:economic_category_id', :to => 'category#index', :as => :category
 		match '/election/:election_id/category/:economic_category_id/platform/:political_party_id', :to => 'category#platform', :as => :category_platform
 		match '/election/:election_id/category/:economic_category_id/policy_brief/:political_party_id', :to => 'category#policy_brief', :as => :category_policy_brief
 		match '/election/:election_id/category/:economic_category_id/statement/:id', :to => 'category#statement', :as => :category_statement
+
+    # redirect old category routes
+		match '/category/:economic_category_id' => redirect('/%{locale}/election/1/category/%{economic_category_id}')
+		match '/category/:economic_category_id/platform/:political_party_id' => redirect('/%{locale}/election/1/category/%{economic_category_id}/platform/%{political_party_id}')
+		match '/category/:economic_category_id/policy_brief/:political_party_id' => redirect('/%{locale}/election/1/category/%{economic_category_id}/policy_brief/%{political_party_id}')
+		match '/category/:economic_category_id/statement/:id' => redirect('/%{locale}/election/1/category/%{economic_category_id}/statement/%{id}')
+
+
 
     # comments and voting
 		match '/add_comment_to/:type/:commentable_id', :to => 'comments#create', :as => :add_comment, :via => :post
