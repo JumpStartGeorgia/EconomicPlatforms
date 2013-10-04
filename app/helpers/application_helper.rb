@@ -65,6 +65,45 @@ logger.debug "**************************sub_title = '#{page_title}'"
 		text.html_safe
 	end
 
+	# put the default locale first and then sort the remaining locales
+	def create_sorted_translation_objects(trans)
+	  if trans.present?
+      # pull out default locale
+      default = trans.select{|x| x.locale == I18n.default_locale.to_s}.first
+      trans.delete(default) if default.present?
+
+      # now sort the left over
+      trans.sort!{|x,y| x.locale <=> y.locale}
+
+      # add default back in
+      trans.insert(0, default) if default.present?
+	  end
+    return trans
+	end
+	
+	# build the language switcher links so default language is first and the rest are alphabetical
+  def build_language_switcher_links
+    html = ''
+    locales = I18n.available_locales.clone
+    # pull out default locale
+    default = locales.select{|x| x == I18n.default_locale}.first
+    locales.delete(default) if default.present?
+    # now sort the left over
+    locales.sort!{|x,y| y.to_s <=> x.to_s}
+    # add default back in
+    locales << default if default.present?
+    
+	  locales.each do |locale|
+		  if locale != I18n.locale
+		    html << "<li>"
+		    html << generate_language_switcher_link(locale)
+		    html << "</li>"
+		  end
+	  end
+	  
+    return html.html_safe
+  end
+
 	# since the url contains english or georgian text, the text must be updated to the correct language
 	# for the language switcher link to work
 	def generate_language_switcher_link(locale)
@@ -93,22 +132,6 @@ logger.debug "**************************sub_title = '#{page_title}'"
 			link_to t("app.language.#{locale}"), params.merge(:locale => locale)
 		end
 
-	end
-	
-	# put the default locale first and then sort the remaining locales
-	def create_sorted_translation_objects(trans)
-	  if trans.present?
-      # pull out default locale
-      default = trans.select{|x| x.locale == I18n.default_locale.to_s}.first
-      trans.delete(default) if default.present?
-
-      # now sort the left over
-      trans.sort!{|x,y| x.locale <=> y.locale}
-
-      # add default back in
-      trans.insert(0, default) if default.present?
-	  end
-    return trans
 	end
 	
 	

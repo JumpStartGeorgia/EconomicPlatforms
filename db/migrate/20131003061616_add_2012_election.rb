@@ -6,10 +6,16 @@ class Add2012Election < ActiveRecord::Migration
       election = Election.create(:date => '2012-10-01')
       election.election_translations.create(:name => '2012 Parliamentary Elections', :locale => 'en')
       election.election_translations.create(:name => '2012 წლის საპარლამენტო არჩევნები', :locale => 'ka')
+      election.election_translations.create(:name => '2012 წლის საპარლამენტო არჩევნები', :locale => 'ru')
+      election.election_translations.create(:name => '2012 წლის საპარლამენტო არჩევნები', :locale => 'am')
+      election.election_translations.create(:name => '2012 წლის საპარლამენტო არჩევნები', :locale => 'az')
 
       election2 = Election.create(:date => '2013-10-27')
       election2.election_translations.create(:name => '2013 Presidential Elections', :locale => 'en')
       election2.election_translations.create(:name => '2013 წლის საპრეზიდენტო არჩევნები', :locale => 'ka')
+      election2.election_translations.create(:name => '2013 წლის საპრეზიდენტო არჩევნები', :locale => 'ru')
+      election2.election_translations.create(:name => '2013 წლის საპრეზიდენტო არჩევნები', :locale => 'am')
+      election2.election_translations.create(:name => '2013 წლის საპრეზიდენტო არჩევნები', :locale => 'az')
 
       # update all exisitng records to be for 2012 election
       Activity.update_all(:election_id => election.id)    
