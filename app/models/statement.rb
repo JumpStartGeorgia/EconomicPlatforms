@@ -37,6 +37,10 @@ class Statement < ActiveRecord::Base
     end
   end
 
+  def self.by_election(election_id)
+    where(:election_id => election_id)
+  end
+
 	def self.sorted
     with_translations(I18n.locale).order("statements.date_made desc")	
   end

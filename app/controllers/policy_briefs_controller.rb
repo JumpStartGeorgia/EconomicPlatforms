@@ -9,7 +9,7 @@ class PolicyBriefsController < ApplicationController
   # GET /policy_briefs
   # GET /policy_briefs.json
   def index
-    @policy_briefs = PolicyBrief.all.sort_by{|x| [x.political_party.name, x.economic_category.name]}.paginate(:page => params[:page], :per_page => 10)
+	  @policy_briefs = PolicyBrief.by_election(@current_election_id).sort_by{|x| [x.political_party.name, x.economic_category.name]}.paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html # index.html.erb

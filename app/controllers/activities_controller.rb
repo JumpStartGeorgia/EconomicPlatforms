@@ -10,7 +10,7 @@ class ActivitiesController < ApplicationController
   # GET /activities.json
   def index
 		if user_signed_in?
-		  @activities = Activity.sorted
+		  @activities = Activity.sorted.by_election(@current_election_id)
 
 		  respond_to do |format|
 		    format.html # index.html.erb

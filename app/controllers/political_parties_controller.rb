@@ -7,7 +7,7 @@ class PoliticalPartiesController < ApplicationController
   # GET /political_parties
   # GET /political_parties.json
   def index
-    @political_parties = PoliticalParty.sorted
+    @political_parties = PoliticalParty.sorted.by_election(@current_election_id)
 
     respond_to do |format|
       format.html # index.html.erb
