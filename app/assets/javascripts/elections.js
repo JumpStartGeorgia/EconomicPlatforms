@@ -30,6 +30,16 @@ $(document).ready(function(){
   }
 
 
+  if ($('.index_election_filter').length)
+  {
+    $('.index_election_filter').change(function ()
+    {
+      location.href = location.href.replace(/\?.*$/, '') + '?election_id=' + $(this).val();
+    });
+  }
+
+
+
 
 });
 

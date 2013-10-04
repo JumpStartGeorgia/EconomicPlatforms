@@ -10,7 +10,7 @@ class StatementsController < ApplicationController
   # GET /statements
   # GET /statements.json
   def index
-    @statements = Statement.sorted.paginate(:page => params[:page])
+    @statements = Statement.sorted.by_election(@current_election_id).paginate(:page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

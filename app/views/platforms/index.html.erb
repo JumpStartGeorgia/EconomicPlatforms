@@ -8,6 +8,8 @@
 	:class => 'btn' %>
 </div>
 
+<%= select_tag :election_id, options_from_collection_for_select(@elections_nav, :id, :name, @current_election_id), {:class => :index_election_filter} %>
+
 <% if @platforms.nil? || @platforms.empty? %>
 	<p>
 		<%= t('.no_platforms') %>

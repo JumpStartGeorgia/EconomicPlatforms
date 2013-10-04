@@ -27,6 +27,10 @@ class PolicyBrief < ActiveRecord::Base
     end
   end
 
+  def self.by_election(election_id)
+    where(:election_id => election_id)
+  end
+
 	def self.by_party_category(political_party_id, economic_category_id)
 		if political_party_id && economic_category_id
 			x = with_translations(I18n.locale)
