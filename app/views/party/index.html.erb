@@ -1,8 +1,8 @@
 <% 
-  page_title = @political_party.name.clone
+  page_title = @political_party.name_with_candidate(@current_election_id).clone
   page_title << " - #{@current_election.name}" if @current_election.present? 
 
-  title page_title
+  title page_title.html_safe
   title_image @political_party.logo.url if @political_party.logo_file_name
 %>
 

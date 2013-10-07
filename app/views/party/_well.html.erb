@@ -15,7 +15,7 @@
 
       <h3 class="block_header font">
 				<%= image_tag(@political_party.logo.url, :style => 'vertical-align: middle;') if @political_party.logo_file_name %>
-				<%= @political_party.name %>
+				<%= @political_party.name_with_candidate(@current_election_id).clone %>
         <% if @current_election.present? %>
 			    <%= " - #{@current_election.name}" %>
         <% end %>

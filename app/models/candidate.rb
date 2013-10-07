@@ -18,6 +18,19 @@ class Candidate < ActiveRecord::Base
     where(:election_id => election_id)
   end
 
+  def self.by_political_party(political_party_id)
+    where(:political_party_id => political_party_id)
+  end
+  
+  def self.name_for_election_party(election_id, political_party_id)
+    name = nil
+    x = by_election(election_id).by_political_party(political_party_id).with_translations(I18n.locale)
+    if x.present?
+      name = x.first.name
+    end
+    return name
+  end
+
   # normal process of Election.destroy does not work because paper trail is throwing error
   # - so have to do normal deletes
   def self.delete_hack(id)

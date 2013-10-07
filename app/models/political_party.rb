@@ -22,9 +22,16 @@ class PoliticalParty < ActiveRecord::Base
   has_many :statements
   has_many :policy_briefs
 	has_many :platforms
-
+	
   def required_elections
     errors.add :election, I18n.t('formtastic.required') if self.election_ids.length == 0
+  end
+
+  def name_with_candidate(election_id)
+    cand = Candidate.name_for_election_party(election_id, self.id)
+    name = self.name.clone
+    name << " (#{cand})" if cand.present? && name.present?
+    return name
   end
 
   def self.sorted
