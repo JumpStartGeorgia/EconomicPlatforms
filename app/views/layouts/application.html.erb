@@ -101,7 +101,8 @@
 															  </a>
 															  <ul class="dropdown-menu">
 																  <% @elections_nav.each do |el| %>
-																  <li><%= link_to el.name, url_for(:election_id => el.id)%></li>
+																    <% li_class = el.id.to_s == @current_election_id.to_s ? "class=active" : "" %>
+																    <li <%= li_class %>><%= link_to el.name, url_for(:election_id => el.id)%></li>
 																  <% end %>
 															  </ul>
 														  </div>
