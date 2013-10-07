@@ -4,6 +4,9 @@ module ActivitiesHelper
 
   def char_limit (text, limit)
     t = ''
+    if text.blank?
+      return t
+    end
 
     words = strip_tags(text).split(' ')
     charcount = 0
