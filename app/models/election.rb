@@ -5,15 +5,17 @@ class Election < ActiveRecord::Base
   accepts_nested_attributes_for :election_translations
   attr_accessible :date, :election_translations_attributes
 
+  has_and_belongs_to_many :political_parites
+
   has_many :activities
   has_many :platforms
   has_many :policy_briefs
-  has_many :political_parties
+#  has_many :political_parties
   has_many :statements
 
   validates :date, :presence => true
 
-	scope :sorted, order("date desc")
+	scope :sorted, with_translations(I18n.locale).order("date desc")
 	
   # normal process of Election.destroy does not work because paper trail is throwing error
   # - so have to do normal deletes
@@ -26,15 +28,17 @@ class Election < ActiveRecord::Base
 
   # get elections that have political parties
   def self.with_political_parties
-    x = nil
+    sql = "select distinct election_id from elections_political_parties"
+    q = find_by_sql(sql)
     ids = []
-    pp = PoliticalParty.select('distinct election_id')
-    ids << pp.map{|x| x.election_id} if pp.present?
-    
-    ids.flatten!
+    x = nil
+        
+    if q.present?
+      ids << q.map{|x| x["election_id"]} 
 
-    if ids.present?
-      x = where(:id => ids)
+      if ids.present?
+        x = where(:id => ids)
+      end
     end
     
     return x

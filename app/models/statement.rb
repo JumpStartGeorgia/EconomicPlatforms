@@ -60,19 +60,19 @@ class Statement < ActiveRecord::Base
   #########################
   ## scores
   #########################
-  def self.party_statement_scores_json(political_party_id, economic_category_id, indicator_category_id)
+  def self.party_statement_scores_json(election_id, political_party_id, economic_category_id, indicator_category_id)
     json = Hash.new
 
-    if political_party_id && economic_category_id && indicator_category_id
+    if election_id && political_party_id && economic_category_id && indicator_category_id
 
       # get the party scores
-      scores = daily_average(political_party_id, economic_category_id, indicator_category_id)
+      scores = daily_average(election_id, political_party_id, economic_category_id, indicator_category_id)
 
       # get the party platform score
-      platform_score = Platform.score(political_party_id, economic_category_id, indicator_category_id)
+      platform_score = Platform.score(election_id, political_party_id, economic_category_id, indicator_category_id)
 
       # get the all party platform average
-      all_party_average = Platform.all_party_average(economic_category_id, indicator_category_id)
+      all_party_average = Platform.all_party_average(election_id, economic_category_id, indicator_category_id)
 
       # put together in nice format
       # {party  cat  ind  title  scale={top  middle  bottom}  values=[{x  y}]  guidlines={party_plat  all_parties_plat}}
@@ -114,25 +114,25 @@ class Statement < ActiveRecord::Base
 		return json
   end
 
-  def self.categiry_statement_scores_json(political_party_id, economic_category_id, indicator_category_id)
+  def self.category_statement_scores_json(election_id, political_party_id, economic_category_id, indicator_category_id)
     json = Hash.new
 
-    if political_party_id && economic_category_id && indicator_category_id
+    if election_id && political_party_id && economic_category_id && indicator_category_id
 
       # get the party scores
-      scores = daily_average(political_party_id, economic_category_id, indicator_category_id)
+      scores = daily_average(election_id, political_party_id, economic_category_id, indicator_category_id)
 
       # get the party platform score
-      platform_score = Platform.score(political_party_id, economic_category_id, indicator_category_id)
+      platform_score = Platform.score(election_id, political_party_id, economic_category_id, indicator_category_id)
 
       # get the all party platform average
-      all_party_average = Platform.all_party_average(economic_category_id, indicator_category_id)
+      all_party_average = Platform.all_party_average(election_id, economic_category_id, indicator_category_id)
 
       # put together in nice format
       # {party  cat  ind  title  scale={top  middle  bottom}  values=[{x  y}]  guidlines={party_plat  all_parties_plat}}
-      json['political_party'] = scores && !scores.empty? ? scores.first.political_party_name : nil
-      json['economic_category'] = scores && !scores.empty? ? scores.first.economic_category_name : nil
-      json['indicator_category'] = scores && !scores.empty? ? scores.first.indicator_category_name : nil
+      json['political_party'] = scores.present? ? scores.first.political_party_name : nil
+      json['economic_category'] = scores.present? ? scores.first.economic_category_name : nil
+      json['indicator_category'] = scores.present? ? scores.first.indicator_category_name : nil
       json['title'] = Hash.new
       json['title']['line1'] = I18n.t('app.common.category_statements',
 				:category => json['economic_category'])
@@ -169,8 +169,8 @@ class Statement < ActiveRecord::Base
   end
 
 
-  def self.daily_average(political_party_id, economic_category_id, indicator_category_id)
-    if political_party_id && economic_category_id && indicator_category_id
+  def self.daily_average(election_id, political_party_id, economic_category_id, indicator_category_id)
+    if election_id && political_party_id && economic_category_id && indicator_category_id
       sql = "select ppt.name as political_party_name,ect.name as economic_category_name, "
       sql << "ict.name as indicator_category_name, s.date_made, "
       sql << "if(avg(ss.value)=4, 0, (avg(ss.value)-4)) as daily_avg_score "
@@ -182,6 +182,7 @@ class Statement < ActiveRecord::Base
       sql << "inner join indicator_category_translations as ict on ict.indicator_category_id = ss.indicator_category_id "
       sql << "where "
       sql << "s.political_party_id = :pp_id "
+      sql << "and s.election_id = :e_id "
       sql << "and s.economic_category_id = :ec_id "
       sql << "and ss.indicator_category_id = :ind_id "
       sql << "and ss.value != 0 "
@@ -189,7 +190,7 @@ class Statement < ActiveRecord::Base
       sql << "group by ppt.name,ect.name, ict.name,s.date_made "
       sql << "order by s.date_made "
 
-		  find_by_sql([sql, :pp_id => political_party_id, :ec_id => economic_category_id,
+		  find_by_sql([sql, :pp_id => political_party_id, :e_id => election_id, :ec_id => economic_category_id,
 		    :ind_id => indicator_category_id, :locale => I18n.locale])
 
     end

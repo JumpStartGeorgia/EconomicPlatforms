@@ -3,9 +3,9 @@ class RootController < ApplicationController
   def index
 
 		# get the latest statements
-		@statements = Statement.sorted.published.latest
+		@statements = Statement.sorted.published.latest.by_election(@current_election_id)
 
-    @activities = Activity.sorted
+    @activities = Activity.sorted.by_election(@current_election_id)
 
 		gon.highlight_first_form_field = false
 
@@ -25,13 +25,13 @@ class RootController < ApplicationController
     @values = []
     @div_id_prefix = "ec_chart_"
     @economic_categories_nav.each do |ec_cat|
-      data = Platform.scores_for_ec_cat_and_ind_cat(ec_cat.id,ideological_id)
-      if data && !data.empty?
+      data = Platform.scores_for_ec_cat_and_ind_cat(@current_election_id, ec_cat.id,ideological_id)
+      if data.present?
         @values << {:div_id => "#{@div_id_prefix}#{ec_cat.id}", :name => ec_cat.name, :data => data.map{|x| x.scores_to_hash}}
       end
     end
 
-    if @values && !@values.empty?
+    if @values.present?
       # get indicators for this category
       @indicators = Indicator.sorted.by_indicator_category(ideological_id).sort{|a,b| b.value <=> a.value}
 

@@ -22,9 +22,10 @@
 				            </a>
 
                     <ul class="parties-dropdown dropdown-menu">
-			              <% if party.policy_briefs && !party.policy_briefs.empty? %>
+                    <% policy_briefs = PolicyBrief.by_election(@current_election_id).by_political_party(party.id).published %>
+			              <% if policy_briefs.present? %>
 
-					              <% party.policy_briefs.each do |policy_brief| %>
+					              <% policy_briefs.each do |policy_brief| %>
 						              <li>
 							              <%= link_to policy_brief.economic_category.name,
 								              party_policy_brief_path(:political_party_id => party.permalink,

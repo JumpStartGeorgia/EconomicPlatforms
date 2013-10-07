@@ -1,5 +1,5 @@
 ﻿# encoding: utf-8
-az:
+ka:
   activerecord:
     models:
       statement: განცხადება
@@ -17,6 +17,7 @@ az:
       activity:
         date: თარიღი
         video: YouTube ვიდეო ლინკი
+        election: არჩევნები
       activity_translation:
         title: სათაური
         body: ტექსტი
@@ -25,6 +26,7 @@ az:
         political_party: პოლიტიკური პარტია
         economic_category: ეკონომიკური კატეგორია
         is_public: ხილული მსოფლიოსათვის
+        election: არჩევნები
       statement_translation:
         source: განცხადების წყარო
         author: განცხადების ავტორი
@@ -41,7 +43,7 @@ az:
       indicator_category_translation:
         name: სახელი
       indicator:
-        indicator_category:
+        indicator_category: ინდიკატორის კატეგორია
         value: შეფასება
       indicator_translation:
         name: სახელი
@@ -49,17 +51,20 @@ az:
         political_party: პოლიტიკური პარტია
         economic_category: ეკონომიკური კატეგორია
         is_public: ხილული მსოფლიოსათვის
+        election: არჩევნები
       platform_translation:
         description: აღწერა
       policy_brief:
         political_party: პოლიტიკური პარტია
         economic_category: ეკონომიკური კატეგორია
         is_public: ხილული მსოფლიოსათვის
+        election: არჩევნები
       policy_brief_translation:
         analysis: ანალიზი
       political_party:
         color: ფერი
         logo: ლოგო
+        election: არჩევნები
       political_party_translation:
         name: სახელი
       page:
@@ -396,7 +401,7 @@ az:
       title: რედაქტირება
     index:
       title: სიახლეები
-      no_pages: მოცემული დროისათვის სიახლე არ მოიძებნება
+      no_activities: მოცემული დროისათვის სიახლე არ მოიძებნება
     new:
       title: ახალი
     show:

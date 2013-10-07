@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131003103503) do
+ActiveRecord::Schema.define(:version => 20131004131734) do
 
   create_table "activities", :force => true do |t|
     t.date     "date"
@@ -95,6 +95,15 @@ ActiveRecord::Schema.define(:version => 20131003103503) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "elections_political_parties", :force => true do |t|
+    t.integer  "election_id"
+    t.integer  "political_party_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "elections_political_parties", ["election_id", "political_party_id"], :name => "elections_political_parties_ids"
 
   create_table "indicator_categories", :force => true do |t|
     t.datetime "created_at"
@@ -244,7 +253,7 @@ ActiveRecord::Schema.define(:version => 20131003103503) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
-    t.integer  "election_id"
+    t.integer  "election_id_old"
   end
 
   create_table "political_party_translations", :force => true do |t|
