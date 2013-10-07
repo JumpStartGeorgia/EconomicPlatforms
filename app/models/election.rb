@@ -1,4 +1,5 @@
 class Election < ActiveRecord::Base
+  has_paper_trail
 
   translates :name
   has_many :election_translations, :dependent => :destroy

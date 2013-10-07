@@ -1,29 +1,24 @@
 class ElectionsController < ApplicationController
-
-  before_filter :authenticate_user!, :except => [:show, :index]
-  before_filter(:except => [:show, :index]) do |controller_instance|
-    controller_instance.send(:valid_role?, :author)
+  before_filter :authenticate_user!
+  before_filter do |controller_instance|
+    controller_instance.send(:valid_role?, :admin)
   end
 
   # GET /elections
   # GET /elections.json
   def index
-		if user_signed_in?
-		  @elections = Election.all
+	  @elections = Election.all
 
-		  respond_to do |format|
-		    format.html # index.html.erb
-		    format.json { render json: @elections }
-		  end
-		else
-			redirect_to root_path
-		end
+	  respond_to do |format|
+	    format.html # index.html.erb
+	    format.json { render json: @elections }
+	  end
   end
 
   # GET /elections/1
   # GET /elections/1.json
   def show
-    @election = Election.find(params[:id].to_i)
+    @election = Election.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

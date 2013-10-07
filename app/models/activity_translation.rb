@@ -1,5 +1,5 @@
 class ActivityTranslation < ActiveRecord::Base
-
+  has_paper_trail
   attr_accessible :activity_id, :title, :body, :locale
   belongs_to :activity
 

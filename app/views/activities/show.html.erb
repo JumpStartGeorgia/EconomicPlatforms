@@ -15,7 +15,7 @@
   <%= link_to t('app.buttons.edit'),
               edit_activity_path(@activity), :class => 'btn' %>
   <%= link_to t('app.buttons.delete'),
-              statement_path(@statement),
+              activity_path(@activity),
               :method => 'delete',
               :confirm => t('app.buttons.confirm'),
               :class => 'btn btn-danger' %>

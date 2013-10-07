@@ -40,7 +40,6 @@ class PlatformsController < ApplicationController
 			@platform.platform_translations.build(:locale => locale.to_s)
 		end
 
-Rails.logger.debug "/////////////// gon path = #{election_political_parties_path(:election_id => 999)}"
     gon.election_political_parties_path = election_political_parties_path(:election_id => 999)
 
     # create the score object for however many categories there are

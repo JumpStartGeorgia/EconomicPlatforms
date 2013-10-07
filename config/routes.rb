@@ -25,6 +25,7 @@ EconomicPlatforms::Application.routes.draw do
     resources :activities
 	  resources :activity_images
     resources :elections
+    resources :candidates
 
     # political parties of an election
     match '/elections/political_parties/:election_id', :to => 'elections#political_parties', :as => 'election_political_parties' 

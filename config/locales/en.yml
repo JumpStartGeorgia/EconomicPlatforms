@@ -13,6 +13,7 @@ en:
       page: Page
       activity: News
       election: Election
+      candidate: Candidate
     attributes:
       activity:
         date: Date
@@ -76,6 +77,11 @@ en:
         date: Election Date
       election_translation:
         name: Election Name
+      candidate:
+        election: Election
+        political_party: Political Party
+      candidate_translation:
+        name: Candidate Name
   app:
     language:
       en: English
@@ -176,6 +182,7 @@ en:
       does_not_exist: You tried to access a page that does not exist.
       not_authorized: You are not authorized to view that page.
       permalink_exists: already exists in the database
+      candidate_exists: already exists for this election.
       success_created: "%{obj} was successfully created."
       success_updated: "%{obj} was successfully updated."
       policy_already_exists: already exists in the database
@@ -297,6 +304,16 @@ en:
       title: New Election
     show:
       title: Election Details
+  candidates:
+    edit:
+      title: Editing Candidate
+    index:
+      title: Candidates
+      no_candidates: "At this time, no candidates have been recorded"
+    new:
+      title: New Candidate
+    show:
+      title: Candidate Details
   admin:
     index:
       title: Administration Section
@@ -392,6 +409,10 @@ en:
       title: New Page
     show:
       title: Page Details
+    page_file_fields:
+      remove_link: Remove File
+    form:
+      add_file: Add File
   activities:
     edit:
       title: Editing News

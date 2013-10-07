@@ -1,5 +1,5 @@
 class Activity < ActiveRecord::Base
-
+  has_paper_trail
   translates :title, :body
   has_many :activity_images, :dependent => :destroy
   has_many :activity_translations, :dependent => :destroy

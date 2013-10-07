@@ -10,7 +10,7 @@
   <%= link_to t('app.buttons.edit'),
               edit_election_path(@election), :class => 'btn' %>
   <%= link_to t('app.buttons.delete'),
-              statement_path(@statement),
+              election_path(@election),
               :method => 'delete',
               :confirm => t('app.buttons.confirm'),
               :class => 'btn btn-danger' %>

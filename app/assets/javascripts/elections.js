@@ -16,8 +16,8 @@ $(document).ready(function(){
 
 	}
 
-  var field = $('#platform_election_id, #policy_brief_election_id, #statement_election_id');
-  var replacefield = $('#platform_political_party_id, #policy_brief_political_party_id, #statement_political_party_id');
+  var field = $('#platform_election_id, #policy_brief_election_id, #statement_election_id, #candidate_election_id');
+  var replacefield = $('#platform_political_party_id, #policy_brief_political_party_id, #statement_political_party_id, #candidate_political_party_id');
   if (field.length && replacefield)
   {
     field.change(function ()

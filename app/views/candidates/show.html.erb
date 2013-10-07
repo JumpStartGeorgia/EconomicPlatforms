@@ -1,0 +1,37 @@
+<% title @election.name %>
+
+<% if user_signed_in? && can?(:manage, Candidate) %>
+<div class="form-actions">
+  <%= link_to t('app.buttons.list'),
+              candidates_path, :class => 'btn'  %>
+	<%= link_to t('app.buttons.new'),
+		          new_candidate_path,
+		          :class => 'btn btn-primary' %>
+  <%= link_to t('app.buttons.edit'),
+              edit_candidate_path(@candidate), :class => 'btn' %>
+  <%= link_to t('app.buttons.delete'),
+              candidate_path(@candidate),
+              :method => 'delete',
+              :confirm => t('app.buttons.confirm'),
+              :class => 'btn btn-danger' %>
+  <%= link_to t('app.buttons.admin'), admin_path,
+  :class => 'btn' %>
+</div>
+<% end %>
+
+<p>
+  <strong><%= t('app.common.election') %>:</strong>
+  <%= @candidate.election.name %>
+</p>
+
+<p>
+  <strong><%= t('app.common.political_party') %>:</strong>
+  <%= @candidate.political_party.name %>
+</p>
+
+<p>
+  <strong><%= t('app.common.candidate') %>:</strong>
+  <%= @candidate.name %>
+</p>
+
+

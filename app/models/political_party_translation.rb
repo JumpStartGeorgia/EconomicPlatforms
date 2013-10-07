@@ -4,9 +4,9 @@ class PoliticalPartyTranslation < ActiveRecord::Base
   has_permalink :create_permalink
   belongs_to :political_party
 
-  attr_accessible :political_party_id, :name, :locale, :permalink, :candidate
+  attr_accessible :political_party_id, :name, :locale, :permalink
 
-  validates :name, :locale, :candidate, :presence => true
+  validates :name, :locale, :presence => true
   validates :permalink, :uniqueness => {:scope => :locale, :case_sensitive => false, :message => I18n.t('app.msgs.permalink_exists')}
 
   def create_permalink
