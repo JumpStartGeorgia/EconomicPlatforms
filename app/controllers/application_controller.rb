@@ -79,7 +79,7 @@ logger.debug "////////////////////////// BROWSER NOT SUPPORTED"
     if @current_election.blank?
       # if getting political parties for election, it is possible election does not have any data yet,
       # so do not redirect if calling this action
-      if !(params[:controller] == "elections" && params[:action] == "political_parties") && !(params[:controller] == "political_parties")
+      if !(params[:controller] == "elections" && params[:action] == "political_parties") && params[:controller] != "political_parties" && params[:controller] != "candidates"
         redirect_to root_path(:locale => I18n.default_locale) 
       end
     else
