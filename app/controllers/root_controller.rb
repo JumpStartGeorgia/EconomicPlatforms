@@ -15,7 +15,7 @@ class RootController < ApplicationController
 	end
 
 	def sitemap
-		  @activities = Activity.sorted
+		  @activities = Activity.sorted.by_election(@current_election_id)
 	end
 
 

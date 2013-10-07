@@ -15,14 +15,14 @@
 				        <% @political_parties_nav.each_with_index do |party,i| %>
 				          <li class="party-dropdown">
 
+                    <% policy_briefs = PolicyBrief.by_election(@current_election_id).by_political_party(party.id).published %>
 				            <a href="#">
 				              <%= image_tag(party.logo.url, :style => 'vertical-align: middle;') if party.logo_file_name %>
 											<%= party.name %>
-				              <%= '<b class="caret"></b>'.html_safe if party.policy_briefs && !party.policy_briefs.empty? %>
+				              <%= '<b class="caret"></b>'.html_safe if policy_briefs.present? %>
 				            </a>
 
                     <ul class="parties-dropdown dropdown-menu">
-                    <% policy_briefs = PolicyBrief.by_election(@current_election_id).by_political_party(party.id).published %>
 			              <% if policy_briefs.present? %>
 
 					              <% policy_briefs.each do |policy_brief| %>
