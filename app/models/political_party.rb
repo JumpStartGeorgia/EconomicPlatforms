@@ -17,10 +17,15 @@ class PoliticalParty < ActiveRecord::Base
 
 #  validates :color, :election_id, :presence => true
   validates :color, :presence => true
+  validate :required_elections
 
   has_many :statements
   has_many :policy_briefs
 	has_many :platforms
+
+  def required_elections
+    errors.add :election, I18n.t('formtastic.required') if self.election_ids.length == 0
+  end
 
   def self.sorted
     with_translations(I18n.locale).order("political_party_translations.name")
