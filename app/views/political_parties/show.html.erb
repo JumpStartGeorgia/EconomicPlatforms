@@ -15,11 +15,17 @@
 </div>
 
 <p><strong><%= t("admin.index.elections") %>:</strong>
-<%= @political_party.election.name %></p>
+<%= @political_party.elections_sorted.map{|x| x.name}.join("<br />").html_safe %>
+</p>
 
 <p>
   <strong><%= t('app.common.name') %>:</strong>
   <%= @political_party.name %>
+</p>
+
+<p>
+  <strong><%= t('app.common.candidate') %>:</strong>
+  <%= @political_party.candidate %>
 </p>
 
 <p>

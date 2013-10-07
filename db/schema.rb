@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131004131734) do
+ActiveRecord::Schema.define(:version => 20131007094924) do
 
   create_table "activities", :force => true do |t|
     t.date     "date"
@@ -264,6 +264,7 @@ ActiveRecord::Schema.define(:version => 20131004131734) do
     t.datetime "updated_at"
     t.string   "permalink"
     t.text     "platform"
+    t.string   "candidate"
   end
 
   add_index "political_party_translations", ["locale"], :name => "index_political_party_translations_on_locale"

@@ -14,6 +14,7 @@
   <thead>
     <tr>
       <th><%= t('app.common.name') %></th>
+      <th><%= t('app.common.candidate') %></th>
       <th><%= t('activerecord.attributes.political_party.election') %></th>
       <th><%= t('app.common.logo') %></th>
       <th><%= t('app.common.color') %></th>
@@ -24,6 +25,7 @@
     <% @political_parties.each do |political_party| %>
       <tr>
         <td><%= political_party.name %></td>
+        <td><%= political_party.candidate %></td>
         <td><%= political_party.elections_sorted.map{|x| x.name}.join("<br />").html_safe %></td>
         <td><%= image_tag(political_party.logo.url) if political_party.logo_file_name %></td>
         <td><span style="background-color: <%= "#{political_party.color}" %>;">&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
