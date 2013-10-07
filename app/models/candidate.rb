@@ -8,6 +8,7 @@ class Candidate < ActiveRecord::Base
   attr_accessible :election_id, :political_party_id, :candidate_translations_attributes
 
   validates :election_id, :political_party_id, :presence => true
+  validates :political_party_id, :uniqueness => {:scope => :election_id, :message => I18n.t('app.msgs.candidate_exists')}
 
   def images
     self.activity_images

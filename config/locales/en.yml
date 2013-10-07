@@ -182,6 +182,7 @@ en:
       does_not_exist: You tried to access a page that does not exist.
       not_authorized: You are not authorized to view that page.
       permalink_exists: already exists in the database
+      candidate_exists: already exists for this election.
       success_created: "%{obj} was successfully created."
       success_updated: "%{obj} was successfully updated."
       policy_already_exists: already exists in the database
@@ -308,6 +309,7 @@ en:
       title: Editing Candidate
     index:
       title: Candidates
+      no_candidates: "At this time, no candidates have been recorded"
     new:
       title: New Candidate
     show:

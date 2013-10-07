@@ -8,34 +8,41 @@
 :class => 'btn' %>
 </div>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= t('app.common.election') %></th>
-      <th><%= t('app.common.political_party') %></th>
-      <th><%= t('app.common.candidate') %></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @candidates.each do |candidate| %>
+<%= select_tag :election_id, options_from_collection_for_select(@elections_nav, :id, :name, @current_election_id), {:class => :index_election_filter} %>
+
+<% if @candidates.blank? %>
+	<p>
+		<%= t('.no_candidates') %>
+	</p>
+<% else %>
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= candidate.election.name %></td>
-        <td><%= candidate.political_party.name %></td>
-        <td><%= candidate.name %></td>
-		    <td>
-				  <%= link_to t('app.buttons.edit'), edit_candidate_path(candidate), :class => 'btn btn-mini' %>
-          <%= link_to t('app.buttons.delete'),
-                      candidate,
-                      :method => :delete,
-                      :confirm => t('app.buttons.confirm'),
-                      :class => 'btn btn-mini btn-danger' %>
-			  </td>
+        <th><%= t('app.common.election') %></th>
+        <th><%= t('app.common.political_party') %></th>
+        <th><%= t('app.common.candidate') %></th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @candidates.each do |candidate| %>
+        <tr>
+          <td><%= candidate.election.name %></td>
+          <td><%= candidate.political_party.name %></td>
+          <td><%= candidate.name %></td>
+		      <td>
+				    <%= link_to t('app.buttons.edit'), edit_candidate_path(candidate), :class => 'btn btn-mini' %>
+            <%= link_to t('app.buttons.delete'),
+                        candidate,
+                        :method => :delete,
+                        :confirm => t('app.buttons.confirm'),
+                        :class => 'btn btn-mini btn-danger' %>
+			    </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-
+<% end %>
