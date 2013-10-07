@@ -1,4 +1,9 @@
-<% title t('.title') %>
+<% 
+  page_title = t('.title')
+  page_title << " - #{@current_election.name}" if @current_election.present? 
+
+  title page_title
+%>
 
 <div class="row">
 	<div class="span12 clear sidespan">
@@ -14,11 +19,12 @@
 				<li>
 					<%= link_to party.name, party_path(party.permalink)%>
 					<ul>
-						<% if party.platforms && !party.platforms.empty? %>
+            <% platforms = Platform.by_election(@current_election_id).by_political_party(party.id).published %>
+						<% if platforms.present? %>
 							<li>
 								<%= t('party.well.platform_header') %>
 								<ul>
-									<% party.platforms.each do |platform| %>
+									<% platforms.each do |platform| %>
 										<li>
 									    <%= link_to platform.economic_category.name,
 										    party_platform_path(:political_party_id => party.permalink,
@@ -28,11 +34,12 @@
 								</ul>
 							</li>
 						<% end %>
-						<% if party.policy_briefs && !party.policy_briefs.empty? %>
+            <% policy_briefs = PolicyBrief.by_election(@current_election_id).by_political_party(party.id).published %>
+						<% if policy_briefs.present? %>
 							<li>
 								<%= t('app.common.policy_briefs') %>
 								<ul>
-									<% party.policy_briefs.each do |policy_brief| %>
+									<% policy_briefs.each do |policy_brief| %>
 										<li>
 									    <%= link_to policy_brief.economic_category.name,
 										    party_policy_brief_path(:political_party_id => party.permalink,
@@ -56,43 +63,47 @@
 		<h2><%= t('app.common.economic_category') %></h2>
 		<ul class="standard">
 			<% @economic_categories_nav.each do |category| %>
-				<li>
-					<%= link_to category.name, category_path(category.permalink)%>
-					<ul>
-						<% if category.platforms && !category.platforms.empty? %>
-							<li>
-								<%= t('category.well.platform_header') %>
-								<ul>
-									<% category.platforms.each do |platform| %>
-										<li>
-									    <%= link_to platform.political_party.name,
-										    category_platform_path(:economic_category_id => category.permalink,
-										    :political_party_id => platform.political_party.permalink) %>
-										</li>
-									<% end %>
-								</ul>
-							</li>
-						<% end %>
-						<% if category.policy_briefs && !category.policy_briefs.empty? %>
-							<li>
-								<%= t('app.common.policy_briefs') %>
-								<ul>
-									<% category.policy_briefs.each do |policy_brief| %>
-										<li>
-									    <%= link_to policy_brief.political_party.name,
-										    category_policy_brief_path(:economic_category_id => category.permalink,
-										    :political_party_id => policy_brief.political_party.permalink) %>
-										</li>
-									<% end %>
-								</ul>
-							</li>
-						<% end %>
-						<li>
-							<%= link_to t('app.common.statements'),
-							    category_path(:economic_category_id => category.permalink) %>
-						</li>
-					</ul>
-				</li>
+        <% platforms = Platform.by_election(@current_election_id).by_economic_category(category.id).published %>
+        <% policy_briefs = PolicyBrief.by_election(@current_election_id).by_economic_category(category.id).published %>
+        <% if platforms.present? && policy_briefs.present? %>
+				  <li>
+					  <%= link_to category.name, category_path(category.permalink)%>
+					  <ul>
+						  <% if platforms.present? %>
+							  <li>
+								  <%= t('category.well.platform_header') %>
+								  <ul>
+									  <% platforms.each do |platform| %>
+										  <li>
+									      <%= link_to platform.political_party.name,
+										      category_platform_path(:economic_category_id => category.permalink,
+										      :political_party_id => platform.political_party.permalink) %>
+										  </li>
+									  <% end %>
+								  </ul>
+							  </li>
+						  <% end %>
+						  <% if policy_briefs.present? %>
+							  <li>
+								  <%= t('app.common.policy_briefs') %>
+								  <ul>
+									  <% policy_briefs.each do |policy_brief| %>
+										  <li>
+									      <%= link_to policy_brief.political_party.name,
+										      category_policy_brief_path(:economic_category_id => category.permalink,
+										      :political_party_id => policy_brief.political_party.permalink) %>
+										  </li>
+									  <% end %>
+								  </ul>
+							  </li>
+						  <% end %>
+						  <li>
+							  <%= link_to t('app.common.statements'),
+							      category_path(:economic_category_id => category.permalink) %>
+						  </li>
+					  </ul>
+				  </li>
+        <% end %>
 			<% end %>
 		</ul>
 	</div>
