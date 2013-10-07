@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131007094924) do
+ActiveRecord::Schema.define(:version => 20131007114300) do
 
   create_table "activities", :force => true do |t|
     t.date     "date"
@@ -44,6 +44,27 @@ ActiveRecord::Schema.define(:version => 20131007094924) do
 
   add_index "activity_translations", ["activity_id"], :name => "index_activity_translations_on_activity_id"
   add_index "activity_translations", ["locale"], :name => "index_activity_translations_on_locale"
+
+  create_table "candidate_translations", :force => true do |t|
+    t.integer  "candidate_id"
+    t.string   "locale"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "candidate_translations", ["candidate_id"], :name => "index_candidate_translations_on_candidate_id"
+  add_index "candidate_translations", ["locale"], :name => "index_candidate_translations_on_locale"
+  add_index "candidate_translations", ["name"], :name => "index_candidate_translations_on_name"
+
+  create_table "candidates", :force => true do |t|
+    t.integer  "election_id"
+    t.integer  "political_party_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "candidates", ["election_id", "political_party_id"], :name => "index_candidates_on_election_id_and_political_party_id"
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
@@ -264,7 +285,6 @@ ActiveRecord::Schema.define(:version => 20131007094924) do
     t.datetime "updated_at"
     t.string   "permalink"
     t.text     "platform"
-    t.string   "candidate"
   end
 
   add_index "political_party_translations", ["locale"], :name => "index_political_party_translations_on_locale"

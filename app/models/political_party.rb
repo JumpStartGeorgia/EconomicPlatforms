@@ -1,7 +1,7 @@
 class PoliticalParty < ActiveRecord::Base
   has_paper_trail
 #  belongs_to :election
-  translates :name, :candidate, :permalink
+  translates :name, :permalink
 
   
 	has_attached_file :logo,

@@ -13,6 +13,7 @@ en:
       page: Page
       activity: News
       election: Election
+      candidate: Candidate
     attributes:
       activity:
         date: Date
@@ -76,6 +77,11 @@ en:
         date: Election Date
       election_translation:
         name: Election Name
+      candidate:
+        election: Election
+        political_party: Political Party
+      candidate_translation:
+        name: Candidate Name
   app:
     language:
       en: English
@@ -297,6 +303,15 @@ en:
       title: New Election
     show:
       title: Election Details
+  candidates:
+    edit:
+      title: Editing Candidate
+    index:
+      title: Candidates
+    new:
+      title: New Candidate
+    show:
+      title: Candidate Details
   admin:
     index:
       title: Administration Section
@@ -392,6 +407,10 @@ en:
       title: New Page
     show:
       title: Page Details
+    page_file_fields:
+      remove_link: Remove File
+    form:
+      add_file: Add File
   activities:
     edit:
       title: Editing News

@@ -13,6 +13,7 @@ ka:
       page: გვერდი
       activity: სიახლე
       election: არჩევნები
+      candidate: Candidate
     attributes:
       activity:
         date: თარიღი
@@ -76,6 +77,11 @@ ka:
         date: არჩევნების მონაცემები
       election_translation:
         name: არჩევნების სახელი
+      candidate:
+        election: არჩევნები
+        political_party: პოლიტიკური პარტია
+      candidate_translation:
+        name: Candidate Name
   app:
     language:
       en: English
@@ -297,6 +303,15 @@ ka:
       title: ახალი არჩევნები
     show:
       title: არჩევნების დეტალები
+  candidates:
+    edit:
+      title: Editing Candidate
+    index:
+      title: Candidates
+    new:
+      title: New Candidate
+    show:
+      title: Candidate Details
   admin:
     index:
       title: ადმინისტრატორის განყოფილება
