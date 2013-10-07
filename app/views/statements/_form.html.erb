@@ -10,19 +10,21 @@
 	<% end %>
 
   <% create_sorted_translation_objects(@statement.statement_translations).each do |trans| %>
-		<%= f.fields_for :statement_translations, trans do |translation| %>
+    <div class="fields">
+		  <%= f.fields_for :statement_translations, trans do |translation| %>
 
-			<div id="form-<%= trans.locale %>" class="multilanguage">
-				<h3><%= t("app.language.#{trans.locale}") %></h3>
+			  <div id="form-<%= trans.locale %>" class="multilanguage_nested">
+				  <h3><%= t("app.language.#{trans.locale}") %></h3>
 
-				<%= translation.input :source %>
-				<%= translation.input :author %>
-				<%= translation.input :statement_made, :as => :text, :input_html => {:rows => 15} %>
-				<%= translation.input :analysis, :as => :text, :input_html => {:rows => 15} %>
-				<%= translation.hidden_field :locale , :value => trans.locale %>
-			</div>
+				  <%= translation.input :source %>
+				  <%= translation.input :author %>
+				  <%= translation.input :statement_made, :as => :text, :input_html => {:rows => 15} %>
+				  <%= translation.input :analysis, :as => :text, :input_html => {:rows => 15} %>
+				  <%= translation.hidden_field :locale , :value => trans.locale %>
+			  </div>
 
-		<% end %>
+		  <% end %>
+		</div>
 	<% end %>
 
   <% order_scores(@statement.statement_scores).each do |score| %>
