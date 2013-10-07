@@ -1,8 +1,7 @@
 <% 
-  page_title = t('.title')
-  page_title << " - #{@current_election.name}" if @current_election.present? 
+  title t('.title')
+  election_sub_title @current_election.name if @current_election.present? 
 
-  title page_title
 %>
 
 <div class="row">

@@ -26,7 +26,7 @@ class CreateCandidates < ActiveRecord::Migration
     
     Candidate.transaction do
       # add new parties
-      dem = PoliticalParty.create(:election_ids => election_id, :color => '#ff0')
+      dem = PoliticalParty.create(:election_ids => election_id, :color => '#079fe2')
       locales.each_with_index do |locale, i|
         if i == 0
           dem.political_party_translations.create(:locale => locale, :name => 'Democratic Movement – United Georgia')
@@ -36,7 +36,7 @@ class CreateCandidates < ActiveRecord::Migration
       end
       party_names << 'Democratic Movement – United Georgia'
       
-      justice = PoliticalParty.create(:election_ids => election_id, :color => '#f0f')
+      justice = PoliticalParty.create(:election_ids => election_id, :color => '#007f14')
       locales.each_with_index do |locale, i|
         if i == 0
           justice.political_party_translations.create(:locale => locale, :name => 'Movement – Justice for Georgia')

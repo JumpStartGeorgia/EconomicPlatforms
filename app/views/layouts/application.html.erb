@@ -110,7 +110,7 @@
 												  </div>
 
 												  <div class="">
-													  <% if @political_parties_nav && !@political_parties_nav.empty? %>
+													  <% if @political_parties_nav.present? %>
 														  <div class="btn-group">
 															  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
 																  <%= t('app.common.political_party')%>
@@ -168,8 +168,17 @@
 										<div class="page-header">
 										  <div class="block">
 					              <h1>
-													<%= image_tag(yield(:title_image), :style => 'vertical-align: middle;') if content_for?(:title_image) %>
-												  <%= yield(:title) %>
+                          <div>
+					                  <% if content_for?(:title_image) %>
+												      <%= image_tag(yield(:title_image), :style => 'vertical-align: middle;') %>
+												    <% end %>
+												    <%= yield(:title) %>
+                          </div>
+					                <% if content_for?(:election_sub_title) %>
+                            <div id="election_sub_title">
+    												  <%= yield(:election_sub_title) %>
+												    </div>
+                          <% end %>
 											  </h1>
 											</div>
 										</div>

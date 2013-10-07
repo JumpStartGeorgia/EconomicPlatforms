@@ -2,7 +2,7 @@
   <div class="span9">
     <% if @current_election.present? %>
       <div class="block">
-        <h1><%= @current_election.name %></h1>
+        <h1 id="election_name"><%= @current_election.name %></h1>
       </div> 
     <% end %>
     <div class="row">
@@ -10,7 +10,7 @@
         <div class="block">
           <h4 class="font"><%= t('app.common.policy_briefs') %></h4>
           <div class="block_body">
-			      <% if @political_parties_nav && !@political_parties_nav.empty? %>
+			      <% if @political_parties_nav.present? %>
 				      <ul class="block_list_line">
 				        <% @political_parties_nav.each_with_index do |party,i| %>
 				          <li class="party-dropdown">

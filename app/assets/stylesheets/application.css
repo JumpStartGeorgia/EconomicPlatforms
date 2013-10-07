@@ -132,10 +132,6 @@ ol.standard li {
 	line-height: 1.5;
 }
 
-.page-header {
-	margin: 9px 0;
-}
-
 /* multilanguage form styles */
 .multilanguage, .multilanguage_nested{
 	padding: 0.5em;
@@ -289,6 +285,7 @@ div.admin_panel ul li {
 
 .page-header {
   padding-bottom: 0px;
+	margin: 9px 0;
   margin-top: -4px;
 }
 
@@ -296,6 +293,9 @@ div.admin_panel ul li {
   margin: 0px;
 }
 
+.page-header .block h1 > div#election_sub_title{
+  font-style: italic;
+}
 
 /* home page styles */
 .block {
@@ -303,6 +303,10 @@ div.admin_panel ul li {
   background: #fff;
   margin: 0px 0px 25px 0px;
   box-shadow: 3px 3px #d0d0d0;
+}
+
+.block h1#election_name{
+  font-style: italic;
 }
 
 .block > h3 {
@@ -343,6 +347,10 @@ div.admin_panel ul li {
 
 .block .block_header h3 + span {
   font-size: 12px;
+}
+
+.block h3.block_header .election_name {
+  font-style: italic;
 }
 
 

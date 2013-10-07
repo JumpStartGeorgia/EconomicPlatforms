@@ -62,6 +62,10 @@ class PolicyBrief < ActiveRecord::Base
 		return self.political_party.political_party_translations[0].name
 	end
 
+	def political_party_name_with_candidate
+		return self.political_party.name_with_candidate(self.election_id)
+	end
+
 	def economic_category_name
 		return self.economic_category.economic_category_translations[0].name
 	end

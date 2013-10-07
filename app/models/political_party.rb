@@ -42,6 +42,28 @@ class PoliticalParty < ActiveRecord::Base
     joins(:elections).where('elections.id = ?', election_id)
   end
   
+	# get parties that have data
+	# data is defined as having at least one record that is public in: platform, policy brief, or statement
+	def self.with_data
+    x = nil
+	  ids = []
+	  p = Platform.select('distinct political_party_id').published
+	  pb = PolicyBrief.select('distinct political_party_id').published
+	  s = Statement.select('distinct political_party_id').published
+	  
+	  ids << p.map{|x| x.political_party_id} if p.present?
+	  ids << pb.map{|x| x.political_party_id} if pb.present?
+	  ids << s.map{|x| x.political_party_id} if s.present?
+
+    ids.flatten!.uniq!
+    
+    if ids.present?
+      x = where(:id => ids)
+    end
+    
+    return x
+	end
+  
   def elections_sorted
     sql = "select distinct election_id from elections_political_parties where political_party_id = ?"
     q = PoliticalParty.find_by_sql([sql, self.id.to_s])

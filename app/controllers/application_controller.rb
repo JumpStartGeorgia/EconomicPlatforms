@@ -92,6 +92,7 @@ logger.debug "////////////////////////// BROWSER NOT SUPPORTED"
    #e_id = params[:election_id].present? ? params[:election_id] : @elections_nav.first.id
     
     @political_parties_nav = PoliticalParty.by_election(@current_election_id).sorted if @current_election_id.present?
+#    @political_parties_nav = PoliticalParty.by_election(@current_election_id).with_data.sorted if @current_election_id.present?
   end
 
   def set_economic_categories

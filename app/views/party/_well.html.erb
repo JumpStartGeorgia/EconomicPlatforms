@@ -14,10 +14,14 @@
     <div class="block">
 
       <h3 class="block_header font">
-				<%= image_tag(@political_party.logo.url, :style => 'vertical-align: middle;') if @political_party.logo_file_name %>
-				<%= @political_party.name_with_candidate(@current_election_id).clone %>
+          <%  if @political_party.logo_file_name %>
+    				<%= image_tag(@political_party.logo.url, :style => 'vertical-align: middle;') %>
+          <% end %>
+  				<%= @political_party.name_with_candidate(@current_election_id) %>
         <% if @current_election.present? %>
-			    <%= " - #{@current_election.name}" %>
+          <div class="election_name">
+			      <%= @current_election.name %>
+		      </div>
         <% end %>
       </h3>
 

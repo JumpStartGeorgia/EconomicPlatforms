@@ -4,8 +4,11 @@ module ApplicationHelper
     content_for(:title) { page_title }
   end
 
+  def election_sub_title(page_title)
+    content_for(:election_sub_title) { page_title }
+  end
+
   def sub_title(page_title)
-logger.debug "**************************sub_title = '#{page_title}'"
 		if page_title
 			content_for(:sub_title) { page_title }
 		end
@@ -16,13 +19,13 @@ logger.debug "**************************sub_title = '#{page_title}'"
   end
 
 	def page_title
-		if content_for?(:title) && content_for?(:sub_title)
-			"#{content_for(:title)} - #{content_for(:sub_title)} | #{t('app.common.app_name')}"
-		elsif content_for?(:title)
-			"#{content_for(:title)} | #{t('app.common.app_name')}"
-		else
-			t('app.common.app_name')
-		end
+	  title = ""
+
+		title << "#{content_for(:title)}" if content_for?(:title)
+		title << " > #{content_for(:sub_title)}" if content_for?(:sub_title) && title.present?
+		title << " > #{content_for(:election_sub_title)}" if content_for?(:election_sub_title) && title.present?
+		title << " | " if title.present?
+		title << t('app.common.app_name')
 	end
 
 	def flash_translation(level)

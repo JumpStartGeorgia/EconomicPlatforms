@@ -1,9 +1,8 @@
 <% 
-  page_title = @economic_category.name.clone
-  page_title << " - #{@current_election.name}" if @current_election.present? 
+  title @economic_category.name
+  election_sub_title @current_election.name if @current_election.present? 
 
-  title page_title
-  sub_title t('.secondary_title', :political_party => @political_party.name)
+  sub_title t('.secondary_title', :political_party => @political_party.name_with_candidate(@current_election_id))
 %>
 
 
@@ -12,7 +11,7 @@
 	<div class="span9 clear">
 	  <div class="block clear">
 		  <div class="block_header font clear">
-		    <%= t('.secondary_title', :political_party => @political_party.name) %>
+		    <%= t('.secondary_title', :political_party => @political_party.name_with_candidate(@current_election_id)) %>
 		  </div>
 
       <div class="block_body">

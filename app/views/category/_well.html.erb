@@ -15,7 +15,9 @@
       <h3 class="block_header font">
 				<%= @economic_category.name %>
         <% if @current_election.present? %>
-			    <%= " - #{@current_election.name}" %>
+          <div class="election_name">
+			      <%= @current_election.name %>
+		      </div>
         <% end %>
       </h3>
 
