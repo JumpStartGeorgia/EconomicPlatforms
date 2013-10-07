@@ -68,15 +68,15 @@ logger.debug "**************************sub_title = '#{page_title}'"
 	# put the default locale first and then sort the remaining locales
 	def create_sorted_translation_objects(trans)
 	  if trans.present?
-      # pull out default locale
-      default = trans.select{|x| x.locale == I18n.default_locale.to_s}.first
-      trans.delete(default) if default.present?
-
-      # now sort the left over
+      # sort
       trans.sort!{|x,y| x.locale <=> y.locale}
 
-      # add default back in
-      trans.insert(0, default) if default.present?
+      # move default locale to first position
+      default = trans.index{|x| x.locale == I18n.default_locale.to_s}
+      if default.present? && default > 0
+        trans.unshift(trans[default])
+        trans.delete_at(default+1)
+      end
 	  end
     return trans
 	end
