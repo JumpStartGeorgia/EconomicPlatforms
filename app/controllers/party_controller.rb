@@ -2,7 +2,7 @@ class PartyController < ApplicationController
 	require 'utf8_converter'
 
 	def index
-		@political_party = PoliticalParty.find_by_permalink(params[:political_party_id]).by_election(election_id)
+		@political_party = PoliticalParty.by_election(@current_election_id).find_by_permalink(params[:political_party_id])
 		if !@political_party
 			redirect_to root_path, notice: t('app.msgs.does_not_exist')
 		else
@@ -13,6 +13,7 @@ class PartyController < ApplicationController
         # get statements for the pass in ec cat id
   	    @statements = Statement.sorted.by_political_party(@political_party.id)
   	      .by_economic_category(params[:economic_category_id])
+          .by_election(@current_election_id)    
   	      .published.paginate(:page => params[:page])
   	    economic_category = @economic_categories_nav.select{|x| x.id.to_s == params[:economic_category_id]}
   	    @economic_category_name = economic_category.first.name if economic_category && !economic_category.empty?
@@ -21,6 +22,7 @@ class PartyController < ApplicationController
         @economic_categories_nav.each do |ec_cat|
     	    @statements = Statement.sorted.by_political_party(@political_party.id)
   	        .by_economic_category(ec_cat.id)
+            .by_election(@current_election_id)
     	      .published.paginate(:page => params[:page])
     	    if @statements && !@statements.empty?
     	      params[:economic_category_id] = ec_cat.id.to_s
@@ -31,12 +33,13 @@ class PartyController < ApplicationController
         params[:indicator_category_id] = 5
       end
 
-			@platforms = Platform.by_political_party(@political_party.id).published
-			@policy_briefs = PolicyBrief.by_political_party(@political_party.id).published
+			@platforms = Platform.by_election(@current_election_id).published.by_political_party(@political_party.id)
+			@policy_briefs = PolicyBrief.by_election(@current_election_id).published.by_political_party(@political_party.id)
 
 			gon.party_profile = true
       gon.party_statement_chart_data = true
       gon.json_data = Statement.sorted.party_statement_scores_json(
+        @current_election_id,
 				@political_party.id,
         params[:economic_category_id],
         params[:indicator_category_id])
@@ -50,20 +53,20 @@ class PartyController < ApplicationController
 	end
 
 	def platform
-		@political_party = PoliticalParty.find_by_permalink(params[:political_party_id]).by_election(election_id)
+		@political_party = PoliticalParty.by_election(@current_election_id).find_by_permalink(params[:political_party_id])
 		@economic_category = EconomicCategory.find_by_permalink(params[:economic_category_id])
 		if !@political_party
 			redirect_to root_path, notice: t('app.msgs.does_not_exist')
 		elsif !@economic_category
 			redirect_to party_path(params[:political_party_id]), notice: t('app.msgs.does_not_exist')
 		else
-			@platform = Platform.published.by_party_category(@political_party.id, @economic_category.id)
+			@platform = Platform.published.by_election(@current_election_id).by_party_category(@political_party.id, @economic_category.id)
 
 			if !@platform
 				redirect_to party_path(params[:political_party_id]), notice: t('app.msgs.does_not_exist')
 			else
-				@platforms = Platform.published.by_political_party(@political_party.id)
-				@policy_briefs = PolicyBrief.published.by_political_party(@political_party.id)
+				@platforms = Platform.published.by_election(@current_election_id).by_political_party(@political_party.id)
+				@policy_briefs = PolicyBrief.published.by_election(@current_election_id).by_political_party(@political_party.id)
 				@comments = @platform.comments
 
 				gon.highlight_first_form_field = false
@@ -85,20 +88,20 @@ class PartyController < ApplicationController
 	end
 
 	def policy_brief
-		@political_party = PoliticalParty.find_by_permalink(params[:political_party_id]).by_election(election_id)
+		@political_party = PoliticalParty.by_election(@current_election_id).find_by_permalink(params[:political_party_id])
 		@economic_category = EconomicCategory.find_by_permalink(params[:economic_category_id])
 		if !@political_party
 			redirect_to root_path, notice: t('app.msgs.does_not_exist')
 		elsif !@economic_category
 			redirect_to party_path(params[:political_party_id]), notice: t('app.msgs.does_not_exist')
 		else
-			@policy_brief = PolicyBrief.published.by_party_category(@political_party.id, @economic_category.id)
+			@policy_brief = PolicyBrief.published.by_election(@current_election_id).by_party_category(@political_party.id, @economic_category.id)
 
 			if !@policy_brief
 				redirect_to party_path(params[:political_party_id]), notice: t('app.msgs.does_not_exist')
 			else
-				@platforms = Platform.published.by_political_party(@political_party.id)
-				@policy_briefs = PolicyBrief.published.by_political_party(@political_party.id)
+				@platforms = Platform.published.by_election(@current_election_id).by_political_party(@political_party.id)
+				@policy_briefs = PolicyBrief.published.by_election(@current_election_id).by_political_party(@political_party.id)
 				@comments = @policy_brief.comments
 
 				gon.highlight_first_form_field = false
@@ -120,18 +123,18 @@ class PartyController < ApplicationController
 	end
 
 	def statement
-		@political_party = PoliticalParty.find_by_permalink(params[:political_party_id])
+		@political_party = PoliticalParty.by_election(@current_election_id).find_by_permalink(params[:political_party_id])
 		if !@political_party
 			redirect_to root_path, notice: t('app.msgs.does_not_exist')
 		else
-		  @statements = Statement.sorted.published.by_political_party(@political_party.id).where(:id => params[:id])
-			@statement = @statements.first if @statements && !@statements.empty?
+		  @statements = Statement.sorted.published.by_election(@current_election_id).by_political_party(@political_party.id).where(:id => params[:id])
+			@statement = @statements.first if @statements.present?
 
 			if !@statement
 				redirect_to party_path(params[:political_party_id]), notice: t('app.msgs.does_not_exist')
 			else
-				@platforms = Platform.published.by_political_party(@political_party.id)
-				@policy_briefs = PolicyBrief.published.by_political_party(@political_party.id)
+				@platforms = Platform.published.by_election(@current_election_id).by_political_party(@political_party.id)
+				@policy_briefs = PolicyBrief.published.by_election(@current_election_id).by_political_party(@political_party.id)
 				@comments = @statement.comments
 
 				gon.highlight_first_form_field = false

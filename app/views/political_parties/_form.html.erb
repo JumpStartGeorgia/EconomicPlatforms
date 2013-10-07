@@ -2,7 +2,19 @@
 	<%= f.error_messages %>
 
 	<%= f.inputs do %>
-	  <%= f.input :election_id, :as => :select, :collection => Election.sorted, :include_blank => false %>
+	  <%#= f.input :election_id, :as => :select, :collection => Election.sorted, :include_blank => false %>
+    <div class="control-group checkbox-group" id="political_party_election_id_input">
+      <label class=" control-label" for="platform_election_id"><%= t('activerecord.attributes.political_party.election') %><abbr title="required">*</abbr></label>
+      <div class="controls">
+        <%= hidden_field_tag "political_party[election_ids][]", nil%>
+        <% Election.sorted.each do |election| %>
+              <label class="checkbox">
+                  <%= check_box_tag "political_party[election_ids][]", election.id, @political_party.election_ids.include?(election.id), id: dom_id(election) %>
+                  <%= election.name %>
+              </label>
+        <% end %>
+      </div>
+    </div>
 	<% end %>
 
   <% create_sorted_translation_objects(@political_party.political_party_translations).each do |trans| %>

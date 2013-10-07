@@ -14,7 +14,7 @@ class Platform < ActiveRecord::Base
 		:platform_translations_attributes, :platform_scores_attributes, :platform_files_attributes
 
   validates :political_party_id, :economic_category_id, :election_id, :presence => true
-	validates :economic_category_id, :uniqueness => {:scope => :political_party_id,
+	validates :economic_category_id, :uniqueness => {:scope => [:political_party_id, :election_id],
 			:message => I18n.t('app.msgs.platform_already_exists')}
 
   scope :published, where("is_public = '1'")
@@ -86,12 +86,12 @@ class Platform < ActiveRecord::Base
   #########################
   ## scores
   #########################
-  def self.score(political_party_id, economic_category_id, indicator_category_id)
-    if political_party_id && economic_category_id && indicator_category_id
+  def self.score(election_id, political_party_id, economic_category_id, indicator_category_id)
+    if election_id && political_party_id && economic_category_id && indicator_category_id
       x = select("platform_scores.value as score_value")
           .joins(:platform_scores)
-          .where(['platforms.political_party_id = :pp_id and platforms.economic_category_id = :ec_id and platform_scores.indicator_category_id = :ind_id and platform_scores.value != 0',
-            :pp_id => political_party_id, :ec_id => economic_category_id, :ind_id => indicator_category_id])
+          .where(['platforms.election_id = :e_id and platforms.political_party_id = :pp_id and platforms.economic_category_id = :ec_id and platform_scores.indicator_category_id = :ind_id and platform_scores.value != 0',
+            :e_id => election_id, :pp_id => political_party_id, :ec_id => economic_category_id, :ind_id => indicator_category_id])
 
       # if x exists, center the value and flip the sign
       if x && x.length > 0
@@ -102,11 +102,11 @@ logger.debug "@@@@@@@@@@@@@ original score = #{x.first.score_value}"
     end
   end
 
-  def self.all_party_average(economic_category_id, indicator_category_id)
-    if economic_category_id && indicator_category_id
+  def self.all_party_average(election_id, economic_category_id, indicator_category_id)
+    if election_id && economic_category_id && indicator_category_id
       x = joins(:platform_scores)
-          .where(['platforms.economic_category_id = :ec_id and platform_scores.indicator_category_id = :ind_id and platform_scores.value != 0',
-            :ec_id => economic_category_id, :ind_id => indicator_category_id])
+          .where(['platforms.election_id = :e_id and platforms.economic_category_id = :ec_id and platform_scores.indicator_category_id = :ind_id and platform_scores.value != 0',
+            :e_id => election_id, :ec_id => economic_category_id, :ind_id => indicator_category_id])
           .average('platform_scores.value')
 
       # if x exists, center the value and flip the sign
@@ -130,8 +130,8 @@ logger.debug "@@@@@@@@@@@@@ original score = #{x.to_f}"
     }
   end
 
-	def self.scores_for_ec_cat_and_ind_cat(economic_category_id, indicator_category_id)
-		if economic_category_id && indicator_category_id
+	def self.scores_for_ec_cat_and_ind_cat(election_id, economic_category_id, indicator_category_id)
+		if economic_category_id && indicator_category_id && election_id
 			sql = "select ect.name as score_economic_category, ict.name as score_indicator_category, "
 			sql << "ppt.name as score_political_party, pp.color as score_color, "
 			sql << "if(ps.value=0, null, ps.value) as score_value, "
@@ -147,6 +147,7 @@ logger.debug "@@@@@@@@@@@@@ original score = #{x.to_f}"
 			sql << "inner join indicator_translations as it on it.indicator_id = ps.indicator_id "
 			sql << "where "
 			sql << "p.economic_category_id = :economic_category_id "
+      sql << "and p.election_id = :e_id "
 			sql << "and ps.indicator_category_id = :indicator_category_id "
 			sql << "and ect.locale = :locale "
 			sql << "and ppt.locale = :locale "
@@ -155,7 +156,8 @@ logger.debug "@@@@@@@@@@@@@ original score = #{x.to_f}"
 			sql << "order by ppt.name "
 
 			find_by_sql([sql, :economic_category_id => economic_category_id,
-				:indicator_category_id => indicator_category_id,
+				:indicator_category_id => indicator_category_id, 
+				:e_id => election_id,
 				:locale => I18n.locale])
 		end
 	end

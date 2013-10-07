@@ -11,24 +11,24 @@
 
       <div class="block_body" id="content_container">
 
-				<% if @political_parties_nav && !@political_parties_nav.empty? %>
+				<% if @political_parties_nav.present? %>
 					<div id="political_party_colors">
-						<div class="clear">
-							<% @political_parties_nav[0..2].each_with_index do |party,i| %>
-								<div>
-								  <div class="colors"><span style="background-color: <%= "#{party.color}" %>;">&nbsp;&nbsp;&nbsp;</span></div>
-								  <div class="party_names"><%= party.name %></div>
-							  </div>
-							<% end %>
-						</div>
-						<div class="clear">
-							<% @political_parties_nav[3..5].each_with_index do |party,i| %>
-								<div>
-								  <div class="colors"><span style="background-color: <%= "#{party.color}" %>;">&nbsp;&nbsp;&nbsp;</span></div>
-								  <div class="party_names"><%= party.name %></div>
-							  </div>
-							<% end %>
-						</div>
+            <% party_rows = @political_parties_nav.length / 3 %>
+            <% (0..party_rows).each do |row| %>            
+              <% 
+                row_start = row*3
+                row_end = (row*3)+2
+              %>
+              
+						  <div class="clear">
+							  <% @political_parties_nav[row_start..row_end].each do |party| %>
+								  <div>
+								    <div class="colors"><span style="background-color: <%= "#{party.color}" %>;">&nbsp;&nbsp;&nbsp;</span></div>
+								    <div class="party_names"><%= party.name %></div>
+							    </div>
+							  <% end %>
+						  </div>
+            <% end %>
 					</div>
 				<% end %>
 

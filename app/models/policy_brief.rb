@@ -10,7 +10,7 @@ class PolicyBrief < ActiveRecord::Base
 		:policy_brief_translations_attributes, :election_id
 
   validates :political_party_id, :economic_category_id, :election_id, :presence => true
-	validates :economic_category_id, :uniqueness => {:scope => :political_party_id,
+	validates :economic_category_id, :uniqueness => {:scope => [:political_party_id, :election_id],
 			:message => I18n.t('app.msgs.policy_already_exists')}
 
   scope :published, where("is_public = '1'")

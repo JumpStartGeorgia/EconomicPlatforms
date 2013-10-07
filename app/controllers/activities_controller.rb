@@ -24,27 +24,31 @@ class ActivitiesController < ApplicationController
   # GET /activities/1
   # GET /activities/1.json
   def show
-    @activities = Activity.sorted
+    @activities = Activity.sorted.by_election(@current_election_id)
     @activity = @activities.select{|x| x.id.to_s == params[:id]}
-		if @activity && !@activity.empty?
+		if @activity.present?
 			@activity = @activity.first
 		else
 			@activity = nil
 		end
 
-    if @activity && @activity.images.length > 0
-      @load_image_slider = true
-      gon.slider_images = []
-      @activity.images.each do |img|
-        gon.slider_images << {"img_src" => img.file.url(:medium)}
+    if @activity.blank?
+			redirect_to root_path, notice: t('app.msgs.does_not_exist')
+    else
+      if @activity && @activity.images.length > 0
+        @load_image_slider = true
+        gon.slider_images = []
+        @activity.images.each do |img|
+          gon.slider_images << {"img_src" => img.file.url(:medium)}
+        end
       end
-    end
 
-		@statements = Statement.sorted.published.latest
+		  @statements = Statement.sorted.published.latest.by_election(@current_election_id)
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @activity }
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @activity }
+      end
     end
   end
 

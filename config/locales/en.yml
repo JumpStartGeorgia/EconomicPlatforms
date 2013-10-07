@@ -17,6 +17,7 @@ en:
       activity:
         date: Date
         video: YouTube Video Link
+        election: Election
       activity_translation:
         title: Title
         body: Text
@@ -25,6 +26,7 @@ en:
         political_party: Political Party
         economic_category: Economic Category
         is_public: Make Visible to World
+        election: Election
       statement_translation:
         source: Source of Statement
         author: Statement Author
@@ -49,17 +51,20 @@ en:
         political_party: Political Party
         economic_category: Economic Category
         is_public: Make Visible to World
+        election: Election
       platform_translation:
         description: Description
       policy_brief:
         political_party: Political Party
         economic_category: Economic Category
         is_public: Make Visible to World
+        election: Election
       policy_brief_translation:
         analysis: Analysis
       political_party:
         color: Color
         logo: Logo
+        election: Election
       political_party_translation:
         name: Name
       page:
@@ -392,7 +397,7 @@ en:
       title: Editing News
     index:
       title: News
-      no_pages: "At this time, no news items have been recorded"
+      no_activities: "At this time, no news items have been recorded"
     new:
       title: New News
     show:

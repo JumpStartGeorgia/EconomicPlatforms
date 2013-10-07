@@ -9,30 +9,36 @@
 
 <%= select_tag :election_id, options_from_collection_for_select(@elections_nav, :id, :name, @current_election_id), {:class => :index_election_filter} %>
 
-<table class="table table-striped">
-  <thead>
-		<tr>
-      <th><%= t('app.common.title') %></th>
-      <th><%= t('app.common.date') %></th>
-      <th><%= t('app.common.actions') %></th>
-		</tr>
-  </thead>
-  <tbody>
-	<% @activities.each do |activity| %>
-		<tr>
-		  <td><%= link_to activity.title, activity %></td>
-		  <td><%= l activity.date, :format => :long if activity.date %></td>
-		  <td>
-				<%= link_to t('app.buttons.edit'), edit_activity_path(activity), :class => 'btn btn-mini' %>
-        <%= link_to t('app.buttons.delete'),
-                    activity,
-                    :method => :delete,
-                    :confirm => t('app.buttons.confirm'),
-                    :class => 'btn btn-mini btn-danger' %>
-			</td>
-		</tr>
-	<% end %>
-  </tbody>
-</table>
+<% if @activities.blank? %>
+	<p>
+		<%= t('.no_activities') %>
+	</p>
+<% else %>
 
+  <table class="table table-striped">
+    <thead>
+		  <tr>
+        <th><%= t('app.common.title') %></th>
+        <th><%= t('app.common.date') %></th>
+        <th><%= t('app.common.actions') %></th>
+		  </tr>
+    </thead>
+    <tbody>
+	  <% @activities.each do |activity| %>
+		  <tr>
+		    <td><%= link_to activity.title, activity %></td>
+		    <td><%= l activity.date, :format => :long if activity.date %></td>
+		    <td>
+				  <%= link_to t('app.buttons.edit'), edit_activity_path(activity), :class => 'btn btn-mini' %>
+          <%= link_to t('app.buttons.delete'),
+                      activity,
+                      :method => :delete,
+                      :confirm => t('app.buttons.confirm'),
+                      :class => 'btn btn-mini btn-danger' %>
+			  </td>
+		  </tr>
+	  <% end %>
+    </tbody>
+  </table>
 
+<% end %>
