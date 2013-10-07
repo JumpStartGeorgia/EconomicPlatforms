@@ -1,5 +1,5 @@
 <% 
-  title @political_party.name
+  title @political_party.name_with_candidate(@current_election_id)
   election_sub_title @current_election.name if @current_election.present? 
 
   title_image @political_party.logo.url if @political_party.logo_file_name
@@ -14,7 +14,7 @@
         <div class="left">
           <h3>
             <%#= "#{t('app.common.political_party')}:"%>
-            <%= @statement.political_party.name %>
+            <%= @statement.political_party.name_with_candidate(@current_election_id) %>
           </h3>
           <span><%= t('.secondary_title', :date => l(@statement.date_made, :format => :long)) %></span>
         </div>
