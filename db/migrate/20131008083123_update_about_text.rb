@@ -9,7 +9,7 @@ class UpdateAboutText < ActiveRecord::Migration
         trans = PageTranslation.where(:locale => locale, :page_id => page.id)
         if trans.present?
           if i == 0
-            trans.first.description = '<h2>Presidential Elections – 2013</h2>
+            trans.first.description = '<h2>Presidential Elections - 2013</h2>
 <br />
     <p> 
     Starting from 2013 a new project Involvement of ethnic minorities of Georgia in assessing economic and social programs of the election-participant political parties has started. The Project is implemented by Economic Policy Research Center (EPRC) with the support of the US Embassy in Georgia Small Grants Program. The main aim of the project is to improve the transparency and efficiency of the Georgian democratic system by providing the general public and ethnic minorities with a timely and professional evaluation of electoral promises, policy proposals and views on policy put forward by the leading Georgian parties in the run up to May 2014 (for local elections) and partially for 2013 Presidential elections.   
@@ -30,13 +30,13 @@ class UpdateAboutText < ActiveRecord::Migration
     David Bakradze - United National Movement
     </li>
     <li>
-    Giorgi Targamadze – Christian-Democratic Movement
+    Giorgi Targamadze - Christian-Democratic Movement
     </li>
     <li>
-    Nino Burjanadze - Democratic Movement – "United Georgia"
+    Nino Burjanadze - Democratic Movement - "United Georgia"
     </li>
     <li>
-    Sergo Javakhadze  – Movement – "Justice for Georgia"
+    Sergo Javakhadze  - Movement - "Justice for Georgia"
     </li>
     </ul>
 <br /><br />
