@@ -13,7 +13,7 @@ ka:
       page: გვერდი
       activity: სიახლე
       election: არჩევნები
-      candidate: Candidate
+      candidate: კანდიდატი
     attributes:
       activity:
         date: თარიღი
@@ -81,7 +81,7 @@ ka:
         election: არჩევნები
         political_party: პოლიტიკური პარტია
       candidate_translation:
-        name: Candidate Name
+        name: კანდიდატის სახელი
   app:
     language:
       en: English
@@ -182,7 +182,7 @@ ka:
       does_not_exist: თქვენ ცდილობთ იხილოთ გვერდი, რომელიც არ არსებობს.
       not_authorized: თქვენ არ გაქვთ უფლება იხილოთ ეს გვერდი.
       permalink_exists: უკვე არსებობს მონაცემთა ბაზაში
-      candidate_exists: already exists for this election.
+      candidate_exists: უკვე არსებობს ამ არჩევნებისთვის.
       success_created: "%{obj} შექმნილია."
       success_updated: "%{obj} განახლებულია."
       policy_already_exists: უკვე არსებობს მონაცემთა ბაზაში
@@ -306,14 +306,14 @@ ka:
       title: არჩევნების დეტალები
   candidates:
     edit:
-      title: Editing Candidate
+      title: კანდიდატის რედაქტირება
     index:
-      title: Candidates
-      no_candidates: "At this time, no candidates have been recorded"
+      title: კანდიდატები
+      no_candidates: "ამჟამად, არცერთი კანდიდატის ჩანაწერი არ მოიპოვება"
     new:
-      title: New Candidate
+      title: ახალი კანდიდატი
     show:
-      title: Candidate Details
+      title: კანდიდატების დეტალები
   admin:
     index:
       title: ადმინისტრატორის განყოფილება

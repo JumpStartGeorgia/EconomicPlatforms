@@ -80,7 +80,7 @@ logger.debug "////////////////////////// BROWSER NOT SUPPORTED"
       # if getting political parties for election, it is possible election does not have any data yet,
       # so do not redirect if calling this action
       if !(params[:controller] == "elections" && params[:action] == "political_parties") && params[:controller] != "political_parties" && params[:controller] != "candidates"
-        redirect_to root_path(:locale => I18n.default_locale) 
+        redirect_to root_path, notice: t('app.msgs.does_not_exist')
       end
     else
       @current_election_id = @current_election.id
@@ -100,7 +100,7 @@ logger.debug "////////////////////////// BROWSER NOT SUPPORTED"
   end
 
   def valid_role?(role)
-    redirect_to root_path, :notice => t('app.msgs.not_authorized') if !current_user || !current_user.role?(role)
+    redirect_to formatted_root_path, :notice => t('app.msgs.not_authorized') if !current_user || !current_user.role?(role)
   end
 
 	def get_stylesheet

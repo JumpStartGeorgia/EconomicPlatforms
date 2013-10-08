@@ -4,7 +4,7 @@ class PartyController < ApplicationController
 	def index
 		@political_party = PoliticalParty.by_election(@current_election_id).find_by_permalink(params[:political_party_id])
 		if !@political_party
-			redirect_to root_path, notice: t('app.msgs.does_not_exist')
+			redirect_to formatted_root_path, notice: t('app.msgs.does_not_exist')
 		else
 			@indicator_categories = IndicatorCategory.with_indicators.sorted
 
@@ -56,7 +56,7 @@ class PartyController < ApplicationController
 		@political_party = PoliticalParty.by_election(@current_election_id).find_by_permalink(params[:political_party_id])
 		@economic_category = EconomicCategory.find_by_permalink(params[:economic_category_id])
 		if !@political_party
-			redirect_to root_path, notice: t('app.msgs.does_not_exist')
+			redirect_to formatted_root_path, notice: t('app.msgs.does_not_exist')
 		elsif !@economic_category
 			redirect_to party_path(params[:political_party_id]), notice: t('app.msgs.does_not_exist')
 		else
@@ -91,7 +91,7 @@ class PartyController < ApplicationController
 		@political_party = PoliticalParty.by_election(@current_election_id).find_by_permalink(params[:political_party_id])
 		@economic_category = EconomicCategory.find_by_permalink(params[:economic_category_id])
 		if !@political_party
-			redirect_to root_path, notice: t('app.msgs.does_not_exist')
+			redirect_to formatted_root_path, notice: t('app.msgs.does_not_exist')
 		elsif !@economic_category
 			redirect_to party_path(params[:political_party_id]), notice: t('app.msgs.does_not_exist')
 		else
@@ -125,7 +125,7 @@ class PartyController < ApplicationController
 	def statement
 		@political_party = PoliticalParty.by_election(@current_election_id).find_by_permalink(params[:political_party_id])
 		if !@political_party
-			redirect_to root_path, notice: t('app.msgs.does_not_exist')
+			redirect_to formatted_root_path, notice: t('app.msgs.does_not_exist')
 		else
 		  @statements = Statement.sorted.published.by_election(@current_election_id).by_political_party(@political_party.id).where(:id => params[:id])
 			@statement = @statements.first if @statements.present?

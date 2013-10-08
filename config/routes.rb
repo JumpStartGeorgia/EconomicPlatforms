@@ -30,6 +30,9 @@ EconomicPlatforms::Application.routes.draw do
     # political parties of an election
     match '/elections/political_parties/:election_id', :to => 'elections#political_parties', :as => 'election_political_parties' 
 
+		match '/election/:election_id/charts', :to => 'root#charts', :as => :charts, :via => :get
+
+
 		# party profile
 		match '/election/:election_id/party/:political_party_id', :to => 'party#index', :as => :party
 		match '/election/:election_id/party/:political_party_id/platform/:economic_category_id', :to => 'party#platform', :as => :party_platform
@@ -63,10 +66,12 @@ EconomicPlatforms::Application.routes.draw do
 
 		match '/admin', :to => 'admin#index', :as => :admin, :via => :get
 		match '/search', :to => 'root#search', :as => :search, :via => :get
-		match '/charts', :to => 'root#charts', :as => :charts, :via => :get
 		match '/about', :to => 'root#about', :as => :about, :via => :get
 		match '/sitemap', :to => 'root#sitemap', :as => :sitemap, :via => :get
 		match '/methodology', :to => 'root#methodology', :as => :methodology, :via => :get
+
+    # if on home page, show election id in nice format
+		match '/election/:election_id', :to => 'root#index', :as => :formatted_root, :via => :get
 
 		root :to => 'root#index'
 	  match "*path", :to => redirect("/#{I18n.default_locale}") # handles /en/fake/path/whatever

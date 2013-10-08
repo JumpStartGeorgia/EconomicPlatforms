@@ -23,7 +23,7 @@ class StatementsController < ApplicationController
   def show
     @statement = Statement.find(params[:id])
 
-		redirect_to root_path, notice: t('app.msgs.does_not_exist') if !@statement
+		redirect_to formatted_root_path, notice: t('app.msgs.does_not_exist') if !@statement
 
     respond_to do |format|
       format.html # show.html.erb

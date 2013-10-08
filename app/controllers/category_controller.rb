@@ -4,7 +4,7 @@ class CategoryController < ApplicationController
 	def index
 		@economic_category = EconomicCategory.find_by_permalink(params[:economic_category_id])
 		if !@economic_category
-			redirect_to root_path, notice: t('app.msgs.does_not_exist')
+			redirect_to formatted_root_path, notice: t('app.msgs.does_not_exist')
 		else
 			@indicator_categories = IndicatorCategory.with_indicators.sorted
 
@@ -57,7 +57,7 @@ class CategoryController < ApplicationController
 		@political_party = PoliticalParty.by_election(@current_election_id).find_by_permalink(params[:political_party_id])
 		@economic_category = EconomicCategory.find_by_permalink(params[:economic_category_id])
 		if !@economic_category
-			redirect_to root_path, notice: t('app.msgs.does_not_exist')
+			redirect_to formatted_root_path, notice: t('app.msgs.does_not_exist')
 		elsif !@political_party
 			redirect_to category_path(params[:economic_category_id]), notice: t('app.msgs.does_not_exist')
 		else
@@ -92,7 +92,7 @@ class CategoryController < ApplicationController
 		@political_party = PoliticalParty.by_election(@current_election_id).find_by_permalink(params[:political_party_id])
 		@economic_category = EconomicCategory.find_by_permalink(params[:economic_category_id])
 		if !@economic_category
-			redirect_to root_path, notice: t('app.msgs.does_not_exist')
+			redirect_to formatted_root_path, notice: t('app.msgs.does_not_exist')
 		elsif !@political_party
 			redirect_to category_path(params[:economic_category_id]), notice: t('app.msgs.does_not_exist')
 		else
@@ -126,7 +126,7 @@ class CategoryController < ApplicationController
 	def statement
 		@economic_category = EconomicCategory.find_by_permalink(params[:economic_category_id])
 		if !@economic_category
-			redirect_to root_path, notice: t('app.msgs.does_not_exist')
+			redirect_to formatted_root_path, notice: t('app.msgs.does_not_exist')
 		else
 		  @statements = Statement.sorted.published.by_election(@current_election_id).by_economic_category(@economic_category.id).where(:id => params[:id])
 			@statement = @statements.first if @statements.present?

@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
       m = Statement
 #     path = statement_path(params[:commentable_id])
     else
-      redirect_to root_path, :alert => 'wrong commentable'
+      redirect_to formatted_root_path, :alert => 'wrong commentable'
       return
     end
     commentable = m.find(params[:commentable_id])
@@ -23,13 +23,13 @@ class CommentsController < ApplicationController
 		if request.env["HTTP_REFERER"]
 	    redirect_to :back
 		else
-	    redirect_to root_path
+	    redirect_to formatted_root_path
 		end
   end
 
   def vote
     if !(['down', 'up'].include? params[:status])
-      redirect_to root_path, :alert => 'wrong status'
+      redirect_to formatted_root_path, :alert => 'wrong status'
       return
     end
 
@@ -55,7 +55,7 @@ class CommentsController < ApplicationController
       m = Statement
 #     path = statement_path(params[:votable_id])
     else
-      redirect_to root_path, :alert => 'wrong votable'
+      redirect_to formatted_root_path, :alert => 'wrong votable'
       return
     end
 
@@ -109,7 +109,7 @@ class CommentsController < ApplicationController
 			if request.env["HTTP_REFERER"]
 		    redirect_to :back
 			else
-		    redirect_to root_path
+		    redirect_to formatted_root_path
 			end
       return false
     end
@@ -117,7 +117,7 @@ class CommentsController < ApplicationController
 		if request.env["HTTP_REFERER"]
       redirect_to :back
 		else
-      redirect_to root_path
+      redirect_to formatted_root_path
 		end
   end
 

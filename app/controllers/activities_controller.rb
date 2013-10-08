@@ -17,7 +17,7 @@ class ActivitiesController < ApplicationController
 		    format.json { render json: @activities }
 		  end
 		else
-			redirect_to root_path
+			redirect_to formatted_root_path
 		end
   end
 
@@ -33,7 +33,7 @@ class ActivitiesController < ApplicationController
 		end
 
     if @activity.blank?
-			redirect_to root_path, notice: t('app.msgs.does_not_exist')
+			redirect_to formatted_root_path, notice: t('app.msgs.does_not_exist')
     else
       if @activity && @activity.images.length > 0
         @load_image_slider = true
