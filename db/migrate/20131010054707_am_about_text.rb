@@ -4,6 +4,7 @@ class AmAboutText < ActiveRecord::Migration
     page = Page.find_by_name('about')
     trans = PageTranslation.where(:page_id => page.id, :locale => 'am')
     if trans.present?
+      trans.first.title = 'մասին'
       trans.first.description = '
 <h2>ՆԱԽԱԳԱՀԱԿԱՆ ԸՆՏՐՈՒԹՅՈՒՆՆԵՐ 2013</h2>
 <br />
