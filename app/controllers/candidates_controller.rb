@@ -60,7 +60,7 @@ class CandidatesController < ApplicationController
     
     respond_to do |format|
       if @candidate.save
-        format.html { redirect_to @candidate, notice: t('app.msgs.success_created', :obj => t('app.common.candidate')) }
+        format.html { redirect_to @candidate, notice: t('app.msgs.success_created', :obj => t('activerecord.models.candidate')) }
         format.json { render json: @candidate, status: :created, location: @candidate }
       else
         gon.election_political_parties_path = election_political_parties_path(:election_id => 999)
@@ -81,7 +81,7 @@ class CandidatesController < ApplicationController
     
     respond_to do |format|
       if @candidate.save
-        format.html { redirect_to @candidate, notice: t('app.msgs.success_updated', :obj => t('app.common.candidate')) }
+        format.html { redirect_to @candidate, notice: t('app.msgs.success_updated', :obj => t('activerecord.models.candidate')) }
         format.json { head :ok }
       else
         gon.election_political_parties_path = election_political_parties_path(:election_id => 999)

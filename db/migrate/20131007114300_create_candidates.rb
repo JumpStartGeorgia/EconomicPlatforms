@@ -21,7 +21,7 @@ class CreateCandidates < ActiveRecord::Migration
       {:en => 'David Bakradze', :ka => 'დავით ბაქრაძე'},
       {:en => 'Giorgi Targamadze', :ka => 'გიორგი თარგამაძე'},
       {:en => 'Nino Burjanadze', :ka => 'ნინო ბურჯანაძე'},
-      {:en => 'Sergo Javakhadze', :ka => 'სერგო ჯავახაძე'}
+      {:en => 'Sergo Javakhadze', :ka => 'სერგო ჯავახიძე'}
     ]
     
     Candidate.transaction do
