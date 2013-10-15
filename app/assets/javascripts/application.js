@@ -37,5 +37,13 @@ $(function ()
     c.toggle(0);
     return false;
   });
+  
+  // if slogan and drop downs cannot fit on one line, turn off float to push the drop down downs to the next line
+  if ($('#title-dropdowns').length > 0 && 
+      ($('#title-dropdowns').width() - $('#title-dropdowns .ds').width()) < $('#title-dropdowns .slogan').width()){
+console.log('not enough room!');   
+      $('#title-dropdowns .slogan').css('float', 'none').css('margin-bottom', '5px');
+      $('#title-dropdowns .ds').css('float', 'none');
+  }
 
 });

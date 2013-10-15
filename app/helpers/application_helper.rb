@@ -52,6 +52,14 @@ module ApplicationHelper
 		end
 	end
 
+  def get_current_url
+		"#{request.protocol}#{request.host_with_port}#{request.fullpath}"
+  end
+  
+	def full_url(path)
+		"#{request.protocol}#{request.host_with_port}#{path}"
+	end
+  
 	def current_url(new_params)
 		url_for :params => params.merge(new_params)
 	end

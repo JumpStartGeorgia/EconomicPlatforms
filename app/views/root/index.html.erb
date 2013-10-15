@@ -9,7 +9,7 @@
       <div class="span4">
         <div class="block">
           <h4 class="font"><%= t('app.common.policy_briefs') %></h4>
-          <div class="block_body">
+          <div class="block_body no_justify">
 			      <% if @political_parties_nav.present? %>
 				      <ul class="block_list_line">
 				        <% @political_parties_nav.each_with_index do |party,i| %>
@@ -60,7 +60,7 @@
 
         <div class="block" style="min-height: 161px;">
           <h4 class="font"><%= t('app.common.statements') %></h4>
-          <div class="block_body">
+          <div class="block_body  no_justify">
 			      <% if !@statements || @statements.empty? %>
 				      <%= t('statements.index.no_statements') %>
 			      <% else %>
@@ -83,7 +83,7 @@
 
         <div class="block">
           <h4 class="font"><%= t('.chart_title')%></h4>
-          <div id="chart_block" class="block_body clear">
+          <div id="chart_block" class="block_body no_justify clear">
 						<div id="chart">
 	            <%= link_to image_tag('/assets/chart.jpg'), charts_path %>
 						</div>

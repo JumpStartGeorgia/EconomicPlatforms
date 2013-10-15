@@ -386,6 +386,10 @@ div.admin_panel ul li {
   text-align: justify;
 }
 
+.block .no_justify{
+  text-align: inherit;
+}
+
 .sidespan .block .block_body {
   padding-top: 5px;
   text-align: left;
