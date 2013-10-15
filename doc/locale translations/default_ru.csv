@@ -1,0 +1,128 @@
+ka/date/formats,default,%d-%m-%Y
+ka/date/formats,short,%d %b
+ka/date/formats,long,"%B %d, %Y"
+ka/date,day_names,"[""воскресенье"", ""понедельник"", ""вторник"", ""среда"", ""четверг"", ""пятница"", ""суббота""]"
+ka/date,abbr_day_names,"[""вс"", ""пн"", ""вт"", ""ср"", ""чт"", ""пт"", ""сб""]"
+ka/date,month_names,"[nil, ""январь"", ""февраль"", ""март"", ""апрель"", ""май"", ""июнь"", ""июль"", ""август"", ""сентябрь"", ""октябрь"", ""ноябрь"", ""декабрь""]"
+ka/date,abbr_month_names,"[nil, ""янв"", ""фев"", ""март"", ""апр"", ""май"", ""июнь"", ""июль"", ""авг"", ""сент"", ""окт"", ""нояб"", ""дек""]"
+ka/date,order,"[:day, :month, :year]"
+ka/time/formats,default,"%a, %d %b %Y %H:%M:%S %z"
+ka/time/formats,short,%d %b %H:%M
+ka/time/formats,long,%d %b %Y %H:%M
+ka/time/formats,file,%Y %m %d %H:%M:%S
+ka/time,am,am
+ka/time,pm,pm
+ka/support/array,words_connector,", "
+ka/support/array,two_words_connector,и
+ka/support/array,last_word_connector,", и "
+ka/support/select,prompt,выберите
+ka/number/format,separator,0
+ka/number/format,delimiter,","
+ka/number/format,precision,2
+ka/number/format,significant,FALSE
+ka/number/format,strip_insignificant_zeros,TRUE
+ka/number/currency/format,format,%u%n
+ka/number/currency/format,unit,$
+ka/number/currency/format,separator,0
+ka/number/currency/format,delimiter,","
+ka/number/currency/format,precision,2
+ka/number/currency/format,significant,FALSE
+ka/number/currency/format,strip_insignificant_zeros,FALSE
+ka/number/percentage/format,delimiter,
+ka/number/precision/format,delimiter,
+ka/number/human/format,delimiter,
+ka/number/human/format,precision,2
+ka/number/human/format,significant,TRUE
+ka/number/human/format,strip_insignificant_zeros,TRUE
+ka/number/human/storage_units,format,%n %u
+ka/number/human/storage_units/units/byte,one,байт
+ka/number/human/storage_units/units/byte,other,байты
+ka/number/human/storage_units/units,kb,Кб
+ka/number/human/storage_units/units,mb,МБ
+ka/number/human/storage_units/units,gb,ГБ
+ka/number/human/storage_units/units,tb,ТБ
+ka/number/human/decimal_units,format,%n %u
+ka/number/human/decimal_units/units,unit,
+ka/number/human/decimal_units/units,thousand,тысяча
+ka/number/human/decimal_units/units,million,миллион
+ka/number/human/decimal_units/units,billion,миллиард
+ka/number/human/decimal_units/units,trillion,триллион
+ka/number/human/decimal_units/units,quadrillion,квадриллион 
+ka/datetime/distance_in_words,half_a_minute,полминуты 
+ka/datetime/distance_in_words/less_than_x_seconds,one,менее секунды
+ka/datetime/distance_in_words/less_than_x_seconds,other,%{count} менее минуты
+ka/datetime/distance_in_words/x_seconds,one,1 секунда
+ka/datetime/distance_in_words/x_seconds,other,%{count} секунда წამი
+ka/datetime/distance_in_words/less_than_x_minutes,one,менее минуты 
+ka/datetime/distance_in_words/less_than_x_minutes,other,%{count} менее минуты
+ka/datetime/distance_in_words/x_minutes,one,1 минута
+ka/datetime/distance_in_words/x_minutes,other,%{count} минута
+ka/datetime/distance_in_words/about_x_hours,one,приблизительно 1 час
+ka/datetime/distance_in_words/about_x_hours,other,приблизительно %{count} час
+ka/datetime/distance_in_words/x_days,one,1 день
+ka/datetime/distance_in_words/x_days,other,%{count} день
+ka/datetime/distance_in_words/about_x_months,one,приблизительно 1 месяц
+ka/datetime/distance_in_words/about_x_months,other,приблизительно %{count} месяц
+ka/datetime/distance_in_words/x_months,one,1 месяц
+ka/datetime/distance_in_words/x_months,other,%{count} месяц
+ka/datetime/distance_in_words/about_x_years,one,приблизительно 1 год
+ka/datetime/distance_in_words/about_x_years,other,приблизительно %{count} год
+ka/datetime/distance_in_words/over_x_years,one,более года
+ka/datetime/distance_in_words/over_x_years,other,%{count} более года
+ka/datetime/distance_in_words/almost_x_years,one,почти 1 год
+ka/datetime/distance_in_words/almost_x_years,other,почти %{count} год
+ka/datetime/prompts,year,год
+ka/datetime/prompts,month,месяц
+ka/datetime/prompts,day,день
+ka/datetime/prompts,hour,час
+ka/datetime/prompts,minute,минута
+ka/datetime/prompts,second,секунда
+ka/helpers/select,prompt,выберите 
+ka/helpers/submit,create,создан %{model}
+ka/helpers/submit,update,обновление %{model}
+ka/helpers/submit,submit,сохранение %{model}
+ka/errors,format,%{attribute} %{message}
+ka/errors/messages,inclusion,нет в списке
+ka/errors/messages,exclusion,занят
+ka/errors/messages,invalid,неверно
+ka/errors/messages,confirmation,не подтверждается
+ka/errors/messages,accepted,Требуется согласие
+ka/errors/messages,empty,Не должно быть свободным 
+ka/errors/messages,blank,Не должно быть свободным 
+ka/errors/messages,too_long,Слишком длинный (максимальное количество символов %{count}) 
+ka/errors/messages,too_short,Слишком короткий (максимальное количество символов %{count}) 
+ka/errors/messages,wrong_length,Неверная длина (должно быть %{count} символов)
+ka/errors/messages,not_a_number,Не число
+ka/errors/messages,not_an_integer,Должно быть целое число 
+ka/errors/messages,greater_than,должно быть больше %{count} 
+ka/errors/messages,greater_than_or_equal_to,должно быть больше или равно %{count} 
+ka/errors/messages,equal_to,должно быть равно %{count} 
+ka/errors/messages,less_than,должно быть меньше %{count} 
+ka/errors/messages,less_than_or_equal_to,должно быть меньше или равно %{count} 
+ka/errors/messages,odd,должно быть нечетное 
+ka/errors/messages,even,должно быть четное 
+ka/activerecord/errors/template/header,one,из-за - сохранение невозможно
+ka/activerecord/errors/template/header,other,из-за - сохранение невозможно 
+ka/activerecord/errors/template,body,"обнаружены проблемы, связанные со следующими полями:"
+ka/activerecord/errors/messages,inclusion,Нет в списке
+ka/activerecord/errors/messages,exclusion,Занято
+ka/activerecord/errors/messages,invalid,Неверно
+ka/activerecord/errors/messages,confirmation,Не подтверждается
+ka/activerecord/errors/messages,accepted,Требуется согласие
+ka/activerecord/errors/messages,empty,Не должно быть пустым
+ka/activerecord/errors/messages,blank,Не должно быть пустым 
+ka/activerecord/errors/messages,too_long,Слишком длинный (максимальное количество символов %{count}) 
+ka/activerecord/errors/messages,too_short,Слишком короткий (максимальное количество символов %{count}) 
+ka/activerecord/errors/messages,wrong_length,Неверная длина (должно быть %{count} символов)
+ka/activerecord/errors/messages,not_a_number,Не число
+ka/activerecord/errors/messages,not_an_integer,Должно быть целое число 
+ka/activerecord/errors/messages,greater_than,должно быть больше чем %{count} 
+ka/activerecord/errors/messages,greater_than_or_equal_to,должно быть больше или равно %{count} 
+ka/activerecord/errors/messages,equal_to,должно быть равно %{count} 
+ka/activerecord/errors/messages,less_than,должно быть меньше чем %{count} 
+ka/activerecord/errors/messages,less_than_or_equal_to,должно быть меньше или равно %{count} 
+ka/activerecord/errors/messages,odd,должно быть нечетное
+ka/activerecord/errors/messages,even,должно быть четное 
+ka/activerecord/errors/messages,taken,Уже занят
+ka/activerecord/errors/messages,record_invalid,валидация не состоялась: %{errors}
+ka/activerecord/errors/full_messages,format,%{attribute}%{message}

@@ -1,0 +1,470 @@
+---
+ka:
+  activerecord:
+    attributes:
+      activity:
+        date: Tarix
+        video: "YouTube video linki"
+      activity_translation:
+        body: Mətn
+        title: Başlıq
+      economic_category_translation:
+        name: Adı
+      election:
+        date: ""
+      election_translation:
+        name: ""
+      indicator:
+        indicator_category: "Göstərici Kateqoriya"
+        value: Qiyymətləndirmə
+      indicator_category_translation:
+        name: Adı
+      indicator_translation:
+        name: Adı
+      page:
+        name: Adı
+      page_translation:
+        description: Təsviri
+        title: Başlıq
+      platform:
+        economic_category: "İqtisadi Kateqoriya"
+        is_public: "Dünyada Görüntülənən"
+        political_party: "Siyasi Partiya"
+      platform_translation:
+        description: Təsviri
+      policy_brief:
+        economic_category: "İqtisadi Kategoriya"
+        is_public: "Dünyada Görüntülənən"
+        political_party: "Siyasi Partiya"
+      policy_brief_translation:
+        analysis: Analiz
+      political_party:
+        color: Rəngi
+        logo: Logo
+      political_party_translation:
+        name: Adı
+      statement:
+        date_made: "Yaradılması Tarixi"
+        economic_category: "İqtisadi Kateqoriya"
+        is_public: "Dünyada Görüntülənən"
+        political_party: "Siyasi Partiya"
+      statement_translation:
+        analysis: Analiz
+        author: "Bəyanatin Müəllifi"
+        source: "Bəyanat Mənbəsi"
+        statement_made: "Edilən Bəyanat"
+      user:
+        email: El-Poçt
+        password: Şifrə
+        password_confirmation: "Şifrəyi təkrar edin"
+        remember_me: "Yadda saxla"
+        role: Rolu
+    models:
+      activity: Yeniliklər
+      economic_category: "Iqtisadi Kateqoriya"
+      election: ""
+      indicator: Göstərici
+      indicator_category: "Göstərici Kateqoriya"
+      page: "veb səhifə"
+      platform: "Partiya Platforması"
+      policy_brief: "Ekspert Qiymətləndirilməsi"
+      political_party: "Siyasi Partiya"
+      statement: Bəyanat
+      user: İstifadəçi
+  activities:
+    activity_image_fields:
+      remove_link: "İmidji silmək"
+    edit:
+      title: "Redaktə etmək"
+    form:
+      add_file: "İmidj Əlavə etmək"
+    index:
+      no_pages: |-
+          Hal hazırda yeniliklər
+          tapılmamışdır
+      title: Yeniliklər
+    new:
+      title: Yeni
+    show:
+      latest_statements_header: "Ən son bəyanatlar"
+      title: |-
+          Yeniliklər
+          Ətraflı olaraq
+  admin:
+    index:
+      activities: Yeniliklər
+      basic_header:  Əsas
+      content_header: "Məzmunun Əlavə Edilməsi"
+      economic_categories: "İqtisadi Kateqoriyalar"
+      elections: ""
+      indicator_categories: |-
+          Göstəricilərin
+          Kateqoriyaları
+      indicators: Göstəricilər
+      new_users: "İstifadəçi əlavə etmək"
+      pages: Səhifə
+      platforms: Platformalar
+      policy_briefs: "Ekspert Qiyymətləndirilməsi"
+      political_parties: "Siyasi Partiyalar"
+      statements: Bəyanatlar
+      title: "Administrator Şöbəsi"
+      users_header: İstifadəçilər
+      view_users: "İstifadəçiyi görmək"
+    users:
+      edit:
+        title: |-
+            İstifadəçinin Səhifəsinə
+            Yeniliklər Daxil Etmək
+      index:
+        title:  İstifadəçilər
+      new:
+        title: "Yeni İstifadəçi"
+      show:
+        title: "İstifadəçinin Təfərrüatları"
+  app:
+    buttons:
+      admin: "Administrator şöbəsi"
+      back: Geri
+      cancel: "Ləğv Etmək"
+      confirm: Əminsinizmi?
+      create: Yaratmaq
+      delete: Silmək
+      edit: Dəyişmək
+      list: "Daha Ətraflı"
+      new: Yeni
+      remove: uzaqlaşdırmaq
+      reset: "Ilkin konfiqurasiyaya qayıtmaq"
+      save: Saxlamaq
+      show: Göstərmək
+      update: Yeniləmək
+      update_statements: "Bəyanatları Yeniləmək"
+    common:
+      about: Haqqında
+      actions: "Seç "
+      activities: Yeniliklər
+      activity: Yeniliklər
+      all_party_platform_avg: "Siyasi Partiyaların Proqramının Orta"
+      analysis: Analiz
+      app_name: "Siyasi Partiyaların Sosyal-İqtisadi Proqramları"
+      author: Bəyanatçı
+      category_statements: "%{category} Bəyanatların"
+      color: Rəngi
+      comments: Komentariya
+      date: Tarixi
+      date_made: "Yaradılması Tarixi"
+      description: Təsviri
+      disclaimer: Disclaimer
+      download_report: "Hessabatı Yükləmək"
+      economic_category: "İqtisadi Kateqoriya"
+      email: "El-poçt "
+      files: "Yardımçı Fayllar"
+      home: Əsas
+      images: Şəkillər
+      indicator: Göstərici
+      indicator_category: "Göstərici kateqoriyası"
+      indicator_scales: "Göstəricinin Miqyası"
+      is_public: "Dünyada Görüntülənən"
+      legend: Əfsanə
+      logo: Logo
+      methodology: Metodologiya
+      name: Adı
+      new_password: "Yeni Şifrə"
+      page: Səhifə
+      party_platform: "%{party} Partiyanın Platformu "
+      party_statements: "%{party} Bəyanatların "
+      platform: "Partiyanın Platformu"
+      policy_brief: "Ekspert Qiyymətləndirməsi"
+      policy_briefs: " Ekspert Qiyymətləndirmələri"
+      political_parties: "Siyasi Partiyalar"
+      political_party: "Siyasi Partiya"
+      role: Rolu
+      scores: Qadınlar
+      sign_in: Giriş
+      sitemap: "Səhifənin Xəritəsi"
+      source: Mənbə
+      statement: Bəyanat
+      statements: Bəyanatlar
+      time: Vaxt
+      title: Başlıq
+      user: İstifadəçi
+      value: Qiyymətləndirmək
+      view_full: Ətraflı
+      view_source: "Mənbəyə baxın"
+    language:
+      am: Հայերեն
+      az: Azərbaycan
+      en: English
+      ka: ქართული
+      ru: Русский
+    msgs:
+      does_not_exist: "Siz mövcud olmayan səhifəyi izləmək istəyirsiniz."
+      not_authorized: "Bu səhifəyi izləməyə sizing izniniz yoxdur."
+      permalink_exists: "Məlumat Basasında Mövcuddur"
+      platform_already_exists: "Məlumat Basasında Mövcuddur"
+      policy_already_exists: "Məlumat Basasında Mövcuddur"
+      statement_chart_instructions: |-
+          Bir partiyanın rəsmi pozisiyası ilə tanış olub, onu
+          digər partiyalar ilə müqayisə etmək üçün, kateqoriya və göstərici seçin.
+      success_created: "%{obj} Yaranıbdır."
+      success_updated: "%{obj} Yenilənibdir."
+    scales:
+      indicator_category_id_1:
+        bottom: Yalnış
+        middle: Mərkəzçi
+        top:  Düzgün
+      indicator_category_id_2:
+        bottom: Ziddiyyətli
+        middle: Mərkəzçi
+        top: Ardıcıl
+      indicator_category_id_3:
+        bottom: "Bu məqbul deyil"
+        middle: Mərkəzçi
+        top: Əsaslandırılmış
+      indicator_category_id_4:
+        bottom: İmkansız
+        middle: Mərkəzçi
+        top: Müyəssər
+      indicator_category_id_5:
+        bottom: Sağçı
+        middle: Mərkəzçi
+        top: Solçu
+  category:
+    index:
+      no_statements: |-
+          Hal hazırda%{economic_category} -da bəyanatlar
+          tapılmır
+      statement_header: Bəyanatlar
+      title: "%{economic_category}"
+      view_statement: "Bəyanatı tam olaraq görmək"
+    platform:
+      secondary_title: "Platforma - %{political_party} "
+      title: "%{economic_category}"
+    policy_brief:
+      secondary_title: "Ekspert Qiyymətləndirməsi - %{political_party}"
+      title: "%{economic_category}"
+    statement:
+      secondary_title: "Bəyanat - %{date}"
+      title: "%{economic_category}"
+    well:
+      no_platforms: "Hal hazırda platformalar geyd edilməyibdir."
+      no_policy_briefs: "Hal hazırda siyasət haqqında xülasələr daxil edilməmişdir"
+      pdf_header:  Yükləmək
+      pdf_link: "PDF Fayl"
+      platform_header: Platformalar
+      policy_brief_header: "Ekspert Qiyymətləndirməsi"
+      profile_header: Profil
+      view_profile: "Tam profil görmək"
+  economic_categories:
+    edit:
+      title: |-
+          İqtisadi Kateqoriyaya Dəyişiklikləri
+          Daxil Etmək
+    index:
+      title: "İqtisadi Kateqoriyalar"
+    new:
+      title: "Yeni İqtisadi Kateqoriya"
+    show:
+      title: "İqtisadi Kateqoriya Təfərrüatlar"
+  elections:
+    edit:
+      title: ""
+    index:
+      title: ""
+    new:
+      title: ""
+    show:
+      title: ""
+  indicator_categories:
+    edit:
+      title: |-
+          Göstəricilər
+          Kateqoriyasına Dəyişikliklər Daxil Etmək
+    index:
+      title: |-
+          Göstəricilərin
+          Kateqoriyaları
+    new:
+      title: |-
+          Yeni Göstərici
+          Kateqoriyası
+    show:
+      title: "Göstəricilərin Kateqoriya Təfərrüatları"
+  indicators:
+    edit:
+      title: |-
+          Göstəricilərə Dəyişikliklər
+          Daxil Etmək
+    index:
+      title: Göstəricilər
+    new:
+      title: "Yeni Göstəricilər"
+    show:
+      title: "Göstərici Təfərrüatları"
+  layouts:
+    application:
+      admin: Administrator
+      js_link_text: Gurulubdur
+      js_link_title: "Jumstart Georgianın veb-səhifəsinə buyurun"
+      search: Axtarmaq
+      sign_out: Çıxış
+      slogan: "Partiyalar nə vəd edirlər?"
+    unsupported_browser:
+      Safari: Safari
+      admin:  Administrator
+      chrome: Chrome
+      firefox: Firefox
+      ie: "Internet Explorer (Yalnız Windows-da)"
+      js_link_text: Gurulubdur
+      js_link_title: |-
+          Jumstart Georgianın veb-səhifəsinə
+          buyurun
+      opera: Opera
+      p1: |-
+          Təəsüf ki, sizing internet brauzerinizin istifadə vədəsi
+          keçibdir və veb-səhifəyə tam olaraq bağlana bilməyəcəksiniz.
+      p2: |-
+          – Veb saytan fəal istifadə etmək üçün, bir neçə pulsuz
+          brauzer var.
+      sign_out: Çıxış
+      title: "Yalnış Brauzer"
+  pages:
+    edit:
+      title: "Səhifələri dəyişmək"
+    form:
+      add_file: "Fayl əlavə etmək"
+    index:
+      no_pages: |-
+          Hal hazırda yeniliklər
+          tapılmamışdır
+      title: Səhifələr
+    new:
+      title: "Yeni Səhifə"
+    page_file_fields:
+      remove_link: "Faylı silmək"
+    show:
+      title: "Səhifəyi tam olaraq görmək"
+  party:
+    index:
+      no_statements: |-
+          Hal hazırda %{economic_category} üçün
+          % {political_party} bəyanatlar geyd edilmir.
+      statement_header: Bəyanatlar
+      title: "%{political_party} "
+      view_statement: "Bəyanatı tam olaraq görmək"
+    platform:
+      secondary_title: "Platforma - %{economic_category} "
+      title: "%{political_party}"
+    policy_brief:
+      secondary_title: "Ekspert Qiyymətləndirməsi %{economic_category} "
+      title: "%{political_party}"
+    statement:
+      secondary_title: "Bəyanat - %{date}"
+      title: "% {political_party} "
+    well:
+      no_platforms: "Hal hazırda platformalar geyd edilməyibdir"
+      no_policy_briefs: "Hal hazırda siyasət haqqında xülasələr daxil edilməmişdir"
+      pdf_header: Yükləmək
+      pdf_link: PDF
+      platform_header: Platformalar
+      policy_brief_header: "Ekspert Qiyymətləndirməsi"
+      profile_header: Profil
+      view_profile: |-
+          Tam profilə
+          baxmaq
+  platforms:
+    edit:
+      title: |-
+          Platformaya Dəyişikliklər
+          Daxil Etmək
+    form:
+      add_file: "Faylı Əlavə Etmək"
+    index:
+      no_platforms: "Hal hazırda platformalar daxil edilməyibdir"
+      title: Platformalar
+    new:
+      title: "Yeni Platforma"
+    platform_file_fields:
+      remove_link: "Faylı Silmək"
+    show:
+      title: "Platformaların Təfərrüatları"
+  policy_briefs:
+    edit:
+      title: |-
+          Siyasi Xülasəyə
+          Dəyişikliklər Daxil Etmək
+    index:
+      empty: Boşdur
+      no_policy_briefs: "Hal hazırda platformalar daxil edilməyibdir"
+      title: "Ekspert Qiyymətləndirməsi"
+    new:
+      title: "Yeni Ekspert Qiyymətləndirməsi"
+    show:
+      title: |-
+          Siyasi Xülasənin
+          Təfərrüatları
+  political_parties:
+    edit:
+      title: |-
+          Siyasi Partiyaya Dəyişikliklər
+          Daxil Etmək
+    index:
+      title: "Siyasi Partiyalar"
+    new:
+      title: "Yeni Siyasi Partiya"
+    show:
+      title: "Siyasi Partiya Təfərrüatlar"
+  root:
+    about:
+      title: Haqqında
+    charts:
+      center: |-
+          Geyd edilən
+          mövzular haqqında Partiyanın mövqesi, Qərbi-Avropa Sosial–Demokratik kimi onun
+          platformuna əsaslanaraq xarakteristika edilir.
+      left: |-
+          Geyd edilən
+          mövzular haqqında Partiyanın mövqesi, son dərəcədə socialist/komunist kimi onun
+          platformuna əsaslanaraq xarakteristika edilir.
+      right: |-
+          Geyd edilən mövzu haqqında
+          partiyanın mövqeyi, onun platformasına əsasən xarakteristika edilir, (necə ki bir
+          ekstremal libertarian dövlət, mülkiyyət hüquqlarının qorunmasını, qanunu və
+          qaydayı təmin etməlidir. Amma, iqtisadiyyatı nəzarət etməməlidir və dövlət
+          misal olaraq, kasıblara və işsizlərə yardım kimi gəlirlərin paylanmasına
+          qarışmamalıdır). 
+      title: "Siyasi partiyaların İdeologiyaları"
+    disclaimer:
+      title: Disclaimer
+    index:
+      about_header: Haqqında
+      chart_text: "Siyasi partiyaların ideologiyalarının cədvəlini görmək üçün tıklayın."
+      chart_title: "Siyasi Partiyaların İdeologiyaları"
+      latest_statements_header: "Yeni Bəyanatlar"
+      no_values: |-
+          Aplikasiyaya geyd edilən siyasi partiya haqqında məlumat
+          hələlik əlavə edilməmişdir.
+      welcome: |-
+          İqtisadi Siyasətin Faktlarının Yoxlayıcısına xoş gəlmisiniz!
+          Siyasi partiyanın platformalarını, bəyanatlarını və həmçinin,
+          bizim dərin analizimizi izləyin ki, Gürcüstanın siyasi partiyalarının iqtisadi
+          siyasətlərini daha yaxşı müəyyən edəsiniz.
+      welcome_link: "Daha artıq bilik əldə etmək üçün, buraya tıklayın."
+    methodology:
+      title: Metodologiya
+    search:
+      title: Axtarış
+    sitemap:
+      other_header: Digər
+      title: "Səhifənin Xəritəsi"
+  statements:
+    edit:
+      title: "Bəyanata Dəyişikliklər Daxil Etmək"
+    index:
+      no_statements: |-
+          Hal hazırda bəyanatlar
+          geyd edilmir
+      title: Bəyanatlar
+    new:
+      title: "Yeni Bəyanat"
+    show:
+      title: "Bəyanatın Təfərrüatları"

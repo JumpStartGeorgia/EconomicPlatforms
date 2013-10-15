@@ -1,0 +1,8 @@
+ka/formtastic,yes,այո
+ka/formtastic,no,ոչ
+ka/formtastic,create,կազմել %{model} 
+ka/formtastic,update,պահել %{model} 
+ka/formtastic,submit,պահել%{model} 
+ka/formtastic,cancel,վերացնել %{model}
+ka/formtastic,reset,բեռնել %{model} 
+ka/formtastic,required,անհրաժեշտ

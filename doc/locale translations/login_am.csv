@@ -1,0 +1,16 @@
+ka/errors/messages,not_found,չի գտնվել
+ka/errors/messages,already_confirmed,արդեն հաստատվել է
+ka/errors/messages,not_locked,շրջափակված չէր
+ka/devise,timeout,GE::Timeout
+ka/devise/failure,unauthenticated,Մինչեւ շարունակելը, պետք է մտնեք համակարգի մեջ կամ անցնեք գրանցում
+ka/devise/failure,locked,Ձեր հաշիվի շրջափակված է
+ka/devise/failure,invalid,Սխալ է էլ.փոստը կամ գաղտնաբառը
+ka/devise/failure,invalid_token,Սխալ է ավտորիզացման նշանը
+ka/devise/sessions,signed_in,Դուք հաջողությամբ մուտք գործեցիք համակարգ:
+ka/devise/sessions,signed_out,Դուք հաջողությամբ դուրս եկաք համակարգից:
+ka/devise/passwords,send_instructions,Մի քանի րոպեում Դուք էլ.փոստով կստանաք հրահանգներ, թե ինչպես եք վերականգնելու գաղտնաբառը:
+ka/devise/passwords,updated,Դուք գաղտնաբառը հաջողությամբ փոխեցիք: Դուք հիմա մուտք եք գործել համակարգ:
+ka/devise/unlocks,locked,GE::This account is locked
+ka/devise/unlocks,unlock,GE::Unlock
+ka/devise/unlocks,send_instructions,Մի քանի րոպեում Դուք էլ.փոստով կստանաք հրահանգներ, թե ինչպես եք ձեր հաշվի վրայից հանելու շրջափակումը:
+ka/devise/unlocks,unlocked,Ձեր հաշվի վրայից շրջափակումը հաջողությամբ հանեցիք: Դուք հիմա մուտք եք գործել համակարգ:

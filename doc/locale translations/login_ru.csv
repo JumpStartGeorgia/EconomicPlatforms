@@ -1,0 +1,16 @@
+ka/errors/messages,not_found,Не найдено
+ka/errors/messages,already_confirmed,Уже подтверждено
+ka/errors/messages,not_locked,Не был заблокирован
+ka/devise,timeout,GE::Timeout
+ka/devise/failure,unauthenticated,Для продолжения, войдите в систему или пройдите регистрацию
+ka/devise/failure,locked,Ваш счет заблокирован
+ka/devise/failure,invalid,Неверный адрес электронной почты или пароль
+ka/devise/failure,invalid_token,Неверный знак авторизации
+ka/devise/sessions,signed_in,Вы успешно вошли в систему 
+ka/devise/sessions,signed_out,Вы успешно вышли из системы 
+ka/devise/passwords,send_instructions,В течение нескольких минут вы получите на электронную почту инструкцию по восстановлению пароля 
+ka/devise/passwords,updated,Ваш пароль успешно изменен. Вы вошли в систему 
+ka/devise/unlocks,locked,GE::This account is locked
+ka/devise/unlocks,unlock,GE::Unlock
+ka/devise/unlocks,send_instructions,В течение нескольких минут вы получите на электронную почту инструкцию по снятию блока с Вашего счета 
+ka/devise/unlocks,unlocked,С Вашего счета успешно снят блок. Вы вошли в систему

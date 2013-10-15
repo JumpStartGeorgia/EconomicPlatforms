@@ -1,0 +1,408 @@
+---
+ka:
+  activerecord:
+    attributes:
+      activity:
+        date: Дата
+        video: "Видео-ссылка YouTube"
+      activity_translation:
+        body: Текст
+        title: Заглавие
+      economic_category_translation:
+        name: Имя
+      election:
+        date: "Данные выборов"
+      election_translation:
+        name: "Наименование выборов"
+      indicator:
+        indicator_category: "Индивидуальная категория"
+        value: Оценка
+      indicator_category_translation:
+        name: "Имя"
+      indicator_translation:
+        name: "Имя"
+      page:
+        name: "Имя"
+      page_translation:
+        description: Описание
+        title: Заглавие
+      platform:
+        economic_category: "Экономическая категория"
+        is_public: "Видимый миру"
+        political_party: "Политическая партия"
+      platform_translation:
+        description: Описание
+      policy_brief:
+        economic_category: "Экономическая категория"
+        is_public: "Видимый миру"
+        political_party: "Политическая партия"
+      policy_brief_translation:
+        analysis: Анализ
+      political_party:
+        color: Цвет
+        logo: Лого
+      political_party_translation:
+        name: "Имя"
+      statement:
+        date_made: "Дата создания"
+        economic_category: "Экономическая категория"
+        is_public: "Видимый миру"
+        political_party: "Политическая партия"
+      statement_translation:
+        analysis: Анализ
+        author: "Автор заявления"
+        source: "Источник заявления"
+        statement_made: "Сделанное заявление"
+      user:
+        email: "Электронная почта"
+        password: Пароль
+        password_confirmation: "Повторите пароль"
+        remember_me: Запомнить
+        role: Роль
+    models:
+      activity: Новости
+      economic_category: "Экономическая категория"
+      election: Выборы
+      indicator: Индикатор
+      indicator_category: "Индивидуальная категория"
+      page: Страница
+      platform: "Платформа партии"
+      policy_brief: "Экспертная оценка"
+      political_party: "Политическая партия"
+      statement: Заявление
+      user: Пользователь
+  activities:
+    activity_image_fields:
+      remove_link: "Стереть имидж"
+    edit:
+      title: Редактировать
+    form:
+      add_file: "Добавить имидж"
+    index:
+      no_pages: "На данный момент нет новостей"
+      title: Новости
+    new:
+      title: Новое
+    show:
+      latest_statements_header: "Свежие заявления"
+      title: "Новости детально"
+  admin:
+    index:
+      activities: Новости
+      basic_header: Основное
+      content_header: "Добавление содержания"
+      economic_categories: "Экономические категории"
+      elections: Выборы
+      indicator_categories: "Категории индикаторов"
+      indicators: Индикаторы
+      new_users: "Добавление пользователя"
+      pages: Страница
+      platforms: Платформы
+      policy_briefs: "Экспертная оценка"
+      political_parties: "Политические партии"
+      statements: Заявлений
+      title: "Отдел администратора"
+      users_header: Пользователи
+      view_users: "Просмотр пользователей"
+    users:
+      edit:
+        title: "Внесение изменений на страницу пользователя"
+      index:
+        title: Пользователи
+      new:
+        title: "Новый пользователь"
+      show:
+        title: "Пользователь детально"
+  app:
+    buttons:
+      admin: "Отдел администратора"
+      back: Назад
+      cancel: Отмена
+      confirm: "Вы уверены"
+      create: Создать
+      delete: Стереть
+      edit: Изменить
+      list: "Смотреть полностью"
+      new: Новый
+      remove: Убрать
+      reset: "Назад к изначальной конфигурации"
+      save: Сохранить
+      show: Просмотр
+      update: Обновление
+      update_statements: "Обновление заявления"
+    common:
+      about: "О Проекте"
+      actions: Выбрать
+      activities: Новости
+      activity: "Новости"
+      all_party_platform_avg: "Среднее программ политических партий"
+      analysis: Анализ
+      app_name: "Социально-экономические программы политических партий"
+      author: Заявитель
+      category_statements: "%{category} заявлений"
+      color: Цвет
+      comments: Комментарии
+      date: Дата
+      date_made: "Дата создания"
+      description: Описание
+      disclaimer: Disclaimer
+      download_report: "Скачать отчет"
+      economic_category: "Экономическая категория"
+      email: "Электронная почта"
+      files: "Вспомогательные файлы"
+      home: Главная
+      images: Фото
+      indicator: Индикатор
+      indicator_category: "Категория индикатора"
+      indicator_scales: "Шкала индикатора"
+      is_public: "Видимый миру"
+      legend: Легенда
+      logo: Лого
+      methodology: Методология
+      name: Имя
+      new_password: "Новый пароль"
+      page: Страница
+      party_platform: "%{party} платформа партии"
+      party_statements: "%{party} заявлений"
+      platform: "Платформа партии"
+      policy_brief: "Экспертная оценка"
+      policy_briefs: "Экспертные оценки"
+      political_parties: "Политические партии"
+      political_party: "Политическая партия"
+      role: Роль
+      scores: Баллы
+      sign_in: Изменение
+      sitemap: "Карта сайта"
+      source: Источник
+      statement: Заявление
+      statements: Заявления
+      time: Время
+      title: Заглавие
+      user: Пользователь
+      value: Оценка
+      view_full: Полностью
+      view_source: "Смотрите источник"
+    language:
+      am: Հայերեն
+      az: Azərbaycan
+      en: English
+      ka: ქართული
+      ru: Русский
+    msgs:
+      does_not_exist: "Вы пытаетесь зайти на несуществующую страницу"
+      not_authorized: "Вы не имеете прав на просмотр данной страницы"
+      permalink_exists: "Уже существует в базе данных"
+      platform_already_exists: "Уже имеется в базе данных"
+      policy_already_exists: "Уже имеется в базе данных"
+      statement_chart_instructions: "Выберите категорию и индикатор для лучшего ознакомления с официальной позицией партии и сравнения с остальными партиями"
+      success_created: "%{obj} создано"
+      success_updated: "%{obj} обновлено"
+    scales:
+      indicator_category_id_1:
+        bottom: Неверно
+        middle: Центристский
+        top: Верно
+      indicator_category_id_2:
+        bottom: Взаимоисключающий
+        middle: "Центристский"
+        top: Последовательный
+      indicator_category_id_3:
+        bottom: Неоправданный
+        middle: "Центристский"
+        top: Оправданный
+      indicator_category_id_4:
+        bottom: Невозможный
+        middle: "Центристский"
+        top: Осуществляемый
+      indicator_category_id_5:
+        bottom: Правые
+        middle: "Центристский"
+        top: Левые
+  category:
+    index:
+      no_statements: "На данный момент заявления не зафиксированы %{economic_category}."
+      statement_header: Заявления
+      title: "%{economic_category}"
+      view_statement: "Просмотр заявления полностью"
+    platform:
+      secondary_title: "платформа - %{political_party}"
+      title: "%{economic_category}"
+    policy_brief:
+      secondary_title: "экспертная оценка - %{political_party}"
+      title: "%{economic_category}"
+    statement:
+      secondary_title: "заявление - %{date}"
+      title: "%{economic_category}"
+    well:
+      no_platforms: "На данный момент платформы не записаны"
+      no_policy_briefs: "На данный момент резюме на политику не внесены"
+      pdf_header: "Скачать"
+      pdf_link: PDF-файл
+      platform_header: Платформы
+      policy_brief_header: "Экспертная оценка"
+      profile_header: Профиль
+      view_profile: "Просмотр всего профиля"
+  economic_categories:
+    edit:
+      title: "Внесение изменений в экономическую категорию"
+    index:
+      title: "Экономическая категория"
+    new:
+      title: "Новая экономическая категория"
+    show:
+      title: "Экономическая категория детально"
+  elections:
+    edit:
+      title: "Отдел администратора"
+    index:
+      title: Выборы
+    new:
+      title: "Новые выборы"
+    show:
+      title: "Выборы детально"
+  indicator_categories:
+    edit:
+      title: "Внесение изменений в категорию индикаторов"
+    index:
+      title: "Категория индикаторов"
+    new:
+      title: "Новая категория индикаторов"
+    show:
+      title: "Категории индикаторов детально"
+  indicators:
+    edit:
+      title: "Внесение изменений в индикаторы"
+    index:
+      title: "Индикаторы"
+    new:
+      title: "Новый индикатор"
+    show:
+      title: "Индикатор детально"
+  layouts:
+    application:
+      admin: Администратор
+      js_link_text: Построено
+      js_link_title: "Посетите веб-сайт Джампстарт Джорджия"
+      search: Поиск
+      sign_out: Выход
+      slogan: "Что нам обещают партии?"
+    unsupported_browser:
+      Safari: Safari
+      admin: Администратор
+      chrome: Chrome
+      firefox: Firefox
+      ie: "Internet Explorer (только для Windows)"
+      js_link_text: "Построено"
+      js_link_title: "Посетите веб-сайт Джампстарт Джорджия"
+      opera: Opera
+      p1: "К сожалению, ваш интернет-браузер устарел, и связаться с веб-сайтом не удалось"
+      p2: "Существует несколько бесплатных браузеров, скачав которые вы сможете пользоваться веб-сайтом"
+      sign_out: Выход
+      title: "Несоответствующий браузер"
+  pages:
+    edit:
+      title: "Изменение страницы"
+    form:
+      add_file: "Добавить файл"
+    index:
+      no_pages: "На данный момент новости не найдены"
+      title: Страницы
+    new:
+      title: "Новая страница"
+    page_file_fields:
+      remove_link: "Стереть файл"
+    show:
+      title: "Просмотр страницы полностью"
+  party:
+    index:
+      no_statements: "На данный момент заявлений %{economic_category} не зафиксировано %{political_party}"
+      statement_header: заявления
+      title: "%{political_party}"
+      view_statement: "Просмотр заявления полностью"
+    platform:
+      secondary_title: "платформа - %{economic_category}"
+      title: "%{political_party}"
+    policy_brief:
+      secondary_title: "экспертная оценка - %{economic_category}"
+      title: "%{political_party}"
+    statement:
+      secondary_title: "заявление - %{date}"
+      title: "%{political_party}"
+    well:
+      no_platforms: "На данный момент платформы не записаны"
+      no_policy_briefs: "На данный момент резюме на политику не внесены"
+      pdf_header: Скачать
+      pdf_link: PDF
+      platform_header: Платформы
+      policy_brief_header: "Экспертная оценка"
+      profile_header: Профиль
+      view_profile: "Просмотр всего профиля"
+  platforms:
+    edit:
+      title: "Внесение изменений в платформу"
+    form:
+      add_file: "Добавить файл"
+    index:
+      no_platforms: "В данное время платформы не внесены"
+      title: Платформы
+    new:
+      title: "Новая платформа"
+    platform_file_fields:
+      remove_link: "Стереть файл"
+    show:
+      title: "Детали платформы"
+  policy_briefs:
+    edit:
+      title: "Внесение изменений в резюме политики"
+    index:
+      empty: Пусто
+      no_policy_briefs: "В данное время платформы не внесены"
+      title: "Экспертная оценка"
+    new:
+      title: "Новая экспертная оценка"
+    show:
+      title: "Резюме политики детально"
+  political_parties:
+    edit:
+      title: "Внесение изменений в политическую партию"
+    index:
+      title: "Политические партии"
+    new:
+      title: "Новая политическая партия"
+    show:
+      title: "Политическая партия детально"
+  root:
+    about:
+      title: "О Проекте"
+    charts:
+      center: "Позиция партии по данному вопросу, согласно платформе характеризуется как западно - европейская социал-демократическая"
+      left: "Позиция партии по данному вопросу, согласно платформе характеризуется как крайне социалистическая/коммунистическая"
+      right: "Позиция партии по данному вопросу, согласно платформе характеризуется как экстремально либеральная Государство должно обеспечить защиту права собственности, законность и порядок, но не должно регулировать экономику, и государство не должно вмешиваться в распределение доходов (например, помощь неимущим или пособие по безработице)"
+      title: "Идеологии политических партий"
+    disclaimer:
+      title: Disclaimer
+    index:
+      about_header: "О Проекте"
+      chart_text: "Нажмите здесь для ознакомления с графиками, отображающими идеологии политических партий"
+      chart_title: "Идеологии политических партий"
+      latest_statements_header: "Новые заявления"
+      no_values: "Информация о политической партии в апликацию к настоящему времени не внесена"
+      welcome: "Добро пожаловать на страницу проверки фактов экономической политики! Ознакомьтесь с платформами политических партий, заявлениями и также нашим глубоким анализом для лучшего познания экономической политики политических партий Грузии."
+      welcome_link: "Узнать больше, здесь"
+    methodology:
+      title: Методология
+    search:
+      title: Поиск
+    sitemap:
+      other_header: Прочее
+      title: "Карта сайта"
+  statements:
+    edit:
+      title: "Внесение изменений в заявление"
+    index:
+      no_statements: "На данный момент заявлений не зафиксировано"
+      title: Заявления
+    new:
+      title: "Новое заявление"
+    show:
+      title: "Заявление детально"

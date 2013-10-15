@@ -139,10 +139,10 @@ ka:
       update: 'განახლება %{model}'
       submit: 'შენახვა %{model}'
 
-  errors:
+  errors: &errors
     format: "%{attribute} %{message}"
 
-    messages: &errors_messages
+    messages: 
       inclusion: "არ არის სიაში"
       exclusion: "დაკავებულია"
       invalid: "არასწორია"
@@ -174,7 +174,15 @@ ka:
       messages:
         taken: "უკვე დაკავებულია"
         record_invalid: "ვალიდაცია ჩავარდა: %{errors}"
-        <<: *errors_messages
 
       full_messages:
         format: "%{attribute}%{message}"
+        
+
+  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
+  activemodel:
+    errors:
+      <<: *errors
+  activerecord:
+    errors:
+      <<: *errors            

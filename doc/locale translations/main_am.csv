@@ -1,0 +1,287 @@
+ka/activerecord/models,statement,հայտարարություն
+ka/activerecord/models,user,սպառող
+ka/activerecord/models,economic_category,տնտեսական կատիգորիա
+ka/activerecord/models,indicator_category,ինդիկատորի կատիգորիա
+ka/activerecord/models,indicator,ինդիկատոր
+ka/activerecord/models,platform,կուսակցության պլատֆորմը
+ka/activerecord/models,policy_brief,փորձագիտական գնահատական
+ka/activerecord/models,political_party,քաղաքական կուսակցություն
+ka/activerecord/models,page,էջ
+ka/activerecord/models,activity,նորույթ
+ka/activerecord/models,election,ընտրություններ
+ka/activerecord/attributes/activity,date,ամսաթիվը
+ka/activerecord/attributes/activity,video,YouTube տեսալինկ
+ka/activerecord/attributes/activity_translation,title,վերնագիր
+ka/activerecord/attributes/activity_translation,body,տեքստ
+ka/activerecord/attributes/statement,date_made,պատրաստելու ամսաթիվը
+ka/activerecord/attributes/statement,political_party,քաղաքական կուսակցություն
+ka/activerecord/attributes/statement,economic_category,տնտեսական կատիգորիա
+ka/activerecord/attributes/statement,is_public,ի գիտություն աշխարհի
+ka/activerecord/attributes/statement_translation,source,հայտարարության աղբյուրը
+ka/activerecord/attributes/statement_translation,author,հայտարարության հեղինակը
+ka/activerecord/attributes/statement_translation,statement_made,արված հայտարարությունը
+ka/activerecord/attributes/statement_translation,analysis,վերլուծություն
+ka/activerecord/attributes/user,email,էլ. փոստ
+ka/activerecord/attributes/user,password,գաղտնաբառ
+ka/activerecord/attributes/user,password_confirmation,կրկնեք գաղտնաբառը
+ka/activerecord/attributes/user,role,դերը
+ka/activerecord/attributes/user,remember_me,հիշիր ինձ
+ka/activerecord/attributes/economic_category_translation,name,անուն
+ka/activerecord/attributes/indicator_category_translation,name,անուն
+ka/activerecord/attributes/indicator,indicator_category,ինդիկատորի կատիգորիա
+ka/activerecord/attributes/indicator,value,գնահատում
+ka/activerecord/attributes/indicator_translation,name,անուն
+ka/activerecord/attributes/platform,political_party,քաղաքական կուսակցություն
+ka/activerecord/attributes/platform,economic_category,տնտեսական կատիգորիա
+ka/activerecord/attributes/platform,is_public,ի գիտություն աշխարհի
+ka/activerecord/attributes/platform_translation,description,հաշվառում
+ka/activerecord/attributes/policy_brief,political_party,քաղաքական կուսակցություն
+ka/activerecord/attributes/policy_brief,economic_category,տնտեսական կատիգորիա
+ka/activerecord/attributes/policy_brief,is_public,ի գիտություն աշխարհի
+ka/activerecord/attributes/policy_brief_translation,analysis,վերլուծություն
+ka/activerecord/attributes/political_party,color,գույն
+ka/activerecord/attributes/political_party,logo,լոգո
+ka/activerecord/attributes/political_party_translation,name,անուն
+ka/activerecord/attributes/page,name,անուն
+ka/activerecord/attributes/page_translation,title,վերնագիր
+ka/activerecord/attributes/page_translation,description,հաշվառում
+ka/activerecord/attributes/election,date,ընտրությունների տվյալները
+ka/activerecord/attributes/election_translation,name,ընտրությունների անվանումը
+ka/app/language,en,English
+ka/app/language,ka,ქართული
+ka/app/language,am,Հայերեն
+ka/app/language,ru,Русский
+ka/app/language,az,Azərbaycan
+ka/app/scales/indicator_category_id_1,top,ճիշտ
+ka/app/scales/indicator_category_id_1,middle,կենտրոնամետ
+ka/app/scales/indicator_category_id_1,bottom,"ոչ ճիշտ, սխալ"
+ka/app/scales/indicator_category_id_2,top,հետեւողական
+ka/app/scales/indicator_category_id_2,middle,կենտրոնամետ
+ka/app/scales/indicator_category_id_2,bottom,փոխբացառող
+ka/app/scales/indicator_category_id_3,top,արդարացված
+ka/app/scales/indicator_category_id_3,middle,կենտրոնամետ
+ka/app/scales/indicator_category_id_3,bottom,արդարացված չէ
+ka/app/scales/indicator_category_id_4,top,իրականացվելիք
+ka/app/scales/indicator_category_id_4,middle,կենտրոնամետ
+ka/app/scales/indicator_category_id_4,bottom,անհնարին
+ka/app/scales/indicator_category_id_5,top,ձախեր
+ka/app/scales/indicator_category_id_5,middle,կենտրոնամետ
+ka/app/scales/indicator_category_id_5,bottom,աջեր
+ka/app/buttons,back,ետ
+ka/app/buttons,list,դիտեք լրիվությամբ
+ka/app/buttons,admin,ադմինիստրատորի բաժին
+ka/app/buttons,delete,"մաքրել, ջնջել"
+ka/app/buttons,edit,փոխել
+ka/app/buttons,show,ցուցմունք
+ka/app/buttons,cancel,անվավեր ճանաչում
+ka/app/buttons,update,նորացում
+ka/app/buttons,save,պահում
+ka/app/buttons,create,պատրաստում
+ka/app/buttons,reset,նախնական կառուցվածքին վերադառնալը
+ka/app/buttons,remove,վերացնել
+ka/app/buttons,confirm,համոզվա՞ծ եք
+ka/app/buttons,new,նոր
+ka/app/buttons,update_statements,հայտարարությունների նորացում
+ka/app/common,app_name,ՔԱՂԱՔԱԿԱՆ ԿՈՒՍԱԿՑՈՒԹՅՈՒՆՆԵՐԻ ՍՈՑԻԱԼ-ՏՆՏԵՍԱԿԱՆ ԾՐԱԳՐԵՐԸ
+ka/app/common,name,նորույթ
+ka/app/common,title,վերնագիր
+ka/app/common,description,հաշվառում
+ka/app/common,date_made,պատրաստման ամսաթիվը
+ka/app/common,political_party,քաղաքական կուսակցություն
+ka/app/common,political_parties,քաղաքական կուսակցություններ
+ka/app/common,economic_category,տնտեսական կատիգորիա
+ka/app/common,statement,հայտարարություն
+ka/app/common,statements,հայտարարություններ
+ka/app/common,activities,նորույթներ
+ka/app/common,activity,նորույթներ
+ka/app/common,indicator,ինդիկատոր
+ka/app/common,indicator_category,ինդիկատորի կատիգորիա
+ka/app/common,user,սպառող
+ka/app/common,source,աղբյուր
+ka/app/common,author,հայտարարող
+ka/app/common,scores,միավորներ
+ka/app/common,email,էլ. փոստ
+ka/app/common,role,դերը
+ka/app/common,new_password,նոր գաղտնաբառը
+ka/app/common,platform,կուսակցության պլատֆորմը
+ka/app/common,policy_brief,փորձագիտական գնահատական
+ka/app/common,policy_briefs,փորձագիտական գնահատականներ
+ka/app/common,date,ամսաթիվ
+ka/app/common,files,օժանդակ ֆայլեր
+ka/app/common,images,նկարներ
+ka/app/common,color,գույն
+ka/app/common,legend,լեգենդ
+ka/app/common,indicator_scales,ինդիկատորի սանդղակը
+ka/app/common,sign_in,փոփոխում
+ka/app/common,analysis,վերլուծություն
+ka/app/common,actions,ընտրեք
+ka/app/common,value,գնահատում
+ka/app/common,page,էջ
+ka/app/common,about,մասին
+ka/app/common,home,գլխավոր
+ka/app/common,methodology,մեթոդաբանություն
+ka/app/common,disclaimer,Disclaimer
+ka/app/common,is_public,հ գիտություն աշխարհի
+ka/app/common,party_statements,%{party} հայտարարությունների
+ka/app/common,party_platform,%{party} կուսակցության պլատֆորմը
+ka/app/common,category_statements,%{category} հայտարարությունների
+ka/app/common,all_party_platform_avg,քաղաքական կուսակցությունների ծրագրերի ընդհանուր
+ka/app/common,time,ժամանակը
+ka/app/common,comments,մեկնաբանություններ
+ka/app/common,view_full,ընդլայնված
+ka/app/common,sitemap,կայքի քարտեզը
+ka/app/common,logo,լոգո
+ka/app/common,view_source,տես աղբյուրը
+ka/app/common,download_report,հաշվի բեռնումը
+ka/app/msgs,does_not_exist,"Դուք փորձում եք բացել էջը, որը գոյություն չունի"
+ka/app/msgs,not_authorized,Դուք այս էջը բացելոի իրավուք չունեք
+ka/app/msgs,permalink_exists,արդեն գոյություն ունի տվյալների բազայում
+ka/app/msgs,success_created,%{obj} պատրաստված է
+ka/app/msgs,success_updated,%{obj} նորացված է
+ka/app/msgs,policy_already_exists,արդեն գոյություն ունի տվյալների բազայում
+ka/app/msgs,platform_already_exists,արդեն գոյություն ունի տվյալների բազայում
+ka/app/msgs,statement_chart_instructions,որպեսզի ավելի լավ տեսնեք մի կուսակցության պաշտոնական դիրքորոշումն եւ համեմատեբ մյոըս կուսակցությունների հետ:
+ka/layouts/application,admin,ադմինիստրատոր
+ka/layouts/application,sign_out,դուրս գալ
+ka/layouts/application,js_link_title,մուտք գործեք ջամպստարտ Ջորջիայի կայք էջը
+ka/layouts/application,js_link_text,կառուցված
+ka/layouts/application,search,որոնում
+ka/layouts/application,slogan,Ի՞նչ են խոստանում կուսակցությունները:
+ka/layouts/unsupported_browser,title,անհամապատասխան բրաուզեր
+ka/layouts/unsupported_browser,p1,"Ցավոք, ձեր համացանց բրաուզերի օգտագործման ժամկետը սպառվել է եւ կայք էջի հետ լիարժեք կապվելը չի իրականացվի"
+ka/layouts/unsupported_browser,p2,"Գոյություն ունեն մի շարք անվճար բրաուզերներ, որոնց արտագրելուց հետո կկարողանաք օգտվել կայք էջից"
+ka/layouts/unsupported_browser,chrome,Chrome
+ka/layouts/unsupported_browser,firefox,Firefox
+ka/layouts/unsupported_browser,ie,Internet Explorer (მხოლოდ Windows-ზე)
+ka/layouts/unsupported_browser,opera,Opera
+ka/layouts/unsupported_browser,Safari,Safari
+ka/layouts/unsupported_browser,admin,ադմինիստրատոր
+ka/layouts/unsupported_browser,sign_out,դուրս գալ
+ka/layouts/unsupported_browser,js_link_title,մուտք գործեք ջամպստարտ Ջորջիայի կայք էջը
+ka/layouts/unsupported_browser,js_link_text,կառուցված
+ka/root/index,welcome,"Բարի գալուստ տնտեսական քաղաքականության փաստերի ստուգմանը: Դիտեք քաղաքական կուսակցությունների պլատֆորմներն եւ նաեւ մեր խոր վերլուծությունը, որպեսզի ավելի լավ ընկալեք Վրաստանի քաղաքական կուսակցությունների տնտեսական քաղաքականությունը"
+ka/root/index,welcome_link,"Իմացեք ավելի, սեղմեք այստեղ"
+ka/root/index,no_values,Քաղաքական կուսակցության մասին ապլիկացիայում տեղեկատվությունը ներկա պահին չի մտցված
+ka/root/index,latest_statements_header,
+ka/root/index,about_header,մասին
+ka/root/index,chart_title,Քաղաքական կուսակցությունների գաղափարախոսությունները
+ka/root/index,chart_text,Փաթաթեք եւ դիտեք քաղաքական կուսակցությունների գաղափարախոսությունների գրաֆիկները
+ka/root/about,title,մասին
+ka/root/methodology,title,մեթոդաբանություն
+ka/root/disclaimer,title,Disclaimer
+ka/root/charts,title,Քաղաքական կուսակցությունների գաղափարախոսությունները
+ka/root/charts,left,"Կուսակցության դիրքորոշումը նշյալ հարցի վերաբերյալ, ելնելով նրա պլատֆորմից, բնութագրվում է որպես ծայրաստիճան սոցիալւստական/կոմունիստական"
+ka/root/charts,center,"Կուսակցության դիրքորոշումը նշյալ հարցի վերաբերյալ, ելնելով նրա պլատֆորմից, բնութագրվում է որպես արեւմտաեվրոպական սոցիալ-ժողովրդավարական"
+ka/root/charts,right,"Պետությունը պետք է ապահովի սեփականության իրավունքի պաշտպանությունը, օրենքն ու կարգուկանոնը, սակայն չպետք է կառավարի էկոնոմիկան եւ պետությունը չպետք է միջամտի եկամուտների վերաբաշխմանը, ինչպիսինն է, օրինակ, աղքատների կամ գործազուրկների օգնությունը"
+ka/root/search,title,որոնում
+ka/root/sitemap,title,կայքի քարտեզը
+ka/root/sitemap,other_header,այլ
+ka/economic_categories/edit,title,փոփոխությունների կատարում տնտեսական կատիգորիայում
+ka/economic_categories/index,title,տնտեսական կատիգորիաներ
+ka/economic_categories/new,title,տնտեսական նոր կատիգորիա
+ka/economic_categories/show,title,տնտեսական կատիգորիայի մանրամասները
+ka/indicator_categories/edit,title,փոփոխությունների կատարում ինդիկատորի կատիգորիայում
+ka/indicator_categories/index,title,ինդիկատորի կատիգորիաներ
+ka/indicator_categories/new,title,ինդիկատորի նոր կատիգորիա
+ka/indicator_categories/show,title,ինդիկատորի կատիգորիայի մանրամասները
+ka/indicators/edit,title,փոփոխությունների կատարումը ինդիկատորում
+ka/indicators/index,title,ինդիկատորներ
+ka/indicators/new,title,նոր ինդիկատոր
+ka/indicators/show,title,ինդիկատորի մանրամասները
+ka/platforms/edit,title,փոփոխությունների կատարումը պլատֆորմում
+ka/platforms/index,title,պլատֆորմներ
+ka/platforms/index,no_platforms,ներկա պահին պլատֆորմները մտցված չեն
+ka/platforms/new,title,նոր պլատֆորմ
+ka/platforms/show,title,մանրամասներ պլատֆորմի մասին
+ka/platforms/platform_file_fields,remove_link,ֆայլի մաքրումը
+ka/platforms/form,add_file,ֆայլի մաքրումը
+ka/policy_briefs/edit,title,փոփոխությունների կատարումը քաղաքական ամփոփագրում
+ka/policy_briefs/index,title,փորձագիտական գնահատական
+ka/policy_briefs/index,no_policy_briefs,ներկա պահին պլատֆորմները մտցված չեն
+ka/policy_briefs/index,empty,դատարկ է
+ka/policy_briefs/new,title,փորձագիտական նոր գնահատական
+ka/policy_briefs/show,title,մանրամասներ քաղաքական ամփոփագրում
+ka/political_parties/edit,title,փոփոխությունների կատարումը քաղաքական կուսակցությունում
+ka/political_parties/index,title,քաղաքական կուսակցություններ
+ka/political_parties/new,title,քաղաքական նոր կուսակցություն
+ka/political_parties/show,title,քաղաքական կուսակցության մանրամասները
+ka/elections/edit,title,ընտրությունների խմբագրումը
+ka/elections/index,title,ընտրություններ
+ka/elections/new,title,
+ka/elections/show,title,
+ka/admin/index,title,ադմինիստրատորի բաժինը
+ka/admin/index,content_header,բովանդակության լրացումը
+ka/admin/index,platforms,պլատֆորմներ
+ka/admin/index,policy_briefs,փորձագիտական գնահատական
+ka/admin/index,statements,հայտարարության
+ka/admin/index,users_header,սպառողներ
+ka/admin/index,new_users,սպառողների ավելացոիմը
+ka/admin/index,view_users,սպառողներին տեսնելը
+ka/admin/index,basic_header,հիմնական
+ka/admin/index,political_parties,քաղաքական կուսակցություններ
+ka/admin/index,economic_categories,տնտեսական կատիգորիաներ
+ka/admin/index,indicator_categories,ինդիկատորների կատիգորիաներ
+ka/admin/index,indicators,ինդիկատորներ
+ka/admin/index,pages,էջ
+ka/admin/index,activities,նորույթներ
+ka/admin/index,elections,Ընտրություններ
+ka/admin/users/edit,title,փոփոխությունների կատարումը սպառողի էջում
+ka/admin/users/index,title,սպառողներ
+ka/admin/users/new,title,նոր սպառող
+ka/admin/users/show,title,սպառողի մանրամասները
+ka/statements/edit,title,փոփոխությունների կատարումը հայտարարության մեջ
+ka/statements/index,title,հայտարարություններ
+ka/statements/index,no_statements,ներկա պահին հայտարարությունները չեն վավերացվում
+ka/statements/new,title,նոր հայտարարություն
+ka/statements/show,title,հայտարարության մանրամասները
+ka/party/index,title,%{political_party} 
+ka/party/index,statement_header,հայտարարություններ
+ka/party/index,no_statements,ներկա պահին հայտարարությունները %{economic_category} չեն վավերացվում – % {political_party} 
+ka/party/index,view_statement,հայտարարության լրիվ դիտումը
+ka/party/well,pdf_header,արտագրումը
+ka/party/well,pdf_link,PDF
+ka/party/well,profile_header,պրոֆիլը
+ka/party/well,view_profile,լրիվ պրոֆիլի դիտումը
+ka/party/well,platform_header,պլատֆորմներ
+ka/party/well,no_platforms,ներկա պահին պլատֆորմները մտցված չեն
+ka/party/well,policy_brief_header,փորձագիտական գնահատական
+ka/party/well,no_policy_briefs,ներկա պահին քաղաքականության մասին ամփոփագրերը մտցված չեն
+ka/party/statement,title,% {political_party} 
+ka/party/statement,secondary_title,հայտարարություն % {date} 
+ka/party/platform,title,%{political_party}
+ka/party/platform,secondary_title,պլատֆորմ - %{economic_category} 
+ka/party/policy_brief,title,%{political_party}
+ka/party/policy_brief,secondary_title,փորձագիտական գնահատական - %{economic_category} 
+ka/category/index,title,%{economic_category}
+ka/category/index,statement_header,հայտարարություններ
+ka/category/index,no_statements,ներկա պահին հայտարարությունները%{economic_category}-ում չեն վավերացվում
+ka/category/index,view_statement,հայտարարության լրիվ դիտումը
+ka/category/well,pdf_header,արտագրումը
+ka/category/well,pdf_link,ՊԴՖ ֆայլ
+ka/category/well,profile_header,պրոֆիլ
+ka/category/well,view_profile,լրիվ պրոֆիլի դիտումը
+ka/category/well,platform_header,պլատֆորմներ
+ka/category/well,no_platforms,ներկա պահին պլատֆորմները մտցված չեն
+ka/category/well,policy_brief_header,փորձագիտական գնահատական
+ka/category/well,no_policy_briefs,ներկա պահին քաղաքականության մասին ամփոփագրերը մտցված չեն
+ka/category/statement,title,%{economic_category}
+ka/category/statement,secondary_title,հայտարարություն - %{date}
+ka/category/platform,title,%{economic_category}
+ka/category/platform,secondary_title,պլատֆորմ - %{political_party}
+ka/category/policy_brief,title,%{economic_category}
+ka/category/policy_brief,secondary_title,փորձագիտական գնահատական - %{political_party} 
+ka/pages/edit,title,էջերի փոփոխումը
+ka/pages/index,title,էջերը
+ka/pages/index,no_pages,ներկա պահին նորույթ չի գտնվել
+ka/pages/new,title,նոր էջ
+ka/pages/show,title,էջի լրիվ դիտումը
+ka/pages/page_file_fields,remove_link,ֆաջլի մաքրումը
+ka/pages/form,add_file,ֆայլի ավելացումը
+ka/activities/edit,title,խմբագրումը
+ka/activities/index,title,նորույթներ
+ka/activities/index,no_pages,ներկա պահին նորույթ չի գտնվել
+ka/activities/new,title,նոր
+ka/activities/show,title,նորույթների մանրամասնորեն
+ka/activities/show,latest_statements_header,ամենաթարմ հայտարարությունը
+ka/activities/form,add_file,վարկանիշի ավելացումը
+ka/activities/activity_image_fields,remove_link,վարկանիշի մաքրումը

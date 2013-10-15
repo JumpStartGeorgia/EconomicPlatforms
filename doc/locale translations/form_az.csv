@@ -1,0 +1,8 @@
+ka/formtastic,yes,Bəli
+ka/formtastic,no,Xeyr
+ka/formtastic,create,Yaratmaq %{model}
+ka/formtastic,update,Saxlamaq %{model}
+ka/formtastic,submit,Saxlamaq %{model}
+ka/formtastic,cancel,Ləğv etmək %{model}
+ka/formtastic,reset,Yenidən başlatmaq %{model}
+ka/formtastic,required,Lazımlı

@@ -1,0 +1,16 @@
+ka/errors/messages,not_found,Tapılmamışdır
+ka/errors/messages,already_confirmed,Artıq təsdiqlənibdir
+ka/errors/messages,not_locked,Bloklanmamışdır
+ka/devise,timeout,GE::Timeout
+ka/devise/failure,unauthenticated,Davam etmək üçün ya sistemə daxil olmalısınız ya da qeydiyyatdan keçməlisiniz
+ka/devise/failure,locked,Sizin hessabınız bloklanmışdır
+ka/devise/failure,invalid,Yalnış El-poçt ya da şifrə
+ka/devise/failure,invalid_token,Yalnış avtorizasiya nişanı
+ka/devise/sessions,signed_in,Siz sistemə uğurla daxil oldunuz
+ka/devise/sessions,signed_out,Siz sistemi uğurla tərk etdiniz
+ka/devise/passwords,send_instructions,Bir neçə dəqiqə ərzində siz el-poçt vasitəsi ilə şifrəni yenidən bərpa etmək instruksiyalarını alacaqsınız
+ka/devise/passwords,updated,Sizin şifrəniz uğurla dəyişdirildi. Siz artıq sistemə daxil olmusunuz
+ka/devise/unlocks,locked,GE::This account is locked
+ka/devise/unlocks,unlock,GE::Unlock
+ka/devise/unlocks,send_instructions,Bir neçə dəqiqə ərzində siz el-poçt vasitəsi ilə hessabınızdan bloku açmaq instruksiyalarını alacaqsınız
+ka/devise/unlocks,unlocked,Sizin hessabınızın bloku uğurla açılmışdır. Siz artıq sistemə daxil olmusunuz

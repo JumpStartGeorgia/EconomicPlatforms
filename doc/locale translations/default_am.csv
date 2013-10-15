@@ -1,0 +1,128 @@
+ka/date/formats,default,%d-%m-%Y
+ka/date/formats,short,%d %b
+ka/date/formats,long,"%B %d, %Y"
+ka/date,day_names,"[""կիրակի"", ""երկուշաբթի"", ""երեքշաբթի"", ""չորեքշաբթի"", ""հինգշաբթի"", ""ուրբաթ"", ""շաբաթ""]"
+ka/date,abbr_day_names,"[""կիր"", ""երկ"", ""երե"", ""չոր"", ""հին"", ""ուրբ"", ""շաբ""] "
+ka/date,month_names,"[nil, ""հունվար"", ""փետրվար"", ""մարտ"", ""ապրիլ"", ""մայիս"", ""հունիս"", ""հուլիս"", ""օգոստոս"", ""սեպտեմբեր"", ""հոկտեմբեր"", ""նոյեմբեր"", ""դեկտեմբեր""]"
+ka/date,abbr_month_names,"[nil, ""հունվ"", ""փետր"", ""մար"", ""ապր"", ""մայիս"", ""հուն"", ""հուլ"", ""օգ"", ""սեպ"", ""հոկ"", ""նոյ"", ""դեկ""]"
+ka/date,order,"[:day, :month, :year]"
+ka/time/formats,default,"%a, %d %b %Y %H:%M:%S %z"
+ka/time/formats,short,%d %b %H:%M
+ka/time/formats,long,%d %b %Y %H:%M
+ka/time/formats,file,%Y %m %d %H:%M:%S
+ka/time,am,am
+ka/time,pm,pm
+ka/support/array,words_connector,", "
+ka/support/array,two_words_connector,եւ
+ka/support/array,last_word_connector,",եւ"
+ka/support/select,prompt,"խնդրում ենք, ընտրեք"
+ka/number/format,separator,0
+ka/number/format,delimiter,","
+ka/number/format,precision,2
+ka/number/format,significant,FALSE
+ka/number/format,strip_insignificant_zeros,TRUE
+ka/number/currency/format,format,%u%n
+ka/number/currency/format,unit,$
+ka/number/currency/format,separator,0
+ka/number/currency/format,delimiter,","
+ka/number/currency/format,precision,2
+ka/number/currency/format,significant,FALSE
+ka/number/currency/format,strip_insignificant_zeros,FALSE
+ka/number/percentage/format,delimiter,
+ka/number/precision/format,delimiter,
+ka/number/human/format,delimiter,
+ka/number/human/format,precision,2
+ka/number/human/format,significant,TRUE
+ka/number/human/format,strip_insignificant_zeros,TRUE
+ka/number/human/storage_units,format,%n %u
+ka/number/human/storage_units/units/byte,one,բայթ
+ka/number/human/storage_units/units/byte,other,բայթեր
+ka/number/human/storage_units/units,kb,կբ
+ka/number/human/storage_units/units,mb,մբ
+ka/number/human/storage_units/units,gb,գբ
+ka/number/human/storage_units/units,tb,տբ
+ka/number/human/decimal_units,format,%n %u
+ka/number/human/decimal_units/units,unit,
+ka/number/human/decimal_units/units,thousand,հազար
+ka/number/human/decimal_units/units,million,միլիոն
+ka/number/human/decimal_units/units,billion,բիլիարդ
+ka/number/human/decimal_units/units,trillion,տրիլիոն
+ka/number/human/decimal_units/units,quadrillion,կվադրիլիոն
+ka/datetime/distance_in_words,half_a_minute,կես րոպե
+ka/datetime/distance_in_words/less_than_x_seconds,one,վայրկյանից քիչ
+ka/datetime/distance_in_words/less_than_x_seconds,other,%{count} րոպեից քիչ
+ka/datetime/distance_in_words/x_seconds,one,1 վայրկյան
+ka/datetime/distance_in_words/x_seconds,other,%{count} վայրկյան
+ka/datetime/distance_in_words/less_than_x_minutes,one,րոպեից քիչ
+ka/datetime/distance_in_words/less_than_x_minutes,other,%{count} րոպեից քիչ
+ka/datetime/distance_in_words/x_minutes,one,1 րոպե
+ka/datetime/distance_in_words/x_minutes,other,%{count} րոպե
+ka/datetime/distance_in_words/about_x_hours,one,1 ժամ
+ka/datetime/distance_in_words/about_x_hours,other,մոտ%{count} ժամ 
+ka/datetime/distance_in_words/x_days,one,1 օր
+ka/datetime/distance_in_words/x_days,other,%{count} օր
+ka/datetime/distance_in_words/about_x_months,one,մոտ 1 ամիս
+ka/datetime/distance_in_words/about_x_months,other,մոտ %{count} ամիս
+ka/datetime/distance_in_words/x_months,one,1 ամիս
+ka/datetime/distance_in_words/x_months,other,%{count} ամիս
+ka/datetime/distance_in_words/about_x_years,one,մոտ 1 տարի
+ka/datetime/distance_in_words/about_x_years,other,մոտ %{count} տարի
+ka/datetime/distance_in_words/over_x_years,one,տարուց ավելի
+ka/datetime/distance_in_words/over_x_years,other,%{count} տարուց ավելի
+ka/datetime/distance_in_words/almost_x_years,one,գրեթե 1 տարի
+ka/datetime/distance_in_words/almost_x_years,other,գրեթե %{count} տարի
+ka/datetime/prompts,year,տարի
+ka/datetime/prompts,month,ամիս
+ka/datetime/prompts,day,օր
+ka/datetime/prompts,hour,ժամ
+ka/datetime/prompts,minute,րոպե
+ka/datetime/prompts,second,վայրկյան
+ka/helpers/select,prompt,"խնդրում ենք, ընտրեք"
+ka/helpers/submit,create,կազմել %{model}
+ka/helpers/submit,update,նորացնել %{model}
+ka/helpers/submit,submit,պահել %{model} 
+ka/errors,format,%{attribute} %{message}
+ka/errors/messages,inclusion,ցուցակում չկա
+ka/errors/messages,exclusion,զբաղված է
+ka/errors/messages,invalid,սխալ է
+ka/errors/messages,confirmation,չի հաստատվում
+ka/errors/messages,accepted,պահանջվում է համաձայնություն
+ka/errors/messages,empty,դատարկ չպետք է լինի
+ka/errors/messages,blank,դատարկ չպետք է լինի
+ka/errors/messages,too_long,շատ երկար է (նշանների առավելագույն քանակությունը %{count} )
+ka/errors/messages,too_short,շատ կարճ է (նշանների նվազագույն քանակությունը %{count} )
+ka/errors/messages,wrong_length,սխալ երկարություն (պետք է լինի % count} )
+ka/errors/messages,not_a_number,թիվ չկա
+ka/errors/messages,not_an_integer,պետք է լինի ամբողջ թիվ
+ka/errors/messages,greater_than,պետք է լինի %{count} –ից ավելի
+ka/errors/messages,greater_than_or_equal_to,պետք է լինի %{count} –ից ավելի կամ հավասար
+ka/errors/messages,equal_to,պետք է լինի %{count} –ին հավասար
+ka/errors/messages,less_than,պետք է լինի %{count} –ից քիչ
+ka/errors/messages,less_than_or_equal_to,պետք է լինի %{count} –ից քիչ կամ հավասար
+ka/errors/messages,odd,պետք է լինի կենտ
+ka/errors/messages,even,պետք է լինի զույգ
+ka/activerecord/errors/template/header,one,պատճառով –հ պահումի հնարավոր չէ
+ka/activerecord/errors/template/header,other,պատճառով –հ պահումի հնարավոր չէ
+ka/activerecord/errors/template,body,հայտնաբերվել են հատեւյալ դաշտերի հետ կապված հիմնախնդիրներ
+ka/activerecord/errors/messages,inclusion,ցուցակում չկա
+ka/activerecord/errors/messages,exclusion,զբաղված է
+ka/activerecord/errors/messages,invalid,սխալ է
+ka/activerecord/errors/messages,confirmation,չի հաստատվում
+ka/activerecord/errors/messages,accepted,ահանջվում է համաձայնություն
+ka/activerecord/errors/messages,empty,դատարկ չպետք է լինի
+ka/activerecord/errors/messages,blank,դատարկ չպետք է լինի
+ka/activerecord/errors/messages,too_long,շատ երկար է (նշանների առավելագույն քանակությունը %{count} )
+ka/activerecord/errors/messages,too_short,շատ կարճ է (նշանների նվազագույն քանակությունը %{count} )
+ka/activerecord/errors/messages,wrong_length,սխալ երկարություն (պետք է լինի % {count} )
+ka/activerecord/errors/messages,not_a_number,թիվ չկա
+ka/activerecord/errors/messages,not_an_integer,պետք է լինի ամբողջ թիվ
+ka/activerecord/errors/messages,greater_than,պետք է լինի %{count} –ից ավելի 
+ka/activerecord/errors/messages,greater_than_or_equal_to,պետք է լինի %{count} –ից ավելի կամ հավասար
+ka/activerecord/errors/messages,equal_to,պետք է լինի %{count} –ին հավասար
+ka/activerecord/errors/messages,less_than,պետք է լինի %{count} –ից քիչ 
+ka/activerecord/errors/messages,less_than_or_equal_to,պետք է լինի %{count} –ից քիչ կամ հավասար
+ka/activerecord/errors/messages,odd,պետք է լինի կենտ
+ka/activerecord/errors/messages,even,պետք է լինի զույգ
+ka/activerecord/errors/messages,taken,արդեն զբաղված է
+ka/activerecord/errors/messages,record_invalid,վալիդացիան տապալվեց %{errors} 
+ka/activerecord/errors/full_messages,format,%{attribute}%{message}

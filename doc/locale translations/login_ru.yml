@@ -1,0 +1,25 @@
+---
+ka:
+  devise:
+    failure:
+      invalid: "Неверный адрес электронной почты или пароль"
+      invalid_token: "Неверный знак авторизации"
+      locked: "Ваш счет заблокирован"
+      unauthenticated: "Для продолжения"
+    passwords:
+      send_instructions: "В течение нескольких минут вы получите на электронную почту инструкцию по восстановлению пароля "
+      updated: "Ваш пароль успешно изменен. Вы вошли в систему "
+    sessions:
+      signed_in: "Вы успешно вошли в систему "
+      signed_out: "Вы успешно вышли из системы "
+    timeout: "GE::Timeout"
+    unlocks:
+      locked: "GE::This account is locked"
+      send_instructions: "В течение нескольких минут вы получите на электронную почту инструкцию по снятию блока с Вашего счета "
+      unlock: "GE::Unlock"
+      unlocked: "С Вашего счета успешно снят блок. Вы вошли в систему"
+  errors:
+    messages:
+      already_confirmed: "Уже подтверждено"
+      not_found: "Не найдено"
+      not_locked: "Не был заблокирован"

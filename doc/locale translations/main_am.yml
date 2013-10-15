@@ -1,0 +1,407 @@
+---
+ka:
+  activerecord:
+    attributes:
+      activity:
+        date: ամսաթիվը
+        video: "YouTube տեսալինկ"
+      activity_translation:
+        body: տեքստ
+        title: վերնագիր
+      economic_category_translation:
+        name: անուն
+      election:
+        date: "ընտրությունների տվյալները"
+      election_translation:
+        name: "ընտրությունների անվանումը"
+      indicator:
+        indicator_category: "ինդիկատորի կատիգորիա"
+        value: գնահատում
+      indicator_category_translation:
+        name: անուն
+      indicator_translation:
+        name: անուն
+      page:
+        name: անուն
+      page_translation:
+        description: հաշվառում
+        title: վերնագիր
+      platform:
+        economic_category: "տնտեսական կատիգորիա"
+        is_public: "ի գիտություն աշխարհի"
+        political_party: "քաղաքական կուսակցություն"
+      platform_translation:
+        description: հաշվառում
+      policy_brief:
+        economic_category: "տնտեսական կատիգորիա"
+        is_public: "ի գիտություն աշխարհի"
+        political_party: "քաղաքական կուսակցություն"
+      policy_brief_translation:
+        analysis: վերլուծություն
+      political_party:
+        color: գույն
+        logo: լոգո
+      political_party_translation:
+        name: անուն
+      statement:
+        date_made: "պատրաստելու ամսաթիվը"
+        economic_category: "տնտեսական կատիգորիա"
+        is_public: "ի գիտություն աշխարհի"
+        political_party: "քաղաքական կուսակցություն"
+      statement_translation:
+        analysis: վերլուծություն
+        author: "հայտարարության հեղինակը"
+        source: "հայտարարության աղբյուրը"
+        statement_made: "արված հայտարարությունը"
+      user:
+        email: "էլ. փոստ"
+        password: գաղտնաբառ
+        password_confirmation: "կրկնեք գաղտնաբառը"
+        remember_me: "հիշիր ինձ"
+        role: դերը
+    models:
+      activity: նորույթ
+      economic_category: "տնտեսական կատիգորիա"
+      election: ընտրություններ
+      indicator: ինդիկատոր
+      indicator_category: "ինդիկատորի կատիգորիա"
+      page: էջ
+      platform: "կուսակցության պլատֆորմը"
+      policy_brief: "փորձագիտական գնահատական"
+      political_party: "քաղաքական կուսակցություն"
+      statement: հայտարարություն
+      user: սպառող
+  activities:
+    activity_image_fields:
+      remove_link: "վարկանիշի մաքրումը"
+    edit:
+      title: խմբագրումը
+    form:
+      add_file: "վարկանիշի ավելացումը"
+    index:
+      no_pages: "ներկա պահին նորույթ չի գտնվել"
+      title: նորույթներ
+    new:
+      title: նոր
+    show:
+      latest_statements_header: "ամենաթարմ հայտարարությունը"
+      title: "նորույթների մանրամասնորեն"
+  admin:
+    index:
+      activities: նորույթներ
+      basic_header: հիմնական
+      content_header: "բովանդակության լրացումը"
+      economic_categories: "տնտեսական կատիգորիաներ"
+      elections: Ընտրություններ
+      indicator_categories: "ինդիկատորների կատիգորիաներ"
+      indicators: ինդիկատորներ
+      new_users: "սպառողների ավելացոիմը"
+      pages: էջ
+      platforms: պլատֆորմներ
+      policy_briefs: "փորձագիտական գնահատական"
+      political_parties: "քաղաքական կուսակցություններ"
+      statements: հայտարարության
+      title: "ադմինիստրատորի բաժինը"
+      users_header: սպառողներ
+      view_users: "սպառողներին տեսնելը"
+    users:
+      edit:
+        title: "փոփոխությունների կատարումը սպառողի էջում"
+      index:
+        title: սպառողներ
+      new:
+        title: "նոր սպառող"
+      show:
+        title: "սպառողի մանրամասները"
+  app:
+    buttons:
+      admin: "ադմինիստրատորի բաժին"
+      back: ետ
+      cancel: "անվավեր ճանաչում"
+      confirm: "համոզվա՞ծ եք"
+      create: պատրաստում
+      delete: "մաքրել, ջնջել"
+      edit: փոխել
+      list: "դիտեք լրիվությամբ"
+      new: նոր
+      remove: վերացնել
+      reset: "նախնական կառուցվածքին վերադառնալը"
+      save: պահում
+      show: ցուցմունք
+      update: նորացում
+      update_statements: "հայտարարությունների նորացում"
+    common:
+      about: մասին
+      actions: ընտրեք
+      activities: նորույթներ
+      activity: նորույթներ
+      all_party_platform_avg: "քաղաքական կուսակցությունների ծրագրերի ընդհանուր"
+      analysis: վերլուծություն
+      app_name: "ՔԱՂԱՔԱԿԱՆ ԿՈՒՍԱԿՑՈՒԹՅՈՒՆՆԵՐԻ ՍՈՑԻԱԼ-ՏՆՏԵՍԱԿԱՆ ԾՐԱԳՐԵՐԸ"
+      author: հայտարարող
+      category_statements: "%{category} հայտարարությունների"
+      color: գույն
+      comments: մեկնաբանություններ
+      date: ամսաթիվ
+      date_made: "պատրաստման ամսաթիվը"
+      description: հաշվառում
+      disclaimer: Disclaimer
+      download_report: "հաշվի բեռնումը"
+      economic_category: "տնտեսական կատիգորիա"
+      email: "էլ. փոստ"
+      files: "օժանդակ ֆայլեր"
+      home: գլխավոր
+      images: նկարներ
+      indicator: ինդիկատոր
+      indicator_category: "ինդիկատորի կատիգորիա"
+      indicator_scales: "ինդիկատորի սանդղակը"
+      is_public: "հ գիտություն աշխարհի"
+      legend: լեգենդ
+      logo: լոգո
+      methodology: մեթոդաբանություն
+      name: նորույթ
+      new_password: "նոր գաղտնաբառը"
+      page: էջ
+      party_platform: "%{party} կուսակցության պլատֆորմը"
+      party_statements: "%{party} հայտարարությունների"
+      platform: "կուսակցության պլատֆորմը"
+      policy_brief: "փորձագիտական գնահատական"
+      policy_briefs: "փորձագիտական գնահատականներ"
+      political_parties: "քաղաքական կուսակցություններ"
+      political_party: "քաղաքական կուսակցություն"
+      role: դերը
+      scores: միավորներ
+      sign_in: փոփոխում
+      sitemap: "կայքի քարտեզը"
+      source: աղբյուր
+      statement: հայտարարություն
+      statements: հայտարարություններ
+      time: ժամանակը
+      title: վերնագիր
+      user: սպառող
+      value: գնահատում
+      view_full: ընդլայնված
+      view_source: "տես աղբյուրը"
+    language:
+      am: Հայերեն
+      az: Azərbaycan
+      en: English
+      ka: ქართული
+      ru: Русский
+    msgs:
+      does_not_exist: "Դուք փորձում եք բացել էջը, որը գոյություն չունի"
+      not_authorized: "Դուք այս էջը բացելոի իրավուք չունեք"
+      permalink_exists: "արդեն գոյություն ունի տվյալների բազայում"
+      platform_already_exists: "արդեն գոյություն ունի տվյալների բազայում"
+      policy_already_exists: "արդեն գոյություն ունի տվյալների բազայում"
+      statement_chart_instructions: "որպեսզի ավելի լավ տեսնեք մի կուսակցության պաշտոնական դիրքորոշումն եւ համեմատեբ մյոըս կուսակցությունների հետ:"
+      success_created: "%{obj} պատրաստված է"
+      success_updated: "%{obj} նորացված է"
+    scales:
+      indicator_category_id_1:
+        bottom: "ոչ ճիշտ, սխալ"
+        middle: կենտրոնամետ
+        top: ճիշտ
+      indicator_category_id_2:
+        bottom: փոխբացառող
+        middle: կենտրոնամետ
+        top: հետեւողական
+      indicator_category_id_3:
+        bottom: "արդարացված չէ"
+        middle: կենտրոնամետ
+        top: արդարացված
+      indicator_category_id_4:
+        bottom: անհնարին
+        middle: կենտրոնամետ
+        top: իրականացվելիք
+      indicator_category_id_5:
+        bottom: աջեր
+        middle: կենտրոնամետ
+        top: ձախեր
+  category:
+    index:
+      no_statements: "ներկա պահին հայտարարությունները%{economic_category}-ում չեն վավերացվում"
+      statement_header: հայտարարություններ
+      title: "%{economic_category}"
+      view_statement: "հայտարարության լրիվ դիտումը"
+    platform:
+      secondary_title: "պլատֆորմ - %{political_party}"
+      title: "%{economic_category}"
+    policy_brief:
+      secondary_title: "փորձագիտական գնահատական - %{political_party} "
+      title: "%{economic_category}"
+    statement:
+      secondary_title: "հայտարարություն - %{date}"
+      title: "%{economic_category}"
+    well:
+      no_platforms: "ներկա պահին պլատֆորմները մտցված չեն"
+      no_policy_briefs: "ներկա պահին քաղաքականության մասին ամփոփագրերը մտցված չեն"
+      pdf_header: արտագրումը
+      pdf_link: "ՊԴՖ ֆայլ"
+      platform_header: պլատֆորմներ
+      policy_brief_header: "փորձագիտական գնահատական"
+      profile_header: պրոֆիլ
+      view_profile: "լրիվ պրոֆիլի դիտումը"
+  economic_categories:
+    edit:
+      title: "փոփոխությունների կատարում տնտեսական կատիգորիայում"
+    index:
+      title: "տնտեսական կատիգորիաներ"
+    new:
+      title: "տնտեսական նոր կատիգորիա"
+    show:
+      title: "տնտեսական կատիգորիայի մանրամասները"
+  elections:
+    edit:
+      title: "ընտրությունների խմբագրումը"
+    index:
+      title: ընտրություններ
+    new:
+      title: ""
+    show:
+      title: ""
+  indicator_categories:
+    edit:
+      title: "փոփոխությունների կատարում ինդիկատորի կատիգորիայում"
+    index:
+      title: "ինդիկատորի կատիգորիաներ"
+    new:
+      title: "ինդիկատորի նոր կատիգորիա"
+    show:
+      title: "ինդիկատորի կատիգորիայի մանրամասները"
+  indicators:
+    edit:
+      title: "փոփոխությունների կատարումը ինդիկատորում"
+    index:
+      title: ինդիկատորներ
+    new:
+      title: "նոր ինդիկատոր"
+    show:
+      title: "ինդիկատորի մանրամասները"
+  layouts:
+    application:
+      admin: ադմինիստրատոր
+      js_link_text: կառուցված
+      js_link_title: "մուտք գործեք ջամպստարտ Ջորջիայի կայք էջը"
+      search: որոնում
+      sign_out: "դուրս գալ"
+      slogan: "Ի՞նչ են խոստանում կուսակցությունները:"
+    unsupported_browser:
+      Safari: Safari
+      admin: ադմինիստրատոր
+      chrome: Chrome
+      firefox: Firefox
+      ie: "Internet Explorer (მხოლოდ Windows-ზე)"
+      js_link_text: կառուցված
+      js_link_title: "մուտք գործեք ջամպստարտ Ջորջիայի կայք էջը"
+      opera: Opera
+      p1: "Ցավոք, ձեր համացանց բրաուզերի օգտագործման ժամկետը սպառվել է եւ կայք էջի հետ լիարժեք կապվելը չի իրականացվի"
+      p2: "Գոյություն ունեն մի շարք անվճար բրաուզերներ, որոնց արտագրելուց հետո կկարողանաք օգտվել կայք էջից"
+      sign_out: "դուրս գալ"
+      title: "անհամապատասխան բրաուզեր"
+  pages:
+    edit:
+      title: "էջերի փոփոխումը"
+    form:
+      add_file: "ֆայլի ավելացումը"
+    index:
+      no_pages: "ներկա պահին նորույթ չի գտնվել"
+      title: էջերը
+    new:
+      title: "նոր էջ"
+    page_file_fields:
+      remove_link: "ֆաջլի մաքրումը"
+    show:
+      title: "էջի լրիվ դիտումը"
+  party:
+    index:
+      no_statements: "ներկա պահին հայտարարությունները %{economic_category} չեն վավերացվում – % {political_party} "
+      statement_header: հայտարարություններ
+      title: "%{political_party} "
+      view_statement: "հայտարարության լրիվ դիտումը"
+    platform:
+      title: "%{political_party}"
+    policy_brief:
+      secondary_title: "փորձագիտական գնահատական - %{economic_category} "
+      title: "%{political_party}"
+    statement:
+      secondary_title: "հայտարարություն % {date} "
+      title: "% {political_party} "
+    well:
+      no_platforms: "ներկա պահին պլատֆորմները մտցված չեն"
+      no_policy_briefs: "ներկա պահին քաղաքականության մասին ամփոփագրերը մտցված չեն"
+      pdf_header: արտագրումը
+      pdf_link: PDF
+      platform_header: պլատֆորմներ
+      policy_brief_header: "փորձագիտական գնահատական"
+      profile_header: պրոֆիլը
+      view_profile: "լրիվ պրոֆիլի դիտումը"
+  platforms:
+    edit:
+      title: "փոփոխությունների կատարումը պլատֆորմում"
+    form:
+      add_file: "ֆայլի մաքրումը"
+    index:
+      no_platforms: "ներկա պահին պլատֆորմները մտցված չեն"
+      title: պլատֆորմներ
+    new:
+      title: "նոր պլատֆորմ"
+    platform_file_fields:
+      remove_link: "ֆայլի մաքրումը"
+    show:
+      title: "մանրամասներ պլատֆորմի մասին"
+  policy_briefs:
+    edit:
+      title: "փոփոխությունների կատարումը քաղաքական ամփոփագրում"
+    index:
+      empty: "դատարկ է"
+      no_policy_briefs: "ներկա պահին պլատֆորմները մտցված չեն"
+      title: "փորձագիտական գնահատական"
+    new:
+      title: "փորձագիտական նոր գնահատական"
+    show:
+      title: "մանրամասներ քաղաքական ամփոփագրում"
+  political_parties:
+    edit:
+      title: "փոփոխությունների կատարումը քաղաքական կուսակցությունում"
+    index:
+      title: "քաղաքական կուսակցություններ"
+    new:
+      title: "քաղաքական նոր կուսակցություն"
+    show:
+      title: "քաղաքական կուսակցության մանրամասները"
+  root:
+    about:
+      title: մասին
+    charts:
+      center: "Կուսակցության դիրքորոշումը նշյալ հարցի վերաբերյալ, ելնելով նրա պլատֆորմից, բնութագրվում է որպես արեւմտաեվրոպական սոցիալ-ժողովրդավարական"
+      left: "Կուսակցության դիրքորոշումը նշյալ հարցի վերաբերյալ, ելնելով նրա պլատֆորմից, բնութագրվում է որպես ծայրաստիճան սոցիալւստական/կոմունիստական"
+      right: "Պետությունը պետք է ապահովի սեփականության իրավունքի պաշտպանությունը, օրենքն ու կարգուկանոնը, սակայն չպետք է կառավարի էկոնոմիկան եւ պետությունը չպետք է միջամտի եկամուտների վերաբաշխմանը, ինչպիսինն է, օրինակ, աղքատների կամ գործազուրկների օգնությունը"
+      title: "Քաղաքական կուսակցությունների գաղափարախոսությունները"
+    disclaimer:
+      title: Disclaimer
+    index:
+      about_header: մասին
+      chart_text: "Փաթաթեք եւ դիտեք քաղաքական կուսակցությունների գաղափարախոսությունների գրաֆիկները"
+      chart_title: "Քաղաքական կուսակցությունների գաղափարախոսությունները"
+      latest_statements_header: ""
+      no_values: "Քաղաքական կուսակցության մասին ապլիկացիայում տեղեկատվությունը ներկա պահին չի մտցված"
+      welcome: "Բարի գալուստ տնտեսական քաղաքականության փաստերի ստուգմանը: Դիտեք քաղաքական կուսակցությունների պլատֆորմներն եւ նաեւ մեր խոր վերլուծությունը, որպեսզի ավելի լավ ընկալեք Վրաստանի քաղաքական կուսակցությունների տնտեսական քաղաքականությունը"
+      welcome_link: "Իմացեք ավելի, սեղմեք այստեղ"
+    methodology:
+      title: մեթոդաբանություն
+    search:
+      title: որոնում
+    sitemap:
+      other_header: այլ
+      title: "կայքի քարտեզը"
+  statements:
+    edit:
+      title: "փոփոխությունների կատարումը հայտարարության մեջ"
+    index:
+      no_statements: "ներկա պահին հայտարարությունները չեն վավերացվում"
+      title: հայտարարություններ
+    new:
+      title: "նոր հայտարարություն"
+    show:
+      title: "հայտարարության մանրամասները"

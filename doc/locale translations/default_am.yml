@@ -1,6 +1,4 @@
-# encoding: utf-8
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
+---
 am:
   activerecord:
     errors:
@@ -9,6 +7,7 @@ am:
       messages:
         taken: "արդեն զբաղված է"
         record_invalid: "վալիդացիան տապալվեց %{errors} "
+        <<: *errors_messages
 
       template:
         body: "հայտնաբերվել են հատեւյալ դաշտերի հետ կապված հիմնախնդիրներ"
@@ -72,9 +71,9 @@ am:
       month: ամիս
       second: վայրկյան
       year: տարի
-  errors: &errors
+  errors:
     format: "%{attribute} %{message}"
-    messages: 
+    messages: &errors_messages
       accepted: "պահանջվում է համաձայնություն"
       blank: "դատարկ չպետք է լինի"
       confirmation: "չի հաստատվում"
@@ -163,11 +162,3 @@ am:
       long: "%d %b %Y %H:%M"
       short: "%d %b %H:%M"
     pm: pm
-
-  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
-  activemodel:
-    errors:
-      <<: *errors
-  activerecord:
-    errors:
-      <<: *errors    

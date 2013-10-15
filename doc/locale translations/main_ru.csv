@@ -1,0 +1,287 @@
+ka/activerecord/models,statement,Заявление
+ka/activerecord/models,user,Пользователь
+ka/activerecord/models,economic_category,Экономическая категория
+ka/activerecord/models,indicator_category,Индивидуальная категория
+ka/activerecord/models,indicator,Индикатор
+ka/activerecord/models,platform,Платформа партии
+ka/activerecord/models,policy_brief,Экспертная оценка
+ka/activerecord/models,political_party,Политическая партия
+ka/activerecord/models,page,Страница
+ka/activerecord/models,activity,Новости
+ka/activerecord/models,election,Выборы
+ka/activerecord/attributes/activity,date,Дата
+ka/activerecord/attributes/activity,video,Видео-ссылка YouTube
+ka/activerecord/attributes/activity_translation,title,Заглавие
+ka/activerecord/attributes/activity_translation,body,Текст
+ka/activerecord/attributes/statement,date_made,Дата создания
+ka/activerecord/attributes/statement,political_party,Политическая партия 
+ka/activerecord/attributes/statement,economic_category,Экономическая категория 
+ka/activerecord/attributes/statement,is_public,Видимый миру
+ka/activerecord/attributes/statement_translation,source,Источник заявления
+ka/activerecord/attributes/statement_translation,author,Автор заявления
+ka/activerecord/attributes/statement_translation,statement_made,Сделанное заявление
+ka/activerecord/attributes/statement_translation,analysis,Анализ
+ka/activerecord/attributes/user,email,Электронная почта
+ka/activerecord/attributes/user,password,Пароль
+ka/activerecord/attributes/user,password_confirmation,Повторите пароль
+ka/activerecord/attributes/user,role,Роль
+ka/activerecord/attributes/user,remember_me,Запомнить
+ka/activerecord/attributes/economic_category_translation,name,Имя
+ka/activerecord/attributes/indicator_category_translation,name,Имя 
+ka/activerecord/attributes/indicator,indicator_category,Индивидуальная категория
+ka/activerecord/attributes/indicator,value,Оценка
+ka/activerecord/attributes/indicator_translation,name,Имя 
+ka/activerecord/attributes/platform,political_party,Политическая партия 
+ka/activerecord/attributes/platform,economic_category,Экономическая категория 
+ka/activerecord/attributes/platform,is_public,Видимый миру
+ka/activerecord/attributes/platform_translation,description,Описание
+ka/activerecord/attributes/policy_brief,political_party,Политическая партия 
+ka/activerecord/attributes/policy_brief,economic_category,Экономическая категория 
+ka/activerecord/attributes/policy_brief,is_public,Видимый миру
+ka/activerecord/attributes/policy_brief_translation,analysis,Анализ
+ka/activerecord/attributes/political_party,color,Цвет
+ka/activerecord/attributes/political_party,logo,Лого
+ka/activerecord/attributes/political_party_translation,name,Имя 
+ka/activerecord/attributes/page,name,Имя 
+ka/activerecord/attributes/page_translation,title,Заглавие
+ka/activerecord/attributes/page_translation,description,Описание
+ka/activerecord/attributes/election,date,Данные выборов
+ka/activerecord/attributes/election_translation,name,Наименование выборов
+ka/app/language,en,English
+ka/app/language,ka,ქართული
+ka/app/language,am,Հայերեն
+ka/app/language,ru,Русский
+ka/app/language,az,Azərbaycan
+ka/app/scales/indicator_category_id_1,top,Верно
+ka/app/scales/indicator_category_id_1,middle,Центристский
+ka/app/scales/indicator_category_id_1,bottom,Неверно
+ka/app/scales/indicator_category_id_2,top,Последовательный
+ka/app/scales/indicator_category_id_2,middle,Центристский 
+ka/app/scales/indicator_category_id_2,bottom,Взаимоисключающий
+ka/app/scales/indicator_category_id_3,top,Оправданный
+ka/app/scales/indicator_category_id_3,middle,Центристский 
+ka/app/scales/indicator_category_id_3,bottom,Неоправданный
+ka/app/scales/indicator_category_id_4,top,Осуществляемый
+ka/app/scales/indicator_category_id_4,middle,Центристский 
+ka/app/scales/indicator_category_id_4,bottom,Невозможный
+ka/app/scales/indicator_category_id_5,top,Левые
+ka/app/scales/indicator_category_id_5,middle,Центристский 
+ka/app/scales/indicator_category_id_5,bottom,Правые
+ka/app/buttons,back,Назад
+ka/app/buttons,list,Смотреть полностью
+ka/app/buttons,admin,Отдел администратора
+ka/app/buttons,delete,Стереть
+ka/app/buttons,edit,Изменить
+ka/app/buttons,show,Просмотр
+ka/app/buttons,cancel,Отмена
+ka/app/buttons,update,Обновление
+ka/app/buttons,save,Сохранить
+ka/app/buttons,create,Создать
+ka/app/buttons,reset,Назад к изначальной конфигурации
+ka/app/buttons,remove,Убрать
+ka/app/buttons,confirm,Вы уверены
+ka/app/buttons,new,Новый
+ka/app/buttons,update_statements,Обновление заявления
+ka/app/common,app_name,Социально-экономические программы политических партий 
+ka/app/common,name,Имя
+ka/app/common,title,Заглавие
+ka/app/common,description,Описание
+ka/app/common,date_made,Дата создания
+ka/app/common,political_party,Политическая партия
+ka/app/common,political_parties,Политические партии 
+ka/app/common,economic_category,Экономическая категория
+ka/app/common,statement,Заявление
+ka/app/common,statements,Заявления
+ka/app/common,activities,Новости
+ka/app/common,activity,Новости 
+ka/app/common,indicator,Индикатор
+ka/app/common,indicator_category,Категория индикатора
+ka/app/common,user,Пользователь
+ka/app/common,source,Источник
+ka/app/common,author,Заявитель
+ka/app/common,scores,Баллы
+ka/app/common,email,Электронная почта
+ka/app/common,role,Роль
+ka/app/common,new_password,Новый пароль
+ka/app/common,platform,Платформа партии
+ka/app/common,policy_brief,Экспертная оценка
+ka/app/common,policy_briefs,Экспертные оценки 
+ka/app/common,date,Дата
+ka/app/common,files,Вспомогательные файлы
+ka/app/common,images,Фото
+ka/app/common,color,Цвет
+ka/app/common,legend,Легенда
+ka/app/common,indicator_scales,Шкала индикатора
+ka/app/common,sign_in,Изменение
+ka/app/common,analysis,Анализ
+ka/app/common,actions,Выбрать
+ka/app/common,value,Оценка
+ka/app/common,page,Страница
+ka/app/common,about,О Проекте
+ka/app/common,home,Главная
+ka/app/common,methodology,Методология
+ka/app/common,disclaimer,Disclaimer
+ka/app/common,is_public,Видимый миру
+ka/app/common,party_statements,%{party} заявлений
+ka/app/common,party_platform,%{party} платформа партии
+ka/app/common,category_statements,%{category} заявлений
+ka/app/common,all_party_platform_avg,Среднее программ политических партий
+ka/app/common,time,Время
+ka/app/common,comments,Комментарии
+ka/app/common,view_full,Полностью
+ka/app/common,sitemap,Карта сайта
+ka/app/common,logo,Лого
+ka/app/common,view_source,Смотрите источник
+ka/app/common,download_report,Скачать отчет
+ka/app/msgs,does_not_exist,Вы пытаетесь зайти на несуществующую страницу
+ka/app/msgs,not_authorized,Вы не имеете прав на просмотр данной страницы
+ka/app/msgs,permalink_exists,Уже существует в базе данных
+ka/app/msgs,success_created,%{obj} создано
+ka/app/msgs,success_updated,%{obj} обновлено
+ka/app/msgs,policy_already_exists,Уже имеется в базе данных 
+ka/app/msgs,platform_already_exists,Уже имеется в базе данных 
+ka/app/msgs,statement_chart_instructions,Выберите категорию и индикатор для лучшего ознакомления с официальной позицией партии и сравнения с остальными партиями
+ka/layouts/application,admin,Администратор
+ka/layouts/application,sign_out,Выход
+ka/layouts/application,js_link_title,Посетите веб-сайт Джампстарт Джорджия 
+ka/layouts/application,js_link_text,Построено
+ka/layouts/application,search,Поиск
+ka/layouts/application,slogan,Что нам обещают партии?
+ka/layouts/unsupported_browser,title,Несоответствующий браузер
+ka/layouts/unsupported_browser,p1,"К сожалению, ваш интернет-браузер устарел, и связаться с веб-сайтом не удалось "
+ka/layouts/unsupported_browser,p2,"Существует несколько бесплатных браузеров, скачав которые вы сможете пользоваться веб-сайтом "
+ka/layouts/unsupported_browser,chrome,Chrome
+ka/layouts/unsupported_browser,firefox,Firefox
+ka/layouts/unsupported_browser,ie,Internet Explorer (только для Windows)
+ka/layouts/unsupported_browser,opera,Opera
+ka/layouts/unsupported_browser,Safari,Safari
+ka/layouts/unsupported_browser,admin,Администратор
+ka/layouts/unsupported_browser,sign_out,Выход
+ka/layouts/unsupported_browser,js_link_title,Посетите веб-сайт Джампстарт Джорджия 
+ka/layouts/unsupported_browser,js_link_text,Построено 
+ka/root/index,welcome,"Добро пожаловать на страницу проверки фактов экономической политики! Ознакомьтесь с платформами политических партий, заявлениями и также нашим глубоким анализом для лучшего познания экономической политики политических партий Грузии."
+ka/root/index,welcome_link,"Узнать больше, здесь"
+ka/root/index,no_values,Информация о политической партии в апликацию к настоящему времени не внесена 
+ka/root/index,latest_statements_header,Новые заявления
+ka/root/index,about_header,О Проекте
+ka/root/index,chart_title,Идеологии политических партий 
+ka/root/index,chart_text,"Нажмите здесь для ознакомления с графиками, отображающими идеологии политических партий "
+ka/root/about,title,О Проекте
+ka/root/methodology,title,Методология
+ka/root/disclaimer,title,Disclaimer
+ka/root/charts,title,Идеологии политических партий 
+ka/root/charts,left,"Позиция партии по данному вопросу, согласно платформе характеризуется как крайне социалистическая/коммунистическая "
+ka/root/charts,center,"Позиция партии по данному вопросу, согласно платформе характеризуется как западно - европейская социал-демократическая "
+ka/root/charts,right,"Позиция партии по данному вопросу, согласно платформе характеризуется как экстремально либеральная Государство должно обеспечить защиту права собственности, законность и порядок, но не должно регулировать экономику, и государство не должно вмешиваться в распределение доходов (например, помощь неимущим или пособие по безработице) "
+ka/root/search,title,Поиск
+ka/root/sitemap,title,Карта сайта
+ka/root/sitemap,other_header,Прочее
+ka/economic_categories/edit,title,Внесение изменений в экономическую категорию
+ka/economic_categories/index,title,Экономическая категория
+ka/economic_categories/new,title,Новая экономическая категория 
+ka/economic_categories/show,title,Экономическая категория детально
+ka/indicator_categories/edit,title,Внесение изменений в категорию индикаторов 
+ka/indicator_categories/index,title,Категория индикаторов 
+ka/indicator_categories/new,title,Новая категория индикаторов 
+ka/indicator_categories/show,title,Категории индикаторов детально 
+ka/indicators/edit,title,Внесение изменений в индикаторы
+ka/indicators/index,title,Индикаторы 
+ka/indicators/new,title,Новый индикатор
+ka/indicators/show,title,Индикатор детально
+ka/platforms/edit,title,Внесение изменений в платформу
+ka/platforms/index,title,Платформы
+ka/platforms/index,no_platforms,В данное время платформы не внесены
+ka/platforms/new,title,Новая платформа
+ka/platforms/show,title,Детали платформы
+ka/platforms/platform_file_fields,remove_link,Стереть файл
+ka/platforms/form,add_file,Добавить файл
+ka/policy_briefs/edit,title,Внесение изменений в резюме политики
+ka/policy_briefs/index,title,Экспертная оценка
+ka/policy_briefs/index,no_policy_briefs,В данное время платформы не внесены 
+ka/policy_briefs/index,empty,Пусто
+ka/policy_briefs/new,title,Новая экспертная оценка
+ka/policy_briefs/show,title,Резюме политики детально
+ka/political_parties/edit,title,Внесение изменений в политическую партию
+ka/political_parties/index,title,Политические партии
+ka/political_parties/new,title,Новая политическая партия
+ka/political_parties/show,title,Политическая партия детально
+ka/elections/edit,title,Отдел администратора
+ka/elections/index,title,Выборы
+ka/elections/new,title,Новые выборы
+ka/elections/show,title,Выборы детально
+ka/admin/index,title,Отдел администратора
+ka/admin/index,content_header,Добавление содержания
+ka/admin/index,platforms,Платформы
+ka/admin/index,policy_briefs,Экспертная оценка 
+ka/admin/index,statements,Заявлений
+ka/admin/index,users_header,Пользователи
+ka/admin/index,new_users,Добавление пользователя 
+ka/admin/index,view_users,Просмотр пользователей 
+ka/admin/index,basic_header,Основное
+ka/admin/index,political_parties,Политические партии 
+ka/admin/index,economic_categories,Экономические категории
+ka/admin/index,indicator_categories,Категории индикаторов
+ka/admin/index,indicators,Индикаторы
+ka/admin/index,pages,Страница
+ka/admin/index,activities,Новости
+ka/admin/index,elections,Выборы
+ka/admin/users/edit,title,Внесение изменений на страницу пользователя 
+ka/admin/users/index,title,Пользователи
+ka/admin/users/new,title,Новый пользователь
+ka/admin/users/show,title,Пользователь детально
+ka/statements/edit,title,Внесение изменений в заявление
+ka/statements/index,title,Заявления
+ka/statements/index,no_statements,На данный момент заявлений не зафиксировано
+ka/statements/new,title,Новое заявление
+ka/statements/show,title,Заявление детально
+ka/party/index,title,%{political_party} 
+ka/party/index,statement_header,заявления
+ka/party/index,no_statements,На данный момент заявлений %{economic_category} не зафиксировано %{political_party}
+ka/party/index,view_statement,Просмотр заявления полностью 
+ka/party/well,pdf_header,Скачать
+ka/party/well,pdf_link,PDF
+ka/party/well,profile_header,Профиль
+ka/party/well,view_profile,Просмотр всего профиля
+ka/party/well,platform_header,Платформы
+ka/party/well,no_platforms,На данный момент платформы не записаны
+ka/party/well,policy_brief_header,Экспертная оценка 
+ka/party/well,no_policy_briefs,На данный момент резюме на политику не внесены
+ka/party/statement,title,%{political_party}
+ka/party/statement,secondary_title,заявление - %{date}
+ka/party/platform,title,%{political_party}
+ka/party/platform,secondary_title,платформа - %{economic_category}
+ka/party/policy_brief,title,%{political_party}
+ka/party/policy_brief,secondary_title,экспертная оценка - %{economic_category}
+ka/category/index,title,%{economic_category}
+ka/category/index,statement_header,Заявления
+ka/category/index,no_statements,На данный момент заявления не зафиксированы %{economic_category}.
+ka/category/index,view_statement,Просмотр заявления полностью 
+ka/category/well,pdf_header,Скачать 
+ka/category/well,pdf_link,PDF-файл
+ka/category/well,profile_header,Профиль
+ka/category/well,view_profile,Просмотр всего профиля 
+ka/category/well,platform_header,Платформы
+ka/category/well,no_platforms,На данный момент платформы не записаны 
+ka/category/well,policy_brief_header,Экспертная оценка 
+ka/category/well,no_policy_briefs,На данный момент резюме на политику не внесены 
+ka/category/statement,title,%{economic_category}
+ka/category/statement,secondary_title,заявление - %{date}
+ka/category/platform,title,%{economic_category}
+ka/category/platform,secondary_title,платформа - %{political_party}
+ka/category/policy_brief,title,%{economic_category}
+ka/category/policy_brief,secondary_title,экспертная оценка - %{political_party}
+ka/pages/edit,title,Изменение страницы
+ka/pages/index,title,Страницы
+ka/pages/index,no_pages,На данный момент новости не найдены
+ka/pages/new,title,Новая страница
+ka/pages/show,title,Просмотр страницы полностью 
+ka/pages/page_file_fields,remove_link,Стереть файл
+ka/pages/form,add_file,Добавить файл
+ka/activities/edit,title,Редактировать
+ka/activities/index,title,Новости
+ka/activities/index,no_pages,На данный момент нет новостей
+ka/activities/new,title,Новое
+ka/activities/show,title,Новости детально
+ka/activities/show,latest_statements_header,Свежие заявления
+ka/activities/form,add_file,Добавить имидж
+ka/activities/activity_image_fields,remove_link,Стереть имидж 

@@ -1,0 +1,8 @@
+ka/formtastic,yes,Да
+ka/formtastic,no,Нет
+ka/formtastic,create,Создание %{model}
+ka/formtastic,update,Сохранение %{model}
+ka/formtastic,submit,Сохранение %{model}
+ka/formtastic,cancel,Отмена %{model}
+ka/formtastic,reset,Перезагрузка %{model}
+ka/formtastic,required,Необходимо

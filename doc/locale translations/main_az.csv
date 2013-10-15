@@ -1,0 +1,322 @@
+ka/activerecord/models,statement,Bəyanat
+ka/activerecord/models,user,İstifadəçi
+ka/activerecord/models,economic_category,Iqtisadi Kateqoriya
+ka/activerecord/models,indicator_category,Göstərici Kateqoriya
+ka/activerecord/models,indicator,Göstərici
+ka/activerecord/models,platform,Partiya Platforması
+ka/activerecord/models,policy_brief,Ekspert Qiymətləndirilməsi
+ka/activerecord/models,political_party,Siyasi Partiya
+ka/activerecord/models,page,veb səhifə
+ka/activerecord/models,activity,Yeniliklər
+ka/activerecord/models,election,
+ka/activerecord/attributes/activity,date,Tarix
+ka/activerecord/attributes/activity,video,YouTube video linki
+ka/activerecord/attributes/activity_translation,title,Başlıq
+ka/activerecord/attributes/activity_translation,body,Mətn
+ka/activerecord/attributes/statement,date_made,Yaradılması Tarixi
+ka/activerecord/attributes/statement,political_party,Siyasi Partiya
+ka/activerecord/attributes/statement,economic_category,İqtisadi Kateqoriya
+ka/activerecord/attributes/statement,is_public,Dünyada Görüntülənən
+ka/activerecord/attributes/statement_translation,source,Bəyanat Mənbəsi
+ka/activerecord/attributes/statement_translation,author,Bəyanatin Müəllifi
+ka/activerecord/attributes/statement_translation,statement_made,Edilən Bəyanat
+ka/activerecord/attributes/statement_translation,analysis,Analiz
+ka/activerecord/attributes/user,email,El-Poçt
+ka/activerecord/attributes/user,password,Şifrə
+ka/activerecord/attributes/user,password_confirmation,Şifrəyi təkrar edin
+ka/activerecord/attributes/user,role,Rolu
+ka/activerecord/attributes/user,remember_me,Yadda saxla
+ka/activerecord/attributes/economic_category_translation,name,Adı
+ka/activerecord/attributes/indicator_category_translation,name,Adı
+ka/activerecord/attributes/indicator,indicator_category,Göstərici Kateqoriya
+ka/activerecord/attributes/indicator,value,Qiyymətləndirmə
+ka/activerecord/attributes/indicator_translation,name,Adı
+ka/activerecord/attributes/platform,political_party,Siyasi Partiya
+ka/activerecord/attributes/platform,economic_category,İqtisadi Kateqoriya
+ka/activerecord/attributes/platform,is_public,Dünyada Görüntülənən
+ka/activerecord/attributes/platform_translation,description,Təsviri
+ka/activerecord/attributes/policy_brief,political_party,Siyasi Partiya
+ka/activerecord/attributes/policy_brief,economic_category,İqtisadi Kategoriya
+ka/activerecord/attributes/policy_brief,is_public,Dünyada Görüntülənən
+ka/activerecord/attributes/policy_brief_translation,analysis,Analiz
+ka/activerecord/attributes/political_party,color,Rəngi
+ka/activerecord/attributes/political_party,logo,Logo
+ka/activerecord/attributes/political_party_translation,name,Adı
+ka/activerecord/attributes/page,name,Adı
+ka/activerecord/attributes/page_translation,title,Başlıq
+ka/activerecord/attributes/page_translation,description,Təsviri
+ka/activerecord/attributes/election,date,
+ka/activerecord/attributes/election_translation,name,
+ka/app/language,en,English
+ka/app/language,ka,ქართული
+ka/app/language,am,Հայերեն
+ka/app/language,ru,Русский
+ka/app/language,az,Azərbaycan
+ka/app/scales/indicator_category_id_1,top, Düzgün
+ka/app/scales/indicator_category_id_1,middle,Mərkəzçi
+ka/app/scales/indicator_category_id_1,bottom,Yalnış
+ka/app/scales/indicator_category_id_2,top,Ardıcıl
+ka/app/scales/indicator_category_id_2,middle,Mərkəzçi
+ka/app/scales/indicator_category_id_2,bottom,Ziddiyyətli
+ka/app/scales/indicator_category_id_3,top,Əsaslandırılmış
+ka/app/scales/indicator_category_id_3,middle,Mərkəzçi
+ka/app/scales/indicator_category_id_3,bottom,Bu məqbul deyil
+ka/app/scales/indicator_category_id_4,top,Müyəssər
+ka/app/scales/indicator_category_id_4,middle,Mərkəzçi
+ka/app/scales/indicator_category_id_4,bottom,İmkansız
+ka/app/scales/indicator_category_id_5,top,Solçu
+ka/app/scales/indicator_category_id_5,middle,Mərkəzçi
+ka/app/scales/indicator_category_id_5,bottom,Sağçı
+ka/app/buttons,back,Geri
+ka/app/buttons,list,Daha Ətraflı
+ka/app/buttons,admin,Administrator şöbəsi
+ka/app/buttons,delete,Silmək
+ka/app/buttons,edit,Dəyişmək
+ka/app/buttons,show,Göstərmək
+ka/app/buttons,cancel,Ləğv Etmək
+ka/app/buttons,update,Yeniləmək
+ka/app/buttons,save,Saxlamaq
+ka/app/buttons,create,Yaratmaq
+ka/app/buttons,reset,Ilkin konfiqurasiyaya qayıtmaq
+ka/app/buttons,remove,uzaqlaşdırmaq
+ka/app/buttons,confirm,Əminsinizmi?
+ka/app/buttons,new,Yeni
+ka/app/buttons,update_statements,Bəyanatları Yeniləmək
+ka/app/common,app_name,Siyasi Partiyaların Sosyal-İqtisadi Proqramları
+ka/app/common,name,Adı
+ka/app/common,title,Başlıq
+ka/app/common,description,Təsviri
+ka/app/common,date_made,Yaradılması Tarixi
+ka/app/common,political_party,Siyasi Partiya
+ka/app/common,political_parties,Siyasi Partiyalar
+ka/app/common,economic_category,İqtisadi Kateqoriya
+ka/app/common,statement,Bəyanat
+ka/app/common,statements,Bəyanatlar
+ka/app/common,activities,Yeniliklər
+ka/app/common,activity,Yeniliklər
+ka/app/common,indicator,Göstərici
+ka/app/common,indicator_category,Göstərici kateqoriyası
+ka/app/common,user,İstifadəçi
+ka/app/common,source,Mənbə
+ka/app/common,author,Bəyanatçı
+ka/app/common,scores,Qadınlar
+ka/app/common,email,El-poçt 
+ka/app/common,role,Rolu
+ka/app/common,new_password,Yeni Şifrə
+ka/app/common,platform,Partiyanın Platformu
+ka/app/common,policy_brief,Ekspert Qiyymətləndirməsi
+ka/app/common,policy_briefs, Ekspert Qiyymətləndirmələri
+ka/app/common,date,Tarixi
+ka/app/common,files,Yardımçı Fayllar
+ka/app/common,images,Şəkillər
+ka/app/common,color,Rəngi
+ka/app/common,legend,Əfsanə
+ka/app/common,indicator_scales,Göstəricinin Miqyası
+ka/app/common,sign_in,Giriş
+ka/app/common,analysis,Analiz
+ka/app/common,actions,Seç 
+ka/app/common,value,Qiyymətləndirmək
+ka/app/common,page,Səhifə
+ka/app/common,about,Haqqında
+ka/app/common,home,Əsas
+ka/app/common,methodology,Metodologiya
+ka/app/common,disclaimer,Disclaimer
+ka/app/common,is_public,Dünyada Görüntülənən
+ka/app/common,party_statements,%{party} Bəyanatların 
+ka/app/common,party_platform,%{party} Partiyanın Platformu 
+ka/app/common,category_statements,%{category} Bəyanatların
+ka/app/common,all_party_platform_avg,Siyasi Partiyaların Proqramının Orta
+ka/app/common,time,Vaxt
+ka/app/common,comments,Komentariya
+ka/app/common,view_full,Ətraflı
+ka/app/common,sitemap,Səhifənin Xəritəsi
+ka/app/common,logo,Logo
+ka/app/common,view_source,Mənbəyə baxın
+ka/app/common,download_report,Hessabatı Yükləmək
+ka/app/msgs,does_not_exist,Siz mövcud olmayan səhifəyi izləmək istəyirsiniz.
+ka/app/msgs,not_authorized,Bu səhifəyi izləməyə sizing izniniz yoxdur.
+ka/app/msgs,permalink_exists,Məlumat Basasında Mövcuddur
+ka/app/msgs,success_created,%{obj} Yaranıbdır.
+ka/app/msgs,success_updated,%{obj} Yenilənibdir.
+ka/app/msgs,policy_already_exists,Məlumat Basasında Mövcuddur
+ka/app/msgs,platform_already_exists,Məlumat Basasında Mövcuddur
+ka/app/msgs,statement_chart_instructions,"Bir partiyanın rəsmi pozisiyası ilə tanış olub, onu
+digər partiyalar ilə müqayisə etmək üçün, kateqoriya və göstərici seçin. "
+ka/layouts/application,admin,Administrator
+ka/layouts/application,sign_out,Çıxış
+ka/layouts/application,js_link_title,Jumstart Georgianın veb-səhifəsinə buyurun
+ka/layouts/application,js_link_text,Gurulubdur
+ka/layouts/application,search,Axtarmaq
+ka/layouts/application,slogan,Partiyalar nə vəd edirlər?
+ka/layouts/unsupported_browser,title,Yalnış Brauzer
+ka/layouts/unsupported_browser,p1,"Təəsüf ki, sizing internet brauzerinizin istifadə vədəsi
+keçibdir və veb-səhifəyə tam olaraq bağlana bilməyəcəksiniz."
+ka/layouts/unsupported_browser,p2,"– Veb saytan fəal istifadə etmək üçün, bir neçə pulsuz
+brauzer var."
+ka/layouts/unsupported_browser,chrome,Chrome
+ka/layouts/unsupported_browser,firefox,Firefox
+ka/layouts/unsupported_browser,ie,Internet Explorer (Yalnız Windows-da)
+ka/layouts/unsupported_browser,opera,Opera
+ka/layouts/unsupported_browser,Safari,Safari
+ka/layouts/unsupported_browser,admin, Administrator
+ka/layouts/unsupported_browser,sign_out,Çıxış
+ka/layouts/unsupported_browser,js_link_title,"Jumstart Georgianın veb-səhifəsinə
+buyurun"
+ka/layouts/unsupported_browser,js_link_text,Gurulubdur
+ka/root/index,welcome,"İqtisadi Siyasətin Faktlarının Yoxlayıcısına xoş gəlmisiniz!
+Siyasi partiyanın platformalarını, bəyanatlarını və həmçinin,
+bizim dərin analizimizi izləyin ki, Gürcüstanın siyasi partiyalarının iqtisadi
+siyasətlərini daha yaxşı müəyyən edəsiniz."
+ka/root/index,welcome_link,"Daha artıq bilik əldə etmək üçün, buraya tıklayın."
+ka/root/index,no_values,"Aplikasiyaya geyd edilən siyasi partiya haqqında məlumat
+hələlik əlavə edilməmişdir."
+ka/root/index,latest_statements_header,Yeni Bəyanatlar
+ka/root/index,about_header,Haqqında
+ka/root/index,chart_title,Siyasi Partiyaların İdeologiyaları
+ka/root/index,chart_text,Siyasi partiyaların ideologiyalarının cədvəlini görmək üçün tıklayın.
+ka/root/about,title,Haqqında
+ka/root/methodology,title,Metodologiya
+ka/root/disclaimer,title,Disclaimer
+ka/root/charts,title,Siyasi partiyaların İdeologiyaları
+ka/root/charts,left,"Geyd edilən
+mövzular haqqında Partiyanın mövqesi, son dərəcədə socialist/komunist kimi onun
+platformuna əsaslanaraq xarakteristika edilir."
+ka/root/charts,center,"Geyd edilən
+mövzular haqqında Partiyanın mövqesi, Qərbi-Avropa Sosial–Demokratik kimi onun
+platformuna əsaslanaraq xarakteristika edilir."
+ka/root/charts,right,"Geyd edilən mövzu haqqında
+partiyanın mövqeyi, onun platformasına əsasən xarakteristika edilir, (necə ki bir
+ekstremal libertarian dövlət, mülkiyyət hüquqlarının qorunmasını, qanunu və
+qaydayı təmin etməlidir. Amma, iqtisadiyyatı nəzarət etməməlidir və dövlət
+misal olaraq, kasıblara və işsizlərə yardım kimi gəlirlərin paylanmasına
+qarışmamalıdır).  "
+ka/root/search,title,Axtarış
+ka/root/sitemap,title,Səhifənin Xəritəsi
+ka/root/sitemap,other_header,Digər
+ka/economic_categories/edit,title,"İqtisadi Kateqoriyaya Dəyişiklikləri
+Daxil Etmək"
+ka/economic_categories/index,title,İqtisadi Kateqoriyalar
+ka/economic_categories/new,title,Yeni İqtisadi Kateqoriya
+ka/economic_categories/show,title,İqtisadi Kateqoriya Təfərrüatlar
+ka/indicator_categories/edit,title,"Göstəricilər
+Kateqoriyasına Dəyişikliklər Daxil Etmək"
+ka/indicator_categories/index,title,"Göstəricilərin
+Kateqoriyaları"
+ka/indicator_categories/new,title,"Yeni Göstərici
+Kateqoriyası"
+ka/indicator_categories/show,title,Göstəricilərin Kateqoriya Təfərrüatları
+ka/indicators/edit,title,"Göstəricilərə Dəyişikliklər
+Daxil Etmək"
+ka/indicators/index,title,Göstəricilər
+ka/indicators/new,title,Yeni Göstəricilər
+ka/indicators/show,title,Göstərici Təfərrüatları
+ka/platforms/edit,title,"Platformaya Dəyişikliklər
+Daxil Etmək"
+ka/platforms/index,title,Platformalar
+ka/platforms/index,no_platforms,Hal hazırda platformalar daxil edilməyibdir
+ka/platforms/new,title,Yeni Platforma
+ka/platforms/show,title,Platformaların Təfərrüatları
+ka/platforms/platform_file_fields,remove_link,Faylı Silmək
+ka/platforms/form,add_file,Faylı Əlavə Etmək
+ka/policy_briefs/edit,title,"Siyasi Xülasəyə
+Dəyişikliklər Daxil Etmək"
+ka/policy_briefs/index,title,Ekspert Qiyymətləndirməsi
+ka/policy_briefs/index,no_policy_briefs,Hal hazırda platformalar daxil edilməyibdir
+ka/policy_briefs/index,empty,Boşdur
+ka/policy_briefs/new,title,Yeni Ekspert Qiyymətləndirməsi
+ka/policy_briefs/show,title,"Siyasi Xülasənin
+Təfərrüatları"
+ka/political_parties/edit,title,"Siyasi Partiyaya Dəyişikliklər
+Daxil Etmək"
+ka/political_parties/index,title,Siyasi Partiyalar
+ka/political_parties/new,title,Yeni Siyasi Partiya
+ka/political_parties/show,title,Siyasi Partiya Təfərrüatlar
+ka/elections/edit,title,
+ka/elections/index,title,
+ka/elections/new,title,
+ka/elections/show,title,
+ka/admin/index,title,Administrator Şöbəsi
+ka/admin/index,content_header,Məzmunun Əlavə Edilməsi
+ka/admin/index,platforms,Platformalar
+ka/admin/index,policy_briefs,Ekspert Qiyymətləndirilməsi
+ka/admin/index,statements,Bəyanatlar
+ka/admin/index,users_header,İstifadəçilər
+ka/admin/index,new_users,İstifadəçi əlavə etmək
+ka/admin/index,view_users,İstifadəçiyi görmək
+ka/admin/index,basic_header, Əsas
+ka/admin/index,political_parties,Siyasi Partiyalar
+ka/admin/index,economic_categories,İqtisadi Kateqoriyalar
+ka/admin/index,indicator_categories,"Göstəricilərin
+Kateqoriyaları"
+ka/admin/index,indicators,Göstəricilər
+ka/admin/index,pages,Səhifə
+ka/admin/index,activities,Yeniliklər
+ka/admin/index,elections,
+ka/admin/users/edit,title,"İstifadəçinin Səhifəsinə
+Yeniliklər Daxil Etmək"
+ka/admin/users/index,title, İstifadəçilər
+ka/admin/users/new,title,Yeni İstifadəçi
+ka/admin/users/show,title,İstifadəçinin Təfərrüatları
+ka/statements/edit,title,Bəyanata Dəyişikliklər Daxil Etmək
+ka/statements/index,title,Bəyanatlar
+ka/statements/index,no_statements,"Hal hazırda bəyanatlar
+geyd edilmir"
+ka/statements/new,title,Yeni Bəyanat
+ka/statements/show,title,Bəyanatın Təfərrüatları
+ka/party/index,title,%{political_party} 
+ka/party/index,statement_header,Bəyanatlar
+ka/party/index,no_statements,"Hal hazırda %{economic_category} üçün
+% {political_party} bəyanatlar geyd edilmir."
+ka/party/index,view_statement,Bəyanatı tam olaraq görmək
+ka/party/well,pdf_header,Yükləmək
+ka/party/well,pdf_link,PDF
+ka/party/well,profile_header,Profil
+ka/party/well,view_profile,"Tam profilə
+baxmaq"
+ka/party/well,platform_header,Platformalar
+ka/party/well,no_platforms,Hal hazırda platformalar geyd edilməyibdir
+ka/party/well,policy_brief_header,Ekspert Qiyymətləndirməsi
+ka/party/well,no_policy_briefs,Hal hazırda siyasət haqqında xülasələr daxil edilməmişdir
+ka/party/statement,title,% {political_party} 
+ka/party/statement,secondary_title,Bəyanat - %{date}
+ka/party/platform,title,%{political_party}
+ka/party/platform,secondary_title,Platforma - %{economic_category} 
+ka/party/policy_brief,title,%{political_party}
+ka/party/policy_brief,secondary_title,Ekspert Qiyymətləndirməsi %{economic_category} 
+ka/category/index,title,%{economic_category}
+ka/category/index,statement_header,Bəyanatlar
+ka/category/index,no_statements,"Hal hazırda%{economic_category} -da bəyanatlar
+tapılmır"
+ka/category/index,view_statement,Bəyanatı tam olaraq görmək
+ka/category/well,pdf_header, Yükləmək
+ka/category/well,pdf_link,PDF Fayl
+ka/category/well,profile_header,Profil
+ka/category/well,view_profile,Tam profil görmək
+ka/category/well,platform_header,Platformalar
+ka/category/well,no_platforms,Hal hazırda platformalar geyd edilməyibdir.
+ka/category/well,policy_brief_header,Ekspert Qiyymətləndirməsi
+ka/category/well,no_policy_briefs,Hal hazırda siyasət haqqında xülasələr daxil edilməmişdir
+ka/category/statement,title,%{economic_category}
+ka/category/statement,secondary_title,Bəyanat - %{date}
+ka/category/platform,title,%{economic_category}
+ka/category/platform,secondary_title,Platforma - %{political_party} 
+ka/category/policy_brief,title,%{economic_category}
+ka/category/policy_brief,secondary_title,Ekspert Qiyymətləndirməsi - %{political_party}
+ka/pages/edit,title,Səhifələri dəyişmək
+ka/pages/index,title,Səhifələr
+ka/pages/index,no_pages,"Hal hazırda yeniliklər
+tapılmamışdır"
+ka/pages/new,title,Yeni Səhifə
+ka/pages/show,title,Səhifəyi tam olaraq görmək
+ka/pages/page_file_fields,remove_link,Faylı silmək
+ka/pages/form,add_file,Fayl əlavə etmək
+ka/activities/edit,title,Redaktə etmək
+ka/activities/index,title,Yeniliklər
+ka/activities/index,no_pages,"Hal hazırda yeniliklər
+tapılmamışdır"
+ka/activities/new,title,Yeni
+ka/activities/show,title,"Yeniliklər
+Ətraflı olaraq"
+ka/activities/show,latest_statements_header,Ən son bəyanatlar
+ka/activities/form,add_file,İmidj Əlavə etmək
+ka/activities/activity_image_fields,remove_link,İmidji silmək

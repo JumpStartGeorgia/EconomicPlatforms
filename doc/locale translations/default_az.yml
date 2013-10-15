@@ -1,0 +1,164 @@
+---
+az:
+  activerecord:
+    errors:
+      full_messages:
+        format: "%{attribute}%{message}"
+      messages:
+        taken: "Artıq məşğuldur"
+        record_invalid: "Yoxlama uğursuzdur: %{errors}"
+        <<: *errors_messages
+
+      template:
+        body: "Sonrakı sahələrlə əlaqədar problemlər aşkar edilibdir"
+        header:
+          one: "–nun saxlanılması görə mümkün deyil "
+          other: "–nun saxlanılması görə mümkün deyil"
+  date:
+    abbr_day_names: [Baz, Baz ert, Çər axş, Çər, Cüm axş, Cüm, Şən]
+    abbr_month_names: [nil, Yan, Fev, Mar, Apr, May, İyun, İyul, Avq, Sen, Okty, Noy, Dek]
+    day_names: [Bazar, Bazar ertəsi, Çərşənbə axşamı, Çərşənbə, Cümə axşamı, Cümə, Şənbə]
+    formats:
+      default: "%d-%m-%Y"
+      long: "%B %d, %Y"
+      short: "%d %b"
+    month_names: [nil, Yanvar, Fevral, Mart, Aprel, May, İyun, İyul, Avqust, Sentyabr, Oktyabr, Noyabr, Noyabr, Dekabr]
+    order:
+      - :day
+      - :month
+      - :year
+
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: "Təqribən 1 saat"
+        other: "Təqribən %{count} saat"
+      about_x_months:
+        one: "Təqribən 1 ay"
+        other: "Təqribən %{count}ay"
+      about_x_years:
+        one: "Təqribən 1 İl"
+        other: "Təqribən %{count} İl"
+      almost_x_years:
+        one: "Təxminən 1 il"
+        other: "Təxminən %{count} il"
+      half_a_minute: "yarım dəqiqə"
+      less_than_x_minutes:
+        one: "dəqiqədən az"
+        other: "%{count} dəqiqədən az"
+      less_than_x_seconds:
+        one: "Saniyədən az"
+        other: "%{count} Dəqiqədən az"
+      over_x_years:
+        one: "İldən artıq"
+        other: "%{count} ildən artıq"
+      x_days:
+        one: "1 Gün"
+        other: "%{count} Gün "
+      x_minutes:
+        one: "1 dəqiqə"
+        other: "%{count} dəqiqə"
+      x_months:
+        one: "1 Ay"
+        other: "%{count} Ay"
+      x_seconds:
+        one: "1 saniyə"
+        other: "%{count} saniyə "
+    prompts:
+      day: Gün
+      hour: Saat
+      minute: Dəqiqə
+      month: Ay
+      second: Saniyə
+      year: İl
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: "Razılıq tələb edir"
+      blank: "Boş olmamalıdır"
+      confirmation: Təsdiqlənmir
+      empty: "Boş olmamalıdır"
+      equal_to: "%{count}-a bərabər olmalıdır"
+      even: "Cüt olmalıdır"
+      exclusion: Məşğuldur
+      greater_than: "%{count}-dan artıq olmalıdır"
+      greater_than_or_equal_to: "%{count}-dan artıq ya da bərabər olmalıdır"
+      inclusion: "Siyahıda mövcud deyil"
+      invalid: "Düzgün deyil"
+      less_than: "%{count}-dan az olmalıdır"
+      less_than_or_equal_to: "%{count}-dən az ya da bərabər olmalıdır"
+      not_a_number: "Rəqəm mövcud deyil"
+      not_an_integer: "Bütöv rəqəm olmalıdır"
+      odd: "Yek olmalıdır"
+      too_long: "Həddindən artıq uzundur (Simvolların maksimum sayı %{count})"
+      too_short: "Həddindən artıq qısadır (Simvolların minimum sayı %{count})"
+      wrong_length: "Yalnış uzunluq (%{count} simvol olmalıdır)"
+  helpers:
+    select:
+      prompt: "Xahiş edirik seminizi edin "
+    submit:
+      create: "Yaratmaq %{model}"
+      submit: "Saxlamaq %{model}"
+      update: "Yeniləmək %{model}"
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: "2"
+        separator: "0"
+        significant: false
+        strip_insignificant_zeros: false
+        unit: $
+    format:
+      delimiter: ","
+      precision: "2"
+      separator: "0"
+      significant: false
+      strip_insignificant_zeros: true
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: milyard
+          million: Milyon
+          quadrillion: Kvadrilion
+          thousand: Min
+          trillion: trilyon
+          unit: ""
+      format:
+        delimiter: ""
+        precision: "2"
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Bayt
+            other: Baytlar
+          gb: Gb
+          kb: Kb
+          mb: Mb
+          tb: Tb
+    percentage:
+      format:
+        delimiter: ""
+    precision:
+      format:
+        delimiter: ""
+  support:
+    array:
+      last_word_connector: ", və"
+      two_words_connector: " və "
+      words_connector: ","
+    select:
+      prompt: "xahiş edirik seçiminizi edin"
+  time:
+    am: am
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      file: "%Y %m %d %H:%M:%S"
+      long: "%d %b %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: pm

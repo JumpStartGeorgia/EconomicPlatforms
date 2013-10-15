@@ -1,0 +1,164 @@
+---
+ru:
+  activerecord:
+    errors:
+      full_messages:
+        format: "%{attribute}%{message}"
+      messages:
+        taken: "Уже занят"
+        record_invalid: "валидация не состоялась: %{errors}"
+        <<: *errors_messages
+
+      template:
+        body: "обнаружены проблемы, связанные со следующими полями:"
+        header:
+          one: "из-за - сохранение невозможно"
+          other: "из-за - сохранение невозможно "
+  date:
+    abbr_day_names: [вс, пн, вт, ср, чт, пт, сб]
+    abbr_month_names: [nil, янв, фев, март, апр, май, июнь, июль, авг, сент, окт, нояб, дек]
+    day_names: [воскресенье, понедельник, вторник, среда, четверг, пятница, суббота]
+    formats:
+      default: "%d-%m-%Y"
+      long: "%B %d, %Y"
+      short: "%d %b"
+    month_names: [nil, январь, февраль, март, апрель, май, июнь, июль, август, сентябрь, октябрь, ноябрь, декабрь]
+    order:
+      - :day
+      - :month
+      - :year
+
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: "приблизительно 1 час"
+        other: "приблизительно %{count} час"
+      about_x_months:
+        one: "приблизительно 1 месяц"
+        other: "приблизительно %{count} месяц"
+      about_x_years:
+        one: "приблизительно 1 год"
+        other: "приблизительно %{count} год"
+      almost_x_years:
+        one: "почти 1 год"
+        other: "почти %{count} год"
+      half_a_minute: "полминуты "
+      less_than_x_minutes:
+        one: "менее минуты "
+        other: "%{count} менее минуты"
+      less_than_x_seconds:
+        one: "менее секунды"
+        other: "%{count} менее минуты"
+      over_x_years:
+        one: "более года"
+        other: "%{count} более года"
+      x_days:
+        one: "1 день"
+        other: "%{count} день"
+      x_minutes:
+        one: "1 минута"
+        other: "%{count} минута"
+      x_months:
+        one: "1 месяц"
+        other: "%{count} месяц"
+      x_seconds:
+        one: "1 секунда"
+        other: "%{count} секунда წამი"
+    prompts:
+      day: день
+      hour: час
+      minute: минута
+      month: месяц
+      second: секунда
+      year: год
+  errors:
+    format: "%{attribute} %{message}"
+    messages: &errors_messages
+      accepted: "Требуется согласие"
+      blank: "Не должно быть свободным "
+      confirmation: "не подтверждается"
+      empty: "Не должно быть свободным "
+      equal_to: "должно быть равно %{count} "
+      even: "должно быть четное "
+      exclusion: занят
+      greater_than: "должно быть больше %{count} "
+      greater_than_or_equal_to: "должно быть больше или равно %{count} "
+      inclusion: "нет в списке"
+      invalid: неверно
+      less_than: "должно быть меньше %{count} "
+      less_than_or_equal_to: "должно быть меньше или равно %{count} "
+      not_a_number: "Не число"
+      not_an_integer: "Должно быть целое число "
+      odd: "должно быть нечетное "
+      too_long: "Слишком длинный (максимальное количество символов %{count}) "
+      too_short: "Слишком короткий (максимальное количество символов %{count}) "
+      wrong_length: "Неверная длина (должно быть %{count} символов)"
+  helpers:
+    select:
+      prompt: "выберите "
+    submit:
+      create: "создан %{model}"
+      submit: "сохранение %{model}"
+      update: "обновление %{model}"
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: "2"
+        separator: "0"
+        significant: false
+        strip_insignificant_zeros: false
+        unit: $
+    format:
+      delimiter: ","
+      precision: "2"
+      separator: "0"
+      significant: false
+      strip_insignificant_zeros: true
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: миллиард
+          million: миллион
+          quadrillion: квадриллион
+          thousand: тысяча
+          trillion: триллион
+          unit: ""
+      format:
+        delimiter: ""
+        precision: "2"
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: байт
+            other: байты
+          gb: ГБ
+          kb: Кб
+          mb: МБ
+          tb: ТБ
+    percentage:
+      format:
+        delimiter: ""
+    precision:
+      format:
+        delimiter: ""
+  support:
+    array:
+      last_word_connector: ", и "
+      two_words_connector: " и "
+      words_connector: ", "
+    select:
+      prompt: выберите
+  time:
+    am: am
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      file: "%Y %m %d %H:%M:%S"
+      long: "%d %b %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: pm

@@ -1,0 +1,128 @@
+ka/date/formats,default,%d-%m-%Y
+ka/date/formats,short,%d %b
+ka/date/formats,long,"%B %d, %Y"
+ka/date,day_names,"[""Bazar"", ""Bazar ertəsi"", ""Çərşənbə axşamı"", ""Çərşənbə"", ""Cümə axşamı"", ""Cümə"", ""Şənbə""]"
+ka/date,abbr_day_names,"[""Baz"", ""Baz ert"", ""Çər axş"", ""Çər"", ""Cüm axş"", ""Cüm"", ""Şən""]"
+ka/date,month_names,"[nil, “Yanvar”,”Fevral”, “Mart”, “Aprel”, “May”, “İyun”, “İyul”, ”Avqust”, “Sentyabr”, “Oktyabr”, “Noyabr”, “Noyabr”, “Dekabr”]"
+ka/date,abbr_month_names,"[nil, “Yan”, ”Fev”, “Mar”, “Apr”, “May”, “İyun”, “İyul”, ”Avq”, “Sen”, “Okty”, “Noy”, “Dek”]"
+ka/date,order,"[:day, :month, :year]"
+ka/time/formats,default,"%a, %d %b %Y %H:%M:%S %z"
+ka/time/formats,short,%d %b %H:%M
+ka/time/formats,long,%d %b %Y %H:%M
+ka/time/formats,file,%Y %m %d %H:%M:%S
+ka/time,am,am
+ka/time,pm,pm
+ka/support/array,words_connector,","
+ka/support/array,two_words_connector,və
+ka/support/array,last_word_connector,və
+ka/support/select,prompt,xahiş edirik seçiminizi edin
+ka/number/format,separator,0
+ka/number/format,delimiter,","
+ka/number/format,precision,2
+ka/number/format,significant,FALSE
+ka/number/format,strip_insignificant_zeros,TRUE
+ka/number/currency/format,format,%u%n
+ka/number/currency/format,unit,$
+ka/number/currency/format,separator,0
+ka/number/currency/format,delimiter,","
+ka/number/currency/format,precision,2
+ka/number/currency/format,significant,FALSE
+ka/number/currency/format,strip_insignificant_zeros,FALSE
+ka/number/percentage/format,delimiter,
+ka/number/precision/format,delimiter,
+ka/number/human/format,delimiter,
+ka/number/human/format,precision,2
+ka/number/human/format,significant,TRUE
+ka/number/human/format,strip_insignificant_zeros,TRUE
+ka/number/human/storage_units,format,%n %u
+ka/number/human/storage_units/units/byte,one,Bayt
+ka/number/human/storage_units/units/byte,other,Baytlar
+ka/number/human/storage_units/units,kb,Kb
+ka/number/human/storage_units/units,mb,Mb
+ka/number/human/storage_units/units,gb,Gb
+ka/number/human/storage_units/units,tb,Tb
+ka/number/human/decimal_units,format,%n %u
+ka/number/human/decimal_units/units,unit,
+ka/number/human/decimal_units/units,thousand,Min
+ka/number/human/decimal_units/units,million,Milyon
+ka/number/human/decimal_units/units,billion,milyard
+ka/number/human/decimal_units/units,trillion,trilyon
+ka/number/human/decimal_units/units,quadrillion,Kvadrilion
+ka/datetime/distance_in_words,half_a_minute,yarım dəqiqə
+ka/datetime/distance_in_words/less_than_x_seconds,one,Saniyədən az
+ka/datetime/distance_in_words/less_than_x_seconds,other,%{count} Dəqiqədən az
+ka/datetime/distance_in_words/x_seconds,one,1 saniyə
+ka/datetime/distance_in_words/x_seconds,other,%{count} saniyə 
+ka/datetime/distance_in_words/less_than_x_minutes,one,dəqiqədən az
+ka/datetime/distance_in_words/less_than_x_minutes,other,%{count} dəqiqədən az
+ka/datetime/distance_in_words/x_minutes,one,1 dəqiqə
+ka/datetime/distance_in_words/x_minutes,other,%{count} dəqiqə
+ka/datetime/distance_in_words/about_x_hours,one,Təqribən 1 saat
+ka/datetime/distance_in_words/about_x_hours,other,Təqribən %{count} saat
+ka/datetime/distance_in_words/x_days,one,1 Gün
+ka/datetime/distance_in_words/x_days,other,%{count} Gün 
+ka/datetime/distance_in_words/about_x_months,one,Təqribən 1 ay
+ka/datetime/distance_in_words/about_x_months,other,Təqribən %{count}ay
+ka/datetime/distance_in_words/x_months,one,1 Ay
+ka/datetime/distance_in_words/x_months,other,%{count} Ay
+ka/datetime/distance_in_words/about_x_years,one,Təqribən 1 İl
+ka/datetime/distance_in_words/about_x_years,other,Təqribən %{count} İl
+ka/datetime/distance_in_words/over_x_years,one,İldən artıq
+ka/datetime/distance_in_words/over_x_years,other,%{count} ildən artıq
+ka/datetime/distance_in_words/almost_x_years,one,Təxminən 1 il
+ka/datetime/distance_in_words/almost_x_years,other,Təxminən %{count} il
+ka/datetime/prompts,year,İl
+ka/datetime/prompts,month,Ay
+ka/datetime/prompts,day,Gün
+ka/datetime/prompts,hour,Saat
+ka/datetime/prompts,minute,Dəqiqə
+ka/datetime/prompts,second,Saniyə
+ka/helpers/select,prompt,Xahiş edirik seminizi edin 
+ka/helpers/submit,create,Yaratmaq %{model}
+ka/helpers/submit,update,Yeniləmək %{model}
+ka/helpers/submit,submit,Saxlamaq %{model}
+ka/errors,format,%{attribute} %{message}
+ka/errors/messages,inclusion,Siyahıda mövcud deyil
+ka/errors/messages,exclusion,Məşğuldur
+ka/errors/messages,invalid,Düzgün deyil
+ka/errors/messages,confirmation,Təsdiqlənmir
+ka/errors/messages,accepted,Razılıq tələb edir
+ka/errors/messages,empty,Boş olmamalıdır
+ka/errors/messages,blank,Boş olmamalıdır
+ka/errors/messages,too_long,Həddindən artıq uzundur (Simvolların maksimum sayı %{count})
+ka/errors/messages,too_short,Həddindən artıq qısadır (Simvolların minimum sayı %{count})
+ka/errors/messages,wrong_length,Yalnış uzunluq (%{count} simvol olmalıdır)
+ka/errors/messages,not_a_number,Rəqəm mövcud deyil
+ka/errors/messages,not_an_integer,Bütöv rəqəm olmalıdır
+ka/errors/messages,greater_than,%{count}-dan artıq olmalıdır
+ka/errors/messages,greater_than_or_equal_to,%{count}-dan artıq ya da bərabər olmalıdır
+ka/errors/messages,equal_to,%{count}-a bərabər olmalıdır
+ka/errors/messages,less_than,%{count}-dan az olmalıdır
+ka/errors/messages,less_than_or_equal_to,%{count}-dən az ya da bərabər olmalıdır
+ka/errors/messages,odd,Yek olmalıdır
+ka/errors/messages,even,Cüt olmalıdır
+ka/activerecord/errors/template/header,one,–nun saxlanılması görə mümkün deyil 
+ka/activerecord/errors/template/header,other,–nun saxlanılması görə mümkün deyil
+ka/activerecord/errors/template,body,Sonrakı sahələrlə əlaqədar problemlər aşkar edilibdir
+ka/activerecord/errors/messages,inclusion,Siyahıda mövcud deyil
+ka/activerecord/errors/messages,exclusion,Məşğuldur
+ka/activerecord/errors/messages,invalid,Məşğuldur
+ka/activerecord/errors/messages,confirmation,Təsdiqlənə bilmir
+ka/activerecord/errors/messages,accepted,İcazə verilməsi tələb olunur
+ka/activerecord/errors/messages,empty,Boş olmamalıdır
+ka/activerecord/errors/messages,blank,Boş olmamalıdır
+ka/activerecord/errors/messages,too_long,Həddindən artıq uzundur (Simvolların maksimum sayı %{count})
+ka/activerecord/errors/messages,too_short,Həddindən artıq qısadır (Simvolların minimum sayı %{count})
+ka/activerecord/errors/messages,wrong_length,Yalnış uzunluq (%{count} simvol olmalıdır)
+ka/activerecord/errors/messages,not_a_number,Rəqəm olmamalıdır
+ka/activerecord/errors/messages,not_an_integer,Bütöv rəqəm olmamalıdır
+ka/activerecord/errors/messages,greater_than,%{count}-dan artıq olmalıdır
+ka/activerecord/errors/messages,greater_than_or_equal_to,%{count}-dan artıq ya da bərabər olmalıdır
+ka/activerecord/errors/messages,equal_to,%{count}-a bərabər olmalıdır
+ka/activerecord/errors/messages,less_than,%{count}-dan az olmalıdır
+ka/activerecord/errors/messages,less_than_or_equal_to,%{count}-dən az ya da bərabər olmalıdır
+ka/activerecord/errors/messages,odd,Yek olmalıdır
+ka/activerecord/errors/messages,even,Cüt olmalıdır
+ka/activerecord/errors/messages,taken,Artıq məşğuldur
+ka/activerecord/errors/messages,record_invalid,Yoxlama uğursuzdur: %{errors}
+ka/activerecord/errors/full_messages,format,%{attribute}%{message}

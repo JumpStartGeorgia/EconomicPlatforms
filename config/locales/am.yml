@@ -1,85 +1,85 @@
 ﻿# encoding: utf-8
-ka:
+am:
   activerecord:
     models:
-      statement: განცხადება
-      user: მომხმარებელი
-      economic_category: ეკონომიკური კატეგორია
-      indicator_category: ინდიკატორის კატეგორია
-      indicator: ინდიკატორი
-      platform: პარტიის პლატფორმა
-      policy_brief: ექსპერტული შეფასება
-      political_party: პოლიტიკური პარტია
-      page: გვერდი
-      activity: სიახლე
-      election: არჩევნები
+      statement: հայտարարություն
+      user: սպառող
+      economic_category: "տնտեսական կատիգորիա"
+      indicator_category: "ինդիկատորի կատիգորիա"
+      indicator: ինդիկատոր
+      platform: "կուսակցության պլատֆորմը"
+      policy_brief: "փորձագիտական գնահատական"
+      political_party: "քաղաքական կուսակցություն"
+      page: էջ
+      activity: նորույթ
+      election: ընտրություններ
       candidate: კანდიდატი
     attributes:
       activity:
-        date: თარიღი
-        video: YouTube ვიდეო ლინკი
-        election: არჩევნები
+        date: ամսաթիվը
+        video: "YouTube տեսալինկ"
+        election: ընտրություններ
       activity_translation:
-        title: სათაური
-        body: ტექსტი
+        title: վերնագիր
+        body: տեքստ
       statement:
-        date_made: შექმნის თარიღი
-        political_party: პოლიტიკური პარტია
-        economic_category: ეკონომიკური კატეგორია
-        is_public: ხილული მსოფლიოსათვის
-        election: არჩევნები
+        date_made: "պատրաստելու ամսաթիվը"
+        political_party: "քաղաքական կուսակցություն"
+        economic_category: "տնտեսական կատիգորիա"
+        is_public: "ի գիտություն աշխարհի"
+        election: ընտրություններ
       statement_translation:
-        source: განცხადების წყარო
-        author: განცხადების ავტორი
-        statement_made: გაკეთებული განცადება
-        analysis: ანალიზი
+        source: "հայտարարության աղբյուրը"
+        author: "հայտարարության հեղինակը"
+        statement_made: "արված հայտարարությունը"
+        analysis: վերլուծություն
       user:
-        email: ელ.ფოსტა
-        password: პაროლი
-        password_confirmation: გაიმეორეთ პაროლი
-        role: როლი
-        remember_me: დამიმახსოვრე
+        email: "էլ. փոստ"
+        password: գաղտնաբառ
+        password_confirmation: "կրկնեք գաղտնաբառը"
+        role: դերը
+        remember_me: "հիշիր ինձ"
       economic_category_translation:
-        name: სახელი
+        name: անուն
       indicator_category_translation:
-        name: სახელი
+        name: անուն
       indicator:
-        indicator_category: ინდიკატორის კატეგორია
-        value: შეფასება
+        indicator_category: "ինդիկատորի կատիգորիա"
+        value: գնահատում
       indicator_translation:
-        name: სახელი
+        name: անուն
       platform:
-        political_party: პოლიტიკური პარტია
-        economic_category: ეკონომიკური კატეგორია
-        is_public: ხილული მსოფლიოსათვის
-        election: არჩევნები
+        political_party: "քաղաքական կուսակցություն"
+        economic_category: "տնտեսական կատիգորիա"
+        is_public: "ի գիտություն աշխարհի"
+        election: ընտրություններ
       platform_translation:
-        description: აღწერა
+        description: հաշվառում
       policy_brief:
-        political_party: პოლიტიკური პარტია
-        economic_category: ეკონომიკური კატეგორია
-        is_public: ხილული მსოფლიოსათვის
-        election: არჩევნები
+        political_party: "քաղաքական կուսակցություն"
+        economic_category: "տնտեսական կատիգորիա"
+        is_public: "ի գիտություն աշխարհի"
+        election: ընտրություններ
       policy_brief_translation:
-        analysis: ანალიზი
+        analysis: վերլուծություն
       political_party:
-        color: ფერი
-        logo: ლოგო
-        election: არჩევნები
+        color: գույն
+        logo: լոգո
+        election: ընտրություններ
       political_party_translation:
-        name: სახელი
+        name: անուն
       page:
-        name: სახელი
+        name: անուն
       page_translation:
-        title: სათაური
-        description: აღწერა
+        title: վերնագիր
+        description: հաշվառում
       election:
-        date: არჩევნების მონაცემები
+        date: "ընտրությունների տվյալները"
       election_translation:
-        name: არჩევნების სახელი
+        name: "ընտրությունների անվանումը"
       candidate:
-        election: არჩევნები
-        political_party: პოლიტიკური პარტია
+        election: ընտրություններ
+        political_party: "քաղաքական կուսակցություն"
       candidate_translation:
         name: კანდიდატის სახელი
   app:
@@ -91,341 +91,341 @@ ka:
       az: Azərbaycan
     scales:
       indicator_category_id_1:
-        top: სწორი
-        middle: ცენტრისტული
-        bottom: არასწორი
+        top: ճիշտ
+        middle: կենտրոնամետ
+        bottom: "ոչ ճիշտ, սխալ"
       indicator_category_id_2:
-        top: თანმიმდერვრული
-        middle: ცენტრისტული
-        bottom: ურთიერთგამომრიცხავი
+        top: հետեւողական
+        middle: կենտրոնամետ
+        bottom: փոխբացառող
       indicator_category_id_3:
-        top: გამართლებული
-        middle: ცენტრისტული
-        bottom: არ არის გამართლებული
+        top: արդարացված
+        middle: կենտրոնամետ
+        bottom: "արդարացված չէ"
       indicator_category_id_4:
-        top: განხორციელებადი
-        middle: ცენტრისტული
-        bottom: შეუძლებელი
+        top: իրականացվելիք
+        middle: կենտրոնամետ
+        bottom: անհնարին
       indicator_category_id_5:
-        top: მემარცხენე
-        middle: ცენტრისტული
-        bottom: მემარჯვენე
+        top: ձախեր
+        middle: կենտրոնամետ
+        bottom: աջեր
     buttons:
-      back: უკან
-      list: იხილეთ სრულად
-      admin: ადმინისტრატორის განყოფილება
-      delete: წაშლა
-      edit: შეცვლა
-      show: ჩვენება
-      cancel: გაუქმება
-      update: განახლება
-      save: შენახვა
-      create: შექმნა
-      reset: საწყის კონფიგურაციაზე დაბრუნება
-      remove: მოშორება
-      confirm: დარწმუნებული ხართ?
-      new: ახალი
-      update_statements: განცხადებების განახლება
+      back: ետ
+      list: "դիտեք լրիվությամբ"
+      admin: "ադմինիստրատորի բաժին"
+      delete: "մաքրել, ջնջել"
+      edit: փոխել
+      show: ցուցմունք
+      cancel: "անվավեր ճանաչում"
+      update: նորացում
+      save: պահում
+      create: պատրաստում
+      reset: "նախնական կառուցվածքին վերադառնալը"
+      remove: վերացնել
+      confirm: "համոզվա՞ծ եք"
+      new: նոր
+      update_statements: "հայտարարությունների նորացում"
     common:
-      app_name: "პოლიტიკური პარტიების: სოციალურ-ეკონომიკური პროგრამები"
-      name: სახელი
-      title: სათაური
-      description: აღწერა
-      date_made: შექმნის თარიღი
-      political_party: პოლიტიკური პარტია
-      political_parties: პოლიტიკური პარტიები
-      economic_category: ეკონომიკური კატეგორია
-      statement: განცხადება
-      statements: განცხადებები
-      activities: სიახლეები
-      activity: სიახლეები
-      indicator: ინდიკატორი
-      indicator_category: ინდიკატორის კატეგორია
-      user: მომხმარებელი
-      source: წყარო
-      author: განმცხადებელი
-      scores: ქულები
-      email: ელ.ფოსტა
-      role: როლი
-      new_password: ახალი პაროლი
-      platform: პარტიის პლატფორმა
-      policy_brief: ექსპერტული შეფასება
-      policy_briefs: ექსპერტული შეფასებები
-      date: თარიღი
-      files: დამხმარე ფაილები
-      images: სურათები
-      color: ფერი
-      legend: ლეგენდა
-      indicator_scales: ინდიკატორის სკალა
-      sign_in: შესვლა
-      analysis: ანალიზი
-      actions: აირჩიეთ
-      value: შეფასება
-      page: გვერდი
-      about: შესახებ
-      home: მთავარი
-      methodology: მეთოდოლოგია
+      app_name: "ՔԱՂԱՔԱԿԱՆ ԿՈՒՍԱԿՑՈՒԹՅՈՒՆՆԵՐԻ ՍՈՑԻԱԼ-ՏՆՏԵՍԱԿԱՆ ԾՐԱԳՐԵՐԸ"
+      name: նորույթ
+      title: վերնագիր
+      description: հաշվառում
+      date_made: "պատրաստման ամսաթիվը"
+      political_party: "քաղաքական կուսակցություն"
+      political_parties: "քաղաքական կուսակցություններ"
+      economic_category: "տնտեսական կատիգորիա"
+      statement: հայտարարություն
+      statements: հայտարարություններ
+      activities: նորույթներ
+      activity: նորույթներ
+      indicator: ինդիկատոր
+      indicator_category: "ինդիկատորի կատիգորիա"
+      user: սպառող
+      source: աղբյուր
+      author: հայտարարող
+      scores: միավորներ
+      email: "էլ. փոստ"
+      role: դերը
+      new_password: "նոր գաղտնաբառը"
+      platform: "կուսակցության պլատֆորմը"
+      policy_brief: "փորձագիտական գնահատական"
+      policy_briefs: "փորձագիտական գնահատականներ"
+      date: ամսաթիվ
+      files: "օժանդակ ֆայլեր"
+      images: նկարներ
+      color: գույն
+      legend: լեգենդ
+      indicator_scales: "ինդիկատորի սանդղակը"
+      sign_in: փոփոխում
+      analysis: վերլուծություն
+      actions: ընտրեք
+      value: գնահատում
+      page: էջ
+      about: մասին
+      home: գլխավոր
+      methodology: մեթոդաբանություն
       disclaimer: Disclaimer
-      is_public: ხილული მსოფლიოსათვის
-      party_statements: "%{party} განცხადებების"
-      party_platform: "%{party} პარტიის პლატფორმა"
-      category_statements: "%{category} განცხადებების"
-      all_party_platform_avg: პოლიტიკური პარტიების პროგრამის საშუალო
-      time: დრო
-      comments: კომენტარები
-      view_full: ვრცლად
-      sitemap: საიტის რუკა
-      logo: ლოგო
-      view_source: იხილეთ წყარო
-      download_report: ანგარიშის ჩამოტვირთვა
+      is_public: "հ գիտություն աշխարհի"
+      party_statements: "%{party} հայտարարությունների"
+      party_platform: "%{party} կուսակցության պլատֆորմը"
+      category_statements: "%{category} հայտարարությունների"
+      all_party_platform_avg: "քաղաքական կուսակցությունների ծրագրերի ընդհանուր"
+      time: ժամանակը
+      comments: մեկնաբանություններ
+      view_full: ընդլայնված
+      sitemap: "կայքի քարտեզը"
+      logo: լոգո
+      view_source: "տես աղբյուրը"
+      download_report: "հաշվի բեռնումը"
     msgs:
-      does_not_exist: თქვენ ცდილობთ იხილოთ გვერდი, რომელიც არ არსებობს.
-      not_authorized: თქვენ არ გაქვთ უფლება იხილოთ ეს გვერდი.
-      permalink_exists: უკვე არსებობს მონაცემთა ბაზაში
+      does_not_exist: "Դուք փորձում եք բացել էջը, որը գոյություն չունի"
+      not_authorized: "Դուք այս էջը բացելոի իրավուք չունեք"
+      permalink_exists: "արդեն գոյություն ունի տվյալների բազայում"
       candidate_exists: უკვე არსებობს ამ არჩევნებისთვის.
-      success_created: "%{obj} შექმნილია."
-      success_updated: "%{obj} განახლებულია."
-      policy_already_exists: უკვე არსებობს მონაცემთა ბაზაში
-      platform_already_exists: უკვე არსებობს მონაცემთა ბაზაში
-      statement_chart_instructions: აირჩიეთ კატეგორია და ინდიკატორი, რათა უკეთ დაინახოთ ერთი პარტიის ოფოციალური პოზიცია და შეადაროთ დანარჩენ სხვა პარტიებს.
+      success_created: "%{obj} պատրաստված է"
+      success_updated: "%{obj} նորացված է"
+      policy_already_exists: "արդեն գոյություն ունի տվյալների բազայում"
+      platform_already_exists: "արդեն գոյություն ունի տվյալների բազայում"
+      statement_chart_instructions: "որպեսզի ավելի լավ տեսնեք մի կուսակցության պաշտոնական դիրքորոշումն եւ համեմատեբ մյոըս կուսակցությունների հետ:"
   layouts:
     application:
-      admin: ადმინისტრატორი
-      sign_out: გასვლა
-      js_link_title: "ეწვიეთ ჯამპსტარტ ჯორჯიას ვებ-გვერდს"
-      js_link_text: აგებულია
-      search: ძიება
-      slogan: რას გპირდებიან პარტიები?
+      admin: ադմինիստրատոր
+      sign_out: "դուրս գալ"
+      js_link_title: "մուտք գործեք ջամպստարտ Ջորջիայի կայք էջը"
+      js_link_text: կառուցված
+      search: որոնում
+      slogan: "Ի՞նչ են խոստանում կուսակցությունները?"
     unsupported_browser:
-      title: არასათანადო ბრაუზერი
-      p1: სამწუხაროდ თქვენი ინტერნეტ ბრაუზერის მოხმარების ვადა გასულია და ვერ მოხდება ვებ-გვერდთან სრულად დაკავშირება.
-      p2: არსებობს რამდენიმე უფასო ბრაუზერი რომელის გადმოწერის შემდეგ შეძლებთ ვებ-გვერდით სარგებლობას.
+      title: "անհամապատասխան բրաուզեր"
+      p1: "Ցավոք, ձեր համացանց բրաուզերի օգտագործման ժամկետը սպառվել է եւ կայք էջի հետ լիարժեք կապվելը չի իրականացվի"
+      p2: "Գոյություն ունեն մի շարք անվճար բրաուզերներ, որոնց արտագրելուց հետո կկարողանաք օգտվել կայք էջից"
       chrome: Chrome
       firefox: Firefox
-      ie: Internet Explorer (მხოლოდ Windows-ზე)
+      ie: "Internet Explorer (მხოლოდ Windows-ზე)"
       opera: Opera
       Safari: Safari
-      admin: ადმინისტრატორი
-      sign_out: გასვლა
-      js_link_title: "ეწვიეთ ჯამპსტარტ ჯორჯიას ვებ-გვერდს"
-      js_link_text: აგებულია
+      admin: ադմինիստրատոր
+      sign_out: "դուրս գալ"
+      js_link_title: "մուտք գործեք ջամպստարտ Ջորջիայի կայք էջը"
+      js_link_text: կառուցված
   root:
     index:
-      welcome: "კეთილი იყოს თქვენი მობრძანება ეკონომიკური პოლიტიკის ფაქტების შემმოწმებელში! იხილეთ პოლიტიკური პარტიის პლატფორმები, განცხადებები და ასევე ჩვენი ღრმა ანალიზი, რათა უკეთ აღმოაჩინოთ საქართველოს პოლიტიკური პარტიების ეკონომიკური პოლიტიკა."
-      welcome_link: "გაიგეთ მეტი, დააჭირეთ აქ."
-      no_values: აპლიკაციაში პოლიტიკურ პარტიაზე ინფორმაცია ამ დროისთვის შეყვანილი არ არის.
-      latest_statements_header: უახლესი განცხადებები
-      about_header: შესახებ
-      chart_title: პოლიტიკური პარტიების იდეოლოგიები
-      chart_text: დააკლიკეთ  და იხილეთ, პოლიტიკური პარტიების იდეოლოგიების გრაფიკები
+      welcome: "Բարի գալուստ տնտեսական քաղաքականության փաստերի ստուգմանը: Դիտեք քաղաքական կուսակցությունների պլատֆորմներն եւ նաեւ մեր խոր վերլուծությունը, որպեսզի ավելի լավ ընկալեք Վրաստանի քաղաքական կուսակցությունների տնտեսական քաղաքականությունը"
+      welcome_link: "Իմացեք ավելի, սեղմեք այստեղ"
+      no_values: "Քաղաքական կուսակցության մասին ապլիկացիայում տեղեկատվությունը ներկա պահին չի մտցված"
+      latest_statements_header: 
+      about_header: մասին
+      chart_text: "Փաթաթեք եւ դիտեք քաղաքական կուսակցությունների գաղափարախոսությունների գրաֆիկները"
+      chart_title: "Քաղաքական կուսակցությունների գաղափարախոսությունները"
     about:
-      title: შესახებ
+      title: մասին
     methodology:
-      title: მეთოდოლოგია
+      title: մեթոդաբանություն
     disclaimer:
       title: Disclaimer
     charts:
-      title: პოლიტიკური პარტიების იდეოლოგიები
-      left: "პარტიის პოზიცია მითითებულ საკითხზე, მისი პლათფორმის მიხედვით ხასიათდება,როგორც უკიდურესად სოციალისტური/კომუნისტური"
-      center: "პარტიის პოზიცია მითითებულ საკითხზე ,მისი პლათფორმის მიხედვით  ხასიათდება, როგორც დასავლურ-ევროპული სოციალურ-დემოკრატიული"
-      right: "პარტიის პოზიცია მითითებულ საკითხზე, მისი პლათფორმის მიხედვით ხასითდება, როგორც ექსტრემალურად ლიბეტარიანული სახელმწიფომ უნდა უზრუნველყოს საკუთრების უფლების დაცვა, კანონი და წესრიგი, მაგრამ არ უნდა არეგულირებდეს ეკონომიკას და სახელმწიფო არ უნდა ერეოდეს შემოსავლების გადანაწილებაში, როგორიცაა მაგალითად ღარიბთა ან უმუშევართა დახმარება)"
+      title: "Քաղաքական կուսակցությունների գաղափարախոսությունները"
+      left: "Կուսակցության դիրքորոշումը նշյալ հարցի վերաբերյալ, ելնելով նրա պլատֆորմից, բնութագրվում է որպես ծայրաստիճան սոցիալւստական/կոմունիստական"
+      center: "Կուսակցության դիրքորոշումը նշյալ հարցի վերաբերյալ, ելնելով նրա պլատֆորմից, բնութագրվում է որպես արեւմտաեվրոպական սոցիալ-ժողովրդավարական"
+      right: "Պետությունը պետք է ապահովի սեփականության իրավունքի պաշտպանությունը, օրենքն ու կարգուկանոնը, սակայն չպետք է կառավարի էկոնոմիկան եւ պետությունը չպետք է միջամտի եկամուտների վերաբաշխմանը, ինչպիսինն է, օրինակ, աղքատների կամ գործազուրկների օգնությունը"
     search:
-      title: ძიება
+      title: որոնում
     sitemap:
-      title: საიტის რუკა
-      other_header: სხვა
+      title: "կայքի քարտեզը"
+      other_header: այլ
   economic_categories:
     edit:
-      title: ცვლილებების შეტანა ეკონომიკურ კატეგორიაში
+      title: "փոփոխությունների կատարում տնտեսական կատիգորիայում"
     index:
-      title: ეკონომიკური კატეგორიები
+      title: "տնտեսական կատիգորիաներ"
     new:
-      title: ახალი ეკონომიკური კატეგორია
+      title: "տնտեսական նոր կատիգորիա"
     show:
-      title: ეკონომიკური კატეგორია დეტალები
+      title: "տնտեսական կատիգորիայի մանրամասները"
   indicator_categories:
     edit:
-      title: ცვლილებების შეტანა ინდიკატორების კატეგორიაში
+      title: "փոփոխությունների կատարում ինդիկատորի կատիգորիայում"
     index:
-      title: ინდიკატორების კატეგორიები
+      title: "ինդիկատորի կատիգորիաներ"
     new:
-      title: ახალი ინდიკატორის კატეგორია
+      title: "ինդիկատորի նոր կատիգորիա"
     show:
-      title: ინდიკატორების კატეგორიები დეტალები
+      title: "ինդիկատորի կատիգորիայի մանրամասները"
   indicators:
     edit:
-      title: ცვლილებების შეტანა ინდიკატორში
+      title: "փոփոխությունների կատարումը ինդիկատորում"
     index:
-      title: ინდიკატორები
+      title: ինդիկատորներ
     new:
-      title: ახალი ინდიკატორი
+      title: "նոր ինդիկատոր"
     show:
-      title: ინდიკატორი დეტალები
+      title: "ինդիկատորի մանրամասները"
   platforms:
     edit:
-      title: ცვლილებების შეტანა პლატფორმაში
+      title: "փոփոխությունների կատարումը պլատֆորմում"
     index:
-      title: პლატფორმები
-      no_platforms: "ამ დროისათვის პლატფორმები არ არის შეყვანილი"
+      title: պլատֆորմներ
+      no_platforms: "ներկա պահին պլատֆորմները մտցված չեն"
     new:
-      title: ახალი პლატფორმა
+      title: "նոր պլատֆորմ"
     show:
-      title: დეტალები პლატფორმაზე
+      title: "մանրամասներ պլատֆորմի մասին"
     platform_file_fields:
-      remove_link: ფაილის წაშლა
+      remove_link: "ֆայլի մաքրումը"
     form:
-      add_file: ფაილის დამატება
+      add_file: "ֆայլի մաքրումը"
   policy_briefs:
     edit:
-      title: ცვლილებების შეტანა პოლიტიკის რეზიუმეში
+      title: "փոփոխությունների կատարումը քաղաքական ամփոփագրում"
     index:
-      title: ექსპერტული შეფასება
-      no_policy_briefs: "ამ დროისათვის პლატფორმები შეყვანილი არ არის"
-      empty: ცარიელია
+      title: "փորձագիտական գնահատական"
+      no_policy_briefs: "ներկա պահին պլատֆորմները մտցված չեն"
+      empty: "դատարկ է"
     new:
-      title: ახალი ექსპერტული შეფასება
+      title: "փորձագիտական նոր գնահատական"
     show:
-      title: დეტალები პოლიტიკის რეზიუმეზე
+      title: "մանրամասներ քաղաքական ամփոփագրում"
   political_parties:
     edit:
-      title: ცვლილებების შეტანა პოლიტიკურ პარტიაში
+      title: "փոփոխությունների կատարումը քաղաքական կուսակցությունում"
     index:
-      title: პოლიტიკური პარტიები
+      title: "քաղաքական կուսակցություններ"
       no_parties: "At this time, no political parties have been recorded"
     new:
-      title: ახალი პოლიტიკური პარტია
+      title: "քաղաքական նոր կուսակցություն"
     show:
-      title: პოლიტიკური პარტია დეტალები
+      title: "քաղաքական կուսակցության մանրամասները"
   elections:
     edit:
-      title: არჩევნების რედაქტირება
+      title: "ընտրությունների խմբագրումը"
     index:
-      title: არჩევნები
+      title: ընտրություններ
     new:
-      title: ახალი არჩევნები
+      title: 
     show:
-      title: არჩევნების დეტალები
+      title: 
   candidates:
     edit:
-      title: კანდიდატის რედაქტირება
+      title: Թեկնածուի խմբագրումը
     index:
-      title: კანდიდატები
-      no_candidates: "ამჟამად, არცერთი კანდიდატის ჩანაწერი არ მოიპოვება"
+      title: Թեկնածուն
+      no_candidates: "Դեռեւս ոչ մի թեկնածուի գրանցումը չի գտնվում"
     new:
-      title: ახალი კანდიდატი
+      title: Նոր թեկնածու
     show:
-      title: კანდიდატების დეტალები
+      title: Թեկնածուի մանրամասները
   admin:
     index:
-      title: ადმინისტრატორის განყოფილება
-      content_header: შინაარსის დამატება
-      platforms: პლატფორმები
-      policy_briefs: ექსპერტული შეფასება
-      statements: განცხადებების
-      users_header: მომხმარებლები
-      new_users: მომხმარებლის დამატება
-      view_users: მომხმარებლების ნახვა
-      basic_header: ძირითადი
-      political_parties: პოლიტიკური პარტიები
-      economic_categories: ეკონომიკური კატეგორიები
-      indicator_categories: ინდიკატორების კატეგორიები
-      indicators: ინიდიკატორები
-      pages: გვერდი
-      activities: სიახლეები
-      elections: არჩევნები
+      title: "ադմինիստրատորի բաժինը"
+      content_header: "բովանդակության լրացումը"
+      platforms: պլատֆորմներ
+      policy_briefs: "փորձագիտական գնահատական"
+      statements: հայտարարության
+      users_header: սպառողներ
+      new_users: "սպառողների ավելացոիմը"
+      view_users: "սպառողներին տեսնելը"
+      basic_header: հիմնական
+      political_parties: "քաղաքական կուսակցություններ"
+      economic_categories: "տնտեսական կատիգորիաներ"
+      indicator_categories: "ինդիկատորների կատիգորիաներ"
+      indicators: ինդիկատորներ
+      pages: էջ
+      activities: նորույթներ
+      elections: Ընտրություններ
     users:
       edit:
-        title: ცვლილებების შეტანა მომხმარებლის გვერდზე
+        title: "փոփոխությունների կատարումը սպառողի էջում"
       index:
-        title: მომხმარებლები
+        title: սպառողներ
       new:
-        title: ახალი მომხმარებელი
+        title: "նոր սպառող"
       show:
-        title: მომხმარებლის დეტალები
+        title: "սպառողի մանրամասները"
   statements:
     edit:
-      title: ცვლილებების შეტანა განცხადებაში
+      title: "փոփոխությունների կատարումը հայտարարության մեջ"
     index:
-      title: განცხადებები
-      no_statements: "ამ მომენტისათვის განცხადებები არ ფიქსირდება"
+      title: հայտարարություններ
+      no_statements: "ներկա պահին հայտարարությունները չեն վավերացվում"
     new:
-      title: ახალი განცხადება
+      title: "նոր հայտարարություն"
     show:
-      title: განცხადების დეტალები
+      title: "հայտարարության մանրամասները"
   party:
     index:
-      title: "%{political_party}"
-      statement_header: "განცხადებები"
-      no_statements: "ამ მომენტისათვის განცხადებები %{economic_category} არ ფიქსირდება %{political_party} - თვის."
-      view_statement: განცადების ნახვა სრულად
+      title: "%{political_party} "
+      statement_header: հայտարարություններ
+      no_statements: "ներկա պահին հայտարարությունները %{economic_category} չեն վավերացվում – %{political_party} "
+      view_statement: "հայտարարության լրիվ դիտումը"
     well:
-      pdf_header: გადმოწერა
+      pdf_header: արտագրումը
       pdf_link: PDF
-      profile_header: "პროფილი"
-      view_profile: სრული პროფილის ნახვა
-      platform_header: "პლატფორმები"
-      no_platforms: "ამ დროისათვის პლათფორმები ჩაწერილი არ არის."
-      policy_brief_header: "ექსპერტული შეფასება"
-      no_policy_briefs: "ამ დროისათვის რეზიუმეები პოლიტიკაზე შეყვანილი არ არის."
+      profile_header: պրոֆիլը
+      platform_header: պլատֆորմներ
+      view_profile: "լրիվ պրոֆիլի դիտումը"
+      no_platforms: "ներկա պահին պլատֆորմները մտցված չեն"
+      policy_brief_header: "փորձագիտական գնահատական"
+      no_policy_briefs: "ներկա պահին քաղաքականության մասին ամփոփագրերը մտցված չեն"
     statement:
-      title: "%{political_party}"
-      secondary_title: "განცხადება - %{date}"
+      title: "%{political_party} "
+      secondary_title: "հայտարարություն %{date} "
     platform:
       title: "%{political_party}"
-      secondary_title: "პლათფორმა - %{economic_category}"
+      secondary_title: "պլատֆորմ - %{economic_category} "
     policy_brief:
       title: "%{political_party}"
-      secondary_title: "ექსპერტული შეფასება - %{economic_category}"
+      secondary_title: "փորձագիտական գնահատական - %{economic_category} "
   category:
     index:
       title: "%{economic_category}"
-      statement_header: "განცხადებები"
-      no_statements: "ამ მომენტისათვის განცხადებები არ ფიქსირდება %{economic_category} -ში."
-      view_statement: განცადების ნახვა სრულად
+      statement_header: հայտարարություններ
+      no_statements: "ներկա պահին հայտարարությունները%{economic_category}-ում չեն վավերացվում"
+      view_statement: "հայտարարության լրիվ դիտումը"
     well:
-      pdf_header: გადმოწერა
-      pdf_link: პდფ ფაილი
-      profile_header: "პროფილი"
-      view_profile: სრული პროფილის ნახვა
-      platform_header: "პლატფორმები"
-      no_platforms: "ამ დროისათვის პლატფორმები ჩაწერილი არ არის."
-      policy_brief_header: "ექსპერტული შეფასება"
-      no_policy_briefs: "ამ დროისათვის რეზიუმეები პოლიტიკაზე შეყვანილი არ არის."
+      pdf_header: արտագրումը
+      pdf_link: "ՊԴՖ ֆայլ"
+      profile_header: պրոֆիլ
+      view_profile: "լրիվ պրոֆիլի դիտումը"
+      platform_header: պլատֆորմներ
+      no_platforms: "ներկա պահին պլատֆորմները մտցված չեն"
+      policy_brief_header: "փորձագիտական գնահատական"
+      no_policy_briefs: "ներկա պահին քաղաքականության մասին ամփոփագրերը մտցված չեն"
     statement:
       title: "%{economic_category}"
-      secondary_title: "განცხადება - %{date}"
+      secondary_title: "հայտարարություն - %{date}"
     platform:
       title: "%{economic_category}"
-      secondary_title: "პლათფორმა - %{political_party}"
+      secondary_title: "պլատֆորմ - %{political_party}"
     policy_brief:
       title: "%{economic_category}"
-      secondary_title: "ექსპერტული შეფასება - %{political_party}"
+      secondary_title: "փորձագիտական գնահատական - %{political_party} "
   pages:
     edit:
-      title: გვერდების შეცვლა
+      title: "էջերի փոփոխումը"
     index:
-      title: გვერდები
-      no_pages: მოცემული დროისათვის სიახლე არ მოიძებნება
+      title: էջերը
+      no_pages: "ներկա պահին նորույթ չի գտնվել"
     new:
-      title: ახალი გვერდი
+      title: "նոր էջ"
     show:
-      title: გვერდის სრულად ნახვა
+      title: "էջի լրիվ դիտումը"
     page_file_fields:
-      remove_link: ფაილის წაშლა
+      remove_link: "ֆաջլի մաքրումը"
     form:
-      add_file: ფაილის დამატება
+      add_file: "ֆայլի ավելացումը"
   activities:
     edit:
-      title: რედაქტირება
+      title: խմբագրումը
     index:
-      title: სიახლეები
-      no_activities: მოცემული დროისათვის სიახლე არ მოიძებნება
+      title: նորույթներ
+      no_activities: "ներկա պահին նորույթ չի գտնվել"
     new:
-      title: ახალი
+      title: նոր
     show:
-      title: სიახლეები დეტალურად
-      latest_statements_header: უახლესი განცხადებები
+      title: "նորույթների մանրամասնորեն"
+      latest_statements_header: "ամենաթարմ հայտարարությունը"
     form:
-      add_file: იმიჯის დამატება
+      add_file: "վարկանիշի ավելացումը"
     activity_image_fields:
-      remove_link: იმიჯის წაშლა
+      remove_link: "վարկանիշի մաքրումը"
