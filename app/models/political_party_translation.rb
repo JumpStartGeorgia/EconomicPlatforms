@@ -10,7 +10,7 @@ class PoliticalPartyTranslation < ActiveRecord::Base
   validates :permalink, :uniqueness => {:scope => :locale, :case_sensitive => false, :message => I18n.t('app.msgs.permalink_exists')}
 
   def create_permalink
-    "#{Utf8Converter.convert_ka_to_en(name.clone)}"
+    "#{Utf8Converter.convert_ka_to_en(name.clone.to_ascii.gsub(/[^0-9A-Za-z|_\- ]/,''))}"
   end
 
   def required_data_provided?
