@@ -293,6 +293,7 @@ ka:
       title: პოლიტიკური პარტიები
     new:
       title: ახალი პოლიტიკური პარტია
+      no_parties: "At this time, no political parties have been recorded"
     show:
       title: პოლიტიკური პარტია დეტალები
   elections:

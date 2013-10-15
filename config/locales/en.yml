@@ -291,6 +291,7 @@ en:
       title: Editing Political Party
     index:
       title: Political Parties
+      no_parties: "At this time, no political parties have been recorded"
     new:
       title: New Political Party
     show:

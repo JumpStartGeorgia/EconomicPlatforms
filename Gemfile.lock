@@ -225,6 +225,9 @@ GEM
     warden (1.1.1)
       rack (>= 1.0)
     will_paginate (3.0.3)
+    ya2yaml (0.31)
+    yaml2csv (0.0.3)
+      ya2yaml (~> 0.30)
 
 PLATFORMS
   ruby
@@ -261,3 +264,4 @@ DEPENDENCIES
   use_tinymce (~> 0.0.15)
   useragent!
   will_paginate (= 3.0.3)
+  yaml2csv

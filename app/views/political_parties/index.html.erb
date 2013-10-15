@@ -10,6 +10,12 @@
 
 <%= select_tag :election_id, options_from_collection_for_select(@elections_w_parties, :id, :name, params[:election_id]), {:include_blank => true, :class => :index_election_filter} %>
 
+<% if @political_parties.blank? %>
+	<p>
+		<%= t('.no_parties') %>
+	</p>
+<% else %>
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -41,3 +47,4 @@
   </tbody>
 </table>
 
+<% end %>

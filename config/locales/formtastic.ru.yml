@@ -2,12 +2,12 @@
 
 ru:
   formtastic:
-    :yes: 'დიახ'
-    :no: 'არა'
-    :create: 'შექმნა %{model}'
-    :update: 'შენახვა %{model}'
-    :submit: 'შენახვა %{model}'
-    :cancel: 'გაუქმება %{model}'
-    :reset: 'გადატვირთვა %{model}'
-    :required: 'საჭირო'
+    :yes: Да
+    :no: Нет
+    cancel: "Отмена %{model}"
+    create: "Создание %{model}"
+    required: Необходимо
+    reset: "Перезагрузка %{model}"
+    submit: "Сохранение %{model}"
+    update: "Сохранение %{model}"
 

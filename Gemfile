@@ -43,6 +43,7 @@ end
 group :development do
 	gem "mailcatcher", "0.5.5" # small smtp server for dev, http://mailcatcher.me/
 #	gem "wkhtmltopdf-binary", "~> 0.9.5.3" # web kit that takes html and converts to pdf
+  gem 'yaml2csv'
 end
 
 group :staging do
