@@ -39,7 +39,7 @@ class UpdateTransTextParty < ActiveRecord::Migration
       trans = PoliticalPartyTranslation.where(:locale => 'am', :name => 'კოალიცია "ქართული ოცნება"').readonly(false)
       if trans.present?
         puts '- updating am' 
-        trans.first.name = '"Վրացական երազանք" կոալիցիան'
+        trans.first.name = '«Վրացական երազանք» կոալիցիան'
         trans.first.permalink = nil
         trans.first.save
       end
@@ -164,7 +164,7 @@ class UpdateTransTextParty < ActiveRecord::Migration
       trans = PoliticalPartyTranslation.where(:locale => 'am', :name => 'დემოკრატიული მოძრაობა  - "ერთიანი საქართველო"').readonly(false)
       if trans.present?
         puts '- updating am' 
-        trans.first.name = '"Միասնական Վրաստան" Ժողովրդավարական շարժում '
+        trans.first.name = '«Միասնական Վրաստան» Ժողովրդավարական շարժում '
         trans.first.permalink = nil
         trans.first.save
       end
@@ -192,7 +192,7 @@ class UpdateTransTextParty < ActiveRecord::Migration
       trans = PoliticalPartyTranslation.where(:locale => 'am', :name => 'მოძრაობა "სამართლიანი საქართველოსთვის"').readonly(false)
       if trans.present?
         puts '- updating am' 
-        trans.first.name = '"Արդարացի Վրաստանի համար" շարժում'
+        trans.first.name = '«Արդարացի Վրաստանի համար» շարժում'
         trans.first.permalink = nil
         trans.first.save
       end
