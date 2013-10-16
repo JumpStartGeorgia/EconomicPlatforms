@@ -8,7 +8,7 @@
 :class => 'btn' %>
 </div>
 
-<%= select_tag :election_id, options_from_collection_for_select(@elections_nav, :id, :name, @current_election_id), {:class => :index_election_filter} %>
+<%= select_tag :election_id, options_from_collection_for_select(@elections_w_parties, :id, :name, @current_election_id), {:class => :index_election_filter} %>
 
 <% if @statements.nil? || @statements.empty? %>
 	<p>

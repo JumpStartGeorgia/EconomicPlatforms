@@ -7,7 +7,7 @@ class CandidatesController < ApplicationController
   # GET /candidates
   # GET /candidates.json
   def index
-    @candidates = Candidate.by_election(@current_election_id)
+    @candidates = Candidate.by_election(params[:election_id])
 
     respond_to do |format|
       format.html # index.html.erb
