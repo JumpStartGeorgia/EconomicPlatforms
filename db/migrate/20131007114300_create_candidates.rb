@@ -1,6 +1,7 @@
 # encoding: UTF-8
 class CreateCandidates < ActiveRecord::Migration
   def up
+=begin
     create_table :candidates do |t|
       t.integer :election_id
       t.integer :political_party_id
@@ -11,7 +12,7 @@ class CreateCandidates < ActiveRecord::Migration
 
     Candidate.create_translation_table! :name => :string
     add_index :candidate_translations, :name
-
+=end
     # create records for 2013
     election_id = 2
     locales = ['en', 'ka', 'ru', 'am', 'az']
@@ -26,7 +27,9 @@ class CreateCandidates < ActiveRecord::Migration
     
     Candidate.transaction do
       # add new parties
-      dem = PoliticalParty.create(:election_ids => election_id, :color => '#079fe2')
+      dem = PoliticalParty.new(:color => '#079fe2')
+      dem.election_ids = election_id
+      dem.save
       locales.each_with_index do |locale, i|
         if i == 0
           dem.political_party_translations.create(:locale => locale, :name => 'Democratic Movement – United Georgia')
@@ -36,7 +39,9 @@ class CreateCandidates < ActiveRecord::Migration
       end
       party_names << 'Democratic Movement – United Georgia'
       
-      justice = PoliticalParty.create(:election_ids => election_id, :color => '#007f14')
+      justice = PoliticalParty.new(:color => '#007f14')
+      justice.election_ids = election_id
+      justice.save
       locales.each_with_index do |locale, i|
         if i == 0
           justice.political_party_translations.create(:locale => locale, :name => 'Movement – Justice for Georgia')
