@@ -19,7 +19,7 @@ $().ready(function() {
 		valid_styles : {'*' : 'color,font-weight,text-decoration'},
 
 		// Theme options
-	  theme_advanced_buttons1 : 'pasteword,|,bold, italic, underline, strikethrough,formatselect,|,bullist,numlist,|, link, unlink, undo, redo,|,fullscreen',
+	  theme_advanced_buttons1 : 'pasteword,|,bold, italic, underline, strikethrough,formatselect,|,bullist,numlist,|,image,|, link, unlink, undo, redo,|,fullscreen',
 		theme_advanced_buttons2 : "tablecontrols",
 		theme_advanced_buttons3 : "",
 		theme_advanced_buttons4 : "",
