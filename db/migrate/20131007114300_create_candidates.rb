@@ -1,7 +1,6 @@
 # encoding: UTF-8
 class CreateCandidates < ActiveRecord::Migration
   def up
-=begin
     create_table :candidates do |t|
       t.integer :election_id
       t.integer :political_party_id
@@ -12,7 +11,7 @@ class CreateCandidates < ActiveRecord::Migration
 
     Candidate.create_translation_table! :name => :string
     add_index :candidate_translations, :name
-=end
+
     # create records for 2013
     election_id = 2
     locales = ['en', 'ka', 'ru', 'am', 'az']
