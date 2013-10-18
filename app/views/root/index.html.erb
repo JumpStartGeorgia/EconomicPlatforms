@@ -8,40 +8,77 @@
     <div class="row">
       <div class="span4">
         <div class="block">
-          <h4 class="font"><%= t('app.common.policy_briefs') %></h4>
-          <div class="block_body no_justify">
-			      <% if @political_parties_nav.present? %>
-				      <ul class="block_list_line">
-				        <% @political_parties_nav.each_with_index do |party,i| %>
-				          <li class="party-dropdown">
+          <% if @policy_briefs_count > 0 %>
+            <h4 class="font"><%= t('app.common.policy_briefs') %></h4>
+            <div class="block_body no_justify">
+			        <% if @political_parties_nav.present? %>
+				        <ul class="block_list_line">
+				          <% @political_parties_nav.each_with_index do |party,i| %>
+				            <li class="party-dropdown">
 
-                    <% policy_briefs = PolicyBrief.by_election(@current_election_id).by_political_party(party.id).published %>
-				            <a href="#">
-				              <%= image_tag(party.logo.url, :style => 'vertical-align: middle;') if party.logo_file_name %>
-											<%= party.name %>
-				              <%= '<b class="caret"></b>'.html_safe if policy_briefs.present? %>
-				            </a>
+                      <% policy_briefs = PolicyBrief.by_election(@current_election_id).by_political_party(party.id).published %>
+				              <a href="#">
+				                <%= image_tag(party.logo.url, :style => 'vertical-align: middle;') if party.logo_file_name %>
+											  <%= party.name %>
+				                <%= '<b class="caret"></b>'.html_safe if policy_briefs.present? %>
+				              </a>
 
-                    <ul class="parties-dropdown dropdown-menu">
-			              <% if policy_briefs.present? %>
+                      <ul class="parties-dropdown dropdown-menu">
+			                <% if policy_briefs.present? %>
 
-					              <% policy_briefs.each do |policy_brief| %>
-						              <li>
-							              <%= link_to policy_brief.economic_category.name,
-								              party_policy_brief_path(:political_party_id => party.permalink,
-								              :economic_category_id => policy_brief.economic_category.permalink) %>
-						              </li>
-					              <% end %>
-			              <% else %>
-				              <li><span class="disabled"><%= t('policy_briefs.index.no_policy_briefs') %></span></li>
-			              <% end %>
-			              </ul>
+					                <% policy_briefs.each do |policy_brief| %>
+						                <li>
+							                <%= link_to policy_brief.economic_category.name,
+								                party_policy_brief_path(:political_party_id => party.permalink,
+								                :economic_category_id => policy_brief.economic_category.permalink) %>
+						                </li>
+					                <% end %>
+			                <% else %>
+				                <li><span class="disabled"><%= t('policy_briefs.index.no_policy_briefs') %></span></li>
+			                <% end %>
+			                </ul>
 
-				          </li>
-				        <% end %>
-				      </ul>
-			      <% end %>
-			    </div>
+				            </li>
+				          <% end %>
+				        </ul>
+		          <% end %>
+  			    </div>
+          <% else %>
+            <h4 class="font"><%= t('app.common.platform') %></h4>
+            <div class="block_body no_justify">
+			        <% if @political_parties_nav.present? %>
+				        <ul class="block_list_line">
+				          <% @political_parties_nav.each_with_index do |party,i| %>
+				            <li class="party-dropdown">
+
+                      <% platforms = Platform.by_election(@current_election_id).by_political_party(party.id).published %>
+				              <a href="#">
+				                <%= image_tag(party.logo.url, :style => 'vertical-align: middle;') if party.logo_file_name %>
+											  <%= party.name %>
+				                <%= '<b class="caret"></b>'.html_safe if platforms.present? %>
+				              </a>
+
+                      <ul class="parties-dropdown dropdown-menu">
+			                <% if platforms.present? %>
+
+					                <% platforms.each do |platform| %>
+						                <li>
+							                <%= link_to platform.economic_category.name,
+								                party_platform_path(:political_party_id => party.permalink,
+								                :economic_category_id => platform.economic_category.permalink) %>
+						                </li>
+					                <% end %>
+			                <% else %>
+				                <li><span class="disabled"><%= t('platforms.index.no_platforms') %></span></li>
+			                <% end %>
+			                </ul>
+
+				            </li>
+				          <% end %>
+				        </ul>
+		          <% end %>
+  			    </div>
+		      <% end %>
 			  </div>
 
       </div>
