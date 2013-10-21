@@ -310,7 +310,8 @@ div.admin_panel ul li {
 }
 
 .block h1#election_name{
-  font-style: italic;
+  text-transform:uppercase;
+  font-family: fightme;
 }
 
 .block > h3 {
@@ -455,6 +456,7 @@ div.admin_panel ul li {
 
 
 .imagecontainer {
+  text-align: center;
 
 }
 

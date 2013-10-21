@@ -142,6 +142,12 @@
         <div class="block">
           <div class="imagecontainer" style="max-width: 236px;">
             <%= link_to(image_tag(@banner_img_name), about_path) %>
+            
+            <% if @current_election_id != 1 %>
+              <p>
+                <%= t('.funded_by') %>
+              </p>
+            <% end %>
           </div>
         </div>
 
