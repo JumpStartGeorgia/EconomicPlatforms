@@ -373,7 +373,7 @@ ka:
       secondary_title: "განცხადება - %{date}"
     platform:
       title: "%{political_party}"
-      secondary_title: "პლათფორმა - %{economic_category}"
+      secondary_title: "პლატფორმა - %{economic_category}"
     policy_brief:
       title: "%{political_party}"
       secondary_title: "ექსპერტული შეფასება - %{economic_category}"
@@ -397,7 +397,7 @@ ka:
       secondary_title: "განცხადება - %{date}"
     platform:
       title: "%{economic_category}"
-      secondary_title: "პლათფორმა - %{political_party}"
+      secondary_title: "პლატფორმა - %{political_party}"
     policy_brief:
       title: "%{economic_category}"
       secondary_title: "ექსპერტული შეფასება - %{political_party}"
