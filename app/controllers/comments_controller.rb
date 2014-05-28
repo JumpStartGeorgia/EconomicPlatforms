@@ -1,6 +1,9 @@
 class CommentsController < ApplicationController
 
   def create
+	    redirect_to formatted_root_path
+=begin
+
     case params[:type]
     when 'platform'
       m = Platform
@@ -25,9 +28,12 @@ class CommentsController < ApplicationController
 		else
 	    redirect_to formatted_root_path
 		end
+=end		
   end
 
   def vote
+	    redirect_to formatted_root_path
+=begin
     if !(['down', 'up'].include? params[:status])
       redirect_to formatted_root_path, :alert => 'wrong status'
       return
@@ -119,6 +125,7 @@ class CommentsController < ApplicationController
 		else
       redirect_to formatted_root_path
 		end
+=end
   end
 
 end

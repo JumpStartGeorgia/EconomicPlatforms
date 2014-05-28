@@ -18,8 +18,8 @@
       </div>
 
 		  <% if params[:format] != "pdf" %>
-			  <%= render :partial => 'comments/list', :locals => {:commentable_type => 'policybrief', :commentable_id => @policy_brief.id} %>
-		    <%= render :partial => 'comments/form', :locals => {:commentable_type => 'policybrief', :commentable_id => @policy_brief.id} %>
+			  <%#= render :partial => 'comments/list', :locals => {:commentable_type => 'policybrief', :commentable_id => @policy_brief.id} %>
+		    <%#= render :partial => 'comments/form', :locals => {:commentable_type => 'policybrief', :commentable_id => @policy_brief.id} %>
 		  <% end %>
 
     </div>

@@ -68,7 +68,7 @@ class CategoryController < ApplicationController
 			else
 				@platforms = Platform.published.by_election(@current_election_id).by_economic_category(@economic_category.id)
 				@policy_briefs = PolicyBrief.published.by_election(@current_election_id).by_economic_category(@economic_category.id)
-				@comments = @platform.comments
+#				@comments = @platform.comments
 
 				gon.highlight_first_form_field = false
 				respond_to do |format|
@@ -103,7 +103,7 @@ class CategoryController < ApplicationController
 			else
 				@platforms = Platform.published.by_election(@current_election_id).by_economic_category(@economic_category.id)
 				@policy_briefs = PolicyBrief.published.by_election(@current_election_id).by_economic_category(@economic_category.id)
-				@comments = @policy_brief.comments
+#				@comments = @policy_brief.comments
 
 				gon.highlight_first_form_field = false
 				respond_to do |format|
@@ -136,7 +136,7 @@ class CategoryController < ApplicationController
 			else
 				@platforms = Platform.published.by_election(@current_election_id).by_economic_category(@economic_category.id)
 				@policy_briefs = PolicyBrief.published.by_election(@current_election_id).by_economic_category(@economic_category.id)
-				@comments = @statement.comments
+#				@comments = @statement.comments
 
 				gon.highlight_first_form_field = false
 				respond_to do |format|

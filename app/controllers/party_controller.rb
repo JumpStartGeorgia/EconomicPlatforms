@@ -67,7 +67,7 @@ class PartyController < ApplicationController
 			else
 				@platforms = Platform.published.by_election(@current_election_id).by_political_party(@political_party.id)
 				@policy_briefs = PolicyBrief.published.by_election(@current_election_id).by_political_party(@political_party.id)
-				@comments = @platform.comments
+#				@comments = @platform.comments
 
 				gon.highlight_first_form_field = false
 				respond_to do |format|
@@ -102,7 +102,7 @@ class PartyController < ApplicationController
 			else
 				@platforms = Platform.published.by_election(@current_election_id).by_political_party(@political_party.id)
 				@policy_briefs = PolicyBrief.published.by_election(@current_election_id).by_political_party(@political_party.id)
-				@comments = @policy_brief.comments
+#				@comments = @policy_brief.comments
 
 				gon.highlight_first_form_field = false
 				respond_to do |format|
@@ -135,7 +135,7 @@ class PartyController < ApplicationController
 			else
 				@platforms = Platform.published.by_election(@current_election_id).by_political_party(@political_party.id)
 				@policy_briefs = PolicyBrief.published.by_election(@current_election_id).by_political_party(@political_party.id)
-				@comments = @statement.comments
+#				@comments = @statement.comments
 
 				gon.highlight_first_form_field = false
 				respond_to do |format|
