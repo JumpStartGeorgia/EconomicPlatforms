@@ -80,12 +80,14 @@
 				          <%= link_to l(statement.date_made, :format => :long),
 							    party_statement_path(:political_party_id => @political_party.permalink, :id => statement.id) %>
 			          </h3>
+<!--
                 <div style="float: left; margin-left: 20px;">
 		              <%= image_tag('/assets/thumbs-up-grey.png') %>
                   <% diff = statement.votes_diff %>
                   <span style="margin: 0 5px; color: <%= diff[:color] %>;"><%= diff[:number] %></span>
 		              <%= image_tag('/assets/thumbs-down-grey.png') %>
                 </div>
+-->                
               </div>
 
 				      <% if user_signed_in? && can?(:manage, Statement) %>

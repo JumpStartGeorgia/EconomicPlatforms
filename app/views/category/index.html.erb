@@ -79,12 +79,14 @@
 				          <%= link_to l(statement.date_made, :format => :long),
 							    category_statement_path(:economic_category_id => @economic_category.permalink, :id => statement.id) %>
 			          </h3>
+<!--			          
                 <div style="float: left; margin-left: 20px;">
 		              <%= image_tag('/assets/thumbs-up-grey.png') %>
                   <% diff = statement.votes_diff %>
                   <span style="margin: 0 5px; color: <%= diff[:color] %>;"><%= diff[:number] %></span>
 		              <%= image_tag('/assets/thumbs-down-grey.png') %>
                 </div>
+-->                
               </div>
 
 
