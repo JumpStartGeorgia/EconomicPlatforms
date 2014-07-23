@@ -31,6 +31,7 @@ gem "use_tinymce", "~> 0.0.15" # wysiwyg
 gem "rails_autolink", "~> 1.0.9" # convert string to link if it is url
 gem 'acts_as_commentable', '2.0.1' #comments
 gem "unidecoder", "~> 1.1.2" #convert utf8 to ascii for permalinks
+gem 'rack-utf8_sanitizer', '~> 1.2.2' # prevent invalid encoding error
 
 # Gems used only for assets and not required
 # in production environments by default.
