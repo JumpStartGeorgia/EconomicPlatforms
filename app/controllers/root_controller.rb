@@ -10,9 +10,9 @@ class RootController < ApplicationController
 		gon.highlight_first_form_field = false
 		
 		# see if banner for this election exists, if not load default
-		@banner_img_name = "banner_#{@current_election_id}.jpg"
-		@banner_img_name = "banner.jpg" if Rails.application.assets.find_asset(@banner_img_name).blank?
-
+		# @banner_img_name = "banner_#{@current_election_id}.jpg"
+		# @banner_img_name = "banner.jpg" if Rails.application.assets.find_asset(@banner_img_name).blank?
+		@banner_img_name = "banner.jpg"
 
     # see if policy briefs exist
     @policy_briefs_count = PolicyBrief.by_election(@current_election_id).published.count
