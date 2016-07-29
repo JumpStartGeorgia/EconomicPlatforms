@@ -95,24 +95,28 @@
 
       <div class="span4">
 
+		      <% if @statements.present? %>
         <div class="block" style="min-height: 161px;">
-          <h4 class="font"><%= t('app.common.statements') %></h4>
-          <div class="block_body  no_justify">
-			      <% if !@statements || @statements.empty? %>
-				      <%= t('statements.index.no_statements') %>
-			      <% else %>
-				      <ul class="block_list_line">
-					      <% @statements.each do |statement| %>
-						      <li>
-							      <%= link_to "#{l(statement.date_made, :format => :short)} - #{statement.political_party.name}",
-									      party_statement_path(:political_party_id => statement.political_party.permalink, :id => statement.id),
-									      :title => "#{statement.economic_category.name}" %>
-						      </li>
-					      <% end %>
-				      </ul>
-			      <% end %>
-			    </div>
+	          <h4 class="font"><%= t('app.common.statements') %></h4>
+	          <div class="block_body  no_justify">
+				      <% if !@statements || @statements.empty? %>
+					      <%= t('statements.index.no_statements') %>
+				      <% else %>
+					      <ul class="block_list_line">
+						      <% @statements.each do |statement| %>
+							      <li>
+								      <%= link_to "#{l(statement.date_made, :format => :short)} - #{statement.political_party.name}",
+										      party_statement_path(:political_party_id => statement.political_party.permalink, :id => statement.id),
+										      :title => "#{statement.economic_category.name}" %>
+							      </li>
+						      <% end %>
+					      </ul>
+				      <% end %>
+				    </div>
 			  </div>
+			  	<% else %>
+			  	&nbsp;
+			    <% end %>
 
       </div>
 

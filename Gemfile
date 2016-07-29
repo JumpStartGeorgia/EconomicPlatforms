@@ -48,10 +48,6 @@ group :development do
   gem 'yaml2csv'
 end
 
-group :staging do
-	gem "unicorn", "4.2.1" # http server
-end
-
-group :production do
+group :staging, :production do
 	gem "unicorn", "4.2.1" # http server
 end
