@@ -56,7 +56,7 @@ $(function ()
 });
 
 
-$('#activityslider .arrow:not(.disabled)').live('click', function ()
+$('#activityslider .arrow:not(.disabled)').on('click', function ()
 {
 
   var direction = $(this).data('direction');

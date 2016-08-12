@@ -14,7 +14,7 @@
 				<h3><%= t("app.language.#{trans.locale}") %></h3>
 
 				<%= translation.input :title %>
-				<%= translation.input :body, :as => :text, :input_html => {:rows => 4} %>
+				<%= translation.input :body, :as => :text, :input_html => {:rows => 4, class: 'tinymce'} %>
 				<%= translation.hidden_field :locale , :value => trans.locale %>
 			</div>
 
@@ -37,3 +37,6 @@
 	  <%= link_to t('app.buttons.cancel'), activities_path, :class => 'btn btn-mini btn-warning' %>
   </div>
 <% end %>
+
+<%= tinymce_assets %>
+<%= tinymce %>

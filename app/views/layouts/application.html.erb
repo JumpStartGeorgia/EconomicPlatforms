@@ -254,14 +254,14 @@
 					</li>
 				</ul>
 			</div>
-			<div id="right">&copy; 2013</div>
+			<div id="right">&copy; 2013 - <%= Time.now.year %></div>
     </footer>
 
     <!-- Javascripts
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag "application" %>
-		<%= use_tinymce_link %>
+		<%#= use_tinymce_link %>
 		<% if !@load_image_slider.nil? && @load_image_slider %>
 		  <script type="text/javascript" src="/javascripts/image_slider.js"></script>
 		<% end %>

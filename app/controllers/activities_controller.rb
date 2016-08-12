@@ -1,5 +1,5 @@
 class ActivitiesController < ApplicationController
-	use_tinymce :create, :update, :new, :edit
+	#use_tinymce :create, :update, :new, :edit
 
   before_filter :authenticate_user!, :except => [:show, :index]
   before_filter(:except => [:show, :index]) do |controller_instance|
