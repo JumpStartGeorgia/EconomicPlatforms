@@ -69,6 +69,7 @@ EconomicPlatforms::Application.routes.draw do
 		match '/about', :to => 'root#about', :as => :about, :via => :get
 		match '/sitemap', :to => 'root#sitemap', :as => :sitemap, :via => :get
 		match '/methodology', :to => 'root#methodology', :as => :methodology, :via => :get
+		match '/reports', :to => 'root#reports', :as => :reports, :via => :get
 
     # if on home page, show election id in nice format
 		match '/election/:election_id', :to => 'root#index', :as => :formatted_root, :via => :get

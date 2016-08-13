@@ -29,4 +29,9 @@
   <%= @election.name %>
 </p>
 
+<p>
+  <strong><%= t('app.common.report') %>:</strong>
+  <%= link_to t('app.common.download_report'), @election.report.url, target: :blank if @election.report.present? %>
+</p>
+
 

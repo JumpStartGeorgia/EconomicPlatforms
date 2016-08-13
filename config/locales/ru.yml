@@ -82,6 +82,8 @@ ru:
       political_party: "Политическая партия"
       candidate_translation:
         name: 
+      report_file:
+        file: Report
   app:
     language:
       en: English
@@ -141,6 +143,8 @@ ru:
       activity: "Новости"
       indicator: Индикатор
       indicator_category: "Категория индикатора"
+      reports: Reports
+      report: Report
       user: Пользователь
       source: Источник
       author: Заявитель
@@ -235,6 +239,9 @@ ru:
     sitemap:
       title: "Карта сайта"
       other_header: Прочее
+    reports:
+      title: Download Reports
+      no_reports: 'Sorry, but no reports have been saved yet.'
   economic_categories:
     edit:
       title: "Внесение изменений в экономическую категорию"

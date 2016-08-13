@@ -14,6 +14,15 @@
 
 				<%= translation.input :name %>
 				<%= translation.hidden_field :locale , :value => trans.locale %>
+
+				<%= translation.fields_for :report_file do |upload| %>
+					<%= upload.input :file, :as => :file, input_html: {accept: '.pdf'} %>
+					<div class="control-group">
+						<div class="controls">
+							<%= link_to t('app.common.download_report'), @election.report.url, :class => 'btn' if @election.report_file_name %>
+						</div>
+					</div>
+				<% end %>
 			</div>
 
 		<% end %>

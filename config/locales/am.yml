@@ -82,6 +82,8 @@ am:
         political_party: "քաղաքական կուսակցություն"
       candidate_translation:
         name: კანდიდატის სახელი
+      report_file:
+        file: Report
   app:
     language:
       en: English
@@ -141,6 +143,8 @@ am:
       activity: նորույթներ
       indicator: ինդիկատոր
       indicator_category: "ինդիկատորի կատիգորիա"
+      reports: Reports
+      report: Report
       user: սպառող
       source: աղբյուր
       author: հայտարարող
@@ -235,6 +239,9 @@ am:
     sitemap:
       title: "կայքի քարտեզը"
       other_header: այլ
+    reports:
+      title: Download Reports
+      no_reports: 'Sorry, but no reports have been saved yet.'
   economic_categories:
     edit:
       title: "փոփոխությունների կատարում տնտեսական կատիգորիայում"

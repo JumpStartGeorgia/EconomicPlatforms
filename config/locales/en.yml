@@ -82,6 +82,8 @@ en:
         political_party: Political Party
       candidate_translation:
         name: Candidate Name
+      report_file:
+        file: Report
   app:
     language:
       en: English
@@ -141,6 +143,8 @@ en:
       activity: Activity
       indicator: Indicator
       indicator_category: Indicator Category
+      reports: Reports
+      report: Report
       user: User
       source: Source
       author: Stated By
@@ -235,6 +239,9 @@ en:
     sitemap:
       title: Site Map
       other_header: Other
+    reports:
+      title: Download Reports
+      no_reports: 'Sorry, but no reports have been saved yet.'
   economic_categories:
     edit:
       title: Editing Economic Category

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131015113743) do
+ActiveRecord::Schema.define(:version => 20160813154131) do
 
   create_table "activities", :force => true do |t|
     t.date     "date"
@@ -291,6 +291,18 @@ ActiveRecord::Schema.define(:version => 20131015113743) do
   add_index "political_party_translations", ["name"], :name => "index_political_party_translations_on_name"
   add_index "political_party_translations", ["permalink"], :name => "index_political_party_translations_on_permalink"
   add_index "political_party_translations", ["political_party_id"], :name => "index_d74f39ea82f0f6fcd074b03ad118d440ba291333"
+
+  create_table "report_files", :force => true do |t|
+    t.integer  "election_translation_id"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  add_index "report_files", ["election_translation_id"], :name => "index_report_files_on_election_translation_id"
 
   create_table "statement_scores", :force => true do |t|
     t.integer  "statement_id"

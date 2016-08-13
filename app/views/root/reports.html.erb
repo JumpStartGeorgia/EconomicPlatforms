@@ -1,0 +1,47 @@
+<% 
+	title t('.title') 
+	reports = @elections_nav.select{|x| x.report.present?}.sort_by{|x| x.date}.reverse
+
+    locales = I18n.available_locales.clone
+    # pull out default locale
+    default = locales.select{|x| x == I18n.default_locale}.first
+    locales.delete(default) if default.present?
+    # now sort the left over
+    locales.sort!{|x,y| y.to_s <=> x.to_s}
+    # add default back in
+    locales << default if default.present?
+%>
+
+<div class="row">
+	<div class="span12 clear sidespan">
+	  <div class="block clear">
+
+      <div class="block_body" id="content_container">
+
+				<% if reports.present? %>
+					<div class="download-container">
+						<% reports.each do |report| %>
+							<div>
+								<strong><%= report.name.strip %>:</strong> 
+								<% report.election_translations.each do |trans| %>
+									<% if trans.report_file.present? && trans.report_file.file.exists? %>
+										<%= link_to t("app.language.#{trans.locale}"), trans.report_file.file.url, target: :blank %>
+									<% end %>
+								<% end %>
+							</div>
+						<% end %>
+					</div>
+				<% else %>
+
+					<p>
+						<%= t('.no_reports') %>
+					</p>
+
+				<% end %>
+
+      </div>
+
+    </div>
+	</div>
+</div>
+

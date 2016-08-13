@@ -82,6 +82,8 @@ az:
         political_party: "Siyasi Partiya"
       candidate_translation:
         name: 
+      report_file:
+        file: Report
   app:
     language:
       en: English
@@ -141,6 +143,8 @@ az:
       activity: Yeniliklər
       indicator: Göstərici
       indicator_category: "Göstərici kateqoriyası"
+      reports: Reports
+      report: Report
       user: İstifadəçi
       source: Mənbə
       author: Bəyanatçı
@@ -235,6 +239,9 @@ az:
     sitemap:
       title: "Səhifənin Xəritəsi"
       other_header: Digər
+    reports:
+      title: Download Reports
+      no_reports: 'Sorry, but no reports have been saved yet.'
   economic_categories:
     edit:
       title: İqtisadi Kateqoriyaya Dəyişiklikləri Daxil Etmək

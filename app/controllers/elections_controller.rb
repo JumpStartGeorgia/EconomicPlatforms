@@ -34,7 +34,8 @@ class ElectionsController < ApplicationController
     # create the translation object for however many locales there are
     # so the form will properly create all of the nested form fields
     I18n.available_locales.each do |locale|
-			@election.election_translations.build(:locale => locale.to_s)
+			et = @election.election_translations.build(:locale => locale.to_s)
+      et.build_report_file
 		end
 
     gon.edit_election = true
@@ -48,6 +49,12 @@ class ElectionsController < ApplicationController
   # GET /elections/1/edit
   def edit
     @election = Election.find(params[:id])
+
+    # if the translation does not have a report file, build it 
+    # so it is available in the form
+    @election.election_translations.each do |et|
+      et.build_report_file if et.report_file.nil?
+    end
 
     gon.edit_election = true
 		@election.date = @election.date.strftime('%d.%m.%Y') if !@election.date.nil?

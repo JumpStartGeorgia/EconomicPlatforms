@@ -59,4 +59,7 @@ class RootController < ApplicationController
 		@page = Page.find_by_name('methodology')
 	end
 
+	def reports
+		
+	end
 end

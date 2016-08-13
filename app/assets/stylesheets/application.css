@@ -824,3 +824,24 @@ footer #left {
 	float: left;
 	width: 90%;
 }
+
+/* download reports page */
+.download-container > div{
+  margin-bottom: 10px;
+}
+
+.download-container > div strong{
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.download-container > div a {
+  background: #3b628d;
+  border-color: #3b628d;
+  color: #fff !important;
+  text-shadow: none;
+  outline: none;
+  box-shadow: none;
+  padding: 3px 10px 4px;
+  text-decoration: none;
+}

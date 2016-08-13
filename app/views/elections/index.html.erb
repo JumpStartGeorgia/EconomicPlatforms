@@ -13,6 +13,7 @@
 		<tr>
       <th><%= t('app.common.title') %></th>
       <th><%= t('app.common.date') %></th>
+      <th><%= t('app.common.report') %></th>
       <th><%= t('app.common.actions') %></th>
 		</tr>
   </thead>
@@ -21,6 +22,7 @@
 		<tr>
 		  <td><%= link_to election.name, election %></td>
 		  <td><%= l election.date, :format => :long if election.date %></td>
+      <td><%= link_to t('app.common.download_report'), election.report.url, target: :blank if election.report.present? %></td>
 		  <td>
 				<%= link_to t('app.buttons.edit'), edit_election_path(election), :class => 'btn btn-mini' %>
         <%= link_to t('app.buttons.delete'),

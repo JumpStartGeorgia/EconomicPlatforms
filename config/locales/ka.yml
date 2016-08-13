@@ -82,6 +82,8 @@ ka:
         political_party: პოლიტიკური პარტია
       candidate_translation:
         name: კანდიდატის სახელი
+      report_file:
+        file: Report
   app:
     language:
       en: English
@@ -141,6 +143,8 @@ ka:
       activity: სიახლეები
       indicator: ინდიკატორი
       indicator_category: ინდიკატორის კატეგორია
+      reports: Reports
+      report: Report
       user: მომხმარებელი
       source: წყარო
       author: განმცხადებელი
@@ -235,6 +239,9 @@ ka:
     sitemap:
       title: საიტის რუკა
       other_header: სხვა
+    reports:
+      title: Download Reports
+      no_reports: 'Sorry, but no reports have been saved yet.'
   economic_categories:
     edit:
       title: ცვლილებების შეტანა ეკონომიკურ კატეგორიაში

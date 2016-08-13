@@ -67,4 +67,23 @@ class Election < ActiveRecord::Base
     return x
 	end
 
+
+  ##############################
+  ## shortcut methods to get to
+  ## report file in report_file object
+  ##############################
+  def report_record
+    x = self.election_translations.select{|x| x.locale == I18n.locale.to_s}.first
+    if x.present?
+      return x.report_record
+    end
+    return nil
+  end
+  def report_file_name
+    report_record.file_file_name if !report_record.blank?
+  end
+  def report
+    report_record.file if !report_record.blank?
+  end
+
 end

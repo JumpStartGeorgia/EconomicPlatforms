@@ -1,7 +1,10 @@
 class ElectionTranslation < ActiveRecord::Base
 
-  attr_accessible :election_id, :name, :locale
   belongs_to :election
+  has_one :report_file, :dependent => :destroy
+  accepts_nested_attributes_for :report_file
+
+  attr_accessible :election_id, :name, :locale, :report_file_attributes
 
   validates :name, :presence => true
 
@@ -17,4 +20,20 @@ class ElectionTranslation < ActiveRecord::Base
   def add_required_data(obj)
     self.name = obj.name
   end
+
+
+  ##############################
+  ## shortcut methods to get to
+  ## report file in report object
+  ##############################
+  def report_record
+    self.report_file
+  end
+  def report
+    report_record.file if report_record
+  end
+  def report_file_name
+    report_record.file_file_name if report_record
+  end
+
 end
