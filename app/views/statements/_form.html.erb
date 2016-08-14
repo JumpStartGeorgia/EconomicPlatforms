@@ -18,8 +18,8 @@
 
 				  <%= translation.input :source %>
 				  <%= translation.input :author %>
-				  <%= translation.input :statement_made, :as => :text, :input_html => {:rows => 15} %>
-				  <%= translation.input :analysis, :as => :text, :input_html => {:rows => 15} %>
+				  <%= translation.input :statement_made, :as => :text, :input_html => {:rows => 10, class: 'tinymce'} %>
+				  <%= translation.input :analysis, :as => :text, :input_html => {:rows => 10, class: 'tinymce'} %>
 				  <%= translation.hidden_field :locale , :value => trans.locale %>
 			  </div>
 
@@ -54,3 +54,7 @@
 	  <%= link_to t('app.buttons.cancel'), statements_path, :class => 'btn btn-mini btn-warning' %>
   </div>
 <% end %>
+
+
+<%= tinymce_assets %>
+<%= tinymce %>
