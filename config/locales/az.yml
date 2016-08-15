@@ -182,6 +182,7 @@ az:
       logo: Logo
       view_source: "Mənbəyə baxın"
       download_report: "Hessabatı Yükləmək"
+      download_reports: Download Reports
     msgs:
       does_not_exist: "Siz mövcud olmayan səhifəyi izləmək istəyirsiniz."
       not_authorized: "Bu səhifəyi izləməyə sizing izniniz yoxdur."

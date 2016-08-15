@@ -182,6 +182,7 @@ am:
       logo: լոգո
       view_source: "տես աղբյուրը"
       download_report: "հաշվի բեռնումը"
+      download_reports: Download Reports
     msgs:
       does_not_exist: "Դուք փորձում եք բացել էջը, որը գոյություն չունի"
       not_authorized: "Դուք այս էջը բացելոի իրավուք չունեք"

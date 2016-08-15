@@ -182,6 +182,7 @@ ru:
       logo: Лого
       view_source: "Смотрите источник"
       download_report: "Скачать отчет"
+      download_reports: Download Reports
     msgs:
       does_not_exist: "Вы пытаетесь зайти на несуществующую страницу"
       not_authorized: "Вы не имеете прав на просмотр данной страницы"

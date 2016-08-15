@@ -58,7 +58,7 @@
 										<%= link_to t('app.common.methodology'), methodology_path %>
 									</li>
 									<li>
-										<%= link_to t('app.common.download_report'), "/Report_#{I18n.locale}.pdf", :target => :blank %>
+										<%= link_to t('app.common.download_reports'), reports_path, :target => :blank %>
 									</li>
 		              <% if user_signed_in? %>
 				            <li class="dropdown">

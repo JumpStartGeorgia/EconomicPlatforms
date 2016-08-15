@@ -182,6 +182,7 @@ en:
       logo: Logo
       view_source: View Source
       download_report: Download Report
+      download_reports: Download Reports
     msgs:
       does_not_exist: You tried to access a page that does not exist.
       not_authorized: You are not authorized to view that page.
