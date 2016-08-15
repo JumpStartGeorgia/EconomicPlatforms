@@ -242,6 +242,7 @@ ka:
     reports:
       title: Download Reports
       no_reports: 'Sorry, but no reports have been saved yet.'
+      no_report: There are no reports for this election.
   economic_categories:
     edit:
       title: ცვლილებების შეტანა ეკონომიკურ კატეგორიაში
