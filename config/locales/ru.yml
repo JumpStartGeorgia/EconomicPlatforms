@@ -83,7 +83,7 @@ ru:
       candidate_translation:
         name: 
       report_file:
-        file: Report
+        file: Отчет
   app:
     language:
       en: English
@@ -143,8 +143,8 @@ ru:
       activity: "Новости"
       indicator: Индикатор
       indicator_category: "Категория индикатора"
-      reports: Reports
-      report: Report
+      reports: Отчеты
+      report: Отчет
       user: Пользователь
       source: Источник
       author: Заявитель
@@ -182,7 +182,7 @@ ru:
       logo: Лого
       view_source: "Смотрите источник"
       download_report: "Скачать отчет"
-      download_reports: Download Reports
+      download_reports: Загрузить Отчеты
     msgs:
       does_not_exist: "Вы пытаетесь зайти на несуществующую страницу"
       not_authorized: "Вы не имеете прав на просмотр данной страницы"
@@ -241,9 +241,9 @@ ru:
       title: "Карта сайта"
       other_header: Прочее
     reports:
-      title: Download Reports
-      no_reports: 'Sorry, but no reports have been saved yet.'
-      no_report: There are no reports for this election.
+      title: Загрузить Отчеты
+      no_reports: 'Никакие отчеты  не были сохранены.'
+      no_report: Отчет об этих выборах недоступен.
   economic_categories:
     edit:
       title: "Внесение изменений в экономическую категорию"

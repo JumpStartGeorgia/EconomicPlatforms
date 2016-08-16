@@ -83,7 +83,7 @@ ka:
       candidate_translation:
         name: კანდიდატის სახელი
       report_file:
-        file: Report
+        file: ანგარიში
   app:
     language:
       en: English
@@ -143,8 +143,8 @@ ka:
       activity: სიახლეები
       indicator: ინდიკატორი
       indicator_category: ინდიკატორის კატეგორია
-      reports: Reports
-      report: Report
+      reports: ანგარიშები
+      report: ანგარიში
       user: მომხმარებელი
       source: წყარო
       author: განმცხადებელი
@@ -182,7 +182,7 @@ ka:
       logo: ლოგო
       view_source: იხილეთ წყარო
       download_report: ანგარიშის ჩამოტვირთვა
-      download_reports: Download Reports
+      download_reports: ჩამოტვირთე ანგარიშები
     msgs:
       does_not_exist: თქვენ ცდილობთ იხილოთ გვერდი, რომელიც არ არსებობს.
       not_authorized: თქვენ არ გაქვთ უფლება იხილოთ ეს გვერდი.
@@ -241,9 +241,9 @@ ka:
       title: საიტის რუკა
       other_header: სხვა
     reports:
-      title: Download Reports
-      no_reports: 'Sorry, but no reports have been saved yet.'
-      no_report: There are no reports for this election.
+      title: ჩამოტვირთე ანგარიშები
+      no_reports: 'არცერთი ანგარიში არ არის შენახული ჯერ.'
+      no_report: ამ არჩევნებისთვის ანგარიში არ არის ხელმისაწვდომი.
   economic_categories:
     edit:
       title: ცვლილებების შეტანა ეკონომიკურ კატეგორიაში
