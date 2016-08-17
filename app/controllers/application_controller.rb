@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
 	before_filter :set_locale
-	before_filter :is_browser_supported?
+#	before_filter :is_browser_supported?
 	before_filter :initialize_gon
 	before_filter :set_elections
 	before_filter :set_political_parties
@@ -74,7 +74,7 @@ logger.debug "////////////////////////// BROWSER NOT SUPPORTED"
   def set_elections
     @elections_w_parties = Election.with_political_parties.sorted
     @elections_nav = Election.sorted.with_translations(I18n.locale).with_data
-    
+
     @current_election = nil
     if user_signed_in?
       @current_election = (params[:election_id].blank? ? @elections_w_parties.first : @elections_w_parties.select{|x| x.id.to_s == params[:election_id]}.first)
@@ -82,15 +82,15 @@ logger.debug "////////////////////////// BROWSER NOT SUPPORTED"
       @current_election = (params[:election_id].blank? ? @elections_nav.first : @elections_nav.select{|x| x.id.to_s == params[:election_id]}.first)
     end
     if @current_election.blank?
-=begin    
+=begin
       # if getting political parties for election, it is possible election does not have any data yet,
       # so do not redirect if calling this action
-      if !(params[:controller] == "elections" && params[:action] == "political_parties") && 
+      if !(params[:controller] == "elections" && params[:action] == "political_parties") &&
           params[:controller] != "political_parties" && params[:controller] != "candidates" && params[:controller] != "activities"
           params[:controller] != "platforms" && params[:controller] != "policy_briefs" && params[:controller] != "statements"
         redirect_to root_path, notice: t('app.msgs.does_not_exist')
       end
-=end      
+=end
         redirect_to root_path, notice: t('app.msgs.does_not_exist')
     else
       @current_election_id = @current_election.id
@@ -100,7 +100,7 @@ logger.debug "////////////////////////// BROWSER NOT SUPPORTED"
   def set_political_parties
    #@political_parties_nav = @current_election.nil? ? nil : @current_election.political_parties.with_translations(I18n.locale)
    #e_id = params[:election_id].present? ? params[:election_id] : @elections_nav.first.id
-    
+
     @political_parties_nav = PoliticalParty.by_election(@current_election_id).sorted if @current_election_id.present?
 #    @political_parties_nav = PoliticalParty.by_election(@current_election_id).with_data.sorted if @current_election_id.present?
   end
@@ -125,7 +125,7 @@ logger.debug "////////////////////////// BROWSER NOT SUPPORTED"
 	  s.gsub(/[^0-9A-Za-z ]/,'').split.join('_')
 	end
 
-  
+
   # add in required content for translations if none provided
   # - only do this if default locale trans record has data
   def add_missing_translation_content(ary_trans)

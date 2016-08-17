@@ -41,7 +41,7 @@ group :assets do
 	gem "sass-rails", "3.2.6"
 	gem "coffee-rails", "~> 3.2.2"
 	gem "uglifier", ">= 1.0.3"
-	gem 'therubyracer'
+	gem 'therubyracer', '~> 0.11.4'
 	gem 'less-rails', "~> 2.6.0"
 	gem "twitter-bootstrap-rails", "~> 2.2.8"
 	gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
